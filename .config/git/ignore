@@ -1,0 +1,4 @@
+.ssh/
+*.pyc
+*.pyc
+*.exe

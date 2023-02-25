@@ -1,0 +1,9 @@
+[user]
+	name = GeorgiyKuzora
+	email = rafale87@gmail.com
+[color]
+	ui = auto
+[core]
+	editor = nano
+[init]
+	defaultBranch = main

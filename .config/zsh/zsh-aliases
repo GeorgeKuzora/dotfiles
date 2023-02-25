@@ -1,0 +1,38 @@
+#!/bin/sh
+# ALIASES
+
+# Colorize grep output (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# confirm before overwriting something
+# alias cp="cp -i"
+# alias mv='mv -i'
+# alias rm='rm -i'
+
+# easier to read disk
+alias df='df -h'     # human-readable sizes
+alias free='free -m' # show sizes in MB
+
+# Bare git for Dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME'
+
+# New ls
+alias ls='ls --color=auto'
+alias ll='ls -lavh --ignore=.. --color=auto --group-directories-first'   # show long listing of all except ".."
+alias l='ls -lavh --ignore=.?* --color=auto --group-directories-first'   # show long listing but no hidden dotfiles except "."
+
+# Apps shortcuts
+# alias vi='nvim'
+# alias vim='nvim'
+alias peerflix='peerflix -l -k'
+alias brh='br -h'
+alias v='nvim "/home/georgiy/Documents/Code/Learn-Vim/$(ls /home/georgiy/Documents/Code/Learn-Vim | fzf -e -i --cycle)"'
+alias emacs_daemon="emacs --daemon & disown"
+alias emacs="emacsclient -c -a -fs 'emacs' & disown"
+# alias hx="helix"
+
+# history fuzzy find
+alias cpy='xclip -selection c'
+alias h="history 1 | cut -c 8- | sort | uniq | fzf | tr '\\n' ' ' | cpy"

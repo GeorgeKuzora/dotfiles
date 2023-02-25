@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Start Yandex-disk
+GenericName=Cloud synchronization
+Comment=Starts yandex-disk daemon in the background.
+Exec=/usr/bin/yandex-disk start & disown
+Icon=web
+Terminal=false
+Type=Application
+Keywords=synchronization;daemon;
+Categories=Network;FileTransfer;P2P

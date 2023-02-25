@@ -1,0 +1,25 @@
+-- Config was built using the following configs:
+-- https://gitlab.com/dwt1/dotfiles/-/blob/master/.config/nvim/init.lua
+-- https://github.com/LunarVim/Neovim-from-scratch/tree/master
+
+require "user.options"
+require "user.keymaps"
+require "user.colorscheme"
+-- require "user.plugins"
+-- require "user.treesitter"
+-- require "user.lualine"
+-- require "user.autopairs"
+-- require "user.bufferline"
+-- require "user.nvim-tree"
+-- require "user.comment"
+-- require "user.cmp"
+-- require "user.lsp"
+-- require "user.telescope"
+-- require "user.gitsigns"
+-- require "user.toggleterm"
+-- require "user.project"
+-- require "user.indentline"
+-- require "user.impatient"
+-- require "user.alpha"
+-- require "user.whichkey"
+-- require "user.autocommands"
