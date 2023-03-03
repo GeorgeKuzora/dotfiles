@@ -124,6 +124,13 @@
 (global-set-key (kbd "C-c C-/") #'company-other-backend)
 (global-set-key (kbd "C-c y") 'company-yasnippet)
 
+;; LSP mode settings
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))  ; or lsp-deferred
+
 ;; Revert buffers when the underlying file has changed
 (global-auto-revert-mode 1)
 ;; Revert Dired and other buffers
