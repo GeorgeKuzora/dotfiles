@@ -108,9 +108,9 @@
 ;; Drag and drop selected text with the mouse
 (setq mouse-drag-and-drop-region t)
 
-;; Tree-sitter enable globaly - CREATES ERRORS
-;;(global-tree-sitter-mode 1)
-;;(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+;; Tree-sitter enable globally
+(global-tree-sitter-mode 1)
+(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
 ;; Company CMP enable global
 (add-hook 'after-init-hook 'global-company-mode)
