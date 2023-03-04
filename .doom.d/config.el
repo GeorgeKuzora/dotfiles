@@ -136,6 +136,9 @@
 ;; Revert Dired and other buffers
 (setq global-auto-revert-non-file-buffers t)
 
+;; Dired reuse the same buffer
+(setq dired-kill-when-opening-new-dired-buffer t)
+
 ;;Beacon mode for not loosing cursor
 (beacon-mode 1)
 
