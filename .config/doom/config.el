@@ -21,19 +21,17 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
-;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
-;;
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 16 :weight 'Medium)
-      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font" :size 16 :weight 'Medium)
-      doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :size 24 :weight 'Medium)
-      doom-unicode-font (font-spec :family "Unifont"))
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 16)
+      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font" :size 16)
+      doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :size 24)
+      doom-unicode-font (font-spec :family "JetBrainsMono Nerd Font"))
 (after! doom-themes
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t))
 (custom-set-faces!
   '(font-lock-comment-face :slant italic)
   '(font-lock-keyword-face :slant italic))
+;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 ;; refresh your font settings. If Emacs still can't find your font, it likely
@@ -44,6 +42,7 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'catppuccin)
 (setq catppuccin-flavor 'macchiato) ;; or 'latte, 'macchiato, or 'mocha
+
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
@@ -201,3 +200,19 @@
 
 ;; Raindow delimeters for all languages
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+;; Treemacs config
+(setq doom-themes-treemacs-theme "doom-colors")
+
+;; Python auto-venv config
+(use-package auto-virtualenv
+  :ensure t
+  :init
+  (use-package pyvenv
+    :ensure t)
+  :config
+  (add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv)
+  (add-hook 'projectile-after-switch-project-hook 'auto-virtualenv-set-virtualenv)  ;; If using projectile
+  (add-hook 'window-configuration-change-hook 'auto-virtualenv-set-virtualenv)
+  (add-hook 'focus-in-hook 'auto-virtualenv-set-virtualenv)
+  )

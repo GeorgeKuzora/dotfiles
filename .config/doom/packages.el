@@ -52,3 +52,6 @@
 (package! beacon)
 (package! rainbow-mode)
 (package! catppuccin-theme)
+(package! pyvenv)
+(package! elpy)
+(package! auto-virtualenv)
