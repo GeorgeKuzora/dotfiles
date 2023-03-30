@@ -66,3 +66,7 @@ AUTO_NOTIFY_IGNORE+=("bashtop")
 
 zsh_add_plugin "MichaelAquilina/zsh-you-should-use"
 # source /home/georgiy/.config/broot/launcher/bash/br
+
+# nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
