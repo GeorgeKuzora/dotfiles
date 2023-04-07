@@ -112,7 +112,7 @@
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
 ;; Company CMP enable global
-(add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'prog-mode-hook 'global-company-mode) ;'after-init-hook
 ;; Company-backends settings
 (setq company-backends '((company-capf
                           company-dabbrev
@@ -122,6 +122,9 @@
                          company-files))
 (global-set-key (kbd "C-c C-/") #'company-other-backend)
 (global-set-key (kbd "C-c y") 'company-yasnippet)
+(setq company-global-modes '(not org-mode))
+(setq company-global-modes '(not gfm-mode))
+(setq company-global-modes '(not markdown-mode))
 
 ;; LSP mode settings
 (use-package lsp-pyright
@@ -216,3 +219,8 @@
   (add-hook 'window-configuration-change-hook 'auto-virtualenv-set-virtualenv)
   (add-hook 'focus-in-hook 'auto-virtualenv-set-virtualenv)
   )
+
+;; FOLDING CONFIGURATION
+;; Enable hs-minor-mode for code folding
+(add-hook 'prog-mode-hook #'hs-minor-mode)
+

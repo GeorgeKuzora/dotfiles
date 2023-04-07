@@ -42,43 +42,40 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+    use "wbthomason/packer.nvim"
+
+    -- Themes
+    use "arcticicestudio/nord-vim"
+	use { "catppuccin/nvim", as = "catppuccin" }
+    use { "folke/tokyonight.nvim", as = "tokyonight" }
 
     -- Possible dependenses for other plugins
-    use 'nvim-lua/popup.nvim' -- An implementation of ht Popup API vim in Neovim
-    use 'nvim-lua/plenary.nvim' -- Useful lua fenctions used by lots of plugins
-	use "kyazdani42/nvim-web-devicons" -- Required by lualine
-	use "moll/vim-bbye" -- Required by Bufferline config
-
-    -- Nord theme
-    -- use 'arcticicestudio/nord-vim'
-	use { "catppuccin/nvim", as = "catppuccin" }
+    -- use "nvim-lua/popup.nvim" -- An implementation of ht Popup API vim in Neovim
+    -- use "nvim-lua/plenary.nvim" -- Useful lua fenctions used by lots of plugins
+	-- use "kyazdani42/nvim-web-devicons" -- Required by lualine
+	-- use "moll/vim-bbye" -- Required by Bufferline config
 
     -- Treesitter
-    use {
-    	"nvim-treesitter/nvim-treesitter",
-    	run = ":TSUpdate",
-    	}
-    use "p00f/nvim-ts-rainbow"
+    -- use "p00f/nvim-ts-rainbow"
 
-    -- Status line
-    use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
+    -- -- Status line
+    -- use {
+    -- "nvim-lualine/lualine.nvim",
+    -- requires = { "kyazdani42/nvim-web-devicons", opt = true }
+    -- }
 
     -- Autopairs
-    use "windwp/nvim-autopairs"
+    -- use "windwp/nvim-autopairs"
 
 	-- Buffer line
 	-- use "akinsho/bufferline.nvim"
 
 	-- Nvim-tree file explower
-	use "kyazdani42/nvim-tree.lua"
+	-- use "kyazdani42/nvim-tree.lua"
 
     -- Comments
-    use "numToStr/Comment.nvim"
-    use "JoosepAlviste/nvim-ts-context-commentstring"
+    -- use "numToStr/Comment.nvim"
+    -- use "JoosepAlviste/nvim-ts-context-commentstring"
 
     -- Terminal
     -- use "akinsho/toggleterm.nvim"
@@ -87,13 +84,13 @@ return packer.startup(function(use)
     -- use "ahmedkhalf/project.nvim"
 
     --Impatient
-    -- use 'lewis6991/impatient.nvim'
+    -- use "lewis6991/impatient.nvim"
 
     -- Indent line
     -- use "lukas-reineke/indent-blankline.nvim"
 
     -- Alpha greetter
-    -- use 'goolord/alpha-nvim'
+    -- use "goolord/alpha-nvim"
     -- use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
 
     -- Whichkey
@@ -119,7 +116,7 @@ return packer.startup(function(use)
 
     -- Telescope
     -- use "nvim-telescope/telescope.nvim"
-    -- use 'nvim-telescope/telescope-media-files.nvim'
+    -- use "nvim-telescope/telescope-media-files.nvim"
 
     -- Git
     -- use "lewis6991/gitsigns.nvim"
