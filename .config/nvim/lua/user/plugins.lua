@@ -46,7 +46,7 @@ return packer.startup(function(use)
 
     -- Themes
     use "arcticicestudio/nord-vim"
-	use { "catppuccin/nvim", as = "catppuccin" }
+    use { "catppuccin/nvim", as = "catppuccin" }
     use { "folke/tokyonight.nvim", as = "tokyonight" }
 
     -- Possible dependenses for other plugins

@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/georgiy/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
   },
+  ["nord-vim"] = {
+    loaded = true,
+    path = "/home/georgiy/.local/share/nvim/site/pack/packer/start/nord-vim",
+    url = "https://github.com/arcticicestudio/nord-vim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/georgiy/.local/share/nvim/site/pack/packer/start/packer.nvim",
