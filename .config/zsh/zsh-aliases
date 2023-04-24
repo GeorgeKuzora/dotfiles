@@ -28,7 +28,8 @@ alias l='ls -lavh --ignore=.?* --color=auto --group-directories-first'   # show 
 # alias vim='nvim'
 alias peerflix='peerflix -l -k'
 alias brh='br -h'
-alias v='nvim "/home/georgiy/Documents/Code/Learn-Vim/$(ls /home/georgiy/Documents/Code/Learn-Vim | fzf -e -i --cycle)"'
+alias vi='nvim'
+alias vim='nvim'
 alias emacs_daemon="emacs --daemon & disown"
 alias emacs="emacsclient -c -a -fs 'emacs' & disown"
 # alias hx="helix"

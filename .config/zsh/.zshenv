@@ -22,8 +22,8 @@ CM_LAUNCHER='rofi'
 # Добавление директорий в PATH
 PATH="$PATH:$HOME/.config/emacs/bin"
 PATH="$PATH:$HOME/.local/bin"
-PATH="$PATH:$HOME/node_modules/stylelint/bin"
 export PATH
+
 # Look manpage via nvim
 # export MANPAGER='nvim +Man!'
 # export MANWIDTH=999
