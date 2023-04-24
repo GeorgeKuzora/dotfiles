@@ -125,6 +125,7 @@
 (setq company-global-modes '(not org-mode))
 (setq company-global-modes '(not gfm-mode))
 (setq company-global-modes '(not markdown-mode))
+(setq company-idle-delay 0.3)
 
 ;; LSP mode settings
 (use-package lsp-pyright
@@ -208,19 +209,28 @@
 (setq doom-themes-treemacs-theme "doom-colors")
 
 ;; Python auto-venv config
-(use-package auto-virtualenv
-  :ensure t
-  :init
-  (use-package pyvenv
-    :ensure t)
-  :config
-  (add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv)
-  (add-hook 'projectile-after-switch-project-hook 'auto-virtualenv-set-virtualenv)  ;; If using projectile
-  (add-hook 'window-configuration-change-hook 'auto-virtualenv-set-virtualenv)
-  (add-hook 'focus-in-hook 'auto-virtualenv-set-virtualenv)
-  )
+;; (use-package auto-virtualenv
+;;   :ensure t
+;;   :init
+;;   (use-package pyvenv
+;;     :ensure t)
+;;   :config
+;;   (add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv)
+;;   (add-hook 'projectile-after-switch-project-hook 'auto-virtualenv-set-virtualenv)  ;; If using projectile
+;;   (add-hook 'window-configuration-change-hook 'auto-virtualenv-set-virtualenv)
+;;   (add-hook 'focus-in-hook 'auto-virtualenv-set-virtualenv)
+;;   )
 
 ;; FOLDING CONFIGURATION
 ;; Enable hs-minor-mode for code folding
 (add-hook 'prog-mode-hook #'hs-minor-mode)
 
+;; Popup-kill-ring
+(use-package popup-kill-ring
+  :ensure t
+  :bind ("M-u" . popup-kill-ring))
+;; Scroll margin from top and bottom
+(custom-set-variables
+ '(scroll-conservatively 1000)
+ '(scroll-margin 8)
+ )
