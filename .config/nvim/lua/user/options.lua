@@ -1,4 +1,8 @@
 -- set vim options here (vim.<first_key>.<second_key> = value)
+vim.cmd[[set keymap=russian-jcukenwin]]
+vim.cmd[[set iminsert=0]]
+vim.cmd[[set imsearch=0]]
+vim.cmd[[highlight lCursor guifg=NONE guibg=cyan]]
 return {
   opt = {
 -- highlihting and search
@@ -55,7 +59,7 @@ return {
     spell = false,            --Enable spellchecking.
     wildignore = {'.pyc', '.swp'},   -- Ignore files matching these patterns when opening files based on a glob pattern.
 -- Colored colum
-    signcolumn = "auto", -- sets vim.opt.signcolumn to auto
+    signcolumn = "yes", -- sets vim.opt.signcolumn to auto
     colorcolumn = '80',      -- colored line on 80 charachters
 -- UI and windows
     mouse = 'a',             -- Enable your mouse
