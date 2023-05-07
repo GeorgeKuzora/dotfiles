@@ -71,7 +71,7 @@ return {
     backup = false,            -- This is recommended by coc
     writebackup = false,       -- This is recommended by coc
 -- automation
-    clipboard = {'unnamedplus', 'unnamed'},  -- Copy paste between vim and everything else
+    clipboard = {'unnamedplus'},  -- Copy paste between vim and everything else, 'unnamed'
     autochdir = false,       -- Your working directory will always be the same as your working directory
     cp = false,              -- 'compatible' is not set
     formatoptions = "tcqj" .. "ro",

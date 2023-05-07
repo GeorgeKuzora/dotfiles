@@ -1,7 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
-    ensure_installed = { "lua", "python", "java", },
+    ensure_installed = { "lua", "python", "java", "c_sharp", "css", "html", "htmldjango", "javascript", "json", "markdown", "markdown_inline", "sql", "typescript" },
     rainbow = {
       enable = true,
       disable = { "jsx", "cpp" }, -- list of languages you want to disable the plugin for
