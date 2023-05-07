@@ -14,7 +14,12 @@ export KEYTIMEOUT=1
 zstyle :compinstall filename '/home/georgiy/.config/zsh/.zshrc'
 # End of lines added by compinstall
 
-# pfetch at the start
+# Auto notify options
+AUTO_NOTIFY_IGNORE+=("bashtop")
+# nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# fetch at the start
 afetch
 
 # From https://github.com/Mach-OS/Machfiles https://www.youtube.com/watch?v=bTLYiNvRIVI
@@ -47,26 +52,17 @@ source "$ZDOTDIR/zsh-functions"
 
 # Normal files to source
 zsh_add_file "zsh-exports"
-# zsh_add_file "zsh-vim-mode"
+zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-aliases"
 zsh_add_file "zsh-prompt"
 
-# Plugins
+# PLUGINS ---------------------------
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
-
 zsh_add_plugin "zsh-users/zsh-history-substring-search"
+zsh_add_plugin "MichaelAquilina/zsh-auto-notify"
+zsh_add_plugin "MichaelAquilina/zsh-you-should-use"
+
 # Bindkeys for "zsh-history-substring-search"
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-
-zsh_add_plugin "MichaelAquilina/zsh-auto-notify"
-# Auto notify options
-AUTO_NOTIFY_IGNORE+=("bashtop")
-
-zsh_add_plugin "MichaelAquilina/zsh-you-should-use"
-# source /home/georgiy/.config/broot/launcher/bash/br
-
-# nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
