@@ -28,6 +28,10 @@ export PATH
 # export MANPAGER='nvim +Man!'
 # export MANWIDTH=999
 
+# Path Variables
+export TERM='xterm-256color'
+export EDITOR='nvim'
+export VISUAL='nvim'
 # Default Apps
 # export EDITOR="nvim"
 # export READER="atril"
