@@ -3,6 +3,7 @@ vim.cmd[[set keymap=russian-jcukenwin]]
 vim.cmd[[set iminsert=0]]
 vim.cmd[[set imsearch=0]]
 vim.cmd[[highlight lCursor guifg=NONE guibg=cyan]]
+vim.cmd [[set grepprg=rg\ --vimgrep\ --smart-case\ --follow]]   -- Better grep command
 return {
   opt = {
 -- highlihting and search

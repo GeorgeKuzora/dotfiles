@@ -33,8 +33,8 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
-    [userleader .. "o"] = { "o<Esc>", desc = "Insert empty line bellow" },
-    [userleader .. "O"] = { "O<Esc>", desc = "Insert empty line above" },
+    [userleader .. "o"] = { "o<Esc>k", desc = "Insert empty line bellow" },
+    [userleader .. "O"] = { "O<Esc>j", desc = "Insert empty line above" },
     ["J"] = { "mzJ`z", desc = "Join Lines" },
     ["<C-d>"] = { "<C-d>zz", desc = "Scroll half down" },
     ["<C-u>"] = { "<C-u>zz", desc = "Scroll half up" },
@@ -42,10 +42,11 @@ return {
     ["N"] = { "Nzzzv", desc = "Find previous" },
     [userleader .. "d"] = { [["_d]], desc = "Delete without killing" },
     [userleader .. "f"] = { vim.lsp.buf.format, desc = "Format buffer" },
-    [userleader .. "k"] = { "<cmd>cnext<CR>zz", desc = "Move next in QuickFix list" },
-    [userleader .. "j"] = { "<cmd>cprev<CR>zz", desc = "Move previous in QuickFix list" },
-    [userleader .. "K"] = { "<cmd>lnext<CR>zz", desc = "Move to next location" },
-    [userleader .. "J"] = { "<cmd>lprev<CR>zz", desc = "Move to previous location" },
+    [userleader .. "q"] = { vim.lsp.buf.format, desc = "Open QuickFix list" },
+    ["]q"] = { "<cmd>cnext<CR>zz", desc = "Move next in QuickFix list" },
+    ["[q"] = { "<cmd>cprev<CR>zz", desc = "Move previous in QuickFix list" },
+    ["]l"] = { "<cmd>lnext<CR>zz", desc = "Move to next location" },
+    ["[l"] = { "<cmd>lprev<CR>zz", desc = "Move to previous location" },
     [userleader .. "s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], desc = "Change word under cursor in a buffer" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
