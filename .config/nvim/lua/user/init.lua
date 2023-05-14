@@ -18,7 +18,11 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "catppuccin-macchiato",
+  -- colorscheme = "catppuccin-mocha",
+  -- colorscheme = "nord",
+  -- colorscheme = "kanagawa",
+  -- colorscheme = "monokai-pro",
+  colorscheme = "rose-pine",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {

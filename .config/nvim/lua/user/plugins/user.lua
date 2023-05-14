@@ -35,4 +35,10 @@ return {
   },
   -- "tpope/vim-fugitive",
   'christoomey/vim-tmux-navigator',
+  {"catppuccin/nvim", name = "catppuccin"},
+  { 'rose-pine/neovim', name = 'rose-pine' },
+  "shaunsingh/nord.nvim",
+  "loctvl842/monokai-pro.nvim",
+  "rebelot/kanagawa.nvim",
+
 }

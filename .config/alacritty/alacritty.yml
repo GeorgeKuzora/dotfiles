@@ -926,4 +926,6 @@ key_bindings:
   #print_events: false
 import:
   # change theme name to your taste:
-  - ~/.config/alacritty/themes/catppuccin-macchiato.yml
+  #- ~/.config/alacritty/themes/catppuccin-macchiato.yml
+  #- ~/.config/alacritty/themes/catppuccin-mocha.yml
+  - ~/.config/alacritty/themes/rose-pine.yml
