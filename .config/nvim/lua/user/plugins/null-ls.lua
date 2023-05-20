@@ -11,9 +11,13 @@ return {
       -- Set a diagnostics
       null_ls.builtins.diagnostics.flake8,
       null_ls.builtins.diagnostics.markdownlint,
+      null_ls.builtins.diagnostics.stylelint,
+      null_ls.builtins.diagnostics.tidy,
       -- Set a formatter
       null_ls.builtins.formatting.black,
       null_ls.builtins.formatting.markdownlint,
+      null_ls.builtins.formatting.stylelint,
+      null_ls.builtins.formatting.tidy
     }
     return config -- return final config table
   end,
