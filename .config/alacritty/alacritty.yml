@@ -927,5 +927,5 @@ key_bindings:
 import:
   # change theme name to your taste:
   #- ~/.config/alacritty/themes/catppuccin-macchiato.yml
-  #- ~/.config/alacritty/themes/catppuccin-mocha.yml
-  - ~/.config/alacritty/themes/rose-pine.yml
+  - ~/.config/alacritty/themes/catppuccin-mocha.yml
+  # - ~/.config/alacritty/themes/rose-pine.yml
