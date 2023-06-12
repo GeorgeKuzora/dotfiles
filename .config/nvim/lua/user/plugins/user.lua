@@ -15,13 +15,17 @@ return {
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
     config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
     end
   },
   {
     "HiPhish/nvim-ts-rainbow2",
+    event = "BufRead",
+  },
+  {
+    "thirtythreeforty/lessspace.vim",
     event = "BufRead",
   },
   {
@@ -35,7 +39,7 @@ return {
   },
   -- "tpope/vim-fugitive",
   'christoomey/vim-tmux-navigator',
-  {"catppuccin/nvim", name = "catppuccin"},
+  { "catppuccin/nvim",  name = "catppuccin" },
   { 'rose-pine/neovim', name = 'rose-pine' },
   "shaunsingh/nord.nvim",
   "loctvl842/monokai-pro.nvim",

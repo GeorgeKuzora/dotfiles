@@ -13,7 +13,7 @@ return {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      ensure_installed = { "markdownlint", "black", "flake8", "stylelint", "tidy", },
+      ensure_installed = { "markdownlint", "black", "flake8", "tidy", "stylelint", },
     },
   },
   {
