@@ -22,6 +22,8 @@ CM_LAUNCHER='rofi'
 # Добавление директорий в PATH
 PATH="$PATH:$HOME/.config/emacs/bin"
 PATH="$PATH:$HOME/.local/bin"
+PATH="$PATH:$HOME/.local/share/nautilus-python/extensions"
+PATH="$PATH:/opt/pt"
 export PATH
 
 # Look manpage via nvim
