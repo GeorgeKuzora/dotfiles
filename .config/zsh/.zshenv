@@ -24,6 +24,7 @@ PATH="$PATH:$HOME/.config/emacs/bin"
 PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/.local/share/nautilus-python/extensions"
 PATH="$PATH:/opt/pt"
+PATH="$PATH:/usr/pgsql-15/bin"
 export PATH
 
 # Look manpage via nvim
