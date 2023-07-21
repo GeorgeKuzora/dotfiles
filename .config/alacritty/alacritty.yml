@@ -929,3 +929,4 @@ import:
   #- ~/.config/alacritty/themes/catppuccin-macchiato.yml
   - ~/.config/alacritty/themes/catppuccin-mocha.yml
   # - ~/.config/alacritty/themes/rose-pine.yml
+  # - ~/.config/alacritty/themes/gnome_terminal.yaml
