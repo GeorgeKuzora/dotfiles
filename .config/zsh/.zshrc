@@ -34,8 +34,6 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
-# zoxide enable
-eval "$(zoxide init zsh)"
 
 # zstyle ':completion::complete:lsof:*' menu yes select
 zmodload zsh/complist
@@ -69,3 +67,6 @@ zsh_add_plugin "jeffreytse/zsh-vi-mode"
 # Bindkeys for "zsh-history-substring-search"
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+# zoxide enable
+eval "$(zoxide init zsh)"
