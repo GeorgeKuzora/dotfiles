@@ -49,10 +49,9 @@ autoload -Uz colors && colors
 
 # Useful Functions
 source "$ZDOTDIR/zsh-functions"
-
 # Normal files to source
 zsh_add_file "zsh-exports"
-zsh_add_file "zsh-vim-mode"
+# zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-aliases"
 zsh_add_file "zsh-prompt"
 
@@ -62,6 +61,7 @@ zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "zsh-users/zsh-history-substring-search"
 zsh_add_plugin "MichaelAquilina/zsh-auto-notify"
 zsh_add_plugin "MichaelAquilina/zsh-you-should-use"
+zsh_add_plugin "jeffreytse/zsh-vi-mode"
 
 # Bindkeys for "zsh-history-substring-search"
 bindkey '^[[A' history-substring-search-up
