@@ -34,6 +34,9 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
+# zoxide enable
+eval "$(zoxide init zsh)"
+
 # zstyle ':completion::complete:lsof:*' menu yes select
 zmodload zsh/complist
 
