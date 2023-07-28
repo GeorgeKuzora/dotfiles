@@ -148,7 +148,7 @@ config.keys = {
     action = wezterm.action.CloseCurrentTab { confirm = false },
   },
   {
-    key = 'w',
+    key = 'q',
     mods = 'CTRL|SHIFT',
     action = wezterm.action.CloseCurrentPane { confirm = false },
   },
@@ -174,12 +174,12 @@ config.window_padding = {
   bottom = 0,
 }
 -- MULTIPLEXING
-config.unix_domains = {
-  {
-    name = 'unix',
-  },
-}
-config.default_gui_startup_args = { 'connect', 'unix' }
+-- config.unix_domains = {
+--   {
+--     name = 'unix',
+--   },
+-- }
+-- config.default_gui_startup_args = { 'connect', 'unix' }
 
 -- TAB TEXT
 local process_icons = {
@@ -242,8 +242,12 @@ local process_icons = {
   },
 }
 
-local function basename(s)
+local function dir_basename(s)
   return string.gsub(s, '(.*[/\\])(.*)/', '%2')
+end
+
+local function proc_basename(s)
+  return string.gsub(s, '(.*[/\\])(.*)', '%2')
 end
 
 local function get_current_working_dir(tab)
@@ -252,7 +256,7 @@ local function get_current_working_dir(tab)
   -- if (basename(current_dir) == basename(HOME_DIR)) then
   --   return "~"
   -- end
-  return basename(current_dir)
+  return dir_basename(current_dir)
 end
 
 local function get_process(tab)
@@ -260,7 +264,7 @@ local function get_process(tab)
   if (process_name == "") then
     return nil
   end
-  process_name = basename(process_name)
+  process_name = proc_basename(process_name)
   if string.find(process_name, 'kubectl') then
     process_name = 'kubectl'
   end
