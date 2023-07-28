@@ -34,6 +34,8 @@ alias emacs_daemon="emacs --daemon & disown"
 alias emacs="emacsclient -c -a -fs 'emacs' & disown"
 alias alacritty="env WINIT_UNIX_BACKEND=x11 alacritty"
 # alias hx="helix"
+alias update="sudo dnf upgrade && flatpack update"
+alias zj="zellij"
 
 # history fuzzy find
 alias cpy='xclip -selection c'
