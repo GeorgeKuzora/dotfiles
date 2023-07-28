@@ -35,20 +35,17 @@ export PATH
 export TERM='xterm-256color'
 export EDITOR='nvim'
 export VISUAL='nvim'
-# Default Apps
-# export EDITOR="nvim"
+export TERMINAL="wezterm"
+export BROWSER="brave-browser"
+export VIDEO="mpv"
+export PAGER="less"
+export SHELL="usr/bin/zsh"
 # export READER="atril"
-# export VISUAL="nvim"
-# export TERMINAL="alacritty"
-# export BROWSER="brave"
-# export VIDEO="mpv"
 # export IMAGE="qimgv"
 # export COLORTERM="truecolor" # alacritty is 256 color terminal
 # export TERM=xterm-256color
 # export OPENER="xdg-open"
-# export PAGER="less"
 # export WM="qtile"
-# export SHELL="zsh"
 # Home folder control
 # export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons
 # export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
