@@ -240,6 +240,9 @@ local process_icons = {
   ['gh'] = {
     { Text = wezterm.nerdfonts.dev_github_badge },
   },
+  ['zellij'] = {
+    { Text = wezterm.nerdfonts.cod_terminal_tmux },
+  },
 }
 
 local function dir_basename(s)
@@ -335,6 +338,7 @@ wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
   if contains_value({ "zsh",
         "bash",
         "htop",
+        "zellij",
         wezterm.nerdfonts.cod_terminal_bash,
         wezterm.nerdfonts.cod_terminal,
         wezterm.nerdfonts.mdi_chart_donut_variant }, get_process(tab)) then
