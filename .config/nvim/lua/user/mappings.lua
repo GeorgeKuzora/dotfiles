@@ -33,8 +33,8 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
-    [userleader .. "o"] = { "o<Esc>k", desc = "Insert empty line bellow" },
-    [userleader .. "O"] = { "O<Esc>j", desc = "Insert empty line above" },
+    ["<leader>o"] = { "o<Esc>k", desc = "Insert empty line bellow" },
+    ["<leader>O"] = { "O<Esc>j", desc = "Insert empty line above" },
     ["J"] = { "mzJ`z", desc = "Join Lines" },
     ["<C-d>"] = { "<C-d>zz", desc = "Scroll half down" },
     ["<C-u>"] = { "<C-u>zz", desc = "Scroll half up" },
@@ -56,6 +56,16 @@ return {
     ["<leader>lj"] = { '<cmd>lua vim.lsp.buf.hover()<CR>', desc = "Hover documentation" },
     ["<C-q>"] = false,
     ["<C-s>"] = false,
+    [userleader .. "o"] = {
+    function()
+      if vim.bo.filetype == "neo-tree" then
+        vim.cmd.wincmd "p"
+      else
+        vim.cmd.Neotree "focus"
+      end
+    end,
+    desc = "Toggle Explorer Focus",
+  }
   },
   v = {
     ["<"] = { "<gv", desc = "Indent left" },
