@@ -274,6 +274,19 @@ local function get_process(tab)
   )
 end
 
+local function get_tab_title(tab)
+  local process = get_process(tab)
+  local working_dir = get_current_working_dir(tab)
+  local title = ""
+  local tabid = tab.tab_index + 1
+  if (process == nil) then
+    title = string.format(' %s. %s ', tabid, working_dir)
+  else
+    title = string.format(' %s. %s > %s  ', tabid, process, working_dir)
+  end
+  return title
+end
+
 wezterm.on(
   'format-tab-title',
   function(tab, tabs, panes, config, hover, max_width)
@@ -286,15 +299,7 @@ wezterm.on(
         end
       end
     end
-    local process = get_process(tab)
-    local working_dir = get_current_working_dir(tab)
-    local title = ""
-    local tabid = tab.tab_index + 1
-    if (process == nil) then
-      title = string.format(' %s. %s ', tabid, working_dir)
-    else
-      title = string.format(' %s. %s > %s  ', tabid, process, working_dir)
-    end
+    local title = get_tab_title(tab)
 
     if has_unseen_output then
       return {
@@ -308,6 +313,35 @@ wezterm.on(
     }
   end
 )
+local function contains_value(list, value)
+  for _, v in ipairs(list) do
+    if v == value then
+      return true
+    end
+  end
+  return false
+end
+
+wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
+  local zoomed = ''
+  if tab.active_pane.is_zoomed then
+    zoomed = '[Z] '
+  end
+
+  local index = ''
+  if #tabs > 1 then
+    index = string.format('[%d/%d] ', tab.tab_index + 1, #tabs)
+  end
+  if contains_value({ "zsh",
+        "bash",
+        "htop",
+        wezterm.nerdfonts.cod_terminal_bash,
+        wezterm.nerdfonts.cod_terminal,
+        wezterm.nerdfonts.mdi_chart_donut_variant }, get_process(tab)) then
+    return zoomed .. index .. get_process(tab) .. " " .. get_current_working_dir(tab)
+  end
+  return zoomed .. index .. tab.active_pane.title
+end)
 
 wezterm.on('update-status', function(window, pane)
   if not window:get_dimensions().is_full_screen then
