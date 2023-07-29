@@ -4,7 +4,7 @@
 -- lower level configuration and more robust one. (which-key will
 -- automatically pick-up stored data by this setting.)
 -- User leader key
-local userleader = "<C-s>"
+local userleader = "<C- >"
 -- Make file an executable
 vim.keymap.set("n", userleader .. "x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- Move text up and down
