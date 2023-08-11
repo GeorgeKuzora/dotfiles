@@ -8,8 +8,7 @@ keybinds {
         bind "Ctrl g" { SwitchToMode "Normal"; }
     }
     resize {
-        unbind "Ctrl n"
-        bind "Ctrl c" { SwitchToMode "Normal"; }
+        bind "Ctrl n" { SwitchToMode "Normal"; }
         bind "h" "Left" { Resize "Increase Left"; }
         bind "j" "Down" { Resize "Increase Down"; }
         bind "k" "Up" { Resize "Increase Up"; }
@@ -158,7 +157,7 @@ keybinds {
         bind "Ctrl a" { SwitchToMode "Pane"; }
     }
     shared_except "resize" "locked" {
-        bind "Ctrl c" { SwitchToMode "Resize"; }
+        bind "Ctrl n" { SwitchToMode "Resize"; }
     }
     shared_except "scroll" "locked" {
         bind "Ctrl s" { SwitchToMode "Scroll"; }
