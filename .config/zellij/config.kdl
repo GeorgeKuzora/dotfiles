@@ -150,6 +150,7 @@ keybinds {
         bind "Alt ]" { NextSwapLayout; }
     }
     shared_except "normal" "locked" {
+        bind "Ctrl c" { SwitchToMode "Normal"; }
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
     }
     shared_except "pane" "locked" {
