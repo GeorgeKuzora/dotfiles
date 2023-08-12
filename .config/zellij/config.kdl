@@ -8,7 +8,8 @@ keybinds {
         bind "Ctrl g" { SwitchToMode "Normal"; }
     }
     resize {
-        bind "Ctrl n" { SwitchToMode "Normal"; }
+        unbind "Ctrl n"
+        bind "Ctrl t" { SwitchToMode "Normal"; }
         bind "h" "Left" { Resize "Increase Left"; }
         bind "j" "Down" { Resize "Increase Down"; }
         bind "k" "Up" { Resize "Increase Up"; }
@@ -48,7 +49,8 @@ keybinds {
         bind "l" "Right" { MovePane "Right"; }
     }
     tab {
-        bind "Ctrl t" { SwitchToMode "Normal"; }
+        unbind "Ctrl t"
+        bind "Ctrl k" { SwitchToMode "Normal"; }
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
         bind "h" "Left" "Up" "k" { GoToPreviousTab; }
         bind "l" "Right" "Down" "j" { GoToNextTab; }
@@ -158,7 +160,7 @@ keybinds {
         bind "Ctrl a" { SwitchToMode "Pane"; }
     }
     shared_except "resize" "locked" {
-        bind "Ctrl n" { SwitchToMode "Resize"; }
+        bind "Ctrl t" { SwitchToMode "Resize"; }
     }
     shared_except "scroll" "locked" {
         bind "Ctrl s" { SwitchToMode "Scroll"; }
@@ -168,7 +170,7 @@ keybinds {
         bind "Ctrl x" { SwitchToMode "Session"; }
     }
     shared_except "tab" "locked" {
-        bind "Ctrl t" { SwitchToMode "Tab"; }
+        bind "Ctrl k" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
         bind "Ctrl h" { SwitchToMode "Move"; }
