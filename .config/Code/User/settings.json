@@ -1,0 +1,15 @@
+{
+    "window.customMenuBarAltFocus": false,
+    "window.titleBarStyle": "custom",
+    "workbench.iconTheme": "catppuccin-mocha",
+    "workbench.startupEditor": "none",
+    "editor.minimap.enabled": false,
+    "window.zoomLevel": 1,
+    "files.autoSave": "afterDelay",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font'",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "vscode-neovim.neovimInitVimPaths.linux": "/home/georgiy/.config/Code/User/init.vim",
+    "debug.javascript.terminalOptions": {
+
+    }
+}
