@@ -160,6 +160,7 @@ keybinds {
         bind "Ctrl a" { SwitchToMode "Pane"; }
     }
     shared_except "resize" "locked" {
+        unbind "Ctrl n"
         bind "Ctrl t" { SwitchToMode "Resize"; }
     }
     shared_except "scroll" "locked" {
