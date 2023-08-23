@@ -6,18 +6,18 @@ XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
 ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 # Language managment variables /etc/enviroments
-typeset -U PATH path
-export GTK_IM_MODULE='fcitx'
-export QT_IM_MODULE='fcitx'
-export SDL_IM_MODULE='fcitx'
-export XMODIFIERS='@im=fcitx'
+# typeset -U PATH path
+# export GTK_IM_MODULE='fcitx'
+# export QT_IM_MODULE='fcitx'
+# export SDL_IM_MODULE='fcitx'
+# export XMODIFIERS='@im=fcitx'
 
 # Clipmenu variables /etc/enviroments
-CM_SELECTIONS='clipboard'
-CM_DEBUG=0
-CM_OUTPUT_CLIP=0
-CM_MAX_CLIPS=10
-CM_LAUNCHER='rofi'
+# CM_SELECTIONS='clipboard'
+# CM_DEBUG=0
+# CM_OUTPUT_CLIP=0
+# CM_MAX_CLIPS=10
+# CM_LAUNCHER='rofi'
 
 # Добавление директорий в PATH
 PATH="$PATH:$HOME/.config/emacs/bin"
