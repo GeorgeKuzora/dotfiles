@@ -73,6 +73,9 @@ return {
     swapfile = false,        -- Disable swap files.
     shell = '/usr/bin/zsh',
     spell = false,            --Enable spellchecking.
+    -- spellfile = '/home/georgiy/.config/nvim/spell/ru.utf-8.add',
+    spelllang={'ru_ru','en_us'},
+    -- spelllang = 'en_us',
     wildignore = {'.pyc', '.swp'},   -- Ignore files matching these patterns when opening files based on a glob pattern.
 -- Colored colum
     signcolumn = "yes", -- sets vim.opt.signcolumn to auto
