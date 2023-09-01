@@ -18,7 +18,7 @@ zstyle :compinstall filename '/home/georgiy/.config/zsh/.zshrc'
 AUTO_NOTIFY_IGNORE+=("bashtop")
 # nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -62,6 +62,8 @@ zsh_add_file "zsh-exports"
 # zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-aliases"
 zsh_add_file "zsh-prompt"
+zsh_add_file "zsh-prompt"
+zsh_add_file "nvims"
 
 # PLUGINS ---------------------------
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
