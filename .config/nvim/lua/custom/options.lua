@@ -92,7 +92,7 @@ opt.visualbell = true                             -- Flash the screen instead of
 opt.title = true                                  -- set the window’s title, reflecting the file currently being edited.
 -- folding
 opt.foldmethod = 'indent'                         -- Fold based on indention levels.
-opt.foldnestmax = 3                               -- Only fold up to three nested levels.
+opt.foldnestmax = 1                               -- Only fold up to three nested levels.
 opt.foldenable = false                            -- Enable folding by default.
 -- undoing
 opt.autoread = true                               -- Automatically re-read files if unmodified inside Vim.
@@ -131,6 +131,7 @@ opt.formatoptions = "tcqj" .. "ro"
 opt.cmdheight = 1                   -- hide command line unless needed
 opt.pumheight = 10                  -- height of the pop up menu
 opt.preserveindent = true
+-- fold for nvim-ufo
 opt.foldenable = true -- enable fold for nvim-ufo
 opt.foldlevel = 99 -- set high foldlevel for nvim-ufo
 opt.foldlevelstart = 99 -- start with all code unfolded
