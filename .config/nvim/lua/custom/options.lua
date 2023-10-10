@@ -101,7 +101,6 @@ opt.dir = '/home/georgiy/.cache/nvim'             -- Directory to store backup f
 opt.undodir = '/home/georgiy/.cache/nvim/undodir' -- Set undofiles dir
 opt.undofile = true                               -- Set undofiles
 opt.confirm = true                                -- Display a confirmation dialog when closing an unsaved file.
-opt.hidden = true                                 -- Hide files in the background instead of closing them.
 opt.history = 10000                               -- Increase the undo limit.
 opt.modeline = false                              -- Ignore file’s mode lines; use vimrc configurations instead.
 opt.swapfile = false                              -- Disable swap files.
@@ -137,6 +136,7 @@ opt.foldlevel = 99 -- set high foldlevel for nvim-ufo
 opt.foldlevelstart = 99 -- start with all code unfolded
 -- opt.foldcolumn = vim.fn.has "nvim-0.9" == 1 and "1" or nil -- show foldcolumn in nvim 0.9
 opt.virtualedit = "block" -- allow going past end of line in visual block mode
+g.hidden = true                                 -- Hide files in the background instead of closing them.
 g.autoformat_enabled = true         -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
 g.cmp_enabled = true                -- enable completion at start
 g.autopairs_enabled = true          -- enable autopairs at start

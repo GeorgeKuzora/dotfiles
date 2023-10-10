@@ -72,6 +72,17 @@ return {
     end,
   },
 
+  -- {
+  --   'ellisonleao/gruvbox.nvim',
+  --   name = 'gruvbox',
+  --   priority = 1000,
+  --   opts = {},
+  --   config = function()
+  --     require("gruvbox").setup({})
+  --     vim.cmd.colorscheme 'gruvbox'
+  --   end,
+  -- },
+
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',

@@ -87,7 +87,7 @@ km.set('n', "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle [U]ndo-tree" }
 km.set('n', "<leader>bn", vim.cmd.enew, { desc = "[N]ew [b]uffer" })
 km.set('n', "<leader>bd",vim.cmd.bdelete, { desc = "[D]elete [b]uffer" })
 -- Explorer
-km.set("n", "<leader>e", vim.cmd.Ex)
+km.set("n", "<leader>e", "<cmd>Neotree toggle position=float reveal=true<cr>", { desc = "Toggle Explorer" })
 
 -- TELESCOPE
 -- See `:help telescope.builtin`
