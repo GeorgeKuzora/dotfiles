@@ -37,6 +37,7 @@ alias alacritty="env WINIT_UNIX_BACKEND=x11 alacritty"
 alias update="sudo dnf upgrade && flatpack update"
 alias zj="zellij"
 alias zja="zellij a"
+alias lg="lazygit"
 
 # history fuzzy find
 alias cpy='xclip -selection c'
