@@ -155,6 +155,19 @@ km.set('n', '<leader>gg', vim.cmd.Git, { desc = "Git fugitive status" })
 --  * <leader>fn new file
 --  * <leader>fe edit file
 -- and hide <leader>1
+--
+-- HARPOON
+-- km.set('n', "<c-s>", '<cmd>lua vim.lsp.buf.signature_help()<CR>', { desc = "Hover signature" })
+km.set('n', "<leader>y", function() require("harpoon.mark").add_file()  end, { desc = "Harpoon add mark" })
+km.set('n', "<leader>h", function() require("harpoon.ui").toggle_quick_menu() end, { desc = "Toggle Harpoon" })
+km.set('n', "]h", function() require("harpoon.ui").nav_next() end, { desc = "Next Harpoon mark" })
+km.set('n', "[h", function() require("harpoon.ui").nav_prev() end, { desc = "Previous Harpoon mark" })
+km.set('n', "<M-u>", function() require("harpoon.ui").nav_file(1) end, { desc = "Harpoon mark 1" })
+km.set('n', "<M-i>", function() require("harpoon.ui").nav_file(2) end, { desc = "Harpoon mark 2" })
+km.set('n', "<M-o>", function() require("harpoon.ui").nav_file(3) end, { desc = "Harpoon mark 3" })
+km.set('n', "<M-p>", function() require("harpoon.ui").nav_file(4) end, { desc = "Harpoon mark 4" })
+
+
 
 wk.register({
   b = {

@@ -196,4 +196,8 @@ return {
     'nvim-treesitter/nvim-treesitter-context',
     event = "BufRead",
   },
+  {
+    'ThePrimeagen/harpoon',
+    event = "VeryLazy",
+  },
 }
