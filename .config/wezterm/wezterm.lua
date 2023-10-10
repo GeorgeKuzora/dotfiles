@@ -342,7 +342,7 @@ wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
         wezterm.nerdfonts.cod_terminal_bash,
         wezterm.nerdfonts.cod_terminal,
         wezterm.nerdfonts.mdi_chart_donut_variant }, get_process(tab)) then
-    return zoomed .. index .. get_process(tab) .. " " .. get_current_working_dir(tab)
+    return zoomed .. index .. get_process(tab) .. " > " .. get_current_working_dir(tab)
   end
   return zoomed .. index .. tab.active_pane.title
 end)
