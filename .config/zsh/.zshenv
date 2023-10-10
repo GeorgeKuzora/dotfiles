@@ -33,8 +33,8 @@ export PATH
 
 # Path Variables
 export TERM='xterm-256color'
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='/usr/bin/nvim'
+export VISUAL='/usr/bin/nvim'
 export TERMINAL="wezterm"
 export BROWSER="brave-browser"
 export VIDEO="mpv"
