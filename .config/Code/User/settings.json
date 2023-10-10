@@ -4,12 +4,23 @@
     "workbench.iconTheme": "catppuccin-mocha",
     "workbench.startupEditor": "none",
     "editor.minimap.enabled": false,
-    "window.zoomLevel": 1,
     "files.autoSave": "afterDelay",
-    "editor.fontFamily": "'JetBrainsMono Nerd Font'",
     "workbench.colorTheme": "Catppuccin Mocha",
-    "vscode-neovim.neovimInitVimPaths.linux": "/home/georgiy/.config/Code/User/init.vim",
+    "vscode-neovim.neovimInitVimPaths.linux": "/home/georgiy/.config/nvim/init.lua",
     "debug.javascript.terminalOptions": {
 
-    }
+    },
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "editor.fontFamily": "'JetBrainsMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontSize": 16,
+    "editor.fontLigatures": true,
+    "editor.mouseWheelZoom": true,
+    "window.zoomLevel": 1,
+    "editor.rulers": [
+       80 
+    ],
+    "workbench.tree.renderIndentGuides": "always",
+    "editor.cursorBlinking": "solid"
 }
