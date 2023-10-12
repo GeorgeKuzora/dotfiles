@@ -54,7 +54,7 @@ zle -N down-line-or-beginning-search
 
 # Colors
 autoload -Uz colors && colors
-
+source "/usr/share/fzf/shell/key-bindings.zsh"
 # Useful Functions
 source "$ZDOTDIR/zsh-functions"
 # Normal files to source
