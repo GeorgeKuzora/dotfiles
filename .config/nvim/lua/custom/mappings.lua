@@ -38,6 +38,11 @@ km.set('n', '[b', ':bprevious<CR>, { desc = "Previous buffer" }')
 km.set('n', '<esc><esc>', ':noh<return><esc>')
 -- Use control-c instead of escape
 km.set('n', '<C-c>', '<Esc>')
+-- Resizing windows
+km.set('n', '<M-Up>', ':resize -2<CR>')
+km.set('n', '<M-Down>', ':resize +2<CR>')
+km.set('n', '<M-Left>', ':vertical resize -2<CR>')
+km.set('n', '<M-Right>', ':vertical resize +2<CR>')
 -- VISUAL MODE
 km.set('v', "<", "<gv", { desc = "Indent left" })
 km.set('v', ">", ">gv", { desc = "Indent right" })
