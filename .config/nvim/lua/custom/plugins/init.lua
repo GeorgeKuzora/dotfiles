@@ -48,56 +48,6 @@ return {
   },
 
   {
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    priority = 1000,
-    opts = {},
-    config = function()
-      require("catppuccin").setup({
-        flavour = "mocha", -- latte, frappe, macchiato, mocha
-        background = {     -- :h background
-          light = "latte",
-          dark = "mocha",
-        },
-        dim_inactive = {
-                enabled = true, -- dims the background color of inactive window
-                shade = "dark",
-                percentage = 0.15, -- percentage of the shade to apply to the inactive window
-            },
-        integrations = {
-          ts_rainbow2 = true,
-            }
-      })
-      vim.cmd.colorscheme 'catppuccin'
-    end,
-  },
-
-  -- {
-  --   'ellisonleao/gruvbox.nvim',
-  --   name = 'gruvbox',
-  --   priority = 1000,
-  --   opts = {},
-  --   config = function()
-  --     require("gruvbox").setup({})
-  --     vim.cmd.colorscheme 'gruvbox'
-  --   end,
-  -- },
-
-  {
-    -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = true,
-        theme = 'catppuccin',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
-  },
-
-  {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
@@ -138,22 +88,35 @@ return {
 
   -- raindow parenticis
   {
-    "HiPhish/nvim-ts-rainbow2",
+    'hiphish/rainbow-delimiters.nvim',
     event = "BufRead",
+    name = 'rainbow_delimiters',
     config = function()
-      require('nvim-treesitter.configs').setup {
-        rainbow = {
-          enable = true,
-          -- list of languages you want to disable the plugin for
-          -- disable = { 'jsx', 'cpp' },
-          -- Which query to use for finding delimiters
-          query = 'rainbow-parens',
-          -- Highlight the entire buffer all at once
-          strategy = require('ts-rainbow').strategy.global,
-        }
+      local rainbow_delimiters = require 'rainbow-delimiters'
+
+      vim.g.rainbow_delimiters = {
+          strategy = {
+              [''] = rainbow_delimiters.strategy['global'],
+              vim = rainbow_delimiters.strategy['local'],
+          },
+          query = {
+              [''] = 'rainbow-delimiters',
+              lua = 'rainbow-blocks',
+          },
+          highlight = {
+              'RainbowDelimiterRed',
+              'RainbowDelimiterYellow',
+              'RainbowDelimiterBlue',
+              'RainbowDelimiterOrange',
+              'RainbowDelimiterGreen',
+              'RainbowDelimiterViolet',
+              'RainbowDelimiterCyan',
+          },
       }
     end,
   },
+
+
   -- remove trailing spaces
   -- {
   --   "thirtythreeforty/lessspace.vim",
@@ -199,5 +162,11 @@ return {
   {
     'ThePrimeagen/harpoon',
     event = "VeryLazy",
+  },
+  {
+    "NvChad/nvim-colorizer.lua",
+    event = "BufRead",
+    cmd = { "ColorizerToggle", "ColorizerAttachToBuffer", "ColorizerDetachFromBuffer", "ColorizerReloadAllBuffers" },
+    opts = { user_default_options = { names = false } },
   },
 }

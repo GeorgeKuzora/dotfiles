@@ -24,22 +24,6 @@ vim.cmd [[set imsearch=0]]
 vim.cmd [[highlight lCursor guifg=NONE guibg=cyan]]
 vim.cmd [[set grepprg=rg\ --vimgrep\ --smart-case\ --follow]] -- Better grep command
 
--- catppuccin ts_rainbow2 colors, comment for another theme
--- vim.cmd [[highlight TSRainbowRed guifg=#f38ba8 ctermfg=Red]]
--- vim.cmd [[highlight TSRainbowYellow guifg=#f9e2af ctermfg=Yellow]]
--- vim.cmd [[highlight TSRainbowBlue guifg=#89b4fa ctermfg=Blue]]
--- vim.cmd [[highlight TSRainbowOrange guifg=#fab387 ctermfg=White]]
--- vim.cmd [[highlight TSRainbowViolet guifg=#cba6f7 ctermfg=Magenta]]
--- vim.cmd [[highlight TSRainbowCyan guifg=#74c7ec ctermfg=Cyan]]
-
--- rose-pine ts_rainbow2 colors, comment for another theme
--- vim.cmd[[highlight TSRainbowRed guifg=#eb6f92 ctermfg=Red]]
--- vim.cmd[[highlight TSRainbowYellow guifg=#f6c177 ctermfg=Yellow]]
--- vim.cmd[[highlight TSRainbowBlue guifg=#3e8fb0 ctermfg=Blue]]
--- vim.cmd[[highlight TSRainbowOrange guifg=#ea9a97 ctermfg=White]]
--- vim.cmd[[highlight TSRainbowViolet guifg=#c4a7e7 ctermfg=Magenta]]
--- vim.cmd[[highlight TSRainbowCyan guifg=#e0def4 ctermfg=Cyan]]
--- autocmd ColorSchemePre rose-pine
 
 -- Enable break indent
 o.breakindent = true
