@@ -64,6 +64,7 @@ return {
   -- for better escaping sequencies
   {
     "max397574/better-escape.nvim",
+    lazy = true,
     event = "InsertCharPre",
     opts = {
       timeout = 300,
@@ -89,7 +90,6 @@ return {
   -- raindow parenticis
   {
     'hiphish/rainbow-delimiters.nvim',
-    event = "BufRead",
     name = 'rainbow_delimiters',
     config = function()
       local rainbow_delimiters = require 'rainbow-delimiters'
@@ -134,7 +134,6 @@ return {
   },
   {
     'windwp/nvim-autopairs',
-    event = "InsertEnter",
     opts = {
       check_ts = true,
       ts_config = { java = false },
@@ -157,7 +156,6 @@ return {
   },
   {
     'nvim-treesitter/nvim-treesitter-context',
-    event = "BufRead",
   },
   {
     'ThePrimeagen/harpoon',

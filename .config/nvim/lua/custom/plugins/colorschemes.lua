@@ -2,6 +2,7 @@ return {
   {
     'catppuccin/nvim',
     name = 'catppuccin',
+    lazy = false,
     priority = 1000,
     opts = {},
     config = function()
@@ -20,13 +21,14 @@ return {
           ts_rainbow2 = true,
             }
       })
-      -- vim.cmd.colorscheme 'catppuccin'
+      vim.cmd.colorscheme 'catppuccin'
     end,
   },
 
   {
     'rebelot/kanagawa.nvim',
     name = 'kanagawa',
+    lazy = false,
     priority = 1000,
     opts = {},
     config = function()
@@ -63,7 +65,7 @@ return {
               light = "lotus"
           },
       })
-      vim.cmd.colorscheme 'kanagawa'
+      -- vim.cmd.colorscheme 'kanagawa'
     end,
   },
 }
