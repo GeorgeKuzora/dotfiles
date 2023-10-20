@@ -155,7 +155,7 @@ config.keys = {
 }
 -- APPEARANCE
 -- config.enable_wayland = true
-config.enable_wayland = false
+config.enable_wayland = true
 config.audible_bell = "Disabled"
 config.window_close_confirmation = 'NeverPrompt'
 config.window_decorations = "TITLE | RESIZE"
@@ -342,7 +342,7 @@ wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
         wezterm.nerdfonts.cod_terminal_bash,
         wezterm.nerdfonts.cod_terminal,
         wezterm.nerdfonts.mdi_chart_donut_variant }, get_process(tab)) then
-    return zoomed .. index .. get_process(tab) .. " > " .. get_current_working_dir(tab)
+    return zoomed .. index .. get_process(tab) .. "  > " .. get_current_working_dir(tab)
   end
   return zoomed .. index .. tab.active_pane.title
 end)
