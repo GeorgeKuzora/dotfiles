@@ -37,9 +37,12 @@ stty stop undef		# Disable ctrl-s to freeze terminal.
 zle_highlight=('paste:none')
 
 # completions
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -i
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+# DOCKER
+# zstyle ':completion:*:*:docker:*' option-stacking yes
+# zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 
 # zstyle ':completion::complete:lsof:*' menu yes select
@@ -79,3 +82,4 @@ bindkey '^[[B' history-substring-search-down
 
 # zoxide enable
 eval "$(zoxide init zsh)"
+

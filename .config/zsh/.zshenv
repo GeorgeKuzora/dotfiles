@@ -26,7 +26,9 @@ PATH="$PATH:$HOME/.local/share/nautilus-python/extensions"
 PATH="$PATH:/opt/pt"
 PATH="$PATH:/usr/pgsql-15/bin"
 export PATH
-
+# For docker completions
+FPATH="$FPATH:$HOME/.config/zsh/vendor-completions"
+# FPATH="$FPATH:/usr/share/zsh/vendor-completions"
 # Look manpage via nvim
 # export MANPAGER='nvim +Man!'
 # export MANWIDTH=999
