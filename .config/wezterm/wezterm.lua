@@ -290,32 +290,6 @@ local function get_tab_title(tab)
   return title
 end
 
-wezterm.on(
-  'format-tab-title',
-  function(tab, tabs, panes, config, hover, max_width)
-    local has_unseen_output = false
-    if not tab.is_active then
-      for _, pane in ipairs(tab.panes) do
-        if pane.has_unseen_output then
-          has_unseen_output = true
-          break
-        end
-      end
-    end
-    local title = get_tab_title(tab)
-
-    if has_unseen_output then
-      return {
-        { Foreground = { Color = 'Orange' } },
-        { Text = title },
-      }
-    end
-
-    return {
-      { Text = title },
-    }
-  end
-)
 local function contains_value(list, value)
   for _, v in ipairs(list) do
     if v == value then
@@ -325,27 +299,54 @@ local function contains_value(list, value)
   return false
 end
 
-wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
-  local zoomed = ''
-  if tab.active_pane.is_zoomed then
-    zoomed = '[Z] '
-  end
+-- wezterm.on(
+--   'format-tab-title',
+--   function(tab, tabs, panes, config, hover, max_width)
+--     local has_unseen_output = false
+--     if not tab.is_active then
+--       for _, pane in ipairs(tab.panes) do
+--         if pane.has_unseen_output then
+--           has_unseen_output = true
+--           break
+--         end
+--       end
+--     end
+--     local title = get_tab_title(tab)
+--
+--     if has_unseen_output then
+--       return {
+--         { Foreground = { Color = 'Orange' } },
+--         { Text = title },
+--       }
+--     end
+--
+--     return {
+--       { Text = title },
+--     }
+--   end
+-- )
 
-  local index = ''
-  if #tabs > 1 then
-    index = string.format('[%d/%d] ', tab.tab_index + 1, #tabs)
-  end
-  if contains_value({ "zsh",
-        "bash",
-        "htop",
-        "zellij",
-        wezterm.nerdfonts.cod_terminal_bash,
-        wezterm.nerdfonts.cod_terminal,
-        wezterm.nerdfonts.mdi_chart_donut_variant }, get_process(tab)) then
-    return zoomed .. index .. get_process(tab) .. "  > " .. get_current_working_dir(tab)
-  end
-  return zoomed .. index .. tab.active_pane.title
-end)
+-- wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
+--   local zoomed = ''
+--   if tab.active_pane.is_zoomed then
+--     zoomed = '[Z] '
+--   end
+--
+--   local index = ''
+--   if #tabs > 1 then
+--     index = string.format('[%d/%d] ', tab.tab_index + 1, #tabs)
+--   end
+--   if contains_value({ "zsh",
+--         "bash",
+--         "htop",
+--         "zellij",
+--         wezterm.nerdfonts.cod_terminal_bash,
+--         wezterm.nerdfonts.cod_terminal,
+--         wezterm.nerdfonts.mdi_chart_donut_variant }, get_process(tab)) then
+--     return zoomed .. index .. get_process(tab) .. "  > " .. get_current_working_dir(tab)
+--   end
+--   return zoomed .. index .. tab.active_pane.title
+-- end)
 
 wezterm.on('update-status', function(window, pane)
   if not window:get_dimensions().is_full_screen then
