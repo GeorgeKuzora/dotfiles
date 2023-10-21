@@ -29,6 +29,8 @@ export FPATH
 # export MANWIDTH=999
 
 # ENVIROMENT VARIABLES
+EDITOR='/usr/bin/nvim'
+VISUAL='/usr/bin/nvim'
 export TERM='xterm-256color'
 export EDITOR='/usr/bin/nvim'
 export VISUAL='/usr/bin/nvim'
