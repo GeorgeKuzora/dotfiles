@@ -89,10 +89,10 @@ opt.history = 10000                               -- Increase the undo limit.
 opt.modeline = false                              -- Ignore file’s mode lines; use vimrc configurations instead.
 opt.swapfile = false                              -- Disable swap files.
 opt.shell = '/usr/bin/zsh'
-opt.spell = false                                 --Enable spellchecking.
+opt.spell = true                                 --Enable spellchecking.
+opt.spelllang = { 'en_us', 'ru_ru' }
 -- opt.spellfile = '/home/georgiy/.config/nvim/spell/ru.utf-8.add'
-opt.spelllang = { 'ru_ru', 'en_us' }
--- otp.spelllang = 'en_us'
+opt.spell = true                                 --Enable spellchecking.
 opt.wildignore = { '.pyc', '.swp' } -- Ignore files matching these patterns when opening files based on a glob pattern.
 -- Colored colum
 wo.signcolumn = "yes"               -- sets vim.opt.signcolumn to auto

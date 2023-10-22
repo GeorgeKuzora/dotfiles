@@ -22,5 +22,6 @@
        80 
     ],
     "workbench.tree.renderIndentGuides": "always",
-    "editor.cursorBlinking": "solid"
+    "editor.cursorBlinking": "solid",
+    "cSpell.language": "en,ru"
 }
