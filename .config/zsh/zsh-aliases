@@ -48,6 +48,6 @@ alias h="history 1 | cut -c 8- | sort | uniq | fzf | tr '\\n' ' ' | cpy"
 alias find="fd"
 alias grep="rg"
 alias ls='exa --oneline'
-alias ll='exa -lah --color=auto --group-directories-first'   # show long listing of all except ".."
+alias ll='exa -lah --color=auto --group-directories-first --icons --git --header'   # show long listing of all except ".."
 alias cat="bat"
 alias curl="xh"

@@ -78,6 +78,7 @@ plugins=(
          auto-notify $plugins
          zsh-vi-mode
          zsh-you-should-use
+         poetry
          )
 
 source $ZSH/oh-my-zsh.sh
