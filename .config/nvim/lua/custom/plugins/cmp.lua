@@ -24,8 +24,11 @@ return {
     local lspkind = require 'lspkind'
     local border_opts =
       { border = "single", winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None" }
+
     require('luasnip.loaders.from_vscode').lazy_load()
-    luasnip.config.setup {}
+    require('luasnip.loaders.from_vscode').lazy_load({paths = "~/.config/nvim/lua/custom/snippets"})
+    require'luasnip'.filetype_extend("python", {"pydoc", "django", "django-rest"})
+    require'luasnip'.filetype_extend("html", {"djangohtml", "htmldjango"})
 
     cmp.setup {
       snippet = {

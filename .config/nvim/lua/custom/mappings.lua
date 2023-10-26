@@ -171,8 +171,28 @@ km.set('n', "<M-u>", function() require("harpoon.ui").nav_file(1) end, { desc = 
 km.set('n', "<M-i>", function() require("harpoon.ui").nav_file(2) end, { desc = "Harpoon mark 2" })
 km.set('n', "<M-o>", function() require("harpoon.ui").nav_file(3) end, { desc = "Harpoon mark 3" })
 km.set('n', "<M-p>", function() require("harpoon.ui").nav_file(4) end, { desc = "Harpoon mark 4" })
+--
+-- LUASNIP
+local ls = require 'luasnip'
+km.set({"i", "s"}, "<c-j>", function()
+  if ls.expand_or_jumpable() then
+    ls.expand_or_jump()
+  end
+end, {silent = true})
 
+km.set({"i", "s"}, "<c-k>", function()
+  if ls.jumpable(-1) then
+    ls.jump(-1)
+  end
+end, {silent = true})
 
+km.set({"i", "s"}, "<c-l>", function()
+	if ls.choice_active() then
+		ls.change_choice(1)
+	end
+end, {silent = true})
+
+km.set("n", "<leader>m", "<cmd>source ~/.config/nvim/lua/custom/plugins/luasnip.lua<CR>", { desc = "Source Luasnip file" })
 
 wk.register({
   b = {

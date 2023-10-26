@@ -167,4 +167,6 @@ return {
     cmd = { "ColorizerToggle", "ColorizerAttachToBuffer", "ColorizerDetachFromBuffer", "ColorizerReloadAllBuffers" },
     opts = { user_default_options = { names = false } },
   },
+  { "rafamadriz/friendly-snippets",
+    name = "friendly-snippets"},
 }
