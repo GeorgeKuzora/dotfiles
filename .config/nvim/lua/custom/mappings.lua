@@ -194,6 +194,11 @@ end, {silent = true})
 
 km.set("n", "<leader>m", "<cmd>source ~/.config/nvim/lua/custom/plugins/luasnip.lua<CR>", { desc = "Source Luasnip file" })
 
+-- WINSHIFT
+local ws = require 'winshift'
+km.set("n", "<c-w>m",  "<cmd>WinShift<CR>", { desc = "Start window move mode" })
+km.set("n", "<c-w>X",   "<cmd>WinShift swap<CR>", { desc = "Start window swap mode" })
+
 wk.register({
   b = {
     name = "[B]uffers",
