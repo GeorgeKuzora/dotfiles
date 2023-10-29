@@ -132,5 +132,4 @@ g.highlighturl_enabled = true -- highlight URLs by default
 g.inlay_hints_enabled = false -- enable or disable LSP inlay hints on startup (Neovim v0.10 only)
 g.lsp_handlers_enabled = true -- enable or disable default vim.lsp.handlers (hover and signature help)
 g.semantic_tokens_enabled = true -- enable or disable LSP semantic tokens on startup
-g.ui_notifications_enabled = true -- disable notifications (TODO: rename to  notifications_enabled in AstroNvim v4)
 g.git_worktrees = nil -- enable git integration for detached worktrees (specify a table where each entry is of the form { toplevel = vim.env.HOME, gitdir=vim.env.HOME .. "/.dotfiles" })

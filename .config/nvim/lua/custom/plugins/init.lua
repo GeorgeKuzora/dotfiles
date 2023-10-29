@@ -23,7 +23,10 @@ return {
       vim.o.timeout = true
       vim.o.timeoutlen = 300
     end,
-    opts = {},
+    opts = {
+      icons = { group = vim.g.icons_enabled and "" or "+", separator = "" },
+      disable = { filetypes = { "TelescopePrompt" } },
+    },
   },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
@@ -47,15 +50,15 @@ return {
     },
   },
 
+
   {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    config = function()
+      require("ibl").setup {
+        indent = { char = "┊", },
+      }
+    end
   },
 
   -- "gc" to comment visual regions/lines
@@ -95,23 +98,23 @@ return {
       local rainbow_delimiters = require 'rainbow-delimiters'
 
       vim.g.rainbow_delimiters = {
-          strategy = {
-              [''] = rainbow_delimiters.strategy['global'],
-              vim = rainbow_delimiters.strategy['local'],
-          },
-          query = {
-              [''] = 'rainbow-delimiters',
-              lua = 'rainbow-blocks',
-          },
-          highlight = {
-              'RainbowDelimiterRed',
-              'RainbowDelimiterYellow',
-              'RainbowDelimiterBlue',
-              'RainbowDelimiterOrange',
-              'RainbowDelimiterGreen',
-              'RainbowDelimiterViolet',
-              'RainbowDelimiterCyan',
-          },
+        strategy = {
+          [''] = rainbow_delimiters.strategy['global'],
+          vim = rainbow_delimiters.strategy['local'],
+        },
+        query = {
+          [''] = 'rainbow-delimiters',
+          lua = 'rainbow-blocks',
+        },
+        highlight = {
+          'RainbowDelimiterRed',
+          'RainbowDelimiterYellow',
+          'RainbowDelimiterBlue',
+          'RainbowDelimiterOrange',
+          'RainbowDelimiterGreen',
+          'RainbowDelimiterViolet',
+          'RainbowDelimiterCyan',
+        },
       }
     end,
   },
@@ -167,6 +170,8 @@ return {
     cmd = { "ColorizerToggle", "ColorizerAttachToBuffer", "ColorizerDetachFromBuffer", "ColorizerReloadAllBuffers" },
     opts = { user_default_options = { names = false } },
   },
-  { "rafamadriz/friendly-snippets",
-    name = "friendly-snippets"},
+  {
+    "rafamadriz/friendly-snippets",
+    name = "friendly-snippets"
+  },
 }
