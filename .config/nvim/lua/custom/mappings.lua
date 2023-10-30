@@ -35,9 +35,8 @@ km.set("n", "<M-k>", "<Esc>:m .-2<CR>==")
 km.set('n', ']b', ':bnext<CR>', { desc = "Next buffer" })
 km.set('n', '[b', ':bprevious<CR>, { desc = "Previous buffer" }')
 -- escape highlight search
-km.set('n', '<esc><esc>', ':noh<return><esc>')
--- Use control-c instead of escape
-km.set('n', '<C-c>', '<Esc>')
+km.set('n', '<C-c>', ':noh<return><esc>')
+-- km.set('n', '<esc><esc>', ':noh<return><esc>')
 -- Resizing windows
 km.set('n', '<M-Up>', ':resize -2<CR>')
 km.set('n', '<M-Down>', ':resize +2<CR>')
