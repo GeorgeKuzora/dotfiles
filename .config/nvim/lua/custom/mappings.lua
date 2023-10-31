@@ -134,7 +134,12 @@ vim.keymap.set('n', "<leader>ls",
   function()
     require("telescope.builtin").lsp_document_symbols()
   end,
-  { desc = "Search symbols", })
+  { desc = "Find symbols", })
+vim.keymap.set('n', "<leader>fs",
+  function()
+    require("telescope.builtin").lsp_document_symbols()
+  end,
+  { desc = "Find symbols", })
 
 -- vim.keymap.set('n', "<leader>f/", function() require("telescope.builtin").current_buffer_fuzzy_find() end,
 --   { desc = "Find words in current buffer" })
