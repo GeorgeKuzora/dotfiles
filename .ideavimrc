@@ -19,9 +19,31 @@ nnoremap <Leader>O O<Esc>
 set scrolloff=5
 
 " Do incremental searching.
-set incsearch
+set hlsearch
 set ignorecase
+set infercase
 set smartcase
+set incsearch
+set wrapscan
+
+set autoindent
+set smartindent
+set copyindent
+set expandtab
+set shiftround
+set shiftwidth=4    
+set smarttab= true   
+set tabstop=4       
+set softtabstop=4   
+
+set display+='lastline'
+set encoding='utf-8'  
+set fileencoding='utf-8'
+set linebreak
+set scrolloff=8   
+set sidescrolloff=5
+
+set number
 set relativenumber
 set scrolloff=8
 set sidescrolloff=5
