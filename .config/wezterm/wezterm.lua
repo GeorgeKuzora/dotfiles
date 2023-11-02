@@ -173,7 +173,18 @@ config.window_padding = {
   top = 0,
   bottom = 0,
 }
+config.window_frame = {
+  border_left_width = '0.1cell',
+  border_right_width = '0.1cell',
+  border_bottom_height = '0.05cell',
+  border_top_height = '0.0cell',
+  border_left_color = 'black',
+  border_right_color = 'black',
+  border_bottom_color = 'black',
+  border_top_color = 'black',
+}
 -- MULTIPLEXING
+--
 -- config.unix_domains = {
 --   {
 --     name = 'unix',
