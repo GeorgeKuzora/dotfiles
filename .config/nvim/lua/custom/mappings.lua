@@ -68,7 +68,7 @@ km.set('i', "<c-u>", "<c-g>u<c-u>", { desc = "Delete character" })
 km.set('i', "<c-w>", "<c-g>u<c-w>", { desc = "Delete word" })
 km.set('i', "<c-s>", '<cmd>lua vim.lsp.buf.signature_help()<CR>', { desc = "Hover signature" })
 km.set('i', "<c-d>", '<cmd>lua vim.lsp.buf.hover()<CR>', { desc = "Hover documentation" })
-km.set('i', "<c-l>", "<c-6>", { desc = "Switch input method" })
+km.set('i', "<c-'>", "<c-6>", { desc = "Switch input method" })
 
 
 -- COMPLEX KEYMAPS

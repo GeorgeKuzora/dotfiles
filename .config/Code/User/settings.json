@@ -6,7 +6,7 @@
     "editor.minimap.enabled": false,
     "files.autoSave": "afterDelay",
     "workbench.colorTheme": "Catppuccin Mocha",
-    "vscode-neovim.neovimInitVimPaths.linux": "/home/georgiy/.config/nvim/init.lua",
+    "vscode-neovim.neovimInitVimPaths.linux": "/home/georgiy/.config/Code/User/init.lua",
     "debug.javascript.terminalOptions": {
 
     },
