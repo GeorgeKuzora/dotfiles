@@ -203,6 +203,20 @@ local ws = require 'winshift'
 km.set("n", "<c-w>m",  "<cmd>WinShift<CR>", { desc = "Start window move mode" })
 km.set("n", "<c-w>X",   "<cmd>WinShift swap<CR>", { desc = "Start window swap mode" })
 
+-- UFO FOLDING
+km.set('n', 'zR', require('ufo').openAllFolds)
+km.set('n', 'zM', require('ufo').closeAllFolds)
+km.set('n', 'zr', require('ufo').openFoldsExceptKinds)
+km.set('n', 'zm', require('ufo').closeFoldsWith) -- closeAllFolds == closeFoldsWith(0)
+km.set('n', 'zq', function()
+    local winid = require('ufo').peekFoldedLinesUnderCursor()
+    if not winid then
+        -- choose one of coc.nvim and nvim lsp
+        vim.lsp.buf.hover()
+    end
+    end, { desc = "[Q]uick view fold"})
+
+
 wk.register({
   b = {
     name = "[B]uffers",
