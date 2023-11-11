@@ -176,3 +176,8 @@ bindkey '^[[B' history-substring-search-down
 # START STARSHIP PROMPT
 eval "$(starship init zsh)"
 # END STARSHIP PROMPT
+
+# PYENV CONFIG
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
