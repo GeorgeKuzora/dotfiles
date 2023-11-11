@@ -6,7 +6,7 @@ return {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      ensure_installed = { "markdownlint", "black", "flake8", "tidy", "stylelint", },
+      ensure_installed = { "markdownlint", "black", "isort", "flake8", "tidy", "stylelint", },
     },
   },
   },
@@ -20,10 +20,11 @@ return {
     config.sources = {
       -- Set a diagnostics
       null_ls.builtins.diagnostics.flake8,
-      -- null_ls.builtins.diagnostics.markdownlint,
+      null_ls.builtins.diagnostics.markdownlint,
       -- null_ls.builtins.diagnostics.stylelint,
       -- null_ls.builtins.diagnostics.tidy,
       -- Set a formatter
+      null_ls.builtins.formatting.isort,
       null_ls.builtins.formatting.black,
       -- null_ls.builtins.formatting.markdownlint,
       -- null_ls.builtins.formatting.stylelint,
