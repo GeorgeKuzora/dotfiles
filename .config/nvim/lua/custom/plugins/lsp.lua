@@ -87,6 +87,11 @@ return {
           telemetry = { enable = false },
         },
       },
+      emmet_ls = {},
+      docker_compose_language_service = {},
+      dockerls = {},
+      marksman = {},
+      unocss = {},
     }
 
     -- Setup neovim lua configuration
