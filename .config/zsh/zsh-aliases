@@ -45,9 +45,9 @@ alias cpy='xclip -selection c'
 alias h="history 1 | cut -c 8- | sort | uniq | fzf | tr '\\n' ' ' | cpy"
 
 # Modern versions of classic tools
-alias find="fd"
-alias grep="rg"
+# alias find="fd"
+# alias grep="rg"
 alias ls='exa --oneline'
 alias ll='exa -lah --color=auto --group-directories-first --icons --git --header'   # show long listing of all except ".."
 alias cat="bat"
-alias curl="xh"
+# alias curl="xh"
