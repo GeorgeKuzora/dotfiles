@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/home/georgiy/.local/bin/yamount
+Icon=dialog-scripts
+Name=yamount
+Type=Application
+X-KDE-AutostartScript=true

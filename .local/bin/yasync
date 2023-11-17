@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+echo "SYNCING DOCUMENTS"
+
+rclone copy -P -u /home/georgiy/Documents yandex:/Documents
+
+echo "SYNCING PICTURES"
+
+rclone copy -P -u /home/georgiy/Pictures yandex:/Pictures

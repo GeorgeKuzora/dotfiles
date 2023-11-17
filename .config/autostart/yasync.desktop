@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/home/georgiy/.local/bin/yasync
+Icon=dialog-scripts
+Name=yasync
+Type=Application
+X-KDE-AutostartScript=true
