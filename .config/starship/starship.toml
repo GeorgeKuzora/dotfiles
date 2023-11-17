@@ -1,4 +1,4 @@
-palette = "catppuccin_mocha"
+# palette = "catppuccin_mocha"
 
 [aws]
 symbol = "  "

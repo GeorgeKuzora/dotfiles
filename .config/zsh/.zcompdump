@@ -1,4 +1,4 @@
-#files: 1028	version: 5.9
+#files: 1027	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -527,7 +527,6 @@ _comps=(
 'ggrep' '_grep'
 'ggu' '_git'
 'ggv' '_gnome-gv'
-'gh' '_gh'
 'ghead' '_head'
 'ghostscript' '_ghostscript'
 'ghostview' '_pspdf'
@@ -856,7 +855,6 @@ _comps=(
 'lzop' '_lzop'
 'm-a' '_module-assistant'
 'mac2unix' '_dos2unix'
-'machinectl' '_machinectl'
 'madison' '_madison'
 'magnum' '_openstack'
 'mail' '_mail'
@@ -1009,6 +1007,8 @@ _comps=(
 'ntalk' '_other_accounts'
 'numfmt' '_numfmt'
 'nvim' '_vim'
+'_nvme' '_nvme'
+'nvme' '_nvme'
 'nvram' '_nvram'
 'objdump' '_objdump'
 'od' '_od'
@@ -1121,7 +1121,6 @@ _comps=(
 'pmpath' '_perl_modules'
 'pmvers' '_perl_modules'
 'podgrep' '_perl_modules'
-'podman' '_podman'
 'podpath' '_perl_modules'
 'podtoc' '_perl_modules'
 'poetry' '_poetry'
@@ -1434,7 +1433,6 @@ _comps=(
 'systemd-inhibit' '_systemd-inhibit'
 'systemd-machine-id-setup' '_systemd'
 'systemd-notify' '_systemd'
-'systemd-nspawn' '_systemd-nspawn'
 'systemd-path' '_systemd-path'
 'systemd-resolve' '_resolvectl'
 'systemd-run' '_systemd-run'
@@ -1477,13 +1475,11 @@ _comps=(
 'tkconch' '_twisted'
 'tkinfo' '_texinfo'
 'tla' '_tla'
-'tldr' '_tldr'
 'tload' '_tload'
 'tmux' '_tmux'
 'todo' '_devtodo'
 'todo.sh' '_todo.sh'
 'toilet' '_toilet'
-'toolbox' '_toolbox'
 'top' '_top'
 'totdconfig' '_totd'
 'touch' '_touch'
@@ -1696,7 +1692,6 @@ _comps=(
 'xfig' '_xfig'
 'xfontsel' '_x_utils'
 'xfreerdp' '_rdesktop'
-'xh' '_xh'
 'xhost' '_x_utils'
 'xinput' '_xinput'
 'xkill' '_x_utils'
@@ -1929,17 +1924,16 @@ bindkey '^[,' _history-complete-newer
 bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
-autoload -Uz _poetry _bat _bluetoothctl _bootctl _busctl \
-            _bwrap _code _coredumpctl _curl _dolphin \
-            _exa _fd _firewalld _flatpak _gh \
-            _hg _hostnamectl _journalctl _kdeconnect _kernel-install \
-            _konsole _kscreen-doctor _libinput _localectl _loginctl \
-            _machinectl _mercurial _mpv _networkctl _oomctl \
-            _plasmashell _podman _rclone _resolvectl _rg \
-            _sd_hosts_or_user_at_host _sd_machines _sd_outputmodes _sd_unit_files _systemctl \
-            _systemd _systemd-analyze _systemd-delta _systemd-inhibit _systemd-nspawn \
-            _systemd-path _systemd-run _systemd-tmpfiles _systemsettings _timedatectl \
-            _tldr _toolbox _udevadm _udisks2 _wezterm \
+autoload -Uz _poetry _poetry _poetry _bat _bluetoothctl \
+            _bootctl _busctl _bwrap _coredumpctl _curl \
+            _dolphin _fd _firewalld _flatpak _hg \
+            _hostnamectl _journalctl _kdeconnect _kernel-install _konsole \
+            _kscreen-doctor _libinput _localectl _loginctl _mercurial \
+            _mpv _networkctl _nvme _oomctl _plasmashell \
+            _rclone _resolvectl _rg _sd_hosts_or_user_at_host _sd_machines \
+            _sd_outputmodes _sd_unit_files _systemctl _systemd _systemd-analyze \
+            _systemd-delta _systemd-inhibit _systemd-path _systemd-run _systemd-tmpfiles \
+            _systemsettings _timedatectl _udevadm _udisks2 _wezterm \
             _wl-copy _wl-paste _wpctl _yt-dlp _zoxide \
             _a2ps _a2utils _aap _abcde _absolute_command_paths \
             _ack _acpi _acpitool _acroread _adb \
@@ -2134,7 +2128,8 @@ autoload -Uz _poetry _bat _bluetoothctl _bootctl _busctl \
             _zip _zle _zlogin _zmodload _zmv \
             _zoneadm _zones _zparseopts _zpty _zsh \
             _zsh-mime-handler _zsocket _zstyle _ztodo _zypper \
-            _docker _xh
+            _docker _exa _docker _exa _docker \
+            _exa
 autoload -Uz +X _call_program
 
 typeset -gUa _comp_assocs

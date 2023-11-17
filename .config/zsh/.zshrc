@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$ZDOTDIR/ohmyzsh"
+export ZSH="$ZDOTDIR/oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -74,9 +74,11 @@ plugins=(
          git
          zsh-autosuggestions
          zsh-syntax-highlighting
-         zsh-history-substring-search
+         # zsh-history-substring-search
+         history-substring-search
          auto-notify $plugins
-         zsh-vi-mode
+         # zsh-vi-mode
+         vi-mode
          zsh-you-should-use
          poetry
          )
@@ -122,13 +124,13 @@ zstyle :compinstall filename '/home/georgiy/.config/zsh/.zshrc'
 # End of lines added by compinstall
 
 # START NVM SETUP
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-alias nvm="unalias nvm; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; nvm $@"
+# alias nvm="unalias nvm; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; nvm $@"
 # END NVM SETUP
 
 # START SETUP
