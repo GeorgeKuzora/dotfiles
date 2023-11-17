@@ -1,6 +1,5 @@
 [Desktop Entry]
-Exec=/home/georgiy/.local/bin/yamount
-Icon=dialog-scripts
-Name=yamount
+Name=Yandex-disk
+Comment=Mount yandex disk
+Exec=rclone mount yandex:/ /home/georgiy/Yandex-disk
 Type=Application
-X-KDE-AutostartScript=true
