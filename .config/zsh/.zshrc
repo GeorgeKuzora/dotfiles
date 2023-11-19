@@ -176,6 +176,7 @@ bindkey '^[[B' history-substring-search-down
 # END BINDKEYS FOR "zsh-history-substring-search"
 
 # START STARSHIP PROMPT
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
 # END STARSHIP PROMPT
 
