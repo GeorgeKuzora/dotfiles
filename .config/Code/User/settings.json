@@ -23,5 +23,11 @@
     ],
     "workbench.tree.renderIndentGuides": "always",
     "editor.cursorBlinking": "solid",
-    "cSpell.language": "en,ru"
+    "cSpell.language": "en,ru",
+    "editor.codeActionsOnSave": {
+
+    },
+    "php.validate.executablePath": "",
+    "editor.lineNumbers": "relative",
+    "search.showLineNumbers": true
 }
