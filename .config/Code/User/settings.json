@@ -29,5 +29,6 @@
     },
     "php.validate.executablePath": "",
     "editor.lineNumbers": "relative",
-    "search.showLineNumbers": true
+    "search.showLineNumbers": true,
+    "git.autofetch": true
 }

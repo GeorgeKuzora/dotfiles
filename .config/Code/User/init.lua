@@ -3,6 +3,14 @@
 
 local vscode = require('vscode-neovim')
 
+-- Highlighting and search
+vim.opt.hlsearch = true                               -- With highlight search
+vim.opt.ignorecase = true                             -- Search ignoring case of letters
+vim.opt.infercase = true                              -- infer cases in keyword completion
+vim.opt.smartcase = true                              -- Search with ignor case if all small and with case if even one is big
+vim.opt.incsearch = true                              -- Search incrementaly when you input request
+vim.opt.wrapscan = true                               -- Cycle search results until the end and then move to the beginning
+
 -- KEYBINDINGS
 
 -- Leader keys
