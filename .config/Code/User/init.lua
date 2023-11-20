@@ -11,6 +11,9 @@ vim.opt.smartcase = true                              -- Search with ignor case 
 vim.opt.incsearch = true                              -- Search incrementaly when you input request
 vim.opt.wrapscan = true                               -- Cycle search results until the end and then move to the beginning
 
+-- System clipboard
+vim.opt.clipboard = { 'unnamedplus' }   -- Copy paste between vim and everything else, 'unnamed'
+
 -- KEYBINDINGS
 
 -- Leader keys
