@@ -217,6 +217,9 @@ km.set('n', 'zq', function()
     end
     end, { desc = "[Q]uick view fold"})
 
+-- AERIAL
+km.set("n", "<leader>a", "<cmd>AerialToggle<CR>")
+
 
 wk.register({
   b = {
