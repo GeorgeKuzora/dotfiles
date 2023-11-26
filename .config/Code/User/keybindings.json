@@ -33,12 +33,6 @@
         "command": "-workbench.action.zoomIn"
     },
     {
-        "command": "vscode-neovim.compositeEscape1",
-        "key": "i",
-        "when": "neovim.mode == insert && editorTextFocus",
-        "args": "i"
-    },
-    {
         "key": "ctrl+shift+alt+b",
         "command": "workbench.action.tasks.build",
         "when": "taskCommandsRegistered"
