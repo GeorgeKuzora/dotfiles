@@ -14,7 +14,7 @@
         "asvetliakov.vscode-neovim": 1
     },
     "editor.fontFamily": "'JetBrainsMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
-    "editor.fontSize": 16,
+    "editor.fontSize": 14,
     "editor.fontLigatures": true,
     "editor.mouseWheelZoom": true,
     "window.zoomLevel": 1,
@@ -36,4 +36,14 @@
     "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.inlayHints.pytestParameters": true,
     "python.analysis.inlayHints.variableTypes": true,
+    "explorer.confirmDragAndDrop": false,
+
+    "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    },
+    "isort.args":["--profile", "black"],
 }
