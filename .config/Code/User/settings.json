@@ -1,6 +1,5 @@
 {
     "window.customMenuBarAltFocus": false,
-    "window.titleBarStyle": "custom",
     "workbench.iconTheme": "catppuccin-mocha",
     "workbench.startupEditor": "none",
     "files.autoSave": "afterDelay",
@@ -11,7 +10,7 @@
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
-    "editor.fontFamily": "'JetBrainsMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
     "editor.fontSize": 14,
     "editor.fontLigatures": true,
     "editor.mouseWheelZoom": true,
@@ -66,4 +65,16 @@
     "editor.smoothScrolling": true,
     "vscode-neovim.mouseSelectionDebounceTime": 0,
     "editor.cursorSmoothCaretAnimation": "on",
+    "editor.overviewRulerBorder": false,
+    "explorer.compactFolders": false,
+    "explorer.confirmDelete": false,
+    "files.insertFinalNewline": true,
+    "extensions.ignoreRecommendations": true,
+    "editor.codeLensFontFamily": "'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
+    "editor.inlayHints.fontFamily": "'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
+    "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
+    "notebook.output.fontFamily": "'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
+    "errorLens.fontFamily": "'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
+    "window.titleBarStyle": "custom",
+    "workbench.activityBar.location": "hidden",
 }
