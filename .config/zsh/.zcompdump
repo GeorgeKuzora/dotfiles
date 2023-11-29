@@ -1,4 +1,4 @@
-#files: 1020	version: 5.9
+#files: 1021	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -2121,7 +2121,7 @@ autoload -Uz _poetry _bat _bluetoothctl _bootctl _busctl \
             _zfs_pool _zftp _zip _zle _zlogin \
             _zmodload _zmv _zoneadm _zones _zparseopts \
             _zpty _zsh _zsh-mime-handler _zsocket _zstyle \
-            _ztodo _zypper _docker _docker
+            _ztodo _zypper _docker _docker _docker
 autoload -Uz +X _call_program
 
 typeset -gUa _comp_assocs
