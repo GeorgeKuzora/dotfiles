@@ -7,3 +7,19 @@
 	editor = nvim
 [init]
 	defaultBranch = main
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+[diff]
+	colorMoved = zebra
+	algorithm = histogram
+[alias]
+    empty = "git commit --allow-empty"
+[status]
+    short = true
+[format]
+	pretty = oneline
+[log]
+	decorate = true
+	abbrevCommit = true
