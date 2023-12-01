@@ -36,7 +36,7 @@ return {
 
       autotag = { enable = true },
 
-      require('nvim-treesitter.configs').setup { enable = true, enable_autocmd = false },
+      require('ts_context_commentstring').setup { enable_autocmd = false },
 
       highlight = {
         enable = true,
