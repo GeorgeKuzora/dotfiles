@@ -35,7 +35,9 @@ return {
       auto_install = true,
 
       autotag = { enable = true },
-      context_commentstring = { enable = true, enable_autocmd = false },
+
+      require('nvim-treesitter.configs').setup { enable = true, enable_autocmd = false },
+
       highlight = {
         enable = true,
         disable = function(_, bufnr) return vim.b[bufnr].large_buf end,
