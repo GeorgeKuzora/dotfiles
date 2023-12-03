@@ -54,7 +54,6 @@
     "window.autoDetectColorScheme": true,
     "vscode-neovim.revealCursorScrollLine": true,
     "editor.stickyScroll.enabled": true,
-    "workbench.editor.showTabs": "single",
     "editor.renderWhitespace": "none",
     "editor.minimap.renderCharacters": false,
     "editor.minimap.scale": 2,
@@ -77,5 +76,6 @@
     "errorLens.fontFamily": "'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
     "window.titleBarStyle": "custom",
     "workbench.activityBar.location": "hidden",
-    "editor.glyphMargin": false,
+    "workbench.editor.pinnedTabSizing": "compact",
+    "workbench.editor.wrapTabs": true,
 }
