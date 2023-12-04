@@ -37,6 +37,7 @@ return {
       nmap('<leader>lr', vim.lsp.buf.rename, '[R]ename')
       nmap('<leader>la', vim.lsp.buf.code_action, 'Code [A]ction')
       nmap('<leader>ls', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+      nmap('<leader>lx', ":LspRestart<CR>", "Restart LSP")
 
       nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
       nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
