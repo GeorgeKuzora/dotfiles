@@ -243,12 +243,25 @@ themes {
         black "#000000"
         white "#ffffff"
     }
+    kitty-default {
+        fg "#dddddd"
+        bg "#000000"
+        red "#cc0403"
+        green "#19cb00"
+        yellow "#cecb00"
+        blue "#0d73cc"
+        magenta "#cb1ed1"
+        orange "#ffa500"
+        cyan "#0dcdcd"
+        black "#000000"
+        white "#ffffff"
+    }
 }
 
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "tango-dark"
+theme "kitty-default"
 
 // The name of the default layout to load on startup
 // Default: "default"
