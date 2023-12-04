@@ -78,4 +78,9 @@
     "workbench.activityBar.location": "hidden",
     "workbench.editor.pinnedTabSizing": "compact",
     "workbench.editor.wrapTabs": true,
+    "workbench.list.smoothScrolling": true,
+    "workbench.editor.sharedViewState": true,
+    "workbench.editor.scrollToSwitchTabs": true,
+    "terminal.integrated.smoothScrolling": true,
+    "editor.minimap.size": "fit",
 }

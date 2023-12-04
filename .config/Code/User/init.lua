@@ -23,7 +23,6 @@ vim.g.maplocalleader = ' '
 
 local km = vim.keymap
 
-km.set('i', "<C-j>", "<Esc>")
 
 -- NORMAL MODE
 km.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
