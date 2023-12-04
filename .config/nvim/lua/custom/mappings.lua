@@ -27,11 +27,6 @@ km.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- Move text up and down
 km.set("n", "<M-j>", "<Esc>:m .+1<CR>==")
 km.set("n", "<M-k>", "<Esc>:m .-2<CR>==")
--- Better windows navigation
--- km.set('n', "<C-h>", "<C-w>h")
--- km.set('n', "<C-k>", "<C-w>k")
--- km.set('n', "<C-j>", "<C-w>j")
--- km.set('n', "<C-l>", "<C-w>l")
 km.set('n', ']b', ':bnext<CR>', { desc = "Next buffer" })
 km.set('n', '[b', ':bprevious<CR>, { desc = "Previous buffer" }')
 -- escape highlight search
@@ -89,10 +84,17 @@ km.set('n', "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle [U]ndo-tree" }
 
 -- Buffers
 km.set('n', "<leader>bn", vim.cmd.enew, { desc = "[N]ew [b]uffer" })
-km.set('n', "<leader>bd",vim.cmd.bdelete, { desc = "[D]elete [b]uffer" })
+km.set('n', "<leader>bd", vim.cmd.bdelete, { desc = "[D]elete [b]uffer" })
 -- Explorer
 km.set("n", "<leader>e", "<cmd>Neotree toggle position=left reveal=true<cr>", { desc = "Toggle Explorer" })
-km.set("n", "<leader>bl", "<cmd>Neotree toggle source=buffers position=left reveal=true<cr>", { desc = "[B]uffers [L]ist" })
+km.set("n", "<leader>bl", "<cmd>Neotree toggle source=buffers position=left reveal=true<cr>",
+  { desc = "[B]uffers [L]ist" })
+
+-- Windows size management
+km.set('n', "<M-=>", "<C-w>+")
+km.set('n', "<M-->", "<C-w>-")
+km.set('n', "<M-,>", "<C-w><")
+km.set('n', "<M-.>", "<C-w>>")
 
 -- TELESCOPE
 -- See `:help telescope.builtin`
@@ -155,6 +157,7 @@ vim.keymap.set('n', "<leader>gC", function() require("telescope.builtin").git_bc
 vim.keymap.set('n', "<leader>gt", function() require("telescope.builtin").git_status { use_file_path = true } end,
   { desc = "Git status" })
 local wk = require("which-key")
+
 -- Git status
 km.set('n', '<leader>gg', vim.cmd.Git, { desc = "Git fugitive status" })
 -- As an example, we will create the following mappings:
@@ -165,10 +168,10 @@ km.set('n', '<leader>gg', vim.cmd.Git, { desc = "Git fugitive status" })
 --  * <leader>fn new file
 --  * <leader>fe edit file
 -- and hide <leader>1
---
+
 -- HARPOON
 -- km.set('n', "<c-s>", '<cmd>lua vim.lsp.buf.signature_help()<CR>', { desc = "Hover signature" })
-km.set('n', "<leader>y", function() require("harpoon.mark").add_file()  end, { desc = "Harpoon add mark" })
+km.set('n', "<leader>y", function() require("harpoon.mark").add_file() end, { desc = "Harpoon add mark" })
 km.set('n', "<leader>h", function() require("harpoon.ui").toggle_quick_menu() end, { desc = "Toggle Harpoon" })
 km.set('n', "]h", function() require("harpoon.ui").nav_next() end, { desc = "Next Harpoon mark" })
 km.set('n', "[h", function() require("harpoon.ui").nav_prev() end, { desc = "Previous Harpoon mark" })
@@ -176,33 +179,34 @@ km.set('n', "<M-u>", function() require("harpoon.ui").nav_file(1) end, { desc = 
 km.set('n', "<M-i>", function() require("harpoon.ui").nav_file(2) end, { desc = "Harpoon mark 2" })
 km.set('n', "<M-o>", function() require("harpoon.ui").nav_file(3) end, { desc = "Harpoon mark 3" })
 km.set('n', "<M-p>", function() require("harpoon.ui").nav_file(4) end, { desc = "Harpoon mark 4" })
---
+
 -- LUASNIP
 local ls = require 'luasnip'
-km.set({"i", "s"}, "<c-j>", function()
+km.set({ "i", "s" }, "<c-j>", function()
   if ls.expand_or_jumpable() then
     ls.expand_or_jump()
   end
-end, {silent = true})
+end, { silent = true })
 
-km.set({"i", "s"}, "<c-k>", function()
+km.set({ "i", "s" }, "<c-k>", function()
   if ls.jumpable(-1) then
     ls.jump(-1)
   end
-end, {silent = true})
+end, { silent = true })
 
-km.set({"i", "s"}, "<c-l>", function()
-	if ls.choice_active() then
-		ls.change_choice(1)
-	end
-end, {silent = true})
+km.set({ "i", "s" }, "<c-l>", function()
+  if ls.choice_active() then
+    ls.change_choice(1)
+  end
+end, { silent = true })
 
-km.set("n", "<leader>m", "<cmd>source ~/.config/nvim/lua/custom/plugins/luasnip.lua<CR>", { desc = "Source Luasnip file" })
+km.set("n", "<leader>m", "<cmd>source ~/.config/nvim/lua/custom/plugins/luasnip.lua<CR>",
+  { desc = "Source Luasnip file" })
 
 -- WINSHIFT
 local ws = require 'winshift'
-km.set("n", "<c-w>m",  "<cmd>WinShift<CR>", { desc = "Start window move mode" })
-km.set("n", "<c-w>X",   "<cmd>WinShift swap<CR>", { desc = "Start window swap mode" })
+km.set("n", "<c-w>m", "<cmd>WinShift<CR>", { desc = "Start window move mode" })
+km.set("n", "<c-w>X", "<cmd>WinShift swap<CR>", { desc = "Start window swap mode" })
 
 -- UFO FOLDING
 km.set('n', 'zR', require('ufo').openAllFolds)
@@ -210,12 +214,12 @@ km.set('n', 'zM', require('ufo').closeAllFolds)
 km.set('n', 'zr', require('ufo').openFoldsExceptKinds)
 km.set('n', 'zm', require('ufo').closeFoldsWith) -- closeAllFolds == closeFoldsWith(0)
 km.set('n', 'zq', function()
-    local winid = require('ufo').peekFoldedLinesUnderCursor()
-    if not winid then
-        -- choose one of coc.nvim and nvim lsp
-        vim.lsp.buf.hover()
-    end
-    end, { desc = "[Q]uick view fold"})
+  local winid = require('ufo').peekFoldedLinesUnderCursor()
+  if not winid then
+    -- choose one of coc.nvim and nvim lsp
+    vim.lsp.buf.hover()
+  end
+end, { desc = "[Q]uick view fold" })
 
 -- AERIAL
 km.set("n", "<leader>a", "<cmd>AerialToggle<CR>")
@@ -227,6 +231,9 @@ wk.register({
   },
   l = {
     name = "[L]SP",
+  },
+  f = {
+    name = "[F]ind",
   },
   g = {
     name = "[G]it",
