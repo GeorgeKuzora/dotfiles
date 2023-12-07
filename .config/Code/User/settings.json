@@ -3,7 +3,7 @@
     "workbench.iconTheme": "catppuccin-mocha",
     "workbench.startupEditor": "none",
     "files.autoSave": "afterDelay",
-    "vscode-neovim.neovimInitVimPaths.linux": "/home/georgiy/.config/Code/User/init.lua",
+    "vscode-neovim.neovimInitVimPaths.linux": "/home/georgiy/.config/nvim/init.lua",
     "debug.javascript.terminalOptions": {
 
     },
@@ -77,7 +77,6 @@
     "window.titleBarStyle": "custom",
     "workbench.activityBar.location": "hidden",
     "workbench.editor.pinnedTabSizing": "compact",
-    "workbench.editor.wrapTabs": true,
     "workbench.list.smoothScrolling": true,
     "workbench.editor.sharedViewState": true,
     "workbench.editor.scrollToSwitchTabs": true,
