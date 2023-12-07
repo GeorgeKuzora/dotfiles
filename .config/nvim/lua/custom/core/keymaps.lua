@@ -79,40 +79,14 @@ km.set('n', "]q", "<cmd>cnext<CR>zz", { desc = "Move next in [Q]uickFix list" })
 km.set('n', "[q", "<cmd>cprev<CR>zz", { desc = "Move previous in [Q]uickFix list" })
 km.set('n', "]l", "<cmd>lnext<CR>zz", { desc = "Move to next [L]ocation" })
 km.set('n', "[l", "<cmd>lprev<CR>zz", { desc = "Move to previous [L]ocation" })
--- Undo-tree
-km.set('n', "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle [U]ndo-tree" })
 
 -- Buffers
 km.set('n', "<leader>bn", vim.cmd.enew, { desc = "[N]ew [b]uffer" })
 km.set('n', "<leader>bd", vim.cmd.bdelete, { desc = "[D]elete [b]uffer" })
--- Explorer
-km.set("n", "<leader>e", "<cmd>Neotree toggle position=left reveal=true<cr>", { desc = "Toggle Explorer" })
-km.set("n", "<leader>bl", "<cmd>Neotree toggle source=buffers position=left reveal=true<cr>",
-  { desc = "[B]uffers [L]ist" })
 
 -- Windows size management
 km.set('n', "<M-=>", "<C-w>+")
 km.set('n', "<M-->", "<C-w>-")
 km.set('n', "<M-,>", "<C-w><")
 km.set('n', "<M-.>", "<C-w>>")
-
-
--- Git status
-km.set('n', '<leader>gg', vim.cmd.Git, { desc = "Git fugitive status" })
--- As an example, we will create the following mappings:
---  * <leader>ff find files
---  * <leader>fr show recent files
---  * <leader>fb Foobar
--- we'll document:
---  * <leader>fn new file
---  * <leader>fe edit file
--- and hide <leader>1
-
-
-
-
-
--- AERIAL
-km.set("n", "<leader>a", "<cmd>AerialToggle<CR>")
-
 

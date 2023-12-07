@@ -7,7 +7,12 @@ return {
   -- NOTE: First, some plugins that don't require any configuration
 
   -- Git related plugins
-  'tpope/vim-fugitive',
+  {
+    'tpope/vim-fugitive',
+    config = function ()
+      vim.keymap.set('n', '<leader>gg', vim.cmd.Git, { desc = "Git fugitive status" })
+    end
+  },
   'tpope/vim-rhubarb',
 
   -- Detect tabstop and shiftwidth automatically
@@ -160,11 +165,9 @@ return {
   {
     "mbbill/undotree",
     event = "VeryLazy",
-    -- mappings = {
-    --   n = {
-    --   [userleader .. "u"] = { "<cmd>UndotreeToggle<CR>", desc = "Toggle Undo-tree" },
-    --   },
-    -- },
+    config = function ()
+      vim.keymap.set('n', "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle [U]ndo-tree" })
+    end
   },
   {
     'windwp/nvim-autopairs',
