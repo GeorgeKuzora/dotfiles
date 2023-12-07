@@ -35,7 +35,7 @@ return {
                 },
             },
             -- A function that should prompt the user to select a window.
-            -- 
+            --
             -- The window picker is used to select a window while swapping windows with
             -- `:WinShift swap`.
             -- @return integer? winid # Either the selected window ID, or `nil` to
@@ -48,10 +48,10 @@ return {
                         -- This table allows you to indicate to the window picker that a window
                         -- should be ignored if its buffer matches any of the following criteria.
                         cur_win = true, -- Filter out the current window
-                        floats = true, -- Filter out floating windows
-                        filetype = {}, -- List of ignored file types
-                        buftype = {}, -- List of ignored buftypes
-                        bufname = {}, -- List of vim regex patterns matching ignored buffer names
+                        floats = true,  -- Filter out floating windows
+                        filetype = {},  -- List of ignored file types
+                        buftype = {},   -- List of ignored buftypes
+                        bufname = {},   -- List of vim regex patterns matching ignored buffer names
                     },
                     -- A function used to filter the list of selectable windows.
                     -- @param winids integer[] # The list of selectable window IDs.
@@ -59,6 +59,11 @@ return {
                     filter_func = nil,
                 })
             end,
+
         })
+        -- WINSHIFT
+        local ws = require 'winshift'
+        vim.keymap.set("n", "<c-w>m", "<cmd>WinShift<CR>", { desc = "Start window move mode" })
+        vim.keymap.set("n", "<c-w>X", "<cmd>WinShift swap<CR>", { desc = "Start window swap mode" })
     end
 }

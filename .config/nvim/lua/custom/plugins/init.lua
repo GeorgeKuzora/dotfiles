@@ -27,6 +27,32 @@ return {
       icons = { group = vim.g.icons_enabled and "" or "+", separator = "" },
       disable = { filetypes = { "TelescopePrompt" } },
     },
+    config = function()
+      local wk = require("which-key")
+      wk.register({
+        b = {
+          name = "[B]uffers", _ = 'which_key_ignore'
+        },
+        l = {
+          name = "[L]SP", _ = 'which_key_ignore'
+        },
+        f = {
+          name = "[F]ind", _ = 'which_key_ignore'
+        },
+        g = {
+          name = "[G]it", _ = 'which_key_ignore'
+        },
+        q = {
+          name = "[Q]uickFix & Diagnostics", _ = 'which_key_ignore'
+        },
+        s = {
+          name = "[S]earch", _ = 'which_key_ignore'
+        },
+        w = {
+          name = "[W]orkspaces", _ = 'which_key_ignore'
+        },
+      }, { prefix = "<leader>" })
+    end
   },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
@@ -168,6 +194,18 @@ return {
   {
     'ThePrimeagen/harpoon',
     event = "VeryLazy",
+    config = function()
+      -- HARPOON
+      -- km.set('n', "<c-s>", '<cmd>lua vim.lsp.buf.signature_help()<CR>', { desc = "Hover signature" })
+      vim.keymap.set('n', "<leader>y", function() require("harpoon.mark").add_file() end, { desc = "Harpoon add mark" })
+      vim.keymap.set('n', "<leader>h", function() require("harpoon.ui").toggle_quick_menu() end, { desc = "Toggle Harpoon" })
+      vim.keymap.set('n', "]h", function() require("harpoon.ui").nav_next() end, { desc = "Next Harpoon mark" })
+      vim.keymap.set('n', "[h", function() require("harpoon.ui").nav_prev() end, { desc = "Previous Harpoon mark" })
+      vim.keymap.set('n', "<M-u>", function() require("harpoon.ui").nav_file(1) end, { desc = "Harpoon mark 1" })
+      vim.keymap.set('n', "<M-i>", function() require("harpoon.ui").nav_file(2) end, { desc = "Harpoon mark 2" })
+      vim.keymap.set('n', "<M-o>", function() require("harpoon.ui").nav_file(3) end, { desc = "Harpoon mark 3" })
+      vim.keymap.set('n', "<M-p>", function() require("harpoon.ui").nav_file(4) end, { desc = "Harpoon mark 4" })
+    end
   },
   {
     "NvChad/nvim-colorizer.lua",
@@ -178,5 +216,8 @@ return {
   {
     "rafamadriz/friendly-snippets",
     name = "friendly-snippets"
+  },
+  {
+    'onsails/lspkind.nvim',
   },
 }

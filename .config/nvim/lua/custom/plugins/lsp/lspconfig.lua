@@ -1,16 +1,15 @@
--- NOTE: This is where your plugins related to LSP can be installed.
---  The configuration is done below. Search for lspconfig to find it below.
 return {
-  -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
   dependencies = {
-    -- Automatically install LSPs to stdpath for neovim
     { 'williamboman/mason.nvim', config = true },
     'williamboman/mason-lspconfig.nvim',
 
     -- Useful status updates for LSP
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-    { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
+    {
+      'j-hui/fidget.nvim',
+      opts = {},
+    },
 
     -- Additional lua configuration, makes nvim stuff amazing!
     'folke/neodev.nvim',
@@ -39,11 +38,11 @@ return {
       nmap('<leader>ls', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
       nmap('<leader>lx', ":LspRestart<CR>", "Restart LSP")
 
-      nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+      nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
       nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
       nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-      nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
-      nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
+      nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+      nmap('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
 
       -- See `:help K` for why this keymap
       nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
@@ -56,6 +55,12 @@ return {
       nmap('<leader>wl', function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
       end, '[W]orkspace [L]ist Folders')
+
+      if vim.lsp.inlay_hint then
+        nmap('<leader>lh', function()
+          vim.lsp.inlay_hint(0, nil)
+        end, 'Toggle Inlay Hints')
+      end
 
       -- Create a command `:Format` local to the LSP buffer
       vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
@@ -86,6 +91,8 @@ return {
         Lua = {
           workspace = { checkThirdParty = false },
           telemetry = { enable = false },
+          hint = { enable = true },
+          diagnostics = { disable = { 'missing-fields' } },
         },
       },
       emmet_ls = {},

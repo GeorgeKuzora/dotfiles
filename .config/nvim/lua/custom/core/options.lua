@@ -97,7 +97,6 @@ opt.shell = '/usr/bin/zsh'
 opt.spell = true                                 --Enable spellchecking.
 opt.spelllang = { 'en_us', 'ru_ru' }
 -- opt.spellfile = '/home/georgiy/.config/nvim/spell/ru.utf-8.add'
-opt.spell = true                                 --Enable spellchecking.
 opt.wildignore = { '.pyc', '.swp' } -- Ignore files matching these patterns when opening files based on a glob pattern.
 -- Colored colum
 wo.signcolumn = "yes"               -- sets vim.opt.signcolumn to auto

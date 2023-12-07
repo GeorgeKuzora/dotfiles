@@ -36,6 +36,9 @@ return {
           luasnip.lsp_expand(args.body)
         end,
       },
+      completion = {
+        completeopt = 'menu,menuone,noinsert',
+      },
       enabled = function()
         if vim.api.nvim_get_option_value("buftype", { buf = 0 }) == "prompt" then return false end
         return vim.g.cmp_enabled
