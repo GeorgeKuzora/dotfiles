@@ -23,21 +23,15 @@ return {
     "TSUpdateSync",
   },
   build = ':TSUpdate',
-  config = function()
-    -- [[ Configure Treesitter ]]
-    -- See `:help nvim-treesitter`
+  config = vim.defer_fn(function()
     require('nvim-treesitter.configs').setup {
       -- Add languages to be installed here that you want installed for treesitter
       ensure_installed = { 'lua', 'python', 'typescript', 'vimdoc', 'vim', 'html',
         'css', 'sql', 'yaml' },
-
       -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
       auto_install = true,
-
       autotag = { enable = true },
-
       require('ts_context_commentstring').setup { enable_autocmd = false },
-
       highlight = {
         enable = true,
         disable = function(_, bufnr) return vim.b[bufnr].large_buf end,
@@ -56,7 +50,7 @@ return {
           init_selection = '<c-space>',
           node_incremental = '<c-space>',
           scope_incremental = '<c-s>',
-          node_decremental = '<S-space>',
+          node_decremental = '<M-space>',
         },
       },
       rainbow = {
@@ -103,21 +97,25 @@ return {
             ["]k"] = { query = "@block.outer", desc = "Next block start" },
             ["]f"] = { query = "@function.outer", desc = "Next function start" },
             ["]a"] = { query = "@parameter.inner", desc = "Next argument start" },
+            [']]'] = { query = "@class.outer", desc = "Next class start"},
           },
           goto_next_end = {
             ["]K"] = { query = "@block.outer", desc = "Next block end" },
             ["]F"] = { query = "@function.outer", desc = "Next function end" },
             ["]A"] = { query = "@parameter.inner", desc = "Next argument end" },
+            [']['] = { query = "@class.outer", desc = "Next class end"},
           },
           goto_previous_start = {
             ["[k"] = { query = "@block.outer", desc = "Previous block start" },
             ["[f"] = { query = "@function.outer", desc = "Previous function start" },
             ["[a"] = { query = "@parameter.inner", desc = "Previous argument start" },
+            ['[['] = { query = "@class.outer", desc = "Previous class start"},
           },
           goto_previous_end = {
             ["[K"] = { query = "@block.outer", desc = "Previous block end" },
             ["[F"] = { query = "@function.outer", desc = "Previous function end" },
             ["[A"] = { query = "@parameter.inner", desc = "Previous argument end" },
+            ['[]'] = { query = "@class.outer", desc = "Previous class end"},
           },
         },
         swap = {
@@ -126,14 +124,16 @@ return {
             [">K"] = { query = "@block.outer", desc = "Swap next block" },
             [">F"] = { query = "@function.outer", desc = "Swap next function" },
             [">A"] = { query = "@parameter.inner", desc = "Swap next argument" },
+            [">C"] = { query = "@class.outer", desc = "Swap next class"},
           },
           swap_previous = {
             ["<K"] = { query = "@block.outer", desc = "Swap previous block" },
             ["<F"] = { query = "@function.outer", desc = "Swap previous function" },
             ["<A"] = { query = "@parameter.inner", desc = "Swap previous argument" },
+            ["<C"] = { query = "@class.outer", desc = "Swap previous class"},
           },
         },
       },
     }
-  end,
+  end, 0)
 }

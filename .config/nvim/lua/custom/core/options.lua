@@ -38,13 +38,6 @@ opt.completeopt = { "menu", "menuone", "noselect" } -- Options for insert mode c
 
 -- NOTE: You should make sure your terminal supports this
 opt.termguicolors = true
--- highlihting and search
-opt.hlsearch = true                               -- With highlight search
-opt.ignorecase = true                             -- Search ignoring case of letters
-opt.infercase = true                              -- infer cases in keyword completion
-opt.smartcase = true                              -- Search with ignor case if all small and with case if even one is big
-opt.incsearch = true                              -- Search incrementaly when you input request
-opt.wrapscan = true                               -- Cycle search results until the end and then move to the beginning
 -- indentation
 opt.autoindent = true                             -- auto indention
 opt.smartindent = true                            -- smart indention
@@ -111,7 +104,6 @@ opt.cursorline = true               -- Enable highlighting of the current line
 opt.backup = false                  -- This is recommended by coc
 opt.writebackup = false             -- This is recommended by coc
 -- Automation
-opt.clipboard = { 'unnamedplus' }   -- Copy paste between vim and everything else, 'unnamed'
 opt.autochdir = false               -- Your working directory will always be the same as your working directory
 opt.cp = false                      -- 'compatible' is not set
 opt.formatoptions = "tcqj" .. "ro"

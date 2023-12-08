@@ -20,67 +20,6 @@ return {
 
 
 
-  -- Useful plugin to show you pending keybinds.
-  {
-    'folke/which-key.nvim',
-    event = "VeryLazy",
-    init = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-    end,
-    opts = {
-      icons = { group = vim.g.icons_enabled and "" or "+", separator = "" },
-      disable = { filetypes = { "TelescopePrompt" } },
-    },
-    config = function()
-      local wk = require("which-key")
-      wk.register({
-        b = {
-          name = "[B]uffers", _ = 'which_key_ignore'
-        },
-        l = {
-          name = "[L]SP", _ = 'which_key_ignore'
-        },
-        f = {
-          name = "[F]ind", _ = 'which_key_ignore'
-        },
-        g = {
-          name = "[G]it", _ = 'which_key_ignore'
-        },
-        q = {
-          name = "[Q]uickFix & Diagnostics", _ = 'which_key_ignore'
-        },
-        s = {
-          name = "[S]earch", _ = 'which_key_ignore'
-        },
-        w = {
-          name = "[W]orkspaces", _ = 'which_key_ignore'
-        },
-      }, { prefix = "<leader>" })
-    end
-  },
-  {
-    -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      -- See `:help gitsigns.txt`
-      -- signs = {
-      --   add = { text = "▎" },
-      --   change = { text = "▎" },
-      --   delete = { text = "▎" },
-      --   topdelete = { text = "契" },
-      --   changedelete = { text = "▎" },
-      --   untracked = { text = "▎" },
-      -- },
-      on_attach = function(bufnr)
-        vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk,
-          { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
-        vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
-        vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
-      end,
-    },
-  },
-
 
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -155,7 +94,6 @@ return {
     end,
   },
 
-
   -- remove trailing spaces
   -- {
   --   "thirtythreeforty/lessspace.vim",
@@ -201,7 +139,7 @@ return {
       -- HARPOON
       -- km.set('n', "<c-s>", '<cmd>lua vim.lsp.buf.signature_help()<CR>', { desc = "Hover signature" })
       vim.keymap.set('n', "<leader>y", function() require("harpoon.mark").add_file() end, { desc = "Harpoon add mark" })
-      vim.keymap.set('n', "<leader>h", function() require("harpoon.ui").toggle_quick_menu() end, { desc = "Toggle Harpoon" })
+      vim.keymap.set('n', "<leader>j", function() require("harpoon.ui").toggle_quick_menu() end, { desc = "Toggle Harpoon" })
       vim.keymap.set('n', "]h", function() require("harpoon.ui").nav_next() end, { desc = "Next Harpoon mark" })
       vim.keymap.set('n', "[h", function() require("harpoon.ui").nav_prev() end, { desc = "Previous Harpoon mark" })
       vim.keymap.set('n', "<M-u>", function() require("harpoon.ui").nav_file(1) end, { desc = "Harpoon mark 1" })

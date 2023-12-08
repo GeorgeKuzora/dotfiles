@@ -2,10 +2,12 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 if vim.g.vscode then
-  require "vscode"
+  require "custom.vscode"
+  require "custom.shared"
 else
   for _, source in ipairs {
     "custom.core",
+    "custom.shared",
     "custom.lazy"
   } do
     local status_ok, fault = pcall(require, source)

@@ -60,7 +60,6 @@ return {
         -- Extract the directory from the current file's path
         current_dir = vim.fn.fnamemodify(current_file, ':h')
       end
-
       -- Find the Git root directory from the current file's path
       local git_root = vim.fn.systemlist('git -C ' .. vim.fn.escape(current_dir, ' ') .. ' rev-parse --show-toplevel')
       [1]
@@ -80,7 +79,6 @@ return {
         }
       end
     end
-
 
     local function telescope_live_grep_open_files()
       require('telescope.builtin').live_grep {
