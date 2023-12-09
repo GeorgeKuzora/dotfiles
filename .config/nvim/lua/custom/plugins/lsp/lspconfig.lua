@@ -107,7 +107,7 @@ return {
       lua_ls = {
         Lua = {
           workspace = {
-            checkThirdParty = true,
+            checkThirdParty = false,
             -- make language server aware of runtime files
             library = {
               [vim.fn.expand("$VIMRUNTIME/lua")] = true,
