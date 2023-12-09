@@ -20,9 +20,9 @@ return {
         dashboard.section.buttons.val = {
             dashboard.button("e", "New File", "<cmd>ene<CR>"),
             dashboard.button("SPC e", "Toggle file explorer", "<cmd>Neotree toggle position=left reveal=true<cr>"),
-            dashboard.button("SPC ff", "Find File", "<cmd>Telescope find_files<CR>"),
-            dashboard.button("SPC fg", "Find Word", "<cmd>Telescope live_grep<CR>"),
-            dashboard.button("SPC wx", "Restore Session", "<cmd>SessionRestore<CR>"),
+            dashboard.button("SPC ff", "Find Files", "<cmd>Telescope find_files<CR>"),
+            dashboard.button("SPC fg", "Find Words", "<cmd>Telescope live_grep<CR>"),
+            dashboard.button("SPC ?", "Recent Files", "<cmd>Telescope oldfiles<CR>"),
             dashboard.button("q", "Quit NVIM", "<cmd>qa<CR>"),
         }
 
