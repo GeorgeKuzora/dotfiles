@@ -2,11 +2,11 @@ return {
   "nvimtools/none-ls.nvim",
   -- "jose-elias-alvarez/null-ls.nvim",
   dependencies = {
-  {
-    "jay-babu/mason-null-ls.nvim",
-    -- overrides `require("mason-null-ls").setup(...)`
-    opts = {
-      ensure_installed = {
+    {
+      "jay-babu/mason-null-ls.nvim",
+      -- overrides `require("mason-null-ls").setup(...)`
+      opts = {
+        ensure_installed = {
           "markdownlint",
           "black",
           "isort",
@@ -15,35 +15,129 @@ return {
           "stylelint",
           "prettierd",
           "eslint_d"
+        },
       },
     },
-  },
   },
   opts = function(_, config)
     -- config variable is the default configuration table for the setup function call
     local null_ls = require "null-ls"
+    local null_ls_utils = require("null-ls.utils")
+    local code_actions = null_ls.builtins.code_actions
+    local formatting = null_ls.builtins.formatting   -- to setup formatters
+    local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 
     -- Check supported formatters and linters
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
+    --  to disable file types use
+    --  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
     config.sources = {
-      null_ls.builtins.code_actions.eslint_d,
+      code_actions.eslint_d,
       -- Set a diagnostics
-      null_ls.builtins.diagnostics.flake8,
-      null_ls.builtins.diagnostics.markdownlint,
-      null_ls.builtins.diagnostics.eslint_d,
+      diagnostics.flake8,
+      diagnostics.markdownlint,
+      diagnostics.eslint_d,
       -- null_ls.builtins.diagnostics.stylelint,
       -- null_ls.builtins.diagnostics.tidy,
       -- Set a formatter
-      null_ls.builtins.formatting.isort,
-      null_ls.builtins.formatting.black,
-      null_ls.builtins.formatting.markdownlint,
-      null_ls.builtins.formatting.eslint_d,
-      null_ls.builtins.formatting.prettierd,
+      formatting.isort,
+      formatting.black,
+      formatting.markdownlint,
+      formatting.eslint_d,
+      formatting.prettierd,
       -- null_ls.builtins.formatting.stylelint,
       -- null_ls.builtins.formatting.tidy
     }
+
+    -- AUTO FORMAT
+    --
+    local format_is_enabled = true
+    vim.api.nvim_create_user_command('KickstartFormatToggle', function()
+      format_is_enabled = not format_is_enabled
+      print('Setting autoformatting to: ' .. tostring(format_is_enabled))
+    end, {})
+
+    vim.keymap.set('n', '<leader>lF', "<cmd>KickstartFormatToggle<CR>", { desc = '[L]sp toggle [F]ormat on save' })
+
+    -- Create an augroup that is used for managing our formatting autocmds.
+    --      We need one augroup per client to make sure that multiple clients
+    --      can attach to the same buffer without interfering with each other.
+    local _augroups = {}
+    local get_augroup = function(client)
+      if not _augroups[client.id] then
+        local group_name = 'kickstart-lsp-format-' .. client.name
+        local id = vim.api.nvim_create_augroup(group_name, { clear = true })
+        _augroups[client.id] = id
+      end
+
+      return _augroups[client.id]
+    end
+
+    -- Whenever an LSP attaches to a buffer, we will run this function.
+    --
+    -- See `:help LspAttach` for more information about this autocmd event.
+    vim.api.nvim_create_autocmd('LspAttach', {
+      group = vim.api.nvim_create_augroup('kickstart-lsp-attach-format', { clear = true }),
+      -- This is where we attach the autoformatting for reasonable clients
+      callback = function(args)
+        local client_id = args.data.client_id
+        local client = vim.lsp.get_client_by_id(client_id)
+        local bufnr = args.buf
+
+        -- Only attach to clients that support document formatting
+        if not client.server_capabilities.documentFormattingProvider then
+          return
+        end
+
+        -- Tsserver usually works poorly. Sorry you work with bad languages
+        -- You can remove this line if you know what you're doing :)
+        if client.name == 'tsserver' then
+          return
+        end
+
+        -- Create an autocmd that will run *before* we save the buffer.
+        --  Run the formatting command for the LSP that has just attached.
+        vim.api.nvim_create_autocmd('BufWritePre', {
+          group = get_augroup(client),
+          buffer = bufnr,
+          callback = function()
+            if not format_is_enabled then
+              return
+            end
+
+            vim.lsp.buf.format {
+              async = false,
+              filter = function(c)
+                return c.id == client.id
+              end,
+            }
+          end,
+        })
+      end,
+    })
+
+    -- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+    --
+    -- require("null-ls").setup({
+    --   on_attach = function(client, bufnr)
+    --     if client.supports_method("textDocument/formatting") then
+    --       vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    --       vim.api.nvim_create_autocmd("BufWritePre", {
+    --         group = augroup,
+    --         buffer = bufnr,
+    --         callback = function()
+    --         if not format_is_enabled then
+    --           return
+    --         end
+    --           vim.lsp.buf.format()
+    --         end,
+    --       })
+    --     end
+    --   end,
+    --   sources = config.sources,
+    -- })
+
     return config -- return final config table
   end,
 }
-

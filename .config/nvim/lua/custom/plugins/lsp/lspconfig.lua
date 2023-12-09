@@ -66,7 +66,6 @@ return {
           vim.lsp.inlay_hint(0, nil)
         end, 'Toggle Inlay Hints')
       end
-
     end
 
     -- LSP SETUP
@@ -75,6 +74,12 @@ return {
     -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+    for type, icon in pairs(signs) do
+      local hl = "DiagnosticSign" .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+    end
 
     -- MASON AND SERVERS
 
@@ -101,10 +106,17 @@ return {
 
       lua_ls = {
         Lua = {
-          workspace = { checkThirdParty = false },
+          workspace = { checkThirdParty = true,
+            -- make language server aware of runtime files
+            library = {
+              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+              [vim.fn.stdpath("config") .. "/lua"] = true,
+            },
+          },
           telemetry = { enable = false },
           hint = { enable = true },
-          diagnostics = { disable = { 'missing-fields' } },
+          diagnostics = { disable = { 'missing-fields' }, globals = { "vim" }, },
+
         },
       },
       emmet_ls = {},

@@ -50,12 +50,12 @@ return {
           init_selection = '<c-space>',
           node_incremental = '<c-space>',
           scope_incremental = '<c-s>',
-          node_decremental = '<M-space>',
+          node_decremental = '<bs>',
         },
       },
       rainbow = {
         enable = true,
-        disable = {},       -- list of languages you want to disable the plugin for
+        disable = {},         -- list of languages you want to disable the plugin for
         extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
         max_file_lines = nil, -- Do not enable for files with more than n lines, int
         -- colors = {}, -- table of hex strings
@@ -80,14 +80,26 @@ return {
             ["ik"] = { query = "@block.inner", desc = "inside block" },
             ["ac"] = { query = "@class.outer", desc = "around class" },
             ["ic"] = { query = "@class.inner", desc = "inside class" },
-            ["a?"] = { query = "@conditional.outer", desc = "around conditional" },
-            ["i?"] = { query = "@conditional.inner", desc = "inside conditional" },
-            ["af"] = { query = "@function.outer", desc = "around function " },
-            ["if"] = { query = "@function.inner", desc = "inside function " },
+            ["ai"] = { query = "@conditional.outer", desc = "around conditional" },
+            ["ii"] = { query = "@conditional.inner", desc = "inside conditional" },
+            ["am"] = { query = "@function.outer", desc = "around function " },
+            ["im"] = { query = "@function.inner", desc = "inside function " },
+            ["af"] = { query = "@call.outer", desc = "Select outer part of a function call" },
+            ["if"] = { query = "@call.inner", desc = "Select inner part of a function call" },
             ["al"] = { query = "@loop.outer", desc = "around loop" },
             ["il"] = { query = "@loop.inner", desc = "inside loop" },
             ["aa"] = { query = "@parameter.outer", desc = "around argument" },
             ["ia"] = { query = "@parameter.inner", desc = "inside argument" },
+            ["a="] = { query = "@assignment.outer", desc = "Select outer part of an assignment" },
+            ["i="] = { query = "@assignment.inner", desc = "Select inner part of an assignment" },
+            ["l="] = { query = "@assignment.lhs", desc = "Select left hand side of an assignment" },
+            ["r="] = { query = "@assignment.rhs", desc = "Select right hand side of an assignment" },
+            ["a:"] = { query = "@property.outer", desc = "Select outer part of an object property" },
+            ["i:"] = { query = "@property.inner", desc = "Select inner part of an object property" },
+            ["l:"] = { query = "@property.lhs", desc = "Select left part of an object property" },
+            ["r:"] = { query = "@property.rhs", desc = "Select right part of an object property" },
+            ["a#"] = { query = "@comment.outer", desc = "around comment" },
+            ["i#"] = { query = "@comment.inner", desc = "inside comment" },
           },
         },
         move = {
@@ -95,45 +107,69 @@ return {
           set_jumps = true,
           goto_next_start = {
             ["]k"] = { query = "@block.outer", desc = "Next block start" },
-            ["]f"] = { query = "@function.outer", desc = "Next function start" },
+            ["]m"] = { query = "@function.outer", desc = "Next function start" },
             ["]a"] = { query = "@parameter.inner", desc = "Next argument start" },
-            [']]'] = { query = "@class.outer", desc = "Next class start"},
+            ["]c"] = { query = "@class.outer", desc = "Next class start" },
+            ["]f"] = { query = "@call.outer", desc = "Next function call start" },
+            ["]i"] = { query = "@conditional.outer", desc = "Next conditional start" },
           },
           goto_next_end = {
             ["]K"] = { query = "@block.outer", desc = "Next block end" },
-            ["]F"] = { query = "@function.outer", desc = "Next function end" },
+            ["]M"] = { query = "@function.outer", desc = "Next function end" },
             ["]A"] = { query = "@parameter.inner", desc = "Next argument end" },
-            [']['] = { query = "@class.outer", desc = "Next class end"},
+            ["]C"] = { query = "@class.outer", desc = "Next class end" },
+            ["]F"] = { query = "@call.outer", desc = "Next function call end" },
+            ["]I"] = { query = "@conditional.outer", desc = "Next conditional end" },
+            ["]L"] = { query = "@loop.outer", desc = "Next loop end" },
           },
           goto_previous_start = {
             ["[k"] = { query = "@block.outer", desc = "Previous block start" },
-            ["[f"] = { query = "@function.outer", desc = "Previous function start" },
+            ["[m"] = { query = "@function.outer", desc = "Previous function start" },
             ["[a"] = { query = "@parameter.inner", desc = "Previous argument start" },
-            ['[['] = { query = "@class.outer", desc = "Previous class start"},
+            ["[c"] = { query = "@class.outer", desc = "Previous class start" },
+            ["[f"] = { query = "@call.outer", desc = "Prev function call start" },
+            ["[i"] = { query = "@conditional.outer", desc = "Prev conditional start" },
+            ["[l"] = { query = "@loop.outer", desc = "Prev loop start" },
           },
           goto_previous_end = {
             ["[K"] = { query = "@block.outer", desc = "Previous block end" },
-            ["[F"] = { query = "@function.outer", desc = "Previous function end" },
+            ["[M"] = { query = "@function.outer", desc = "Previous function end" },
             ["[A"] = { query = "@parameter.inner", desc = "Previous argument end" },
-            ['[]'] = { query = "@class.outer", desc = "Previous class end"},
+            ["[C"] = { query = "@class.outer", desc = "Previous class end" },
+            ["[F"] = { query = "@call.outer", desc = "Prev function call end" },
+            ["[I"] = { query = "@conditional.outer", desc = "Prev conditional end" },
+            ["[L"] = { query = "@loop.outer", desc = "Prev loop end" },
           },
         },
         swap = {
           enable = true,
           swap_next = {
-            [">K"] = { query = "@block.outer", desc = "Swap next block" },
-            [">F"] = { query = "@function.outer", desc = "Swap next function" },
-            [">A"] = { query = "@parameter.inner", desc = "Swap next argument" },
-            [">C"] = { query = "@class.outer", desc = "Swap next class"},
+            ["<leader>nk"] = { query = "@block.outer", desc = "Swap next block" },
+            ["<leader>nm"] = { query = "@function.outer", desc = "Swap next function" },
+            ["<leader>na"] = { query = "@parameter.inner", desc = "Swap next argument" },
+            ["<leader>n:"] = { query = "@property.outer", desc = "Swap next property" },
+            ["<leader>nc"] = { query = "@class.outer", desc = "Swap next class" },
           },
           swap_previous = {
-            ["<K"] = { query = "@block.outer", desc = "Swap previous block" },
-            ["<F"] = { query = "@function.outer", desc = "Swap previous function" },
-            ["<A"] = { query = "@parameter.inner", desc = "Swap previous argument" },
-            ["<C"] = { query = "@class.outer", desc = "Swap previous class"},
+            ["<leader>pk"] = { query = "@block.outer", desc = "Swap previous block" },
+            ["<leader>pm"] = { query = "@function.outer", desc = "Swap previous function" },
+            ["<leader>pa"] = { query = "@parameter.inner", desc = "Swap previous argument" },
+            ["<leader>p:"] = { query = "@property.outer", desc = "Swap previous property" },
+            ["<leader>pc"] = { query = "@class.outer", desc = "Swap previous class" },
           },
         },
       },
     }
+    local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
+
+    -- vim way: ; goes to the direction you were moving.
+    vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move)
+    vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_opposite)
+
+    -- Optionally, make builtin f, F, t, T also repeatable with ; and ,
+    vim.keymap.set({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f)
+    vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F)
+    vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t)
+    vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
   end, 0)
 }

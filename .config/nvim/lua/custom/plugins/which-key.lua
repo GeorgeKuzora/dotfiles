@@ -36,6 +36,12 @@ return {
             h = {
                 name = "Git [H]unk", _ = 'which_key_ignore'
             },
+            n = {
+                name = "Swap [N]ext", _ = 'which_key_ignore'
+            },
+            p = {
+                name = "Swap [P]revious", _ = 'which_key_ignore'
+            },
         }, { prefix = "<leader>" })
         -- register which-key VISUAL mode
         -- required for visual <leader>hs (hunk stage) to work

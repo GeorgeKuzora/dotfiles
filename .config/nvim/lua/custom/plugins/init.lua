@@ -1,25 +1,17 @@
--- You can add your own plugins here or in other files in this directory!
---  I promise not to create any merge conflicts in this directory :)
---
--- See the kickstart.nvim README for more information
 return {
-
-  -- NOTE: First, some plugins that don't require any configuration
-
-  -- Git related plugins
   {
     'tpope/vim-fugitive',
-    config = function ()
+    config = function()
       vim.keymap.set('n', '<leader>gg', vim.cmd.Git, { desc = "Git fugitive status" })
     end
   },
   'tpope/vim-rhubarb',
 
-  -- Detect tabstop and shiftwidth automatically
+  'nvim-treesitter/nvim-treesitter-context',
+
+  'onsails/lspkind.nvim',
+
   'tpope/vim-sleuth',
-
-
-
 
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -36,10 +28,27 @@ return {
     end
   },
 
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  {
+    'numToStr/Comment.nvim',
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
+    opts = {},
+    config = function()
+      -- import comment plugin safely
+      local comment = require("Comment")
 
-  -- for better escaping sequencies
+      local ts_context_commentstring = require("ts_context_commentstring.integrations.comment_nvim")
+
+      -- enable comment
+      comment.setup({
+        -- for commenting tsx and jsx files
+        pre_hook = ts_context_commentstring.create_pre_hook(),
+      })
+    end,
+  },
+
   {
     "max397574/better-escape.nvim",
     lazy = true,
@@ -53,19 +62,16 @@ return {
       end -- keys used for escaping, if it is a function will use the result everytime
     },
   },
-  -- New surround movements
+
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
     config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
+      require("nvim-surround").setup({})
     end,
   },
 
-  -- raindow parenticis
   {
     'hiphish/rainbow-delimiters.nvim',
     name = 'rainbow_delimiters',
@@ -94,71 +100,42 @@ return {
     end,
   },
 
-  -- remove trailing spaces
-  -- {
-  --   "thirtythreeforty/lessspace.vim",
-  --   event = "BufRead",
-  -- },
-  -- undotree
   {
     "mbbill/undotree",
     event = "VeryLazy",
-    config = function ()
+    config = function()
       vim.keymap.set('n', "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle [U]ndo-tree" })
     end
   },
-  {
-    'windwp/nvim-autopairs',
-    opts = {
-      check_ts = true,
-      ts_config = { java = false },
-      fast_wrap = {
-        map = "<M-e>",
-        chars = { "{", "[", "(", '"', "'" },
-        pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
-        offset = 0,
-        end_key = "$",
-        keys = "qwertyuiopzxcvbnmasdfghjkl",
-        check_comma = true,
-        highlight = "PmenuSel",
-        highlight_grey = "LineNr",
-      },
-    } -- this is equalent to setup({}) function
-  },
+
   {
     'folke/trouble.nvim',
-    event = "VeryLazy",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {},
   },
-  {
-    'nvim-treesitter/nvim-treesitter-context',
-  },
-  {
-    'ThePrimeagen/harpoon',
-    event = "VeryLazy",
-    config = function()
-      -- HARPOON
-      -- km.set('n', "<c-s>", '<cmd>lua vim.lsp.buf.signature_help()<CR>', { desc = "Hover signature" })
-      vim.keymap.set('n', "<leader>y", function() require("harpoon.mark").add_file() end, { desc = "Harpoon add mark" })
-      vim.keymap.set('n', "<leader>j", function() require("harpoon.ui").toggle_quick_menu() end, { desc = "Toggle Harpoon" })
-      vim.keymap.set('n', "]h", function() require("harpoon.ui").nav_next() end, { desc = "Next Harpoon mark" })
-      vim.keymap.set('n', "[h", function() require("harpoon.ui").nav_prev() end, { desc = "Previous Harpoon mark" })
-      vim.keymap.set('n', "<M-u>", function() require("harpoon.ui").nav_file(1) end, { desc = "Harpoon mark 1" })
-      vim.keymap.set('n', "<M-i>", function() require("harpoon.ui").nav_file(2) end, { desc = "Harpoon mark 2" })
-      vim.keymap.set('n', "<M-o>", function() require("harpoon.ui").nav_file(3) end, { desc = "Harpoon mark 3" })
-      vim.keymap.set('n', "<M-p>", function() require("harpoon.ui").nav_file(4) end, { desc = "Harpoon mark 4" })
-    end
-  },
+
   {
     "NvChad/nvim-colorizer.lua",
-    event = "BufRead",
+    event = { "BufReadPre", "BufNewFile" },
     cmd = { "ColorizerToggle", "ColorizerAttachToBuffer", "ColorizerDetachFromBuffer", "ColorizerReloadAllBuffers" },
     opts = { user_default_options = { names = false } },
+    config = true,
   },
+
   {
     "rafamadriz/friendly-snippets",
     name = "friendly-snippets"
   },
+
   {
-    'onsails/lspkind.nvim',
+    "nvim-tree/nvim-web-devicons",
+    config = true
+  },
+
+  {
+    "szw/vim-maximizer",
+    keys = {
+      { "<leader>z", "<cmd>MaximizerToggle<CR>", desc = "Maximize/minimize a split" },
+    },
   },
 }
