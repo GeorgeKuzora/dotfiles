@@ -39,6 +39,7 @@ return {
       },
       completion = {
         completeopt = 'menu,menuone,noinsert,preview',
+        keyword_length = 4,
       },
       enabled = function()
         if vim.api.nvim_get_option_value("buftype", { buf = 0 }) == "prompt" then return false end
