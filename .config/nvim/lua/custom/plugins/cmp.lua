@@ -38,7 +38,7 @@ return {
         end,
       },
       completion = {
-        completeopt = 'menu,menuone,noinsert,preview,noselect',
+        completeopt = 'menu,menuone,noinsert,preview',
       },
       enabled = function()
         if vim.api.nvim_get_option_value("buftype", { buf = 0 }) == "prompt" then return false end
@@ -74,21 +74,21 @@ return {
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
         ['<C-e>'] = cmp.mapping.abort(),
         ['<C-Space>'] = cmp.mapping.complete {},
-        ["<CR>"] = cmp.mapping({
-          i = function(fallback)
-            if cmp.visible() and cmp.get_active_entry() then
-              cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
-            else
-              fallback()
-            end
-          end,
-          s = cmp.mapping.confirm({ select = true }),
-          c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
-        }),
-        -- ['<CR>'] = cmp.mapping.confirm {
-        --   behavior = cmp.ConfirmBehavior.Replace,
-        --   select = true,
-        -- },
+        -- ["<CR>"] = cmp.mapping({
+        --   i = function(fallback)
+        --     if cmp.visible() and cmp.get_active_entry() then
+        --       cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+        --     else
+        --       fallback()
+        --     end
+        --   end,
+        --   s = cmp.mapping.confirm({ select = true }),
+        --   c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+        -- }),
+        ['<CR>'] = cmp.mapping.confirm {
+          behavior = cmp.ConfirmBehavior.Replace,
+          select = true,
+        },
         ['<Tab>'] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
@@ -127,6 +127,9 @@ return {
 
     -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
     cmp.setup.cmdline({ '/', '?' }, {
+      completion = {
+        completeopt = 'menu,menuone,noinsert,noselect',
+      },
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
         { name = 'buffer' }
@@ -137,6 +140,7 @@ return {
     cmp.setup.cmdline(':', {
       completion = {
         keyword_length = 4,
+        completeopt = 'menu,menuone,noinsert,noselect',
       },
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
