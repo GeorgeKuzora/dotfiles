@@ -1,6 +1,7 @@
 return {
   -- Autocompletion
   'hrsh7th/nvim-cmp',
+  event = { "InsertEnter", "CmdlineEnter" },
   dependencies = {
     -- Snippet Engine & its associated nvim-cmp source
     'L3MON4D3/LuaSnip',
@@ -37,7 +38,7 @@ return {
         end,
       },
       completion = {
-        completeopt = 'menu,menuone,noinsert',
+        completeopt = 'menu,menuone,noinsert,preview,noselect',
       },
       enabled = function()
         if vim.api.nvim_get_option_value("buftype", { buf = 0 }) == "prompt" then return false end
@@ -73,10 +74,21 @@ return {
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
         ['<C-e>'] = cmp.mapping.abort(),
         ['<C-Space>'] = cmp.mapping.complete {},
-        ['<CR>'] = cmp.mapping.confirm {
-          behavior = cmp.ConfirmBehavior.Replace,
-          select = true,
-        },
+        ["<CR>"] = cmp.mapping({
+          i = function(fallback)
+            if cmp.visible() and cmp.get_active_entry() then
+              cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+            else
+              fallback()
+            end
+          end,
+          s = cmp.mapping.confirm({ select = true }),
+          c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+        }),
+        -- ['<CR>'] = cmp.mapping.confirm {
+        --   behavior = cmp.ConfirmBehavior.Replace,
+        --   select = true,
+        -- },
         ['<Tab>'] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
