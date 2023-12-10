@@ -25,7 +25,7 @@ return {
                 name = "[G]it", _ = 'which_key_ignore'
             },
             q = {
-                name = "[Q]uickFix & Diagnostics", _ = 'which_key_ignore'
+                name = "Diagnostics", _ = 'which_key_ignore'
             },
             s = {
                 name = "[S]earch", _ = 'which_key_ignore'
@@ -42,6 +42,11 @@ return {
             p = {
                 name = "Swap [P]revious", _ = 'which_key_ignore'
             },
+
+            c = {
+                name = "QuickFix", _ = 'which_key_ignore'
+            },
+
         }, { prefix = "<leader>" })
         -- register which-key VISUAL mode
         -- required for visual <leader>hs (hunk stage) to work

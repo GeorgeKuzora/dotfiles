@@ -47,7 +47,7 @@ km.set('n', '<leader>qd', vim.diagnostic.open_float, { desc = 'Open floating dia
 km.set('n', '<leader>ql', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 km.set("n", "<leader>qD", "<cmd>Telescope diagnostics bufnr=0<CR>", { desc = 'Show diagnostics for file' })
 -- QuickFix list
-km.set('n', "<leader>qf", "<cmd>copen<CR>", { desc = "Open [Q]uick[F]ix list" })
+km.set('n', "<leader>co", "<cmd>copen<CR>", { desc = "Open [Q]uick[F]ix list" })
 km.set('n', "]q", "<cmd>cnext<CR>zz", { desc = "Move next in [Q]uickFix list" })
 km.set('n', "[q", "<cmd>cprev<CR>zz", { desc = "Move previous in [Q]uickFix list" })
 km.set('n', "]l", "<cmd>lnext<CR>zz", { desc = "Move to next [L]ocation" })
@@ -62,4 +62,3 @@ km.set('n', "<M-=>", "<C-w>+")
 km.set('n', "<M-->", "<C-w>-")
 km.set('n', "<M-,>", "<C-w><")
 km.set('n', "<M-.>", "<C-w>>")
-
