@@ -24,9 +24,6 @@ return {
             g = {
                 name = "[G]it", _ = 'which_key_ignore'
             },
-            q = {
-                name = "Diagnostics", _ = 'which_key_ignore'
-            },
             s = {
                 name = "[S]earch", _ = 'which_key_ignore'
             },

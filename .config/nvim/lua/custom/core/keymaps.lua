@@ -43,9 +43,9 @@ km.set('i', "<c-'>", "<c-6>", { desc = "Switch input method" })
 -- Diagnostic keymaps
 km.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to [previous] [D]iagnostic message' })
 km.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to [next] [D]iagnostic message' })
-km.set('n', '<leader>qd', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-km.set('n', '<leader>ql', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
-km.set("n", "<leader>qD", "<cmd>Telescope diagnostics bufnr=0<CR>", { desc = 'Show diagnostics for file' })
+km.set('n', '<leader>ld', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+km.set('n', '<leader>ll', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+km.set("n", "<leader>lD", "<cmd>Telescope diagnostics bufnr=0<CR>", { desc = 'Show diagnostics for file' })
 -- QuickFix list
 km.set('n', "<leader>co", "<cmd>copen<CR>", { desc = "Open [Q]uick[F]ix list" })
 km.set('n', "]q", "<cmd>cnext<CR>zz", { desc = "Move next in [Q]uickFix list" })
