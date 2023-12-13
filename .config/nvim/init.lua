@@ -4,6 +4,7 @@ vim.g.maplocalleader = ' '
 if vim.g.vscode then
   require "custom.vscode"
   require "custom.shared"
+  require "custom.vscodelazy"
 else
   for _, source in ipairs {
     "custom.core",
