@@ -1,8 +1,7 @@
 {
-	"google docs": {
-		"prefix": "gd",
-		"body": [
-			"google docs"
-		]
-	}
+  "@pytest.fixture": {
+    "prefix": "pf",
+    "body": ["@pytest.fixture\n$0"],
+    "description": "Adds pytest fixture decorator."
+  }
 }
