@@ -10,7 +10,7 @@ return {
         harpoon:setup()
         -- HARPOON
         -- km.set('n', "<c-s>", '<cmd>lua vim.lsp.buf.signature_help()<CR>', { desc = "Hover signature" })
-        vim.keymap.set('n', "<leader>y", function() harpoon:list():append() end, { desc = "Harpoon add mark" })
+        vim.keymap.set('n', "<leader>i", function() harpoon:list():append() end, { desc = "Harpoon add mark" })
         vim.keymap.set('n', "<leader>j", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
             { desc = "Toggle Harpoon" })
         vim.keymap.set('n', "<M-u>", function() harpoon:list():select(1) end, { desc = "Harpoon mark 1" })
