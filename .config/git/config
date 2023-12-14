@@ -5,6 +5,7 @@
 	ui = auto
 [core]
 	editor = nvim
+	pager = delta
 [init]
 	defaultBranch = main
 [pull]
@@ -12,14 +13,24 @@
 [fetch]
 	prune = true
 [diff]
-	colorMoved = zebra
+    	colorMoved = default
+	; colorMoved = zebra ; if not using delta
 	algorithm = histogram
 [alias]
-    empty = "git commit --allow-empty"
+    	empty = "git commit --allow-empty"
 [status]
-    short = true
+    	short = true
 [format]
 	pretty = oneline
 [log]
 	decorate = true
 	abbrevCommit = true
+[interactive]
+    	diffFilter = delta --color-only
+
+[delta]
+    	navigate = true    # use n and N to move between diff sections
+    	light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
+[merge]
+    	conflictstyle = diff3
