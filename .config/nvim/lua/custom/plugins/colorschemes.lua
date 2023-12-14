@@ -21,9 +21,23 @@ return {
           ts_rainbow2 = true,
         }
       })
-      vim.cmd.colorscheme 'catppuccin'
+      -- vim.cmd.colorscheme 'catppuccin'
     end,
   },
+
+  {
+    'GeorgeKuzora/night-owl.nvim',
+    name = 'night-owl',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      require("night-owl").setup()
+      vim.cmd.colorscheme 'night-owl'
+    end,
+  },
+
+
   --
   -- {
   --   'rebelot/kanagawa.nvim',
