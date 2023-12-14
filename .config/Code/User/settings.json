@@ -1,6 +1,5 @@
 {
     "window.customMenuBarAltFocus": false,
-    "workbench.iconTheme": "catppuccin-mocha",
     "workbench.startupEditor": "none",
     "files.autoSave": "afterDelay",
     "vscode-neovim.neovimInitVimPaths.linux": "/home/georgiy/.config/nvim/init.lua",
@@ -46,7 +45,7 @@
         "--profile",
         "black"
     ],
-    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.colorTheme": "Night Owl",
     "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
     "workbench.preferredHighContrastColorTheme": "Catppuccin Mocha",
     "workbench.preferredHighContrastLightColorTheme": "Catppuccin Latte",
@@ -82,4 +81,5 @@
     "workbench.editor.scrollToSwitchTabs": true,
     "terminal.integrated.smoothScrolling": true,
     "editor.minimap.size": "fit",
+    "workbench.iconTheme": "material-icon-theme",
 }
