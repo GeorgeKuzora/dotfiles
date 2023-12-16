@@ -88,13 +88,13 @@ return {
           lua = 'rainbow-blocks',
         },
         highlight = {
+          'RainbowDelimiterRed',
+          'RainbowDelimiterYellow',
+          'RainbowDelimiterBlue',
           'RainbowDelimiterOrange',
           'RainbowDelimiterGreen',
           'RainbowDelimiterViolet',
           'RainbowDelimiterCyan',
-          'RainbowDelimiterRed',
-          'RainbowDelimiterYellow',
-          'RainbowDelimiterBlue',
         },
       }
     end,

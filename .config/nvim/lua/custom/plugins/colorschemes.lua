@@ -17,27 +17,73 @@ return {
           shade = "dark",
           percentage = 0.15, -- percentage of the shade to apply to the inactive window
         },
+        color_overrides = {
+          mocha = {
+            base = "#11111b",
+            mantle = "#08080d",
+            crust = "#08080d",
+          },
+        },
         integrations = {
           ts_rainbow2 = true,
         }
       })
-      -- vim.cmd.colorscheme 'catppuccin'
+      vim.cmd.colorscheme 'catppuccin'
     end,
   },
 
-  {
-    'GeorgeKuzora/night-owl.nvim',
-    name = 'night-owl',
-    lazy = false,
-    priority = 1000,
-    opts = {},
-    config = function()
-      require("night-owl").setup()
-      vim.cmd.colorscheme 'night-owl'
-    end,
-  },
-
-
+  -- {
+  --   'GeorgeKuzora/night-owl.nvim',
+  --   name = 'night-owl',
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {},
+  --   config = function()
+  --     require("night-owl").setup()
+  --     -- vim.cmd.colorscheme 'night-owl'
+  --   end,
+  -- },
+  --
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   name = 'tokyonight',
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {},
+  --   config = function()
+  --     require("tokyonight").setup({
+  --       style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+  --       light_style = "day",
+  --       dim_inactive = true,
+  --     })
+  --     -- vim.cmd.colorscheme 'tokyonight'
+  --   end,
+  -- },
+  --
+  -- {
+  --   "EdenEast/nightfox.nvim",
+  --   name = 'nightfox',
+  --   priority = 1000,
+  --   opts = {},
+  --   config = function()
+  --     require('nightfox').setup({
+  --       options = {
+  --         dim_inactive = true,
+  --       }
+  --     })
+  --     -- vim.cmd.colorscheme 'nightfox'
+  --   end
+  -- },
+  --
+  -- {
+  --   'rose-pine/neovim',
+  --   name = 'rose-pine',
+  --   priority = 1000,
+  --   opts = {},
+  --   config = function()
+  --     -- vim.cmd('colorscheme rose-pine')
+  --   end
+  -- },
   --
   -- {
   --   'rebelot/kanagawa.nvim',
@@ -47,41 +93,42 @@ return {
   --   opts = {},
   --   config = function()
   --     require("kanagawa").setup({
-  --       compile = false,  -- enable compiling the colorscheme
-  --       undercurl = true, -- enable undercurls
-  --       commentStyle = { italic = true },
-  --       functionStyle = {},
-  --       keywordStyle = { italic = true },
-  --       statementStyle = { bold = true },
-  --       typeStyle = {},
-  --       transparent = false,   -- do not set background color
-  --       dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
-  --       terminalColors = true, -- define vim.g.terminal_color_{0,17}
-  --       colors = {             -- add/modify theme and palette colors
-  --         palette = {},
-  --         theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-  --       },
-  --       overrides = function(colors) -- add/modify highlights
-  --         local palette = colors.palette
-  --         return {
-  --           RainbowDelimiterRed = { default = true, fg = palette.waveRed, ctermfg = 'Red' },
-  --           RainbowDelimiterOrange = { default = true, fg = palette.surimiOrange, ctermfg = 'White' },
-  --           RainbowDelimiterYellow = { default = true, fg = palette.boatYellow2, ctermfg = 'Yellow' },
-  --           RainbowDelimiterGreen = { default = true, fg = palette.springGreen, ctermfg = 'Green' },
-  --           RainbowDelimiterCyan = { default = true, fg = palette.springBlue, ctermfg = 'Cyan' },
-  --           RainbowDelimiterBlue = { default = true, fg = palette.crystalBlue, ctermfg = 'Blue' },
-  --           RainbowDelimiterViolet = { default = true, fg = palette.oniViolet, ctermfg = 'Magenta' },
-  --         }
-  --       end,
-  --       theme = "wave",  -- Load "wave" theme when 'background' option is not set
-  --       background = {   -- map the value of 'background' option to a theme
-  --         dark = "wave", -- try "dragon" !
-  --         light = "lotus"
-  --       },
-  --     })
-  --     -- vim.cmd.colorscheme 'kanagawa'
+  -- compile = false,  -- enable compiling the colorscheme
+  -- undercurl = true, -- enable undercurls
+  -- commentStyle = { italic = true },
+  -- functionStyle = {},
+  -- keywordStyle = { italic = true },
+  -- statementStyle = { bold = true },
+  -- typeStyle = {},
+  -- transparent = false,   -- do not set background color
+  -- dimInactive = true,    -- dim inactive window `:h hl-NormalNC`
+  -- terminalColors = true, -- define vim.g.terminal_color_{0,17}
+  -- colors = {             -- add/modify theme and palette colors
+  --   palette = {},
+  --   theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+  -- },
+  -- overrides = function(colors) -- add/modify highlights
+  --   local palette = colors.palette
+  --   return {
+  --     RainbowDelimiterRed = { default = true, fg = palette.waveRed, ctermfg = 'Red' },
+  --     RainbowDelimiterOrange = { default = true, fg = palette.surimiOrange, ctermfg = 'White' },
+  --     RainbowDelimiterYellow = { default = true, fg = palette.boatYellow2, ctermfg = 'Yellow' },
+  --     RainbowDelimiterGreen = { default = true, fg = palette.springGreen, ctermfg = 'Green' },
+  --     RainbowDelimiterCyan = { default = true, fg = palette.springBlue, ctermfg = 'Cyan' },
+  --     RainbowDelimiterBlue = { default = true, fg = palette.crystalBlue, ctermfg = 'Blue' },
+  --     RainbowDelimiterViolet = { default = true, fg = palette.oniViolet, ctermfg = 'Magenta' },
+  --   }
+  -- end,
+  -- theme = "wave",  -- Load "wave" theme when 'background' option is not set
+  -- background = {   -- map the value of 'background' option to a theme
+  --   dark = "wave", -- try "dragon" !
+  --   light = "lotus"
+  -- },
+  -- })
+  -- vim.cmd("colorscheme kanagawa")
   --   end,
   -- },
+
   -- {
   --   "craftzdog/solarized-osaka.nvim",
   --   name = "solarized-osaka",
@@ -126,15 +173,7 @@ return {
   --     -- vim.cmd.colorscheme 'solarized-osaka'
   --   end,
   -- },
-  -- {
-  --   'rose-pine/neovim',
-  --   name = 'rose-pine',
-  --   priority = 1000,
-  --   opts = {},
-  --   config = function()
-  --     -- vim.cmd('colorscheme rose-pine')
-  --   end
-  -- },
+  --
   -- {
   --   'navarasu/onedark.nvim',
   --   name = 'onedark',
@@ -184,13 +223,4 @@ return {
   --   end
   -- },
   --
-  -- {
-  --   "EdenEast/nightfox.nvim",
-  --   name = 'nightfox',
-  --   priority = 1000,
-  --   opts = {},
-  --   config = function()
-  --     -- vim.cmd.colorscheme 'nightfox'
-  --   end
-  -- },
 }
