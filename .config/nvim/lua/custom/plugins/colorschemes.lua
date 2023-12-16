@@ -25,7 +25,12 @@ return {
           },
         },
         integrations = {
-          ts_rainbow2 = true,
+          aerial = true,
+          harpoon = true,
+          mason = true,
+          neotree = true,
+          treesitter_context = true,
+          which_key = true,
         }
       })
       vim.cmd.colorscheme 'catppuccin'
