@@ -212,6 +212,8 @@ config.colors = {
   cursor_fg = 'black',
   cursor_border = 'silver',
 }
+config.initial_cols = 140
+config.initial_rows = 36
 config.window_padding = {
   left = 0,
   right = 0,
