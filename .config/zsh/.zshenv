@@ -33,6 +33,7 @@ READER="evince"
 IMAGE="loupe"
 STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 
+export VI_MODE_SET_CURSOR=true
 # FCITX LANGUAGE MANAGEMENT VARIABLES /etc/enviroments
 # typeset -U PATH path
 # export GTK_IM_MODULE='fcitx'
