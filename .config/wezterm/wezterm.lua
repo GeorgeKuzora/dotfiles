@@ -142,7 +142,12 @@ config.keys = {
   {
     key = 'w',
     mods = 'CTRL|SHIFT',
-    action = wezterm.action.CloseCurrentPane { confirm = false },
+    action = wezterm.action.CloseCurrentPane { confirm = true },
+  },
+  {
+    key = 'w',
+    mods = 'CTRL|SHIFT|META',
+    action = wezterm.action.CloseCurrentTab { confirm = true },
   },
   {
     key = 'UpArrow',
@@ -174,7 +179,18 @@ config.keys = {
 -- CONFIGURATION
 config.enable_wayland = true
 config.audible_bell = "Disabled"
-config.window_close_confirmation = 'NeverPrompt'
+config.skip_close_confirmation_for_processes_named = {
+  'bash',
+  'sh',
+  'zsh',
+  'fish',
+  'zellij',
+  'tmux',
+  'nu',
+  'cmd.exe',
+  'pwsh.exe',
+  'powershell.exe',
+}
 config.window_decorations = "RESIZE"
 config.use_fancy_tab_bar = false
 config.show_tab_index_in_tab_bar = true
