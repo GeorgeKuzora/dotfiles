@@ -158,7 +158,9 @@ config.keys = {
 config.enable_wayland = true
 config.audible_bell = "Disabled"
 config.window_close_confirmation = 'NeverPrompt'
-config.window_decorations = "TITLE | RESIZE"
+config.window_decorations = "RESIZE"
+-- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+-- config.integrated_title_button_style = "Gnome"
 -- config.color_scheme = 'Catppuccin Mocha'
 config.use_fancy_tab_bar = false
 config.show_tab_index_in_tab_bar = true
@@ -166,12 +168,19 @@ config.tab_max_width = 40
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
-config.font = wezterm.font 'JetBrainsMono Nerd Font'
+config.font = wezterm.font('JetBrainsMono Nerd Font', { weight = 'Light' })
+config.font_size = 12.0
+config.default_cursor_style = 'SteadyBlock'
 config.window_padding = {
   left = 0,
   right = 0,
   top = 0,
   bottom = 0,
+}
+config.colors = {
+  cursor_bg = 'silver',
+  cursor_fg = 'black',
+  cursor_border = 'silver',
 }
 --config.window_frame = {
 --  border_left_width = '0.1cell',
