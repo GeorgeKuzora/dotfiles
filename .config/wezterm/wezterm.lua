@@ -220,6 +220,11 @@ config.window_padding = {
   top = 0,
   bottom = 0,
 }
+config.unix_domains = {
+  {
+    name = 'unix',
+  },
+}
 
 -- CUSTOM FUNCTIONALITY
 
