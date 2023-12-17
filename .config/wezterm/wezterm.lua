@@ -190,16 +190,17 @@ config.font = wezterm.font_with_fallback {
 config.font_size = 12.0
 config.freetype_load_flags = "NO_HINTING"
 config.default_cursor_style = 'SteadyBlock'
+config.force_reverse_video_cursor = true
+config.colors = {
+  cursor_bg = 'silver',
+  cursor_fg = 'black',
+  cursor_border = 'silver',
+}
 config.window_padding = {
   left = 0,
   right = 0,
   top = 0,
   bottom = 0,
-}
-config.colors = {
-  cursor_bg = 'silver',
-  cursor_fg = 'black',
-  cursor_border = 'silver',
 }
 
 -- CUSTOM FUNCTIONALITY
