@@ -188,6 +188,7 @@ config.font = wezterm.font_with_fallback {
   'Noto Sans Mono',
 }
 config.font_size = 12.0
+config.freetype_load_flags = "NO_HINTING"
 config.default_cursor_style = 'SteadyBlock'
 config.window_padding = {
   left = 0,
