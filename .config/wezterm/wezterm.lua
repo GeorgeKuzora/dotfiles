@@ -10,13 +10,9 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
--- This is where you actually apply your config choices
-
-
 -- KEYBINDINGS
--- Remove unused defaults
 config.keys = {
-  -- Turn off the default SUPER actions
+  -- Remove unused defaults
   {
     key = 'c',
     mods = 'SUPER',
@@ -142,26 +138,44 @@ config.keys = {
     mods = 'SUPER',
     action = wezterm.action.DisableDefaultAssignment,
   },
+  -- New assignments
   {
     key = 'w',
-    mods = 'CTRL|SHIFT|ALT',
-    action = wezterm.action.CloseCurrentTab { confirm = false },
-  },
-  {
-    key = 'q',
     mods = 'CTRL|SHIFT',
     action = wezterm.action.CloseCurrentPane { confirm = false },
   },
+  {
+    key = 'UpArrow',
+    mods = 'SHIFT',
+    action = wezterm.action.ScrollToPrompt(-1)
+  },
+  {
+    key = 'DownArrow',
+    mods = 'SHIFT',
+    action = wezterm.action.ScrollToPrompt(1)
+  },
+  {
+    key = 'Home',
+    mods = 'SHIFT',
+    action = wezterm.action.ScrollToTop,
+  },
+  {
+    key = 'End',
+    mods = 'SHIFT',
+    action = wezterm.action.ScrollToBottom,
+  },
+  {
+    key = 'Backspace',
+    mods = 'CTRL|SHIFT',
+    action = wezterm.action.ResetFontSize
+  },
 }
--- APPEARANCE
--- config.enable_wayland = true
+
+-- CONFIGURATION
 config.enable_wayland = true
 config.audible_bell = "Disabled"
 config.window_close_confirmation = 'NeverPrompt'
 config.window_decorations = "RESIZE"
--- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
--- config.integrated_title_button_style = "Gnome"
--- config.color_scheme = 'Catppuccin Mocha'
 config.use_fancy_tab_bar = false
 config.show_tab_index_in_tab_bar = true
 config.tab_max_width = 40
@@ -169,6 +183,10 @@ config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
 config.font = wezterm.font('JetBrainsMono Nerd Font', { weight = 'Light' })
+config.font = wezterm.font_with_fallback {
+  'JetBrainsMono Nerd Font',
+  'Noto Sans Mono',
+}
 config.font_size = 12.0
 config.default_cursor_style = 'SteadyBlock'
 config.window_padding = {
@@ -182,24 +200,6 @@ config.colors = {
   cursor_fg = 'black',
   cursor_border = 'silver',
 }
---config.window_frame = {
---  border_left_width = '0.1cell',
---  border_right_width = '0.1cell',
---  border_bottom_height = '0.05cell',
---  border_top_height = '0.0cell',
---  border_left_color = 'black',
---  border_right_color = 'black',
---  border_bottom_color = 'black',
---  border_top_color = 'black',
---}
--- MULTIPLEXING
---
--- config.unix_domains = {
---   {
---     name = 'unix',
---   },
--- }
--- config.default_gui_startup_args = { 'connect', 'unix' }
 
 -- TAB TEXT
 local process_icons = {
@@ -373,9 +373,7 @@ wezterm.on('update-status', function(window, pane)
     window:set_right_status("")
     return
   end
-
   local date = wezterm.strftime '%Y-%m-%d %H:%M:%S' .. " "
-
   -- Make it italic and underlined
   window:set_right_status(wezterm.format {
     { Attribute = { Underline = 'Single' } },
@@ -383,5 +381,6 @@ wezterm.on('update-status', function(window, pane)
     { Text = date },
   })
 end)
+
 -- and finally, return the configuration to wezterm
 return config
