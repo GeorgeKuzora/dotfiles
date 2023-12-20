@@ -198,10 +198,13 @@ config.tab_max_width = 40
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
-config.font = wezterm.font('JetBrainsMono Nerd Font', { weight = 'Light' })
 config.font = wezterm.font_with_fallback {
-  'JetBrainsMono Nerd Font',
-  'Noto Sans Mono',
+  { family = 'VictorMono Nerd Font',    weight = "Regular" },
+  { family = 'JetBrainsMono Nerd Font', weight = "ExtraLight" },
+  { family = 'JetBrainsMono Nerd Font', weight = "Regular" },
+  { family = 'CommitMono Nerd Font',    weight = "Regular" },
+  { family = 'CaskaydiaCove Nerd Font', weight = "Regular" },
+  { family = 'Noto Sans Mono',          weight = "Regular" },
 }
 config.font_size = 12.0
 config.freetype_load_flags = "NO_HINTING"
