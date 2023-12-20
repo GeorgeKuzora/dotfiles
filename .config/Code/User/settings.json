@@ -59,7 +59,7 @@
   "files.insertFinalNewline": true,
   "extensions.ignoreRecommendations": true,
   "editor.codeLensFontFamily": "'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
-  "editor.inlayHints.fontFamily": "'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
+  "editor.inlayHints.fontFamily": "'VictorMono Nerd Font', 'JetBrainsMono Nerd Font',  monospace",
   "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
   "notebook.output.fontFamily": "'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
   "errorLens.fontFamily": "'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
@@ -91,5 +91,6 @@
       "mantle": "#11111b",
       "crust": "#11111b"
     }
-  }
+  },
+  "catppuccin.italicKeywords": false
 }
