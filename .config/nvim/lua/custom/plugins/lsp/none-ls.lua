@@ -1,53 +1,40 @@
 return {
-  "nvimtools/none-ls.nvim",
-  -- "jose-elias-alvarez/null-ls.nvim",
+  'nvimtools/none-ls.nvim',
+  lazy = true,
+  -- event = { "BufReadPre", "BufNewFile" }, -- TO ENABLE UNCOMMENT THIS
   dependencies = {
     {
-      "jay-babu/mason-null-ls.nvim",
-      -- overrides `require("mason-null-ls").setup(...)`
-      opts = {
-        ensure_installed = {
-          "markdownlint",
-          "black",
-          "isort",
-          "flake8",
-          "tidy",
-          "stylelint",
-          "prettierd",
-          "eslint_d"
-        },
-      },
+      'jay-babu/mason-null-ls.nvim',
+      opts = {},
     },
   },
   opts = function(_, config)
     -- config variable is the default configuration table for the setup function call
-    local null_ls = require "null-ls"
-    local null_ls_utils = require("null-ls.utils")
+    local null_ls = require 'null-ls'
+    local null_ls_utils = require 'null-ls.utils'
     local code_actions = null_ls.builtins.code_actions
-    local formatting = null_ls.builtins.formatting   -- to setup formatters
+    local formatting = null_ls.builtins.formatting -- to setup formatters
     local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 
-    -- Check supported formatters and linters
-    -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
-    -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
     --  to disable file types use
     --  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
     config.sources = {
+      -- Set code actions
       code_actions.eslint_d,
       -- Set a diagnostics
       diagnostics.flake8,
       diagnostics.markdownlint,
       diagnostics.eslint_d,
-      -- null_ls.builtins.diagnostics.stylelint,
-      -- null_ls.builtins.diagnostics.tidy,
+      diagnostics.diagnostics.stylelint,
+      diagnostics.diagnostics.tidy,
       -- Set a formatter
       formatting.isort,
       formatting.black,
-      formatting.markdownlint,
+      formatting.prettier,
       formatting.eslint_d,
       formatting.prettierd,
-      -- null_ls.builtins.formatting.stylelint,
-      -- null_ls.builtins.formatting.tidy
+      formatting.formatting.stylelint,
+      formatting.formatting.tidy,
     }
 
     -- AUTO FORMAT
@@ -58,7 +45,7 @@ return {
       print('Setting autoformatting to: ' .. tostring(format_is_enabled))
     end, {})
 
-    vim.keymap.set('n', '<leader>lF', "<cmd>KickstartFormatToggle<CR>", { desc = '[L]sp toggle [F]ormat on save' })
+    vim.keymap.set('n', '<leader>lF', '<cmd>KickstartFormatToggle<CR>', { desc = '[L]sp toggle [F]ormat on save' })
 
     -- Create an augroup that is used for managing our formatting autocmds.
     --      We need one augroup per client to make sure that multiple clients
@@ -75,7 +62,6 @@ return {
     end
 
     -- Whenever an LSP attaches to a buffer, we will run this function.
-    --
     -- See `:help LspAttach` for more information about this autocmd event.
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach-format', { clear = true }),
@@ -116,28 +102,6 @@ return {
         })
       end,
     })
-
-    -- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-    --
-    -- require("null-ls").setup({
-    --   on_attach = function(client, bufnr)
-    --     if client.supports_method("textDocument/formatting") then
-    --       vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-    --       vim.api.nvim_create_autocmd("BufWritePre", {
-    --         group = augroup,
-    --         buffer = bufnr,
-    --         callback = function()
-    --         if not format_is_enabled then
-    --           return
-    --         end
-    --           vim.lsp.buf.format()
-    --         end,
-    --       })
-    --     end
-    --   end,
-    --   sources = config.sources,
-    -- })
-
     return config -- return final config table
   end,
 }
