@@ -6,19 +6,19 @@ return {
     priority = 1000,
     opts = {},
     config = function()
-      require("catppuccin").setup({
-        flavour = "mocha", -- latte, frappe, macchiato, mocha
-        background = {     -- :h background
-          light = "latte",
-          dark = "mocha",
+      require('catppuccin').setup {
+        flavour = 'mocha', -- latte, frappe, macchiato, mocha
+        background = { -- :h background
+          light = 'latte',
+          dark = 'mocha',
         },
         dim_inactive = {
-          enabled = true,          -- dims the background color of inactive window
-          shade = "dark",
-          percentage = 0.15,       -- percentage of the shade to apply to the inactive window
+          enabled = true, -- dims the background color of inactive window
+          shade = 'dark',
+          percentage = 0.15, -- percentage of the shade to apply to the inactive window
         },
-        styles = {                 -- Handles the styles of general hi groups (see `:h highlight-args`):
-          comments = { "italic" }, -- Change the style of comments
+        styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+          comments = { 'italic' }, -- Change the style of comments
           conditionals = {},
           loops = {},
           functions = {},
@@ -33,9 +33,9 @@ return {
         },
         color_overrides = {
           mocha = {
-            base = "#181825",
-            mantle = "#11111b",
-            crust = "#11111b",
+            base = '#181825',
+            mantle = '#11111b',
+            crust = '#11111b',
           },
         },
         integrations = {
@@ -45,8 +45,9 @@ return {
           neotree = true,
           treesitter_context = true,
           which_key = true,
-        }
-      })
+          lsp_trouble = true,
+        },
+      }
       vim.cmd.colorscheme 'catppuccin'
     end,
   },
