@@ -56,7 +56,6 @@
   "editor.overviewRulerBorder": false,
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
-  "files.insertFinalNewline": true,
   "extensions.ignoreRecommendations": true,
   "editor.codeLensFontFamily": "'VictorMono Nerd Font', 'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
   "editor.inlayHints.fontFamily": "'GohuFont 11 Nerd Font',  'VictorMono Nerd Font', monospace",
