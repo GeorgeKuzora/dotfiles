@@ -7,7 +7,7 @@
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
-  "editor.fontFamily": "'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontFamily": "'VictorMono Nerd Font', 'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
   "editor.mouseWheelZoom": true,
@@ -58,11 +58,11 @@
   "explorer.confirmDelete": false,
   "files.insertFinalNewline": true,
   "extensions.ignoreRecommendations": true,
-  "editor.codeLensFontFamily": "'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
-  "editor.inlayHints.fontFamily": "'VictorMono Nerd Font', 'JetBrainsMono Nerd Font',  monospace",
-  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
-  "notebook.output.fontFamily": "'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
-  "errorLens.fontFamily": "'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
+  "editor.codeLensFontFamily": "'VictorMono Nerd Font', 'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
+  "editor.inlayHints.fontFamily": "'GohuFont 11 Nerd Font',  'VictorMono Nerd Font', monospace",
+  "terminal.integrated.fontFamily": "'VictorMono Nerd Font', 'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
+  "notebook.output.fontFamily": "'VictorMono Nerd Font', 'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
+  "errorLens.fontFamily": "'VictorMono Nerd Font', 'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
   "window.titleBarStyle": "custom",
   "workbench.activityBar.location": "hidden",
   "workbench.editor.pinnedTabSizing": "compact",
@@ -92,5 +92,7 @@
       "crust": "#11111b"
     }
   },
-  "catppuccin.italicKeywords": false
+  "catppuccin.italicKeywords": false,
+  "editor.inlayHints.fontSize": 12,
+  "errorLens.fontStyleItalic": true
 }
