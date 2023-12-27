@@ -46,6 +46,8 @@ return {
           treesitter_context = true,
           which_key = true,
           lsp_trouble = true,
+          noice = true,
+          notify = true,
         },
       }
       vim.cmd.colorscheme 'catppuccin'
