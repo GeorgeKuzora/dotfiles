@@ -39,6 +39,7 @@ alias zj="zellij"
 alias zja="zellij a"
 alias zjs="zellij -s"
 alias lg="lazygit"
+alias lzd="lazydocker"
 
 # history fuzzy find
 alias cpy='xclip -selection c'
