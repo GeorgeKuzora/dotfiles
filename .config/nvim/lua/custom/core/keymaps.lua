@@ -54,7 +54,17 @@ km.set('n', '<leader>bn', vim.cmd.enew, { desc = '[N]ew [b]uffer' })
 km.set('n', '<leader>bd', vim.cmd.bdelete, { desc = '[D]elete [b]uffer' })
 
 -- Windows size management
-km.set('n', '<M-=>', '<C-w>+')
 km.set('n', '<M-->', '<C-w>-')
+km.set('n', '<M-=>', '<C-w>+')
 km.set('n', '<M-,>', '<C-w><')
 km.set('n', '<M-.>', '<C-w>>')
+
+-- Better window navigation
+km.set('n', '<C-M-h>', '<C-w>h', { desc = 'Move to the left window' })
+km.set('n', '<C-M-l>', '<C-w>l', { desc = 'Move to the right window' })
+km.set('n', '<C-M-j>', '<C-w>j', { desc = 'Move to the bottom window' })
+km.set('n', '<C-M-k>', '<C-w>k', { desc = 'Move to the top window' })
+
+km.set('n', '<C-w><C-w>', function()
+  require('nvim-window').pick()
+end, { desc = 'Move to the top window' })

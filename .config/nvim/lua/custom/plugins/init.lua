@@ -5,6 +5,7 @@ return {
       vim.keymap.set('n', '<leader>gg', vim.cmd.Git, { desc = 'Git fugitive status' })
     end,
   },
+
   'tpope/vim-rhubarb',
 
   'nvim-treesitter/nvim-treesitter-context',
@@ -131,5 +132,14 @@ return {
     keys = {
       { '<leader>z', '<cmd>MaximizerToggle<CR>', desc = 'Maximize/minimize a split' },
     },
+  },
+  {
+    'm4xshen/hardtime.nvim',
+    dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
+    opts = {},
+  },
+  {
+    'https://gitlab.com/yorickpeterse/nvim-window.git',
+    opts = {},
   },
 }
