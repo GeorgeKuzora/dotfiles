@@ -1,5 +1,4 @@
-alias vik="NVIM_APPNAME=kickstart nvim"
-alias via="NVIM_APPNAME=AstroNvim nvim"
+alias vil="NVIM_APPNAME=lazyvim nvim"
 
 function nvims() {
   items=("default" "kickstart" "AstroNvim")
