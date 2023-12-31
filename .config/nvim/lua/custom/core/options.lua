@@ -1,8 +1,3 @@
--- [[ Setting options ]]
--- See `:help vim.o`
--- NOTE: You can change these options as you wish!
-
--- Declaring local variables to reduce amount of typing
 local g = vim.g
 local o = vim.o
 local wo = vim.wo
@@ -19,6 +14,7 @@ end
 
 -- set vim options here (vim.<first_key>.<second_key> = value)
 vim.cmd [[set keymap=russian-jcukenwin]]
+vim.cmd [[set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖБЮ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:<>,фисвуапршолдьтщзйкыегмцчняю;abcdefghijklmnopqrstuvwxyz.]]
 vim.cmd [[set iminsert=0]]
 vim.cmd [[set imsearch=0]]
 vim.cmd [[highlight lCursor guifg=NONE guibg=cyan]]
