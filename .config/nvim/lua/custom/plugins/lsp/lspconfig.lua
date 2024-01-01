@@ -139,6 +139,8 @@ return {
         'flake8',
         'stylelint',
         'markdownlint',
+        -- debuggers
+        'debugpy',
       },
     }
 
