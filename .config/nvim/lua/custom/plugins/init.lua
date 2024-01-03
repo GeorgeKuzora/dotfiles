@@ -147,10 +147,10 @@ return {
   },
 
   {
-    'szw/vim-maximizer',
-    keys = {
-      { '<leader>z', '<cmd>MaximizerToggle<CR>', desc = 'Maximize/minimize a split' },
-    },
+    'declancm/maximize.nvim',
+    config = function()
+      require('maximize').setup()
+    end,
   },
 
   {

@@ -26,6 +26,10 @@ return {
         end
       end
 
+      local function maximize_status()
+        return vim.t.maximized and '   ' or ''
+      end
+
       lualine.setup {
         options = {
           icons_enabled = true,
@@ -43,6 +47,9 @@ return {
               'macro-recording',
               fmt = show_macro_recording,
             },
+          },
+          lualine_c = {
+            { 'maximize_status', fmt = maximize_status },
           },
         },
       }
