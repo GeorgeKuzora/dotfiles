@@ -65,6 +65,6 @@ km.set('n', '<C-M-l>', '<C-w>l', { desc = 'Move to the right window' })
 km.set('n', '<C-M-j>', '<C-w>j', { desc = 'Move to the bottom window' })
 km.set('n', '<C-M-k>', '<C-w>k', { desc = 'Move to the top window' })
 
-km.set('n', '<C-w><C-w>', function()
+km.set('n', '<C-w>w', function()
   require('nvim-window').pick()
-end, { desc = 'Move to the top window' })
+end, { desc = 'Pick a window' })

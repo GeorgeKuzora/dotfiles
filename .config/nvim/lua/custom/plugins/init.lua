@@ -21,10 +21,29 @@ return {
       require('ibl').setup {
         indent = { char = '┊' },
         scope = {
-          enabled = true,
+          enabled = false,
           show_start = false,
           show_end = false,
         },
+      }
+    end,
+  },
+
+  {
+    'echasnovski/mini.indentscope',
+    version = false,
+    config = function()
+      require('mini.indentscope').setup {
+        mappings = {
+          -- Textobjects
+          object_scope = 'in',
+          object_scope_with_border = 'an',
+
+          -- Motions (jump to respective border line; if not present - body line)
+          goto_top = '[n',
+          goto_bottom = ']n',
+        },
+        symbol = '┊',
       }
     end,
   },
@@ -133,11 +152,7 @@ return {
       { '<leader>z', '<cmd>MaximizerToggle<CR>', desc = 'Maximize/minimize a split' },
     },
   },
-  {
-    'm4xshen/hardtime.nvim',
-    dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
-    opts = {},
-  },
+
   {
     'https://gitlab.com/yorickpeterse/nvim-window.git',
     opts = {},
