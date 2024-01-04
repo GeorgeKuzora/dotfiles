@@ -6,7 +6,7 @@ local a = vim.api
 
 -- Astro optimizations
 vim.opt.viewoptions:remove 'curdir' -- disable saving current directory with views
-vim.opt.shortmess:append { s = true, I = true } -- disable search count wrap and startup messages
+vim.opt.shortmess:append { s = true, I = true, W = true, c = true, C = true } -- disable search count wrap and startup messages
 vim.opt.backspace:append { 'nostop' } -- don't stop backspace at insert
 if vim.fn.has 'nvim-0.9' == 1 then
   vim.opt.diffopt:append 'linematch:60' -- enable linematch diff algorithm
@@ -18,7 +18,7 @@ vim.cmd [[set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖБЮ
 vim.cmd [[set iminsert=0]]
 vim.cmd [[set imsearch=0]]
 vim.cmd [[highlight lCursor guifg=NONE guibg=cyan]]
-vim.cmd [[set grepprg=rg\ --vimgrep\ --smart-case\ --follow]] -- Better grep command
+opt.grepprg = 'rg --vimgrep --smart-case --follow' -- Better grep command
 
 -- Enable break indent
 o.breakindent = true
@@ -86,9 +86,9 @@ opt.spell = true --Enable spellchecking.
 opt.spelllang = { 'en_us', 'ru_ru' }
 -- opt.spellfile = '/home/georgiy/.config/nvim/spell/ru.utf-8.add'
 opt.wildignore = { '.pyc', '.swp' } -- Ignore files matching these patterns when opening files based on a glob pattern.
--- Colored colum
-wo.signcolumn = 'yes' -- sets vim.opt.signcolumn to auto
-opt.colorcolumn = '80' -- colored line on 80 charachters
+-- Colored column
+opt.signcolumn = 'yes' -- sets vim.opt.signcolumn to auto
+opt.colorcolumn = '80' -- colored line on 80 characters
 -- UI and windows
 opt.mouse = 'a' -- Enable your mouse
 opt.splitbelow = true -- Horizontal splits will automatically be below
@@ -101,7 +101,7 @@ opt.writebackup = false -- This is recommended by coc
 -- Automation
 opt.autochdir = false -- Your working directory will always be the same as your working directory
 opt.cp = false -- 'compatible' is not set
-opt.formatoptions = 'tcqj' .. 'ro'
+opt.formatoptions = 'tcqjronl'
 opt.cmdheight = 0 -- hide command line unless needed
 opt.pumheight = 10 -- height of the pop up menu
 opt.preserveindent = true
@@ -120,3 +120,30 @@ g.inlay_hints_enabled = false -- enable or disable LSP inlay hints on startup (N
 g.lsp_handlers_enabled = true -- enable or disable default vim.lsp.handlers (hover and signature help)
 g.semantic_tokens_enabled = true -- enable or disable LSP semantic tokens on startup
 g.git_worktrees = nil -- enable git integration for detached worktrees (specify a table where each entry is of the form { toplevel = vim.env.HOME, gitdir=vim.env.HOME .. "/.dotfiles" })
+
+-- LazyVim options
+opt.autowrite = true
+opt.autowriteall = true
+opt.grepformat = '%f:%l:%c:%m'
+opt.inccommand = 'nosplit' -- preview incremental substitute
+opt.list = true
+opt.pumblend = 10
+opt.sessionoptions = { 'buffers', 'curdir', 'tabpages', 'winsize', 'help', 'globals', 'skiprtp', 'folds' }
+opt.showmode = false -- Dont show mode since we have a statusline
+opt.splitkeep = 'screen'
+opt.wildmode = 'longest:full,full' -- Command-line completion mode
+opt.winminwidth = 5 -- Minimum window width
+opt.fillchars = {
+  foldopen = '',
+  foldclose = '',
+  -- fold = "⸱",
+  fold = ' ',
+  foldsep = ' ',
+  diff = '╱',
+  eob = ' ',
+}
+if vim.fn.has 'nvim-0.10' == 1 then
+  opt.smoothscroll = true
+end
+-- Fix markdown indentation settings
+vim.g.markdown_recommended_style = 0
