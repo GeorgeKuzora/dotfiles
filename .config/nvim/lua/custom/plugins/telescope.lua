@@ -48,6 +48,8 @@ return {
 
     pcall(telescope.load_extension, 'telescope-fzf-native.nvim', 'fzf')
 
+    local builtin = require 'telescope.builtin'
+
     local function find_git_root()
       -- Use the current buffer's path as the starting point for the git search
       local current_file = vim.api.nvim_buf_get_name(0)
@@ -86,6 +88,11 @@ return {
       }
     end
 
+    local function find_WORD()
+      local word = vim.fn.expand '<cWORD>'
+      builtin.grep_string { search = word }
+    end
+
     vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
 
     -- KEYMAPS
@@ -104,6 +111,9 @@ return {
     end, { desc = '[F]ind All [F]iles' })
     vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = '[F]ind [H]elp' })
     vim.keymap.set('n', '<leader>fw', require('telescope.builtin').grep_string, { desc = '[F]ind current [W]ord' })
+
+    vim.keymap.set('n', '<leader>fW', find_WORD, { desc = '[F]ind current [W]ORD' })
+
     vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = '[F]ind by [G]rep' })
     vim.keymap.set('n', '<leader>fG', function()
       require('telescope.builtin').live_grep {
@@ -145,8 +155,7 @@ return {
     end, { desc = 'Find symbols' })
     vim.keymap.set('n', '<leader>fo', telescope_live_grep_open_files, { desc = '[F]ind [/] in Open Files' })
     vim.keymap.set('n', '<leader>fv', require('telescope.builtin').builtin, { desc = '[F]ind [S]elect Telescope' })
-    -- vim.keymap.set('n', "<leader>f/", function() require("telescope.builtin").current_buffer_fuzzy_find() end,
-    --   { desc = "Find words in current buffer" })
+    vim.keymap.set('n', '<leader>fj', require('telescope.builtin').jumplist, { desc = '[F]ind in [J]ump List' })
 
     vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
     vim.keymap.set('n', '<leader>gb', function()
