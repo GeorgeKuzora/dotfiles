@@ -195,13 +195,6 @@ plugins {
 //
 // on_force_close "quit"
 
-//  Send a request for a simplified ui (without arrow fonts) to plugins
-//  Options:
-//    - true
-//    - false (Default)
-//
-simplified_ui true
-
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
 //
@@ -228,46 +221,24 @@ pane_frames false
 // Define color themes for Zellij
 // For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
-//
-themes {
-    tango-dark {
-        fg "#ffffff"
-        bg "#000000"
-        red "#cc0000"
-        green "#4e9a06"
-        yellow "#fce94f"
-        blue "#3465a4"
-        magenta "#75507b"
-        orange "#c4a000"
-        cyan "#06989a"
-        black "#000000"
-        white "#ffffff"
-    }
-    kitty-default {
-        fg "#dddddd"
-        bg "#000000"
-        red "#cc0403"
-        green "#19cb00"
-        yellow "#cecb00"
-        blue "#0d73cc"
-        magenta "#cb1ed1"
-        orange "#f78300"
-        cyan "#0dcdcd"
-        black "#000000"
-        white "#ffffff"
-    }
-}
 
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
 // theme "catppuccin-mocha"
-theme "kitty-default"
+// theme "kitty-default"
 
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "compact"
+default_layout "default"
+
+//  Send a request for a simplified ui (without arrow fonts) to plugins
+//  Options:
+//    - true
+//    - false (Default)
+//
+simplified_ui false
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal

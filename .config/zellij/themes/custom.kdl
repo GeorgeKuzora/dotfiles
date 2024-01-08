@@ -1,0 +1,29 @@
+themes {
+    tango-dark {
+        fg "#ffffff"
+        bg "#000000"
+        red "#cc0000"
+        green "#4e9a06"
+        yellow "#fce94f"
+        blue "#3465a4"
+        magenta "#75507b"
+        orange "#c4a000"
+        cyan "#06989a"
+        black "#000000"
+        white "#ffffff"
+    }
+    term-default {
+        fg "#dddddd"
+        bg "#000000"
+        red "#cc0403"
+        green "#19cb00"
+        yellow "#cecb00"
+        blue "#0d73cc"
+        magenta "#cb1ed1"
+        orange "#f78300"
+        cyan "#0dcdcd"
+        black "#000000"
+        white "#ffffff"
+    }
+}
+
