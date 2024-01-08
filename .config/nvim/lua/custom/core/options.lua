@@ -122,8 +122,8 @@ g.semantic_tokens_enabled = true -- enable or disable LSP semantic tokens on sta
 g.git_worktrees = nil -- enable git integration for detached worktrees (specify a table where each entry is of the form { toplevel = vim.env.HOME, gitdir=vim.env.HOME .. "/.dotfiles" })
 
 -- LazyVim options
-opt.autowrite = true
-opt.autowriteall = true
+-- opt.autowrite = true
+-- opt.autowriteall = true
 opt.grepformat = '%f:%l:%c:%m'
 opt.inccommand = 'nosplit' -- preview incremental substitute
 opt.list = true
