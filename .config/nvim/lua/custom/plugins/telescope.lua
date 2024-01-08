@@ -37,8 +37,12 @@ return {
             ['<C-k>'] = actions.move_selection_previous,
             ['<ESC>'] = actions.close,
             ['<C-c>'] = actions.close,
+            ['<C-q>'] = actions.send_to_qflist,
+            ['<M-q>'] = actions.send_selected_to_qflist,
           },
           n = {
+            ['<C-q>'] = actions.send_to_qflist,
+            ['<M-q>'] = actions.send_selected_to_qflist,
             q = actions.close,
             ['<ESC>'] = actions.close,
           },
