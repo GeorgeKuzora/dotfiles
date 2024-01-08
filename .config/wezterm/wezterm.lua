@@ -174,6 +174,46 @@ config.keys = {
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.ResetFontSize,
 	},
+	{
+		key = "{",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.ActivateTabRelative(-1),
+	},
+	{
+		key = "}",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.ActivateTabRelative(1),
+	},
+	{
+		key = "h",
+		mods = "CTRL|SHIFT|ALT",
+		action = wezterm.action.ActivatePaneDirection("Left"),
+	},
+	{
+		key = "l",
+		mods = "CTRL|SHIFT|ALT",
+		action = wezterm.action.ActivatePaneDirection("Right"),
+	},
+	{
+		key = "k",
+		mods = "CTRL|SHIFT|ALT",
+		action = wezterm.action.ActivatePaneDirection("Up"),
+	},
+	{
+		key = "j",
+		mods = "CTRL|SHIFT|ALT",
+		action = wezterm.action.ActivatePaneDirection("Down"),
+	},
+	{
+		key = "{",
+		mods = "CTRL|SHIFT|ALT",
+		action = wezterm.action.ActivatePaneDirection("Prev"),
+	},
+	{
+		key = "}",
+		mods = "CTRL|SHIFT|ALT",
+		action = wezterm.action.ActivatePaneDirection("Next"),
+	},
 }
 
 -- CONFIGURATION
@@ -198,6 +238,7 @@ config.tab_max_width = 40
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
+config.unzoom_on_switch_pane = true
 config.font = wezterm.font_with_fallback({
 	{ family = "VictorMono Nerd Font", weight = "Regular" },
 	{ family = "JetBrainsMono Nerd Font", weight = "ExtraLight" },
@@ -244,6 +285,35 @@ wezterm.on("update-status", function(window, pane)
 		{ Text = date },
 	}))
 end)
+
+-- This function returns the suggested title for a tab.
+-- It prefers the title that was set via `tab:set_title()`
+-- or `wezterm cli set-tab-title`, but falls back to the
+-- title of the active pane in that tab.
+local function tab_title(tab_info)
+	local title = tab_info.tab_title
+	-- if the tab title is explicitly set, take that
+	if title and #title > 0 then
+		return title
+	end
+	-- Otherwise, use the title from the active pane
+	-- in that tab
+	return tab_info.active_pane.title
+end
+
+local function _on_format_tab_title(tab, _tabs, _panes, _config, _hover, _max_width)
+	local zoomed = ""
+	local index = tab.tab_index + 1
+	local title = tab_title(tab)
+	if tab.active_pane.is_zoomed then
+		zoomed = "z"
+	end
+	return {
+		{ Text = string.format("%s %d: %s ", zoomed, index, title) },
+	}
+end
+
+wezterm.on("format-tab-title", _on_format_tab_title)
 
 -- and finally, return the configuration to wezterm
 return config
