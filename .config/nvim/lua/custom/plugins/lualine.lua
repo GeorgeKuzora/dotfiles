@@ -30,6 +30,22 @@ return {
         return vim.t.maximized and '   ' or ''
       end
 
+      local function lsp_server_name()
+        local msg = 'No Active Lsp'
+        local buf_ft = vim.api.nvim_get_option_value('filetype', { buf = 0 })
+        local clients = vim.lsp.get_clients()
+        if next(clients) == nil then
+          return msg
+        end
+        for _, client in ipairs(clients) do
+          local filetypes = client.config.filetypes
+          if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+            return client.name
+          end
+        end
+        return msg
+      end
+
       lualine.setup {
         options = {
           icons_enabled = true,
@@ -38,19 +54,31 @@ return {
           section_separators = '',
         },
         sections = {
-          lualine_b = {
-            {
-              'russian-keymap',
-              fmt = show_russian_keymap,
-            },
+          lualine_a = { 'mode', {
+            'russian-keymap',
+            fmt = show_russian_keymap,
+          } },
+          lualine_b = { 'branch', 'diff', 'diagnostics' },
+          lualine_c = {
             {
               'macro-recording',
               fmt = show_macro_recording,
             },
-          },
-          lualine_c = {
             { 'maximize_status', fmt = maximize_status },
+            'filename',
           },
+          lualine_x = {
+            'encoding',
+            'fileformat',
+            'filetype',
+            {
+              'lsp_server_name',
+              fmt = lsp_server_name,
+              icon = ' LSP:',
+            },
+          },
+          lualine_y = { 'progress' },
+          lualine_z = { 'location' },
         },
       }
     end,
