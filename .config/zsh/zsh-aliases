@@ -6,11 +6,6 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# confirm before overwriting something
-# alias cp="cp -i"
-# alias mv='mv -i'
-# alias rm='rm -i'
-
 # easier to read disk
 alias df='df -h'     # human-readable sizes
 alias free='free -m' # show sizes in MB
@@ -24,8 +19,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME'
 # alias l='ls -lavh --ignore=.?* --color=auto --group-directories-first'   # show long listing but no hidden dotfiles except "."
 
 # Apps shortcuts
-# alias vi='nvim'
-# alias vim='nvim'
 alias peerflix='peerflix -l -k'
 alias brh='br -h'
 alias vi='nvim'
@@ -33,7 +26,6 @@ alias vim='nvim'
 alias emacs_daemon="emacs --daemon & disown"
 alias emacs="emacsclient -c -a -fs 'emacs' & disown"
 alias alacritty="env WINIT_UNIX_BACKEND=x11 alacritty"
-# alias hx="helix"
 alias update="sudo dnf upgrade && flatpack update"
 alias zj="zellij"
 alias zja="zellij a"
@@ -42,14 +34,14 @@ alias lg="lazygit"
 alias lzg="lazygit"
 alias lzd="lazydocker"
 
+# Python shortcuts
+alias pyal="source .venv/bin/activate"
+
 # history fuzzy find
 alias cpy='xclip -selection c'
 alias h="history 1 | cut -c 8- | sort | uniq | fzf | tr '\\n' ' ' | cpy"
 
 # Modern versions of classic tools
-# alias find="fd"
-# alias grep="rg"
 alias ls='exa --oneline'
 alias ll='exa -lah --color=auto --group-directories-first --icons --git --header'   # show long listing of all except ".."
 alias cat="bat"
-# alias curl="xh"
