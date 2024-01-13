@@ -170,6 +170,16 @@ config.keys = {
 		action = wezterm.action.ScrollToBottom,
 	},
 	{
+		key = "UpArrow",
+		mods = "SHIFT|ALT",
+		action = wezterm.action.ScrollByLine(-1),
+	},
+	{
+		key = "DownArrow",
+		mods = "SHIFT|ALT",
+		action = wezterm.action.ScrollByLine(1),
+	},
+	{
 		key = "Backspace",
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.ResetFontSize,
