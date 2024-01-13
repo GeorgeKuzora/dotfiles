@@ -91,7 +91,7 @@
       "crust": "#11111b"
     }
   },
-  "catppuccin.italicKeywords": false,
-  "editor.inlayHints.fontSize": 14,
-  "errorLens.fontStyleItalic": true
+  "editor.inlayHints.fontSize": 12,
+  "errorLens.fontStyleItalic": true,
+  "catppuccin.italicKeywords": false
 }
