@@ -86,7 +86,6 @@ return {
     local servers = {
       gopls = {},
       pyright = {},
-      ruff_lsp = {},
       tsserver = {},
       html = { filetypes = { 'html', 'twig', 'hbs' } },
       lua_ls = {
