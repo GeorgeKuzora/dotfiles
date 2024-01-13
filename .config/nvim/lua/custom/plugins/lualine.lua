@@ -65,7 +65,12 @@ return {
               fmt = show_macro_recording,
             },
             { 'maximize_status', fmt = maximize_status },
-            'filename',
+            {
+              'filename',
+              file_status = true,
+              newfile_status = true,
+              path = 1,
+            },
           },
           lualine_x = {
             'encoding',
