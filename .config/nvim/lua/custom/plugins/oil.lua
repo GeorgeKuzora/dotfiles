@@ -7,7 +7,7 @@ return {
     require('oil').setup {}
     local o = require 'oil'
     vim.keymap.set('n', '-', function()
-      o.toggle_float()
+      o.open()
     end, { desc = 'Oil open parent directory' })
   end,
 }
