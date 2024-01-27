@@ -93,7 +93,6 @@ opt.colorcolumn = '80' -- colored line on 80 characters
 opt.mouse = 'a' -- Enable your mouse
 opt.splitbelow = true -- Horizontal splits will automatically be below
 opt.splitright = true -- Vertical splits will automatically be to the right
-opt.termguicolors = true -- Support true colors
 opt.conceallevel = 0 -- So that I can see `` in markdown files
 opt.cursorline = true -- Enable highlighting of the current line
 opt.backup = false -- This is recommended by coc
@@ -102,8 +101,7 @@ opt.writebackup = false -- This is recommended by coc
 opt.autochdir = false -- Your working directory will always be the same as your working directory
 opt.cp = false -- 'compatible' is not set
 opt.formatoptions = 'tcqjronl'
-opt.cmdheight = 0 -- hide command line unless needed
-opt.pumheight = 10 -- height of the pop up menu
+opt.cmdheight = 1 -- hide command line unless needed
 opt.preserveindent = true
 -- opt.foldcolumn = vim.fn.has "nvim-0.9" == 1 and "1" or nil -- show foldcolumn in nvim 0.9
 opt.virtualedit = 'block' -- allow going past end of line in visual block mode
