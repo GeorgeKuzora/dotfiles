@@ -280,6 +280,7 @@ config.unix_domains = {
 		name = "unix",
 	},
 }
+config.check_for_updates = false
 
 -- CUSTOM FUNCTIONALITY
 
