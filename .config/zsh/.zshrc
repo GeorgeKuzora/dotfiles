@@ -113,6 +113,8 @@ source $ZSH/oh-my-zsh.sh
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.config/zsh/.histfile
 HISTSIZE=1000000
+HISTFILESIZE=1000000
+HISTCONTROL=ignoredups
 SAVEHIST=1000000
 setopt autocd
 unsetopt beep
