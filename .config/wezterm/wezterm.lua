@@ -227,8 +227,9 @@ config.keys = {
 }
 
 -- CONFIGURATION
-config.adjust_window_size_when_changing_font_size = false
 config.enable_wayland = true
+config.window_decorations = "RESIZE"
+config.adjust_window_size_when_changing_font_size = false
 config.audible_bell = "Disabled"
 config.skip_close_confirmation_for_processes_named = {
 	"bash",
@@ -242,7 +243,6 @@ config.skip_close_confirmation_for_processes_named = {
 	"pwsh.exe",
 	"powershell.exe",
 }
-config.window_decorations = "RESIZE"
 config.use_fancy_tab_bar = false
 config.show_tab_index_in_tab_bar = true
 config.tab_max_width = 40
