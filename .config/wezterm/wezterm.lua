@@ -145,38 +145,48 @@ config.keys = {
 		action = wezterm.action.CloseCurrentPane({ confirm = true }),
 	},
 	{
-		key = "w",
-		mods = "CTRL|SHIFT|META",
+		key = "q",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.CloseCurrentTab({ confirm = true }),
 	},
 	{
 		key = "UpArrow",
-		mods = "SHIFT",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.ScrollToPrompt(-1),
 	},
 	{
 		key = "DownArrow",
-		mods = "SHIFT",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.ScrollToPrompt(1),
 	},
 	{
 		key = "Home",
-		mods = "SHIFT",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.ScrollToTop,
 	},
 	{
 		key = "End",
-		mods = "SHIFT",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.ScrollToBottom,
 	},
 	{
 		key = "UpArrow",
-		mods = "SHIFT|ALT",
+		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.ScrollByLine(-1),
 	},
 	{
 		key = "DownArrow",
-		mods = "SHIFT|ALT",
+		mods = "CTRL|SHIFT|ALT",
+		action = wezterm.action.ScrollByLine(1),
+	},
+	{
+		key = "k",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.ScrollByLine(-1),
+	},
+	{
+		key = "j",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.ScrollByLine(1),
 	},
 	{
@@ -224,11 +234,21 @@ config.keys = {
 		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.ActivatePaneDirection("Next"),
 	},
+	{
+		key = "Enter",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "Enter",
+		mods = "CTRL|SHIFT|ALT",
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
 }
 
 -- CONFIGURATION
-config.enable_wayland = true
-config.window_decorations = "RESIZE"
+config.enable_wayland = false
+config.window_decorations = "NONE"
 config.adjust_window_size_when_changing_font_size = false
 config.audible_bell = "Disabled"
 config.skip_close_confirmation_for_processes_named = {
@@ -245,7 +265,7 @@ config.skip_close_confirmation_for_processes_named = {
 }
 config.use_fancy_tab_bar = false
 config.show_tab_index_in_tab_bar = true
-config.tab_max_width = 40
+config.tab_max_width = 60
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
@@ -281,6 +301,78 @@ config.unix_domains = {
 	},
 }
 config.check_for_updates = false
+
+config.colors = {
+	tab_bar = {
+		-- The color of the strip that goes along the top of the window
+		-- (does not apply when fancy tab bar is in use)
+		background = "#000000",
+
+		-- The active tab is the one that has focus in the window
+		active_tab = {
+			bg_color = "#313244",
+			fg_color = "#bac2de",
+
+			-- Specify whether you want "Half", "Normal" or "Bold" intensity for the
+			-- label shown for this tab.
+			-- The default is "Normal"
+			intensity = "Bold",
+
+			-- Specify whether you want "None", "Single" or "Double" underline for
+			-- label shown for this tab.
+			-- The default is "None"
+			underline = "None",
+
+			-- Specify whether you want the text to be italic (true) or not (false)
+			-- for this tab.  The default is false.
+			italic = true,
+
+			-- Specify whether you want the text to be rendered with strikethrough (true)
+			-- or not for this tab.  The default is false.
+			strikethrough = false,
+		},
+
+		-- Inactive tabs are the tabs that do not have focus
+		inactive_tab = {
+			bg_color = "#181825",
+			fg_color = "#7f849c",
+
+			-- The same options that were listed under the `active_tab` section above
+			-- can also be used for `inactive_tab`.
+		},
+
+		-- You can configure some alternate styling when the mouse pointer
+		-- moves over inactive tabs
+		inactive_tab_hover = {
+			bg_color = "#313244",
+			fg_color = "#bac2de",
+			italic = true,
+
+			-- The same options that were listed under the `active_tab` section above
+			-- can also be used for `inactive_tab_hover`.
+		},
+
+		-- The new tab button that let you create new tabs
+		new_tab = {
+			bg_color = "#11111b",
+			fg_color = "#6c7086",
+
+			-- The same options that were listed under the `active_tab` section above
+			-- can also be used for `new_tab`.
+		},
+
+		-- You can configure some alternate styling when the mouse pointer
+		-- moves over the new tab button
+		new_tab_hover = {
+			bg_color = "#181825",
+			fg_color = "#7f849c",
+			italic = true,
+
+			-- The same options that were listed under the `active_tab` section above
+			-- can also be used for `new_tab_hover`.
+		},
+	},
+}
 
 -- CUSTOM FUNCTIONALITY
 
