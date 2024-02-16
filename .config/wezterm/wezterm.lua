@@ -206,32 +206,32 @@ config.keys = {
 	},
 	{
 		key = "h",
-		mods = "CTRL|SHIFT|ALT",
+		mods = "SHIFT|ALT",
 		action = wezterm.action.ActivatePaneDirection("Left"),
 	},
 	{
 		key = "l",
-		mods = "CTRL|SHIFT|ALT",
+		mods = "SHIFT|ALT",
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
 	{
 		key = "k",
-		mods = "CTRL|SHIFT|ALT",
+		mods = "SHIFT|ALT",
 		action = wezterm.action.ActivatePaneDirection("Up"),
 	},
 	{
 		key = "j",
-		mods = "CTRL|SHIFT|ALT",
+		mods = "SHIFT|ALT",
 		action = wezterm.action.ActivatePaneDirection("Down"),
 	},
 	{
 		key = "{",
-		mods = "CTRL|SHIFT|ALT",
+		mods = "SHIFT|ALT",
 		action = wezterm.action.ActivatePaneDirection("Prev"),
 	},
 	{
 		key = "}",
-		mods = "CTRL|SHIFT|ALT",
+		mods = "SHIFT|ALT",
 		action = wezterm.action.ActivatePaneDirection("Next"),
 	},
 	{
@@ -265,7 +265,7 @@ config.skip_close_confirmation_for_processes_named = {
 }
 config.use_fancy_tab_bar = false
 config.show_tab_index_in_tab_bar = true
-config.tab_max_width = 60
+config.tab_max_width = 50
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
@@ -413,7 +413,7 @@ local function _on_format_tab_title(tab, _tabs, _panes, _config, _hover, _max_wi
 		zoomed = "z"
 	end
 	return {
-		{ Text = string.format("%s %d: %s ", zoomed, index, title) },
+		{ Text = string.format(" %s %d: %s ", zoomed, index, title) },
 	}
 end
 
