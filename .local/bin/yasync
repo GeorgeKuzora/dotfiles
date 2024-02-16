@@ -5,11 +5,11 @@ echo "BACKING UP NOTES"
 cd /home/georgiy/Documents/Notes/My_vault/
 git add . && \
 git commit -m "new notes" && \
-git push || \
+git push
 
 echo "SYNCING DOCUMENTS"
 
-rclone copy -P -u /home/georgiy/Documents yandex:/Documents || \
+rclone copy -P -u /home/georgiy/Documents yandex:/Documents
 
 echo "SYNCING PICTURES"
 
