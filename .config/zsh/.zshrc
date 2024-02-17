@@ -163,7 +163,7 @@ autoload -Uz colors && colors
 # END COLORS SETUP
 
 # START ZOXIDE SETUP
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 # END ZOXIDE SETUP
 
 # START SOURCE SETUP
