@@ -93,5 +93,8 @@
   },
   "editor.inlayHints.fontSize": 12,
   "errorLens.fontStyleItalic": true,
-  "catppuccin.italicKeywords": false
+  "catppuccin.italicKeywords": false,
+  "markdownlint.config": {
+
+  }
 }
