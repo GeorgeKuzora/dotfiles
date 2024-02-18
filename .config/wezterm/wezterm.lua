@@ -236,12 +236,12 @@ config.keys = {
 	},
 	{
 		key = "Enter",
-		mods = "CTRL|SHIFT",
+		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
 		key = "Enter",
-		mods = "CTRL|SHIFT|ALT",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 }
