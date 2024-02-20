@@ -206,32 +206,32 @@ config.keys = {
 	},
 	{
 		key = "h",
-		mods = "SHIFT|ALT",
+		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.ActivatePaneDirection("Left"),
 	},
 	{
 		key = "l",
-		mods = "SHIFT|ALT",
+		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
 	{
 		key = "k",
-		mods = "SHIFT|ALT",
+		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.ActivatePaneDirection("Up"),
 	},
 	{
 		key = "j",
-		mods = "SHIFT|ALT",
+		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.ActivatePaneDirection("Down"),
 	},
 	{
 		key = "{",
-		mods = "SHIFT|ALT",
+		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.ActivatePaneDirection("Prev"),
 	},
 	{
 		key = "}",
-		mods = "SHIFT|ALT",
+		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.ActivatePaneDirection("Next"),
 	},
 	{
