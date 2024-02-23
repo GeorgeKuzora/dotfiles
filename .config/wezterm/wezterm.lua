@@ -196,12 +196,12 @@ config.keys = {
 	},
 	{
 		key = "{",
-		mods = "CTRL|SHIFT",
+		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.ActivateTabRelative(-1),
 	},
 	{
 		key = "}",
-		mods = "CTRL|SHIFT",
+		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.ActivateTabRelative(1),
 	},
 	{
@@ -226,12 +226,12 @@ config.keys = {
 	},
 	{
 		key = "{",
-		mods = "CTRL|SHIFT|ALT",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.ActivatePaneDirection("Prev"),
 	},
 	{
 		key = "}",
-		mods = "CTRL|SHIFT|ALT",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.ActivatePaneDirection("Next"),
 	},
 	{
@@ -247,8 +247,8 @@ config.keys = {
 }
 
 -- CONFIGURATION
-config.enable_wayland = false
-config.window_decorations = "NONE"
+config.enable_wayland = true
+-- config.window_decorations = "RESIZE"
 config.adjust_window_size_when_changing_font_size = false
 config.audible_bell = "Disabled"
 config.skip_close_confirmation_for_processes_named = {
