@@ -91,7 +91,7 @@
       "crust": "#11111b"
     }
   },
-  "editor.inlayHints.fontSize": 12,
+  "editor.inlayHints.fontSize": 14,
   "errorLens.fontStyleItalic": true,
   "catppuccin.italicKeywords": false,
   "markdownlint.config": {
