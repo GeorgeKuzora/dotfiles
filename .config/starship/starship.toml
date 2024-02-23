@@ -1,7 +1,6 @@
 palette = "catppuccin_mocha"
 
-format = """$all"""
-right_format = """$battery$time"""
+format = """$all $os with $battery$time$line_break$character"""
 add_newline = true
 
 [line_break]
@@ -10,7 +9,7 @@ disabled = false
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-format = '[  $time]($style)'
+format = '[ $time]($style)'
 
 [battery]
 format = '[$symbol$percentage]($style) '
@@ -101,7 +100,7 @@ symbol = " "
 symbol = " "
 
 [os]
-disabled = true
+disabled = false
 
 [os.symbols]
 Alpaquita = " "
