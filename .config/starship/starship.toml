@@ -1,4 +1,29 @@
-# palette = "catppuccin_mocha"
+palette = "catppuccin_mocha"
+
+format = """$all"""
+right_format = """$battery$time"""
+add_newline = true
+
+[line_break]
+disabled = false
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+format = '[  $time]($style)'
+
+[battery]
+format = '[$symbol$percentage]($style) '
+full_symbol = '󰁹 '
+charging_symbol = '󰂄 '
+discharging_symbol = '󱟞 '
+
+[[battery.display]]
+threshold = 100
+style = 'bold green'
+
+[character]
+disabled = false
 
 [aws]
 symbol = "  "
@@ -74,6 +99,9 @@ symbol = " "
 
 [nodejs]
 symbol = " "
+
+[os]
+disabled = true
 
 [os.symbols]
 Alpaquita = " "
