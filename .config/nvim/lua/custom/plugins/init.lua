@@ -147,13 +147,6 @@ return {
   },
 
   {
-    'declancm/maximize.nvim',
-    config = function()
-      require('maximize').setup()
-    end,
-  },
-
-  {
     'https://gitlab.com/yorickpeterse/nvim-window.git',
     opts = {},
   },
