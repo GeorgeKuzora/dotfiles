@@ -1,28 +1,28 @@
 return {
-  'windwp/nvim-autopairs',
-  event = { 'InsertEnter' },
-  dependencies = {
-    'hrsh7th/nvim-cmp',
-  },
-  config = function()
-    local autopairs = require 'nvim-autopairs'
-
-    -- configure autopairs
-    autopairs.setup {
-      check_ts = true,
-      ts_config = { java = false },
-      fast_wrap = {
-        map = '<M-e>',
-        chars = { '{', '[', '(', '"', "'" },
-        pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], '%s+', ''),
-        offset = 0,
-        end_key = '$',
-        keys = 'qwertyuiopzxcvbnmasdfghjkl',
-        check_comma = true,
-        highlight = 'PmenuSel',
-        highlight_grey = 'LineNr',
-      },
-      map_cr = true,
-    }
-  end,
+  -- 'windwp/nvim-autopairs',
+  -- event = { 'InsertEnter' },
+  -- dependencies = {
+  --   'hrsh7th/nvim-cmp',
+  -- },
+  -- config = function()
+  --   local autopairs = require 'nvim-autopairs'
+  --
+  --   -- configure autopairs
+  --   autopairs.setup {
+  --     check_ts = true,
+  --     ts_config = { java = false },
+  --     fast_wrap = {
+  --       map = '<M-e>',
+  --       chars = { '{', '[', '(', '"', "'" },
+  --       pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], '%s+', ''),
+  --       offset = 0,
+  --       end_key = '$',
+  --       keys = 'qwertyuiopzxcvbnmasdfghjkl',
+  --       check_comma = true,
+  --       highlight = 'PmenuSel',
+  --       highlight_grey = 'LineNr',
+  --     },
+  --     map_cr = true,
+  --   }
+  -- end,
 }
