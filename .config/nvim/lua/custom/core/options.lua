@@ -112,7 +112,7 @@ opt.writebackup = false -- This is recommended by coc
 opt.autochdir = false -- Your working directory will always be the same as your working directory
 opt.cp = false -- 'compatible' is not set
 opt.formatoptions = 'tcqjronl'
-opt.cmdheight = 0 -- hide command line unless needed
+opt.cmdheight = 1 -- hide command line unless needed
 opt.pumheight = 10 -- height of the pop up menu
 opt.preserveindent = true
 -- opt.foldcolumn = vim.fn.has "nvim-0.9" == 1 and "1" or nil -- show foldcolumn in nvim 0.9
