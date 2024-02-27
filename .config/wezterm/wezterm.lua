@@ -302,6 +302,7 @@ config.unix_domains = {
 }
 config.check_for_updates = false
 
+config.color_scheme = "Wez"
 config.colors = {
 	tab_bar = {
 		-- The color of the strip that goes along the top of the window
