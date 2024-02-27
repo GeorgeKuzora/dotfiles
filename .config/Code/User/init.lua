@@ -1,4 +1,11 @@
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 local km = vim.keymap
+local vscode = require 'vscode-neovim'
+
+-- escape highlight search
+km.set('n', '<leader>n', '<cmd>noh<cr>')
 
 km.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Remap for dealing with word wrap
@@ -30,3 +37,21 @@ km.set('x', '<', '<gv', { desc = 'Indent left' })
 km.set('x', '>', '>gv', { desc = 'Indent right' })
 km.set('x', '<leader>p', [["_dP]], { desc = 'Paste without killing' })
 km.set('x', '<leader>d', [["_d]], { desc = 'Delete without killing' })
+
+-- OPTIONS
+
+local g = vim.g
+local o = vim.o
+local wo = vim.wo
+local opt = vim.opt
+local a = vim.api
+
+-- highlihting and search
+opt.hlsearch = true -- With highlight search
+opt.ignorecase = true -- Search ignoring case of letters
+opt.infercase = true -- infer cases in keyword completion
+opt.smartcase = true -- Search with ignor case if all small and with case if even one is big
+opt.incsearch = true -- Search incrementaly when you input request
+opt.wrapscan = true -- Cycle search results until the end and then move to the beginning
+
+opt.clipboard = { 'unnamedplus' } -- Copy paste between vim and everything else, 'unnamed'

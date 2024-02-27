@@ -31,6 +31,16 @@ o.timeoutlen = 300
 -- opt.completeopt = 'menuone,noselect'
 opt.completeopt = { 'menu', 'menuone' } -- Options for insert mode completion
 
+-- highlihting and search
+opt.hlsearch = true -- With highlight search
+opt.ignorecase = true -- Search ignoring case of letters
+opt.infercase = true -- infer cases in keyword completion
+opt.smartcase = true -- Search with ignor case if all small and with case if even one is big
+opt.incsearch = true -- Search incrementaly when you input request
+opt.wrapscan = true -- Cycle search results until the end and then move to the beginning
+
+opt.clipboard = { 'unnamedplus' } -- Copy paste between vim and everything else, 'unnamed'
+
 -- NOTE: You should make sure your terminal supports this
 opt.termguicolors = true
 -- indentation
