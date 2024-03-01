@@ -114,8 +114,8 @@ return {
             ['i:'] = { query = '@property.inner', desc = 'Select inner part of an object property' },
             ['R:'] = { query = '@property.lhs', desc = 'Select left part of an object property' },
             ['r:'] = { query = '@property.rhs', desc = 'Select right part of an object property' },
-            ['a#'] = { query = '@comment.outer', desc = 'around comment' },
-            ['i#'] = { query = '@comment.inner', desc = 'inside comment' },
+            ['a/'] = { query = '@comment.outer', desc = 'around comment' },
+            ['i/'] = { query = '@comment.inner', desc = 'inside comment' },
           },
         },
         move = {
