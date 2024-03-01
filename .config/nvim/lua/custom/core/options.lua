@@ -135,8 +135,9 @@ g.git_worktrees = nil -- enable git integration for detached worktrees (specify 
 -- opt.autowrite = true
 -- opt.autowriteall = true
 opt.grepformat = '%f:%l:%c:%m'
-opt.inccommand = 'nosplit' -- preview incremental substitute
+opt.inccommand = 'split' -- preview incremental substitute
 opt.list = true
+opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 opt.pumblend = 10
 opt.sessionoptions = { 'buffers', 'curdir', 'tabpages', 'winsize', 'help', 'globals', 'skiprtp', 'folds' }
 opt.showmode = false -- Dont show mode since we have a statusline
