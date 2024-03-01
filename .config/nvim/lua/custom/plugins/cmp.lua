@@ -38,7 +38,7 @@ return {
       },
       completion = {
         completeopt = 'menu,menuone,noinsert,preview',
-        keyword_length = 2,
+        -- keyword_length = 2,
       },
       enabled = function()
         if vim.api.nvim_get_option_value('buftype', { buf = 0 }) == 'prompt' then
@@ -66,20 +66,60 @@ return {
         },
       },
       mapping = cmp.mapping.preset.insert {
-        ['<C-n>'] = cmp.mapping.select_next_item(),
-        ['<C-p>'] = cmp.mapping.select_prev_item(),
+        ['<C-n>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+        ['<C-p>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
         ['<Up>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
         ['<Down>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
-        ['<C-k>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
-        ['<C-j>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+        -- ['<C-k>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+        -- ['<C-j>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
+        ['<C-y>'] = cmp.mapping.confirm { select = true },
         ['<C-e>'] = cmp.mapping.abort(),
         ['<C-Space>'] = cmp.mapping.complete {},
-        ['<CR>'] = cmp.mapping.confirm {
-          behavior = cmp.ConfirmBehavior.Insert,
-          select = true,
-        },
+
+        ['<C-j>'] = cmp.mapping(function()
+          if luasnip.expand_or_locally_jumpable() then
+            luasnip.expand_or_jump()
+          end
+        end, { 'i', 's' }),
+
+        ['<C-k>'] = cmp.mapping(function()
+          if luasnip.locally_jumpable(-1) then
+            luasnip.jump(-1)
+          end
+        end, { 'i', 's' }),
+
+        ['<Tab>'] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.confirm {
+              behavior = cmp.ConfirmBehavior.Insert,
+              select = true,
+            }
+          -- elseif luasnip.expand_or_locally_jumpable() then
+          --   luasnip.expand_or_jump()
+          else
+            fallback()
+          end
+        end, { 'i', 's' }),
+
+        ['<S-Tab>'] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.confirm {
+              behavior = cmp.ConfirmBehavior.Insert,
+              select = true,
+            }
+          -- elseif luasnip.locally_jumpable(-1) then
+          --   luasnip.jump(-1)
+          else
+            fallback()
+          end
+        end, { 'i', 's' }),
+
+        -- ['<CR>'] = cmp.mapping.confirm {
+        --   behavior = cmp.ConfirmBehavior.Insert,
+        --   select = true,
+        -- },
         -- ["<CR>"] = cmp.mapping({
         --   i = function(fallback)
         --     if cmp.visible() and cmp.get_active_entry() then
@@ -91,24 +131,24 @@ return {
         --   s = cmp.mapping.confirm({ select = true }),
         --   c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
         -- }),
-        ['<Tab>'] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_next_item()
-          elseif luasnip.expand_or_locally_jumpable() then
-            luasnip.expand_or_jump()
-          else
-            fallback()
-          end
-        end, { 'i', 's' }),
-        ['<S-Tab>'] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_prev_item()
-          elseif luasnip.locally_jumpable(-1) then
-            luasnip.jump(-1)
-          else
-            fallback()
-          end
-        end, { 'i', 's' }),
+        -- ['<Tab>'] = cmp.mapping(function(fallback)
+        --   if cmp.visible() then
+        --     cmp.select_next_item()
+        --   elseif luasnip.expand_or_locally_jumpable() then
+        --     luasnip.expand_or_jump()
+        --   else
+        --     fallback()
+        --   end
+        -- end, { 'i', 's' }),
+        -- ['<S-Tab>'] = cmp.mapping(function(fallback)
+        --   if cmp.visible() then
+        --     cmp.select_prev_item()
+        --   elseif luasnip.locally_jumpable(-1) then
+        --     luasnip.jump(-1)
+        --   else
+        --     fallback()
+        --   end
+        -- end, { 'i', 's' }),
       },
       sources = {
         { name = 'nvim_lsp', priority = 1000 },
@@ -141,7 +181,7 @@ return {
     -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
     cmp.setup.cmdline(':', {
       completion = {
-        keyword_length = 4,
+        -- keyword_length = 4,
         completeopt = 'menu,menuone,noinsert,noselect',
       },
       mapping = cmp.mapping.preset.cmdline(),
