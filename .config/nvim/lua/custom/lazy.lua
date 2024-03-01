@@ -16,21 +16,18 @@ vim.opt.rtp:prepend(lazypath)
 --
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
-require('lazy').setup(
-  {
-    { import = 'custom.plugins' },
-    { import = 'custom.plugins.lsp' },
+require('lazy').setup({
+  { import = 'custom.plugins' },
+  { import = 'custom.plugins.lsp' },
+}, {
+  install = {
+    colorscheme = { 'catppuccin' },
   },
-  {
-    install = {
-      colorscheme = { "catppuccin" },
-    },
-    checker = {
-      enabled = false,
-      notify = false,
-    },
-    change_detection = {
-      notify = false,
-    },
-  }
-)
+  checker = {
+    enabled = false,
+    notify = false,
+  },
+  change_detection = {
+    notify = false,
+  },
+})
