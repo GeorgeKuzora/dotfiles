@@ -139,4 +139,6 @@ return {
     'https://gitlab.com/yorickpeterse/nvim-window.git',
     opts = {},
   },
+
+  { 'folke/todo-comments.nvim', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 }
