@@ -8,8 +8,6 @@ return {
 
   'tpope/vim-rhubarb',
 
-  'nvim-treesitter/nvim-treesitter-context',
-
   'onsails/lspkind.nvim',
 
   'tpope/vim-sleuth',
