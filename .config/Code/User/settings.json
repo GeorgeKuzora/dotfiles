@@ -71,7 +71,7 @@
   "terminal.integrated.smoothScrolling": true,
   "editor.minimap.size": "fit",
   "workbench.iconTheme": "catppuccin-mocha",
-  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.colorTheme": "Rosé Pine",
   // we try to make semantic highlighting look good
   "editor.semanticHighlighting.enabled": true,
   // prevent VSCode from modifying the terminal colors
