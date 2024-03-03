@@ -98,10 +98,10 @@ return {
         },
         highlight = {
           'RainbowDelimiterRed',
-          'RainbowDelimiterYellow',
-          'RainbowDelimiterBlue',
           'RainbowDelimiterOrange',
+          'RainbowDelimiterYellow',
           'RainbowDelimiterGreen',
+          'RainbowDelimiterBlue',
           'RainbowDelimiterViolet',
           'RainbowDelimiterCyan',
         },
