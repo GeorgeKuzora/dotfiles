@@ -1,6 +1,6 @@
 # palette = "catppuccin_mocha"
 
-format = """$all $os with $battery$time$line_break$character"""
+format = """$os $all$battery$time$line_break$character"""
 add_newline = true
 
 [line_break]
