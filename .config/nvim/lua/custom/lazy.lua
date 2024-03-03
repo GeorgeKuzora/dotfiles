@@ -21,7 +21,7 @@ require('lazy').setup({
   { import = 'custom.plugins.lsp' },
 }, {
   install = {
-    colorscheme = { 'catppuccin' },
+    colorscheme = { 'rose-pine' },
   },
   checker = {
     enabled = false,

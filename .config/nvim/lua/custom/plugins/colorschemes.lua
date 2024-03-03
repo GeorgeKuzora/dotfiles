@@ -1,56 +1,89 @@
 return {
+  -- {
+  --   'catppuccin/nvim',
+  --   name = 'catppuccin',
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {},
+  --   config = function()
+  --     require('catppuccin').setup {
+  --       flavour = 'mocha', -- latte, frappe, macchiato, mocha
+  --       background = { -- :h background
+  --         light = 'latte',
+  --         dark = 'mocha',
+  --       },
+  --       dim_inactive = {
+  --         enabled = true, -- dims the background color of inactive window
+  --         shade = 'dark',
+  --         percentage = 0.15, -- percentage of the shade to apply to the inactive window
+  --       },
+  --       styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+  --         comments = { 'italic' }, -- Change the style of comments
+  --         conditionals = {},
+  --         loops = {},
+  --         functions = {},
+  --         keywords = {},
+  --         strings = {},
+  --         variables = {},
+  --         numbers = {},
+  --         booleans = {},
+  --         properties = {},
+  --         types = {},
+  --         operators = {},
+  --       },
+  --       color_overrides = {
+  --         mocha = {
+  --           base = '#181825',
+  --           mantle = '#11111b',
+  --           crust = '#11111b',
+  --         },
+  --       },
+  --       integrations = {
+  --         aerial = true,
+  --         harpoon = true,
+  --         mason = true,
+  --         neotree = true,
+  --         treesitter_context = true,
+  --         which_key = true,
+  --         lsp_trouble = true,
+  --         noice = true,
+  --         notify = true,
+  --       },
+  --     }
+  --     vim.cmd.colorscheme 'catppuccin'
+  --   end,
+  -- },
+
   {
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    lazy = false,
+    'rose-pine/neovim',
+    name = 'rose-pine',
     priority = 1000,
     opts = {},
     config = function()
-      require('catppuccin').setup {
-        flavour = 'mocha', -- latte, frappe, macchiato, mocha
-        background = { -- :h background
-          light = 'latte',
-          dark = 'mocha',
-        },
-        dim_inactive = {
-          enabled = true, -- dims the background color of inactive window
-          shade = 'dark',
-          percentage = 0.15, -- percentage of the shade to apply to the inactive window
-        },
-        styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-          comments = { 'italic' }, -- Change the style of comments
-          conditionals = {},
-          loops = {},
-          functions = {},
-          keywords = {},
-          strings = {},
-          variables = {},
-          numbers = {},
-          booleans = {},
-          properties = {},
-          types = {},
-          operators = {},
-        },
-        color_overrides = {
-          mocha = {
-            base = '#181825',
-            mantle = '#11111b',
-            crust = '#11111b',
-          },
-        },
-        integrations = {
-          aerial = true,
-          harpoon = true,
-          mason = true,
-          neotree = true,
-          treesitter_context = true,
-          which_key = true,
-          lsp_trouble = true,
-          noice = true,
-          notify = true,
+      local palette = require 'rose-pine.palette'
+
+      local red = palette.love
+      local orange = palette.rose
+      local yellow = palette.gold
+      local green = palette.foam
+      local cyan = palette.text
+      local blue = palette.pine
+      local violet = palette.iris
+
+      require('rose-pine').setup {
+        dim_inactive_windows = true,
+        highlight_groups = {
+          RainbowDelimiterRed = { fg = red },
+          RainbowDelimiterYellow = { fg = yellow },
+          RainbowDelimiterBlue = { fg = blue },
+          RainbowDelimiterOrange = { fg = orange },
+          RainbowDelimiterGreen = { fg = green },
+          RainbowDelimiterViolet = { fg = violet },
+          RainbowDelimiterCyan = { fg = cyan },
         },
       }
-      vim.cmd.colorscheme 'catppuccin'
+
+      vim.cmd 'colorscheme rose-pine'
     end,
   },
 
@@ -94,16 +127,6 @@ return {
   --       }
   --     })
   --     -- vim.cmd.colorscheme 'nightfox'
-  --   end
-  -- },
-  --
-  -- {
-  --   'rose-pine/neovim',
-  --   name = 'rose-pine',
-  --   priority = 1000,
-  --   opts = {},
-  --   config = function()
-  --     -- vim.cmd('colorscheme rose-pine')
   --   end
   -- },
   --
