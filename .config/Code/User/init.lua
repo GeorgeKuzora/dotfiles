@@ -8,9 +8,6 @@ local vscode = require 'vscode-neovim'
 km.set('n', '<leader>n', '<cmd>noh<cr>')
 
 km.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
--- Remap for dealing with word wrap
-km.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-km.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 km.set('n', 'J', 'mzJ`z', { desc = 'Join Lines' })
 km.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll half down' })
