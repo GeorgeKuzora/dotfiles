@@ -58,7 +58,7 @@
   "explorer.confirmDelete": false,
   "extensions.ignoreRecommendations": true,
   "editor.codeLensFontFamily": "'VictorMono Nerd Font', 'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
-  "editor.inlayHints.fontFamily": "'MonaspiceRn Nerd Font', 'GohuFont 11 Nerd Font',  'VictorMono Nerd Font', monospace",
+  "editor.inlayHints.fontFamily": "'VictorMono Nerd Font', 'MonaspiceRn Nerd Font', 'GohuFont 11 Nerd Font',  monospace",
   "terminal.integrated.fontFamily": "'VictorMono Nerd Font', 'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
   "notebook.output.fontFamily": "'VictorMono Nerd Font', 'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
   "errorLens.fontFamily": "'VictorMono Nerd Font', 'JetBrainsMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
@@ -91,7 +91,6 @@
       "crust": "#11111b"
     }
   },
-  "editor.inlayHints.fontSize": 14,
   "errorLens.fontStyleItalic": true,
   "catppuccin.italicKeywords": false,
   "markdownlint.config": {
