@@ -7,6 +7,7 @@ PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/.local/share/nautilus-python/extensions"
 PATH="$PATH:/opt/pt"
 PATH="$PATH:/usr/pgsql-15/bin"
+PATH="$PATH:$HOME/go/bin"
 export PATH
 
 # FPATH FOR COMPLETIONS
