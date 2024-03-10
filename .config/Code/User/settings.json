@@ -95,5 +95,11 @@
   "catppuccin.italicKeywords": false,
   "markdownlint.config": {
 
-  }
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingDelete": "never",
+  "editor.autoClosingOvertype": "never",
+  "editor.autoClosingQuotes": "never",
+  "editor.autoSurround": "never"
 }
