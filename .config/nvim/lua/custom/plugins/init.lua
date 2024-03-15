@@ -1,12 +1,13 @@
 return {
   {
-    'tpope/vim-fugitive',
-    config = function()
-      vim.keymap.set('n', '<leader>gg', vim.cmd.Git, { desc = 'Git fugitive status' })
-    end,
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",        
+      "sindrets/diffview.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    config = true
   },
-
-  'tpope/vim-rhubarb',
 
   'onsails/lspkind.nvim',
 
