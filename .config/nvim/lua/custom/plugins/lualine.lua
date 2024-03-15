@@ -71,11 +71,11 @@ return {
             'encoding',
             'fileformat',
             'filetype',
-            {
-              'lsp_server_name',
-              fmt = lsp_server_name,
-              icon = ' LSP:',
-            },
+            -- {
+            --   'lsp_server_name',
+            --   fmt = lsp_server_name,
+            --   icon = ' LSP:',
+            -- },
           },
           lualine_y = { 'progress' },
           lualine_z = { 'location' },
