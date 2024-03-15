@@ -1,7 +1,6 @@
 {
   "window.customMenuBarAltFocus": false,
   "workbench.startupEditor": "none",
-  "files.autoSave": "afterDelay",
   "vscode-neovim.neovimInitVimPaths.linux": "/home/georgiy/.config/Code/User/init.lua",
   "debug.javascript.terminalOptions": {},
   "extensions.experimental.affinity": {
