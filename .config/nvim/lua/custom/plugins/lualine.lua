@@ -26,10 +26,6 @@ return {
         end
       end
 
-      local function maximize_status()
-        return vim.t.maximized and '   ' or ''
-      end
-
       local function lsp_server_name()
         local msg = 'No Active Lsp'
         local buf_ft = vim.api.nvim_get_option_value('filetype', { buf = 0 })
@@ -64,7 +60,6 @@ return {
               'macro-recording',
               fmt = show_macro_recording,
             },
-            { 'maximize_status', fmt = maximize_status },
             {
               'filename',
               file_status = true,
