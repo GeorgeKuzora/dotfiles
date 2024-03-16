@@ -20,6 +20,9 @@ vim.cmd [[set imsearch=0]]
 vim.cmd [[highlight lCursor guifg=NONE guibg=cyan]]
 opt.grepprg = 'rg --vimgrep --smart-case --follow' -- Better grep command
 
+-- :f in current path recursively
+vim.cmd 'set path+=**'
+
 -- Enable break indent
 o.breakindent = true
 
