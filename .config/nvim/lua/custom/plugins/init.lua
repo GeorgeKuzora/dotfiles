@@ -10,6 +10,9 @@ return {
       local neogit = require 'neogit'
       neogit.setup()
       vim.keymap.set('n', '<leader>gg', neogit.open, { desc = 'Open Neo[G]it' })
+      vim.keymap.set('n', '<leader>gG', function()
+        neogit.open { 'commit' }
+      end, { desc = 'Open Neo[G]it' })
     end,
   },
 

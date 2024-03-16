@@ -164,6 +164,7 @@ return {
     vim.keymap.set('n', '<leader>fj', require('telescope.builtin').jumplist, { desc = '[F]ind in [J]ump List' })
 
     vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
+    vim.keymap.set('n', '<leader>gF', ':LiveGrepGitRoot<cr>', { desc = 'Search by Grep on [G]it [R]oot' })
     vim.keymap.set('n', '<leader>gb', function()
       require('telescope.builtin').git_branches { use_file_path = true }
     end, { desc = 'Git branches' })
@@ -176,6 +177,5 @@ return {
     vim.keymap.set('n', '<leader>gt', function()
       require('telescope.builtin').git_status { use_file_path = true }
     end, { desc = 'Git status' })
-    vim.keymap.set('n', '<leader>gG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
   end,
 }
