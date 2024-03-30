@@ -4,6 +4,12 @@
 -- See `:help vim.keymap.set()`
 local km = vim.keymap
 
+-- Russian keymaps
+km.set('n', '<leader>щ', 'o<Esc>k', { desc = 'Insert empty line bellow' })
+km.set('n', 'л', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+km.set('n', 'о', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- Leave highlight
 km.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Remap for dealing with word wrap
 km.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
