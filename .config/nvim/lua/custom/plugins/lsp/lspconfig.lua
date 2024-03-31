@@ -42,7 +42,13 @@ return {
 
       -- See `:help K` for why this keymap
       nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-      nmap('<leader>k', vim.lsp.buf.signature_help, 'Signature Documentation')
+      nmap('<A-K>', vim.lsp.buf.signature_help, 'Signature Documentation')
+      vim.keymap.set('i', '<A-k>', function()
+        vim.lsp.buf.hover()
+      end, { desc = 'Hover documentation' })
+      vim.keymap.set('i', '<A-K>', function()
+        vim.lsp.buf.signature_help()
+      end, { desc = 'Hover signature' })
 
       -- Lesser used LSP functionality
       nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')

@@ -10,48 +10,9 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
--- NVIM MUX NAVIGATION
-
-local w = require("wezterm")
-local a = w.action
-
-local function is_inside_vim(pane)
-	local tty = pane:get_tty_name()
-	if tty == nil then
-		return false
-	end
-
-	local success, stdout, stderr = w.run_child_process({
-		"sh",
-		"-c",
-		"ps -o state= -o comm= -t"
-			.. w.shell_quote_arg(tty)
-			.. " | "
-			.. "grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?)(diff)?$'",
-	})
-
-	return success
-end
-
-local function is_outside_vim(pane)
-	return not is_inside_vim(pane)
-end
-
-local function bind_if(cond, key, mods, action)
-	local function callback(win, pane)
-		if cond(pane) then
-			win:perform_action(action, pane)
-		else
-			win:perform_action(a.SendKey({ key = key, mods = mods }), pane)
-		end
-	end
-
-	return { key = key, mods = mods, action = w.action_callback(callback) }
-end
-
 -- KEYBINDINGS
 config.keys = {
-	-- Remove unused defaults
+	-- REMOVE UNUSED DEFAULTS
 	{
 		key = "c",
 		mods = "SUPER",
@@ -177,7 +138,19 @@ config.keys = {
 		mods = "SUPER",
 		action = wezterm.action.DisableDefaultAssignment,
 	},
-	-- New assignments
+
+	-- NEW ASSIGNMENTS
+	-- Creating and closing tabs and panes
+	{
+		key = "Enter",
+		mods = "CTRL|SHIFT|ALT",
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "Enter",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
 	{
 		key = "w",
 		mods = "CTRL|SHIFT",
@@ -188,14 +161,16 @@ config.keys = {
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.CloseCurrentTab({ confirm = true }),
 	},
+
+	-- Moving inside panes
 	{
 		key = "UpArrow",
-		mods = "CTRL|SHIFT",
+		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.ScrollToPrompt(-1),
 	},
 	{
 		key = "DownArrow",
-		mods = "CTRL|SHIFT",
+		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.ScrollToPrompt(1),
 	},
 	{
@@ -210,12 +185,12 @@ config.keys = {
 	},
 	{
 		key = "UpArrow",
-		mods = "CTRL|SHIFT|ALT",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.ScrollByLine(-1),
 	},
 	{
 		key = "DownArrow",
-		mods = "CTRL|SHIFT|ALT",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.ScrollByLine(1),
 	},
 	{
@@ -228,11 +203,8 @@ config.keys = {
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.ScrollByLine(1),
 	},
-	{
-		key = "Backspace",
-		mods = "CTRL|SHIFT",
-		action = wezterm.action.ResetFontSize,
-	},
+
+	-- Move between tabs
 	{
 		key = "{",
 		mods = "CTRL|SHIFT|ALT",
@@ -243,6 +215,8 @@ config.keys = {
 		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.ActivateTabRelative(1),
 	},
+
+	-- Move between panes
 	{
 		key = "h",
 		mods = "CTRL|SHIFT|ALT",
@@ -273,23 +247,13 @@ config.keys = {
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.ActivatePaneDirection("Next"),
 	},
-	{
-		key = "Enter",
-		mods = "CTRL|SHIFT|ALT",
-		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-	},
-	{
-		key = "Enter",
-		mods = "CTRL|SHIFT",
-		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
-	},
 
-	bind_if(is_outside_vim, "h", "CTRL", a.ActivatePaneDirection("Left")),
-	bind_if(is_outside_vim, "l", "CTRL", a.ActivatePaneDirection("Right")),
-	bind_if(is_outside_vim, "k", "CTRL", a.ActivatePaneDirection("Up")),
-	bind_if(is_outside_vim, "j", "CTRL", a.ActivatePaneDirection("Down")),
-	bind_if(is_outside_vim, "[", "CTRL", a.ActivatePaneDirection("Prev")),
-	bind_if(is_outside_vim, "]", "CTRL", a.ActivatePaneDirection("Next")),
+	-- Changing font
+	{
+		key = "Backspace",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.ResetFontSize,
+	},
 }
 
 -- CONFIGURATION
