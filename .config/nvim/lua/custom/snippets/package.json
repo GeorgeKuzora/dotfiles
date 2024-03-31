@@ -1,19 +1,25 @@
 {
-	"name": "snippets",
-	"contributes": {
-		"snippets": [
-			{
-				"language": [
-					"all"
-				],
-				"path": "./snippets/all.json"
-			},
-			{
-				"language": [
-					"python"
-				],
-				"path": "./snippets/python.json"
-			}
-		]
-	}
+  "name": "snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "all"
+        ],
+        "path": "./snippets/all.json"
+      },
+      {
+        "language": [
+          "python"
+        ],
+        "path": "./snippets/python.json"
+      },
+      {
+        "language": [
+          "go"
+        ],
+        "path": "./snippets/go.json"
+      }
+    ]
+  }
 }
