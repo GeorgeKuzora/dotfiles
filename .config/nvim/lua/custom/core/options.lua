@@ -161,3 +161,10 @@ if vim.fn.has 'nvim-0.10' == 1 then
 end
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
+
+-- NEOVIDE OPTIONS
+vim.o.guifont = 'Victor Mono:h14'
+vim.g.neovide_scale_factor = 1.2
+vim.g.neovide_hide_mouse_when_typing = true
+vim.g.neovide_cursor_animation_length = 0.0
+vim.g.neovide_cursor_vfx_mode = ''
