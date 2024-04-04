@@ -163,7 +163,7 @@ end
 vim.g.markdown_recommended_style = 0
 
 -- NEOVIDE OPTIONS
-vim.o.guifont = 'Victor Mono:h14'
+vim.o.guifont = 'VictorMono Nerd Font:h14'
 vim.g.neovide_scale_factor = 1.2
 vim.g.neovide_hide_mouse_when_typing = true
 vim.g.neovide_cursor_animation_length = 0.0
