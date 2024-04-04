@@ -23,6 +23,7 @@ alias peerflix='peerflix -l -k'
 alias brh='br -h'
 alias vi='nvim'
 alias vim='nvim'
+alias nvd="neovide"
 alias emacs_daemon="emacs --daemon & disown"
 alias emacs="emacsclient -c -a -fs 'emacs' & disown"
 alias alacritty="env WINIT_UNIX_BACKEND=x11 alacritty"
