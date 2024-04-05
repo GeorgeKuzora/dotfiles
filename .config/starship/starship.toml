@@ -22,7 +22,7 @@ threshold = 100
 style = 'bold green'
 
 [character]
-disabled = false
+disabled = true
 
 [aws]
 symbol = "  "
