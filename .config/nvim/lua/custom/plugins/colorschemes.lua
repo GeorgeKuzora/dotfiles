@@ -50,7 +50,19 @@ return {
           notify = true,
         },
       }
-      vim.cmd.colorscheme 'catppuccin'
+      -- vim.cmd.colorscheme 'catppuccin'
+    end,
+  },
+
+  {
+    'oxfist/night-owl.nvim',
+    branch = 'GeorgeKuzora/main',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      require('night-owl').setup()
+      vim.cmd.colorscheme 'night-owl'
     end,
   },
 
