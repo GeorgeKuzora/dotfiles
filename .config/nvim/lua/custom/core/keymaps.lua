@@ -85,3 +85,16 @@ km.set('n', ']l', '<cmd>lnext<CR>zz', { desc = 'Move to next [L]ocation' })
 km.set('n', '[l', '<cmd>lprev<CR>zz', { desc = 'Move to previous [L]ocation' })
 -- km.set('n', ']q', '<cmd>cnext<CR>zz', { desc = 'Move next in [Q]uickFix list' })
 -- km.set('n', '[q', '<cmd>cprev<CR>zz', { desc = 'Move previous in [Q]uickFix list' })
+--
+
+km.set('n', '<C-_>', function()
+  if vim.g.neovide then
+    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.05
+  end
+end, { desc = 'Neovide decrease scale factor' })
+
+km.set('n', '<C-+>', function()
+  if vim.g.neovide then
+    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.05
+  end
+end, { desc = 'Neovide increase scale factor' })
