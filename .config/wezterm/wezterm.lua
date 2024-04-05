@@ -278,7 +278,7 @@ config.show_tab_index_in_tab_bar = true
 config.tab_max_width = 50
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
-config.tab_bar_at_bottom = true
+config.tab_bar_at_bottom = false
 config.unzoom_on_switch_pane = true
 config.font = wezterm.font_with_fallback({
 	{ family = "VictorMono Nerd Font", weight = "Regular" },
