@@ -50,7 +50,7 @@ return {
           notify = true,
         },
       }
-      -- vim.cmd.colorscheme 'catppuccin'
+      vim.cmd.colorscheme 'catppuccin'
     end,
   },
 
@@ -62,7 +62,7 @@ return {
     opts = {},
     config = function()
       require('night-owl').setup()
-      vim.cmd.colorscheme 'night-owl'
+      -- vim.cmd.colorscheme 'night-owl'
     end,
   },
 
