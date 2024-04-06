@@ -421,7 +421,7 @@ local function _on_format_tab_title(tab, _tabs, _panes, _config, _hover, _max_wi
 	local index = tab.tab_index + 1
 	local title = tab_title(tab)
 	if tab.active_pane.is_zoomed then
-		zoomed = "z"
+		zoomed = "✦"
 	end
 	return {
 		{ Text = string.format(" %s %d: %s ", zoomed, index, title) },
