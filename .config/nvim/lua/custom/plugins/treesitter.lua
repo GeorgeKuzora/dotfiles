@@ -177,5 +177,8 @@ return {
         },
       },
     }
+    vim.keymap.set('n', 'gs', function()
+      require('treesitter-context').go_to_context(vim.v.count1)
+    end, { silent = true })
   end, 0),
 }
