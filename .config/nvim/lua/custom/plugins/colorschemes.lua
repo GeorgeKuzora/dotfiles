@@ -21,14 +21,14 @@ return {
           comments = { 'italic' }, -- Change the style of comments
           conditionals = {},
           loops = {},
-          functions = {},
-          keywords = {},
+          functions = { 'italic' },
+          keywords = { 'italic' },
           strings = {},
           variables = {},
           numbers = {},
           booleans = {},
           properties = {},
-          types = {},
+          types = { 'italic' },
           operators = {},
         },
         color_overrides = {
