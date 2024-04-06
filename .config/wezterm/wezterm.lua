@@ -355,7 +355,7 @@ config.colors = {
 		-- You can configure some alternate styling when the mouse pointer
 		-- moves over inactive tabs
 		inactive_tab_hover = {
-			bg_color = "#313244",
+			bg_color = "#1e1e2e",
 			fg_color = "#bac2de",
 			italic = false,
 
@@ -366,7 +366,7 @@ config.colors = {
 		-- The new tab button that let you create new tabs
 		new_tab = {
 			bg_color = "#181825",
-			fg_color = "#6c7086",
+			fg_color = "#7f849c",
 
 			-- The same options that were listed under the `active_tab` section above
 			-- can also be used for `new_tab`.
@@ -376,7 +376,7 @@ config.colors = {
 		-- moves over the new tab button
 		new_tab_hover = {
 			bg_color = "#1e1e2e",
-			fg_color = "#7f849c",
+			fg_color = "#bac2de",
 			italic = false,
 
 			-- The same options that were listed under the `active_tab` section above
