@@ -259,7 +259,7 @@ config.keys = {
 }
 
 -- CONFIGURATION
-config.enable_wayland = true
+config.enable_wayland = false
 config.window_decorations = "NONE"
 config.adjust_window_size_when_changing_font_size = false
 config.audible_bell = "Disabled"
