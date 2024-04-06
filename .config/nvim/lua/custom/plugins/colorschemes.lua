@@ -50,19 +50,47 @@ return {
           notify = true,
         },
       }
-      vim.cmd.colorscheme 'catppuccin'
+      -- vim.cmd.colorscheme 'catppuccin'
     end,
   },
 
   {
-    'oxfist/night-owl.nvim',
-    branch = 'GeorgeKuzora/main',
+    'GeorgeKuzora/night-owl.nvim',
     lazy = false,
     priority = 1000,
     opts = {},
     config = function()
       require('night-owl').setup()
-      -- vim.cmd.colorscheme 'night-owl'
+      vim.cmd.colorscheme 'night-owl'
+    end,
+  },
+
+  {
+    'folke/tokyonight.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      require('tokyonight').setup {
+        style = 'night', -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+        light_style = 'day',
+        dim_inactive = true,
+      }
+      -- vim.cmd.colorscheme 'tokyonight'
+    end,
+  },
+
+  {
+    'EdenEast/nightfox.nvim',
+    priority = 1000,
+    opts = {},
+    config = function()
+      require('nightfox').setup {
+        options = {
+          dim_inactive = true,
+        },
+      }
+      -- vim.cmd.colorscheme 'nightfox'
     end,
   },
 
@@ -99,49 +127,6 @@ return {
   --   end,
   -- },
 
-  -- {
-  --   'GeorgeKuzora/night-owl.nvim',
-  --   name = 'night-owl',
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {},
-  --   config = function()
-  --     require("night-owl").setup()
-  --     -- vim.cmd.colorscheme 'night-owl'
-  --   end,
-  -- },
-  --
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   name = 'tokyonight',
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {},
-  --   config = function()
-  --     require("tokyonight").setup({
-  --       style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-  --       light_style = "day",
-  --       dim_inactive = true,
-  --     })
-  --     -- vim.cmd.colorscheme 'tokyonight'
-  --   end,
-  -- },
-  --
-  -- {
-  --   "EdenEast/nightfox.nvim",
-  --   name = 'nightfox',
-  --   priority = 1000,
-  --   opts = {},
-  --   config = function()
-  --     require('nightfox').setup({
-  --       options = {
-  --         dim_inactive = true,
-  --       }
-  --     })
-  --     -- vim.cmd.colorscheme 'nightfox'
-  --   end
-  -- },
-  --
   -- {
   --   'rebelot/kanagawa.nvim',
   --   name = 'kanagawa',
@@ -230,7 +215,7 @@ return {
   --     -- vim.cmd.colorscheme 'solarized-osaka'
   --   end,
   -- },
-  --
+
   -- {
   --   'navarasu/onedark.nvim',
   --   name = 'onedark',

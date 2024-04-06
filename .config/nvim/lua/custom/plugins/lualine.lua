@@ -1,8 +1,6 @@
 return {
   {
-    -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
     name = 'lualine',
     opts = {},
     config = function()
@@ -45,7 +43,7 @@ return {
       lualine.setup {
         options = {
           icons_enabled = true,
-          theme = 'catppuccin',
+          theme = 'night-owl',
           component_separators = '|',
           section_separators = '',
         },
