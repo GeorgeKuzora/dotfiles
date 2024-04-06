@@ -162,15 +162,27 @@ config.keys = {
 		action = wezterm.action.CloseCurrentTab({ confirm = true }),
 	},
 
-	-- Moving inside panes
+	-- Adjust panes size
 	{
 		key = "UpArrow",
 		mods = "CTRL|SHIFT|ALT",
-		action = wezterm.action.ScrollToPrompt(-1),
+		action = wezterm.action.AdjustPaneSize({ "Up", 1 }),
 	},
 	{
 		key = "DownArrow",
 		mods = "CTRL|SHIFT|ALT",
+		action = wezterm.action.AdjustPaneSize({ "Down", 1 }),
+	},
+
+	-- Moving inside panes
+	{
+		key = "UpArrow",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.ScrollToPrompt(-1),
+	},
+	{
+		key = "DownArrow",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.ScrollToPrompt(1),
 	},
 	{
@@ -182,16 +194,6 @@ config.keys = {
 		key = "End",
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.ScrollToBottom,
-	},
-	{
-		key = "UpArrow",
-		mods = "CTRL|SHIFT",
-		action = wezterm.action.ScrollByLine(-1),
-	},
-	{
-		key = "DownArrow",
-		mods = "CTRL|SHIFT",
-		action = wezterm.action.ScrollByLine(1),
 	},
 	{
 		key = "k",
@@ -257,7 +259,7 @@ config.keys = {
 }
 
 -- CONFIGURATION
-config.enable_wayland = false
+config.enable_wayland = true
 config.window_decorations = "NONE"
 config.adjust_window_size_when_changing_font_size = false
 config.audible_bell = "Disabled"
