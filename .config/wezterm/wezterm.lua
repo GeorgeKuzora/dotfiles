@@ -317,7 +317,7 @@ config.colors = {
 	tab_bar = {
 		-- The color of the strip that goes along the top of the window
 		-- (does not apply when fancy tab bar is in use)
-		background = "#000000",
+		background = "#11111b",
 
 		-- The active tab is the one that has focus in the window
 		active_tab = {
@@ -357,7 +357,7 @@ config.colors = {
 		inactive_tab_hover = {
 			bg_color = "#313244",
 			fg_color = "#bac2de",
-			italic = true,
+			italic = false,
 
 			-- The same options that were listed under the `active_tab` section above
 			-- can also be used for `inactive_tab_hover`.
@@ -365,7 +365,7 @@ config.colors = {
 
 		-- The new tab button that let you create new tabs
 		new_tab = {
-			bg_color = "#11111b",
+			bg_color = "#181825",
 			fg_color = "#6c7086",
 
 			-- The same options that were listed under the `active_tab` section above
@@ -375,9 +375,9 @@ config.colors = {
 		-- You can configure some alternate styling when the mouse pointer
 		-- moves over the new tab button
 		new_tab_hover = {
-			bg_color = "#181825",
+			bg_color = "#1e1e2e",
 			fg_color = "#7f849c",
-			italic = true,
+			italic = false,
 
 			-- The same options that were listed under the `active_tab` section above
 			-- can also be used for `new_tab_hover`.
