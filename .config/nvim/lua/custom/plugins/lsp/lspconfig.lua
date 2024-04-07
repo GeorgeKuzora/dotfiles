@@ -14,6 +14,7 @@ return {
       opts = {},
     },
     'folke/neodev.nvim',
+    'hrsh7th/cmp-nvim-lsp',
   },
 
   -- KEYMAPS
