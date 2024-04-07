@@ -164,12 +164,22 @@ config.keys = {
 
 	-- Adjust panes size
 	{
-		key = "UpArrow",
+		key = "<",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.AdjustPaneSize({ "Left", 1 }),
+	},
+	{
+		key = ">",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.AdjustPaneSize({ "Right", 1 }),
+	},
+	{
+		key = ">",
 		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.AdjustPaneSize({ "Up", 1 }),
 	},
 	{
-		key = "DownArrow",
+		key = "<",
 		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.AdjustPaneSize({ "Down", 1 }),
 	},
@@ -259,7 +269,7 @@ config.keys = {
 }
 
 -- CONFIGURATION
-config.enable_wayland = false
+config.enable_wayland = true
 config.window_decorations = "NONE"
 config.adjust_window_size_when_changing_font_size = false
 config.audible_bell = "Disabled"
