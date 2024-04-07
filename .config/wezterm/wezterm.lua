@@ -165,22 +165,22 @@ config.keys = {
 	-- Adjust panes size
 	{
 		key = "<",
-		mods = "CTRL|SHIFT",
+		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.AdjustPaneSize({ "Left", 1 }),
 	},
 	{
 		key = ">",
-		mods = "CTRL|SHIFT",
+		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.AdjustPaneSize({ "Right", 1 }),
 	},
 	{
 		key = ">",
-		mods = "CTRL|SHIFT|ALT",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.AdjustPaneSize({ "Up", 1 }),
 	},
 	{
 		key = "<",
-		mods = "CTRL|SHIFT|ALT",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.AdjustPaneSize({ "Down", 1 }),
 	},
 
