@@ -26,6 +26,7 @@ return {
     km.set('n', '<leader>xt', function()
       trouble.toggle 'lsp_type_definitions'
     end, { desc = 'Trouble LSP Type Definitions' })
+    km.set('n', '<leader>xo', '<cmd>TodoTrouble<CR>', { desc = 'Open todos in trouble' })
     km.set('n', '[q', function()
       if require('trouble').is_open() then
         require('trouble').previous { skip_groups = true, jump = true }
