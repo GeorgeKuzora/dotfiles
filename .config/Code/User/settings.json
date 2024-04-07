@@ -70,7 +70,7 @@
   "terminal.integrated.smoothScrolling": true,
   "editor.minimap.size": "fit",
   "workbench.iconTheme": "catppuccin-mocha",
-  "workbench.colorTheme": "Night Owl",
+  "workbench.colorTheme": "Tokyo Night",
   // we try to make semantic highlighting look good
   "editor.semanticHighlighting.enabled": true,
   // prevent VSCode from modifying the terminal colors
