@@ -3,6 +3,7 @@ return {
   branch = '0.1.x',
   dependencies = {
     'nvim-lua/plenary.nvim',
+    'folke/todo-comments.nvim',
     {
       'nvim-telescope/telescope-fzf-native.nvim',
       build = 'make',
@@ -150,7 +151,7 @@ return {
     vim.keymap.set('n', '<leader>fr', function()
       require('telescope.builtin').registers()
     end, { desc = 'Find registers' })
-    vim.keymap.set('n', '<leader>ft', function()
+    vim.keymap.set('n', '<leader>fT', function()
       require('telescope.builtin').colorscheme { enable_preview = true }
     end, { desc = 'Find themes' })
     vim.keymap.set('n', '<leader>ls', function()
@@ -162,6 +163,7 @@ return {
     vim.keymap.set('n', '<leader>fo', telescope_live_grep_open_files, { desc = '[F]ind [/] in Open Files' })
     vim.keymap.set('n', '<leader>fv', require('telescope.builtin').builtin, { desc = '[F]ind [S]elect Telescope' })
     vim.keymap.set('n', '<leader>fj', require('telescope.builtin').jumplist, { desc = '[F]ind in [J]ump List' })
+    vim.keymap.set('n', '<leader>ft', '<cmd>TodoTelescope<cr>', { desc = '[F]ind [T]odos' })
 
     vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
     vim.keymap.set('n', '<leader>gF', ':LiveGrepGitRoot<cr>', { desc = 'Search by Grep on [G]it [R]oot' })
