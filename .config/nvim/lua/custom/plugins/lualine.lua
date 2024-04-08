@@ -43,7 +43,7 @@ return {
       lualine.setup {
         options = {
           icons_enabled = true,
-          theme = 'night-owl',
+          -- theme = 'catppuccin',
           component_separators = '|',
           section_separators = '',
         },
