@@ -142,7 +142,7 @@ opt.inccommand = 'split' -- preview incremental substitute
 opt.list = true
 opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 opt.pumblend = 10
-opt.sessionoptions = { 'buffers', 'curdir', 'tabpages', 'winsize', 'help', 'globals', 'skiprtp', 'folds' }
+opt.sessionoptions = { 'blank', 'buffers', 'curdir', 'folds', 'help', 'tabpages', 'winsize', 'winpos', 'terminal', 'localoptions' }
 opt.showmode = false -- Dont show mode since we have a statusline
 opt.splitkeep = 'screen'
 opt.wildmode = 'longest:full,full' -- Command-line completion mode
