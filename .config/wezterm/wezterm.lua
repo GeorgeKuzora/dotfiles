@@ -300,7 +300,7 @@ config.font = wezterm.font_with_fallback({
 	{ family = "CaskaydiaCove Nerd Font", weight = "Regular" },
 	{ family = "Noto Sans Mono", weight = "Regular" },
 })
-config.font_size = 12.0
+config.font_size = 14.0
 config.freetype_load_flags = "DEFAULT"
 config.default_cursor_style = "SteadyBlock"
 config.force_reverse_video_cursor = true
