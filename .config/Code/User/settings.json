@@ -101,5 +101,6 @@
   "editor.autoClosingOvertype": "never",
   "editor.autoClosingQuotes": "never",
   "editor.autoSurround": "never",
-  "go.toolsManagement.autoUpdate": true
+  "go.toolsManagement.autoUpdate": true,
+  "markdown-pdf.displayHeaderFooter": false
 }
