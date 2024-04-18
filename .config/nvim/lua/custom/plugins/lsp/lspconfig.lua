@@ -71,6 +71,11 @@ return {
       if vim.lsp.inlay_hint then
         nmap('<leader>lh', function()
           vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled(0))
+          if vim.lsp.inlay_hint.is_enabled(0) then
+            print 'Inlay hints enabled'
+          else
+            print 'Inlay hints disabled'
+          end
         end, 'Toggle Inlay Hints')
       end
     end
@@ -93,14 +98,16 @@ return {
     local servers = {
       gopls = {
         settings = {
-          hints = {
-            rangeVariableTypes = true,
-            parameterNames = true,
-            constantValues = true,
-            assignVariableTypes = true,
-            compositeLiteralFields = true,
-            compositeLiteralTypes = true,
-            functionTypeParameters = true,
+          gopls = {
+            hints = {
+              assignVariableTypes = true,
+              compositeLiteralFields = true,
+              compositeLiteralTypes = true,
+              constantValues = true,
+              functionTypeParameters = true,
+              parameterNames = true,
+              rangeVariableTypes = true,
+            },
           },
         },
       },
