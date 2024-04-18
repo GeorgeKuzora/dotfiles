@@ -1,13 +1,14 @@
 # ZSH CONFIGURATION PATH
 ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-
+#GO
+GOPATH="$HOME/go"
 # PATH
 PATH="$PATH:$HOME/.config/emacs/bin"
 PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/.local/share/nautilus-python/extensions"
 PATH="$PATH:/opt/pt"
 PATH="$PATH:/usr/pgsql-15/bin"
-PATH="$PATH:$HOME/go/bin"
+PATH="$PATH:$GOPATH/bin"
 export PATH
 
 # FPATH FOR COMPLETIONS
@@ -19,7 +20,7 @@ export FPATH
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 
-# ENVIROMENT VARIABLES
+# ENVIRONMENT VARIABLES
 EDITOR='/usr/bin/nvim'
 VISUAL='/usr/bin/nvim'
 TERM='xterm-256color'
