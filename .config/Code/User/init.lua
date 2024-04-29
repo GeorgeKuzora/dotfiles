@@ -5,35 +5,26 @@ local km = vim.keymap
 local vscode = require("vscode-neovim")
 
 -- escape highlight search
-km.set("n", "<leader>n", "<cmd>noh<cr>")
-
-km.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+km.set({ "n", "v" }, "<leader>n", "<Nop>", { silent = true })
 
 km.set("n", "J", "mzJ`z", { desc = "Join Lines" })
-km.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll half down" })
-km.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll half up" })
-km.set("n", "n", "nzzzv", { desc = "Find next" })
-km.set("n", "N", "Nzzzv", { desc = "Find previous" })
-km.set("n", "<leader>d", [["_d]], { desc = "Delete without killing" })
-km.set("n", "x", '"_x', { desc = "Delete char into void" })
+
+-- Don't use registers
+km.set({ 'n', 'v', 'x' }, '<leader>d', [["_d]], { desc = 'Delete without killing' }}
+km.set({ 'n', 'v', 'x' }, '<leader>c', [["_c]], { desc = 'Change without killing' })
+km.set({'n'}, 'x', '"_x', { desc = 'Delete char into void' })
+km.set({'n'}, 's', '"_s', { desc = 'Change char into void' })
+km.set({ 'v', 'x' }, '<leader>p', [["_dP]], { desc = 'Paste without killing' })
+km.set({ 'v', 'x' }, '<leader>P', [["_dP]], { desc = 'Paste without killing' })
+
 -- Insert line without insert mode
 km.set("n", "<leader>o", "o<Esc>k", { desc = "Insert empty line bellow" })
 km.set("n", "<leader>O", "O<Esc>j", { desc = "Insert empty line above" })
--- Move text up and down
-km.set("n", "<M-j>", "<Esc>:m .+1<CR>==")
-km.set("n", "<M-k>", "<Esc>:m .-2<CR>==")
 
--- VISUAL MODE
-km.set("v", "<", "<gv", { desc = "Indent left" })
-km.set("v", ">", ">gv", { desc = "Indent right" })
-km.set("v", "<leader>p", [["_dP]], { desc = "Paste without killing" })
-km.set("v", "<leader>d", [["_d]], { desc = "Delete without killing" })
+-- Indentation
+km.set({ "v", "x" }, "<", "<gv", { desc = "Indent left" })
+km.set({ "v", "x" }, ">", ">gv", { desc = "Indent right" })
 
--- VISUALBLOCK MODE
-km.set("x", "<", "<gv", { desc = "Indent left" })
-km.set("x", ">", ">gv", { desc = "Indent right" })
-km.set("x", "<leader>p", [["_dP]], { desc = "Paste without killing" })
-km.set("x", "<leader>d", [["_d]], { desc = "Delete without killing" })
 
 -- OPTIONS
 
