@@ -23,14 +23,6 @@ km.set('n', 'J', 'mzJ`z', { desc = 'Join Lines' })
 -- Insert line without insert mode
 km.set('n', '<leader>o', 'o<Esc>k', { desc = 'Insert empty line bellow' })
 km.set('n', '<leader>O', 'O<Esc>j', { desc = 'Insert empty line above' })
--- Move text up and down
--- km.set('n', '<M-j>', '<Esc>:m .+1<CR>==')
--- km.set('n', '<M-k>', '<Esc>:m .-2<CR>==')
--- km.set('v', '<M-j>', ":m '>+1<CR>gv=gv")
--- km.set('v', '<M-k>', ":m '<-2<CR>gv=gv")
--- Move text up and down
--- km.set('x', '<M-j>', ":move '>+1<CR>gv-gv")
--- km.set('x', '<M-k>', ":move '<-2<CR>gv-gv")
 -- Indentation change
 km.set('v', '<', '<gv', { desc = 'Indent left' })
 km.set('v', '>', '>gv', { desc = 'Indent right' })
@@ -44,16 +36,18 @@ km.set('n', 'n', 'nzzzv', { desc = 'Find next' })
 km.set('n', 'N', 'Nzzzv', { desc = 'Find previous' })
 
 -- PASTING AND YANKING
-km.set('n', '<leader>d', [["_d]], { desc = 'Delete without killing' })
+km.set({ 'n', 'v', 'x' }, '<leader>d', [["_d]], { desc = 'Delete without killing' })
+km.set({ 'n', 'v', 'x' }, '<leader>c', [["_c]], { desc = 'Change without killing' })
+km.set({ 'n', 'v', 'x' }, '<leader>D', [["_D]], { desc = 'Delete until end of the line without killing' })
+km.set({ 'n', 'v', 'x' }, '<leader>C', [["_C]], { desc = 'Change until end of the line without killing' })
 km.set('n', 'x', '"_x', { desc = 'Delete char into void' })
-km.set('v', '<leader>p', [["_dP]], { desc = 'Paste without killing' })
-km.set('v', '<leader>d', [["_d]], { desc = 'Delete without killing' })
-km.set('x', '<leader>p', [["_dP]], { desc = 'Paste without killing' })
-km.set('x', '<leader>d', [["_d]], { desc = 'Delete without killing' })
+km.set('n', 's', '"_s', { desc = 'Change char into void' })
+km.set({ 'v', 'x' }, '<leader>p', [["_dP]], { desc = 'Paste without killing' })
+km.set({ 'v', 'x' }, '<leader>P', [["_dP]], { desc = 'Paste without killing' })
 
 -- WORKING WITH BUFFERS
-km.set('n', '<leader>bn', vim.cmd.enew, { desc = '[N]ew [b]uffer' })
-km.set('n', '<leader>bd', vim.cmd.bdelete, { desc = '[D]elete [b]uffer' })
+km.set('n', '<leader>bn', vim.cmd.enew, { desc = '[N]ew [B]uffer' })
+km.set('n', '<leader>bd', vim.cmd.bdelete, { desc = '[D]elete [B]uffer' })
 km.set('n', ']b', ':bnext<CR>', { desc = 'Next buffer' })
 km.set('n', '[b', ':bprevious<CR>, { desc = "Previous buffer" }')
 
@@ -62,6 +56,8 @@ km.set('n', '<M-->', '<C-w>-')
 km.set('n', '<M-=>', '<C-w>+')
 km.set('n', '<M-,>', '<C-w><')
 km.set('n', '<M-.>', '<C-w>>')
+
+-- set in a plugin with wezterm windows integration
 -- km.set('n', '<M-h>', '<C-w>h')
 -- km.set('n', '<M-l>', '<C-w>l')
 -- km.set('n', '<M-j>', '<C-w>j')
@@ -83,10 +79,12 @@ km.set('n', '<leader>lD', '<cmd>Telescope diagnostics bufnr=0<CR>', { desc = 'Sh
 -- MOVING IN INTERNAL LISTS
 km.set('n', ']l', '<cmd>lnext<CR>zz', { desc = 'Move to next [L]ocation' })
 km.set('n', '[l', '<cmd>lprev<CR>zz', { desc = 'Move to previous [L]ocation' })
+
+-- set in trouble plugin
 -- km.set('n', ']q', '<cmd>cnext<CR>zz', { desc = 'Move next in [Q]uickFix list' })
 -- km.set('n', '[q', '<cmd>cprev<CR>zz', { desc = 'Move previous in [Q]uickFix list' })
---
 
+-- NEOVIDE KEYMAPS
 km.set('n', '<C-_>', function()
   if vim.g.neovide then
     vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.05
