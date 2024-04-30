@@ -10,12 +10,12 @@ km.set({ "n", "v" }, "<leader>n", "<Nop>", { silent = true })
 km.set("n", "J", "mzJ`z", { desc = "Join Lines" })
 
 -- Don't use registers
-km.set({ 'n', 'v', 'x' }, '<leader>d', [["_d]], { desc = 'Delete without killing' }}
-km.set({ 'n', 'v', 'x' }, '<leader>c', [["_c]], { desc = 'Change without killing' })
-km.set({'n'}, 'x', '"_x', { desc = 'Delete char into void' })
-km.set({'n'}, 's', '"_s', { desc = 'Change char into void' })
-km.set({ 'v', 'x' }, '<leader>p', [["_dP]], { desc = 'Paste without killing' })
-km.set({ 'v', 'x' }, '<leader>P', [["_dP]], { desc = 'Paste without killing' })
+km.set({ "n", "v", "x" }, "<leader>d", [["_d]], { desc = "Delete without killing" })
+km.set({ "n", "v", "x" }, "<leader>c", [["_c]], { desc = "Change without killing" })
+km.set({ "n" }, "x", '"_x', { desc = "Delete char into void" })
+km.set({ "n" }, "s", '"_s', { desc = "Change char into void" })
+km.set({ "v", "x" }, "<leader>p", [["_dP]], { desc = "Paste without killing" })
+km.set({ "v", "x" }, "<leader>P", [["_dP]], { desc = "Paste without killing" })
 
 -- Insert line without insert mode
 km.set("n", "<leader>o", "o<Esc>k", { desc = "Insert empty line bellow" })
@@ -24,7 +24,6 @@ km.set("n", "<leader>O", "O<Esc>j", { desc = "Insert empty line above" })
 -- Indentation
 km.set({ "v", "x" }, "<", "<gv", { desc = "Indent left" })
 km.set({ "v", "x" }, ">", ">gv", { desc = "Indent right" })
-
 
 -- OPTIONS
 
