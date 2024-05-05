@@ -70,8 +70,8 @@ return {
 
       if vim.lsp.inlay_hint then
         nmap('<leader>lh', function()
-          vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled(0))
-          if vim.lsp.inlay_hint.is_enabled(0) then
+          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(nil))
+          if vim.lsp.inlay_hint.is_enabled(nil) then
             print 'Inlay hints enabled'
           else
             print 'Inlay hints disabled'
