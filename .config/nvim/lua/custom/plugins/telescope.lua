@@ -19,7 +19,7 @@ return {
     telescope.setup {
       defaults = {
         git_worktrees = vim.g.git_worktrees,
-        path_display = { 'smart' },
+        path_display = { 'truncate', 'filename_first' },
         sorting_strategy = 'ascending',
         layout_config = {
           horizontal = { prompt_position = 'top', preview_width = 0.55 },
