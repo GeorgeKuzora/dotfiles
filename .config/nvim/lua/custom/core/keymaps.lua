@@ -70,8 +70,6 @@ km.set('i', '<c-w>', '<c-g>u<c-w>', { desc = 'Delete word' })
 km.set('i', "<c-'>", '<c-6>', { desc = 'Switch input method' })
 
 -- DIAGNOSTIC KEYMAPS
-km.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to [previous] [D]iagnostic message' })
-km.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to [next] [D]iagnostic message' })
 km.set('n', '<leader>ld', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 km.set('n', '<leader>ll', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 km.set('n', '<leader>lD', '<cmd>Telescope diagnostics bufnr=0<CR>', { desc = 'Show diagnostics for file' })
