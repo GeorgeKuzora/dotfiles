@@ -44,7 +44,6 @@ return {
       nmap('<leader>lS', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[L]sp workspace [S]ymbols')
 
       -- See `:help K` for why this keymap
-      nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
       nmap('<A-K>', vim.lsp.buf.signature_help, 'Signature Documentation')
       vim.keymap.set('i', '<A-k>', function()
         vim.lsp.buf.hover()
