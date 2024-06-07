@@ -78,9 +78,9 @@ km.set('n', '<leader>lD', '<cmd>Telescope diagnostics bufnr=0<CR>', { desc = 'Sh
 km.set('n', ']l', '<cmd>lnext<CR>zz', { desc = 'Move to next [L]ocation' })
 km.set('n', '[l', '<cmd>lprev<CR>zz', { desc = 'Move to previous [L]ocation' })
 
--- set in trouble plugin
--- km.set('n', ']q', '<cmd>cnext<CR>zz', { desc = 'Move next in [Q]uickFix list' })
--- km.set('n', '[q', '<cmd>cprev<CR>zz', { desc = 'Move previous in [Q]uickFix list' })
+-- QUICKFIX LIST
+km.set('n', ']q', '<cmd>cnext<CR>zz', { desc = 'Move next in [Q]uickFix list' })
+km.set('n', '[q', '<cmd>cprev<CR>zz', { desc = 'Move previous in [Q]uickFix list' })
 
 -- NEOVIDE KEYMAPS
 km.set('n', '<C-_>', function()

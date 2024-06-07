@@ -1,51 +1,57 @@
 return {
   'folke/trouble.nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
-  opts = {},
-  config = function()
-    local km = vim.keymap
-    local trouble = require 'trouble'
-    km.set('n', '<leader>xx', function()
-      trouble.toggle()
-    end, { desc = 'Trouble toggle' })
-    km.set('n', '<leader>xw', function()
-      trouble.toggle 'workspace_diagnostics'
-    end, { desc = 'Trouble Workspace diagnostics' })
-    km.set('n', '<leader>xd', function()
-      trouble.toggle 'document_diagnostics'
-    end, { desc = 'Trouble Document diagnostics' })
-    km.set('n', '<leader>xq', function()
-      trouble.toggle 'quickfix'
-    end, { desc = 'Trouble quickfix list' })
-    km.set('n', '<leader>xl', function()
-      trouble.toggle 'loclist'
-    end, { desc = 'Trouble Location List' })
-    km.set('n', '<leader>xr', function()
-      trouble.toggle 'lsp_references'
-    end, { desc = 'Trouble LSP References' })
-    km.set('n', '<leader>xt', function()
-      trouble.toggle 'lsp_type_definitions'
-    end, { desc = 'Trouble LSP Type Definitions' })
-    km.set('n', '<leader>xo', '<cmd>TodoTrouble<CR>', { desc = 'Open todos in trouble' })
-    km.set('n', '[q', function()
-      if require('trouble').is_open() then
-        require('trouble').previous { skip_groups = true, jump = true }
-      else
-        local ok, err = pcall(vim.cmd.cprev)
-        if not ok then
-          vim.notify(err, vim.log.levels.ERROR)
-        end
-      end
-    end, { desc = 'Previous trouble/quickfix item' })
-    km.set('n', ']q', function()
-      if require('trouble').is_open() then
-        require('trouble').next { skip_groups = true, jump = true }
-      else
-        local ok, err = pcall(vim.cmd.cnext)
-        if not ok then
-          vim.notify(err, vim.log.levels.ERROR)
-        end
-      end
-    end, { desc = 'Next trouble/quickfix item' })
-  end,
+  opts = {}, -- for default options, refer to the configuration section for custom setup.
+  cmd = 'Trouble',
+  keys = {
+    {
+      '<leader>xx',
+      '<cmd>Trouble diagnostics toggle<cr>',
+      desc = 'Diagnostics (Trouble)',
+    },
+    {
+      '<leader>xw',
+      '<cmd>Trouble diagnostics toggle<cr>',
+      desc = 'Diagnostics (Trouble)',
+    },
+    {
+      '<leader>xd',
+      '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
+      desc = 'Buffer Diagnostics (Trouble)',
+    },
+    {
+      '<leader>xs',
+      '<cmd>Trouble symbols toggle focus=false win.position=bottom<cr>',
+      desc = 'Symbols (Trouble)',
+    },
+    {
+      '<leader>xl',
+      '<cmd>Trouble lsp toggle focus=false win.position=bottom<cr>',
+      desc = 'LSP Definitions / references / ... (Trouble)',
+    },
+    {
+      '<leader>xL',
+      '<cmd>Trouble loclist toggle<cr>',
+      desc = 'Location List (Trouble)',
+    },
+    {
+      '<leader>xq',
+      '<cmd>Trouble qflist toggle<cr>',
+      desc = 'Quickfix List (Trouble)',
+    },
+    {
+      '<leader>xr',
+      '<cmd>Trouble lsp_references toggle<cr>',
+      desc = 'Trouble LSP References',
+    },
+    {
+      '<leader>xt',
+      '<cmd>Trouble lsp_type_definitions toggle<cr>',
+      desc = 'Trouble LSP Type Definitions',
+    },
+    {
+      '<leader>xo',
+      '<cmd>Trouble todo toggle<cr>',
+      desc = 'Open todos in trouble',
+    },
+  },
 }
