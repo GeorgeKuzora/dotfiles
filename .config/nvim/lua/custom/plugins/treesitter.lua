@@ -6,7 +6,12 @@ return {
     'nvim-treesitter/nvim-treesitter-context',
     'JoosepAlviste/nvim-ts-context-commentstring',
     'nvim-treesitter/nvim-treesitter-refactor',
-    { 'windwp/nvim-ts-autotag', opts = { autotag = { enable_close_on_slash = false } } },
+    {
+      'windwp/nvim-ts-autotag',
+      config = function()
+        require('nvim-ts-autotag').setup()
+      end,
+    },
   },
   cmd = {
     'TSBufDisable',
@@ -45,7 +50,6 @@ return {
       },
       -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
       auto_install = true,
-      autotag = { enable = true },
       require('ts_context_commentstring').setup { enable_autocmd = false },
       highlight = {
         enable = true,
