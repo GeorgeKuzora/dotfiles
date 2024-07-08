@@ -123,5 +123,13 @@
   "typescript.inlayHints.variableTypes.enabled": true,
   "workbench.sideBar.location": "right",
   "workbench.editor.showTabs": "none",
-  "workbench.editor.scrollToSwitchTabs": true
+  "workbench.editor.scrollToSwitchTabs": true,
+  "errorLens.enabledDiagnosticLevels": [
+    "error",
+    "warning",
+    "info",
+    "hint"
+  ],
+  "errorLens.messageEnabled": true,
+  "editor.inlayHints.enabled": "offUnlessPressed"
 }
