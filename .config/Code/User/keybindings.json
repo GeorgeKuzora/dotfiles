@@ -111,5 +111,9 @@
         "key": "ctrl+t",
         "command": "-vscode-neovim.send",
         "when": "editorTextFocus && neovim.ctrlKeysInsert.t && neovim.init && neovim.mode == 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+    },
+    {
+        "key": "ctrl+alt+`",
+        "command": "workbench.action.toggleMaximizedPanel"
     }
 ]
