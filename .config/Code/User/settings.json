@@ -132,5 +132,6 @@
   ],
   "errorLens.messageEnabled": true,
   "editor.inlayHints.enabled": "offUnlessPressed",
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "editor.renderLineHighlight": "gutter"
 }
