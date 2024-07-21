@@ -1,0 +1,28 @@
+[
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "i i": "vim::NormalBefore" // remap ii in insert mode to escape.
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": [
+        "vim::PushOperator",
+        {
+          "AddSurrounds": {}
+        }
+      ]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space o": ["workspace::SendKeystrokes", "o escape k"],
+      "space shift-o": ["workspace::SendKeystrokes", "shift-o escape j"],
+      "j": ["workspace::SendKeystrokes", "g j"],
+      "k": ["workspace::SendKeystrokes", "g k"]
+    }
+  }
+]

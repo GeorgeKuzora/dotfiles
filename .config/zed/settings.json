@@ -9,11 +9,68 @@
 {
   "base_keymap": "VSCode",
   "vim_mode": true,
+  "vim": {
+    // "always": use system clipboard when no register is specified
+    // "never": don't use system clipboard unless "+ or "* is specified
+    // "on_yank": use system clipboard for yank operations when no register is specified
+    "use_system_clipboard": "always",
+    // Lets `f` and `t` motions extend across multiple lines
+    "use_multiline_find": true
+  },
+  // disable cursor blink
+  "current_line_highlight": "gutter",
+  "cursor_blink": false,
+  "relative_line_numbers": true,
+  "vertical_scroll_margin": 8,
   "ui_font_size": 16,
+  "ui_font_family": "VictorMono Nerd Font",
+  "buffer_font_family": "VictorMono Nerd Font",
   "buffer_font_size": 16,
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha"
   },
+  "use_autoclose": false,
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": true
+  },
+  "lsp": {
+    "gopls": {
+      "initialization_options": {
+        "hints": {
+          "assignVariableTypes": true,
+          "compositeLiteralFields": true,
+          "compositeLiteralTypes": true,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": true,
+          "rangeVariableTypes": true
+        }
+      }
+    },
+    "pyright": {
+      "settings": {
+        "python.analysis": {
+          "diagnosticMode": "workspace",
+          "typeCheckingMode": "strict"
+        },
+        "python": {
+          "pythonPath": ".venv/bin/python"
+        }
+      }
+    }
+  },
+  "languages": {
+    "Python": {
+      "formatter": {
+        "external": {
+          "command": "black",
+          "arguments": ["-"]
+        }
+      },
+      "format_on_save": "on"
+    }
+  }
 }
