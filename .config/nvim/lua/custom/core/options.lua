@@ -108,7 +108,7 @@ opt.splitbelow = true -- Horizontal splits will automatically be below
 opt.splitright = true -- Vertical splits will automatically be to the right
 opt.termguicolors = true -- Support true colors
 opt.conceallevel = 0 -- So that I can see `` in markdown files
-opt.cursorline = true -- Enable highlighting of the current line
+opt.cursorline = false -- Enable highlighting of the current line
 opt.backup = false -- This is recommended by coc
 opt.writebackup = false -- This is recommended by coc
 -- Automation
