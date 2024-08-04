@@ -1,0 +1,7 @@
+{
+  "@pytest.fixture": {
+    "prefix": "pf",
+    "body": ["@pytest.fixture\n$0"],
+    "description": "Adds pytest fixture decorator."
+  }
+}

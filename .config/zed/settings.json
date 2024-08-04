@@ -22,6 +22,7 @@
   "cursor_blink": false,
   "relative_line_numbers": true,
   "vertical_scroll_margin": 8,
+  "buffer_line_height": "standard",
   "ui_font_size": 16,
   "ui_font_family": "VictorMono Nerd Font",
   "buffer_font_family": "VictorMono Nerd Font",
@@ -29,7 +30,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Tokyo Night"
+    "dark": "Catppuccin Mocha"
   },
   "use_autoclose": false,
   "tab_bar": {
