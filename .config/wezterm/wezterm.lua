@@ -369,6 +369,7 @@ config.unix_domains = {
 }
 config.check_for_updates = false
 
+-- config.color_scheme = "Catppuccin Mocha"
 config.color_scheme = "Wez"
 config.colors = {
 	tab_bar = {
