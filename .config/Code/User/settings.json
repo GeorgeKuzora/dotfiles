@@ -122,7 +122,6 @@
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.variableTypes.enabled": true,
   "workbench.sideBar.location": "right",
-  "workbench.editor.showTabs": "none",
   "workbench.editor.scrollToSwitchTabs": true,
   "errorLens.enabledDiagnosticLevels": [
     "error",
@@ -133,5 +132,6 @@
   "errorLens.messageEnabled": true,
   "editor.inlayHints.enabled": "offUnlessPressed",
   "redhat.telemetry.enabled": false,
-  "editor.renderLineHighlight": "gutter"
+  "editor.renderLineHighlight": "gutter",
+  "window.density.editorTabHeight": "compact"
 }
