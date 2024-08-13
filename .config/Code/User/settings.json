@@ -133,5 +133,6 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "redhat.telemetry.enabled": false,
   "editor.renderLineHighlight": "gutter",
-  "window.density.editorTabHeight": "compact"
+  "window.density.editorTabHeight": "compact",
+  "workbench.editor.showTabs": "none"
 }
