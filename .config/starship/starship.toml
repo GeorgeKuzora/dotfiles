@@ -1,4 +1,4 @@
-# palette = "catppuccin_mocha"
+palette = "catppuccin_mocha"
 
 format = """$os $all$battery$time$line_break$character"""
 add_newline = true
