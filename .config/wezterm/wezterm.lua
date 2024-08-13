@@ -369,9 +369,10 @@ config.unix_domains = {
 }
 config.check_for_updates = false
 
--- config.color_scheme = "Catppuccin Mocha"
-config.color_scheme = "Wez"
+config.color_scheme = "Catppuccin Mocha"
+-- config.color_scheme = "Wez"
 config.colors = {
+	background = "#181825",
 	tab_bar = {
 		-- The color of the strip that goes along the top of the window
 		-- (does not apply when fancy tab bar is in use)
