@@ -134,5 +134,8 @@
   "redhat.telemetry.enabled": false,
   "editor.renderLineHighlight": "gutter",
   "window.density.editorTabHeight": "compact",
-  "workbench.editor.showTabs": "none"
+  "workbench.editor.showTabs": "none",
+  "python.analysis.diagnosticMode": "workspace",
+  "explorer.confirmPasteNative": false,
+  "files.autoSave": "afterDelay"
 }
