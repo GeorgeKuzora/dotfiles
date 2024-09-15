@@ -7,6 +7,11 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
   "base_keymap": "VSCode",
   "vim_mode": true,
   "vim": {
@@ -27,15 +32,46 @@
   "ui_font_family": "VictorMono Nerd Font",
   "buffer_font_family": "VictorMono Nerd Font",
   "buffer_font_size": 16,
+  "project_panel": {
+    "dock": "right"
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-4o"
+    },
+    "version": "2",
+    "dock": "right"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "indent_guides": {
+    "enabled": true,
+    "line_width": 1,
+    "active_line_width": 2,
+    "coloring": "fixed",
+    "background_coloring": "disabled"
+  },
   "theme": {
     "mode": "system",
     "light": "One Light",
     "dark": "Catppuccin Mocha"
   },
   "use_autoclose": false,
+  "always_treat_brackets_as_autoclosed": false,
   "tab_bar": {
     "show": true,
     "show_nav_history_buttons": true
+  },
+  "tabs": {
+    "close_position": "right",
+    "file_icons": false,
+    "git_status": true
+  },
+  "format_on_save": "off",
+  "file_types": {
+    "Dockerfile": ["Dockerfile*"]
   },
   "lsp": {
     "gopls": {
@@ -71,7 +107,7 @@
           "arguments": ["-"]
         }
       },
-      "format_on_save": "on"
+      "format_on_save": "off"
     }
   }
 }

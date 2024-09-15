@@ -22,11 +22,5 @@
       "space o": ["workspace::SendKeystrokes", "o escape k"],
       "space shift-o": ["workspace::SendKeystrokes", "shift-o escape j"]
     }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "ctrl-w": null
-    }
   }
 ]
