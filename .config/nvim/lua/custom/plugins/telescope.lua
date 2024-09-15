@@ -161,7 +161,7 @@ return {
       require('telescope.builtin').lsp_document_symbols()
     end, { desc = 'Find symbols' })
     vim.keymap.set('n', '<leader>fo', telescope_live_grep_open_files, { desc = '[F]ind [/] in Open Files' })
-    vim.keymap.set('n', '<leader>fv', require('telescope.builtin').builtin, { desc = '[F]ind [S]elect Telescope' })
+    vim.keymap.set('n', '<leader>fv', require('telescope.builtin').builtin, { desc = '[F]ind Select Telescope' })
     vim.keymap.set('n', '<leader>fj', require('telescope.builtin').jumplist, { desc = '[F]ind in [J]ump List' })
     vim.keymap.set('n', '<leader>ft', '<cmd>TodoTelescope<cr>', { desc = '[F]ind [T]odos' })
 

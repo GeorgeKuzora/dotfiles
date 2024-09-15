@@ -53,7 +53,7 @@ return {
     vim.keymap.set('n', '<F4>', dap.toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })
     vim.keymap.set('n', '<F6>', function()
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
-    end, { desc = 'Debug: Set Breakpoint' })
+    end, { desc = 'Debug: Set Breakpoint with condition' })
 
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|

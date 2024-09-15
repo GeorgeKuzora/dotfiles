@@ -1,59 +1,66 @@
 return {
   'folke/which-key.nvim',
-  event = 'VeryLazy',
-  init = function()
-    vim.o.timeout = true
-    vim.o.timeoutlen = 500
-  end,
-  opts = {
-    icons = { group = vim.g.icons_enabled and '' or '+', separator = '' },
-    disable = { filetypes = { 'TelescopePrompt' } },
+  event = 'VimEnter',
+  dependencies = {
+    'nvim-tree/nvim-web-devicons',
+    { 'echasnovski/mini.icons', version = false },
   },
-  config = function()
-    local wk = require 'which-key'
-    wk.register({
-      b = {
-        name = '[B]uffers',
-        _ = 'which_key_ignore',
+  opts = {
+    preset = 'classic',
+    delay = 1000,
+    icons = {
+      mappings = vim.g.have_nerd_font,
+      keys = vim.g.have_nerd_font and {} or {
+        Up = '<Up> ',
+        Down = '<Down> ',
+        Left = '<Left> ',
+        Right = '<Right> ',
+        C = '<C-…> ',
+        M = '<M-…> ',
+        D = '<D-…> ',
+        S = '<S-…> ',
+        CR = '<CR> ',
+        Esc = '<Esc> ',
+        ScrollWheelDown = '<ScrollWheelDown> ',
+        ScrollWheelUp = '<ScrollWheelUp> ',
+        NL = '<NL> ',
+        BS = '<BS> ',
+        Space = '<Space> ',
+        Tab = '<Tab> ',
+        F1 = '<F1>',
+        F2 = '<F2>',
+        F3 = '<F3>',
+        F4 = '<F4>',
+        F5 = '<F5>',
+        F6 = '<F6>',
+        F7 = '<F7>',
+        F8 = '<F8>',
+        F9 = '<F9>',
+        F10 = '<F10>',
+        F11 = '<F11>',
+        F12 = '<F12>',
       },
-      l = {
-        name = '[L]SP',
-        _ = 'which_key_ignore',
-      },
-      f = {
-        name = '[F]ind',
-        _ = 'which_key_ignore',
-      },
-      g = {
-        name = '[G]it',
-        _ = 'which_key_ignore',
-      },
-      w = {
-        name = '[W]orkspaces',
-        _ = 'which_key_ignore',
-      },
-      h = {
-        name = 'Git [H]unk',
-        _ = 'which_key_ignore',
-      },
-      n = {
-        name = 'Swap [N]ext',
-        _ = 'which_key_ignore',
-      },
-      p = {
-        name = 'Swap [P]revious',
-        _ = 'which_key_ignore',
-      },
-      x = {
-        name = 'Trouble',
-        _ = 'which_key_ignore',
-      },
-    }, { prefix = '<leader>' })
-    -- register which-key VISUAL mode
-    -- required for visual <leader>hs (hunk stage) to work
-    wk.register({
-      ['<leader>'] = { name = 'VISUAL <leader>' },
-      ['<leader>h'] = { 'Git [H]unk' },
-    }, { mode = 'v' })
-  end,
+    },
+    disable = { filetypes = { 'TelescopePrompt' } },
+    spec = {
+      { '<leader>f', group = 'Find' },
+      { '<leader>b', group = 'Buffers' },
+      { '<leader>l', group = 'LSP' },
+      { '<leader>g', group = 'Git' },
+      { '<leader>w', group = 'Workspace' },
+      { '<leader>h', group = 'Git Hunk', mode = { 'n', 'v' } },
+      { '<leader>]', group = 'Next' },
+      { '<leader>[', group = 'Previous' },
+      { '<leader>x', group = 'Trouble' },
+    },
+  },
+  keys = {
+    {
+      '<leader>k',
+      function()
+        require('which-key').show { global = false }
+      end,
+      desc = 'Buffer Local Keymaps (which-key)',
+    },
+  },
 }

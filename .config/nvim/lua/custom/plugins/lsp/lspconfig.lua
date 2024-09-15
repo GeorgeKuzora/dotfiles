@@ -29,46 +29,26 @@ return {
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
       end
 
-      nmap('<leader>lx', ':LspRestart<CR>', 'Restart LSP')
-
-      nmap('<leader>lr', vim.lsp.buf.rename, '[R]ename')
-      nmap('<leader>la', vim.lsp.buf.code_action, 'Code [A]ction')
-
-      nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-      nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-      nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
-      nmap('gy', require('telescope.builtin').lsp_type_definitions, '[G]oto t[Y]pe definition')
-      nmap('<leader>ls', require('telescope.builtin').lsp_document_symbols, '[L]sp Document [S]ymbols')
-      nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Lsp [W]orkspace [S]ymbols')
-      nmap('<leader>fS', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[F]ind workspace [S]ymbols')
-      nmap('<leader>lS', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[L]sp workspace [S]ymbols')
-
-      -- See `:help K` for why this keymap
-      nmap('<A-K>', vim.lsp.buf.signature_help, 'Signature Documentation')
-      vim.keymap.set('i', '<A-k>', function()
-        vim.lsp.buf.hover()
-      end, { desc = 'Hover documentation' })
-      vim.keymap.set('i', '<A-K>', function()
-        vim.lsp.buf.signature_help()
-      end, { desc = 'Hover signature' })
-
-      -- Lesser used LSP functionality
-      nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-      nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
-      nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
-      nmap('<leader>wl', function()
-        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-      end, '[W]orkspace [L]ist Folders')
-
-      -- Create a command `:Format` local to the LSP buffer
       vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
         vim.lsp.buf.format()
       end, { desc = 'Format current buffer with LSP' })
 
+      nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+      nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+      nmap('gR', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+      nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+      nmap('gy', require('telescope.builtin').lsp_type_definitions, '[G]oto t[Y]pe definition')
+
+      nmap('<leader>lx', ':LspRestart<CR>', 'Restart LSP')
+      nmap('<leader>lr', vim.lsp.buf.rename, '[R]ename')
+      nmap('<leader>la', vim.lsp.buf.code_action, 'Code [A]ction')
+      nmap('<leader>ls', require('telescope.builtin').lsp_document_symbols, '[L]sp Document [S]ymbols')
+      nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Lsp [W]orkspace [S]ymbols')
+      nmap('<leader>fS', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[F]ind workspace [S]ymbols')
+      nmap('<leader>lS', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[L]sp workspace [S]ymbols')
       nmap('<leader>lv', function()
         vim.lsp.buf.format { async = false }
       end, '[F]ormat buffer with lsp')
-
       if vim.lsp.inlay_hint then
         nmap('<leader>lh', function()
           vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(nil))
@@ -79,6 +59,20 @@ return {
           end
         end, 'Toggle Inlay Hints')
       end
+
+      nmap('<A-K>', vim.lsp.buf.signature_help, 'Signature Documentation')
+      vim.keymap.set('i', '<A-k>', function()
+        vim.lsp.buf.hover()
+      end, { desc = 'Hover documentation' })
+      vim.keymap.set('i', '<A-K>', function()
+        vim.lsp.buf.signature_help()
+      end, { desc = 'Hover signature' })
+
+      nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
+      nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
+      nmap('<leader>wl', function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+      end, '[W]orkspace [L]ist Folders')
     end
 
     -- LSP SETUP
@@ -90,6 +84,7 @@ return {
 
     vim.diagnostic.config {
       severity_sort = true,
+      update_in_insert = false,
       signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = ' ',
@@ -97,11 +92,17 @@ return {
           [vim.diagnostic.severity.HINT] = '󰠠 ',
           [vim.diagnostic.severity.INFO] = ' ',
         },
-        linehl = {
+        numhl = {
           [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
           [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
           [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
           [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
+        },
+        linehl = {
+          [vim.diagnostic.severity.ERROR] = 'DiagnosticLineBackgroundError',
+          [vim.diagnostic.severity.WARN] = 'DiagnosticLineBackgroundWarn',
+          [vim.diagnostic.severity.HINT] = 'DiagnosticLineBackgroundHint',
+          [vim.diagnostic.severity.INFO] = 'DiagnosticLineBackgroundInfo',
         },
       },
     }
