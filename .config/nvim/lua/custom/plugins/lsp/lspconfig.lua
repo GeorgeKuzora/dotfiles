@@ -195,10 +195,8 @@ return {
         -- formatters
         'stylua', -- lua formatter
         'isort', -- python formatter
-        'black', -- python formatter
         'prettier',
         -- linters
-        'flake8',
         'stylelint',
         'markdownlint',
         'eslint_d',
