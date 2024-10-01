@@ -124,7 +124,7 @@ return {
         },
       },
       pyright = {},
-      tsserver = {
+      ts_ls = {
         typescript = {
           inlayHints = {
             includeInlayParameterNameHints = 'all',
