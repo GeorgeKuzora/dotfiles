@@ -124,8 +124,8 @@ return {
     vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = '[F]ind by [G]rep' })
     vim.keymap.set('n', '<leader>fG', function()
       require('telescope.builtin').live_grep {
-        additional_args = function(args)
-          return vim.list_extend(args, { '--hidden', '--no-ignore' })
+        additional_args = function()
+            return  { '--hidden', '--no-ignore' }
         end,
       }
     end, { desc = 'Find words in all files' })
