@@ -5,7 +5,7 @@ return {
   config = function()
     local conform = require 'conform'
 
-    local format_is_enabled = true
+    local format_is_enabled = false
     vim.api.nvim_create_user_command('FormatOnSaveToggle', function()
       format_is_enabled = not format_is_enabled
       print('Setting autoformatting to: ' .. tostring(format_is_enabled))
