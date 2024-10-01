@@ -3,8 +3,18 @@ return {
   'nvim-treesitter/nvim-treesitter',
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
-    'nvim-treesitter/nvim-treesitter-context',
-    'JoosepAlviste/nvim-ts-context-commentstring',
+    {
+      'nvim-treesitter/nvim-treesitter-context',
+      config = function()
+        require('treesitter-context').setup { max_lines = 5 }
+      end,
+    },
+    {
+      'JoosepAlviste/nvim-ts-context-commentstring',
+      config = function()
+        require('ts_context_commentstring').setup { enable_autocmd = false }
+      end,
+    },
     'nvim-treesitter/nvim-treesitter-refactor',
     {
       'windwp/nvim-ts-autotag',
@@ -50,14 +60,14 @@ return {
       },
       -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
       auto_install = true,
-      require('ts_context_commentstring').setup { enable_autocmd = false },
       highlight = {
         enable = true,
+        additional_vim_regex_highlighting = { 'ruby' },
         disable = function(_, bufnr)
           return vim.b[bufnr].large_buf
         end,
       },
-      indent = { enable = true },
+      indent = { enable = true, disable = { 'ruby' } },
       refactor = {
         highlight_definitions = {
           enable = true,
