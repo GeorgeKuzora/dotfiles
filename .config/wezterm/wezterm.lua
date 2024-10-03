@@ -347,6 +347,7 @@ config.font = wezterm.font_with_fallback({
 })
 config.font_size = 16.0
 config.freetype_load_flags = "DEFAULT"
+config.warn_about_missing_glyphs = false
 config.default_cursor_style = "SteadyBlock"
 config.force_reverse_video_cursor = true
 config.colors = {
