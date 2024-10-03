@@ -4,15 +4,15 @@ local wo = vim.wo
 local opt = vim.opt
 local a = vim.api
 
--- Astro optimizations
+-- Optimizations
 vim.opt.viewoptions:remove 'curdir' -- disable saving current directory with views
 vim.opt.shortmess:append { s = true, I = true, W = true, c = true, C = true } -- disable search count wrap and startup messages
 vim.opt.backspace:append { 'nostop' } -- don't stop backspace at insert
 if vim.fn.has 'nvim-0.9' == 1 then
-  vim.opt.diffopt:append 'linematch:60' -- enable linematch diff algorithm
+  vim.opt.diffopt:append 'linematch:60' -- enable line match diff algorithm
 end
 
--- set vim options here (vim.<first_key>.<second_key> = value)
+-- Set vim options here (vim.<first_key>.<second_key> = value)
 vim.cmd [[set keymap=russian-jcukenwin]]
 vim.cmd [[set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖБЮ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:<>,фисвуапршолдьтщзйкыегмцчняю;abcdefghijklmnopqrstuvwxyz.]]
 vim.cmd [[set iminsert=0]]
@@ -30,26 +30,22 @@ o.breakindent = true
 o.updatetime = 250
 o.timeoutlen = 300
 
--- Set completeopt to have a better completion experience
--- opt.completeopt = 'menuone,noselect'
-opt.completeopt = { 'menu', 'menuone' } -- Options for insert mode completion
+-- Set completeopt to have a better completion experience in insert mode
+opt.completeopt = { 'menu', 'menuone', 'preview', 'noselect' }
 
 -- highlihting and search
 opt.hlsearch = true -- With highlight search
 opt.ignorecase = true -- Search ignoring case of letters
 opt.infercase = true -- infer cases in keyword completion
-opt.smartcase = true -- Search with ignor case if all small and with case if even one is big
-opt.incsearch = true -- Search incrementaly when you input request
+opt.smartcase = true -- Search with ignore case if all small and with case if even one is big
+opt.incsearch = true -- Search incrementally when you input request
 opt.wrapscan = true -- Cycle search results until the end and then move to the beginning
 
-opt.clipboard = { 'unnamedplus' } -- Copy paste between vim and everything else, 'unnamed'
-
--- NOTE: You should make sure your terminal supports this
-opt.termguicolors = true
 -- indentation
 opt.autoindent = true -- auto indention
 opt.smartindent = true -- smart indention
 opt.copyindent = true -- copy the previous indentation on autoindenting
+opt.preserveindent = true
 opt.shiftround = true -- When shifting lines, round the indentation to the nearest multiple of shiftwidth.
 opt.shiftwidth = 4 -- When shifting, indent using four spaces.
 opt.expandtab = true -- create spaces from tab
@@ -76,14 +72,10 @@ opt.errorbells = false -- Disable beep on errors.
 opt.visualbell = true -- Flash the screen instead of beeping on errors.
 opt.title = true -- set the window’s title, reflecting the file currently being edited.
 -- folding
--- opt.foldmethod = 'indent'                         -- Fold based on indention levels.
--- opt.foldnestmax = 1                               -- Only fold up to three nested levels.
--- opt.foldenable = false                            -- Enable folding by default.
--- fold for nvim-ufo
-opt.foldcolumn = '0'
+opt.foldenable = true -- enable fold for nvim-ufo
+opt.foldmethod = 'manual'                         -- Fold based on indention levels.
 opt.foldlevel = 99 -- set high foldlevel for nvim-ufo
 opt.foldlevelstart = 99 -- start with all code unfolded
-opt.foldenable = true -- enable fold for nvim-ufo
 -- undoing
 opt.autoread = true -- Automatically re-read files if unmodified inside Vim.
 opt.backspace = { 'indent', 'eol', 'start' } -- Allow backspacing over indention, line breaks and insertion start.
@@ -93,7 +85,7 @@ opt.undofile = true -- Set undofiles
 opt.confirm = true -- Display a confirmation dialog when closing an unsaved file.
 opt.history = 10000 -- Increase the undo limit.
 opt.modeline = false -- Ignore file’s mode lines; use vimrc configurations instead.
-opt.swapfile = false -- Disable swap files.
+opt.swapfile = false -- Disable swap files. if string.find(vim.fn.expand('$SHELL'), 'zsh') ~= nil then
 if string.find(vim.fn.expand('$SHELL'), 'zsh') ~= nil then
   opt.shell = '/usr/bin/zsh'
 elseif string.find(vim.fn.expand('$SHELL'), 'bash') ~= nil then
@@ -101,15 +93,14 @@ elseif string.find(vim.fn.expand('$SHELL'), 'bash') ~= nil then
 else
   opt.shell = vim.fn.expand('$SHELL')
 end
--- opt.shell = '/usr/bin/zsh'
 opt.spell = true --Enable spellchecking.
 opt.spelllang = { 'en_us', 'ru_ru' }
--- opt.spellfile = '/home/georgiy/.config/nvim/spell/ru.utf-8.add'
 opt.wildignore = { '.pyc', '.swp' } -- Ignore files matching these patterns when opening files based on a glob pattern.
--- Colored column
-opt.signcolumn = 'yes' -- sets vim.opt.signcolumn to auto
-opt.colorcolumn = '80' -- colored line on 80 characters
+opt.clipboard = { 'unnamedplus' } -- Copy paste between vim and everything else, 'unnamed'
 -- UI and windows
+opt.signcolumn = 'yes' -- sets vim.opt.signcolumn to auto
+opt.colorcolumn = '80,100,120' -- colored line on characters
+opt.termguicolors = true
 opt.mouse = 'a' -- Enable your mouse
 opt.splitbelow = true -- Horizontal splits will automatically be below
 opt.splitright = true -- Vertical splits will automatically be to the right
@@ -122,10 +113,8 @@ opt.writebackup = false -- This is recommended by coc
 opt.autochdir = false -- Your working directory will always be the same as your working directory
 opt.cp = false -- 'compatible' is not set
 opt.formatoptions = 'tcqjronl'
-opt.cmdheight = 1 -- hide command line unless needed
+opt.cmdheight = 1 -- command line minimum high
 opt.pumheight = 10 -- height of the pop up menu
-opt.preserveindent = true
--- opt.foldcolumn = vim.fn.has "nvim-0.9" == 1 and "1" or nil -- show foldcolumn in nvim 0.9
 opt.virtualedit = 'block' -- allow going past end of line in visual block mode
 g.hidden = true -- Hide files in the background instead of closing them.
 g.autoformat_enabled = true -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
@@ -142,8 +131,6 @@ g.semantic_tokens_enabled = true -- enable or disable LSP semantic tokens on sta
 g.git_worktrees = nil -- enable git integration for detached worktrees (specify a table where each entry is of the form { toplevel = vim.env.HOME, gitdir=vim.env.HOME .. "/.dotfiles" })
 
 -- LazyVim options
--- opt.autowrite = true
--- opt.autowriteall = true
 opt.grepformat = '%f:%l:%c:%m'
 opt.inccommand = 'split' -- preview incremental substitute
 opt.list = true
@@ -157,7 +144,6 @@ opt.winminwidth = 5 -- Minimum window width
 opt.fillchars = {
   foldopen = '',
   foldclose = '',
-  -- fold = "⸱",
   fold = ' ',
   foldsep = ' ',
   diff = '╱',
