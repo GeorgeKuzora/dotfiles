@@ -87,8 +87,8 @@ opt.foldenable = true -- enable fold for nvim-ufo
 -- undoing
 opt.autoread = true -- Automatically re-read files if unmodified inside Vim.
 opt.backspace = { 'indent', 'eol', 'start' } -- Allow backspacing over indention, line breaks and insertion start.
-opt.dir = '/home/georgiy/.cache/nvim' -- Directory to store backup files.
-opt.undodir = '/home/georgiy/.cache/nvim/undodir' -- Set undofiles dir
+opt.dir = vim.fn.expand('$HOME/.cache/nvim') -- Directory to store backup files.
+opt.undodir = vim.fn.expand('$HOME/.cache/nvim/undodir') -- Set undofiles dir
 opt.undofile = true -- Set undofiles
 opt.confirm = true -- Display a confirmation dialog when closing an unsaved file.
 opt.history = 10000 -- Increase the undo limit.
