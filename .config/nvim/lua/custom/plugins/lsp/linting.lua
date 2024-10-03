@@ -4,6 +4,14 @@ return {
   event = { 'BufReadPre', 'BufNewFile' }, -- to disable, comment this out
   config = function()
     local lint = require 'lint'
+   
+    local python_linters = {}
+    if vim.fn.executable('flake8') == 1 then
+      table.insert(python_linters, 'flake8')
+    end
+    if vim.fn.executable('mypy') == 1 then
+      table.insert(python_linters, 'mypy')
+    end
 
     lint.linters_by_ft = {
       javascript = { 'eslint_d' },
@@ -11,7 +19,7 @@ return {
       javascriptreact = { 'eslint_d' },
       typescriptreact = { 'eslint_d' },
       svelte = { 'eslint_d' },
-      python = { 'flake8', 'mypy' },
+      python = python_linters,
       markdown = { 'markdownlint' },
     }
 
