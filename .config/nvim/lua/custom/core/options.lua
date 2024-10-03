@@ -94,7 +94,14 @@ opt.confirm = true -- Display a confirmation dialog when closing an unsaved file
 opt.history = 10000 -- Increase the undo limit.
 opt.modeline = false -- Ignore file’s mode lines; use vimrc configurations instead.
 opt.swapfile = false -- Disable swap files.
-opt.shell = '/usr/bin/zsh'
+if string.find(vim.fn.expand('$SHELL'), 'zsh') ~= nil then
+  opt.shell = '/usr/bin/zsh'
+elseif string.find(vim.fn.expand('$SHELL'), 'bash') ~= nil then
+  opt.shell = '/usr/bin/bash'
+else
+  opt.shell = vim.fn.expand('$SHELL')
+end
+-- opt.shell = '/usr/bin/zsh'
 opt.spell = true --Enable spellchecking.
 opt.spelllang = { 'en_us', 'ru_ru' }
 -- opt.spellfile = '/home/georgiy/.config/nvim/spell/ru.utf-8.add'
