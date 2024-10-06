@@ -74,10 +74,8 @@ plugins=(
          git
          zsh-autosuggestions
          zsh-syntax-highlighting
-         # zsh-history-substring-search
+         autoswitch_virtualenv $plugins
          history-substring-search
-         auto-notify $plugins
-         # zsh-vi-mode
          vi-mode
          zsh-you-should-use
          poetry
@@ -167,7 +165,7 @@ eval "$(zoxide init --cmd cd zsh)"
 # END ZOXIDE SETUP
 
 # START SOURCE SETUP
-source "/usr/share/fzf/shell/key-bindings.zsh"
+source "$XDG_CONFIG_HOME/fzf/key-bindings.zsh"
 source "$ZDOTDIR/zsh-aliases"
 source "$ZDOTDIR/nvims"
 # END SOURCE SETUP
@@ -188,3 +186,5 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 # WSL NETWORK SETTINGS
 sudo ip link set dev eth0 mtu 1350
+# PIPX SETUP
+export PIPX_DEFAULT_PYTHON=$(pyenv which python)
