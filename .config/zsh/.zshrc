@@ -186,3 +186,5 @@ eval "$(starship init zsh)"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+# WSL NETWORK SETTINGS
+sudo ip link set dev eth0 mtu 1350
