@@ -53,5 +53,12 @@ return {
       '<cmd>Trouble todo toggle<cr>',
       desc = 'Open todos in trouble',
     },
+    {
+      '<leader>xc',
+      function ()
+        require("trouble").close()
+      end,
+      desc = 'Open todos in trouble',
+    },
   },
 }
