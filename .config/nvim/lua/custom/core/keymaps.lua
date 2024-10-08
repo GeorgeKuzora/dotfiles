@@ -46,10 +46,10 @@ km.set({ 'v', 'x' }, '<leader>p', [["_dP]], { desc = 'Paste without killing' })
 km.set({ 'v', 'x' }, '<leader>P', [["_dP]], { desc = 'Paste without killing' })
 
 -- WORKING WITH BUFFERS
-km.set('n', '<leader>bn', vim.cmd.enew, { desc = '[N]ew [B]uffer' })
-km.set('n', '<leader>bd', vim.cmd.bdelete, { desc = '[D]elete [B]uffer' })
+km.set('n', '<leader>bn', vim.cmd.enew, { desc = 'New buffer' })
+km.set('n', '<leader>bd', vim.cmd.bdelete, { desc = 'Delete buffer' })
 km.set('n', ']b', ':bnext<CR>', { desc = 'Next buffer' })
-km.set('n', '[b', ':bprevious<CR>, { desc = "Previous buffer" }')
+km.set('n', '[b', ':bprevious<CR>', { desc = 'Previous buffer' })
 
 --WINDOW MANAGEMENT
 km.set('n', '<M-->', '<C-w>-')
@@ -57,32 +57,25 @@ km.set('n', '<M-=>', '<C-w>+')
 km.set('n', '<M-,>', '<C-w><')
 km.set('n', '<M-.>', '<C-w>>')
 
--- set in a plugin with wezterm windows integration
--- km.set('n', '<M-h>', '<C-w>h')
--- km.set('n', '<M-l>', '<C-w>l')
--- km.set('n', '<M-j>', '<C-w>j')
--- km.set('n', '<M-k>', '<C-w>k')
--- km.set('n', '<M-[>', '<C-w>p')
-
 -- INSERT MODE
 km.set('i', '<c-u>', '<c-g>u<c-u>', { desc = 'Delete character' })
 km.set('i', '<c-w>', '<c-g>u<c-w>', { desc = 'Delete word' })
 km.set('i', "<c-'>", '<c-6>', { desc = 'Switch input method' })
 
--- DIAGNOSTIC KEYMAPS
+-- DIAGNOSTICS
 km.set('n', '<leader>ld', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 km.set('n', '<leader>ll', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 km.set('n', '<leader>lD', '<cmd>Telescope diagnostics bufnr=0<CR>', { desc = 'Show diagnostics for file' })
 
--- MOVING IN INTERNAL LISTS
-km.set('n', ']l', '<cmd>lnext<CR>zz', { desc = 'Move to next [L]ocation' })
-km.set('n', '[l', '<cmd>lprev<CR>zz', { desc = 'Move to previous [L]ocation' })
+-- LOCATION LIST
+km.set('n', ']l', '<cmd>lnext<CR>zz', { desc = 'Next location' })
+km.set('n', '[l', '<cmd>lprev<CR>zz', { desc = 'Previous location' })
 
 -- QUICKFIX LIST
-km.set('n', ']q', '<cmd>cnext<CR>zz', { desc = 'Move next in [Q]uickFix list' })
-km.set('n', '[q', '<cmd>cprev<CR>zz', { desc = 'Move previous in [Q]uickFix list' })
+km.set('n', ']q', '<cmd>cnext<CR>zz', { desc = 'Next in QuickFix list' })
+km.set('n', '[q', '<cmd>cprev<CR>zz', { desc = 'Previous in QuickFix list' })
 
--- NEOVIDE KEYMAPS
+-- NEOVIDE
 km.set('n', '<C-_>', function()
   if vim.g.neovide then
     vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.05
@@ -95,7 +88,7 @@ km.set('n', '<C-+>', function()
   end
 end, { desc = 'Neovide increase scale factor' })
 
--- VIM UI KEYMAPS
+-- VIM UI
 km.set({ 'n', 'v', 'x' }, 'gx', function()
   local current_path = vim.api.nvim_buf_get_name(0)
   print(current_path)
