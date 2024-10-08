@@ -39,7 +39,7 @@ return {
       end,
     }
 
-    vim.keymap.set('n', '<leader>lF', '<cmd>FormatOnSaveToggle<CR>', { desc = '[L]sp toggle [F]ormat on save' })
+    vim.keymap.set('n', '<leader>lF', '<cmd>FormatOnSaveToggle<CR>', { desc = 'Toggle format on save' })
     vim.keymap.set({ 'n', 'v' }, '<leader>lf', function()
       conform.format {
         lsp_fallback = true,
