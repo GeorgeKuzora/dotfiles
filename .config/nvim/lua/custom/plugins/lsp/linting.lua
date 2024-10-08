@@ -4,8 +4,8 @@ return {
   event = { 'BufReadPre', 'BufNewFile' }, -- to disable, comment this out
   config = function()
     local lint = require 'lint'
-   
     local python_linters = {}
+
     if vim.fn.executable('flake8') == 1 then
       table.insert(python_linters, 'flake8')
     end
@@ -34,6 +34,6 @@ return {
 
     vim.keymap.set('n', '<leader>li', function()
       lint.try_lint()
-    end, { desc = 'Trigger linting for current file' })
+    end, { desc = 'Lint current buffer' })
   end,
 }
