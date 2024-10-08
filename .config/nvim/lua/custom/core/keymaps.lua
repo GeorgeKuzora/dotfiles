@@ -94,3 +94,10 @@ km.set('n', '<C-+>', function()
     vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.05
   end
 end, { desc = 'Neovide increase scale factor' })
+
+-- VIM UI KEYMAPS
+km.set({ 'n', 'v', 'x' }, 'gx', function()
+  local current_path = vim.api.nvim_buf_get_name(0)
+  print(current_path)
+  vim.ui.open(current_path)
+end, { desc = 'Show file in file explorer' })
