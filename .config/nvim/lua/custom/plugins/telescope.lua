@@ -103,33 +103,33 @@ return {
     vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
 
     -- KEYMAPS
-    vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-    vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+    vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = 'Find recently opened files' })
+    vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = 'Find existing buffers' })
     vim.keymap.set('n', '<leader>/', function()
       require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
         winblend = 10,
         previewer = false,
       })
-    end, { desc = '[/] Fuzzily search in current buffer' })
+    end, { desc = 'Fuzzily search in current buffer' })
 
-    vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[F]ind [F]iles', silent = true })
+    vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'Find files', silent = true })
     vim.keymap.set('n', '<leader>fF', function()
       require('telescope.builtin').find_files { hidden = true, no_ignore = true }
-    end, { desc = '[F]ind All [F]iles' })
-    vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = '[F]ind [H]elp' })
-    vim.keymap.set('n', '<leader>fw', require('telescope.builtin').grep_string, { desc = '[F]ind current [W]ord' })
+    end, { desc = 'Find all files' })
+    vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = 'Find help' })
+    vim.keymap.set('n', '<leader>fw', require('telescope.builtin').grep_string, { desc = 'Find current word by GREP' })
 
-    vim.keymap.set('n', '<leader>fW', find_WORD, { desc = '[F]ind current [W]ORD' })
+    vim.keymap.set('n', '<leader>fW', find_WORD, { desc = '[F]ind current WORD by GREP' })
 
-    vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = '[F]ind by [G]rep' })
+    vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = 'Find by GREP' })
     vim.keymap.set('n', '<leader>fG', function()
       require('telescope.builtin').live_grep {
         additional_args = function()
             return  { '--hidden', '--no-ignore' }
         end,
       }
-    end, { desc = 'Find words in all files' })
-    vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = '[F]ind [D]iagnostics' })
+    end, { desc = 'Find by GREP in all files' })
+    vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = 'Find diagnostics' })
     vim.keymap.set('n', '<leader>f<CR>', function()
       require('telescope.builtin').resume()
     end, { desc = 'Resume previous search' })
@@ -156,28 +156,28 @@ return {
     end, { desc = 'Find themes' })
     vim.keymap.set('n', '<leader>ls', function()
       require('telescope.builtin').lsp_document_symbols()
-    end, { desc = 'Find symbols' })
+    end, { desc = 'Find current buffer symbols' })
     vim.keymap.set('n', '<leader>fs', function()
       require('telescope.builtin').lsp_document_symbols()
-    end, { desc = 'Find symbols' })
-    vim.keymap.set('n', '<leader>fo', telescope_live_grep_open_files, { desc = '[F]ind [/] in Open Files' })
-    vim.keymap.set('n', '<leader>fv', require('telescope.builtin').builtin, { desc = '[F]ind Select Telescope' })
-    vim.keymap.set('n', '<leader>fj', require('telescope.builtin').jumplist, { desc = '[F]ind in [J]ump List' })
-    vim.keymap.set('n', '<leader>ft', '<cmd>TodoTelescope<cr>', { desc = '[F]ind [T]odos' })
+    end, { desc = 'Find current buffer symbols' })
+    vim.keymap.set('n', '<leader>fo', telescope_live_grep_open_files, { desc = 'Find by GREP in open files' })
+    vim.keymap.set('n', '<leader>fv', require('telescope.builtin').builtin, { desc = 'Find Telescope builtins' })
+    vim.keymap.set('n', '<leader>fj', require('telescope.builtin').jumplist, { desc = 'Find in jump list' })
+    vim.keymap.set('n', '<leader>ft', '<cmd>TodoTelescope<cr>', { desc = 'Find TODO comments' })
 
-    vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
-    vim.keymap.set('n', '<leader>gF', ':LiveGrepGitRoot<cr>', { desc = 'Search by Grep on [G]it [R]oot' })
+    vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Find files in Git' })
+    vim.keymap.set('n', '<leader>gF', ':LiveGrepGitRoot<cr>', { desc = 'Find by Grep in Git files' })
     vim.keymap.set('n', '<leader>gb', function()
       require('telescope.builtin').git_branches { use_file_path = true }
-    end, { desc = 'Git branches' })
+    end, { desc = 'Find Git branches' })
     vim.keymap.set('n', '<leader>gc', function()
       require('telescope.builtin').git_commits { use_file_path = true }
-    end, { desc = 'Git commits (repository)' })
+    end, { desc = 'Find Git commits (repository)' })
     vim.keymap.set('n', '<leader>gC', function()
       require('telescope.builtin').git_bcommits { use_file_path = true }
-    end, { desc = 'Git commits (current file)' })
+    end, { desc = 'Find Git commits (current file)' })
     vim.keymap.set('n', '<leader>gt', function()
       require('telescope.builtin').git_status { use_file_path = true }
-    end, { desc = 'Git status' })
+    end, { desc = 'Find changes in Git status' })
   end,
 }
