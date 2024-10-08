@@ -33,22 +33,22 @@ return {
         vim.lsp.buf.format()
       end, { desc = 'Format current buffer with LSP' })
 
-      nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-      nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-      nmap('gR', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-      nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
-      nmap('gy', require('telescope.builtin').lsp_type_definitions, '[G]oto t[Y]pe definition')
+      nmap('gd', require('telescope.builtin').lsp_definitions, 'Go to definition')
+      nmap('gD', vim.lsp.buf.declaration, 'Go to declaration')
+      nmap('gR', require('telescope.builtin').lsp_references, 'Go to references')
+      nmap('gI', require('telescope.builtin').lsp_implementations, 'Go to implementation')
+      nmap('gy', require('telescope.builtin').lsp_type_definitions, 'Go to type definition')
 
       nmap('<leader>lx', ':LspRestart<CR>', 'Restart LSP')
-      nmap('<leader>lr', vim.lsp.buf.rename, '[R]ename')
-      nmap('<leader>la', vim.lsp.buf.code_action, 'Code [A]ction')
-      nmap('<leader>ls', require('telescope.builtin').lsp_document_symbols, '[L]sp Document [S]ymbols')
-      nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Lsp [W]orkspace [S]ymbols')
-      nmap('<leader>fS', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[F]ind workspace [S]ymbols')
-      nmap('<leader>lS', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[L]sp workspace [S]ymbols')
+      nmap('<leader>lr', vim.lsp.buf.rename, 'Rename symbol')
+      nmap('<leader>la', vim.lsp.buf.code_action, 'Code action')
+      nmap('<leader>ls', require('telescope.builtin').lsp_document_symbols, 'Document symbols')
+      nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace symbols')
+      nmap('<leader>fS', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace symbols')
+      nmap('<leader>lS', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace symbols')
       nmap('<leader>lv', function()
         vim.lsp.buf.format { async = false }
-      end, '[F]ormat buffer with lsp')
+      end, 'Format buffer with LSP')
       if vim.lsp.inlay_hint then
         nmap('<leader>lh', function()
           vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(nil))
@@ -57,22 +57,22 @@ return {
           else
             print 'Inlay hints disabled'
           end
-        end, 'Toggle Inlay Hints')
+        end, 'Toggle inlay hints')
       end
 
-      nmap('<A-K>', vim.lsp.buf.signature_help, 'Signature Documentation')
+      nmap('<A-K>', function() vim.lsp.buf.signature_help() end, 'Signature help')
       vim.keymap.set('i', '<A-k>', function()
         vim.lsp.buf.hover()
       end, { desc = 'Hover documentation' })
       vim.keymap.set('i', '<A-K>', function()
         vim.lsp.buf.signature_help()
-      end, { desc = 'Hover signature' })
+      end, { desc = 'Signature help' })
 
-      nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
-      nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
+      nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, 'Add workspace folder')
+      nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Remove workspace folder')
       nmap('<leader>wl', function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-      end, '[W]orkspace [L]ist Folders')
+      end, 'List workspace folders')
     end
 
     -- LSP SETUP
@@ -193,8 +193,8 @@ return {
     mason_tool_installer.setup {
       ensure_installed = {
         -- formatters
-        'stylua', -- lua formatter
-        'isort', -- python formatter
+        'stylua',
+        'isort',
         'prettier',
         -- linters
         'stylelint',
