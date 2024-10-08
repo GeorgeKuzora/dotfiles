@@ -338,12 +338,14 @@ config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = false
 config.unzoom_on_switch_pane = true
 config.font = wezterm.font_with_fallback({
-	{ family = "VictorMono Nerd Font", weight = "Regular" },
-	{ family = "JetBrainsMono Nerd Font", weight = "ExtraLight" },
 	{ family = "JetBrainsMono Nerd Font", weight = "Regular" },
+	{ family = "JetBrainsMono Nerd Font", weight = "Light" },
+	{ family = "JetBrainsMono Nerd Font", weight = "ExtraLight" },
+	{ family = "VictorMono Nerd Font", weight = "Regular" },
 	{ family = "CommitMono Nerd Font", weight = "Regular" },
 	{ family = "CaskaydiaCove Nerd Font", weight = "Regular" },
 	{ family = "Noto Sans Mono", weight = "Regular" },
+	{ family = "MonaspiceNe Nerd Font", weight = "Regular" },
 })
 config.font_size = 16.0
 config.freetype_load_flags = "DEFAULT"
