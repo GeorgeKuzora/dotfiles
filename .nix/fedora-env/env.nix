@@ -6,4 +6,5 @@ with import <nixpkgs> {}; [
     lazydocker
     monophony
     obsidian
+    yazi
 ]
