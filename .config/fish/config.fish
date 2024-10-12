@@ -1,3 +1,4 @@
+set fish_greeting
 set -g fish_key_bindings fish_vi_key_bindings
 # Emulates vim's cursor shape behavior
 # Set the normal and visual mode cursors to a block
