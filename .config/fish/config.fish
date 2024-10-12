@@ -86,7 +86,7 @@ end
 if status is-interactive
     atuin init fish | source
     fzf --fish | source
-    zoxide init --cmd cd fish | source
+    zoxide init --cmd z fish | source
     pyenv init - | source
     starship init fish | source
 end
