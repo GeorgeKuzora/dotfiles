@@ -17,6 +17,7 @@ set -g fish_vi_force_cursor 1
 
 # ENV VARIABLES
 set -gx XDG_CONFIG_HOME $HOME/.config
+set -gx PYENV_ROOT $HOME/.pyenv
 set -gx GOPATH $HOME/go
 set -gx MANPAGER 'nvim +Man!'
 set -gx MANWIDTH 999
@@ -35,8 +36,7 @@ set -gx IMAGE $(which loupe)
 set -gx STARSHIP_CONFIG $XDG_CONFIG_HOME/starship/starship.toml
 
 # PATH
-set -gx PATH $PATH $GOPATH/bin
-set -gx PATH $PATH $HOME/.local/bin
+fish_add_path $PYENV_ROOT/bin $PATH $GOPATH/bin $HOME/.local/bin
 
 # ALIASES
 # Colorize grep output (good for log files)
