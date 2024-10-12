@@ -66,7 +66,7 @@ alias h="history 1 | cut -c 8- | sort | uniq | fzf | tr '\\n' ' ' | cpy"
 # Modern versions of classic tools
 if type -q exa; and type -q bat
     alias ls='exa --oneline'
-    alias ll='exa -lah --color=auto --group-directories-first --icons --git --header'   # show long listing of all except ".."
+    alias ll='exa -lah --color=auto --group-directories-first --icons --header'   # show long listing of all except ".."
     alias cat='bat'
 else
     alias ls='ls --color=auto'

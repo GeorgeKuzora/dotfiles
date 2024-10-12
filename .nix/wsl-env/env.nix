@@ -20,5 +20,6 @@ with import <nixpkgs> {}; [
     lazydocker
     yazi
     jq
+    fish
 ]
 
