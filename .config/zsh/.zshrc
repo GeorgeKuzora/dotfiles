@@ -76,7 +76,7 @@ plugins=(
          zsh-syntax-highlighting
          autoswitch_virtualenv $plugins
          history-substring-search
-         vi-mode
+         zsh-vi-mode
          zsh-you-should-use
          poetry
          )
