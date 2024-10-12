@@ -78,7 +78,7 @@ plugins=(
          history-substring-search
          auto-notify $plugins
          # zsh-vi-mode
-         vi-mode
+         zsh-vi-mode
          zsh-you-should-use
          poetry
          )
