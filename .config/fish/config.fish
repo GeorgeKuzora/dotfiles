@@ -39,41 +39,49 @@ set -gx STARSHIP_CONFIG $XDG_CONFIG_HOME/starship/starship.toml
 # PATH
 fish_add_path $PYENV_ROOT/bin $PATH $GOPATH/bin $HOME/.local/bin
 
-# ALIASES
+# ABBREVIATION
 # Colorize grep output (good for log files)
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
+abbr -a grep 'grep --color=auto'
+abbr -a egrep 'egrep --color=auto'
+abbr -a fgrep 'fgrep --color=auto'
 # easier to read disk
-alias df='df -h'     # human-readable sizes
-alias free='free -m' # show sizes in MB
+abbr -a df 'df -h'     # human-readable sizes
+abbr -a free 'free -m' # show sizes in MB
 # nvim to vim
-alias vi='nvim'
-alias vim='nvim'
-alias vin='neovide'
+abbr -a vi 'nvim'
+abbr -a vim 'nvim'
+abbr -a vin 'neovide'
 # system
-alias update='sudo dnf upgrade && sudo snap refresh && flatpack update'
+abbr -a update 'sudo dnf upgrade && sudo snap refresh && flatpack update'
 #tools
-alias zj='zellij'
-alias zja='zellij a'
-alias zjs='zellij -s'
-alias lg='lazygit'
-alias lzg='lazygit'
-alias lzd='lazydocker'
-# history fuzzy find
-alias cpy='xclip -selection c'
-alias h="history 1 | cut -c 8- | sort | uniq | fzf | tr '\\n' ' ' | cpy"
+abbr -a zj 'zellij'
+abbr -a zja 'zellij a'
+abbr -a zjs 'zellij -s'
+abbr -a lg 'lazygit'
+abbr -a lzg 'lazygit'
+abbr -a lzd 'lazydocker'
+# Git
+abbr -a gst git status
+abbr -a gl git log
+abbr -a ga git add
+abbr -a gc git commit
+abbr -a gP git push
+abbr -a gp git pull
+abbr -a gf git fetch
+abbr -a gco git checkout
+abbr -a gcb git checkout -b
+abbr -a gwta git worktree add
+abbr -a gwtr git worktree remove
 # Modern versions of classic tools
 if type -q exa; and type -q bat
-    alias ls='exa --oneline'
-    alias ll='exa -lah --color=auto --group-directories-first --icons --git --header'   # show long listing of all except ".."
-    alias cat='bat'
+    abbr -a ls 'exa --oneline'
+    abbr -a ll 'exa -lah --color=auto --group-directories-first --icons --git --header'   # show long listing of all except ".."
+    abbr -a cat 'bat'
 else
-    alias ls='ls --color=auto'
-    alias ll='ls -lavh --ignore=.. --color=auto --group-directories-first'   # show long listing of all except ".."
-    alias l='ls -lavh --ignore=.?* --color=auto --group-directories-first'   # show long listing but no hidden dotfiles except "."
+    abbr -a ls 'ls --color=auto'
+    abbr -a ll 'ls -lavh --ignore=.. --color=auto --group-directories-first'   # show long listing of all except ".."
+    abbr -a l 'ls -lavh --ignore=.?* --color=auto --group-directories-first'   # show long listing but no hidden dotfiles except "."
 end
-
 
 if status is-interactive
     atuin init fish | source
