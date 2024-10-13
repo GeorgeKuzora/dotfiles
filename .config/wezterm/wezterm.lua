@@ -177,6 +177,11 @@ config.keys = {
 		mods = "SUPER",
 		action = wezterm.action.DisableDefaultAssignment,
 	},
+	{
+		key = "Enter",
+		mods = "ALT",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
 
 	-- NEW ASSIGNMENTS
 	-- Creating and closing tabs and panes
