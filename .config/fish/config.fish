@@ -50,13 +50,6 @@ safe_abbr vim nvim
 safe_abbr vin neovide
 # system
 safe_abbr update 'sudo dnf upgrade && sudo snap refresh && flatpack update'
-#tools
-safe_abbr zj 'zellij'
-safe_abbr zja 'zellij a'
-safe_abbr zjs 'zellij -s'
-safe_abbr lg 'lazygit'
-safe_abbr lzg 'lazygit'
-safe_abbr lzd 'lazydocker'
 # Git
 safe_abbr gst 'git status'
 safe_abbr gl 'git log'
@@ -69,7 +62,13 @@ safe_abbr gco 'git checkout'
 safe_abbr gcb 'git checkout -b'
 safe_abbr gwta 'git worktree add'
 safe_abbr gwtr 'git worktree remove'
-# Modern versions of classic tools
+# Other tools
+safe_abbr zj 'zellij'
+safe_abbr zja 'zellij a'
+safe_abbr zjs 'zellij -s'
+safe_abbr lg 'lazygit'
+safe_abbr lzg 'lazygit'
+safe_abbr lzd 'lazydocker'
 safe_abbr ls 'ls --color=auto'
 safe_abbr ll 'ls -lavh --ignore=.. --color=auto --group-directories-first'   # show long listing of all except ".."
 safe_abbr l 'ls -lavh --ignore=.?* --color=auto --group-directories-first'   # show long listing but no hidden dotfiles except "."
