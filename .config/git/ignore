@@ -5,3 +5,6 @@
 __pycache__/
 .vscode
 .idea
+.devbox
+devbox.json
+devbox.lock
