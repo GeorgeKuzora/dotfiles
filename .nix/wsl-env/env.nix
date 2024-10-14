@@ -21,5 +21,6 @@ with import <nixpkgs> {}; [
     yazi
     jq
     fish
+    direnv
 ]
 
