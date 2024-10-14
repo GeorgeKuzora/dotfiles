@@ -77,8 +77,8 @@ safe_abbr ll 'exa -lah --color=auto --group-directories-first --icons --header' 
 safe_abbr cat 'bat'
 
 if status is-interactive
-    atuin init fish | source
     fzf --fish | source
+    atuin init fish | source
     zoxide init --cmd cd fish | source
     pyenv init - | source
     starship init fish | source
