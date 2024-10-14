@@ -9,4 +9,6 @@ with import <nixpkgs> {}; [
     yazi
     fish
     xclip
+    direnv
+    jq
 ]
