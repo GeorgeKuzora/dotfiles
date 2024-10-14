@@ -22,5 +22,6 @@ with import <nixpkgs> {}; [
     jq
     fish
     direnv
+    werf
 ]
 
