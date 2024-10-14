@@ -7,7 +7,6 @@ with import <nixpkgs> {}; [
     monophony
     obsidian
     yazi
-    fish
     xclip
     direnv
     jq
