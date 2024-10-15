@@ -8,3 +8,4 @@ __pycache__/
 .devbox
 devbox.json
 devbox.lock
+.envrc
