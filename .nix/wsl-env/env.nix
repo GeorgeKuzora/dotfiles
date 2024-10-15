@@ -23,5 +23,6 @@ with import <nixpkgs> {}; [
     fish
     direnv
     werf
+    go-task
 ]
 
