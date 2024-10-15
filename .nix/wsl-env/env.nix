@@ -24,5 +24,6 @@ with import <nixpkgs> {}; [
     direnv
     werf
     go-task
+    httpie
 ]
 
