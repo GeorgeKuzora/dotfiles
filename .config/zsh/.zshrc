@@ -188,3 +188,5 @@ eval "$(pyenv init -)"
 sudo ip link set dev eth0 mtu 1350
 # PIPX SETUP
 export PIPX_DEFAULT_PYTHON=$(pyenv which python)
+
+fish
