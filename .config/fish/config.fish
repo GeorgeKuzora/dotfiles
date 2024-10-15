@@ -34,7 +34,7 @@ set -gx IMAGE $(which loupe)
 set -gx STARSHIP_CONFIG $XDG_CONFIG_HOME/starship/starship.toml
 
 # PATH
-fish_add_path $PYENV_ROOT/bin $PATH $GOPATH/bin $HOME/.local/bin
+fish_add_path $PYENV_ROOT/bin $PATH $GOPATH/bin $HOME/.local/bin /usr/lib/x86_64-linux-gnu
 
 # ABBREVIATION
 # Colorize grep output (good for log files)
