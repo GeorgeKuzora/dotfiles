@@ -80,7 +80,7 @@ safe_abbr cat 'bat'
 if status is-interactive
     fzf --fish | source
     atuin init fish | source
-    zoxide init --cmd cd fish | source
+    zoxide init fish | source
     pyenv init - | source
     direnv hook fish | source
     starship init fish | source
