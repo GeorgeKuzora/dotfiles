@@ -1,9 +1,10 @@
 with import <nixpkgs> {}; [
     dart
     lazydocker
-    monophony
     obsidian
     yazi
     direnv
     jq
+    logseq
+    go-task
 ]
