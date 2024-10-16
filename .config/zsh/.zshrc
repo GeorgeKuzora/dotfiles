@@ -1,19 +1,40 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
+# PATH
+export XDG_CONFIG_HOME="$HOME/.config"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ZSH="$ZDOTDIR/oh-my-zsh"
+export GOPATH="$HOME/go"
+export PATH="$PATH:$HOME/.local/bin:$GOPATH/bin"
+export FPATH="$FPATH:$HOME/.config/zsh/vendor-completions:/usr/share/zsh/vendor-completions"
+export MANPATH="/usr/local/man:$MANPATH"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# ENV VARS
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+  export VISUAL='vim'
+else
+  export EDITOR='nvim'
+  export VISUAL='nvim'
+fi
+export TERM='xterm-256color'
+export COLORTERM="truecolor"
+export TERMINAL="kitty"
+export BROWSER="brave-browser"
+export VIDEO="mpv"
+export PAGER="less"
+export SHELL="zsh"
+export OPENER="xdg-open"
+export READER="evince"
+export IMAGE="loupe"
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+export VI_MODE_SET_CURSOR=true
+export ARCHFLAGS="-arch x86_64"
+
+# OH-MY-ZSH CONFIG
 ZSH_THEME="robbyrussell"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
@@ -75,7 +96,6 @@ plugins=(
          zsh-autosuggestions
          zsh-syntax-highlighting
          history-substring-search
-         auto-notify $plugins
          zsh-vi-mode
          zsh-you-should-use
          poetry
@@ -83,31 +103,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-
 # PERSONAL CONFIGURATION
-
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.config/zsh/.histfile
 HISTSIZE=1000000
 HISTFILESIZE=1000000
@@ -117,69 +113,69 @@ setopt autocd
 unsetopt beep
 bindkey -v
 export KEYTIMEOUT=1
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/georgiy/.config/zsh/.zshrc'
-# End of lines added by compinstall
-
-# START NVM SETUP
-# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# alias nvm="unalias nvm; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; nvm $@"
-# END NVM SETUP
-
-# START SETUP
+zstyle :compinstall filename "$HOME/.config/zsh/.zshrc"
 setopt extendedglob nomatch menucomplete
 setopt interactive_comments
-stty stop undef		# Disable ctrl-s to freeze terminal.
+stty stop undef  # Disable ctrl-s to freeze terminal.
 zle_highlight=('paste:none')
-# END SETUP
-
-# START COMPLETIONS SETUP
 autoload -Uz compinit && compinit -i
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
-# DOCKER
-# zstyle ':completion:*:*:docker:*' option-stacking yes
-# zstyle ':completion:*:*:docker-*:*' option-stacking yes
-# zstyle ':completion::complete:lsof:*' menu yes select
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
+zstyle ':completion::complete:lsof:*' menu yes select
 zmodload zsh/complist
-_comp_options+=(globdots)		# Include hidden files.
+_comp_options+=(globdots)  # Include hidden files.
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
-# END COMPLETIONS SETUP
-
-# START COLORS SETUP
 autoload -Uz colors && colors
-# END COLORS SETUP
-
-# START ZOXIDE SETUP
-eval "$(zoxide init --cmd cd zsh)"
-# END ZOXIDE SETUP
-
-# START SOURCE SETUP
-source "/usr/share/fzf/shell/key-bindings.zsh"
-source "$ZDOTDIR/zsh-aliases"
-source "$ZDOTDIR/nvims"
-# END SOURCE SETUP
-
-# START BINDKEYS FOR "zsh-history-substring-search"
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-# END BINDKEYS FOR "zsh-history-substring-search"
 
-# START STARSHIP PROMPT
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-eval "$(starship init zsh)"
-# END STARSHIP PROMPT
+# ALIASES
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias df='df -h'     # human-readable sizes
+alias free='free -m' # show sizes in MB
+alias config='/usr/bin/git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME'
+alias peerflix='peerflix -l -k'
+alias brh='br -h'
+alias vi='nvim'
+alias vim='nvim'
+alias vin="neovide"
+alias emacs_daemon="emacs --daemon & disown"
+alias emacs="emacsclient -c -a -fs 'emacs' & disown"
+alias alacritty="env WINIT_UNIX_BACKEND=x11 alacritty"
+alias update="sudo dnf upgrade && flatpack update"
+alias zj="zellij"
+alias zja="zellij a"
+alias zjs="zellij -s"
+alias lg="lazygit"
+alias lzg="lazygit"
+alias lzd="lazydocker"
+alias pyal="source .venv/bin/activate"
+alias cpy='xclip -selection c'
+alias h="history 1 | cut -c 8- | sort | uniq | fzf | tr '\\n' ' ' | cpy"
+alias vid="NVIM_APPNAME=defaultnvim nvim"
+if ! command -v -- "$exa" > /dev/null 2>&1; then
+    alias ls='exa --oneline'
+    alias ll='exa -lah --color=auto --group-directories-first --icons --git --header'   # show long listing of all except ".."
+else
+    alias ls='ls --color=auto'
+    alias ll='ls -lavh --ignore=.. --color=auto --group-directories-first'   # show long listing of all except ".."
+    alias l='ls -lavh --ignore=.?* --color=auto --group-directories-first'   # show long listing but no hidden dotfiles except "."
+fi
+if ! command -v -- "$bat" > /dev/null 2>&1; then
+    alias cat="bat"
+fi
 
-# PYENV CONFIG
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# APPS SETUP
+source <(fzf --zsh)
+eval "$(atuin init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 eval "$(pyenv init -)"
+eval "$(direnv hook zsh)"
+eval "$(starship init zsh)"
