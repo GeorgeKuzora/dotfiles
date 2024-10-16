@@ -4,8 +4,7 @@ SETUVAR --export PYENV_ROOT:/home/georgiy/\x2epyenv
 SETUVAR __fish_initialized:3400
 SETUVAR _fisher_catppuccin_2F_fish_files:\x7e/\x2econfig/fish/themes/Catppuccin\x20Frappe\x2etheme\x1e\x7e/\x2econfig/fish/themes/Catppuccin\x20Latte\x2etheme\x1e\x7e/\x2econfig/fish/themes/Catppuccin\x20Macchiato\x2etheme\x1e\x7e/\x2econfig/fish/themes/Catppuccin\x20Mocha\x2etheme
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ecatppuccin/fish\x1eryoppippi/fish\x2dpoetry
-SETUVAR _fisher_ryoppippi_2F_fish_2D_poetry_files:\x7e/\x2econfig/fish/conf\x2ed/fish\x2dpoetry\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ecatppuccin/fish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:6c7086
 SETUVAR fish_color_cancel:f38ba8
