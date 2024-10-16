@@ -74,10 +74,8 @@ plugins=(
          git
          zsh-autosuggestions
          zsh-syntax-highlighting
-         # zsh-history-substring-search
          history-substring-search
          auto-notify $plugins
-         # zsh-vi-mode
          zsh-vi-mode
          zsh-you-should-use
          poetry
@@ -108,7 +106,6 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 # PERSONAL CONFIGURATION
-
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.config/zsh/.histfile
