@@ -79,6 +79,7 @@ plugins=(
          zsh-vi-mode
          zsh-you-should-use
          poetry
+         direnv
          )
 
 source $ZSH/oh-my-zsh.sh
@@ -107,6 +108,43 @@ source $ZSH/oh-my-zsh.sh
 
 # PERSONAL CONFIGURATION
 
+# ZSH CONFIGURATION PATH
+ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export ZSH="$ZDOTDIR/oh-my-zsh"
+#GO
+GOPATH="$HOME/go"
+# PATH
+PATH="$PATH:$HOME/.config/emacs/bin"
+PATH="$PATH:$HOME/.local/bin"
+PATH="$PATH:$HOME/.local/share/nautilus-python/extensions"
+PATH="$PATH:/opt/pt"
+PATH="$PATH:/usr/pgsql-15/bin"
+PATH="$PATH:$GOPATH/bin"
+export PATH
+
+# FPATH FOR COMPLETIONS
+FPATH="$FPATH:$HOME/.config/zsh/vendor-completions"
+FPATH="$FPATH:/usr/share/zsh/vendor-completions"
+export FPATH
+
+# LOOK MANPAGE VIA NVIM
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
+
+# ENVIRONMENT VARIABLES
+EDITOR='/usr/bin/nvim'
+VISUAL='/usr/bin/nvim'
+TERM='xterm-256color'
+COLORTERM="truecolor"
+TERMINAL="kitty"
+BROWSER="brave-browser"
+VIDEO="mpv"
+PAGER="less"
+SHELL="zsh"
+OPENER="xdg-open"
+READER="evince"
+IMAGE="loupe"
+STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.config/zsh/.histfile
@@ -160,14 +198,9 @@ zle -N down-line-or-beginning-search
 autoload -Uz colors && colors
 # END COLORS SETUP
 
-# START ZOXIDE SETUP
-eval "$(zoxide init --cmd cd zsh)"
-# END ZOXIDE SETUP
 
 # START SOURCE SETUP
 source "$XDG_CONFIG_HOME/fzf/key-bindings.zsh"
-source "$ZDOTDIR/zsh-aliases"
-source "$ZDOTDIR/nvims"
 # END SOURCE SETUP
 
 # START BINDKEYS FOR "zsh-history-substring-search"
@@ -175,10 +208,6 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 # END BINDKEYS FOR "zsh-history-substring-search"
 
-# START STARSHIP PROMPT
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-eval "$(starship init zsh)"
-# END STARSHIP PROMPT
 
 # PYENV CONFIG
 export PYENV_ROOT="$HOME/.pyenv"
@@ -189,4 +218,70 @@ sudo ip link set dev eth0 mtu 1350
 # PIPX SETUP
 export PIPX_DEFAULT_PYTHON=$(pyenv which python)
 
-fish
+
+export VI_MODE_SET_CURSOR=true
+# FCITX LANGUAGE MANAGEMENT VARIABLES /etc/enviroments
+# typeset -U PATH path
+# export GTK_IM_MODULE='fcitx'
+# export QT_IM_MODULE='fcitx'
+# export SDL_IM_MODULE='fcitx'
+# export XMODIFIERS='@im=fcitx'
+
+# ALIASES
+
+# Colorize grep output (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# easier to read disk
+alias df='df -h'     # human-readable sizes
+alias free='free -m' # show sizes in MB
+
+# Bare git for Dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME'
+
+# New ls
+# alias ls='ls --color=auto'
+# alias ll='ls -lavh --ignore=.. --color=auto --group-directories-first'   # show long listing of all except ".."
+# alias l='ls -lavh --ignore=.?* --color=auto --group-directories-first'   # show long listing but no hidden dotfiles except "."
+
+# Apps shortcuts
+alias peerflix='peerflix -l -k'
+alias brh='br -h'
+alias vi='nvim'
+alias vim='nvim'
+alias vin="neovide"
+alias emacs_daemon="emacs --daemon & disown"
+alias emacs="emacsclient -c -a -fs 'emacs' & disown"
+alias alacritty="env WINIT_UNIX_BACKEND=x11 alacritty"
+alias update="sudo dnf upgrade && flatpack update"
+alias zj="zellij"
+alias zja="zellij a"
+alias zjs="zellij -s"
+alias lg="lazygit"
+alias lzg="lazygit"
+alias lzd="lazydocker"
+
+# Python shortcuts
+alias pyal="source .venv/bin/activate"
+
+# history fuzzy find
+alias cpy='xclip -selection c'
+alias h="history 1 | cut -c 8- | sort | uniq | fzf | tr '\\n' ' ' | cpy"
+
+# Modern versions of classic tools
+alias ls='exa --oneline'
+alias ll='exa -lah --color=auto --group-directories-first --icons --header'   # show long listing of all except ".."
+alias cat="bat"
+
+alias vid="NVIM_APPNAME=defaultnvim nvim"
+
+
+# START ZOXIDE SETUP
+eval "$(zoxide init --cmd cd zsh)"
+# END ZOXIDE SETUP
+#
+# START STARSHIP PROMPT
+eval "$(starship init zsh)"
+# END STARSHIP PROMPT
