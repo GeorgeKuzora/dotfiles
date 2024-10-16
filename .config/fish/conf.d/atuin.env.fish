@@ -1,2 +1,2 @@
 
-source "$HOME/.atuin/bin/env.fish"
+source "$HOME/.config/fish/completions/atuin.fish"

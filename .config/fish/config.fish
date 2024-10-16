@@ -34,7 +34,7 @@ set -gx IMAGE $(which loupe)
 set -gx STARSHIP_CONFIG $XDG_CONFIG_HOME/starship/starship.toml
 
 # PATH
-fish_add_path $PYENV_ROOT/bin $PATH $GOPATH/bin $HOME/.local/bin /usr/lib/x86_64-linux-gnu
+fish_add_path $PYENV_ROOT/bin $PATH $GOPATH/bin $HOME/.local/bin
 
 # ABBREVIATION
 # Colorize grep output (good for log files)
@@ -79,7 +79,7 @@ safe_abbr cat 'bat'
 if status is-interactive
     fzf --fish | source
     atuin init fish | source
-    zoxide init --cmd cd fish | source
+    zoxide init fish | source
     pyenv init - | source
     direnv hook fish | source
     starship init fish | source
