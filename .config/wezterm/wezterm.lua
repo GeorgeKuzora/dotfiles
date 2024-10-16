@@ -319,6 +319,7 @@ config.keys = {
 }
 
 -- CONFIGURATION
+config.default_prog = { '/usr/bin/fish', '-i' }
 config.enable_wayland = false
 config.window_decorations = "NONE"
 config.adjust_window_size_when_changing_font_size = false
