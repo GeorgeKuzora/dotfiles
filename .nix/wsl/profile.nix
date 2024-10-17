@@ -32,8 +32,9 @@
         direnv
         fish
         werf
-        task-go
+        go-task
         httpie
+        tldr
     ];
   };
 }
