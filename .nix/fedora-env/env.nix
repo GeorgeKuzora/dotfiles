@@ -5,6 +5,6 @@ with import <nixpkgs> {}; [
     yazi
     direnv
     jq
-    logseq
     go-task
+    httpie
 ]
