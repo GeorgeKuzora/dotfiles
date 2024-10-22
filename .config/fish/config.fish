@@ -75,6 +75,7 @@ safe_abbr l 'ls -lavh --ignore=.?* --color=auto --group-directories-first'   # s
 safe_abbr ls 'exa --oneline'
 safe_abbr ll 'exa -lah --color=auto --group-directories-first --icons --git --header'   # show long listing of all except ".."
 safe_abbr cat 'bat'
+safe_abbr pyal 'source .venv/bin/activate.fish'
 
 
 if status is-interactive
