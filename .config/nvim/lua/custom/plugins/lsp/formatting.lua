@@ -25,7 +25,7 @@ return {
         markdown = { 'prettier' },
         graphql = { 'prettier' },
         lua = { 'stylua' },
-        python = { 'isort', 'black' },
+        python = { 'isort' },
       },
       format_on_save = function()
         if not format_is_enabled then
