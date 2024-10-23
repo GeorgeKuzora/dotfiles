@@ -11,6 +11,12 @@ return {
         return vim.fn.executable 'make' == 1
       end,
     },
+    {
+      "nvim-telescope/telescope-frecency.nvim",
+      config = function()
+        require("telescope").load_extension "frecency"
+      end,
+    },
   },
   -- cmd = "Telescope",
   config = function()
