@@ -48,14 +48,20 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
+    ".config/atuin".source = config.lib.file.mkOutOfStoreSymlink "/home/georgiy/.dotfiles/.config/atuin";
     ".config/autostart".source = config.lib.file.mkOutOfStoreSymlink "/home/georgiy/.dotfiles/.config/autostart";
-    ".config/Code".source = config.lib.file.mkOutOfStoreSymlink "/home/georgiy/.dotfiles/.config/Code";
+
+    ".config/Code/User/snippets".source = config.lib.file.mkOutOfStoreSymlink "/home/georgiy/.dotfiles/.config/Code/User/snippets";
+    ".config/Code/User/init.lua".source = config.lib.file.mkOutOfStoreSymlink "/home/georgiy/.dotfiles/.config/Code/User/init.lua";
+    ".config/Code/User/settings.json".source = config.lib.file.mkOutOfStoreSymlink "/home/georgiy/.dotfiles/.config/Code/User/settings.json";
+    ".config/Code/User/keybindings.json".source = config.lib.file.mkOutOfStoreSymlink "/home/georgiy/.dotfiles/.config/Code/User/keybindings.json";
+
     ".config/fish".source = config.lib.file.mkOutOfStoreSymlink "/home/georgiy/.dotfiles/.config/fish";
     ".config/git".source = config.lib.file.mkOutOfStoreSymlink "/home/georgiy/.dotfiles/.config/git";
     ".config/kitty".source = config.lib.file.mkOutOfStoreSymlink "/home/georgiy/.dotfiles/.config/kitty";
     ".config/mpv".source = config.lib.file.mkOutOfStoreSymlink "/home/georgiy/.dotfiles/.config/mpv";
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/georgiy/.dotfiles/.config/nvim";
-    ".config/pypoerty".source = config.lib.file.mkOutOfStoreSymlink "/home/georgiy/.dotfiles/.config/pypoerty";
+    ".config/pypoerty".source = config.lib.file.mkOutOfStoreSymlink "/home/georgiy/.dotfiles/.config/pypoetry";
     ".config/starship".source = config.lib.file.mkOutOfStoreSymlink "/home/georgiy/.dotfiles/.config/starship";
     ".config/tmux/tmux.conf".source = config.lib.file.mkOutOfStoreSymlink "/home/georgiy/.dotfiles/.config/tmux/tmux.conf";
     ".config/wezterm".source = config.lib.file.mkOutOfStoreSymlink "/home/georgiy/.dotfiles/.config/wezterm";
