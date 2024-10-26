@@ -16,11 +16,8 @@ return {
       },
     }
 
-    vim.keymap.set('n', '-', function()
+    vim.keymap.set('n', '<leader>-', function()
       o.open()
     end, { desc = 'Oil open parent directory' })
-    vim.keymap.set('n', '<leader>-', function()
-      o.toggle_float()
-    end, { desc = 'Oil open parent directory in float' })
   end,
 }
