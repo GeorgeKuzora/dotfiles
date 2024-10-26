@@ -13,7 +13,6 @@ in {
 
     packages = [
       pkgs.lazydocker
-      pkgs.obsidian
       pkgs.yazi
       pkgs.direnv
       pkgs.jq
@@ -81,6 +80,7 @@ in {
     bash = {
       enable = true;
       bashrcExtra = ''
+        if [ -e /home/kuzora/.nix-profile/etc/profile.d/nix.sh ]; then . /home/kuzora/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
         sudo ip link set eth0 mtu 1350
         fish -i
       '';
