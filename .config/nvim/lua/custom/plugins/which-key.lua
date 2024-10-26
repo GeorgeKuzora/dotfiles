@@ -43,6 +43,7 @@ return {
     },
     disable = { filetypes = { 'TelescopePrompt' } },
     spec = {
+      { '<leader>e', group = 'Explorer' },
       { '<leader>f', group = 'Find' },
       { '<leader>b', group = 'Buffers' },
       { '<leader>l', group = 'LSP' },
