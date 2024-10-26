@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 let
-  username = "georgiy";
-  home = "/home/georgiy";
+  username = "kuzora";
+  home = "/home/kuzora";
 in {
   nixpkgs.config.allowUnfree = true;
   news.display = "silent";
@@ -19,7 +19,27 @@ in {
       pkgs.jq
       pkgs.go-task
       pkgs.httpie
-      # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+      pkgs.atuin
+      pkgs.bat
+      pkgs.delta
+      pkgs.fd
+      pkgs.fzf
+      pkgs.go
+      pkgs.lazygit
+      pkgs.lua
+      pkgs.luajitPackages.luarocks
+      pkgs.neovim
+      pkgs.nodejs
+      pkgs.ripgrep
+      pkgs.starship
+      pkgs.stow
+      pkgs.unzip
+      pkgs.xclip
+      pkgs.zoxide
+      pkgs.eza
+      pkgs.fish
+      pkgs.werf
+      (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       # (pkgs.writeShellScriptBin "my-hello" ''
       #   echo "Hello, ${config.home.username}!"
       # '')
@@ -59,9 +79,17 @@ in {
     home-manager.enable = true;
     bash = {
       enable = true;
-      # bashrcExtra = ''
-      #   fish -i
-      # '';
+      bashrcExtra = ''
+        sudo ip link set eth0 mtu 1350
+        fish -i
+      '';
+      shellAliases = {
+        ll = "ls -alF";
+        la = "ls -A";
+        l = "ls -CF";
+        ".." = "cd ..";
+        "-" = "cd -";
+      };
     };
   };
 }
