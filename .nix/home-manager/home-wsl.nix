@@ -13,7 +13,6 @@ in {
 
     packages = [
       pkgs.lazydocker
-      pkgs.obsidian
       pkgs.yazi
       pkgs.direnv
       pkgs.jq
