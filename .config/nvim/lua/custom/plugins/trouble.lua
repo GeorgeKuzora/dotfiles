@@ -20,7 +20,12 @@ return {
     },
     {
       '<leader>xs',
-      '<cmd>Trouble symbols toggle focus=false win.position=bottom<cr>',
+      '<cmd>Trouble symbols toggle focus=false win.position=right<cr>',
+      desc = 'Symbols (Trouble)',
+    },
+    {
+      '<leader>a',
+      '<cmd>Trouble symbols toggle focus=true win.position=right<cr>',
       desc = 'Symbols (Trouble)',
     },
     {
