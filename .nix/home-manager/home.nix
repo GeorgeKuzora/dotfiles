@@ -49,6 +49,11 @@ in {
       ".config/zsh/.zshrc".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/zsh/.zshrc";
       ".config/zsh/vendor-completions".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/zsh/vendor-completions";
       ".zshenv".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.zshenv";
+
+      ".local/bin/yamount".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.local/bin/yamount";
+      ".local/bin/yasync".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.local/bin/yasync";
+      ".local/bin/yt".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.local/bin/yt";
+      ".local/bin/yta".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.local/bin/yta";
     };
     sessionVariables = {
       # EDITOR = "emacs";
