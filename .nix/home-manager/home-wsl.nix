@@ -47,7 +47,14 @@ in {
 
     file = {
       ".config/atuin".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/atuin";
-      ".config/fish".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/fish";
+
+      ".config/fish/completions".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/fish/completions";
+      ".config/fish/conf.d".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/fish/conf.d";
+      ".config/fish/functions".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/fish/functions";
+      ".config/fish/themes".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/fish/themes";
+      ".config/fish/config.fish".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/fish/config.fish";
+      ".config/fish/fish_plugins".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/fish/fish_plugins";
+
       ".config/git".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/git";
       ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/nvim";
       ".config/pypoetry".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/pypoetry";
