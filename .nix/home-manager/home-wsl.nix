@@ -32,6 +32,7 @@ in {
       pkgs.ripgrep
       pkgs.starship
       pkgs.stow
+      pkgs.tmux
       pkgs.unzip
       pkgs.xclip
       pkgs.zoxide
