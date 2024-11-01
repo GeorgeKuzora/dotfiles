@@ -1,5 +1,6 @@
 # OPTIONS
 set fish_greeting # disable greeting on startup
+set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense'
 
 # KEYBINDINGS
 set -g fish_key_bindings fish_hybrid_key_bindings
@@ -85,5 +86,6 @@ if status is-interactive
     pyenv init - | source
     direnv hook fish | source
     starship init fish | source
+    carapace _carapace | source
 end
 
