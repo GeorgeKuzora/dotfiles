@@ -53,6 +53,7 @@ return {
       { '<leader>]', group = 'Next' },
       { '<leader>[', group = 'Previous' },
       { '<leader>x', group = 'Trouble' },
+      { '<leader>t', group = 'Test' },
     },
   },
   keys = {
