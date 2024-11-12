@@ -9,8 +9,8 @@ km.set('n', 'о', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 km.set('n', '<C-c>', ':noh<return><esc>')
 km.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Remap for dealing with word wrap
-km.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-km.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+-- km.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- km.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 -- Quick Spell correction
 km.set('n', 'z1', 'z=1<CR><CR>', { desc = 'Quick spell correction' })
 -- change word under cursor
