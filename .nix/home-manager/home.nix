@@ -20,6 +20,7 @@ in {
       pkgs.go-task
       pkgs.httpie
       pkgs.carapace
+      pkgs.difftastic
       # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
       # (pkgs.writeShellScriptBin "my-hello" ''
       #   echo "Hello, ${config.home.username}!"

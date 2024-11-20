@@ -41,6 +41,7 @@ in {
       pkgs.werf
       pkgs.tldr
       pkgs.carapace
+      pkgs.difftastic
       (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       # (pkgs.writeShellScriptBin "my-hello" ''
       #   echo "Hello, ${config.home.username}!"
