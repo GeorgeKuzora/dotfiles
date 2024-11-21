@@ -50,7 +50,7 @@ safe_abbr vi nvim
 safe_abbr vim nvim
 safe_abbr vin neovide
 # system
-safe_abbr update 'sudo dnf upgrade && sudo snap refresh && flatpack update'
+safe_abbr update 'sudo dnf update && sudo snap refresh && flatpak update'
 # Git
 safe_abbr gst 'git status'
 safe_abbr gl 'git log'
