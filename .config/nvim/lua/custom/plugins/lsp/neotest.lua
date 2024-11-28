@@ -39,7 +39,7 @@ return {
     vim.keymap.set('n', '<leader>tl', function()
       neotest.run.run_last()
     end, { desc = 'Run last test' })
-    vim.keymap.set('n', '<leader>tx', function()
+    vim.keymap.set('n', '<leader>tu', function()
       neotest.run.stop()
     end, { desc = 'Stop running tests' })
     vim.keymap.set('n', '<leader>tf', function ()
