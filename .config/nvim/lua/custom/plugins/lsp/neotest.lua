@@ -9,10 +9,27 @@ return {
   },
   config = function ()
     local neotest = require("neotest")
+
+    local function getPytestArgs()
+            local envVarValue = os.getenv('VI_PYTEST_ARGS')
+            if envVarValue == nil then
+                return nil
+            end
+
+            local list = {}
+            for word in envVarValue:gmatch("%S+") do
+                table.insert(list, word)
+            end
+
+        return list
+    end
+
     require("neotest").setup {
       adapters = {
         require("neotest-python"){
           dap = { justMyCode = false },
+          args = getPytestArgs,
+          runner = "pytest",
         },
       }
     }
