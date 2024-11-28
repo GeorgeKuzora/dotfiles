@@ -9,3 +9,4 @@ __pycache__/
 .env
 ./generate.py
 ./new_schema.py
+taskfile.dist.yml
