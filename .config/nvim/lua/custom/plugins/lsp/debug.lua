@@ -3,6 +3,7 @@ return {
   dependencies = {
     -- Creates a beautiful debugger UI
     'rcarriga/nvim-dap-ui',
+    'theHamsta/nvim-dap-virtual-text',
 
     -- Installs the debug adapters for you
     'williamboman/mason.nvim',
@@ -46,11 +47,16 @@ return {
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
     vim.fn.sign_define('DapBreakpoint', { text = '🔴', texthl = 'red', linehl = '', numhl = '' })
+    require('nvim-dap-virtual-text').setup()
 
     require('dap-go').setup()
     require('dap-python').setup '~/.local/share/nvim/mason/packages/debugpy/venv/bin/python'
 
     vim.keymap.set('n', '<F2>', dap.restart, { desc = 'Debug: Restart' })
+    vim.keymap.set('n', '<F3>', function()
+      require('dapui').eval(nil, { enter = true })
+    end, { desc = 'Debug: Evaluate variable' })
+    vim.keymap.set('n', '<F4>', dap.run_to_cursor, { desc = 'Debug: Run to cursor' })
     vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Debug: Start/Continue' })
     vim.keymap.set('n', '<F6>', function()
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
