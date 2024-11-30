@@ -52,6 +52,10 @@ km.set('n', ']b', ':bnext<CR>', { desc = 'Next buffer' })
 km.set('n', '[b', ':bprevious<CR>', { desc = 'Previous buffer' })
 
 --WINDOW MANAGEMENT
+km.set('n', '<C-h>', '<C-w>h')
+km.set('n', '<C-l>', '<C-w>l')
+km.set('n', '<C-j>', '<C-w>j')
+km.set('n', '<C-k>', '<C-w>k')
 km.set('n', '<M-->', '<C-w>-')
 km.set('n', '<M-=>', '<C-w>+')
 km.set('n', '<M-,>', '<C-w><')
