@@ -17,10 +17,10 @@ in {
       pkgs.yazi
       pkgs.direnv
       pkgs.jq
-      pkgs.go-task
       pkgs.httpie
       pkgs.carapace
       pkgs.difftastic
+      pkgs.taskwarrior3
       # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
       # (pkgs.writeShellScriptBin "my-hello" ''
       #   echo "Hello, ${config.home.username}!"
@@ -49,6 +49,7 @@ in {
       ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/nvim";
       ".config/pypoetry".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/pypoetry";
       ".config/starship".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/starship";
+      ".config/task/taskrc".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/task/taskrc";
       ".config/tmux/tmux.conf".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/tmux/tmux.conf";
       ".config/wezterm".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/wezterm";
       ".config/zed".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/zed";
