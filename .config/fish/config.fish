@@ -87,6 +87,7 @@ safe_abbr pyal 'source .venv/bin/activate.fish'
 safe_abbr pd 'prevd'
 safe_abbr nd 'nextd'
 safe_abbr gtask 'go-task'
+safe_abbr gotask 'go-task'
 
 
 if status is-interactive
@@ -97,6 +98,6 @@ if status is-interactive
     direnv hook fish | source
     starship init fish | source
     carapace _carapace | source
-    go-task --completion fish | source
+    #go-task --completion fish | source
 end
 
