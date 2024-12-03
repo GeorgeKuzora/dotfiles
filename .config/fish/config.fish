@@ -88,6 +88,7 @@ safe_abbr pd 'prevd'
 safe_abbr nd 'nextd'
 safe_abbr gtask 'go-task'
 safe_abbr gotask 'go-task'
+safe_abbr got 'go-task'
 
 
 if status is-interactive
