@@ -29,8 +29,8 @@
   "vertical_scroll_margin": 8,
   "buffer_line_height": "standard",
   "ui_font_size": 16,
-  "ui_font_family": "VictorMono Nerd Font",
-  "buffer_font_family": "VictorMono Nerd Font",
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_size": 16,
   "project_panel": {
     "dock": "right"
@@ -73,6 +73,15 @@
   "file_types": {
     "Dockerfile": ["Dockerfile*"]
   },
+  "terminal": {
+    "shell": {
+      "with_arguments": {
+        "program": "fish",
+        "args": ["-i"]
+      }
+    },
+    "font_family": "JetBrainsMono Nerd Font"
+  },
   "lsp": {
     "gopls": {
       "initialization_options": {
@@ -103,7 +112,7 @@
     "Python": {
       "formatter": {
         "external": {
-          "command": "black",
+          "command": "isort",
           "arguments": ["-"]
         }
       },
