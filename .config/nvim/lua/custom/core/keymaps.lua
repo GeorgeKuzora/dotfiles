@@ -19,7 +19,7 @@ km.set('n', '<leader>*', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
 km.set('n', '<leader>lc', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Set file as executable' })
 
 -- LINES MODIFICATION
-km.set('n', 'J', 'mzJ`z', { desc = 'Join Lines' })
+-- km.set('n', 'J', 'mzJ`z', { desc = 'Join Lines' })
 -- Insert line without insert mode
 km.set('n', '<leader>o', 'o<Esc>k', { desc = 'Insert empty line bellow' })
 km.set('n', '<leader>O', 'O<Esc>j', { desc = 'Insert empty line above' })
