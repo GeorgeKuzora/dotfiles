@@ -12,6 +12,9 @@ return {
     if vim.fn.executable('mypy') == 1 then
       table.insert(python_linters, 'mypy')
     end
+    if vim.fn.executable('ruff') == 1 then
+      table.insert(python_linters, 'ruff')
+    end
 
     lint.linters_by_ft = {
       javascript = { 'eslint_d' },

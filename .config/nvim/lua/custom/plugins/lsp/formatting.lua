@@ -11,6 +11,19 @@ return {
       print('Setting autoformatting to: ' .. tostring(format_is_enabled))
     end, {})
 
+
+    local python_formatters = {}
+
+    if vim.fn.executable('black') == 1 then
+      table.insert(python_formatters, 'black')
+    end
+    if vim.fn.executable('isort') == 1 then
+      table.insert(python_formatters, 'isort')
+    end
+    if vim.fn.executable('ruff') == 1 then
+      table.insert(python_formatters, 'ruff_format')
+    end
+
     conform.setup {
       formatters_by_ft = {
         javascript = { 'prettier' },
@@ -25,7 +38,7 @@ return {
         markdown = { 'prettier' },
         graphql = { 'prettier' },
         lua = { 'stylua' },
-        python = { 'isort', 'black' },
+        python = python_formatters,
       },
       format_on_save = function()
         if not format_is_enabled then
