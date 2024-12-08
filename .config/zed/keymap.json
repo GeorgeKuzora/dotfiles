@@ -22,5 +22,17 @@
       "space o": ["workspace::SendKeystrokes", "o escape k"],
       "space shift-o": ["workspace::SendKeystrokes", "shift-o escape j"]
     }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "ctrl-shift-j": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-j": "workspace::ToggleBottomDock"
+    }
   }
 ]

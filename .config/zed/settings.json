@@ -23,7 +23,7 @@
     "use_multiline_find": true
   },
   // disable cursor blink
-  "current_line_highlight": "gutter",
+  "current_line_highlight": "all",
   "cursor_blink": false,
   "relative_line_numbers": true,
   "vertical_scroll_margin": 8,
