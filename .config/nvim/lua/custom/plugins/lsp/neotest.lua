@@ -13,7 +13,7 @@ return {
     local function getPytestArgs()
             local envVarValue = os.getenv('VI_PYTEST_ARGS')
             if envVarValue == nil then
-                return nil
+                return {}
             end
 
             local list = {}
