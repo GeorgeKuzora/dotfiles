@@ -20,6 +20,7 @@ in {
       pkgs.httpie
       pkgs.carapace
       pkgs.difftastic
+      pkgs.starship
       pkgs.taskwarrior3
       # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
       # (pkgs.writeShellScriptBin "my-hello" ''
