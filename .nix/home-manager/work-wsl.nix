@@ -37,6 +37,7 @@ in {
       pkgs.zoxide
       pkgs.eza
       pkgs.fish
+      pkgs.werf
       pkgs.tldr
       pkgs.carapace
       pkgs.difftastic
@@ -76,6 +77,7 @@ in {
       enable = true;
       bashrcExtra = ''
         if [ -e /home/kuzora/.nix-profile/etc/profile.d/nix.sh ]; then . /home/kuzora/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+        sudo ip link set eth0 mtu 1350
         fish -i
       '';
       shellAliases = {

@@ -19,7 +19,11 @@
         inherit pkgs;
         modules = [ ./home.nix ];
       };
-      homeConfigurations."wsl" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."wsl-work" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./work-wsl.nix ];
+      };
+      homeConfigurations."wsl-home" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./home-wsl.nix ];
       };
