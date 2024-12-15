@@ -43,7 +43,7 @@ safe_abbr grep 'grep --color=auto'
 safe_abbr egrep 'egrep --color=auto'
 safe_abbr fgrep 'fgrep --color=auto'
 # easier to read disk
-safe_abbr df 'df -h'     # human-readable sizes
+safe_abbr df 'df -h' # human-readable sizes
 safe_abbr free 'free -m' # show sizes in MB
 # nvim to vim
 safe_abbr vi nvim
@@ -74,26 +74,26 @@ safe_abbr gmod 'git merge origin/dev'
 safe_abbr gmos 'git merge origin/staging'
 safe_abbr gmot 'git merge origin/test'
 # Other tools
-safe_abbr zj 'zellij'
+safe_abbr zj zellij
 safe_abbr zja 'zellij a'
 safe_abbr zjs 'zellij -s'
-safe_abbr lg 'lazygit'
-safe_abbr lzg 'lazygit'
-safe_abbr lzd 'lazydocker'
+safe_abbr lg lazygit
+safe_abbr lzg lazygit
+safe_abbr lzd lazydocker
 safe_abbr ls 'ls --color=auto'
-safe_abbr ll 'ls -lavh --ignore=.. --color=auto --group-directories-first'   # show long listing of all except ".."
-safe_abbr l 'ls -lavh --ignore=.?* --color=auto --group-directories-first'   # show long listing but no hidden dotfiles except "."
+safe_abbr ll 'ls -lavh --ignore=.. --color=auto --group-directories-first' # show long listing of all except ".."
+safe_abbr l 'ls -lavh --ignore=.?* --color=auto --group-directories-first' # show long listing but no hidden dotfiles except "."
 safe_abbr ls 'exa --oneline'
-safe_abbr ll 'exa -lah --color=auto --group-directories-first --icons --git --header'   # show long listing of all except ".."
-safe_abbr cat 'bat'
+safe_abbr ll 'exa -lah --color=auto --group-directories-first --icons --git --header' # show long listing of all except ".."
+safe_abbr cat bat
 safe_abbr pyal 'source .venv/bin/activate.fish'
-safe_abbr pd 'prevd'
-safe_abbr nd 'nextd'
-safe_abbr gtask 'go-task'
-safe_abbr gotask 'go-task'
-safe_abbr got 'go-task'
-safe_abbr lazyvim 'NVIM_APPNAME=lazyvim nvim'
-safe_abbr vid 'NVIM_APPNAME=defaultnvim nvim'
+safe_abbr pd prevd
+safe_abbr nd nextd
+safe_abbr gtask go-task
+safe_abbr gotask go-task
+safe_abbr got go-task
+safe_abbr lazyvim 'set -gx NVIM_APPNAME lazyvim && nvim'
+safe_abbr vid 'set -gx NVIM_APPNAME defaultvim && nvim'
 
 if status is-interactive
     fzf --fish | source
@@ -105,4 +105,3 @@ if status is-interactive
     carapace _carapace | source
     #go-task --completion fish | source
 end
-
