@@ -48,6 +48,7 @@ return {
           lsp_trouble = true,
           noice = true,
           notify = true,
+          blink_cmp = true,
           barbecue = {
             dim_dirname = true, -- directory name is dimmed by default
             bold_basename = true,

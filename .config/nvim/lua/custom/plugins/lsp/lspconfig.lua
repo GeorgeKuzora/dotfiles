@@ -14,102 +14,11 @@ return {
       opts = {},
     },
     'folke/neodev.nvim',
-    'hrsh7th/cmp-nvim-lsp',
+    'saghen/blink.cmp',
   },
 
-  -- KEYMAPS
-
-  config = function()
-    local on_attach = function(_, bufnr)
-      local nmap = function(keys, func, desc)
-        if desc then
-          desc = 'LSP: ' .. desc
-        end
-
-        vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
-      end
-
-      vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-        vim.lsp.buf.format()
-      end, { desc = 'Format current buffer with LSP' })
-
-      nmap('gd', require('telescope.builtin').lsp_definitions, 'Go to definition')
-      nmap('gD', vim.lsp.buf.declaration, 'Go to declaration')
-      nmap('gR', require('telescope.builtin').lsp_references, 'Go to references')
-      nmap('gI', require('telescope.builtin').lsp_implementations, 'Go to implementation')
-      nmap('gy', require('telescope.builtin').lsp_type_definitions, 'Go to type definition')
-
-      nmap('<leader>lx', ':LspRestart<CR>', 'Restart LSP')
-      nmap('<leader>lr', vim.lsp.buf.rename, 'Rename symbol')
-      nmap('<leader>la', vim.lsp.buf.code_action, 'Code action')
-      nmap('<leader>ls', require('telescope.builtin').lsp_document_symbols, 'Document symbols')
-      nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace symbols')
-      nmap('<leader>fS', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace symbols')
-      nmap('<leader>lS', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace symbols')
-      nmap('<leader>lv', function()
-        vim.lsp.buf.format { async = false }
-      end, 'Format buffer with LSP')
-      if vim.lsp.inlay_hint then
-        nmap('<leader>lh', function()
-          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(nil))
-          if vim.lsp.inlay_hint.is_enabled(nil) then
-            print 'Inlay hints enabled'
-          else
-            print 'Inlay hints disabled'
-          end
-        end, 'Toggle inlay hints')
-      end
-
-      nmap('<A-K>', function() vim.lsp.buf.signature_help() end, 'Signature help')
-      vim.keymap.set('i', '<A-k>', function()
-        vim.lsp.buf.hover()
-      end, { desc = 'Hover documentation' })
-      vim.keymap.set('i', '<A-K>', function()
-        vim.lsp.buf.signature_help()
-      end, { desc = 'Signature help' })
-
-      nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, 'Add workspace folder')
-      nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Remove workspace folder')
-      nmap('<leader>wl', function()
-        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-      end, 'List workspace folders')
-    end
-
-    -- LSP SETUP
-
-    require('neodev').setup()
-    -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-
-    vim.diagnostic.config {
-      severity_sort = true,
-      update_in_insert = false,
-      signs = {
-        text = {
-          [vim.diagnostic.severity.ERROR] = ' ',
-          [vim.diagnostic.severity.WARN] = ' ',
-          [vim.diagnostic.severity.HINT] = '󰠠 ',
-          [vim.diagnostic.severity.INFO] = ' ',
-        },
-        numhl = {
-          [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
-          [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
-          [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
-          [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
-        },
-        linehl = {
-          [vim.diagnostic.severity.ERROR] = 'DiagnosticLineBackgroundError',
-          [vim.diagnostic.severity.WARN] = 'DiagnosticLineBackgroundWarn',
-          [vim.diagnostic.severity.HINT] = 'DiagnosticLineBackgroundHint',
-          [vim.diagnostic.severity.INFO] = 'DiagnosticLineBackgroundInfo',
-        },
-      },
-    }
-
-    -- LSP SERVERS
-
-    local servers = {
+  opts = {
+    servers = {
       gopls = {
         gopls = {
           hints = {
@@ -172,6 +81,92 @@ return {
       marksman = {},
       unocss = {},
       typos_lsp = {},
+    },
+  },
+
+  config = function(_, opts)
+    local on_attach = function(_, bufnr)
+      local nmap = function(keys, func, desc)
+        if desc then
+          desc = 'LSP: ' .. desc
+        end
+
+        vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+      end
+
+      vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+        vim.lsp.buf.format()
+      end, { desc = 'Format current buffer with LSP' })
+
+      nmap('gd', require('telescope.builtin').lsp_definitions, 'Go to definition')
+      nmap('gD', vim.lsp.buf.declaration, 'Go to declaration')
+      nmap('gR', require('telescope.builtin').lsp_references, 'Go to references')
+      nmap('gI', require('telescope.builtin').lsp_implementations, 'Go to implementation')
+      nmap('gy', require('telescope.builtin').lsp_type_definitions, 'Go to type definition')
+
+      nmap('<leader>lx', ':LspRestart<CR>', 'Restart LSP')
+      nmap('<leader>lr', vim.lsp.buf.rename, 'Rename symbol')
+      nmap('<leader>la', vim.lsp.buf.code_action, 'Code action')
+      nmap('<leader>ls', require('telescope.builtin').lsp_document_symbols, 'Document symbols')
+      nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace symbols')
+      nmap('<leader>fS', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace symbols')
+      nmap('<leader>lS', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace symbols')
+      nmap('<leader>lv', function()
+        vim.lsp.buf.format { async = false }
+      end, 'Format buffer with LSP')
+      if vim.lsp.inlay_hint then
+        nmap('<leader>lh', function()
+          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(nil))
+          if vim.lsp.inlay_hint.is_enabled(nil) then
+            print 'Inlay hints enabled'
+          else
+            print 'Inlay hints disabled'
+          end
+        end, 'Toggle inlay hints')
+      end
+
+      nmap('<A-K>', function() vim.lsp.buf.signature_help() end, 'Signature help')
+      vim.keymap.set('i', '<A-k>', function()
+        vim.lsp.buf.hover()
+      end, { desc = 'Hover documentation' })
+      vim.keymap.set('i', '<A-K>', function()
+        vim.lsp.buf.signature_help()
+      end, { desc = 'Signature help' })
+
+      nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, 'Add workspace folder')
+      nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Remove workspace folder')
+      nmap('<leader>wl', function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+      end, 'List workspace folders')
+    end
+
+    -- LSP SETUP
+
+    require('neodev').setup()
+
+    vim.diagnostic.config {
+      severity_sort = true,
+      update_in_insert = false,
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = ' ',
+          [vim.diagnostic.severity.WARN] = ' ',
+          [vim.diagnostic.severity.HINT] = '󰠠 ',
+          [vim.diagnostic.severity.INFO] = ' ',
+        },
+        numhl = {
+          [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
+          [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
+          [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
+          [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
+        },
+        linehl = {
+          [vim.diagnostic.severity.ERROR] = 'DiagnosticLineBackgroundError',
+          [vim.diagnostic.severity.WARN] = 'DiagnosticLineBackgroundWarn',
+          [vim.diagnostic.severity.HINT] = 'DiagnosticLineBackgroundHint',
+          [vim.diagnostic.severity.INFO] = 'DiagnosticLineBackgroundInfo',
+        },
+      },
     }
 
     -- MASON CONFIG
@@ -207,17 +202,21 @@ return {
 
     -- Ensure the servers above are installed
     mason_lspconfig.setup {
-      ensure_installed = vim.tbl_keys(servers),
+      ensure_installed = vim.tbl_keys(opts.servers),
       automatic_installation = true, -- not the same as ensure_installed
     }
+
+    -- BLINK capabilities
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
 
     mason_lspconfig.setup_handlers {
       function(server_name)
         require('lspconfig')[server_name].setup {
           capabilities = capabilities,
           on_attach = on_attach,
-          settings = servers[server_name],
-          filetypes = (servers[server_name] or {}).filetypes,
+          settings = opts.servers[server_name],
+          filetypes = (opts.servers[server_name] or {}).filetypes,
         }
       end,
     }
