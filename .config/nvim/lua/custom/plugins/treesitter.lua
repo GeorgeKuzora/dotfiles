@@ -60,20 +60,17 @@ return {
       },
       -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
       auto_install = true,
+      sync_install = false,
       highlight = {
         enable = true,
-        additional_vim_regex_highlighting = { 'ruby' },
-        disable = function(_, bufnr)
-          return vim.b[bufnr].large_buf
+        disable = function(_, buf)
+          local max_filesize = 100 * 1024 -- 100 KB
+          local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+          if ok and stats and stats.size > max_filesize then
+              return true
+          end
         end,
-      },
-      indent = { enable = true, disable = { 'ruby' } },
-      refactor = {
-        highlight_definitions = {
-          enable = true,
-          -- Set to false if you have an `updatetime` of ~100.
-          clear_on_cursor_move = true,
-        },
+        additional_vim_regex_highlighting = false,
       },
       incremental_selection = {
         enable = true,
@@ -84,6 +81,7 @@ return {
           node_decremental = '<bs>',
         },
       },
+      indent = { enable = true, disable = { 'ruby' } },
       rainbow = {
         enable = true,
         disable = {}, -- list of languages you want to disable the plugin for
@@ -99,6 +97,13 @@ return {
           'TSRainbowGreen',
           'TSRainbowViolet',
           'TSRainbowCyan',
+        },
+      },
+      refactor = {
+        highlight_definitions = {
+          enable = true,
+          -- Set to false if you have an `updatetime` of ~100.
+          clear_on_cursor_move = true,
         },
       },
       textobjects = {
@@ -143,6 +148,7 @@ return {
             [']c'] = { query = '@class.outer', desc = 'Next class start' },
             [']f'] = { query = '@call.outer', desc = 'Next function call start' },
             [']i'] = { query = '@conditional.outer', desc = 'Next conditional start' },
+            [']l'] = { query = '@loop.outer', desc = 'Next loop start' },
           },
           goto_next_end = {
             [']K'] = { query = '@block.outer', desc = 'Next block end' },
