@@ -92,7 +92,8 @@ safe_abbr nd 'nextd'
 safe_abbr gtask 'go-task'
 safe_abbr gotask 'go-task'
 safe_abbr got 'go-task'
-
+safe_abbr lazyvim "NVIM_APPNAME=lazyvim nvim"
+safe_abbr vid "NVIM_APPNAME=defaultnvim nvim"
 
 if status is-interactive
     fzf --fish | source
