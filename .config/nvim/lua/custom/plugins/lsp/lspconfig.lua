@@ -32,7 +32,15 @@ return {
           },
         },
       },
-      pyright = {},
+      pyright = {
+        python = {
+          analysis = {
+            autoSearchPaths = false,
+            diagnosticMode = "openFilesOnly",
+            useLibraryCodeForTypes = false,
+          },
+        },
+      },
       ts_ls = {
         typescript = {
           inlayHints = {
