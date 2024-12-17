@@ -34,7 +34,7 @@ return {
     }
 
     require('luasnip.loaders.from_vscode').lazy_load()
-    require('luasnip.loaders.from_vscode').lazy_load { paths = '~/.config/nvim/lua/custom/snippets' }
+    require('luasnip.loaders.from_vscode').lazy_load { paths = '~/.config/nvim/snippets' }
     require('luasnip').filetype_extend('python', { 'pydoc', 'django', 'django-rest' })
     require('luasnip').filetype_extend('html', { 'djangohtml', 'htmldjango' })
 
@@ -55,7 +55,5 @@ return {
         ls.change_choice(1)
       end
     end, { silent = true })
-
-    vim.keymap.set('n', '<leader>m', '<cmd>source ~/.config/nvim/lua/custom/plugins/luasnip.lua<CR>', { desc = 'Source Luasnip file' })
   end,
 }
