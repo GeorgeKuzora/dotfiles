@@ -42,14 +42,16 @@ fish_add_path $PYENV_ROOT/bin $PATH $GOPATH/bin $HOME/.local/bin
 safe_abbr grep 'grep --color=auto'
 safe_abbr egrep 'egrep --color=auto'
 safe_abbr fgrep 'fgrep --color=auto'
-# easier to read disk
+# Easier to read disk
 safe_abbr df 'df -h' # human-readable sizes
 safe_abbr free 'free -m' # show sizes in MB
-# nvim to vim
+# Nvim
 safe_abbr vi nvim
 safe_abbr vim nvim
 safe_abbr vin neovide
-# system
+safe_abbr lazyvim 'set -gx NVIM_APPNAME lazyvim && nvim'
+safe_abbr vid 'set -gx NVIM_APPNAME defaultvim && nvim'
+# System
 safe_abbr update 'sudo dnf update && sudo snap refresh && flatpak update'
 # Git
 safe_abbr gst 'git status'
@@ -73,6 +75,22 @@ safe_abbr gmomn 'git merge origin/main'
 safe_abbr gmod 'git merge origin/dev'
 safe_abbr gmos 'git merge origin/staging'
 safe_abbr gmot 'git merge origin/test'
+# Kubectl
+safe_abbr k 'kubectl'
+safe_abbr kg 'kubectl get'
+safe_abbr kd 'kubectl describe'
+safe_abbr kl 'kubectl logs'
+safe_abbr kgp 'kubectl get pods'
+safe_abbr kdp 'kubectl describe pods'
+safe_abbr klp 'kubectl logs pods'
+safe_abbr kgd 'kubectl get deployments'
+safe_abbr kdd 'kubectl describe deployments'
+safe_abbr kld 'kubectl logs deployments'
+safe_abbr kgs 'kubectl get services'
+safe_abbr kds 'kubectl describe services'
+safe_abbr kls 'kubectl logs services'
+# Poetry
+safe_abbr psh 'poetry shell'
 # Other tools
 safe_abbr zj zellij
 safe_abbr zja 'zellij a'
@@ -92,8 +110,6 @@ safe_abbr nd nextd
 safe_abbr gtask go-task
 safe_abbr gotask go-task
 safe_abbr got go-task
-safe_abbr lazyvim 'set -gx NVIM_APPNAME lazyvim && nvim'
-safe_abbr vid 'set -gx NVIM_APPNAME defaultvim && nvim'
 
 if status is-interactive
     fzf --fish | source
