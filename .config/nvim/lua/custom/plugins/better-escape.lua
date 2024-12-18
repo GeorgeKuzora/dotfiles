@@ -1,5 +1,6 @@
 return {
   'max397574/better-escape.nvim',
+  event = { 'BufReadPre', 'BufNewFile' },
   config = function()
     local escape = function()
       vim.api.nvim_input '<esc>'

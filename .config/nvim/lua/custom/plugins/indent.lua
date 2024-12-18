@@ -2,6 +2,7 @@ return {
   {
     'lukas-reineke/indent-blankline.nvim',
     main = 'ibl',
+    event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       require('ibl').setup {
         indent = { char = '┊' },
@@ -17,6 +18,7 @@ return {
   {
     'echasnovski/mini.indentscope',
     version = false,
+    event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       require('mini.indentscope').setup {
         mappings = {
