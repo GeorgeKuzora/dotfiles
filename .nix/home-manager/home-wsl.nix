@@ -34,6 +34,7 @@ in {
       pkgs.tmux
       pkgs.unzip
       pkgs.xclip
+      pkgs.xsel
       pkgs.zoxide
       pkgs.eza
       pkgs.fish
