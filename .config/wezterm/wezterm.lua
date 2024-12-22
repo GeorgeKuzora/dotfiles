@@ -1,5 +1,6 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
+local act = wezterm.action
 
 -- This table will hold the configuration.
 local config = {}
@@ -11,9 +12,80 @@ if wezterm.config_builder then
 end
 
 -- KEYBINDINGS
-config.keys = {}
+config.keys = {
+    { key = 'p', mods = 'SHIFT|CTRL', action = act.ActivateCommandPalette },
+    { key = 'x', mods = 'SHIFT|CTRL', action = act.ActivateCopyMode },
+    { key = 'f', mods = 'SHIFT|CTRL', action = act.Search 'CurrentSelectionOrEmptyString' },
+    { key = 'k', mods = 'SHIFT|CTRL', action = act.ClearScrollback 'ScrollbackOnly' },
+    { key = 'l', mods = 'SHIFT|CTRL', action = act.ShowDebugOverlay },
+    { key = 'm', mods = 'SHIFT|CTRL', action = act.Hide },
+    { key = 'n', mods = 'SHIFT|CTRL', action = act.SpawnWindow },
+    { key = 'r', mods = 'SHIFT|CTRL', action = act.ReloadConfiguration },
+    { key = 'phys:Space', mods = 'SHIFT|CTRL', action = act.QuickSelect },
+    { key = 'Enter', mods = 'ALT', action = act.ToggleFullScreen },
+
+    { key = 'LeftArrow', mods = 'ALT', action = act.ActivatePaneDirection 'Left' },
+    { key = 'RightArrow', mods = 'ALT', action = act.ActivatePaneDirection 'Right' },
+    { key = 'UpArrow', mods = 'ALT', action = act.ActivatePaneDirection 'Up' },
+    { key = 'DownArrow', mods = 'ALT', action = act.ActivatePaneDirection 'Down' },
+    { key = 'LeftArrow', mods = 'SHIFT|ALT', action = act.AdjustPaneSize { 'Left', 5 } },
+    { key = 'DownArrow', mods = 'SHIFT|ALT', action = act.AdjustPaneSize { 'Down', 5 } },
+    { key = 'UpArrow', mods = 'SHIFT|ALT', action = act.AdjustPaneSize { 'Up', 5 } },
+    { key = 'RightArrow', mods = 'SHIFT|ALT', action = act.AdjustPaneSize { 'Right', 5 } },
+    { key = 'w', mods = 'SHIFT|CTRL', action = act.CloseCurrentPane { confirm = true } },
+    { key = 'r', mods = 'SHIFT|CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
+    { key = 'd', mods = 'SHIFT|CTRL', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
+    { key = 'z', mods = 'SHIFT|CTRL', action = act.TogglePaneZoomState },
+
+    { key = 'q', mods = 'SHIFT|CTRL', action = act.CloseCurrentTab { confirm = true } },
+    { key = '9', mods = 'SHIFT|CTRL', action = act.ActivateLastTab },
+    { key = 'Tab', mods = 'CTRL', action = act.ActivateTabRelative(1) },
+    { key = 'Tab', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(-1) },
+    { key = 'Tab', mods = 'SHIFT|CTRL|ALT', action = act.ActivateTab(-1) },
+    { key = '{', mods = 'SHIFT|CTRL|ALT', action = act.MoveTabRelative(-1) },
+    { key = '}', mods = 'SHIFT|CTRL|ALT', action = act.MoveTabRelative(1) },
+    { key = 't', mods = 'SHIFT|CTRL', action = act.SpawnTab 'CurrentPaneDomain' },
+
+    {
+        key = 'u',
+        mods = 'SHIFT|CTRL',
+        action = act.CharSelect {
+            copy_on_select = true,
+            copy_to = 'ClipboardAndPrimarySelection',
+        },
+    },
+
+    { key = '0', mods = 'SHIFT|CTRL', action = act.ResetFontSize },
+    { key = '=', mods = 'SHIFT|CTRL', action = act.IncreaseFontSize },
+    { key = '-', mods = 'SHIFT|CTRL', action = act.DecreaseFontSize },
+
+    { key = 'PageUp', mods = 'SHIFT|CTRL', action = act.ScrollByPage(-1) },
+    { key = 'PageDown', mods = 'SHIFT|CTRL', action = act.ScrollByPage(1) },
+    { key = 'UpArrow', mods = 'SHIFT|CTRL', action = act.ScrollByLine(-1) },
+    { key = 'DownArrow', mods = 'SHIFT|CTRL', action = act.ScrollByLine(1) },
+    { key = 'Home', mods = 'SHIFT|CTRL', action = act.ScrollToTop },
+    { key = 'End', mods = 'SHIFT|CTRL', action = act.ScrollToBottom },
+    { key = 'LeftArrow', mods = 'SHIFT|CTRL', action = act.ScrollToPrompt(-1) },
+    { key = 'RightArrow', mods = 'SHIFT|CTRL', action = act.ScrollToPrompt(1) },
+
+    { key = 'c', mods = 'SHIFT|CTRL', action = act.CopyTo 'Clipboard' },
+    { key = 'Insert', mods = 'CTRL', action = act.CopyTo 'PrimarySelection' },
+    { key = 'Copy', mods = 'NONE', action = act.CopyTo 'Clipboard' },
+    { key = 'v', mods = 'SHIFT|CTRL', action = act.PasteFrom 'Clipboard' },
+    { key = 'Insert', mods = 'SHIFT', action = act.PasteFrom 'PrimarySelection' },
+    { key = 'Paste', mods = 'NONE', action = act.PasteFrom 'Clipboard' },
+}
+
+for i = 1, 8 do
+    table.insert(config.keys, {
+    key = tostring(i),
+    mods = 'CTRL|SHIFT',
+    action = wezterm.action.ActivateTab(i - 1),
+})
+end
 
 -- CONFIGURATION
+config.disable_default_key_bindings = true
 config.default_prog = { '/usr/bin/fish', '-i' }
 config.enable_wayland = true
 config.window_decorations = "NONE"
