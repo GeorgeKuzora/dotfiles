@@ -13,6 +13,17 @@ return {
       end,
     },
   },
+  opts = {
+    extensions = {
+      undo = {
+        side_by_side = true,
+        layout_strategy = "vertical",
+        layout_config = {
+          preview_height = 0.8,
+        },
+      },
+    },
+  },
   config = function()
     local actions = require 'telescope.actions'
     local telescope = require 'telescope'
