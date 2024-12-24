@@ -15,6 +15,7 @@ return {
       trigger = {
         show_in_snippet = false,
       },
+      accept = { auto_brackets = { enabled = false }, },
     },
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
