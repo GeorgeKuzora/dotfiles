@@ -4,6 +4,7 @@ return {
   dependencies = {
     'nvim-lua/plenary.nvim',
     'folke/todo-comments.nvim',
+    'debugloop/telescope-undo.nvim',
     {
       'nvim-telescope/telescope-fzf-native.nvim',
       build = 'make',
@@ -66,7 +67,7 @@ return {
       },
     }
 
-    pcall(telescope.load_extension, 'telescope-fzf-native.nvim', 'fzf')
+    pcall(telescope.load_extension, 'telescope-fzf-native.nvim', 'fzf', 'undo')
 
     local builtin = require 'telescope.builtin'
 
@@ -195,5 +196,9 @@ return {
     vim.keymap.set('n', '<leader>gt', function()
       require('telescope.builtin').git_status { use_file_path = true }
     end, { desc = 'Find changes in Git status' })
+
+    vim.keymap.set('n', '<leader>u', function()
+      require("telescope").extensions.undo.undo()
+    end, { desc = 'Toggle undo-tree' })
   end,
 }
