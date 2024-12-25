@@ -43,9 +43,10 @@ return {
       lualine.setup {
         options = {
           icons_enabled = true,
-          -- theme = 'catppuccin',
+          theme = 'auto',
           component_separators = '|',
-          section_separators = '',
+          globalstatus = vim.o.laststatus == 3,
+          disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
         },
         sections = {
           lualine_a = { 'mode', {
@@ -69,11 +70,11 @@ return {
             'encoding',
             'fileformat',
             'filetype',
-            -- {
-            --   'lsp_server_name',
-            --   fmt = lsp_server_name,
-            --   icon = ' LSP:',
-            -- },
+            {
+              'lsp_server_name',
+              fmt = lsp_server_name,
+              icon = ' ',
+            },
           },
           lualine_y = { 'progress' },
           lualine_z = { 'location' },
