@@ -49,8 +49,8 @@ safe_abbr free 'free -m' # show sizes in MB
 safe_abbr vi nvim
 safe_abbr vim nvim
 safe_abbr vin neovide
-safe_abbr lazyvim 'set -gx NVIM_APPNAME lazyvim && nvim'
-safe_abbr vid 'set -gx NVIM_APPNAME defaultvim && nvim'
+safe_abbr lazyvim 'set -gx NVIM_APPNAME lazyvim; nvim'
+safe_abbr vid 'set -gx NVIM_APPNAME defaultvim; nvim'
 # System
 safe_abbr update 'sudo dnf update && sudo snap refresh && flatpak update'
 # Git
