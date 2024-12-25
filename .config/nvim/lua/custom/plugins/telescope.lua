@@ -129,7 +129,10 @@ return {
 
     -- KEYMAPS
     vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = 'Find recently opened files' })
-    vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = 'Find existing buffers' })
+    vim.keymap.set('n', '<leader><space>', function ()
+      require('telescope.builtin').buffers{sort_mru = true, sort_lastused = true}
+    end,
+      { desc = 'Find existing buffers' })
     vim.keymap.set('n', '<leader>/', function()
       require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
         winblend = 10,
