@@ -6,7 +6,7 @@ return {
     { 'echasnovski/mini.icons', version = false },
   },
   opts = {
-    preset = 'classic',
+    preset = 'helix',
     delay = 1000,
     icons = {
       mappings = vim.g.have_nerd_font,
