@@ -32,10 +32,11 @@ return {
         end
         local msg = ''
         for _, client in ipairs(clients) do
-          local filetypes = client.config.filetypes
-          if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-            msg = client.name .. ', ' .. msg
-          end
+          -- local filetypes = client.config.filetypes
+          -- if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+            -- msg = client.name .. ', ' .. msg
+          -- end
+          msg = client.name .. ', ' .. msg
         end
         if #msg > 0 then
           msg = string.sub(msg, 0, #msg-2)
