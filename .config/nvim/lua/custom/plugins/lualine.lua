@@ -36,10 +36,10 @@ return {
           -- if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
             -- msg = client.name .. ', ' .. msg
           -- end
-          msg = client.name .. ', ' .. msg
+          msg = msg .. ', ' .. client.name
         end
         if #msg > 0 then
-          msg = string.sub(msg, 0, #msg-2)
+          msg = string.sub(msg, 3, #msg)
           return msg
         end
       end
