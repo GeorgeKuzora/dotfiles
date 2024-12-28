@@ -25,19 +25,22 @@ return {
       end
 
       local function lsp_server_name()
-        local msg = 'No Active Lsp'
         local buf_ft = vim.api.nvim_get_option_value('filetype', { buf = 0 })
         local clients = vim.lsp.get_clients()
         if next(clients) == nil then
-          return msg
+          return
         end
+        local msg = ''
         for _, client in ipairs(clients) do
           local filetypes = client.config.filetypes
           if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-            return client.name
+            msg = client.name .. ', ' .. msg
           end
         end
-        return msg
+        if #msg > 0 then
+          msg = string.sub(msg, 0, #msg-2)
+          return msg
+        end
       end
 
       lualine.setup {
