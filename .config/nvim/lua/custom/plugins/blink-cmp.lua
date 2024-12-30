@@ -1,7 +1,7 @@
 return {
   'saghen/blink.cmp',
   lazy = false, -- lazy loading handled internally
-  dependencies = { 
+  dependencies = {
     'rafamadriz/friendly-snippets',
   },
   version = 'v0.*',
@@ -15,10 +15,10 @@ return {
       trigger = {
         show_in_snippet = false,
       },
-      accept = { auto_brackets = { enabled = false }, },
+      accept = { auto_brackets = { enabled = false } },
       documentation = {
-          auto_show = true,
-          auto_show_delay_ms = 200,
+        auto_show = true,
+        auto_show_delay_ms = 200,
       },
     },
     sources = {
@@ -27,5 +27,5 @@ return {
     },
     signature = { enabled = true },
   },
-  opts_extend = { "sources.default" },
+  opts_extend = { 'sources.default' },
 }
