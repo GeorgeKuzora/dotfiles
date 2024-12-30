@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, ghostty ... }:
 let
   username = "georgiy";
   home = "/home/georgiy";
@@ -24,6 +24,7 @@ in {
       pkgs.taskwarrior3
       pkgs.neovim
       pkgs.xsel
+      ghostty.default
       # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
       # (pkgs.writeShellScriptBin "my-hello" ''
       #   echo "Hello, ${config.home.username}!"
