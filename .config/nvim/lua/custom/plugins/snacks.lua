@@ -6,6 +6,7 @@ return {
     opts = {
       statuscolumn = { enabled = true },
       lazygit = { enabled = true },
+      rename = { enabled = true },
     },
     keys = {
       { '<leader>gl', function () Snacks.lazygit.open() end, desc = 'LazyGit' },
