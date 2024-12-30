@@ -50,6 +50,7 @@ return {
           diffview = true,
           fidget = true,
           gitsigns = true,
+          grug_far = true,
           harpoon = true,
           indent_blankline = {
               enabled = true,
