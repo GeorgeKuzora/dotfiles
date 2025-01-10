@@ -99,6 +99,9 @@ safe_abbr kds 'kubectl describe services'
 safe_abbr kls 'kubectl logs services'
 # Poetry
 safe_abbr psh 'poetry shell'
+safe_abbr pi 'poetry install'
+safe_abbr pl 'poetry lock'
+safe_abbr pe 'poetry env'
 # Other tools
 safe_abbr zj zellij
 safe_abbr zja 'zellij a'
