@@ -119,5 +119,13 @@
     {
         "key": "ctrl+shift+g ctrl+shift+g",
         "command": "workbench.scm.focus"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "continue.focusEdit"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-continue.focusEdit"
     }
 ]

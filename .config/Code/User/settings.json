@@ -1,12 +1,12 @@
 {
   "window.customMenuBarAltFocus": false,
   "workbench.startupEditor": "none",
-  "vscode-neovim.neovimInitVimPaths.linux": "/home/georgiy/.config/Code/User/init.lua",
+  "vscode-neovim.neovimInitVimPaths.linux": "/home/georgiy/.dotfiles/.config/Code/User/init.lua",
   "debug.javascript.terminalOptions": {},
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
-  "editor.fontFamily": "'JetBrainsMono Nerd Font',  'VictorMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font',  'VictorMono Nerd Font', 'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
   "editor.mouseWheelZoom": true,
@@ -20,15 +20,16 @@
   "editor.lineNumbers": "relative",
   "search.showLineNumbers": true,
   "git.autofetch": true,
-  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.typeCheckingMode": "standard",
   "python.analysis.inlayHints.callArgumentNames": "partial",
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.analysis.inlayHints.pytestParameters": true,
   "python.analysis.inlayHints.variableTypes": true,
+  "python.formatting.provider": "isort",
   "explorer.confirmDragAndDrop": false,
 
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.defaultFormatter": "ms-python.isort",
     "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit"
@@ -40,7 +41,6 @@
   "workbench.preferredHighContrastLightColorTheme": "Catppuccin Latte",
   "workbench.preferredLightColorTheme": "Catppuccin Latte",
   "window.autoDetectColorScheme": true,
-  "vscode-neovim.revealCursorScrollLine": true,
   "editor.stickyScroll.enabled": true,
   "editor.renderWhitespace": "none",
   "editor.minimap.renderCharacters": false,
@@ -57,9 +57,9 @@
   "explorer.confirmDelete": false,
   "extensions.ignoreRecommendations": true,
   "editor.codeLensFontFamily": "'JetBrainsMono Nerd Font',  'VictorMono Nerd Font', 'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
-  "editor.inlayHints.fontFamily": "'JetBrainsMono Nerd Font',  'VictorMono Nerd Font', 'MonaspiceRn Nerd Font', 'GohuFont 11 Nerd Font',  monospace",
-  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font',  'VictorMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
-  "notebook.output.fontFamily": "'JetBrainsMono Nerd Font',  'VictorMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
+  "editor.inlayHints.fontFamily": "'JetBrainsMono Nerd Font',  'VictorMono Nerd Font', 'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
+  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font',  'VictorMono Nerd Font', 'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
+  "notebook.output.fontFamily": "'JetBrainsMono Nerd Font',  'VictorMono Nerd Font', 'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
   "errorLens.fontFamily": "'JetBrainsMono Nerd Font', 'VictorMono Nerd Font',  'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
   "window.titleBarStyle": "custom",
   "workbench.activityBar.location": "hidden",
@@ -90,7 +90,6 @@
     }
   },
   "errorLens.fontStyleItalic": true,
-  "catppuccin.italicKeywords": false,
   "markdownlint.config": {
 
   },
@@ -137,5 +136,25 @@
   "workbench.editor.showTabs": "none",
   "python.analysis.diagnosticMode": "workspace",
   "explorer.confirmPasteNative": false,
-  "files.autoSave": "afterDelay"
+  "files.autoSave": "afterDelay",
+  "vscode-neovim.useWSL": true,
+  "vscode-neovim.wslDistribution": "Ubuntu-22.04",
+  "vscode-neovim.neovimExecutablePaths.linux": "/home/kuzora/.nix-profile/bin/nvim",
+  "catppuccin.italicKeywords": false,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.autoIndent": false,
+  "makefile.configureOnOpen": true,
+  "pythonTestExplorer.testFramework": "pytest",
+  "security.workspace.trust.untrustedFiles": "open",
+  "git.confirmSync": false,
+  "vscode-neovim.neovimInitVimPaths.win32": "C:/Users/kuzora/AppData/Roaming/Code/User/init.lua",
+  "vscode-neovim.revealCursorScrollLine": true,
+  "ruff.enable": false,
+  "flake8.importStrategy": "fromEnvironment",
+  "mypy-type-checker.importStrategy": "fromEnvironment",
+  "isort.importStrategy": "fromEnvironment",
+  "gitlab.duoCodeSuggestions.enabled": false,
+  "gitlab.duoChat.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "continue.remoteConfigServerUrl": "http://localhost:29841"
 }
