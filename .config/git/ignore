@@ -10,3 +10,4 @@ __pycache__/
 ./generate.py
 ./new_schema.py
 taskfile.dist.yml
+.continue
