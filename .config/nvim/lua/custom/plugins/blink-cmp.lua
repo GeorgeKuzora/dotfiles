@@ -22,7 +22,7 @@ return {
       },
     },
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer' },
+      default = { 'lsp', 'path', 'snippets', 'buffer' , 'codecompanion' },
       cmdline = {},
     },
     signature = { enabled = true },
