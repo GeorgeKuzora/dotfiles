@@ -45,6 +45,7 @@ return {
     spec = {
       { '<leader>[', group = 'Previous' },
       { '<leader>]', group = 'Next' },
+      { '<leader>a', group = 'AI' },
       { '<leader>b', group = 'Buffers' },
       { '<leader>e', group = 'Explorer' },
       { '<leader>f', group = 'Find' },

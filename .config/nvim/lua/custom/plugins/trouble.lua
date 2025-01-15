@@ -24,7 +24,7 @@ return {
       desc = 'Symbols (Trouble)',
     },
     {
-      '<leader>a',
+      '<leader>;',
       '<cmd>Trouble symbols toggle focus=true win.position=right<cr>',
       desc = 'Symbols (Trouble)',
     },
