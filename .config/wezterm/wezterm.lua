@@ -33,8 +33,8 @@ config.keys = {
     { key = 'UpArrow', mods = 'SHIFT|ALT', action = act.AdjustPaneSize { 'Up', 5 } },
     { key = 'RightArrow', mods = 'SHIFT|ALT', action = act.AdjustPaneSize { 'Right', 5 } },
     { key = 'w', mods = 'SHIFT|CTRL', action = act.CloseCurrentPane { confirm = true } },
-    { key = 'r', mods = 'SHIFT|CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
-    { key = 'd', mods = 'SHIFT|CTRL', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
+    { key = 'd', mods = 'SHIFT|CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
+    { key = 'r', mods = 'SHIFT|CTRL', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
     { key = 'z', mods = 'SHIFT|CTRL', action = act.TogglePaneZoomState },
 
     { key = 'q', mods = 'SHIFT|CTRL', action = act.CloseCurrentTab { confirm = true } },
