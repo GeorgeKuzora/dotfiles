@@ -1,0 +1,8 @@
+font-family = JetBrainsMono Nerd Font
+font-size = 16
+theme = catppuccin-mocha
+background = #181825
+cursor-invert-fg-bg = true
+mouse-hide-while-typing = true
+command = fish
+gtk-titlebar = false
