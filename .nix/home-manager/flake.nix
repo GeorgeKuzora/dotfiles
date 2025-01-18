@@ -8,20 +8,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
   };
 
   outputs = { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      # ghostty = ghostty.packages.${system};
     in {
       homeConfigurations."georgiy" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        # inherit ghostty;
         modules = [ ./home.nix ];
       };
       homeConfigurations."wsl-work" = home-manager.lib.homeManagerConfiguration {
