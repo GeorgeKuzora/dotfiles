@@ -24,6 +24,7 @@ in {
       pkgs.taskwarrior3
       pkgs.neovim
       pkgs.xsel
+      pkgs.lazygit
       ghostty.default
       # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
       # (pkgs.writeShellScriptBin "my-hello" ''
