@@ -48,6 +48,7 @@ in {
       ".config/fish/fish_plugins".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/fish/fish_plugins";
 
       ".config/git".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/git";
+      ".config/ghostty".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/ghostty";
       ".config/kitty".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/kitty";
       ".config/mpv".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/mpv";
       ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/nvim";
