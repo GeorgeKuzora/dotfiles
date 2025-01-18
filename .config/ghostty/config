@@ -107,3 +107,4 @@ keybind = ctrl+shift+j=write_scrollback_file:paste
 
 keybind = ctrl+shift+i=inspector:toggle
 keybind = ctrl+shift+o=toggle_tab_overview
+keybind = ctrl+shift+l=clear_screen
