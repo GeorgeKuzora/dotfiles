@@ -1,4 +1,4 @@
-{ config, pkgs, ghostty ... }:
+{ config, pkgs, ... }:
 let
   username = "georgiy";
   home = "/home/georgiy";
@@ -25,7 +25,7 @@ in {
       pkgs.neovim
       pkgs.xsel
       pkgs.lazygit
-      ghostty.default
+      # ghostty.default
       # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
       # (pkgs.writeShellScriptBin "my-hello" ''
       #   echo "Hello, ${config.home.username}!"

@@ -13,14 +13,15 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ghostty ... }:
+  outputs = { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      ghostty = ghostty.packages.${system};
+      # ghostty = ghostty.packages.${system};
     in {
       homeConfigurations."georgiy" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs, ghostty;
+        inherit pkgs;
+        # inherit ghostty;
         modules = [ ./home.nix ];
       };
       homeConfigurations."wsl-work" = home-manager.lib.homeManagerConfiguration {
