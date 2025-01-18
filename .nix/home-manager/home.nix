@@ -25,7 +25,6 @@ in {
       pkgs.neovim
       pkgs.xsel
       pkgs.lazygit
-      pkgs.ghostty
       # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
       # (pkgs.writeShellScriptBin "my-hello" ''
       #   echo "Hello, ${config.home.username}!"
