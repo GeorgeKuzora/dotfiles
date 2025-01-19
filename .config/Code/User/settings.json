@@ -139,7 +139,7 @@
   "files.autoSave": "afterDelay",
   "vscode-neovim.useWSL": true,
   "vscode-neovim.wslDistribution": "Ubuntu-22.04",
-  "vscode-neovim.neovimExecutablePaths.linux": "/home/kuzora/.nix-profile/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.linux": "/home/georgiy/.nix-profile/bin/nvim",
   "catppuccin.italicKeywords": false,
   "python.analysis.autoImportCompletions": true,
   "python.analysis.autoIndent": false,
