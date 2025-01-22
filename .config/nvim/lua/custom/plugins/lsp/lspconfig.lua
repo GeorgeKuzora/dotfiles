@@ -35,9 +35,9 @@ return {
       pyright = {
         python = {
           analysis = {
-            autoSearchPaths = true,
-            diagnosticMode = "openFilesOnly",
-            useLibraryCodeForTypes = true,
+            -- autoSearchPaths = true,
+            -- diagnosticMode = "openFilesOnly",
+            -- useLibraryCodeForTypes = true,
           },
         },
       },
