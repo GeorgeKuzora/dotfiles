@@ -3,5 +3,15 @@
     "prefix": "pf",
     "body": ["@pytest.fixture\n$0"],
     "description": "Adds pytest fixture decorator."
+  },
+  "@pytest.mark.parametrize": {
+    "prefix": "pmp",
+    "body": ["@pytest.mark.parametrize(\n    [$0],\n    [$1],\n)"],
+    "description": "Adds pytest parametrize decorator."
+  }
+  "@pytest.param": {
+    "prefix": "pp",
+    "body": ["@pytest.param($0),"],
+    "description": "Adds pytest param statement."
   }
 }
