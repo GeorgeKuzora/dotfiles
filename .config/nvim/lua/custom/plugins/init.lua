@@ -3,4 +3,5 @@ return {
   'tpope/vim-sleuth',
   'rafamadriz/friendly-snippets',
   'nvim-tree/nvim-web-devicons',
+  'sindrets/diffview.nvim',
 }
