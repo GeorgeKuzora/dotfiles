@@ -40,14 +40,12 @@ return {
         },
         integrations = {
           alpha = true,
-          barbecue = {
-            dim_dirname = true, -- directory name is dimmed by default
-            bold_basename = true,
-            dim_context = false,
-            alt_background = false,
-          },
           blink_cmp = true,
           diffview = true,
+          dropbar = {
+            enabled = true,
+            color_mode = true, -- enable color for kind's texts, not just kind's icons
+          },
           fidget = true,
           gitsigns = true,
           grug_far = true,
