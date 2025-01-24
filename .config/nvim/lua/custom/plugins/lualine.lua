@@ -25,17 +25,12 @@ return {
       end
 
       local function lsp_server_name()
-        local buf_ft = vim.api.nvim_get_option_value('filetype', { buf = 0 })
         local clients = vim.lsp.get_clients()
         if next(clients) == nil then
           return
         end
         local msg = ''
         for _, client in ipairs(clients) do
-          -- local filetypes = client.config.filetypes
-          -- if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-            -- msg = client.name .. ', ' .. msg
-          -- end
           msg = msg .. ', ' .. client.name
         end
         if #msg > 0 then
