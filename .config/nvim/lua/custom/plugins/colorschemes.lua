@@ -88,6 +88,8 @@ return {
             DiagnosticSignWarn = { bg = '#2D2B32' },
             DiagnosticSignInfo = { bg = '#242B36' },
             DiagnosticSignHint = { bg = '#242B36' },
+            SnacksIndentScope = { fg = colors.overlay0 },
+            SnacksIndent = { fg = colors.surface0 },
           }
         end,
       }
