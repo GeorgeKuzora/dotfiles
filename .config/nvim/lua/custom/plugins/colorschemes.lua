@@ -5,7 +5,7 @@ return {
     lazy = false,
     priority = 1000,
     init = function()
-      -- vim.cmd.colorscheme 'catppuccin'
+      vim.cmd.colorscheme 'catppuccin'
     end,
     opts = {
       flavour = 'mocha', -- latte, frappe, macchiato, mocha
@@ -110,23 +110,31 @@ return {
     lazy = false,
     priority = 1000,
     init = function()
-      vim.cmd.colorscheme 'no-clown-fiesta'
-      local highlights = {
-        DiagnosticLineBackgroundError = { bg = '#2D2331' },
-        DiagnosticLineBackgroundWarn = { bg = '#2D2B32' },
-        DiagnosticLineBackgroundInfo = { bg = '#242B36' },
-        DiagnosticLineBackgroundHint = { bg = '#242B36' },
-        DiagnosticSignError = { bg = '#2D2331' },
-        DiagnosticSignWarn = { bg = '#2D2B32' },
-        DiagnosticSignInfo = { bg = '#242B36' },
-        DiagnosticSignHint = { bg = '#242B36' },
-        SnacksIndentScope = { fg = '#585858'  },
-        SnacksIndent = { fg = '#343434' },
-      }
-      for group, attrs in pairs(highlights) do
-        vim.api.nvim_set_hl(0, group, attrs)
-      end
+      -- vim.cmd.colorscheme 'no-clown-fiesta'
+      -- local highlights = {
+      --   DiagnosticLineBackgroundError = { bg = '#2D2331' },
+      --   DiagnosticLineBackgroundWarn = { bg = '#2D2B32' },
+      --   DiagnosticLineBackgroundInfo = { bg = '#242B36' },
+      --   DiagnosticLineBackgroundHint = { bg = '#242B36' },
+      --   DiagnosticSignError = { bg = '#2D2331' },
+      --   DiagnosticSignWarn = { bg = '#2D2B32' },
+      --   DiagnosticSignInfo = { bg = '#242B36' },
+      --   DiagnosticSignHint = { bg = '#242B36' },
+      --   SnacksIndentScope = { fg = '#585858'  },
+      --   SnacksIndent = { fg = '#343434' },
+      -- }
+      -- for group, attrs in pairs(highlights) do
+      --   vim.api.nvim_set_hl(0, group, attrs)
+      -- end
 
     end,
   },
+{
+    "dgox16/oldworld.nvim",
+    lazy = false,
+    priority = 1000,
+    init = function()
+      -- vim.cmd.colorscheme("oldworld")
+    end,
+}
 }
