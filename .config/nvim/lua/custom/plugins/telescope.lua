@@ -1,111 +1,111 @@
 return {
-  'nvim-telescope/telescope.nvim',
-  branch = '0.1.x',
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-    'folke/todo-comments.nvim',
+  -- 'nvim-telescope/telescope.nvim',
+  -- branch = '0.1.x',
+  -- dependencies = {
+  --   'nvim-lua/plenary.nvim',
+  --   'folke/todo-comments.nvim',
     -- 'debugloop/telescope-undo.nvim',
-    {
-      'nvim-telescope/telescope-fzf-native.nvim',
-      build = 'make',
-      cond = function()
-        return vim.fn.executable 'make' == 1
-      end,
-    },
-  },
-  opts = {
-    extensions = {
-      undo = {
-        side_by_side = true,
-        layout_strategy = "vertical",
-        layout_config = {
-          preview_height = 0.8,
-        },
-      },
-    },
-  },
-  config = function()
-    local actions = require 'telescope.actions'
-    local telescope = require 'telescope'
-    local lsp_config = {
-      fname_width = 45,
-      path_display = {
-        shorten = { len = 1, exclude = { -2, -1 } }
-      },
-      layout_config = {
-        horizontal = { prompt_position = 'top', preview_width = 0.40 },
-        preview_cutoff = 120,
-      },
-    }
-    telescope.setup {
-      defaults = {
-        git_worktrees = vim.g.git_worktrees,
-        path_display = { 'truncate' },
-        sorting_strategy = 'ascending',
-        layout_config = {
-          horizontal = { prompt_position = 'top', preview_width = 0.55 },
-          vertical = { mirror = false },
-          width = 0.97,
-          height = 0.90,
-          preview_cutoff = 120,
-        },
-        mappings = {
-          i = {
-            ['<C-u>'] = false,
-            ['<C-d>'] = false,
-            ['<M-n>'] = actions.cycle_history_next,
-            ['<M-p>'] = actions.cycle_history_prev,
-            ['<C-n>'] = actions.move_selection_next,
-            ['<C-p>'] = actions.move_selection_previous,
-            ['<C-j>'] = actions.move_selection_next,
-            ['<C-k>'] = actions.move_selection_previous,
-            ['<ESC>'] = actions.close,
-            ['<C-c>'] = actions.close,
-            ['<C-q>'] = actions.send_to_qflist,
-            ['<M-q>'] = actions.send_selected_to_qflist,
-          },
-          n = {
-            ['<C-q>'] = actions.send_to_qflist,
-            ['<M-q>'] = actions.send_selected_to_qflist,
-            q = actions.close,
-            ['<ESC>'] = actions.close,
-          },
-        },
-      },
-      pickers = {
-        lsp_references = lsp_config,
-        lsp_dynamic_workspace_symbols = lsp_config,
-      },
-    }
-
-    pcall(telescope.load_extension, 'telescope-fzf-native.nvim', 'fzf', 'undo')
-
-    local builtin = require 'telescope.builtin'
-
+  --   {
+  --     'nvim-telescope/telescope-fzf-native.nvim',
+  --     build = 'make',
+  --     cond = function()
+  --       return vim.fn.executable 'make' == 1
+  --     end,
+  --   },
+  -- },
+  -- opts = {
+  --   extensions = {
+  --     undo = {
+  --       side_by_side = true,
+  --       layout_strategy = "vertical",
+  --       layout_config = {
+  --         preview_height = 0.8,
+  --       },
+  --     },
+  --   },
+  -- },
+  -- config = function()
+  --   local actions = require 'telescope.actions'
+  --   local telescope = require 'telescope'
+  --   local lsp_config = {
+  --     fname_width = 45,
+  --     path_display = {
+  --       shorten = { len = 1, exclude = { -2, -1 } }
+  --     },
+  --     layout_config = {
+  --       horizontal = { prompt_position = 'top', preview_width = 0.40 },
+  --       preview_cutoff = 120,
+  --     },
+  --   }
+  --   telescope.setup {
+  --     defaults = {
+  --       git_worktrees = vim.g.git_worktrees,
+  --       path_display = { 'truncate' },
+  --       sorting_strategy = 'ascending',
+  --       layout_config = {
+  --         horizontal = { prompt_position = 'top', preview_width = 0.55 },
+  --         vertical = { mirror = false },
+  --         width = 0.97,
+  --         height = 0.90,
+  --         preview_cutoff = 120,
+  --       },
+  --       mappings = {
+  --         i = {
+  --           ['<C-u>'] = false,
+  --           ['<C-d>'] = false,
+  --           ['<M-n>'] = actions.cycle_history_next,
+  --           ['<M-p>'] = actions.cycle_history_prev,
+  --           ['<C-n>'] = actions.move_selection_next,
+  --           ['<C-p>'] = actions.move_selection_previous,
+  --           ['<C-j>'] = actions.move_selection_next,
+  --           ['<C-k>'] = actions.move_selection_previous,
+  --           ['<ESC>'] = actions.close,
+  --           ['<C-c>'] = actions.close,
+  --           ['<C-q>'] = actions.send_to_qflist,
+  --           ['<M-q>'] = actions.send_selected_to_qflist,
+  --         },
+  --         n = {
+  --           ['<C-q>'] = actions.send_to_qflist,
+  --           ['<M-q>'] = actions.send_selected_to_qflist,
+  --           q = actions.close,
+  --           ['<ESC>'] = actions.close,
+  --         },
+  --       },
+  --     },
+  --     pickers = {
+  --       lsp_references = lsp_config,
+  --       lsp_dynamic_workspace_symbols = lsp_config,
+  --     },
+  --   }
+  --
+  --   pcall(telescope.load_extension, 'telescope-fzf-native.nvim', 'fzf', 'undo')
+  --
+  --   local builtin = require 'telescope.builtin'
+  --
     -- Custom live_grep function to search in git root
-    local function live_grep_git_root()
-      local git_root = FindGitRoot()
-      if git_root then
-        require('telescope.builtin').live_grep {
-          search_dirs = { git_root },
-        }
-      end
-    end
-
-    local function telescope_live_grep_open_files()
-      require('telescope.builtin').live_grep {
-        grep_open_files = true,
-        prompt_title = 'Live Grep in Open Files',
-      }
-    end
-
-    local function find_WORD()
-      local word = vim.fn.expand '<cWORD>'
-      builtin.grep_string { search = word }
-    end
-
-    vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
-
+    -- local function live_grep_git_root()
+    --   local git_root = FindGitRoot()
+    --   if git_root then
+    --     require('telescope.builtin').live_grep {
+    --       search_dirs = { git_root },
+    --     }
+    --   end
+    -- end
+    --
+    -- local function telescope_live_grep_open_files()
+    --   require('telescope.builtin').live_grep {
+    --     grep_open_files = true,
+    --     prompt_title = 'Live Grep in Open Files',
+    --   }
+    -- end
+    --
+    -- local function find_WORD()
+    --   local word = vim.fn.expand '<cWORD>'
+    --   builtin.grep_string { search = word }
+    -- end
+    --
+    -- vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
+    --
     -- KEYMAPS
     -- vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = 'Find recently opened files' })
     -- vim.keymap.set('n', '<leader><space>', function ()
@@ -227,5 +227,5 @@ return {
     -- vim.keymap.set(
     --   'n', '<leader>sg', ':LiveGrepGitRoot<cr>', { desc = 'Search in Git files' }
     -- )
-  end,
+--   end,
 }
