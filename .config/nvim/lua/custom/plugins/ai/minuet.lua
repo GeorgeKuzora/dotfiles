@@ -1,6 +1,22 @@
 return {
   -- 'milanglacier/minuet-ai.nvim',
   -- config = function()
-  --   require('minuet').setup {}
+  --   require('minuet').setup {
+  --     provider = 'openai_fim_compatible',
+  --     n_completions = 1, -- recommend for local model for resource saving
+  --     context_window = 2048, -- adjust context window size for available computing resources
+  --     provider_options = {
+  --       openai_fim_compatible = {
+  --         api_key = 'TERM',
+  --         name = 'Ollama',
+  --         end_point = 'http://127.0.0.1:29841/v1/completions',
+  --         model = 'qwen2.5-coder:7b',
+  --         optional = {
+  --           max_tokens = 256,
+  --           top_p = 0.9,
+  --         },
+  --       },
+  --     },
+  --   }
   -- end,
 }
