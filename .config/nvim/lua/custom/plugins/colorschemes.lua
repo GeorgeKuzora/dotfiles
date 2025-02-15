@@ -5,7 +5,7 @@ return {
     lazy = false,
     priority = 1000,
     init = function()
-      vim.cmd.colorscheme 'catppuccin'
+      -- vim.cmd.colorscheme 'catppuccin'
     end,
     opts = {
       flavour = 'mocha', -- latte, frappe, macchiato, mocha
@@ -126,15 +126,21 @@ return {
       -- for group, attrs in pairs(highlights) do
       --   vim.api.nvim_set_hl(0, group, attrs)
       -- end
-
     end,
   },
-{
-    "dgox16/oldworld.nvim",
+  {
+    'dgox16/oldworld.nvim',
     lazy = false,
     priority = 1000,
     init = function()
       -- vim.cmd.colorscheme("oldworld")
     end,
-}
+  },
+  {
+    'vague2k/vague.nvim',
+    config = function()
+      require('vague').setup {}
+      vim.cmd.colorscheme 'vague'
+    end,
+  },
 }
