@@ -5,7 +5,7 @@ return {
     lazy = false,
     priority = 1000,
     init = function()
-      -- vim.cmd.colorscheme 'catppuccin'
+      vim.cmd.colorscheme 'catppuccin'
     end,
     opts = {
       flavour = 'mocha', -- latte, frappe, macchiato, mocha
@@ -140,7 +140,7 @@ return {
     'vague2k/vague.nvim',
     config = function()
       require('vague').setup {}
-      vim.cmd.colorscheme 'vague'
+      -- vim.cmd.colorscheme 'vague'
     end,
   },
 }
