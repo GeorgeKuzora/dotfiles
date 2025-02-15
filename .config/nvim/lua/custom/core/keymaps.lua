@@ -69,7 +69,6 @@ km.set('i', "<c-'>", '<c-6>', { desc = 'Switch input method' })
 -- DIAGNOSTICS
 km.set('n', '<leader>ld', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 km.set('n', '<leader>ll', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
--- km.set('n', '<leader>lD', '<cmd>Telescope diagnostics bufnr=0<CR>', { desc = 'Show diagnostics for file' })
 
 -- LOCATION LIST
 km.set('n', ']l', '<cmd>lnext<CR>zz', { desc = 'Next location' })
