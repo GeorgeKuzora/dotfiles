@@ -39,6 +39,7 @@ return {
       },
       picker = {},
       explorer = {},
+      dashboard = {},
     },
     keys = {
       { '<leader>gg', function() Snacks.lazygit.open() end, desc = 'LazyGit', },
