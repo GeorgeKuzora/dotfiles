@@ -1,58 +1,58 @@
 return {
-  "olimorris/codecompanion.nvim",
+  'olimorris/codecompanion.nvim',
   event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-treesitter/nvim-treesitter",
+    'nvim-lua/plenary.nvim',
+    'nvim-treesitter/nvim-treesitter',
     {
       'echasnovski/mini.diff',
       version = false,
-      config = function ()
+      config = function()
         require('mini.diff').setup()
-      end
+      end,
     },
   },
   opts = {
     adapters = {
       llama3 = function()
-        return require("codecompanion.adapters").extend("ollama", {
-          name = "llama3",
+        return require('codecompanion.adapters').extend('ollama', {
+          name = 'llama3',
           schema = {
             model = {
-              default = "qwen2.5-coder:7b",
+              default = 'qwen2.5-coder:7b',
             },
           },
-        env = {
-          url = "http://127.0.0.1:29841",
-        },
-        headers = {
-          ["Content-Type"] = "application/json",
-        },
-        parameters = {
-          sync = true,
-        },
+          env = {
+            url = 'http://127.0.0.1:29841',
+          },
+          headers = {
+            ['Content-Type'] = 'application/json',
+          },
+          parameters = {
+            sync = true,
+          },
         })
       end,
     },
     strategies = {
       chat = {
-        adapter = "llama3",
+        adapter = 'llama3',
         keymaps = {
           completion = {
             modes = {
-              i = "<C-a>",
+              i = '<C-a>',
             },
             index = 1,
-            callback = "keymaps.completion",
-            description = "Completion Menu",
+            callback = 'keymaps.completion',
+            description = 'Completion Menu',
           },
         },
       },
       inline = {
-        adapter = "llama3",
+        adapter = 'llama3',
       },
       cmd = {
-        adapter = "llama3",
+        adapter = 'llama3',
       },
     },
     display = {
@@ -61,7 +61,7 @@ return {
         -- close_chat_at = 240, -- Close an open chat buffer if the total columns of your display are less than...
         -- layout = "vertical", -- vertical|horizontal split for default provider
         -- opts = { "internal", "filler", "closeoff", "algorithm:patience", "followwrap", "linematch:120" },
-        provider = "mini_diff", -- default|mini_diff
+        provider = 'mini_diff', -- default|mini_diff
       },
     },
   },

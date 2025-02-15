@@ -18,6 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
   { import = 'custom.plugins' },
+  { import = 'custom.plugins.ai' },
   { import = 'custom.plugins.lsp' },
 }, {
   -- install = {
