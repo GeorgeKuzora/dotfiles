@@ -1,6 +1,9 @@
 local km = vim.keymap
 
 -- NEOVIM QUIRKS HEALING AND MISCELLANEOUS
+-- Escape insert mode
+km.set('i', 'ii', '<esc>', { desc = 'Escape insert mode' })
+km.set('i', 'шш', '<esc>', { desc = 'Escape insert mode' })
 -- Russian keymaps
 km.set('n', '<leader>щ', 'o<Esc>k', { desc = 'Insert empty line bellow' })
 km.set('n', 'л', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
