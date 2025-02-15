@@ -1,7 +1,13 @@
-  return {
-    'supermaven-inc/supermaven-nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
-    config = function()
-      require('supermaven-nvim').setup {}
-    end,
-  }
+return {
+  'supermaven-inc/supermaven-nvim',
+  event = { 'BufReadPre', 'BufNewFile' },
+  config = function()
+    require('supermaven-nvim').setup {
+      keymaps = {
+        accept_suggestion = '<A-a>',
+        clear_suggestion = '<C-]>',
+        accept_word = '<C-j>',
+      },
+    }
+  end,
+}
