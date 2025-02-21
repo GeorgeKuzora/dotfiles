@@ -11,3 +11,4 @@ __pycache__/
 ./new_schema.py
 taskfile.dist.yml
 .continue
+hidden*
