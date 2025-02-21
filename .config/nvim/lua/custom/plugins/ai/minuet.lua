@@ -6,8 +6,8 @@ return {
   config = function()
     require('minuet').setup {
       provider = 'openai_fim_compatible',
-      n_completions = 1, -- recommend for local model for resource saving
-      context_window = 1024, -- adjust context window size for available computing resources
+      n_completions = 1, -- recommended for local model for resource saving
+      context_window = 512, -- adjust context window size for available computing resources
       provider_options = {
         openai_fim_compatible = {
           api_key = 'TERM',
@@ -25,9 +25,9 @@ return {
         show_on_completion_menu = true,
         keymap = {
           -- accept whole completion
-          accept = '<A-A>',
+          accept = '<C-A-y>',
           -- accept one line
-          accept_line = '<A-a>',
+          accept_line = '<C-y>',
           -- accept n lines (prompts for number)
           -- e.g. "A-z 2 CR" will accept 2 lines
           accept_n_lines = '<A-z>',
