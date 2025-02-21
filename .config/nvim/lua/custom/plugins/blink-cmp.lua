@@ -27,7 +27,10 @@ return {
     },
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer', 'codecompanion' },
-      cmdline = {},
+    },
+
+    cmdline = {
+      sources = {},
     },
     signature = { enabled = true },
   },
