@@ -17,7 +17,6 @@
   "cSpell.language": "en,ru",
   "editor.codeActionsOnSave": {},
   "php.validate.executablePath": "",
-  "editor.lineNumbers": "relative",
   "search.showLineNumbers": true,
   "git.autofetch": true,
   "python.analysis.typeCheckingMode": "standard",
