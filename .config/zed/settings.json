@@ -28,7 +28,7 @@
   // disable cursor blink
   "current_line_highlight": "all",
   "cursor_blink": false,
-  "relative_line_numbers": true,
+  "relative_line_numbers": false,
   "vertical_scroll_margin": 8,
   "buffer_line_height": "standard",
   "ui_font_size": 16,
