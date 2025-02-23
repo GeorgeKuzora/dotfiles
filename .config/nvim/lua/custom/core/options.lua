@@ -63,7 +63,7 @@ opt.sidescrolloff = 5 -- The number of screen columns to keep to the left and ri
 opt.syntax = 'enable' -- Enable syntax higlihting
 -- display
 wo.number = true -- Show line numbers on the sidebar.
-opt.relativenumber = true -- Show line number on the current line and relative numbers on all other lines.
+opt.relativenumber = false -- Show line number on the current line and relative numbers on all other lines.
 opt.laststatus = 3 -- Always display the status bar.
 opt.ruler = true -- Always show cursor position.
 opt.wildmenu = true -- Display command line’s tab complete options as a menu.
