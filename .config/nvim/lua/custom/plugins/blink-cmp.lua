@@ -28,10 +28,6 @@ return {
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer', 'codecompanion' },
     },
-
-    cmdline = {
-      sources = {},
-    },
     signature = { enabled = true },
   },
   opts_extend = { 'sources.default' },
