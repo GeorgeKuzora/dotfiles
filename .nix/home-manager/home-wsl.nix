@@ -41,7 +41,8 @@ in {
       pkgs.tldr
       pkgs.carapace
       pkgs.difftastic
-      pkgs.taskwarrior3
+      # pkgs.taskwarrior3
+      pkgs.go-task
       pkgs.gcc
       pkgs.python312Full
       pkgs.pipx

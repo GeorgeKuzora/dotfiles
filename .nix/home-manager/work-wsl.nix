@@ -41,8 +41,9 @@ in {
       pkgs.tldr
       pkgs.carapace
       pkgs.difftastic
-      pkgs.taskwarrior3
-      (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      # pkgs.taskwarrior3
+      pkgs.go-task
+      # (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       # (pkgs.writeShellScriptBin "my-hello" ''
       #   echo "Hello, ${config.home.username}!"
       # '')

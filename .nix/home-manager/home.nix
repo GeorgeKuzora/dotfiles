@@ -21,7 +21,8 @@ in {
       pkgs.carapace
       pkgs.difftastic
       pkgs.starship
-      pkgs.taskwarrior3
+      # pkgs.taskwarrior3
+      pkgs.go-task
       pkgs.neovim
       pkgs.xsel
       pkgs.lazygit
