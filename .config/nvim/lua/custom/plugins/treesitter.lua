@@ -4,12 +4,6 @@ return {
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
     {
-      'nvim-treesitter/nvim-treesitter-context',
-      config = function()
-        require('treesitter-context').setup { max_lines = 5 }
-      end,
-    },
-    {
       'JoosepAlviste/nvim-ts-context-commentstring',
       config = function()
         require('ts_context_commentstring').setup { enable_autocmd = false }
@@ -197,8 +191,5 @@ return {
         },
       },
     }
-    vim.keymap.set('n', 'gs', function()
-      require('treesitter-context').go_to_context(vim.v.count1)
-    end, { desc= 'Go to context', silent = true })
   end, 0),
 }
