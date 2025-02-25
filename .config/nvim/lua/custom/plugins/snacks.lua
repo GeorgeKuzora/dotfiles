@@ -8,7 +8,7 @@ return {
     lazy = false,
     opts = {
       statuscolumn = { enabled = true },
-      lazygit = { enabled = true },
+      lazygit = { enabled = false },
       rename = { enabled = true },
       indent = {
         indent = {
