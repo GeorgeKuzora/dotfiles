@@ -134,5 +134,5 @@ if status is-interactive
     direnv hook fish | source
     starship init fish | source
     carapace _carapace | source
-    #go-task --completion fish | source
+    task --completion fish | source
 end
