@@ -43,6 +43,7 @@ return {
     },
     keys = {
       -- { '<leader>gg', function() Snacks.lazygit.open() end, desc = 'LazyGit', },
+      { 'gs', function() Snacks.scope.jump() end, desc = 'Go to start of current scope' },
       -- Picker
       -- Top Pickers & Explorer
       { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
