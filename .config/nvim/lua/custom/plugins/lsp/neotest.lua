@@ -60,7 +60,7 @@ return {
     end, { desc = 'Displays output of tests' })
     vim.keymap.set('n', '<leader>tp', function ()
       neotest.output_panel.toggle()
-    end, { desc = 'Records all output in a single window' })
+    end, { desc = 'Toggle test output panel' })
     vim.keymap.set('n', '<leader>tc', function ()
       neotest.output_panel.clear()
     end, { desc = 'Clear output panel' })
