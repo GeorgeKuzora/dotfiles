@@ -42,7 +42,7 @@ return {
       dashboard = {},
     },
     keys = {
-      { '<leader>gg', function() Snacks.lazygit.open() end, desc = 'LazyGit', },
+      -- { '<leader>gg', function() Snacks.lazygit.open() end, desc = 'LazyGit', },
       -- Picker
       -- Top Pickers & Explorer
       { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
