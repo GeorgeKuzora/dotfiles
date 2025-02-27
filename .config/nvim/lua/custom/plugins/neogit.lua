@@ -13,8 +13,6 @@ return {
       vim.keymap.set('n', '<leader>gG', function()
         neogit.open { 'commit' }
       end, { desc = 'Open [N]eo[G]it commit dialog' })
-      vim.keymap.set('n', '<leader>go', '<cmd>DiffviewOpen<cr>', { desc = 'Open Diffview' })
-      vim.keymap.set('n', '<leader>gc', '<cmd>DiffviewClose<cr>', { desc = 'Close Diffview' })
     end,
   },
 }
