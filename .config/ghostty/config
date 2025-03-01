@@ -35,8 +35,8 @@ keybind = shift+page_down=ignore
 keybind = shift+home=ignore
 keybind = shift+end=ignore
 
-keybind = ctrl+shift+period=open_config
-keybind = ctrl+shift+comma=reload_config
+keybind = ctrl+shift+comma=open_config
+keybind = ctrl+shift+period=reload_config
 
 keybind = ctrl+shift+q=quit
 keybind = ctrl+shift+w=close_surface
