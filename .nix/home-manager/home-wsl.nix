@@ -46,7 +46,7 @@ in {
       pkgs.gcc
       pkgs.python312Full
       pkgs.pipx
-      (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      # (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       # (pkgs.writeShellScriptBin "my-hello" ''
       #   echo "Hello, ${config.home.username}!"
       # '')
