@@ -1,5 +1,5 @@
 font-family = JetBrainsMono Nerd Font
-font-size = 16
+font-size = 14
 theme = catppuccin-mocha
 background = #181825
 cursor-invert-fg-bg = true
