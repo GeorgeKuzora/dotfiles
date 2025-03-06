@@ -1,0 +1,374 @@
+0000000000000000000000000000000000000000 6ac48a959afd28b61f51dc28cd916157eab0d60f GeorgiyKuzora <rafale87@gmail.com> 1708174402 +0300	clone: from github.com:GeorgeKuzora/dotfiles.git
+6ac48a959afd28b61f51dc28cd916157eab0d60f 758c3a86dfae3379d7e2d2824214ae567fcb9351 GeorgiyKuzora <rafale87@gmail.com> 1708174630 +0300	pull origin main: Fast-forward
+758c3a86dfae3379d7e2d2824214ae567fcb9351 7462cefe798f56c321a51e244ce77f4ca9343912 GeorgiyKuzora <rafale87@gmail.com> 1708240893 +0300	commit: wezterm: change new pane keybinding
+7462cefe798f56c321a51e244ce77f4ca9343912 e53524ca7966f3d8a1ac8c5d39b4f3856d95094d GeorgiyKuzora <rafale87@gmail.com> 1708241230 +0300	commit: nvim: add comments
+e53524ca7966f3d8a1ac8c5d39b4f3856d95094d f6f56d735240545b3dd982d99d624eaf57505610 GeorgiyKuzora <rafale87@gmail.com> 1708245096 +0300	commit: code: markdownlint config
+f6f56d735240545b3dd982d99d624eaf57505610 c256d2d2ffcc74debac85ac4c0e31703dfc81928 GeorgiyKuzora <rafale87@gmail.com> 1708459981 +0300	commit: wezterm: change pane shortcuts
+c256d2d2ffcc74debac85ac4c0e31703dfc81928 20dd85d224c17e7794f72e42c3d52f04587e78eb GeorgiyKuzora <rafale87@gmail.com> 1708716961 +0300	commit: wezterm: set keymaps
+20dd85d224c17e7794f72e42c3d52f04587e78eb d81b07d108b01c0d1c779df8ac3d23e5e27a9895 GeorgiyKuzora <rafale87@gmail.com> 1708717029 +0300	commit: starship: set custom starship prompt for werzterm
+d81b07d108b01c0d1c779df8ac3d23e5e27a9895 c276b6622b3974e3ae47e39ff7516794f191932d GeorgiyKuzora <rafale87@gmail.com> 1708717051 +0300	commit: nvim: spellbook
+c276b6622b3974e3ae47e39ff7516794f191932d e596bb06686c17971aecfcb10ddebe2ba67d5880 GeorgiyKuzora <rafale87@gmail.com> 1708717071 +0300	commit: code: inlay hints font size to 14
+e596bb06686c17971aecfcb10ddebe2ba67d5880 f573396737998fc13c37bf6699782272ac69e17a GeorgiyKuzora <rafale87@gmail.com> 1708717082 +0300	commit: history save
+f573396737998fc13c37bf6699782272ac69e17a 63e9c8e452e26f80bd3ce334720a8ab473a0b84a GeorgiyKuzora <rafale87@gmail.com> 1708718417 +0300	commit: starship: change format
+63e9c8e452e26f80bd3ce334720a8ab473a0b84a b804d90c31117cf73c71c103c65de8036d4520fc GeorgiyKuzora <rafale87@gmail.com> 1708718437 +0300	commit: wezterm: set to x11
+b804d90c31117cf73c71c103c65de8036d4520fc 91c0fd48e0342a03bd52d450ab9485127b7e3a4a GeorgiyKuzora <rafale87@gmail.com> 1708718465 +0300	commit: history
+91c0fd48e0342a03bd52d450ab9485127b7e3a4a 8d808466111412057f10b2ed4499410cd88fa2ce GeorgiyKuzora <rafale87@gmail.com> 1708975891 +0300	commit: nvim: remove maximize nvim
+8d808466111412057f10b2ed4499410cd88fa2ce 842e224fa0169635c96c2af88bcfe21e666827f3 GeorgiyKuzora <rafale87@gmail.com> 1708977933 +0300	commit: starship: set follow terminal theme
+842e224fa0169635c96c2af88bcfe21e666827f3 564c0815c1edcfebad090321bd38dc0e8854e8cb GeorgiyKuzora <rafale87@gmail.com> 1709054526 +0300	commit: wezterm: set Wez theme
+564c0815c1edcfebad090321bd38dc0e8854e8cb 954d47651b143b6e01d5d213b1e56548ed38596d GeorgiyKuzora <rafale87@gmail.com> 1709054531 +0300	commit: history
+954d47651b143b6e01d5d213b1e56548ed38596d 3330c808be174964a30d27031859c131254e338c GeorgiyKuzora <rafale87@gmail.com> 1709054623 +0300	commit: nvim: remove neo-tree plugin
+3330c808be174964a30d27031859c131254e338c 6e1541a337560ae73b5035b7216aaa8ef01092f6 GeorgiyKuzora <rafale87@gmail.com> 1709054875 +0300	commit (amend): nvim: remove neo-tree plugin
+6e1541a337560ae73b5035b7216aaa8ef01092f6 6e1541a337560ae73b5035b7216aaa8ef01092f6 GeorgiyKuzora <rafale87@gmail.com> 1709056209 +0300	reset: moving to HEAD
+6e1541a337560ae73b5035b7216aaa8ef01092f6 271ca4b6b680669b246ff20794a0172c32fc9544 GeorgiyKuzora <rafale87@gmail.com> 1709056240 +0300	commit: zsh: removed .zcompdump from zsh as autogen file
+271ca4b6b680669b246ff20794a0172c32fc9544 329b09f9898134f53999a6d59d5c0355692155d3 GeorgiyKuzora <rafale87@gmail.com> 1709056271 +0300	commit: history
+329b09f9898134f53999a6d59d5c0355692155d3 896d62ef4fdb16e2d22dc9643fdab6d4f01630c3 GeorgiyKuzora <rafale87@gmail.com> 1709068030 +0300	commit: nvim, code: extract vscode config from nvim
+896d62ef4fdb16e2d22dc9643fdab6d4f01630c3 1f31bab91524084bee720cc24a9536816415b3b8 GeorgiyKuzora <rafale87@gmail.com> 1709068071 +0300	commit: nvim: remove noice plugin
+1f31bab91524084bee720cc24a9536816415b3b8 ca1518ef93dc54531d2816e893083b5e6cf1876d GeorgiyKuzora <rafale87@gmail.com> 1709068114 +0300	commit: nvim: remove autopairs plugin
+ca1518ef93dc54531d2816e893083b5e6cf1876d 6ba441a32c75be82020b3b116031d1227217ad94 GeorgiyKuzora <rafale87@gmail.com> 1709068120 +0300	commit: history
+6ba441a32c75be82020b3b116031d1227217ad94 75a2055bf85f33a613102545fa547fb252f122a1 GeorgiyKuzora <rafale87@gmail.com> 1709322422 +0300	commit: nvim: add usefull options
+75a2055bf85f33a613102545fa547fb252f122a1 bf498a31c796f96575c1594b0e0e016978434599 GeorgiyKuzora <rafale87@gmail.com> 1709322475 +0300	commit: nvim: change comment sign to / in treesitter
+bf498a31c796f96575c1594b0e0e016978434599 debdea855c9ed790071e0463edae84d78b7a1455 GeorgiyKuzora <rafale87@gmail.com> 1709322515 +0300	commit: nvim: set harpoon to 1234 from letters
+debdea855c9ed790071e0463edae84d78b7a1455 debdea855c9ed790071e0463edae84d78b7a1455 GeorgiyKuzora <rafale87@gmail.com> 1709322628 +0300	reset: moving to HEAD
+debdea855c9ed790071e0463edae84d78b7a1455 4ddf79c3859409263eec947272e7045f0512364b GeorgiyKuzora <rafale87@gmail.com> 1709322648 +0300	commit: nvim: add changes in disables autopairs plugin
+4ddf79c3859409263eec947272e7045f0512364b 7e8e9a311f1276119ffbfde9170ecdf2035d92f9 GeorgiyKuzora <rafale87@gmail.com> 1709322693 +0300	commit: nvim: disable winshift plugin
+7e8e9a311f1276119ffbfde9170ecdf2035d92f9 65af3f91e5b1264cd5cc20a4124d3aeebd546739 GeorgiyKuzora <rafale87@gmail.com> 1709322706 +0300	commit: nvim: format with linter
+65af3f91e5b1264cd5cc20a4124d3aeebd546739 9bd0b2fbdc8be33c1fdf5fe0f3fc5abc81faca77 GeorgiyKuzora <rafale87@gmail.com> 1709323374 +0300	commit: nvim: cmp set keymaps for using all different keys
+9bd0b2fbdc8be33c1fdf5fe0f3fc5abc81faca77 d4a3d82e5fe3c1ea2b58e394732a6f0e1c37cccd GeorgiyKuzora <rafale87@gmail.com> 1709323379 +0300	commit: history
+d4a3d82e5fe3c1ea2b58e394732a6f0e1c37cccd 4599dbd518c35a27154c997d230364ea2ea304d2 GeorgiyKuzora <rafale87@gmail.com> 1709449678 +0300	commit: code: remove wraped lines move shortcuts
+4599dbd518c35a27154c997d230364ea2ea304d2 72f26caec88674726265b2e6c9ee4e75f9b20169 GeorgiyKuzora <rafale87@gmail.com> 1709449694 +0300	commit: history
+72f26caec88674726265b2e6c9ee4e75f9b20169 5e5211f0258e019c35c9d2e4c8e8dbcef6537c31 GeorgiyKuzora <rafale87@gmail.com> 1709450103 +0300	commit: starship: change prompt format, os in the begining
+5e5211f0258e019c35c9d2e4c8e8dbcef6537c31 7dc8399181c9c8ad51f4470eddacc83da22fd480 GeorgiyKuzora <rafale87@gmail.com> 1709470380 +0300	commit: nvim: delete none-ls plugin (null-ls)
+7dc8399181c9c8ad51f4470eddacc83da22fd480 4dace626d0e752d8c50b6863abded1012c66896b GeorgiyKuzora <rafale87@gmail.com> 1709470437 +0300	commit: nvim: delete autopairs plugin
+4dace626d0e752d8c50b6863abded1012c66896b c8e403a6673a1fa018b416db6d24af8c3eecf800 GeorgiyKuzora <rafale87@gmail.com> 1709470454 +0300	commit: nvim: delete noice plugin
+c8e403a6673a1fa018b416db6d24af8c3eecf800 603995dd4fc0c5ef79875e3b2f20a468dd966ae9 GeorgiyKuzora <rafale87@gmail.com> 1709470474 +0300	commit: nvim: delete winshift plugin
+603995dd4fc0c5ef79875e3b2f20a468dd966ae9 10cc85b6c39748238385a57ab3cc7d42bc49abfa GeorgiyKuzora <rafale87@gmail.com> 1709470517 +0300	commit: nvim: move nvim-treesitter-context into treesitter plugin file
+10cc85b6c39748238385a57ab3cc7d42bc49abfa 9e8eb0e20f5246540cd934570a98f1a300ae47d6 GeorgiyKuzora <rafale87@gmail.com> 1709470543 +0300	commit: nvim: delete nvim-surround plugin
+9e8eb0e20f5246540cd934570a98f1a300ae47d6 2f83503debf5de82f33fbe1396013002999439cc GeorgiyKuzora <rafale87@gmail.com> 1709470560 +0300	commit: history
+2f83503debf5de82f33fbe1396013002999439cc 8f8c406e386768462860607981133b0c086c7ae6 GeorgiyKuzora <rafale87@gmail.com> 1709471044 +0300	commit: nvim: add todo-comments plugin
+8f8c406e386768462860607981133b0c086c7ae6 65afd3471bdd2a632827db02a8cc0ccb0c81359a GeorgiyKuzora <rafale87@gmail.com> 1709471909 +0300	commit: nvim: telescope keymaps change add C-n C-p
+65afd3471bdd2a632827db02a8cc0ccb0c81359a c1a0498ac96597e01a02ae8a30018f96a7ae5fa2 GeorgiyKuzora <rafale87@gmail.com> 1709471934 +0300	commit: history
+c1a0498ac96597e01a02ae8a30018f96a7ae5fa2 845386f1b4b6ee587ccb0c6af19f7482cab00f96 GeorgiyKuzora <rafale87@gmail.com> 1709477620 +0300	commit: nvim: set rose-pine theme
+845386f1b4b6ee587ccb0c6af19f7482cab00f96 5fe5ad35a45e9806ac8f09132fdec7dc871217b6 GeorgiyKuzora <rafale87@gmail.com> 1709477658 +0300	commit: nvim: reorder rainbow delimeters to rainbow order
+5fe5ad35a45e9806ac8f09132fdec7dc871217b6 50446a25afbe7a92440d8c803281c0187eb86c7a GeorgiyKuzora <rafale87@gmail.com> 1709477667 +0300	commit: nvim: lazy-lock
+50446a25afbe7a92440d8c803281c0187eb86c7a 49dd14a800da8e17d9eb9dad9288e3099c21a7ed GeorgiyKuzora <rafale87@gmail.com> 1709477683 +0300	commit: code: set rose-pine theme
+49dd14a800da8e17d9eb9dad9288e3099c21a7ed e1860fe6254a1c3ebe35c0cf0db3cbf3a7f51aa2 GeorgiyKuzora <rafale87@gmail.com> 1709477688 +0300	commit: history
+e1860fe6254a1c3ebe35c0cf0db3cbf3a7f51aa2 83790c7b4585beb9e794d42d4390f6b6c49011a0 GeorgiyKuzora <rafale87@gmail.com> 1709501324 +0300	commit: nvim: extract rainbow-delimiters config into separate file
+83790c7b4585beb9e794d42d4390f6b6c49011a0 025dfc8db5ccbc8e6fb9dce162ff85a9b1d982be GeorgiyKuzora <rafale87@gmail.com> 1709501355 +0300	commit: wezterm: set colorscheme to rose-pine
+025dfc8db5ccbc8e6fb9dce162ff85a9b1d982be 3319584a8e932899977043c17bc3c75cc95a2549 GeorgiyKuzora <rafale87@gmail.com> 1709501361 +0300	commit: history
+3319584a8e932899977043c17bc3c75cc95a2549 5a9ec902ccb53331f5b653e8f84e2638961ddd98 GeorgiyKuzora <rafale87@gmail.com> 1709577630 +0300	revert: Revert "wezterm: set colorscheme to rose-pine"
+5a9ec902ccb53331f5b653e8f84e2638961ddd98 dcc11698d34e4e54367fb47d9e554cd06148bf84 GeorgiyKuzora <rafale87@gmail.com> 1709577658 +0300	revert: Revert "code: set rose-pine theme"
+dcc11698d34e4e54367fb47d9e554cd06148bf84 6eb0c67738d54b2e5aae6584484120482a5bccf4 GeorgiyKuzora <rafale87@gmail.com> 1709577835 +0300	commit: Revert "nvim: set rose-pine theme"
+6eb0c67738d54b2e5aae6584484120482a5bccf4 f7d98e5e52e4d4ae17951d4638fd69c2b3d70877 GeorgiyKuzora <rafale87@gmail.com> 1709913753 +0300	commit: code: set inlay hints settings
+f7d98e5e52e4d4ae17951d4638fd69c2b3d70877 d3e1dd9209cc3f61100e8d8e275f42fa7b35d160 GeorgiyKuzora <rafale87@gmail.com> 1710097450 +0300	commit: add go/bin to path explicitly
+d3e1dd9209cc3f61100e8d8e275f42fa7b35d160 32911a6e5c04417d543af29e6f5b8240d24716e8 GeorgiyKuzora <rafale87@gmail.com> 1710097480 +0300	commit (amend): zsh: add go/bin to path explicitly
+32911a6e5c04417d543af29e6f5b8240d24716e8 ea2254b6a4681c57281b04c6692c835af5386913 GeorgiyKuzora <rafale87@gmail.com> 1710097500 +0300	commit: code: disable autopairs and surround
+ea2254b6a4681c57281b04c6692c835af5386913 29a5197b42306afc1de6273e2812415028be1eeb GeorgiyKuzora <rafale87@gmail.com> 1710097510 +0300	commit: history
+29a5197b42306afc1de6273e2812415028be1eeb ee960a8c9d1274c5e770e7b16e2569d9a870ea72 GeorgiyKuzora <rafale87@gmail.com> 1710100898 +0300	commit: nvim: move nvim-window pick keymap into plugin config function
+ee960a8c9d1274c5e770e7b16e2569d9a870ea72 a50b06242f5f401ad19563d7ccad44e2530537ac GeorgiyKuzora <rafale87@gmail.com> 1710100936 +0300	commit: code: add nvim indentation options into init.lua
+a50b06242f5f401ad19563d7ccad44e2530537ac 4564fd062741a3e3940999a6563b0aa12d49603a GeorgiyKuzora <rafale87@gmail.com> 1710524264 +0300	commit: nvim: replace fugitive with neogit
+4564fd062741a3e3940999a6563b0aa12d49603a 3ab2ced96dea2d2357c666b8121f4f69280e8e38 GeorgiyKuzora <rafale87@gmail.com> 1710526609 +0300	commit: code: disable autosave
+3ab2ced96dea2d2357c666b8121f4f69280e8e38 ed014acdc156f4191c35e216fcd7625a524ca582 GeorgiyKuzora <rafale87@gmail.com> 1710528884 +0300	commit: nvim: remove maximized window status from lua line
+ed014acdc156f4191c35e216fcd7625a524ca582 d098815ee4a5db199fcc9e81715f99fa6b3f7224 GeorgiyKuzora <rafale87@gmail.com> 1710529022 +0300	commit: nvim: disable show LSP name in lualine
+d098815ee4a5db199fcc9e81715f99fa6b3f7224 d3023b9428f33b30e6a8343def00e37d58ad373d GeorgiyKuzora <rafale87@gmail.com> 1710529471 +0300	commit: nvim: add keymap for open neogit
+d3023b9428f33b30e6a8343def00e37d58ad373d efcb83d711d672e3f6333b5267e34b6d7625cbfc GeorgiyKuzora <rafale87@gmail.com> 1710579313 +0300	commit: nvim: improve gitsigns keymaps
+efcb83d711d672e3f6333b5267e34b6d7625cbfc 06c86cf88d05df4d428fe3f24565a264bd099e02 GeorgiyKuzora <rafale87@gmail.com> 1710580007 +0300	commit: nvim: improve neogit keymaps with telescope in mind
+06c86cf88d05df4d428fe3f24565a264bd099e02 f4cbc93b28e644af1976cc4332119b461e07234f GeorgiyKuzora <rafale87@gmail.com> 1710592060 +0300	commit: nvim: set quick spellcheck correction keymap
+f4cbc93b28e644af1976cc4332119b461e07234f a11a36be03d4da043ccc1703172ef501e74310c9 GeorgiyKuzora <rafale87@gmail.com> 1710592094 +0300	commit: nvim: add option for :find recusevly in current directory
+a11a36be03d4da043ccc1703172ef501e74310c9 3e8c93876c6cadce4405db1af98b42dcb7b6c7db GeorgiyKuzora <rafale87@gmail.com> 1710668704 +0300	commit: nvim: move neogit config into separate file
+3e8c93876c6cadce4405db1af98b42dcb7b6c7db 3107fd0d0c9a4128af98bc96e2fabaa3cd8ccbff GeorgiyKuzora <rafale87@gmail.com> 1710668775 +0300	commit (amend): nvim: move neogit config into separate file
+3107fd0d0c9a4128af98bc96e2fabaa3cd8ccbff 0c7ec8c5bb13a7125cc8d30f8900dc6c3f810a1a GeorgiyKuzora <rafale87@gmail.com> 1710669545 +0300	commit: nvim: set gitsigns custom untracked status char
+0c7ec8c5bb13a7125cc8d30f8900dc6c3f810a1a 56dea0597af4195bb3546f3373f0fd39249c2746 GeorgiyKuzora <rafale87@gmail.com> 1710670240 +0300	commit: history
+56dea0597af4195bb3546f3373f0fd39249c2746 85e3e9c8f3cebbdc4d5af8fd6b5a3ea91bd294bc GeorgiyKuzora <rafale87@gmail.com> 1711805689 +0300	commit: nvim: add new words to spell dict
+85e3e9c8f3cebbdc4d5af8fd6b5a3ea91bd294bc f267ae40fad322f04eb193f6544b74405c8192c2 GeorgiyKuzora <rafale87@gmail.com> 1711805704 +0300	commit: nvim: add russian keymaps
+f267ae40fad322f04eb193f6544b74405c8192c2 061f324c9a5b268c04e24d44908e9cf16f002324 GeorgiyKuzora <rafale87@gmail.com> 1711805711 +0300	commit: history
+061f324c9a5b268c04e24d44908e9cf16f002324 d563ecd30f7e875eea4da7785bcea3ff6d3a1e9c GeorgiyKuzora <rafale87@gmail.com> 1711822329 +0300	commit: nvim + wezterm: add nvim wezterm navigator plugin
+d563ecd30f7e875eea4da7785bcea3ff6d3a1e9c d804470e538e1c4375fb351991c9bdc8e17ef5b1 GeorgiyKuzora <rafale87@gmail.com> 1711822344 +0300	commit: nvim: add words to spell dict
+d804470e538e1c4375fb351991c9bdc8e17ef5b1 ce6ecdffc554976083e8a82d416198abac8ba247 GeorgiyKuzora <rafale87@gmail.com> 1711822350 +0300	commit: history
+ce6ecdffc554976083e8a82d416198abac8ba247 936bee7398427ae796c1015e69e36e8139d34b1b GeorgiyKuzora <rafale87@gmail.com> 1711862024 +0300	commit: history: remove history due to sec concerns
+936bee7398427ae796c1015e69e36e8139d34b1b b168ee763674f8af7b37fe4b9b46e9117331d829 GeorgiyKuzora <rafale87@gmail.com> 1711862071 +0300	commit: nvim + wezterm: remove navigator plugin + keys refactor
+b168ee763674f8af7b37fe4b9b46e9117331d829 ae35eca46cf4833a5f036fc613f4bdc34fab3464 GeorgiyKuzora <rafale87@gmail.com> 1711908080 +0300	commit: nvim: add go snippets
+ae35eca46cf4833a5f036fc613f4bdc34fab3464 f3a28454a827a42b2c8a6987492ed3ff77184cf6 GeorgiyKuzora <rafale87@gmail.com> 1712172844 +0300	commit: nvim: add words in spell dictionary
+f3a28454a827a42b2c8a6987492ed3ff77184cf6 a78a62a08d724965c3e707b820f329c17d3ce954 GeorgiyKuzora <rafale87@gmail.com> 1712172862 +0300	commit: nvim: add neovide options
+a78a62a08d724965c3e707b820f329c17d3ce954 165d0972464567a24e1bf7592447e78ce1cffb14 GeorgiyKuzora <rafale87@gmail.com> 1712204330 +0300	commit: nvim: change neovide font fo VictorMono Nerd Font
+165d0972464567a24e1bf7592447e78ce1cffb14 4b484df54d4b365cb4b15c4b4574ca6812b4ef16 GeorgiyKuzora <rafale87@gmail.com> 1712258926 +0300	commit: zsh: add neovide alias
+4b484df54d4b365cb4b15c4b4574ca6812b4ef16 b838c06ac8c77255e89569b0899ac0856b6192f5 GeorgiyKuzora <rafale87@gmail.com> 1712289823 +0300	commit: nvim: set colorsheme to night-owl
+b838c06ac8c77255e89569b0899ac0856b6192f5 264eee2210418c38166c5ccb34413b33d8e2f453 GeorgiyKuzora <rafale87@gmail.com> 1712289853 +0300	commit: starship: disable character in starship for warp
+264eee2210418c38166c5ccb34413b33d8e2f453 c7bd68b00dabb705d2e28d23494e42a449a13035 GeorgiyKuzora <rafale87@gmail.com> 1712290989 +0300	commit: nvim: add neovide scale factor keybinds
+c7bd68b00dabb705d2e28d23494e42a449a13035 fafe4a13624ef64662279d6e5921dbaba02e35e6 GeorgiyKuzora <rafale87@gmail.com> 1712345799 +0300	commit: wezterm: move tabbar to the top
+fafe4a13624ef64662279d6e5921dbaba02e35e6 c482c8c687c21d9349963c16977ebb761004d020 GeorgiyKuzora <rafale87@gmail.com> 1712378192 +0300	commit: wezterm: change tabs collors
+c482c8c687c21d9349963c16977ebb761004d020 3e6f14bec695dd77ec7a74f7d7cfeb711d260ba7 GeorgiyKuzora <rafale87@gmail.com> 1712381923 +0300	commit: zsh: change neovide allias to vin
+3e6f14bec695dd77ec7a74f7d7cfeb711d260ba7 d9199bbcff98b570bb37721762cec3464c3b303e GeorgiyKuzora <rafale87@gmail.com> 1712382000 +0300	commit: nvim: replace oil refresh keymap to "gl"
+d9199bbcff98b570bb37721762cec3464c3b303e d3b941be7ebf220b6ba98265c81ae46ca31c41cb GeorgiyKuzora <rafale87@gmail.com> 1712396795 +0300	commit: nvim: set italics to catppucinne theme
+d3b941be7ebf220b6ba98265c81ae46ca31c41cb 6ed4dcc2befd1419d39786501236b1611d20fa7b GeorgiyKuzora <rafale87@gmail.com> 1712397047 +0300	commit: nvim: theme to catppuccine
+6ed4dcc2befd1419d39786501236b1611d20fa7b 6ed4dcc2befd1419d39786501236b1611d20fa7b GeorgiyKuzora <rafale87@gmail.com> 1712397109 +0300	reset: moving to HEAD
+6ed4dcc2befd1419d39786501236b1611d20fa7b 858e1ba252639b4ec4bad77e554cd5f9ca26b63b GeorgiyKuzora <rafale87@gmail.com> 1712409667 +0300	commit: wezterm: change tab line colors
+858e1ba252639b4ec4bad77e554cd5f9ca26b63b 57738eccc1517a12662e710a2ad1a7b1bf20ef0d GeorgiyKuzora <rafale87@gmail.com> 1712409694 +0300	commit: wezterm: set zoomed pane char to diamond
+57738eccc1517a12662e710a2ad1a7b1bf20ef0d bee9449eefee995edf8d28bd22f6abad6fc5f698 GeorgiyKuzora <rafale87@gmail.com> 1712409722 +0300	commit: starship: enable character
+bee9449eefee995edf8d28bd22f6abad6fc5f698 8d8266dfe929a8b71928d3a81a88e67a20214aa7 GeorgiyKuzora <rafale87@gmail.com> 1712409762 +0300	commit: nvim: set keymap go to treesitter context
+8d8266dfe929a8b71928d3a81a88e67a20214aa7 bd6910910a0b30cd47edc50844a1a961f3229bcf GeorgiyKuzora <rafale87@gmail.com> 1712428643 +0300	commit: wezterm: change keymaps, enable wayland
+bd6910910a0b30cd47edc50844a1a961f3229bcf ff07f89f41f1b73a7e5056544eec1c7db6665031 GeorgiyKuzora <rafale87@gmail.com> 1712433105 +0300	commit: nvim: colorscheme Night-Owl
+ff07f89f41f1b73a7e5056544eec1c7db6665031 184a10df8543cfa55d6b18335de41ef6aac016a5 GeorgiyKuzora <rafale87@gmail.com> 1712433126 +0300	commit: code: colorscheme Night-Owl
+184a10df8543cfa55d6b18335de41ef6aac016a5 6ee138bb5e3776c3803f18079dd98b484f5c122e GeorgiyKuzora <rafale87@gmail.com> 1712433262 +0300	commit: wezterm: disable wayland
+6ee138bb5e3776c3803f18079dd98b484f5c122e 2b6f9d0d2b8fb4527db2c3e8215253f4c4a431f3 GeorgiyKuzora <rafale87@gmail.com> 1712493833 +0300	commit: nvim: telescope file_path to smart
+2b6f9d0d2b8fb4527db2c3e8215253f4c4a431f3 1138af04437bb9a9a2f65b119147103e3ef4b3b7 GeorgiyKuzora <rafale87@gmail.com> 1712493857 +0300	commit: code: set gopls to auto update
+1138af04437bb9a9a2f65b119147103e3ef4b3b7 58e8fefaa4a85aebdc9c9a36df58b968ba7c97da GeorgiyKuzora <rafale87@gmail.com> 1712493875 +0300	commit: code: theme to tokyonight
+58e8fefaa4a85aebdc9c9a36df58b968ba7c97da 712806f4327303d9ba3b6faced5f484269df545b GeorgiyKuzora <rafale87@gmail.com> 1712495946 +0300	commit: wezterm: change keymaps for AdjustPaneSize
+712806f4327303d9ba3b6faced5f484269df545b d8e0ece5bb5e1263fe27e15954552a0a920bce41 GeorgiyKuzora <rafale87@gmail.com> 1712496749 +0300	commit: wezterm: to xorg
+d8e0ece5bb5e1263fe27e15954552a0a920bce41 01e48e387132ff9755c8bea5beddb8e87dd2027b GeorgiyKuzora <rafale87@gmail.com> 1712500297 +0300	commit: nvim: add find TODOS
+01e48e387132ff9755c8bea5beddb8e87dd2027b d39c64db86b50839ee2257df55aa13f9a02f9032 GeorgiyKuzora <rafale87@gmail.com> 1712503669 +0300	commit: nvim: add cmp-nvim-lsp to lsp-config dependencies
+d39c64db86b50839ee2257df55aa13f9a02f9032 a9a4deee95005da4be2c16ddb337727a8fc85ef3 GeorgiyKuzora <rafale87@gmail.com> 1712503693 +0300	commit: nvim: add troble TODOS
+a9a4deee95005da4be2c16ddb337727a8fc85ef3 76137420e68231dd4300fb64f9e4137c231bce40 GeorgiyKuzora <rafale87@gmail.com> 1712503708 +0300	commit: nvim: neogit update
+76137420e68231dd4300fb64f9e4137c231bce40 7a5c806750903c6935db41de9e2da6222aa4c891 GeorgiyKuzora <rafale87@gmail.com> 1712507832 +0300	commit: wezterm: keymaps change
+7a5c806750903c6935db41de9e2da6222aa4c891 1c9b5d2152efec4203446154656ca63adf84a620 GeorgiyKuzora <rafale87@gmail.com> 1712601919 +0300	commit: nvim: disable explicit lualine theme
+1c9b5d2152efec4203446154656ca63adf84a620 7a704d69da0ab7e47c2f4f27a6b675a36145ef84 GeorgiyKuzora <rafale87@gmail.com> 1712604320 +0300	commit (amend): nvim: disable explicit lualine theme
+7a704d69da0ab7e47c2f4f27a6b675a36145ef84 ac645c1285c949693f8e876be4f36b4c86fcd8ee GeorgiyKuzora <rafale87@gmail.com> 1712604389 +0300	commit: nvim: remove all themes
+ac645c1285c949693f8e876be4f36b4c86fcd8ee 3157a433b84d38e1d4d7230de7b0806a600a90d7 GeorgiyKuzora <rafale87@gmail.com> 1712689861 +0300	commit: nvim: set which-key timeout to 500
+3157a433b84d38e1d4d7230de7b0806a600a90d7 3da3c2d840a16f4751fb2b611a0b12336cb4802d GeorgiyKuzora <rafale87@gmail.com> 1712689875 +0300	commit: code: to catppuccine
+3da3c2d840a16f4751fb2b611a0b12336cb4802d c3f865f609a09a536b109db067b0afc67c121f50 GeorgiyKuzora <rafale87@gmail.com> 1712721754 +0300	commit: nvim: add lazygit plugin
+c3f865f609a09a536b109db067b0afc67c121f50 f75c213e8529f1e51a28b988850923d33c4f2211 GeorgiyKuzora <rafale87@gmail.com> 1712770756 +0300	commit: nvim: add auto-sessions plugin
+f75c213e8529f1e51a28b988850923d33c4f2211 ef6b493ddfac7cd9f25a42d5b42b1afad9596b24 GeorgiyKuzora <rafale87@gmail.com> 1713004388 +0300	commit: kitty: change font size tab bar position
+ef6b493ddfac7cd9f25a42d5b42b1afad9596b24 d0831e2dfc8b622a1c53134ec1bfa81a855f40dd GeorgiyKuzora <rafale87@gmail.com> 1713004415 +0300	commit: wezterm: change font size
+d0831e2dfc8b622a1c53134ec1bfa81a855f40dd 037a12241de087e722f3a93eac67363baa47aa5b GeorgiyKuzora <rafale87@gmail.com> 1713004445 +0300	commit: nvim: update all plugins
+037a12241de087e722f3a93eac67363baa47aa5b c913063cd133783f5d8bc2bb5a0ccad50b04d4ab GeorgiyKuzora <rafale87@gmail.com> 1713004484 +0300	commit: code: change plugins settings
+c913063cd133783f5d8bc2bb5a0ccad50b04d4ab db65273819afbd16181444d7582e190f798c00c1 GeorgiyKuzora <rafale87@gmail.com> 1713450024 +0300	commit: nvim: enable inlay hints
+db65273819afbd16181444d7582e190f798c00c1 6078deba2c6465d66e6084d8c58688bcbd629736 GeorgiyKuzora <rafale87@gmail.com> 1713451488 +0300	commit: nvim: setup golang inlay hints
+6078deba2c6465d66e6084d8c58688bcbd629736 18cee135e50b6b18b37d5d1a20afd2d7657d728d GeorgiyKuzora <rafale87@gmail.com> 1713464724 +0300	commit: zsh: set gopath explicitly
+18cee135e50b6b18b37d5d1a20afd2d7657d728d e8bcf2e4b16aa4bc757b9d2bf95fe3f4c53e407b GeorgiyKuzora <rafale87@gmail.com> 1713464790 +0300	commit: code: init.lua line shift
+e8bcf2e4b16aa4bc757b9d2bf95fe3f4c53e407b 2ca5fcee5bb7d87708424ac6195d58c7cd629849 GeorgiyKuzora <rafale87@gmail.com> 1713465337 +0300	commit: nvim: set windows change keybinds to M-hjkl
+2ca5fcee5bb7d87708424ac6195d58c7cd629849 e5e3034cf17e6c9e8e94674d8af3f069ee6a2b2b GeorgiyKuzora <rafale87@gmail.com> 1713511164 +0300	commit: code: enable inlay hint for go
+e5e3034cf17e6c9e8e94674d8af3f069ee6a2b2b 428bfff0b05ed0f16892cd010e6dac1d159ffb9f GeorgiyKuzora <rafale87@gmail.com> 1713684054 +0300	commit: nvim: change git keybindings
+428bfff0b05ed0f16892cd010e6dac1d159ffb9f 114447e3f6a117f47cba5ec597e9ad49a15df8f2 GeorgiyKuzora <rafale87@gmail.com> 1713688506 +0300	commit: nvim+wezterm: add mux navigation
+114447e3f6a117f47cba5ec597e9ad49a15df8f2 c0d5c11514d43800dee6c9e8264cb29f6bd5c571 GeorgiyKuzora <rafale87@gmail.com> 1713691445 +0300	commit: nvim: update aerial
+c0d5c11514d43800dee6c9e8264cb29f6bd5c571 fb5408c08d9fce92744722eb2ff7fbd88f6c8c19 GeorgiyKuzora <rafale87@gmail.com> 1714403476 +0300	commit: nvim: moved plugins into separate files
+fb5408c08d9fce92744722eb2ff7fbd88f6c8c19 1d7baab6fae483ca278f470f5878a1b2399b2147 GeorgiyKuzora <rafale87@gmail.com> 1714408282 +0300	commit: nvim: keymaps change
+1d7baab6fae483ca278f470f5878a1b2399b2147 23c2582230478675581bc7e4239c5a4638623ff3 GeorgiyKuzora <rafale87@gmail.com> 1714408306 +0300	commit: code: vim keymaps change
+23c2582230478675581bc7e4239c5a4638623ff3 c3cbf1c6ad1cd9f44325f697d1c5b2fb4e70940b GeorgiyKuzora <rafale87@gmail.com> 1714458792 +0300	commit: code: fix init.lua
+c3cbf1c6ad1cd9f44325f697d1c5b2fb4e70940b 4de8e95e2a87beb7d45613ae5345f2b16490db9f GeorgiyKuzora <rafale87@gmail.com> 1714892215 +0300	commit: code: change app appearence
+4de8e95e2a87beb7d45613ae5345f2b16490db9f 3bd2bb28e3d95ce05aacae2340dcf1c95caa41d1 GeorgiyKuzora <rafale87@gmail.com> 1714924320 +0300	commit: nvim: fix enable inline hints keybind function
+3bd2bb28e3d95ce05aacae2340dcf1c95caa41d1 5d2481bbd17b6dc9f370d7df044e85e5fdc7acd7 GeorgiyKuzora <rafale87@gmail.com> 1714925460 +0300	commit: nvim: Add barbecue plugin
+5d2481bbd17b6dc9f370d7df044e85e5fdc7acd7 8bb7578e5ff7d6e6694d9e4b5007074cb1005d8b GeorgiyKuzora <rafale87@gmail.com> 1714927742 +0300	commit: nvim: add go.nvim still no inlay hints
+8bb7578e5ff7d6e6694d9e4b5007074cb1005d8b e0577ee27ed0d72d74943d7bec78fe232e6c78b0 GeorgiyKuzora <rafale87@gmail.com> 1715021196 +0300	commit: code: add keybindings
+e0577ee27ed0d72d74943d7bec78fe232e6c78b0 932ff485fb7a5da73ebe21e8f16720fca253ba9e GeorgiyKuzora <rafale87@gmail.com> 1715194475 +0300	commit: nvim: add keybinds for workspace symbols find
+932ff485fb7a5da73ebe21e8f16720fca253ba9e 716ac9d67cb86bf1adc1e071932573096b162bc4 GeorgiyKuzora <rafale87@gmail.com> 1715409225 +0300	commit: nvim: change path_display param for telescope
+716ac9d67cb86bf1adc1e071932573096b162bc4 4be7ecb3aa5f5d48c877aebe20c281cbe970c413 GeorgiyKuzora <rafale87@gmail.com> 1715448978 +0300	commit: nix: add nix package manager
+4be7ecb3aa5f5d48c877aebe20c281cbe970c413 437503534c008d75271aa20b1732d05c9dced2a5 GeorgiyKuzora <rafale87@gmail.com> 1716053975 +0300	commit: nvim: add words in to spell-list
+437503534c008d75271aa20b1732d05c9dced2a5 741ae7e1e03df93050b7098282d9f9700cf7486c GeorgiyKuzora <rafale87@gmail.com> 1716054001 +0300	commit: nvim: change go lua row order
+741ae7e1e03df93050b7098282d9f9700cf7486c 2ca371709f74078fe3704a42c43c395f8cc05e7c GeorgiyKuzora <rafale87@gmail.com> 1716054094 +0300	commit: nvim: set correct gopls and tsserver lsp-config
+2ca371709f74078fe3704a42c43c395f8cc05e7c e64b2e97aecef14df01b7c4a4e28b209032ce2a9 GeorgiyKuzora <rafale87@gmail.com> 1716054615 +0300	commit: nvim: install plugins
+e64b2e97aecef14df01b7c4a4e28b209032ce2a9 76403cd3cbd39baca2b9d4486c6cddeacb10d6ce GeorgiyKuzora <rafale87@gmail.com> 1716401801 +0300	commit: nvim: update to 0.10 changes
+76403cd3cbd39baca2b9d4486c6cddeacb10d6ce 30cd5e8d47ab1d98fd70d436eb5e1d3e3b3e301b GeorgiyKuzora <rafale87@gmail.com> 1716401817 +0300	commit: nvim: add words into spell list
+30cd5e8d47ab1d98fd70d436eb5e1d3e3b3e301b 555adfe9c67d5bcb55b33e73ea395f30eb1c8f53 GeorgiyKuzora <rafale87@gmail.com> 1716574725 +0300	commit: nvim: Remove lsp.hover keybind it became native
+555adfe9c67d5bcb55b33e73ea395f30eb1c8f53 9f88b38ee2fa05586fbba4b7f7789db6725bf217 GeorgiyKuzora <rafale87@gmail.com> 1717009701 +0300	commit: nvim: updated plugins
+9f88b38ee2fa05586fbba4b7f7789db6725bf217 e0b92f6189694276ec30c7434c34abe7bcbec244 GeorgiyKuzora <rafale87@gmail.com> 1717009729 +0300	commit: nvim: disable go plugin, constant errors with it
+e0b92f6189694276ec30c7434c34abe7bcbec244 602035b7b5d330e012e941209cc73a2fd30a5883 GeorgiyKuzora <rafale87@gmail.com> 1717315542 +0300	commit: nvim: add keymap to oil float
+602035b7b5d330e012e941209cc73a2fd30a5883 903e609e7fbe8942c60bc69ca8c25f2500de2c33 GeorgiyKuzora <rafale87@gmail.com> 1717786798 +0300	commit: nvim: update trouble config
+903e609e7fbe8942c60bc69ca8c25f2500de2c33 9b257c57b86502adc0f408c473e433d6b5927f47 GeorgiyKuzora <rafale87@gmail.com> 1717786812 +0300	commit: nvim: update plugins
+9b257c57b86502adc0f408c473e433d6b5927f47 9aff001bcf34eb4a6264be6ce360db92a9b98d78 GeorgiyKuzora <rafale87@gmail.com> 1719638035 +0300	commit: code: add custom snippets
+9aff001bcf34eb4a6264be6ce360db92a9b98d78 f6cf724928720febe2617a6900023af85a543d3e GeorgiyKuzora <rafale87@gmail.com> 1720436878 +0300	commit: nvim: Lazy update all
+f6cf724928720febe2617a6900023af85a543d3e 177fc54f67a2d29880185a254f59d916679d434a GeorgiyKuzora <rafale87@gmail.com> 1720436896 +0300	commit: nvim: Update better-escape config
+177fc54f67a2d29880185a254f59d916679d434a 3ad0fe19ce28c6eef2fcbb818dd3f73b46e6ea0f GeorgiyKuzora <rafale87@gmail.com> 1720436919 +0300	commit: code: update settings
+3ad0fe19ce28c6eef2fcbb818dd3f73b46e6ea0f 2f47da51b7b3b7fd7298ce5799a75cd41ded1a25 GeorgiyKuzora <rafale87@gmail.com> 1720437531 +0300	commit: nvim: ts-autotag update config
+2f47da51b7b3b7fd7298ce5799a75cd41ded1a25 01442474295121d09a614ab9a793093994309e5b GeorgiyKuzora <rafale87@gmail.com> 1720439385 +0300	commit: nvim: update diagnostics config
+01442474295121d09a614ab9a793093994309e5b f14d0ae46430b02f1643ed3b674a0bb5a565f167 GeorgiyKuzora <rafale87@gmail.com> 1720974964 +0300	commit: code: settings and keybinds change
+f14d0ae46430b02f1643ed3b674a0bb5a565f167 859ed797a47a6aac6da10a1f8a0766b0f2e61d20 GeorgiyKuzora <rafale87@gmail.com> 1720975002 +0300	commit: nvim: disable AutoSesions plugin
+859ed797a47a6aac6da10a1f8a0766b0f2e61d20 6ca9ff3762ba1ea0b845c24aa30020393e06603f GeorgiyKuzora <rafale87@gmail.com> 1721018808 +0300	commit: zed: add zed settings.json
+6ca9ff3762ba1ea0b845c24aa30020393e06603f ef41a9afe0d7018157a4511db3a0a19d80985a41 GeorgiyKuzora <rafale87@gmail.com> 1721536637 +0300	commit: code: disable line highlight
+ef41a9afe0d7018157a4511db3a0a19d80985a41 7bd261f7e81747efadaf057da60eceb7f958de49 GeorgiyKuzora <rafale87@gmail.com> 1721536655 +0300	commit: nvim: disable line highlight
+7bd261f7e81747efadaf057da60eceb7f958de49 6a59b5d49ec308712f19ceaab01be96180350ee7 GeorgiyKuzora <rafale87@gmail.com> 1721536700 +0300	commit: poetry: set virtualenv in project
+6a59b5d49ec308712f19ceaab01be96180350ee7 03bcdaaca00aa26badb18b0f58da057edcfd7359 GeorgiyKuzora <rafale87@gmail.com> 1721536727 +0300	commit: atuin: atuin config init
+03bcdaaca00aa26badb18b0f58da057edcfd7359 61fb0d07c73d5d0081369d9bd4d24a74e4058d40 GeorgiyKuzora <rafale87@gmail.com> 1721536752 +0300	commit: zed: settings for zed
+61fb0d07c73d5d0081369d9bd4d24a74e4058d40 4ca2b68c004874bf40069584bf467629180a5b06 GeorgiyKuzora <rafale87@gmail.com> 1722181847 +0300	commit: code: disable format on save for python
+4ca2b68c004874bf40069584bf467629180a5b06 b2b19b51cd28c1f63ed08e4327fdecf25f718f30 GeorgiyKuzora <rafale87@gmail.com> 1722181868 +0300	commit: zed: set color theme to tokio Night
+b2b19b51cd28c1f63ed08e4327fdecf25f718f30 b8e05300a7c49092b74930492ab9167b66e60210 GeorgiyKuzora <rafale87@gmail.com> 1722797703 +0300	commit: zed: settings for zed
+b8e05300a7c49092b74930492ab9167b66e60210 596450d5a6a04ec95c901bcff70f062dd51fba76 GeorgiyKuzora <rafale87@gmail.com> 1723058534 +0300	commit: tmux: add tmux config
+596450d5a6a04ec95c901bcff70f062dd51fba76 2bab05ff66f41a53ee19205b1fdb89dc72e235e6 GeorgiyKuzora <rafale87@gmail.com> 1723140923 +0300	commit: nvim, wezterm: disable navigation between nvim and wez
+2bab05ff66f41a53ee19205b1fdb89dc72e235e6 825860e3fec37181e83cb1ed8ce570611433c76b GeorgiyKuzora <rafale87@gmail.com> 1723140934 +0300	commit: tmux: config update
+825860e3fec37181e83cb1ed8ce570611433c76b 5879b99c5daa47917262bdc172fb7bdf68cb573e GeorgiyKuzora <rafale87@gmail.com> 1723141590 +0300	commit: zellij: set default config
+5879b99c5daa47917262bdc172fb7bdf68cb573e 5821acaa17dde667649eb579f0eb786235543588 GeorgiyKuzora <rafale87@gmail.com> 1723227999 +0300	commit: wezterm: change font size to 16
+5821acaa17dde667649eb579f0eb786235543588 11c29a9da0910e5326cb2f1470ceedecf2be9dd8 GeorgiyKuzora <rafale87@gmail.com> 1723315573 +0300	commit: tmux: tmux.conf update
+11c29a9da0910e5326cb2f1470ceedecf2be9dd8 233a2c26a8e41ec00127611b0bbee19d938bb419 GeorgiyKuzora <rafale87@gmail.com> 1723385339 +0300	commit: wezterm: add catppuccin color scheme
+233a2c26a8e41ec00127611b0bbee19d938bb419 a39f845746cbecd449fb26790ff291c063fc3f37 GeorgiyKuzora <rafale87@gmail.com> 1723485226 +0300	commit: code: enable compact tabs
+a39f845746cbecd449fb26790ff291c063fc3f37 4f76cf9aba62a46bea71edf4b12c3c95bebf1f8d GeorgiyKuzora <rafale87@gmail.com> 1723575019 +0300	commit: code: disable tabs
+4f76cf9aba62a46bea71edf4b12c3c95bebf1f8d 95154afca5b01e205c68c336d0125d5d901888a0 GeorgiyKuzora <rafale87@gmail.com> 1723575059 +0300	commit: wezterm: set color scheme to catppuccin and baground to Mantle
+95154afca5b01e205c68c336d0125d5d901888a0 400b7dd92097d153a29327950f5c8c6c9eef197e GeorgiyKuzora <rafale87@gmail.com> 1723575123 +0300	commit: starship: set pallete to catppuccin_mocha
+400b7dd92097d153a29327950f5c8c6c9eef197e b9f70944674b40f794cb8743d65b71b95c5ee2bc GeorgiyKuzora <rafale87@gmail.com> 1726321888 +0300	commit: code: settings change
+b9f70944674b40f794cb8743d65b71b95c5ee2bc 4f457f80470acb81ff61d33a205f0871a1658181 GeorgiyKuzora <rafale87@gmail.com> 1726374381 +0300	commit: zed: settings update
+4f457f80470acb81ff61d33a205f0871a1658181 5b00eaf674673723f9bd0ad85f10639f0971ddf2 GeorgiyKuzora <rafale87@gmail.com> 1726374459 +0300	commit: nvim: session plugin delete
+5b00eaf674673723f9bd0ad85f10639f0971ddf2 0ad688ba2fab071b918f6dcd056a8413547c3cc7 GeorgiyKuzora <rafale87@gmail.com> 1726374554 +0300	commit: nvim: kemaps update
+0ad688ba2fab071b918f6dcd056a8413547c3cc7 4947a67efca4afbe6aab4588bae0711f3865b061 GeorgiyKuzora <rafale87@gmail.com> 1726374568 +0300	commit: nvim: go plugin enable
+4947a67efca4afbe6aab4588bae0711f3865b061 b6e816f7c1e172ccd94d48d823b5fa33936fc16e GeorgiyKuzora <rafale87@gmail.com> 1726374592 +0300	commit: nvim: change diagnostic highlights
+b6e816f7c1e172ccd94d48d823b5fa33936fc16e 864eab46763ae5e2e533cfaa856600d3993e48a7 GeorgiyKuzora <rafale87@gmail.com> 1726374604 +0300	commit: nvim: lazy-lock
+864eab46763ae5e2e533cfaa856600d3993e48a7 00589ed41494fc39d686e03588faa3f94f018abc GeorgiyKuzora <rafale87@gmail.com> 1727001568 +0300	commit: nvim: add surround nvim
+00589ed41494fc39d686e03588faa3f94f018abc 6093f07ae96f0d943b8910a65a3445eb92d31a48 GeorgiyKuzora <rafale87@gmail.com> 1727803787 +0300	commit: nvim: change treesitter config
+6093f07ae96f0d943b8910a65a3445eb92d31a48 ccf7ce8036f2dd87fe79008be5d095d7909c12d2 GeorgiyKuzora <rafale87@gmail.com> 1727804076 +0300	commit: stash
+ccf7ce8036f2dd87fe79008be5d095d7909c12d2 00589ed41494fc39d686e03588faa3f94f018abc GeorgiyKuzora <rafale87@gmail.com> 1727804088 +0300	rebase (start): checkout 00589ed41494fc39d686e03588faa3f94f018abc
+00589ed41494fc39d686e03588faa3f94f018abc 6093f07ae96f0d943b8910a65a3445eb92d31a48 GeorgiyKuzora <rafale87@gmail.com> 1727804088 +0300	rebase: fast-forward
+6093f07ae96f0d943b8910a65a3445eb92d31a48 c9589f5d9af0da1951a92685e054fba92a1698ed GeorgiyKuzora <rafale87@gmail.com> 1727804088 +0300	rebase (squash): nvim: change treesitter config
+c9589f5d9af0da1951a92685e054fba92a1698ed c9589f5d9af0da1951a92685e054fba92a1698ed GeorgiyKuzora <rafale87@gmail.com> 1727804088 +0300	rebase (finish): returning to refs/heads/main
+c9589f5d9af0da1951a92685e054fba92a1698ed 58bb27964e8bd61510df18aea225694152ac742a GeorgiyKuzora <rafale87@gmail.com> 1727805207 +0300	commit: squash
+58bb27964e8bd61510df18aea225694152ac742a 00589ed41494fc39d686e03588faa3f94f018abc GeorgiyKuzora <rafale87@gmail.com> 1727805215 +0300	rebase (start): checkout 00589ed41494fc39d686e03588faa3f94f018abc
+00589ed41494fc39d686e03588faa3f94f018abc c9589f5d9af0da1951a92685e054fba92a1698ed GeorgiyKuzora <rafale87@gmail.com> 1727805215 +0300	rebase: fast-forward
+c9589f5d9af0da1951a92685e054fba92a1698ed 7b864bcbcd094cfdc14a984c03bcd0e838d9ec84 GeorgiyKuzora <rafale87@gmail.com> 1727805215 +0300	rebase (squash): nvim: change treesitter config
+7b864bcbcd094cfdc14a984c03bcd0e838d9ec84 7b864bcbcd094cfdc14a984c03bcd0e838d9ec84 GeorgiyKuzora <rafale87@gmail.com> 1727805215 +0300	rebase (finish): returning to refs/heads/main
+7b864bcbcd094cfdc14a984c03bcd0e838d9ec84 5565fa5cb8392aec027c9540b29da4460ba7b4cf GeorgiyKuzora <rafale87@gmail.com> 1727805231 +0300	commit: nvim: ufo plagin update
+5565fa5cb8392aec027c9540b29da4460ba7b4cf da33b737609309877f45b944017853ba947f1edf GeorgiyKuzora <rafale87@gmail.com> 1727805281 +0300	commit: nvim: disable auto format by default
+da33b737609309877f45b944017853ba947f1edf b1223b7d7e87a42ac5ea602cd42a65625963796b GeorgiyKuzora <rafale87@gmail.com> 1727805368 +0300	commit: nvim: linting add mypy
+b1223b7d7e87a42ac5ea602cd42a65625963796b 20b20af744f3738c11c1b0a47d99301528d4c3f3 GeorgiyKuzora <rafale87@gmail.com> 1727806484 +0300	commit: nvim: lspconfig rename ts_ls
+20b20af744f3738c11c1b0a47d99301528d4c3f3 2f0e8b5ae85e659ed64fa03f4e2a490e4fd71988 GeorgiyKuzora <rafale87@gmail.com> 1727806521 +0300	commit: nvim: lspconfig remove black and flake8 from ensure installed
+2f0e8b5ae85e659ed64fa03f4e2a490e4fd71988 744e9cc49e9eb17a55b56efbef4156a95048bef3 GeorgiyKuzora <rafale87@gmail.com> 1727806604 +0300	commit: nvim: remove navigator
+744e9cc49e9eb17a55b56efbef4156a95048bef3 1741cf61b9c68469aee98192aad6f0808954d19a GeorgiyKuzora <rafale87@gmail.com> 1727806986 +0300	commit: pypoetry: remove in-project config
+1741cf61b9c68469aee98192aad6f0808954d19a be91de16dd25c3c0ff14b96ca01ab5d4b7cb7d3c GeorgiyKuzora <rafale87@gmail.com> 1727807669 +0300	commit: tmux: add keybinds
+be91de16dd25c3c0ff14b96ca01ab5d4b7cb7d3c 1b20c9c1b78e528012e18fc5da735f0d1b661dce GeorgiyKuzora <rafale87@gmail.com> 1727809565 +0300	commit: nvim: change telescope fG livegrep
+1b20c9c1b78e528012e18fc5da735f0d1b661dce 03a313ad77b53cb40a61c1fc8591f9f0ad3ff7a6 GeorgiyKuzora <rafale87@gmail.com> 1727930440 +0300	commit: nvim: lint python linters
+03a313ad77b53cb40a61c1fc8591f9f0ad3ff7a6 e6440e3e38d62f56ffdd9e9ab362094d181f4a96 GeorgiyKuzora <rafale87@gmail.com> 1727979914 +0300	commit: nvim: set cache and undo dir from $HOME
+e6440e3e38d62f56ffdd9e9ab362094d181f4a96 d86384c10fd21ba658ded9d190db79b19886b1c4 GeorgiyKuzora <rafale87@gmail.com> 1727980540 +0300	commit: nvim: set opt.shell based on $SHELL
+d86384c10fd21ba658ded9d190db79b19886b1c4 5778e56f37f4ff70f21dde33be0b795735571646 GeorgiyKuzora <rafale87@gmail.com> 1727981594 +0300	commit (amend): nvim: set opt.shell based on $SHELL
+5778e56f37f4ff70f21dde33be0b795735571646 ca6810a445549159f1b7d15178fb74e05366e9e5 GeorgiyKuzora <rafale87@gmail.com> 1727982849 +0300	commit: nvim: options refactor
+ca6810a445549159f1b7d15178fb74e05366e9e5 edbfd7ae5a0d58e0c91125ec503587d33e8c56c9 GeorgiyKuzora <rafale87@gmail.com> 1727983183 +0300	commit: wezterm: set no warn on missing glyphs
+edbfd7ae5a0d58e0c91125ec503587d33e8c56c9 1c3aa1ddb3f54ccf939da370bfab3906a5d6e205 GeorgiyKuzora <rafale87@gmail.com> 1728238213 +0300	commit: nvim: add description to go to context
+1c3aa1ddb3f54ccf939da370bfab3906a5d6e205 edd7aa71f968306f92bf8f9367f5acb5faa6d9ed GeorgiyKuzora <rafale87@gmail.com> 1728409057 +0300	cherry-pick: nvim: add trouble close
+edd7aa71f968306f92bf8f9367f5acb5faa6d9ed 988e950180e79b4e1fc76680d8a8ce49389a6d19 GeorgiyKuzora <rafale87@gmail.com> 1728409072 +0300	cherry-pick: nvim: telescope change keymap desctiptions
+988e950180e79b4e1fc76680d8a8ce49389a6d19 843ed6bb537cec901fb36d5d423ab67de61579a1 GeorgiyKuzora <rafale87@gmail.com> 1728409086 +0300	cherry-pick: nvim: change telescope keymaps descriptions
+843ed6bb537cec901fb36d5d423ab67de61579a1 f86e0d26f8219109f218a859babd9047ff3476db GeorgiyKuzora <rafale87@gmail.com> 1728409101 +0300	cherry-pick: nvim: change gx keymap behavior
+f86e0d26f8219109f218a859babd9047ff3476db 1540d2fcd4e15f394b830d952e796ae2abeea06a GeorgiyKuzora <rafale87@gmail.com> 1728409132 +0300	cherry-pick: nvim: keymaps refactor
+1540d2fcd4e15f394b830d952e796ae2abeea06a 99fd6ccd2b316386f46a1253b0d33d062ebda3ef GeorgiyKuzora <rafale87@gmail.com> 1728409145 +0300	cherry-pick: nvim: format toggle description change
+99fd6ccd2b316386f46a1253b0d33d062ebda3ef f1880282c420a6fdf002de1bb3516cc425a01087 GeorgiyKuzora <rafale87@gmail.com> 1728409156 +0300	cherry-pick: nvim: refactor linting
+f1880282c420a6fdf002de1bb3516cc425a01087 6f7cb5e7906cc66bae93dbd4c8b91aa84c0fe7bf GeorgiyKuzora <rafale87@gmail.com> 1728409382 +0300	commit: nvim: change gx description
+6f7cb5e7906cc66bae93dbd4c8b91aa84c0fe7bf f1b2fa97765bdc96ac6cc1231ee2c33d0bc0740a GeorgiyKuzora <rafale87@gmail.com> 1728410024 +0300	commit: wezterm: set font to JetBrainsMono
+f1b2fa97765bdc96ac6cc1231ee2c33d0bc0740a b3b9bef0f3883a4a2447de58f29e7d844dd0ddbe GeorgiyKuzora <rafale87@gmail.com> 1728583127 +0300	commit: nix: add nix/nix.conf with command and flakes
+b3b9bef0f3883a4a2447de58f29e7d844dd0ddbe f8e0cfa21a014db0f541f4f54644b683f7b58b0a GeorgiyKuzora <rafale87@gmail.com> 1728583139 +0300	commit: nix: add fedora-env
+f8e0cfa21a014db0f541f4f54644b683f7b58b0a 5986dce3b02758a0e764c449069b8cefa09a4d03 GeorgiyKuzora <rafale87@gmail.com> 1728621985 +0300	commit: nix: add yazi to fedora-env
+5986dce3b02758a0e764c449069b8cefa09a4d03 5164d977691e75ff973fbb99c9d792abbc5fdbfd GeorgiyKuzora <rafale87@gmail.com> 1728712195 +0300	commit: nix: add fedora packages
+5164d977691e75ff973fbb99c9d792abbc5fdbfd c2f0d66775a6b68d5d8fc904731d3d4a51c7d66d GeorgiyKuzora <rafale87@gmail.com> 1728712215 +0300	commit: zsh: add zsh-vi-mode instead of vi-mode
+c2f0d66775a6b68d5d8fc904731d3d4a51c7d66d 68a8e89f47cc0c5d8934b64dfb75a9c75038b412 GeorgiyKuzora <rafale87@gmail.com> 1728712234 +0300	commit: atuin: add config
+68a8e89f47cc0c5d8934b64dfb75a9c75038b412 2f963c9faacc464dd3c576da5faa40da3020b89f GeorgiyKuzora <rafale87@gmail.com> 1728712246 +0300	commit: fish: setup fish shell
+2f963c9faacc464dd3c576da5faa40da3020b89f 98bd082b1125a7b85233d96022b6da9323f73a49 GeorgiyKuzora <rafale87@gmail.com> 1728715080 +0300	commit: fish: set pyenv PATH
+98bd082b1125a7b85233d96022b6da9323f73a49 b020e3c8448178de1cfcf35432384a4d132c4a11 GeorgiyKuzora <rafale87@gmail.com> 1728729815 +0300	commit: fish: add files to fish config
+b020e3c8448178de1cfcf35432384a4d132c4a11 1d2927d3bb61889de81da848ea64691716fbd5d5 GeorgiyKuzora <rafale87@gmail.com> 1728731028 +0300	commit: fish: add plugins
+1d2927d3bb61889de81da848ea64691716fbd5d5 9c5039883154646ca30f114f4f7ac8a77a320e0b GeorgiyKuzora <rafale87@gmail.com> 1728732671 +0300	commit: fish: remove failed stow links
+9c5039883154646ca30f114f4f7ac8a77a320e0b d614829dcc23f5aa741c08f0b265b8eb075b0b8f GeorgiyKuzora <rafale87@gmail.com> 1728739418 +0300	commit: fish: set abbreviations
+d614829dcc23f5aa741c08f0b265b8eb075b0b8f ab5e221d5dc906262169404887cd64d3c797eae3 GeorgiyKuzora <rafale87@gmail.com> 1728740729 +0300	commit: fish: disable cd from zoxide
+ab5e221d5dc906262169404887cd64d3c797eae3 50763b7940e74dc8ef23234d44c1960e81cc3a1f GeorgiyKuzora <rafale87@gmail.com> 1728742193 +0300	commit: fish: poetry completions
+50763b7940e74dc8ef23234d44c1960e81cc3a1f 6d288af56f57ef3d108a8b47efabd2086fb083f0 GeorgiyKuzora <rafale87@gmail.com> 1728801893 +0300	commit: wezterm: disable ALT-ENTER key
+6d288af56f57ef3d108a8b47efabd2086fb083f0 33019baf179bab1d9e19ed7448c3fb7c8262a086 GeorgiyKuzora <rafale87@gmail.com> 1728806710 +0300	commit: fish: set hybrid binds and safe abbr
+33019baf179bab1d9e19ed7448c3fb7c8262a086 0c5d0589fc019a85ea22fd64d645faaca9896c2f GeorgiyKuzora <rafale87@gmail.com> 1728806826 +0300	commit: fish: refactor
+0c5d0589fc019a85ea22fd64d645faaca9896c2f b21e87c212ff1c831952fe216e6eb993203e84b3 GeorgiyKuzora <rafale87@gmail.com> 1728807211 +0300	commit: fish: set zoxide to cd
+b21e87c212ff1c831952fe216e6eb993203e84b3 d278f1668e7e0a034961b2338dd76905d7fbf7cb GeorgiyKuzora <rafale87@gmail.com> 1728926290 +0300	commit: nix: add fedora flake
+d278f1668e7e0a034961b2338dd76905d7fbf7cb 04719962ecb5a6d6f67522b18f339c83d421efe6 GeorgiyKuzora <rafale87@gmail.com> 1728926314 +0300	commit: nix: add direnv jq to fedora env
+04719962ecb5a6d6f67522b18f339c83d421efe6 7534f273b798e1069f3c3ddb1e58cfdb1158c1b3 GeorgiyKuzora <rafale87@gmail.com> 1728926357 +0300	commit: fish: atuin over fzf
+7534f273b798e1069f3c3ddb1e58cfdb1158c1b3 93c25de743b8636180fd9e85b61f22f61ecd98f5 GeorgiyKuzora <rafale87@gmail.com> 1728926367 +0300	commit: fish: vars
+93c25de743b8636180fd9e85b61f22f61ecd98f5 1783f64d6e20fb1eddb53ea098301566f79b24b1 GeorgiyKuzora <rafale87@gmail.com> 1728926468 +0300	cherry-pick: fish: add gitbare function
+1783f64d6e20fb1eddb53ea098301566f79b24b1 6a6281772726c47a13ecd44f532d5fe1e846d68b GeorgiyKuzora <rafale87@gmail.com> 1728926591 +0300	commit: fish: add direnv
+6a6281772726c47a13ecd44f532d5fe1e846d68b bb531e1e71912878bf82f609a2615203c3c00e46 GeorgiyKuzora <rafale87@gmail.com> 1728935673 +0300	commit: nix: remove fish
+bb531e1e71912878bf82f609a2615203c3c00e46 0fe49523f5a2ecfd3b02bedd798491e06662a187 GeorgiyKuzora <rafale87@gmail.com> 1728935929 +0300	commit: nix: clean packages for fedora
+0fe49523f5a2ecfd3b02bedd798491e06662a187 499168b8f97b6063764b9167db252a26e0d27209 GeorgiyKuzora <rafale87@gmail.com> 1728936352 +0300	commit: fish: remove fish poetry
+499168b8f97b6063764b9167db252a26e0d27209 6184068c4c41253e2293f936d0ace3006ef199c6 GeorgiyKuzora <rafale87@gmail.com> 1729096697 +0300	commit: wezterm: set fish as default prog
+6184068c4c41253e2293f936d0ace3006ef199c6 c38e7f8c8c75d93ab3f5639c3e8ddf097986ea30 GeorgiyKuzora <rafale87@gmail.com> 1729096710 +0300	commit: zhs: clean up
+c38e7f8c8c75d93ab3f5639c3e8ddf097986ea30 4cbb18376129c3710c97bd4a7d5d15fc645e8e36 GeorgiyKuzora <rafale87@gmail.com> 1729096717 +0300	commit: fish: vars
+4cbb18376129c3710c97bd4a7d5d15fc645e8e36 f2c0e4e13a89bf80d05ca9c0ac223c019aa72bae GeorgiyKuzora <rafale87@gmail.com> 1729096808 +0300	commit: fish: zoxide remove cd
+f2c0e4e13a89bf80d05ca9c0ac223c019aa72bae 749b8756e859ded74d16a08779acb422ab1816d6 GeorgiyKuzora <rafale87@gmail.com> 1729099977 +0300	commit: fish: atuin completions
+749b8756e859ded74d16a08779acb422ab1816d6 3492d70cb061ea9c2bd0e9add6949cb43a3de736 GeorgiyKuzora <rafale87@gmail.com> 1729100022 +0300	commit: bash: clean up
+3492d70cb061ea9c2bd0e9add6949cb43a3de736 b992d4afedb15fe07e9f348a4174f289c2bedef8 GeorgiyKuzora <rafale87@gmail.com> 1729100035 +0300	commit: zsh: clean up
+b992d4afedb15fe07e9f348a4174f289c2bedef8 7c909f88a875e4aeafa6a91968623dd247001ca0 GeorgiyKuzora <rafale87@gmail.com> 1729100355 +0300	commit (amend): zsh: clean up
+7c909f88a875e4aeafa6a91968623dd247001ca0 50fc608fa6101d9831f4a1f8e57f65ed7dc08ec3 GeorgiyKuzora <rafale87@gmail.com> 1729102848 +0300	commit: fish: set nix
+50fc608fa6101d9831f4a1f8e57f65ed7dc08ec3 10fbd1540c20d038e2abf767373050f7c7bd579d GeorgiyKuzora <rafale87@gmail.com> 1729102865 +0300	commit: nix: add task logseq
+10fbd1540c20d038e2abf767373050f7c7bd579d cd93a24087ba020426dbf1e66f0007668d8932df GeorgiyKuzora <rafale87@gmail.com> 1729189118 +0300	commit: nix: app change
+cd93a24087ba020426dbf1e66f0007668d8932df 820d898349b749d502dabb84a641f111ef0a7863 GeorgiyKuzora <rafale87@gmail.com> 1729189133 +0300	pull (start): checkout 820d898349b749d502dabb84a641f111ef0a7863
+820d898349b749d502dabb84a641f111ef0a7863 40b6c078d6028a1e85858a97349ec4abb0a569dd GeorgiyKuzora <rafale87@gmail.com> 1729189133 +0300	pull (pick): nix: app change
+40b6c078d6028a1e85858a97349ec4abb0a569dd 40b6c078d6028a1e85858a97349ec4abb0a569dd GeorgiyKuzora <rafale87@gmail.com> 1729189133 +0300	pull (finish): returning to refs/heads/main
+40b6c078d6028a1e85858a97349ec4abb0a569dd 96b104377c49e29b2e6758bb7d7b03b17beb95b4 GeorgiyKuzora <rafale87@gmail.com> 1729711731 +0300	commit: nvim: add telescope frecency extention
+96b104377c49e29b2e6758bb7d7b03b17beb95b4 1482489176a11126d9c8228ce9a44cec24864c03 GeorgiyKuzora <rafale87@gmail.com> 1729711748 +0300	pull --no-edit (start): checkout 1482489176a11126d9c8228ce9a44cec24864c03
+1482489176a11126d9c8228ce9a44cec24864c03 f58685c6694891f90b396747ba493bb7c2df83b5 GeorgiyKuzora <rafale87@gmail.com> 1729711748 +0300	pull --no-edit (pick): nvim: add telescope frecency extention
+f58685c6694891f90b396747ba493bb7c2df83b5 f58685c6694891f90b396747ba493bb7c2df83b5 GeorgiyKuzora <rafale87@gmail.com> 1729711748 +0300	pull --no-edit (finish): returning to refs/heads/main
+f58685c6694891f90b396747ba493bb7c2df83b5 85960bcf1d0df47e1c5e16ec3c6a0affb1d9c542 GeorgiyKuzora <rafale87@gmail.com> 1729711865 +0300	cherry-pick: fish: add pyal abbr
+85960bcf1d0df47e1c5e16ec3c6a0affb1d9c542 18ad817b616d9c32611ee66d03c2a0027801531a GeorgiyKuzora <rafale87@gmail.com> 1729876270 +0300	commit: nvim: remove frerency
+18ad817b616d9c32611ee66d03c2a0027801531a 7b4dce942b0c0dd8bc78629e929ba98ef05f9853 GeorgiyKuzora <rafale87@gmail.com> 1729880731 +0300	commit: nix: add home manager
+7b4dce942b0c0dd8bc78629e929ba98ef05f9853 602891e3e0462ba519668911af3c2f469e9386da GeorgiyKuzora <rafale87@gmail.com> 1729882629 +0300	commit: nix: move home-manager conf
+602891e3e0462ba519668911af3c2f469e9386da f6c8f5bce6ccf3e65d6378147fae2c55c1b75208 GeorgiyKuzora <rafale87@gmail.com> 1729885924 +0300	commit: nix: home-manager setup
+f6c8f5bce6ccf3e65d6378147fae2c55c1b75208 f6c8f5bce6ccf3e65d6378147fae2c55c1b75208 GeorgiyKuzora <rafale87@gmail.com> 1729885960 +0300	reset: moving to HEAD
+f6c8f5bce6ccf3e65d6378147fae2c55c1b75208 9cda201d6ea7ab9692e1ce2ab0b39eba9ac14c69 GeorgiyKuzora <rafale87@gmail.com> 1729889868 +0300	commit: nix: home-manager setup
+9cda201d6ea7ab9692e1ce2ab0b39eba9ac14c69 c08f1cbe843a94b568647c4dfcf662b2e356bb7f GeorgiyKuzora <rafale87@gmail.com> 1729925755 +0300	commit: nvim: add hardtime
+c08f1cbe843a94b568647c4dfcf662b2e356bb7f 0bdc6476ee099f21ac28297220ef73e85b44cdc9 GeorgiyKuzora <rafale87@gmail.com> 1729927337 +0300	commit: nvim: add minifiles
+0bdc6476ee099f21ac28297220ef73e85b44cdc9 0af8ab9c7dfa4752d8e41a18f9e0a7b109709b32 GeorgiyKuzora <rafale87@gmail.com> 1729928295 +0300	commit: nvim: add nvim-tree
+0af8ab9c7dfa4752d8e41a18f9e0a7b109709b32 b45bc77f53eff4577ecfcf088f7c68913b8555ce GeorgiyKuzora <rafale87@gmail.com> 1729928459 +0300	commit: nvim: whichkey add e as explorer
+b45bc77f53eff4577ecfcf088f7c68913b8555ce c007e82f6a00529bc79ce471297847c2e09e69c1 GeorgiyKuzora <rafale87@gmail.com> 1729929555 +0300	commit: nvim: set trouble symbols to the right
+c007e82f6a00529bc79ce471297847c2e09e69c1 ce16fb0d56f70f4b6256e530e9eca5129fe3df24 GeorgiyKuzora <rafale87@gmail.com> 1729929570 +0300	commit: nvim: delete aerial
+ce16fb0d56f70f4b6256e530e9eca5129fe3df24 fbffea11375d179018a065911eb2dd5243ce1a2a GeorgiyKuzora <rafale87@gmail.com> 1729952595 +0300	commit: nix: wsl home-manager setup
+fbffea11375d179018a065911eb2dd5243ce1a2a 38dca07660e575d0023f7cb28f109e9e1b862c0c GeorgiyKuzora <rafale87@gmail.com> 1729952933 +0300	commit: nix: wsl add tldr
+38dca07660e575d0023f7cb28f109e9e1b862c0c 703b4e9e1118eff5d5fbb626cd09d869c059c8c7 GeorgiyKuzora <rafale87@gmail.com> 1729954517 +0300	commit: nix: wsl remove obsidian
+703b4e9e1118eff5d5fbb626cd09d869c059c8c7 cde4aa2f1b902df961bf5d756503f6dd0257fe82 GeorgiyKuzora <rafale87@gmail.com> 1729956322 +0300	pull: Fast-forward
+cde4aa2f1b902df961bf5d756503f6dd0257fe82 41018c81ab2f402e4b8518bd9c33dfdf27e5453a GeorgiyKuzora <rafale87@gmail.com> 1729956727 +0300	commit: README.md
+41018c81ab2f402e4b8518bd9c33dfdf27e5453a c410d0e3eadb129ad529464a5bc2d2285336d06f GeorgiyKuzora <rafale87@gmail.com> 1729957227 +0300	commit: nix: add local bit to home manager
+c410d0e3eadb129ad529464a5bc2d2285336d06f 993fcee4e7e1ad9c8ad8463ab620de1af534e15d GeorgiyKuzora <rafale87@gmail.com> 1730009332 +0300	commit: nix: manage fish files independently
+993fcee4e7e1ad9c8ad8463ab620de1af534e15d 041e3b6d8eed674ff56dc83d1a0b4f0b0d03af21 GeorgiyKuzora <rafale87@gmail.com> 1730009588 +0300	pull: Fast-forward
+041e3b6d8eed674ff56dc83d1a0b4f0b0d03af21 eb8568a1e0d3e9f18a1f0dccb77d0235ce660912 GeorgiyKuzora <rafale87@gmail.com> 1730009989 +0300	commit: tmux: catppuccine
+eb8568a1e0d3e9f18a1f0dccb77d0235ce660912 9dbcfb0abcf277189fdde050b6a083e4378e4bf7 GeorgiyKuzora <rafale87@gmail.com> 1730016902 +0300	commit: tmux: tmux catppuccin setup
+9dbcfb0abcf277189fdde050b6a083e4378e4bf7 c2deebeaf6d1636262731f304b4dc4648c4e9caf GeorgiyKuzora <rafale87@gmail.com> 1730022218 +0300	commit: tmux: catppuccin setup
+c2deebeaf6d1636262731f304b4dc4648c4e9caf e8675db709995e5fcfc64e5ebeb4ac554424a612 GeorgiyKuzora <rafale87@gmail.com> 1730398353 +0300	pull --no-edit: Fast-forward
+e8675db709995e5fcfc64e5ebeb4ac554424a612 219fd41e544b7197be62d1251620f42ad2ff5284 GeorgiyKuzora <rafale87@gmail.com> 1730486002 +0300	commit: fish: add carpace completions
+219fd41e544b7197be62d1251620f42ad2ff5284 4a88ace8d7ed99ec1ad00a2e0517557c820243b2 GeorgiyKuzora <rafale87@gmail.com> 1730487716 +0300	commit: nvim: add neotest plugin
+4a88ace8d7ed99ec1ad00a2e0517557c820243b2 d5e0711b31a4ba835c23af56d9757eda0d97c6e4 GeorgiyKuzora <rafale87@gmail.com> 1730525918 +0300	commit: code: change font to jetbrains mono
+d5e0711b31a4ba835c23af56d9757eda0d97c6e4 0fb2714e02e1a9be9e9983f76dadc8dec824536b GeorgiyKuzora <rafale87@gmail.com> 1730556578 +0300	pull --no-edit: Fast-forward
+0fb2714e02e1a9be9e9983f76dadc8dec824536b 966c38d47a4187b0852959f47c36ea9e2c68f11e GeorgiyKuzora <rafale87@gmail.com> 1730826356 +0300	commit: zellij: 0.41 config file
+966c38d47a4187b0852959f47c36ea9e2c68f11e b2fde4ebb55ab5f1e0d21dd5f3ca9f0e0741e1ab GeorgiyKuzora <rafale87@gmail.com> 1730911011 +0300	pull --no-edit: Fast-forward
+b2fde4ebb55ab5f1e0d21dd5f3ca9f0e0741e1ab 92e8adc09f7e8d7211d2f160888f00b9a5eb0691 GeorgiyKuzora <rafale87@gmail.com> 1731827523 +0300	pull: Fast-forward
+92e8adc09f7e8d7211d2f160888f00b9a5eb0691 e7eb0faef2275be013dd692f377cf034e62cb2d8 GeorgiyKuzora <rafale87@gmail.com> 1731850355 +0300	commit: fish: git branch abbr
+e7eb0faef2275be013dd692f377cf034e62cb2d8 9d2a27237562c4934052af231276b17f43c220ad GeorgiyKuzora <rafale87@gmail.com> 1732202409 +0300	commit: fish: update abbr fix
+9d2a27237562c4934052af231276b17f43c220ad ef8323eb9928b45f54bcca9f22780a3b64a77f24 GeorgiyKuzora <rafale87@gmail.com> 1732202417 +0300	pull --no-edit (start): checkout ef8323eb9928b45f54bcca9f22780a3b64a77f24
+ef8323eb9928b45f54bcca9f22780a3b64a77f24 a622db77b950b26b28e85706e1c22f67447c4490 GeorgiyKuzora <rafale87@gmail.com> 1732202417 +0300	pull --no-edit (pick): fish: update abbr fix
+a622db77b950b26b28e85706e1c22f67447c4490 a622db77b950b26b28e85706e1c22f67447c4490 GeorgiyKuzora <rafale87@gmail.com> 1732202417 +0300	pull --no-edit (finish): returning to refs/heads/main
+a622db77b950b26b28e85706e1c22f67447c4490 182b0063cb042cce3f72321a79954425e0808c86 GeorgiyKuzora <rafale87@gmail.com> 1733069454 +0300	commit: nix: add taskwarrior
+182b0063cb042cce3f72321a79954425e0808c86 0a1a7e22acef97885b0b600a9b0c1c4d03e79706 GeorgiyKuzora <rafale87@gmail.com> 1733069462 +0300	pull --no-edit (start): checkout 0a1a7e22acef97885b0b600a9b0c1c4d03e79706
+0a1a7e22acef97885b0b600a9b0c1c4d03e79706 cff64fb48480bfd3827b25481f3bab59ad999ab7 GeorgiyKuzora <rafale87@gmail.com> 1733069462 +0300	pull --no-edit (pick): nix: add taskwarrior
+cff64fb48480bfd3827b25481f3bab59ad999ab7 cff64fb48480bfd3827b25481f3bab59ad999ab7 GeorgiyKuzora <rafale87@gmail.com> 1733069462 +0300	pull --no-edit (finish): returning to refs/heads/main
+cff64fb48480bfd3827b25481f3bab59ad999ab7 f0f6c8de794631a379a454031a18625532ccb224 GeorgiyKuzora <rafale87@gmail.com> 1733069888 +0300	commit: fish: add go-task abbr
+f0f6c8de794631a379a454031a18625532ccb224 ce11141fd1149375c4930e51bd09041a1639167e GeorgiyKuzora <rafale87@gmail.com> 1733336363 +0300	pull --no-edit: Fast-forward
+ce11141fd1149375c4930e51bd09041a1639167e af201cb9e21d66d27fd3c3bc7f90319332fc6248 GeorgiyKuzora <rafale87@gmail.com> 1733336784 +0300	commit: wezterm: remove unused commented code
+af201cb9e21d66d27fd3c3bc7f90319332fc6248 654cd66ce173f423ecb03c6bc04bb40541c4e7d0 GeorgiyKuzora <rafale87@gmail.com> 1733337063 +0300	commit: wezterm: return default keybindings
+654cd66ce173f423ecb03c6bc04bb40541c4e7d0 f67771cc9ae90b15e0a8e3058d992a201ef4d95a GeorgiyKuzora <rafale87@gmail.com> 1733377081 +0300	commit: zed: change settings
+f67771cc9ae90b15e0a8e3058d992a201ef4d95a 7bf302ed26be373801d4b57de1193b9264532997 GeorgiyKuzora <rafale87@gmail.com> 1733514930 +0300	pull --no-edit: Fast-forward
+7bf302ed26be373801d4b57de1193b9264532997 1f4430fe2aaae06559da8ea3530696db073c5393 GeorgiyKuzora <rafale87@gmail.com> 1733662193 +0300	commit: zed: setting and keymap change
+1f4430fe2aaae06559da8ea3530696db073c5393 004113f2da26a88e7e603a2388d19b05231938bb GeorgiyKuzora <rafale87@gmail.com> 1734113607 +0300	commit: wezterm: enable wayland
+004113f2da26a88e7e603a2388d19b05231938bb 85f905a964e7a123754932c3a3300e18f66ab29a GeorgiyKuzora <rafale87@gmail.com> 1734113624 +0300	commit: nix: add starship to home manager
+85f905a964e7a123754932c3a3300e18f66ab29a 204014901b084c9d6d50e0a533ceaf6afa97cf87 GeorgiyKuzora <rafale87@gmail.com> 1734113630 +0300	pull --no-edit (start): checkout 204014901b084c9d6d50e0a533ceaf6afa97cf87
+204014901b084c9d6d50e0a533ceaf6afa97cf87 b30087a3586f5f4ba440aba2f24772f8e693d4f8 GeorgiyKuzora <rafale87@gmail.com> 1734113630 +0300	pull --no-edit (pick): wezterm: enable wayland
+b30087a3586f5f4ba440aba2f24772f8e693d4f8 2fa0b33a89d434faf289618021b7aa3435e893a2 GeorgiyKuzora <rafale87@gmail.com> 1734113630 +0300	pull --no-edit (pick): nix: add starship to home manager
+2fa0b33a89d434faf289618021b7aa3435e893a2 2fa0b33a89d434faf289618021b7aa3435e893a2 GeorgiyKuzora <rafale87@gmail.com> 1734113630 +0300	pull --no-edit (finish): returning to refs/heads/main
+2fa0b33a89d434faf289618021b7aa3435e893a2 0dc142eada740dfdc59a6014dd13b2e834d84847 GeorgiyKuzora <rafale87@gmail.com> 1734779939 +0300	pull: Fast-forward
+0dc142eada740dfdc59a6014dd13b2e834d84847 9ca5a13242b6c2f27efcea1bc7cdb1f4a1788bed GeorgiyKuzora <rafale87@gmail.com> 1734781435 +0300	commit: nix: add neovim
+9ca5a13242b6c2f27efcea1bc7cdb1f4a1788bed 2604bbcb227016531aa4d313a2db1fa431b8550e GeorgiyKuzora <rafale87@gmail.com> 1734781452 +0300	commit: nvim: blink change
+2604bbcb227016531aa4d313a2db1fa431b8550e 1a1683de7fa553bc97740aeaea517abd2a6313ec GeorgiyKuzora <rafale87@gmail.com> 1737204511 +0300	commit: nix: add lazygit to home.nix
+1a1683de7fa553bc97740aeaea517abd2a6313ec 655f7b919486beea74e8d08537a2f7f5417014d2 GeorgiyKuzora <rafale87@gmail.com> 1737204517 +0300	pull (start): checkout 655f7b919486beea74e8d08537a2f7f5417014d2
+655f7b919486beea74e8d08537a2f7f5417014d2 2c2c8f24d7150c5bc6a57f5599362ecbb40e262f GeorgiyKuzora <rafale87@gmail.com> 1737204652 +0300	commit: conflict resolve
+2c2c8f24d7150c5bc6a57f5599362ecbb40e262f 2c2c8f24d7150c5bc6a57f5599362ecbb40e262f GeorgiyKuzora <rafale87@gmail.com> 1737204658 +0300	rebase (finish): returning to refs/heads/main
+2c2c8f24d7150c5bc6a57f5599362ecbb40e262f 282d3e45acaaff1e14aa240cafbf0c182a4c82f0 GeorgiyKuzora <rafale87@gmail.com> 1737205590 +0300	commit: nix: remove gostty
+282d3e45acaaff1e14aa240cafbf0c182a4c82f0 225f7391b8b80e7e61abfede8cabf72527291eab GeorgiyKuzora <rafale87@gmail.com> 1737208553 +0300	commit: nix: add ghostty from pkgs
+225f7391b8b80e7e61abfede8cabf72527291eab b6825fada0cc15960b3db6293c33345f407409b6 GeorgiyKuzora <rafale87@gmail.com> 1737208748 +0300	commit: nix: cant install ghostty
+b6825fada0cc15960b3db6293c33345f407409b6 d54bede9f58f4a5e84315e6d7c7f9d140a5c3f50 GeorgiyKuzora <rafale87@gmail.com> 1737209153 +0300	commit: nix: add ghostty config
+d54bede9f58f4a5e84315e6d7c7f9d140a5c3f50 51dac2c28875f140964b42b542c88893fd9a49f7 GeorgiyKuzora <rafale87@gmail.com> 1737211362 +0300	commit: ghostty: add config
+51dac2c28875f140964b42b542c88893fd9a49f7 faf88b378e26e5e41634528f02ca2ce217bae8ea GeorgiyKuzora <rafale87@gmail.com> 1737219410 +0300	commit: ghostty: add keybind
+faf88b378e26e5e41634528f02ca2ce217bae8ea a6c1be3cea803367ec729541f3376dce696effd1 GeorgiyKuzora <rafale87@gmail.com> 1737219462 +0300	commit: nvim: Lazylock
+a6c1be3cea803367ec729541f3376dce696effd1 1ecec3b499b2ab4b06f0f88a14b14487a96d622f GeorgiyKuzora <rafale87@gmail.com> 1737219597 +0300	commit: ghostty: add keybind
+1ecec3b499b2ab4b06f0f88a14b14487a96d622f 86eb9c1284be17418c2c22ff0dabe4c405d3fabe GeorgiyKuzora <rafale87@gmail.com> 1737225094 +0300	commit: wezterm: change keybinds
+86eb9c1284be17418c2c22ff0dabe4c405d3fabe 380538fe52ec6014bc595f11e939c6bbe708246c GeorgiyKuzora <rafale87@gmail.com> 1737226069 +0300	commit: nix: chnges
+380538fe52ec6014bc595f11e939c6bbe708246c 821a0126de662b3ba577350e949c7b4c8a172980 GeorgiyKuzora <rafale87@gmail.com> 1737226312 +0300	commit: nix: nix flake update
+821a0126de662b3ba577350e949c7b4c8a172980 2b47f7e38c2c64002cad6f08da786bfddfe8bcc3 GeorgiyKuzora <rafale87@gmail.com> 1737288089 +0300	commit: ghostty: change resize steps
+2b47f7e38c2c64002cad6f08da786bfddfe8bcc3 f0adbaa4b538223e7605576bf4b6380ed1aa82b2 GeorgiyKuzora <rafale87@gmail.com> 1737288112 +0300	commit: wezterm: set keys to match with ghostty
+f0adbaa4b538223e7605576bf4b6380ed1aa82b2 4b8697ce3aec4f47197c07d1a9eedd4b7e8f11ed GeorgiyKuzora <rafale87@gmail.com> 1737288129 +0300	commit: code: set neovim path for linux
+4b8697ce3aec4f47197c07d1a9eedd4b7e8f11ed 100c3fed4baa96ed7626cc469bcbd9efb839177c GeorgiyKuzora <rafale87@gmail.com> 1737789577 +0300	pull: Fast-forward
+100c3fed4baa96ed7626cc469bcbd9efb839177c 8945690ac96b14219d5549a4289f10cd70b89e32 GeorgiyKuzora <rafale87@gmail.com> 1737792721 +0300	commit: nvim: lazy lock
+8945690ac96b14219d5549a4289f10cd70b89e32 4ff8f9a3003f841346f32434c92b9aa41f2b4c9d GeorgiyKuzora <rafale87@gmail.com> 1738177752 +0300	commit: zed: settings
+4ff8f9a3003f841346f32434c92b9aa41f2b4c9d 853fe85379ed847a4fdb912325fd06a3a74120ce GeorgiyKuzora <rafale87@gmail.com> 1738177776 +0300	commit: code: keybindings for giga
+853fe85379ed847a4fdb912325fd06a3a74120ce cb55b9c60950b705baa7a51f932398804ac6244c GeorgiyKuzora <rafale87@gmail.com> 1738177781 +0300	pull --no-edit (start): checkout cb55b9c60950b705baa7a51f932398804ac6244c
+cb55b9c60950b705baa7a51f932398804ac6244c e86d6f5bbbe3ddaf0a72c7c4722e8a257abb662e GeorgiyKuzora <rafale87@gmail.com> 1738177781 +0300	pull --no-edit (pick): zed: settings
+e86d6f5bbbe3ddaf0a72c7c4722e8a257abb662e da540cef420884894c69925fd27e77489f759b3c GeorgiyKuzora <rafale87@gmail.com> 1738177781 +0300	pull --no-edit (pick): code: keybindings for giga
+da540cef420884894c69925fd27e77489f759b3c da540cef420884894c69925fd27e77489f759b3c GeorgiyKuzora <rafale87@gmail.com> 1738177781 +0300	pull --no-edit (finish): returning to refs/heads/main
+da540cef420884894c69925fd27e77489f759b3c 0678cd0bcc0c4cc1c470c864ed4aea8b70f1f525 GeorgiyKuzora <rafale87@gmail.com> 1738180049 +0300	commit: nvim: coloroscheme change
+0678cd0bcc0c4cc1c470c864ed4aea8b70f1f525 2e08ad85d3e7c729dea57779ce914f31ac81f476 GeorgiyKuzora <rafale87@gmail.com> 1738180308 +0300	commit: nvim: disable rainbow delimeters
+2e08ad85d3e7c729dea57779ce914f31ac81f476 c8094147eb00409bbc6b15f5453c5e06d894a6e0 GeorgiyKuzora <rafale87@gmail.com> 1738263313 +0300	pull --no-edit: Fast-forward
+c8094147eb00409bbc6b15f5453c5e06d894a6e0 0a0fa1cd19672a67f20469a6621c474632461143 GeorgiyKuzora <rafale87@gmail.com> 1740924014 +0300	pull: Fast-forward
+0a0fa1cd19672a67f20469a6621c474632461143 05647230e30d32a6acc52da71d0023ea275120e2 GeorgiyKuzora <rafale87@gmail.com> 1740924105 +0300	commit: nvim: ll
+05647230e30d32a6acc52da71d0023ea275120e2 47b046d9cb5c052d4546054c933ca8f9a3a745fc GeorgiyKuzora <rafale87@gmail.com> 1741153518 +0300	commit: ghostty: change font size
+47b046d9cb5c052d4546054c933ca8f9a3a745fc 3f4762406c7f7600930b0fd4936a11f04a607f9f GeorgiyKuzora <rafale87@gmail.com> 1741153527 +0300	pull (start): checkout 3f4762406c7f7600930b0fd4936a11f04a607f9f
+3f4762406c7f7600930b0fd4936a11f04a607f9f 69a2b2a574b1a929a1d3a3939746ea42113f0964 GeorgiyKuzora <rafale87@gmail.com> 1741153527 +0300	pull (pick): ghostty: change font size
+69a2b2a574b1a929a1d3a3939746ea42113f0964 69a2b2a574b1a929a1d3a3939746ea42113f0964 GeorgiyKuzora <rafale87@gmail.com> 1741153527 +0300	pull (finish): returning to refs/heads/main
