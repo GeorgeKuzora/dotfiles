@@ -1,0 +1,102 @@
+{ config, pkgs, ... }:
+let
+  username = "{{- .chezmoi.username -}}";
+  home = "{{- .chezmoi.homeDir -}}";
+in {
+  nixpkgs.config.allowUnfree = true;
+  news.display = "silent";
+
+  home = {
+    username = "${username}";
+    homeDirectory = "${home}";
+    stateVersion = "24.05";
+
+    packages = [
+{{- if eq .email "g.kuzora@korona.net" }}
+      pkgs.werf
+{{- else if eq .chezmoi.osRelease.id "fedora" }}
+      pkgs.obsidian
+{{- end }}
+      pkgs.ansible
+      pkgs.atuin
+      pkgs.bat
+      pkgs.carapace
+      pkgs.chezmoi
+      pkgs.delta
+      pkgs.difftastic
+      pkgs.direnv
+      pkgs.eza
+      pkgs.fd
+      pkgs.fish
+      pkgs.fzf
+      pkgs.gcc
+      pkgs.go
+      pkgs.go-task
+      pkgs.httpie
+      pkgs.jq
+      pkgs.lazydocker
+      pkgs.lazygit
+      pkgs.lua
+      pkgs.luajitPackages.luarocks
+      pkgs.neovim
+      pkgs.nodejs
+      pkgs.pipx
+      pkgs.ripgrep
+      pkgs.starship
+      pkgs.stow
+      pkgs.tldr
+      pkgs.tmux
+      pkgs.unzip
+      pkgs.xclip
+      pkgs.xsel
+      pkgs.yazi
+      pkgs.zoxide
+      # pkgs.taskwarrior3
+      # (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      # (pkgs.writeShellScriptBin "my-hello" ''
+      #   echo "Hello, ${config.home.username}!"
+      # '')
+    ];
+
+    file = {
+      # ".config/atuin".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/atuin";
+
+      # ".config/fish/completions".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/fish/completions";
+      # ".config/fish/conf.d".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/fish/conf.d";
+      # ".config/fish/functions".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/fish/functions";
+      # ".config/fish/themes".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/fish/themes";
+      # ".config/fish/config.fish".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/fish/config.fish";
+      # ".config/fish/fish_plugins".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/fish/fish_plugins";
+
+      # ".config/git".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/git";
+      # ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/nvim";
+      # ".config/pypoetry".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/pypoetry";
+      # ".config/starship".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/starship";
+      # ".config/task/taskrc".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/task/taskrc";
+      # ".config/tmux/tmux.conf".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/tmux/tmux.conf";
+      # ".config/zellij".source = config.lib.file.mkOutOfStoreSymlink "${home}/.dotfiles/.config/zellij";
+    };
+    sessionVariables = {
+      # EDITOR = "emacs";
+    };
+  };
+  # Let Home Manager install and manage itself.
+  programs = {
+    home-manager.enable = true;
+    # bash = {
+    #   enable = true;
+    #   bashrcExtra = ''
+    #     if [ -e /home/kuzora/.nix-profile/etc/profile.d/nix.sh ]; then . /home/kuzora/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+    #     sudo ip link set eth0 mtu 1350
+    #     fish -i
+    #   '';
+    #   shellAliases = {
+    #     ll = "ls -alF";
+    #     la = "ls -A";
+    #     l = "ls -CF";
+    #     ".." = "cd ..";
+    #     "-" = "cd -";
+    #   };
+    # };
+  };
+}

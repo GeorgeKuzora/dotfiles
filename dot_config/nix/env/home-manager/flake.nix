@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of georgiy";
+  description = "Home Manager configuration";
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
@@ -17,17 +17,9 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      homeConfigurations."georgiy" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."home" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./home.nix ];
-      };
-      homeConfigurations."wsl-work" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ ./work-wsl.nix ];
-      };
-      homeConfigurations."wsl-home" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ ./home-wsl.nix ];
       };
     };
 }
