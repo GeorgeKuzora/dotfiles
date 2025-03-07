@@ -27,6 +27,7 @@ in {
       pkgs.xsel
       pkgs.lazygit
       pkgs.chezmoi
+      pkgs.ansible
       # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
       # (pkgs.writeShellScriptBin "my-hello" ''
       #   echo "Hello, ${config.home.username}!"
