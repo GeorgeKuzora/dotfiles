@@ -29,7 +29,7 @@ bind-key -T copy-mode-vi y send -X copy-selection-and-cancel
 # don't exit copy mode after dragging with mouse
 unbind -T copy-mode-vi MouseDragEnd1Pane
 # source tmux.conf
-bind R source-file '/home/georgiy/.config/tmux/tmux.conf'
+bind R source-file '{{- .chezmoi.homeDir -}}/.config/tmux/tmux.conf'
 # select pane with vim movements
 bind h select-pane -L
 bind j select-pane -D
