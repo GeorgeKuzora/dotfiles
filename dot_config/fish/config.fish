@@ -114,7 +114,6 @@ safe_abbr lzg lazygit
 safe_abbr lzd lazydocker
 safe_abbr ls 'ls --color=auto'
 safe_abbr ll 'ls -lavh --ignore=.. --color=auto --group-directories-first' # show long listing of all except ".."
-safe_abbr l 'ls -lavh --ignore=.?* --color=auto --group-directories-first' # show long listing but no hidden dotfiles except "."
 safe_abbr ls 'exa --oneline'
 safe_abbr ll 'exa -lah --color=auto --group-directories-first --icons --git --header' # show long listing of all except ".."
 safe_abbr cat bat

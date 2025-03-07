@@ -1,3 +1,4 @@
+{{- if eq .chezmoi.osRelease.id "fedora" -}}
 [Desktop Entry]
 Categories=Network;FileTransfer;P2P
 Comment=Starts the main syncthing process in the background.
@@ -8,3 +9,4 @@ Keywords=synchronization;daemon;
 Name=Start Syncthing
 Terminal=false
 Type=Application
+{{- end }}

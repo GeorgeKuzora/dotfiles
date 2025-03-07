@@ -1,5 +1,5 @@
 {{- if eq .chezmoi.os "linux" }}
-. $HOME/.config/zsh/.zshrc
+. {{ .chezmoi.homeDir -}}/.config/zsh/.zshrc
 
 if [ -e {{ .chezmoi.homeDir -}}/.nix-profile/etc/profile.d/nix.sh ]; then . {{ .chezmoi.homeDir -}}/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 {{- end }}
