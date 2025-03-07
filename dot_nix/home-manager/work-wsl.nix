@@ -43,6 +43,7 @@ in {
       pkgs.difftastic
       # pkgs.taskwarrior3
       pkgs.go-task
+      pkgs.chezmoi
       # (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       # (pkgs.writeShellScriptBin "my-hello" ''
       #   echo "Hello, ${config.home.username}!"
