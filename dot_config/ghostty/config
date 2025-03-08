@@ -2,10 +2,19 @@ font-family = JetBrainsMono Nerd Font
 font-size = 14
 theme = catppuccin-mocha
 background = #181825
+cursor-click-to-move = true
 cursor-invert-fg-bg = true
 mouse-hide-while-typing = true
+mouse-shift-capture =true
 command = fish
+maximize = true
+working-directory = inherit
+window-inherit-working-directory = true
 gtk-titlebar = false
+window-save-state = always
+window-new-tab-position = end
+adw-toolbar-style = raised
+gtk-wide-tabs = false
 
 keybind = ctrl+comma=ignore
 keybind = ctrl+shift+e=ignore
