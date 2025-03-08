@@ -125,6 +125,7 @@ safe_abbr gotask go-task
 safe_abbr got go-task
 safe_abbr tsk go-task
 safe_abbr ai 'ssh -L 29841:localhost:9841 -p 3389 kuzora@gpu-lana01.well.ftc.ru'
+safe_abbr y yazi
 
 if status is-interactive
     fzf --fish | source
