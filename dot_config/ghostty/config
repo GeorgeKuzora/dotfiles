@@ -13,8 +13,6 @@ window-inherit-working-directory = true
 gtk-titlebar = false
 window-save-state = always
 window-new-tab-position = end
-adw-toolbar-style = raised
-gtk-wide-tabs = false
 
 keybind = ctrl+comma=ignore
 keybind = ctrl+shift+e=ignore
