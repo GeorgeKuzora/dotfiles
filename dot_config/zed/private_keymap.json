@@ -8,12 +8,7 @@
   {
     "context": "vim_mode == visual",
     "bindings": {
-      "shift-s": [
-        "vim::PushOperator",
-        {
-          "AddSurrounds": {}
-        }
-      ]
+      "shift-s": ["vim::PushAddSurrounds", {}]
     }
   },
   {
@@ -32,7 +27,10 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-shift-j": "workspace::ToggleBottomDock"
+      "ctrl-shift-j": "workspace::ToggleBottomDock",
+      "ctrl-shift-l": "outline_panel::ToggleFocus",
+      "ctrl-shift-b": "workspace::ToggleRightDock",
+      "ctrl-alt-b": "workspace::ToggleLeftDock"
     }
   }
 ]
