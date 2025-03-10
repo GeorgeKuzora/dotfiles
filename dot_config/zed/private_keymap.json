@@ -32,5 +32,11 @@
       "ctrl-shift-b": "workspace::ToggleRightDock",
       "ctrl-alt-b": "workspace::ToggleLeftDock"
     }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-l": "outline_panel::ToggleFocus"
+    }
   }
 ]
