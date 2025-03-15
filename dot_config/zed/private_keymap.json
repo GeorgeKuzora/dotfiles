@@ -1,11 +1,5 @@
 [
   {
-    "context": "vim_mode == insert",
-    "bindings": {
-      "i i": "vim::NormalBefore" // remap ii in insert mode to escape.
-    }
-  },
-  {
     "context": "vim_mode == visual",
     "bindings": {
       "shift-s": ["vim::PushAddSurrounds", {}]
