@@ -41,8 +41,8 @@
   },
   "assistant": {
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "provider": "mistral",
+      "model": "open-codestral-mamba"
     },
     "version": "2",
     "dock": "right"
