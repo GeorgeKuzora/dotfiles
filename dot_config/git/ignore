@@ -12,4 +12,4 @@ __pycache__/
 taskfile.dist.yml
 .continue
 hidden*
-.vscode
+.venv
