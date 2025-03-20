@@ -16,7 +16,6 @@ set -g fish_vi_force_cursor 1
 
 # ENV VARIABLES
 set -gx XDG_CONFIG_HOME $HOME/.config
-#set -gx PYENV_ROOT $HOME/.pyenv
 set -gx GOPATH $HOME/go
 set -gx MANPAGER 'nvim +Man!'
 set -gx MANWIDTH 999
@@ -36,7 +35,6 @@ set -gx STARSHIP_CONFIG $XDG_CONFIG_HOME/starship/starship.toml
 
 # PATH
 fish_add_path $PATH $GOPATH/bin $HOME/.local/bin
-#fish_add_path $PYENV_ROOT/bin $PATH $GOPATH/bin $HOME/.local/bin
 
 # ABBREVIATION
 # Colorize grep output (good for log files)
@@ -132,7 +130,6 @@ if status is-interactive
     fzf --fish | source
     atuin init fish | source
     zoxide init fish | source
-    #pyenv init - | source
     direnv hook fish | source
     starship init fish | source
     carapace _carapace | source
