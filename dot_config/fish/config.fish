@@ -137,4 +137,6 @@ if status is-interactive
     starship init fish | source
     carapace _carapace | source
     task --completion fish | source
+    uv generate-shell-completion fish | source
+    uvx --generate-shell-completion fish | source
 end
