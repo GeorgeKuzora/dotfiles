@@ -124,6 +124,7 @@ safe_abbr gotask go-task
 safe_abbr got go-task
 safe_abbr tsk go-task
 safe_abbr ai 'ssh -L 29841:localhost:9841 -p 3389 kuzora@gpu-lana01.well.ftc.ru'
+ssh casper 'admin@casper-admin.ml2.dp-k8s-test.ftc.ru -p30023'
 safe_abbr y yazi
 
 if status is-interactive
