@@ -42,6 +42,18 @@
   "project_panel": {
     "dock": "right"
   },
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/.jj",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+    ".venv"
+  ],
   "language_models": {
     "openai": {
       "api_url": "https://ai.ftc.ru/api",
