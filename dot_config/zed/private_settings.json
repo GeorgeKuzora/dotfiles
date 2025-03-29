@@ -42,6 +42,19 @@
   "project_panel": {
     "dock": "right"
   },
+  "language_models": {
+    "openai": {
+      "api_url": "https://ai.ftc.ru/api",
+      "available_models": [
+        {
+          "name": "Qwen2.5-Coder-32B",
+          "display_name": "KCH QWEN 32B",
+          "max_tokens": 128000
+        }
+      ],
+      "version": "1"
+    }
+  },
   "assistant": {
     "default_model": {
       "provider": "mistral",
@@ -113,13 +126,25 @@
           "pythonPath": ".venv/bin/python"
         }
       }
+    },
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          // Ruff server settings goes here
+          "lineLength": 80,
+          "lint": {
+            "extendSelect": ["I"]
+          }
+        }
+      }
     }
   },
   "languages": {
     "Python": {
+      "language_servers": ["ruff", "pyright"],
       "formatter": {
         "external": {
-          "command": "isort",
+          "command": "ruff",
           "arguments": ["-"]
         }
       },
