@@ -1,0 +1,48 @@
+{{- if eq .email "g.kuzora@korona.net" }}
+werf
+{{- end }}
+{{- if eq .chezmoi.os "darwin" }}
+git
+mas
+python@3.11
+{{- end }}
+{{- if or (eq .chezmoi.osRelease.id "fedora") (eq .chezmoi.os "darwin") }}
+--cask ghostty
+--cask obsidian
+--cask visual-studio-code
+--cask zed
+{{- end }}
+{{- if eq .chezmoi.osRelease.id "ubuntu" }}
+xclip
+xsel
+{{- end }}
+node
+atuin
+bat
+carapace
+chezmoi
+git-delta
+difftastic
+direnv
+eza
+fd
+fish
+fzf
+gcc
+go
+go-task
+httpie
+jq
+lazydocker
+lazygit
+lua
+luarocks
+neovim
+ripgrep
+starship
+stow
+tmux
+unzip
+uv
+yazi
+zoxide

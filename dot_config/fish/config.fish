@@ -34,7 +34,7 @@ set -gx IMAGE $(which loupe)
 set -gx STARSHIP_CONFIG $XDG_CONFIG_HOME/starship/starship.toml
 
 # PATH
-fish_add_path $PATH $GOPATH/bin $HOME/.local/bin
+fish_add_path $PATH /home/linuxbrew/.linuxbrew/bin $GOPATH/bin $HOME/.local/bin
 
 # ABBREVIATION
 # Colorize grep output (good for log files)
@@ -124,7 +124,7 @@ safe_abbr gotask go-task
 safe_abbr got go-task
 safe_abbr tsk go-task
 safe_abbr ai 'ssh -L 29841:localhost:9841 -p 3389 kuzora@gpu-lana01.well.ftc.ru'
-ssh casper 'admin@casper-admin.ml2.dp-k8s-test.ftc.ru -p30023'
+safe_abbr casper 'ssh casper admin@casper-admin.ml2.dp-k8s-test.ftc.ru -p30023'
 safe_abbr y yazi
 
 if status is-interactive

@@ -1,9 +1,0 @@
-tap "homebrew/cask"
-brew "git"
-brew "python@3.11"
-brew "node"
-cask "visual-studio-code"
-cask "docker
-brew "mas"
-mas "Xcode", id: 497799835
-mas "Pixelmator Pro", id: 1289583905
