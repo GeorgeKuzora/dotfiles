@@ -107,7 +107,7 @@ return {
       end, { desc = 'Format current buffer with LSP' })
 
       nmap('<leader>lx', ':LspRestart<CR>', 'Restart LSP')
-      nmap('<leader>gn', vim.lsp.buf.rename, 'Rename symbol')
+      nmap('gn', vim.lsp.buf.rename, 'Rename symbol')
       nmap('gra', vim.lsp.buf.code_action, 'Code action')
       nmap('<leader>lv', function()
         vim.lsp.buf.format { async = false }
