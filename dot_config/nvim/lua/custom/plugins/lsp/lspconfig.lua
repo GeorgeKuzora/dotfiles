@@ -41,7 +41,6 @@ return {
           },
         },
       },
-      rust_analyzer = {},
       ts_ls = {
         typescript = {
           inlayHints = {
