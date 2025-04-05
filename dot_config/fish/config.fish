@@ -34,7 +34,7 @@ set -gx IMAGE $(which loupe)
 set -gx STARSHIP_CONFIG $XDG_CONFIG_HOME/starship/starship.toml
 
 # PATH
-fish_add_path $PATH /home/linuxbrew/.linuxbrew/bin $GOPATH/bin $HOME/.local/bin $HOME/.modular/bin
+fish_add_path $PATH /home/linuxbrew/.linuxbrew/bin $GOPATH/bin $HOME/.local/bin
 
 # ABBREVIATION
 # Colorize grep output (good for log files)
