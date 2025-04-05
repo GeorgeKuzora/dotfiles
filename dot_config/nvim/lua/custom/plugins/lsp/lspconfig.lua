@@ -174,6 +174,7 @@ return {
     local mason_tool_installer = require 'mason-tool-installer'
 
     mason.setup {
+      PATH = "append",
       ui = {
         icons = {
           package_installed = '✓',
