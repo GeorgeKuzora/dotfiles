@@ -73,8 +73,9 @@ km.set('i', "<c-'>", '<c-6>', { desc = 'Switch input method' })
 km.set('n', '<leader>ld', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 km.set('n', '<leader>ll', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 km.set('n', 'gK', function()
-  local new_config = not vim.diagnostic.config().virtual_lines
-  vim.diagnostic.config({ virtual_lines = new_config })
+  local new_lines = not vim.diagnostic.config().virtual_lines
+  local new_text = not vim.diagnostic.config().virtual_text
+  vim.diagnostic.config({ virtual_lines = new_lines, virtual_text = new_text })
 end, { desc = 'Toggle diagnostic virtual_lines' })
 
 -- LOCATION LIST
