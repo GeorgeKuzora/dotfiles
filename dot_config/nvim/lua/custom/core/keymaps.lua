@@ -24,8 +24,8 @@ km.set('n', '<leader>lc', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Set f
 -- LINES MODIFICATION
 -- km.set('n', 'J', 'mzJ`z', { desc = 'Join Lines' })
 -- Insert line without insert mode
-km.set('n', '<leader>o', 'o<Esc>k', { desc = 'Insert empty line bellow' })
-km.set('n', '<leader>O', 'O<Esc>j', { desc = 'Insert empty line above' })
+-- km.set('n', '<leader>o', 'o<Esc>k', { desc = 'Insert empty line bellow' })
+-- km.set('n', '<leader>O', 'O<Esc>j', { desc = 'Insert empty line above' })
 -- Indentation change
 km.set('v', '<', '<gv', { desc = 'Indent left' })
 km.set('v', '>', '>gv', { desc = 'Indent right' })
