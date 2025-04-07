@@ -5,7 +5,7 @@ return {
       'folke/todo-comments.nvim',
     },
     priority = 1000,
-    lazy = false,
+    lazy = true,
     opts = {
       statuscolumn = { enabled = true },
       lazygit = { enabled = false },
@@ -42,7 +42,7 @@ return {
       dashboard = {},
     },
     keys = {
-      -- { '<leader>gg', function() Snacks.lazygit.open() end, desc = 'LazyGit', },
+      { '<leader>gg', function() Snacks.lazygit.open() end, desc = 'LazyGit', },
       { 'gs', function() Snacks.scope.jump() end, desc = 'Go to start of current scope' },
       -- Picker
       -- Top Pickers & Explorer

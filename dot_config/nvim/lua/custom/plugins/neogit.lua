@@ -9,8 +9,8 @@ return {
     config = function()
       local neogit = require 'neogit'
       neogit.setup {}
-      vim.keymap.set('n', '<leader>gg', neogit.open, { desc = 'Open Neogit' })
-      vim.keymap.set('n', '<leader>gG', function()
+      vim.keymap.set('n', '<leader>gG', neogit.open, { desc = 'Open Neogit' })
+      vim.keymap.set('n', '<leader>gGc', function()
         neogit.open { 'commit' }
       end, { desc = 'Open [N]eo[G]it commit dialog' })
     end,
