@@ -5,10 +5,10 @@ return {
       'folke/todo-comments.nvim',
     },
     priority = 1000,
-    lazy = true,
+    lazy = false,
     opts = {
       statuscolumn = { enabled = true },
-      lazygit = { enabled = false },
+      lazygit = { enabled = true },
       rename = { enabled = true },
       indent = {
         indent = {
