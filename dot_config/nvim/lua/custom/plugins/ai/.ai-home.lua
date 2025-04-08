@@ -2,6 +2,9 @@ return {
   {
     "supermaven-inc/supermaven-nvim",
     event = { "BufReadPre", "BufNewFile" },
+    keys = {
+      { "<leader>av", '<cmd>SupermavenToggle<cr>', desc = "Toggle Supermaven" },
+    },
     config = function()
       require("supermaven-nvim").setup {
         keymaps = {
