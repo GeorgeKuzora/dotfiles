@@ -51,8 +51,6 @@ km.set({ 'v', 'x' }, '<leader>P', [["_dP]], { desc = 'Paste without killing' })
 -- WORKING WITH BUFFERS
 km.set('n', '<leader>bn', vim.cmd.enew, { desc = 'New buffer' })
 km.set('n', '<leader>bd', vim.cmd.bdelete, { desc = 'Delete buffer' })
--- km.set('n', ']b', ':bnext<CR>', { desc = 'Next buffer' })
--- km.set('n', '[b', ':bprevious<CR>', { desc = 'Previous buffer' })
 
 --WINDOW MANAGEMENT
 -- km.set('n', '<C-h>', '<C-w>h')
@@ -77,14 +75,6 @@ km.set('n', 'gK', function()
   local new_text = not vim.diagnostic.config().virtual_text
   vim.diagnostic.config({ virtual_lines = new_lines, virtual_text = new_text })
 end, { desc = 'Toggle diagnostic virtual_lines' })
-
--- LOCATION LIST
--- km.set('n', ']l', '<cmd>lnext<CR>zz', { desc = 'Next location' })
--- km.set('n', '[l', '<cmd>lprev<CR>zz', { desc = 'Previous location' })
-
--- QUICKFIX LIST
--- km.set('n', ']q', '<cmd>cnext<CR>zz', { desc = 'Next in QuickFix list' })
--- km.set('n', '[q', '<cmd>cprev<CR>zz', { desc = 'Previous in QuickFix list' })
 
 -- NEOVIDE
 km.set('n', '<C-_>', function()
