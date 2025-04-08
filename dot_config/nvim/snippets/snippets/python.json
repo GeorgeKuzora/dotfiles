@@ -9,9 +9,9 @@
     "body": ["@pytest.mark.parametrize(\n    [$1],\n    [$0],\n)"],
     "description": "Adds pytest parametrize decorator."
   },
-  "@pytest.param": {
+  "pytest.param": {
     "prefix": "pp",
-    "body": ["@pytest.param($0),"],
+    "body": ["pytest.param($0),"],
     "description": "Adds pytest param statement."
   }
 }
