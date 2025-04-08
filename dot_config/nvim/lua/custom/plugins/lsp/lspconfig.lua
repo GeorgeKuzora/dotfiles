@@ -187,7 +187,6 @@ return {
     mason_tool_installer.setup {
       ensure_installed = {
         -- formatters
-        'stylua',
         'isort',
         'prettier',
         -- linters

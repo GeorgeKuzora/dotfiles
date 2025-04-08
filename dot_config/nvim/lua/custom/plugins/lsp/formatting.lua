@@ -37,7 +37,6 @@ return {
         yaml = { 'prettier' },
         markdown = { 'prettier' },
         graphql = { 'prettier' },
-        lua = { 'stylua' },
         python = python_formatters,
       },
       format_on_save = function()
