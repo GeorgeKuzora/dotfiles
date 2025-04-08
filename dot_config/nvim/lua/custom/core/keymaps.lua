@@ -35,8 +35,8 @@ km.set('x', '>', '>gv', { desc = 'Indent right' })
 -- MOVING IN BUFFER
 km.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll half down' })
 km.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll half up' })
--- km.set('n', 'n', 'nzzzv', { desc = 'Find next' })
--- km.set('n', 'N', 'Nzzzv', { desc = 'Find previous' })
+km.set('n', 'n', 'nzzzv', { desc = 'Find next' })
+km.set('n', 'N', 'Nzzzv', { desc = 'Find previous' })
 
 -- PASTING AND YANKING
 km.set({ 'n', 'v', 'x' }, '<leader>d', [["_d]], { desc = 'Delete without killing' })
