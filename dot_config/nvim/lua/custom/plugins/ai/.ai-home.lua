@@ -1,4 +1,18 @@
 return {
+	{
+		"supermaven-inc/supermaven-nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			require("supermaven-nvim").setup {
+				keymaps = {
+					accept_suggestion = "<C-y>",
+					clear_suggestion = "<C-]>",
+					accept_word = "<C-j>",
+				},
+			}
+		end,
+	},
+-- {
   -- 'olimorris/codecompanion.nvim',
   -- event = { 'BufReadPre', 'BufNewFile' },
   -- dependencies = {
@@ -148,4 +162,5 @@ return {
   --   },
   -- },
   -- config = true,
+-- },
 }

@@ -1,0 +1,5 @@
+{{- if eq .email "g.kuzora@korona.net" -}}
+{{-   include "dot_config/nvim/lua/custom/plugins/ai/.ai-work.lua" -}}
+{{- else -}}
+{{-   include "dot_config/nvim/lua/custom/plugins/ai/.ai-home.lua" -}}
+{{- end -}}
