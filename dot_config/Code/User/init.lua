@@ -20,8 +20,8 @@ km.set({ 'n', 'v', 'x' }, '<leader>D', [["_D]], { desc = 'Delete until end of th
 km.set({ 'n', 'v', 'x' }, '<leader>C', [["_C]], { desc = 'Change until end of the line without killing' })
 
 -- Insert line without insert mode
-km.set("n", "<leader>o", "o<Esc>k", { desc = "Insert empty line bellow" })
-km.set("n", "<leader>O", "O<Esc>j", { desc = "Insert empty line above" })
+km.set("n", "]<space>", "o<Esc>k", { desc = "Insert empty line bellow" })
+km.set("n", "[<space>", "O<Esc>j", { desc = "Insert empty line above" })
 
 -- Indentation
 km.set({ "v", "x" }, "<", "<gv", { desc = "Indent left" })
