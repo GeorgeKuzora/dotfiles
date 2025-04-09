@@ -1,73 +1,55 @@
 return {
   -- {
---   'milanglacier/minuet-ai.nvim',
---   dependencies = {
---     'nvim-lua/plenary.nvim',
---   },
---   keys = {
---     { "<leader>av", '<cmd>Minuet virtualtext toggle<cr>', desc = "Toggle virtual text" },
---   },
---   config = function()
---     require('minuet').setup {
---       provider = 'openai_fim_compatible',
---       n_completions = 1, -- recommended for local model for resource saving
---       context_window = 512, -- adjust context window size for available computing resources
---       provider_options = {
---         openai_fim_compatible = {
---           api_key = 'AIAPI',
---           name = 'qwen',
---           end_point = 'https://ai.ftc.ru/api/v1/completion',
---           model = 'Qwen2.5-Coder-32B-Instruct-AWQ',
---           optional = {
---             max_tokens = 256,
---             top_p = 0.9,
---           },
---         },
---       },
---       virtualtext = {
---         auto_trigger_ft = { 'python', 'lua', 'go' },
---         show_on_completion_menu = true,
---         keymap = {
---           -- accept whole completion
---           accept = '<C-A-y>',
---           -- accept one line
---           accept_line = '<C-y>',
---           -- accept n lines (prompts for number)
---           -- e.g. "A-z 2 CR" will accept 2 lines
---           accept_n_lines = '<A-z>',
---           -- Cycle to prev completion item, or manually invoke completion
---           prev = '<A-[>',
---           -- Cycle to next completion item, or manually invoke completion
---           next = '<A-]>',
---           dismiss = '<A-e>',
---         },
---       },
---     }
---     vim.cmd('Minuet virtualtext disable')
---   end,
--- },
+  --   'milanglacier/minuet-ai.nvim',
+  --   dependencies = {
+  --     'nvim-lua/plenary.nvim',
+  --   },
+  --   keys = {
+  --     { "<leader>av", '<cmd>Minuet virtualtext toggle<cr>', desc = "Toggle virtual text" },
+  --   },
+  --   config = function()
+  --     require('minuet').setup {
+  --       provider = 'openai_fim_compatible',
+  --       n_completions = 1, -- recommended for local model for resource saving
+  --       context_window = 512, -- adjust context window size for available computing resources
+  --       provider_options = {
+  --         openai_fim_compatible = {
+  --           api_key = 'AIAPI',
+  --           name = 'qwen',
+  --           end_point = 'https://ai.ftc.ru/api/v1/completion',
+  --           model = 'Qwen2.5-Coder-32B-Instruct-AWQ',
+  --           optional = {
+  --             max_tokens = 256,
+  --             top_p = 0.9,
+  --           },
+  --         },
+  --       },
+  --       virtualtext = {
+  --         auto_trigger_ft = { 'python', 'lua', 'go' },
+  --         show_on_completion_menu = true,
+  --         keymap = {
+  --           -- accept whole completion
+  --           accept = '<C-A-y>',
+  --           -- accept one line
+  --           accept_line = '<C-y>',
+  --           -- accept n lines (prompts for number)
+  --           -- e.g. "A-z 2 CR" will accept 2 lines
+  --           accept_n_lines = '<A-z>',
+  --           -- Cycle to prev completion item, or manually invoke completion
+  --           prev = '<A-[>',
+  --           -- Cycle to next completion item, or manually invoke completion
+  --           next = '<A-]>',
+  --           dismiss = '<A-e>',
+  --         },
+  --       },
+  --     }
+  --     vim.cmd('Minuet virtualtext disable')
+  --   end,
+  -- },
   {
     "yetone/avante.nvim",
     event = "VeryLazy",
     version = false, -- Never set this value to "*"! Never!
-    opts = {
-      provider = "koronatech",
-      openai = {
-        endpoint = "https://api.openai.com/v1",
-        model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
-        timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
-        temperature = 0,
-        max_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
-        --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
-      },
-      vendors = {
-        koronatech = {
-          __inherited_from = "openai",
-          api_key_name = "KORONATECH_API_KEY",
-          endpoint = "https://ai.ftc.ru/api/chat/v1",
-          model = "instruct",
-        },
-      },
     build = "make",
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
@@ -81,6 +63,25 @@ return {
           file_types = { "markdown", "Avante" },
         },
         ft = { "markdown", "Avante" },
+      },
+    },
+    opts = {
+      provider = "koronatech",
+      openai = {
+        endpoint = "https://api.openai.com/v1",
+        model = "gpt-4o",  -- your desired model (or use gpt-4o, etc.)
+        timeout = 30000,   -- Timeout in milliseconds, increase this for reasoning models
+        temperature = 0,
+        max_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
+        --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
+      },
+      vendors = {
+        koronatech = {
+          __inherited_from = "openai",
+          api_key_name = "KORONATECH_API_KEY",
+          endpoint = "https://ai.ftc.ru/api",
+          model = "Instruct",
+        },
       },
     },
   },
