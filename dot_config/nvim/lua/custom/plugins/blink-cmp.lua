@@ -3,6 +3,7 @@ return {
   lazy = false, -- lazy loading handled internally
   dependencies = {
     'rafamadriz/friendly-snippets',
+    'Kaiser-Yang/blink-cmp-avante',
   },
   version = 'v0.*',
   opts = {
@@ -26,13 +27,18 @@ return {
       },
     },
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer', },
+      default = { 'lsp', 'path', 'snippets', 'buffer', 'avante' },
       providers = {
         cmdline = {
           -- ignores cmdline completions when executing shell commands
           enabled = function()
             return vim.fn.getcmdtype() ~= ':' or not vim.fn.getcmdline():match "^[%%0-9,'<>%-]*!"
           end,
+        },
+        avante = {
+          module = 'blink-cmp-avante',
+          name = 'Avante',
+          opts = {}
         },
       },
     },

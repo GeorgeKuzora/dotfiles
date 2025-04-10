@@ -83,6 +83,11 @@ return {
           model = "Instruct",
         },
       },
+      file_selector = {
+        provider = "snacks",
+        -- Options override for custom providers
+        provider_opts = {},
+      }
     },
   },
   -- {
