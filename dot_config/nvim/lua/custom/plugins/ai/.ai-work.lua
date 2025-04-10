@@ -16,7 +16,7 @@ return {
   --         openai_fim_compatible = {
   --           api_key = 'AIAPI',
   --           name = 'qwen',
-  --           end_point = 'https://ai.ftc.ru/api/v1/completion',
+  --           end_point = 'https://ai.kth.ru/api/v1/completion',
   --           model = 'Qwen2.5-Coder-32B-Instruct-AWQ',
   --           optional = {
   --             max_tokens = 256,
@@ -79,7 +79,7 @@ return {
         koronatech = {
           __inherited_from = "openai",
           api_key_name = "KORONATECH_API_KEY",
-          endpoint = "https://ai.ftc.ru/api",
+          endpoint = "https://ai.kth.ru/api",
           model = "Instruct",
         },
       },
@@ -112,7 +112,7 @@ return {
   --     cftai = function()
   --     return require("codecompanion.adapters").extend("openai_compatible", {
   --       env = {
-  --         url = "https://ai.ftc.ru/api", -- optional: default value is ollama url http://127.0.0.1:11434
+  --         url = "https://ai.kth.ru/api", -- optional: default value is ollama url http://127.0.0.1:11434
   --         api_key = "sk-dec8ac00c3824b7bbcf1092e57f3beba", -- optional: if your endpoint is authenticated
   --         chat_url = "/v1/chat/completions", -- optional: default value, override if different
   --         models_endpoint = "/v1/models", -- optional: attaches to the end of the URL to form the endpoint to retrieve models

@@ -81,7 +81,7 @@ return {
   --     cftai = function()
   --     return require("codecompanion.adapters").extend("openai_compatible", {
   --       env = {
-  --         url = "https://ai.ftc.ru/api", -- optional: default value is ollama url http://127.0.0.1:11434
+  --         url = "https://ai.kth.ru/api", -- optional: default value is ollama url http://127.0.0.1:11434
   --         api_key = "sk-dec8ac00c3824b7bbcf1092e57f3beba", -- optional: if your endpoint is authenticated
   --         chat_url = "/v1/chat/completions", -- optional: default value, override if different
   --         models_endpoint = "/v1/models", -- optional: attaches to the end of the URL to form the endpoint to retrieve models
