@@ -13,7 +13,17 @@ return {
       'j-hui/fidget.nvim',
       opts = {},
     },
-    'folke/neodev.nvim',
+    {
+      'folke/lazydev.nvim',
+      ft = 'lua', -- only load on lua files
+      opts = {
+        library = {
+          -- See the configuration section for more details
+          -- Load luvit types when the `vim.uv` word is found
+          { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+        },
+      },
+    },
     'saghen/blink.cmp',
   },
 
@@ -92,13 +102,12 @@ return {
     },
   },
 
+
   config = function(_, opts)
+    -- KEYBINDINGS
+
     local on_attach = function(_, bufnr)
       local nmap = function(keys, func, desc)
-        if desc then
-          desc = 'LSP: ' .. desc
-        end
-
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
       end
 
@@ -106,7 +115,6 @@ return {
         vim.lsp.buf.format()
       end, { desc = 'Format current buffer with LSP' })
 
-      nmap('<leader>lx', ':LspRestart<CR>', 'Restart LSP')
       nmap('gn', vim.lsp.buf.rename, 'Rename symbol')
       nmap('gra', vim.lsp.buf.code_action, 'Code action')
       nmap('<leader>lv', function()
@@ -138,34 +146,20 @@ return {
       end, 'List workspace folders')
     end
 
-    -- LSP SETUP
+    -- CAPABILITIES
 
-    require('neodev').setup()
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-    vim.diagnostic.config {
-      severity_sort = true,
-      update_in_insert = false,
-      signs = {
-        text = {
-          [vim.diagnostic.severity.ERROR] = ' ',
-          [vim.diagnostic.severity.WARN] = ' ',
-          [vim.diagnostic.severity.HINT] = '󰠠 ',
-          [vim.diagnostic.severity.INFO] = ' ',
-        },
-        numhl = {
-          [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
-          [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
-          [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
-          [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
-        },
-        linehl = {
-          [vim.diagnostic.severity.ERROR] = 'DiagnosticLineBackgroundError',
-          [vim.diagnostic.severity.WARN] = 'DiagnosticLineBackgroundWarn',
-          [vim.diagnostic.severity.HINT] = 'DiagnosticLineBackgroundHint',
-          [vim.diagnostic.severity.INFO] = 'DiagnosticLineBackgroundInfo',
-        },
-      },
-    }
+    capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities({}, false))
+
+    capabilities = vim.tbl_deep_extend('force', capabilities, {
+      textDocument = {
+        foldingRange = {
+          dynamicRegistration = false,
+          lineFoldingOnly = true
+        }
+      }
+    })
 
     -- MASON CONFIG
 
@@ -203,10 +197,6 @@ return {
       ensure_installed = vim.tbl_keys(opts.servers),
       automatic_installation = true, -- not the same as ensure_installed
     }
-
-    -- BLINK capabilities
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
 
     mason_lspconfig.setup_handlers {
       function(server_name)

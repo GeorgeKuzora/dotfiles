@@ -4,6 +4,7 @@ return {
   dependencies = {
     'rafamadriz/friendly-snippets',
     'Kaiser-Yang/blink-cmp-avante',
+    'folke/lazydev.nvim',
   },
   version = 'v0.*',
   opts = {
@@ -27,7 +28,7 @@ return {
       },
     },
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer', 'avante' },
+      default = { 'lsp', 'path', 'snippets', 'buffer', 'avante', 'lazydev' },
       providers = {
         cmdline = {
           -- ignores cmdline completions when executing shell commands
@@ -39,6 +40,12 @@ return {
           module = 'blink-cmp-avante',
           name = 'Avante',
           opts = {}
+        },
+        lazydev = {
+          name = "LazyDev",
+          module = "lazydev.integrations.blink",
+          -- make lazydev completions top priority (see `:h blink.cmp`)
+          score_offset = 100,
         },
       },
     },
