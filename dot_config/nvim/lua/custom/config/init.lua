@@ -1,0 +1,5 @@
+require 'custom.config.keymaps'
+require 'custom.config.options'
+require 'custom.config.config'
+require 'custom.config.autocmds'
+require 'custom.config.lazy'
