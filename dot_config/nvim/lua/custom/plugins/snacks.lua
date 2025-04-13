@@ -98,7 +98,7 @@ return {
       { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
       { "grr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
       { "gri", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
-      { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
+      { "grt", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto Type Definition" },
       { "go", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
       { "gO", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
       { "<leader>lp", function() Snacks.picker.lsp_config() end, desc = "Lsp Config" },
