@@ -9,6 +9,7 @@ return {
       keymaps = {
         ['<C-l>'] = false,
         ['gl'] = 'actions.refresh',
+        ['q'] = { "actions.close", mode = "n" },
       },
       columns = { 'icon' },
       view_options = {
