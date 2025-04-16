@@ -17,7 +17,7 @@ return {
     }
 
     vim.keymap.set('n', '-', function()
-      o.open()
+      o.open_float()
     end, { desc = 'Oil open parent directory' })
   end,
 }
