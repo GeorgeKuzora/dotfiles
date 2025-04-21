@@ -37,6 +37,8 @@ km.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll half down' })
 km.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll half up' })
 km.set('n', 'n', 'nzzzv', { desc = 'Find next' })
 km.set('n', 'N', 'Nzzzv', { desc = 'Find previous' })
+km.set('n', '}', '}zzzv', { desc = 'Next paragraph' })
+km.set('n', '{', '{zzzv', { desc = 'Previous paragraph' })
 
 -- PASTING AND YANKING
 km.set({ 'n', 'v', 'x' }, '<leader>d', [["_d]], { desc = 'Delete without killing' })
@@ -90,7 +92,7 @@ km.set('n', '<C-+>', function()
 end, { desc = 'Neovide increase scale factor' })
 
 -- VIM UI
-km.set({ 'n', 'v', 'x' }, 'gx', function()
+km.set({ 'n', 'v', 'x' }, '<leader>lx', function()
   local current_path = vim.api.nvim_buf_get_name(0)
   print(current_path)
   vim.ui.open(current_path)
