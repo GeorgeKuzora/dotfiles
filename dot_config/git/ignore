@@ -13,3 +13,4 @@ taskfile.dist.yml
 .continue
 hidden*
 .venv
+.zed
