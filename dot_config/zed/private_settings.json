@@ -67,7 +67,7 @@
       "version": "1"
     }
   },
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "mistral",
       "model": "open-codestral-mamba"

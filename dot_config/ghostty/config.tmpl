@@ -6,7 +6,12 @@ cursor-click-to-move = true
 cursor-invert-fg-bg = true
 mouse-hide-while-typing = true
 mouse-shift-capture =true
+{{- if eq .chezmoi.os "linux" }}
 command = fish
+{{- end }}
+{{- if eq .chezmoi.os "darwin" }}
+command = /opt/homebrew/bin/fish
+{{- end }}
 maximize = true
 working-directory = inherit
 window-inherit-working-directory = true

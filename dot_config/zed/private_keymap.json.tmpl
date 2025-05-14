@@ -1,0 +1,76 @@
+{{- if eq .chezmoi.os "darwin" }}
+[
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": ["vim::PushAddSurrounds", {}]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space o": ["workspace::SendKeystrokes", "o escape k"],
+      "space shift-o": ["workspace::SendKeystrokes", "shift-o escape j"]
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "cmd-shift-j": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-j": "workspace::ToggleBottomDock",
+      "cmd-shift-l": "outline_panel::ToggleFocus",
+      "cmd-shift-b": "workspace::ToggleRightDock",
+      "cmd-alt-b": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-shift-l": "outline_panel::ToggleFocus"
+    }
+  }
+]
+{{- end }}
+{{- if eq .chezmoi.os "linux" }}
+[
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": ["vim::PushAddSurrounds", {}]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space o": ["workspace::SendKeystrokes", "o escape k"],
+      "space shift-o": ["workspace::SendKeystrokes", "shift-o escape j"]
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "ctrl-shift-j": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-j": "workspace::ToggleBottomDock",
+      "ctrl-shift-l": "outline_panel::ToggleFocus",
+      "ctrl-shift-b": "workspace::ToggleRightDock",
+      "ctrl-alt-b": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-l": "outline_panel::ToggleFocus"
+    }
+  }
+]
+{{- end }}
