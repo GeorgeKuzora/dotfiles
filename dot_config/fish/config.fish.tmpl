@@ -36,7 +36,7 @@ set -gx MISTRAL_API_KEY {{ gopass "websites/mistral/codestral" }}
 set -gx KORONATECH_API_KEY {{ gopass "websites/koronatech/instruct" }}
 
 # PATH
-fish_add_path $PATH /home/linuxbrew/.linuxbrew/bin $GOPATH/bin $HOME/.local/bin /home/linuxbrew/.linuxbrew/opt/rustup/bin $HOME/.cargo/bin
+fish_add_path $PATH /home/linuxbrew/.linuxbrew/bin $GOPATH/bin $HOME/.local/bin /home/linuxbrew/.linuxbrew/opt/rustup/bin $HOME/.cargo/bin /opt/homebrew/bin
 
 # ABBREVIATION
 # Colorize grep output (good for log files)
