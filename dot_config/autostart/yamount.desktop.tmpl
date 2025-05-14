@@ -1,7 +1,9 @@
 {{- if eq .chezmoi.os "linux" -}}
+{{- if eq .chezmoi.osRelease.id "fedora" -}}
 [Desktop Entry]
 Name=Yandex-disk
 Comment=Mount yandex disk
 Exec=rclone mount yandex:/ /home/georgiy/Yandex-disk
 Type=Application
+{{- end }}
 {{- end }}
