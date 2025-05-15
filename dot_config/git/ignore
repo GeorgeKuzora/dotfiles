@@ -14,3 +14,4 @@ taskfile.dist.yml
 hidden*
 .venv
 .zed
+.DS_Store
