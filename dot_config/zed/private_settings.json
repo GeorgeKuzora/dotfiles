@@ -56,21 +56,22 @@
   ],
   "language_models": {
     "openai": {
-      "api_url": "https://ai.ftc.ru/api",
+      "api_url": "https://ai.kth.pro/api",
       "available_models": [
         {
-          "name": "Qwen2.5-Coder-32B",
-          "display_name": "KCH QWEN 32B",
-          "max_tokens": 128000
+          "name": "Instruct",
+          "display_name": "Instruct",
+          "max_tokens": 32000
         }
       ],
       "version": "1"
     }
   },
   "agent": {
+    "default_profile": "ask",
     "default_model": {
-      "provider": "mistral",
-      "model": "open-codestral-mamba"
+      "provider": "openai",
+      "model": "Instruct"
     },
     "version": "2",
     "dock": "right"
@@ -132,7 +133,7 @@
       "settings": {
         "python.analysis": {
           "diagnosticMode": "workspace",
-          "typeCheckingMode": "strict"
+          "typeCheckingMode": "standard"
         },
         "python": {
           "pythonPath": ".venv/bin/python"
@@ -153,10 +154,10 @@
   },
   "languages": {
     "Python": {
-      "language_servers": ["ruff", "pyright"],
+      "language_servers": ["pyright"],
       "formatter": {
         "external": {
-          "command": "ruff",
+          "command": "isort",
           "arguments": ["-"]
         }
       },
