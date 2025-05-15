@@ -1,18 +1,19 @@
 {
   "window.customMenuBarAltFocus": false,
   "workbench.startupEditor": "none",
-  "vscode-neovim.neovimInitVimPaths.linux": "/home/georgiy/.dotfiles/.config/Code/User/init.lua",
+  "vscode-neovim.neovimInitVimPaths.linux": "/home/kuzora/.dotfiles/.config/Code/User/init.lua",
   "debug.javascript.terminalOptions": {},
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
   "editor.fontFamily": "'JetBrainsMono Nerd Font',  'VictorMono Nerd Font', 'RobotoMono Nerd Font',  'Droid Sans Mono', 'monospace', monospace",
   "editor.fontSize": 14,
-  "editor.fontLigatures": true,
+  "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09'",
   "editor.mouseWheelZoom": true,
   "window.zoomLevel": 1,
-  "editor.rulers": [80],
-  "workbench.tree.renderIndentGuides": "always",
+  "editor.rulers": [
+     80, 100, 120
+   ],
   "editor.cursorBlinking": "solid",
   "cSpell.language": "en,ru",
   "editor.codeActionsOnSave": {},
@@ -34,20 +35,21 @@
       "source.organizeImports": "explicit"
     }
   },
-  "isort.args": ["--profile", "black"],
-  "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
+  "isort.args": [
+    "--profile",
+    "black"
+  ],
   "workbench.preferredHighContrastColorTheme": "Catppuccin Mocha",
   "workbench.preferredHighContrastLightColorTheme": "Catppuccin Latte",
   "workbench.preferredLightColorTheme": "Catppuccin Latte",
   "window.autoDetectColorScheme": true,
-  "editor.stickyScroll.enabled": true,
+  "editor.stickyScroll.enabled": false,
   "editor.renderWhitespace": "none",
   "editor.minimap.renderCharacters": false,
   "editor.minimap.scale": 2,
   "editor.minimap.autohide": true,
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
-  "editor.cursorSurroundingLines": 8,
   "editor.smoothScrolling": true,
   "vscode-neovim.mouseSelectionDebounceTime": 0,
   "editor.cursorSmoothCaretAnimation": "on",
@@ -130,7 +132,6 @@
   "errorLens.messageEnabled": true,
   "editor.inlayHints.enabled": "offUnlessPressed",
   "redhat.telemetry.enabled": false,
-  "editor.renderLineHighlight": "gutter",
   "window.density.editorTabHeight": "compact",
   "workbench.editor.showTabs": "none",
   "python.analysis.diagnosticMode": "workspace",
@@ -138,7 +139,6 @@
   "files.autoSave": "afterDelay",
   "vscode-neovim.useWSL": true,
   "vscode-neovim.wslDistribution": "Ubuntu-22.04",
-  "vscode-neovim.neovimExecutablePaths.linux": "/home/georgiy/.nix-profile/bin/nvim",
   "catppuccin.italicKeywords": false,
   "python.analysis.autoImportCompletions": true,
   "python.analysis.autoIndent": false,
@@ -155,5 +155,19 @@
   "gitlab.duoCodeSuggestions.enabled": false,
   "gitlab.duoChat.enabled": false,
   "chat.commandCenter.enabled": false,
-  "continue.remoteConfigServerUrl": "http://localhost:29841"
+  "continue.remoteConfigServerUrl": "",
+  "continue.userToken": "",
+  "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
+  "gruvboxMaterial.darkContrast": "hard",
+  "gruvboxMaterial.italicKeywords": true,
+  "editor.bracketPairColorization.enabled": false,
+  "remote.autoForwardPortsSource": "hybrid",
+  "continue.enableTabAutocomplete": true,
+  "http.proxySupport": "off",
+  "vscode-neovim.neovimExecutablePaths.linux": "/home/linuxbrew/.linuxbrew/bin/nvim",
+  "yaml.schemas": {
+    "c:\\Users\\kuzora\\.vscode\\extensions\\continue.continue-1.0.9-win32-x64\\config-yaml-schema.json": [
+      ".continue/**/*.yaml"
+    ]
+  }
 }
