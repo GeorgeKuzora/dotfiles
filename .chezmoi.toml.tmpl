@@ -1,4 +1,8 @@
 {{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $mistral_api_key := promptStringOnce . "mistral_api_key" "Mistral API key" -}}
+{{- $koronatech_api_key := promptStringOnce . "koronatech_api_key" "Koronatech API key" -}}
 
 [data]
     email = {{ $email | quote }}
+    mistral_api_key = {{ $mistral_api_key | quote }}
+    koronatech_api_key = {{ $koronatech_api_key | quote }}
