@@ -56,7 +56,7 @@
   ],
   "language_models": {
     "openai": {
-      "api_url": "https://ai.kth.pro/api",
+      "api_url": "https://ai.kth.pro/api/v1",
       "available_models": [
         {
           "name": "Instruct",
