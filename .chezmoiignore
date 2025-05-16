@@ -1,12 +1,10 @@
 ./README.md
 {{- if ne .chezmoi.os "linux" }}
-./dot_zshenv
 ./dot_bash_profile.tmpl
 ./dot_bashrc.tmpl
 ./dot_config/autostart
-dot_profile.tmpl
-{{- end }}
-{{- if ne .chezmoi.os "darwin" }}
+./dot_profile.tmpl
+{{- else if ne .chezmoi.os "darwin" }}
 ./dot_zprofile
 {{- end }}
 

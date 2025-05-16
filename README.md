@@ -10,25 +10,19 @@ I manage my dotfiles using the **[chezmoi](https://www.chezmoi.io/)** CLI tool a
 
 1. [Set up SSH keys for GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 2. Install [Homebrew](https://brew.sh/).
-3. Install 'gopass' using Homebrew:
-
-```bash
-brew install gopass
-```
-
-4. Add passwords to gopass.
-5. Install `chezmoi` using Homebrew:
+3. Install `chezmoi` using Homebrew:
 
 ```bash
 brew install chezmoi
 ```
 
-6. Apply the dotfiles using `chezmoi`:
+4. Apply the dotfiles using `chezmoi`:
 
 ```bash
 chezmoi init --apply git@github.com:GeorgeKuzora/dotfiles.git
 ```
 
+5. Enter information for configuration variables.
 7. Navigate to `~/.config/brewfile`.
 8. Run the following command to install packages listed in the `Brewfile`:
 
