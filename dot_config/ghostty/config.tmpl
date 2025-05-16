@@ -1,3 +1,9 @@
+{{- if eq .chezmoi.os "linux" }}
+command = fish
+{{- else if eq .chezmoi.os "darwin" }}
+command = /opt/homebrew/bin/fish
+{{- end }}
+
 font-family = JetBrainsMono Nerd Font
 font-size = 14
 theme = catppuccin-mocha
@@ -6,12 +12,6 @@ cursor-click-to-move = true
 cursor-invert-fg-bg = true
 mouse-hide-while-typing = true
 mouse-shift-capture =true
-{{- if eq .chezmoi.os "linux" }}
-command = fish
-{{- end }}
-{{- if eq .chezmoi.os "darwin" }}
-command = /opt/homebrew/bin/fish
-{{- end }}
 maximize = true
 working-directory = inherit
 window-inherit-working-directory = true
@@ -47,6 +47,7 @@ keybind = shift+page_down=ignore
 keybind = shift+home=ignore
 keybind = shift+end=ignore
 
+
 keybind = ctrl+shift+comma=open_config
 keybind = ctrl+shift+period=reload_config
 
@@ -64,11 +65,11 @@ keybind = ctrl+shift+l=goto_split:right
 keybind = ctrl+shift+left_bracket=goto_split:previous
 keybind = ctrl+shift+right_bracket=goto_split:next
 
-keybind = alt+shift+up=resize_split:up,50
-keybind = alt+shift+down=resize_split:down,50
-keybind = alt+shift+left=resize_split:left,50
-keybind = alt+shift+right=resize_split:right,50
-keybind = alt+shift+equal=equalize_splits
+keybind = alt+ctrl+up=resize_split:up,50
+keybind = alt+ctrl+down=resize_split:down,50
+keybind = alt+ctrl+left=resize_split:left,50
+keybind = alt+ctrl+right=resize_split:right,50
+keybind = alt+ctrl+equal=equalize_splits
 
 keybind = ctrl+shift+z=toggle_split_zoom
 keybind = ctrl+shift+enter=toggle_fullscreen
