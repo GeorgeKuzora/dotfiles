@@ -1,7 +1,5 @@
 {{- if eq .chezmoi.os "linux" }}
 command = fish
-{{- else if eq .chezmoi.os "darwin" }}
-command = /opt/homebrew/bin/fish
 {{- end }}
 
 font-family = JetBrainsMono Nerd Font
