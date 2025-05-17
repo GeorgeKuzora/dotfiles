@@ -86,7 +86,7 @@ end
 
 -- CONFIGURATION
 config.disable_default_key_bindings = true
-config.default_prog = { '/usr/bin/fish', '-i' }
+config.default_prog = { 'fish', '-i' }
 config.enable_wayland = true
 config.window_decorations = "NONE"
 config.adjust_window_size_when_changing_font_size = false
@@ -222,6 +222,7 @@ config.colors = {
 
 -- CUSTOM FUNCTIONALITY
 
+-- Add current time to status bar in the full screen mode
 wezterm.on("update-status", function(window, pane)
 	if not window:get_dimensions().is_full_screen then
 		window:set_right_status("")
