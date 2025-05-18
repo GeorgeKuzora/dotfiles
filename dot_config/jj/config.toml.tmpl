@@ -1,7 +1,6 @@
 "$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
 [user]
 name = "GeorgiyKuzora"
-email = "georgiy@kuzora.ru"
-
+email = {{ .email | quote }}
 [ui]
 pager = ":builtin"
