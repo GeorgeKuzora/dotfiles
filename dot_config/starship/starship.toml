@@ -194,6 +194,6 @@ crust = "#11111b"
 
 [custom.jj]
 command='''starship-jj --ignore-working-copy starship prompt'''
-format = "[$symbol](blue bold) $output "
-symbol = "JJ" #                                                                    
+format = "[$symbol](blue bold) [$output](bold) "
+symbol = ""
 when = "jj root --ignore-working-copy"
