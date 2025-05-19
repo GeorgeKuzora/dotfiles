@@ -196,6 +196,7 @@ return {
     mason_lspconfig.setup {
       ensure_installed = vim.tbl_keys(opts.servers),
       automatic_installation = true, -- not the same as ensure_installed
+      automatic_enable = true,
     }
 
     mason_lspconfig.setup_handlers {
