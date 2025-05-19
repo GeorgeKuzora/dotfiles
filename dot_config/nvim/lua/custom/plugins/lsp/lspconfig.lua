@@ -199,15 +199,17 @@ return {
       automatic_enable = true,
     }
 
-    mason_lspconfig.setup_handlers {
-      function(server_name)
-        require('lspconfig')[server_name].setup {
-          capabilities = capabilities,
-          on_attach = on_attach,
-          settings = opts.servers[server_name],
-          filetypes = (opts.servers[server_name] or {}).filetypes,
-        }
-      end,
-    }
+    local setup_servers = function(server_name, server_opts)
+      require('lspconfig')[server_name].setup {
+        capabilities = capabilities,
+        on_attach = on_attach,
+        settings = server_opts,
+        filetypes = (server_opts or {}).filetypes,
+      }
+    end
+
+    for server_name, server_opts in pairs(opts.servers) do
+      setup_servers(server_name, server_opts)
+    end
   end,
 }
