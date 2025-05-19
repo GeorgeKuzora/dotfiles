@@ -199,6 +199,8 @@ return {
       automatic_enable = true,
     }
 
+    -- LSP CONFIG
+
     local setup_servers = function(server_name, server_opts)
       require('lspconfig')[server_name].setup {
         capabilities = capabilities,
