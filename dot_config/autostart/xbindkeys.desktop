@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=xbindkeys
+Comment=Start xbindkeys
+Exec=xbindkeys
+Type=Application
