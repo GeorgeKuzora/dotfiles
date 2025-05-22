@@ -120,4 +120,6 @@ keybind = super+shift+l=clear_screen
 
 keybind = ctrl+shift+o=toggle_tab_overview
 keybind = ctrl+shift+i=inspector:toggle
+{{- if eq .chezmoi.os "darwin" }}
 keybind = ctrl+shift+p=toggle_command_palette
+{{- end }}
