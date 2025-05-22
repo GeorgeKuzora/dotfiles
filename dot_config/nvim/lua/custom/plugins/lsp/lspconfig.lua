@@ -5,7 +5,6 @@ return {
       'williamboman/mason.nvim',
       config = true,
       dependencies = {
-        'williamboman/mason-lspconfig.nvim',
         'WhoIsSethDaniel/mason-tool-installer.nvim',
       },
     },
@@ -164,7 +163,6 @@ return {
     -- MASON CONFIG
 
     local mason = require 'mason'
-    local mason_lspconfig = require 'mason-lspconfig'
     local mason_tool_installer = require 'mason-tool-installer'
 
     mason.setup {
@@ -190,12 +188,6 @@ return {
         -- debuggers
         'debugpy',
       },
-    }
-
-    -- Ensure the servers above are installed
-    mason_lspconfig.setup {
-      ensure_installed = vim.tbl_keys(opts.servers),
-      automatic_installation = true, -- not the same as ensure_installed
     }
 
     -- LSP CONFIG
