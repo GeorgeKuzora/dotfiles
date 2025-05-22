@@ -120,7 +120,7 @@ return {
         vim.lsp.buf.format { async = false }
       end, 'Format buffer with LSP')
       if vim.lsp.inlay_hint then
-        nmap('<leader>lh', function()
+        nmap('<leader>Uh', function()
           vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(nil))
           if vim.lsp.inlay_hint.is_enabled(nil) then
             print 'Inlay hints enabled'

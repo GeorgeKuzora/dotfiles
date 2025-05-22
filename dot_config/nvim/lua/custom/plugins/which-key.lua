@@ -56,6 +56,7 @@ return {
       { '<leader>t', group = 'Test' },
       { '<leader>w', group = 'Workspace' },
       { '<leader>x', group = 'Trouble' },
+      { '<leader>U', group = 'UI' },
     },
   },
   keys = {
