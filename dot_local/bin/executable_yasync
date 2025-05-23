@@ -1,17 +1,23 @@
 #!/usr/bin/bash
 
 echo "BACKING UP NOTES"
+echo ""
 
 cd /home/georgiy/Documents/Notes/My_vault/
 git add . && \
-git commit -m "new notes" && \
+git commit -m "new notes"
+git pull
 git push
 
+echo ""
 echo "SYNCING DOCUMENTS"
+echo ""
 
 rclone copy -P -u /home/georgiy/Documents yandex:/Documents
 
+echo ""
 echo "SYNCING PICTURES"
+echo ""
 
 rclone copy -P -u /home/georgiy/Pictures yandex:/Pictures
 
