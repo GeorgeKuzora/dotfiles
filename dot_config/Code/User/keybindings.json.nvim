@@ -1,4 +1,6 @@
 // Place your key bindings in this file to override the defaultsauto[]
+// This kebindings file is for use with VSCode's Neovim extension
+// https://github.com/asvetliakov/vscode-neovim
 [
     {
         "key": "ctrl+=",
