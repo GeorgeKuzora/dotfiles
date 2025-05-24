@@ -90,14 +90,8 @@ km.set('n', '<leader>ud', function()
   vim.diagnostic.config({ virtual_lines = new_lines, virtual_text = new_text })
 end, { desc = 'Toggle diagnostic virtual lines' })
 
-km.set('n', '<leader>uD', function()
-  local lines = vim.diagnostic.config().virtual_lines
-  local text = vim.diagnostic.config().virtual_text
-  if lines == true or text == true then
-    vim.diagnostic.config({ virtual_lines = false, virtual_text = false })
-  else
-    vim.diagnostic.config({ virtual_lines = false, virtual_text = true })
-  end
+km.set('n', '<leader>UD', function()
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end, { desc = 'Toggle diagnostic' })
 
 km.set('n', '<leader>ux', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Set file as executable' })
