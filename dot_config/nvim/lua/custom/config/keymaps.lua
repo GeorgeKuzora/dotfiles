@@ -72,12 +72,12 @@ km.set('i', "<c-'>", '<c-6>', { desc = 'Switch input method' })
 -- DIAGNOSTICS
 km.set('n', '<leader>ld', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 km.set('n', '<leader>ll', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
-km.set('n', '<leader>Ud', function()
+km.set('n', '<leader>ud', function()
   local new_lines = not vim.diagnostic.config().virtual_lines
   local new_text = not vim.diagnostic.config().virtual_text
   vim.diagnostic.config({ virtual_lines = new_lines, virtual_text = new_text })
 end, { desc = 'Toggle diagnostic virtual lines' })
-km.set('n', '<leader>UD', function()
+km.set('n', '<leader>uD', function()
   local lines = vim.diagnostic.config().virtual_lines
   local text = vim.diagnostic.config().virtual_text
   if lines == true or text == true then

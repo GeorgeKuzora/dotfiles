@@ -89,7 +89,7 @@ return {
       { "<leader>fq", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
       { "<leader><CR>", function() Snacks.picker.resume() end, desc = "Resume" },
       { "<leader>fR", function() Snacks.picker.resume() end, desc = "Resume" },
-      { "<leader>u", function() Snacks.picker.undo() end, desc = "Undo History" },
+      { "<leader>fu", function() Snacks.picker.undo() end, desc = "Undo History" },
       -- { "<leader>fn", function() Snacks.picker.notifications() end, desc = "Notification History" },
       -- { "<leader>fH", function() Snacks.picker.highlights() end, desc = "Highlights" },
       -- { "<leader>fi", function() Snacks.picker.icons() end, desc = "Icons" },
