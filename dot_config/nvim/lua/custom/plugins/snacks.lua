@@ -46,20 +46,8 @@ return {
     keys = {
       { '<leader>gg', function() Snacks.lazygit.open() end, desc = 'LazyGit', },
       { 'gs', function() Snacks.scope.jump() end, desc = 'Go to start of current scope', mode = { 'n', 'v' } },
-      -- Picker
-      -- Top Pickers & Explorer
-      { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
       { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
-      { "z,", function() Snacks.picker.spelling() end, desc = "Spelling" },
-      { "<leader>fi", function() Snacks.picker.cliphist() end, desc = "Clipboard" },
-      -- find
-      { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
-      { "<leader>fn", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
-      { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
-      { "<leader>fF", function() Snacks.picker.files({ hidden = true, ignored = true }) end, desc = "Find Files" },
-      { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
-      { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
-      { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
+      -- Pickers
       -- git
       { "<leader>gb", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
       { "<leader>gl", function() Snacks.picker.git_log() end, desc = "Git Log" },
@@ -73,7 +61,17 @@ return {
       { "<leader>vb", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
       { "<leader>vf", function() Snacks.picker.grep() end, desc = "Grep" },
       { "<leader>vw", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
-      -- search
+      -- Find
+      { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+      { "z,", function() Snacks.picker.spelling() end, desc = "Spelling" },
+      { "<leader>fi", function() Snacks.picker.cliphist() end, desc = "Clipboard" },
+      { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
+      { "<leader>fn", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
+      { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
+      { "<leader>fF", function() Snacks.picker.files({ hidden = true, ignored = true }) end, desc = "Find Files" },
+      { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
+      { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
+      { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
       { '<leader>f"', function() Snacks.picker.registers() end, desc = "Registers" },
       { '<leader>f/', function() Snacks.picker.search_history() end, desc = "Search History" },
       { "<leader>fa", function() Snacks.picker.autocmds() end, desc = "Autocmds" },
@@ -87,9 +85,9 @@ return {
       { "<leader>fl", function() Snacks.picker.loclist() end, desc = "Location List" },
       { "<leader>fm", function() Snacks.picker.marks() end, desc = "Marks" },
       { "<leader>fq", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
-      { "<leader><CR>", function() Snacks.picker.resume() end, desc = "Resume" },
-      { "<leader>fR", function() Snacks.picker.resume() end, desc = "Resume" },
+      { "<leader><CR>", function() Snacks.picker.resume() end, desc = "Resume Find" },
       { "<leader>fu", function() Snacks.picker.undo() end, desc = "Undo History" },
+      { "<leader>fx", function() Snacks.picker.lsp_config() end, desc = "Lsp Config" },
       -- { "<leader>fn", function() Snacks.picker.notifications() end, desc = "Notification History" },
       -- { "<leader>fH", function() Snacks.picker.highlights() end, desc = "Highlights" },
       -- { "<leader>fi", function() Snacks.picker.icons() end, desc = "Icons" },
@@ -104,7 +102,6 @@ return {
       { "grt", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto Type Definition" },
       { "go", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
       { "gO", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
-      { "<leader>lp", function() Snacks.picker.lsp_config() end, desc = "Lsp Config" },
     },
   },
 }

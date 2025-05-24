@@ -1,5 +1,19 @@
 local km = vim.keymap
 
+-- NOT USED
+-- Remap for dealing with word wrap
+-- km.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- km.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+-- km.set('n', 'J', 'mzJ`z', { desc = 'Join Lines' })
+-- Insert line without insert mode
+-- km.set('n', '<leader>o', 'o<Esc>k', { desc = 'Insert empty line bellow' })
+-- km.set('n', '<leader>O', 'O<Esc>j', { desc = 'Insert empty line above' })
+-- Moving between windows
+-- km.set('n', '<C-h>', '<C-w>h')
+-- km.set('n', '<C-l>', '<C-w>l')
+-- km.set('n', '<C-j>', '<C-w>j')
+-- km.set('n', '<C-k>', '<C-w>k')
+
 -- NEOVIM QUIRKS HEALING AND MISCELLANEOUS
 -- Escape insert mode
 km.set('i', 'ii', '<esc>', { desc = 'Escape insert mode' })
@@ -10,23 +24,13 @@ km.set('n', 'л', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 km.set('n', 'о', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 -- escape highlight search
 km.set('n', '<C-c>', ':noh<return><esc>')
-km.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
--- Remap for dealing with word wrap
--- km.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
--- km.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+km.set({ 'n', 'v', 'x' }, '<Space>', '<Nop>', { silent = true })
 -- Quick Spell correction
 km.set('n', 'z1', 'z=1<CR><CR>', { desc = 'Quick spell correction' })
 -- change word under cursor
 km.set('n', '<leader>*', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Change word under cursor in a buffer' })
--- Make file an executable
-km.set('n', '<leader>lc', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Set file as executable' })
 
--- LINES MODIFICATION
--- km.set('n', 'J', 'mzJ`z', { desc = 'Join Lines' })
--- Insert line without insert mode
--- km.set('n', '<leader>o', 'o<Esc>k', { desc = 'Insert empty line bellow' })
--- km.set('n', '<leader>O', 'O<Esc>j', { desc = 'Insert empty line above' })
--- Indentation change
+-- INDENTATION CHANGE
 km.set('v', '<', '<gv', { desc = 'Indent left' })
 km.set('v', '>', '>gv', { desc = 'Indent right' })
 km.set('x', '<', '<gv', { desc = 'Indent left' })
@@ -55,10 +59,6 @@ km.set('n', '<leader>bn', vim.cmd.enew, { desc = 'New buffer' })
 km.set('n', '<leader>bd', vim.cmd.bdelete, { desc = 'Delete buffer' })
 
 --WINDOW MANAGEMENT
--- km.set('n', '<C-h>', '<C-w>h')
--- km.set('n', '<C-l>', '<C-w>l')
--- km.set('n', '<C-j>', '<C-w>j')
--- km.set('n', '<C-k>', '<C-w>k')
 km.set('n', '<M-->', '<C-w>-')
 km.set('n', '<M-=>', '<C-w>+')
 km.set('n', '<M-,>', '<C-w><')
@@ -67,16 +67,29 @@ km.set('n', '<M-.>', '<C-w>>')
 -- INSERT MODE
 km.set('i', '<c-u>', '<c-g>u<c-u>', { desc = 'Delete character' })
 km.set('i', '<c-w>', '<c-g>u<c-w>', { desc = 'Delete word' })
-km.set('i', "<c-'>", '<c-6>', { desc = 'Switch input method' })
 
 -- DIAGNOSTICS
 km.set('n', '<leader>ld', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-km.set('n', '<leader>ll', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+km.set('n', '<leader>lD', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
+-- NVIM UI
+km.set({ 'n' }, '<leader>uo', function()
+  local current_path = vim.api.nvim_buf_get_name(0)
+  print(current_path)
+  vim.ui.open(current_path)
+end, { desc = 'Show file in xdg-open' })
+
+km.set('n', '<leader>uw', function()
+  local current_wrap = vim.api.nvim_get_option_value("wrap", { win = 0 })
+  vim.api.nvim_set_option_value("wrap", not current_wrap, { win = 0 })
+end, { desc = 'Toggle wrap' })
+
 km.set('n', '<leader>ud', function()
   local new_lines = not vim.diagnostic.config().virtual_lines
   local new_text = not vim.diagnostic.config().virtual_text
   vim.diagnostic.config({ virtual_lines = new_lines, virtual_text = new_text })
 end, { desc = 'Toggle diagnostic virtual lines' })
+
 km.set('n', '<leader>uD', function()
   local lines = vim.diagnostic.config().virtual_lines
   local text = vim.diagnostic.config().virtual_text
@@ -87,27 +100,4 @@ km.set('n', '<leader>uD', function()
   end
 end, { desc = 'Toggle diagnostic' })
 
--- NEOVIDE
-km.set('n', '<C-_>', function()
-  if vim.g.neovide then
-    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.05
-  end
-end, { desc = 'Neovide decrease scale factor' })
-
-km.set('n', '<C-+>', function()
-  if vim.g.neovide then
-    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.05
-  end
-end, { desc = 'Neovide increase scale factor' })
-
--- VIM UI
-km.set({ 'n', 'v', 'x' }, '<leader>lx', function()
-  local current_path = vim.api.nvim_buf_get_name(0)
-  print(current_path)
-  vim.ui.open(current_path)
-end, { desc = 'Show file in xdg-open' })
-
-km.set('n', '<leader>uw', function()
-  local current_wrap = vim.api.nvim_get_option_value("wrap", { win = 0 })
-  vim.api.nvim_set_option_value("wrap", not current_wrap, { win = 0 })
-end, { desc = 'Toggle wrap' })
+km.set('n', '<leader>ux', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Set file as executable' })

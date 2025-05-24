@@ -56,7 +56,7 @@ return {
       { '<leader>t', group = 'Test' },
       { '<leader>v', group = 'Search' },
       { '<leader>w', group = 'Workspace' },
-      { '<leader>x', group = 'Trouble' },
+      { '<leader>r', group = 'Trouble' },
       { '<leader>u', group = 'UI' },
     },
   },
