@@ -120,7 +120,7 @@ return {
         vim.lsp.buf.format { async = false }
       end, 'Format buffer with LSP')
       if vim.lsp.inlay_hint then
-        nmap('<leader>Uh', function()
+        nmap('<leader>uh', function()
           vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(nil))
           if vim.lsp.inlay_hint.is_enabled(nil) then
             print 'Inlay hints enabled'
@@ -130,13 +130,18 @@ return {
         end, 'Toggle inlay hints')
       end
 
-      nmap('<A-K>', function() vim.lsp.buf.signature_help() end, 'Signature help')
-      vim.keymap.set('i', '<A-k>', function()
-        vim.lsp.buf.hover()
-      end, { desc = 'Hover documentation' })
-      vim.keymap.set('i', '<A-K>', function()
+      --
+      nmap('<C-s>', function() vim.lsp.buf.signature_help() end, 'Signature help')
+
+      vim.keymap.set({ 'i', 'v', 'x' }, '<C-s>', function()
         vim.lsp.buf.signature_help()
       end, { desc = 'Signature help' })
+
+      vim.keymap.set({ 'i', 'v', 'x' }, '<C-k>', function()
+        vim.lsp.buf.hover()
+      end, { desc = 'Hover documentation' })
+      --
+
 
       nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, 'Add workspace folder')
       nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Remove workspace folder')
