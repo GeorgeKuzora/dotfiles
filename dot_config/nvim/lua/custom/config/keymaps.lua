@@ -90,7 +90,7 @@ km.set('n', '<leader>ud', function()
   vim.diagnostic.config({ virtual_lines = new_lines, virtual_text = new_text })
 end, { desc = 'Toggle diagnostic virtual lines' })
 
-km.set('n', '<leader>UD', function()
+km.set('n', '<leader>uD', function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end, { desc = 'Toggle diagnostic' })
 
