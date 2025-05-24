@@ -106,3 +106,8 @@ km.set({ 'n', 'v', 'x' }, '<leader>lx', function()
   print(current_path)
   vim.ui.open(current_path)
 end, { desc = 'Show file in xdg-open' })
+
+km.set('n', '<leader>Uw', function()
+  local current_wrap = vim.api.nvim_get_option_value("wrap", { win = 0 })
+  vim.api.nvim_set_option_value("wrap", not current_wrap, { win = 0 })
+end, { desc = 'Toggle wrap' })
