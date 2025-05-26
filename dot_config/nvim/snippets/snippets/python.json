@@ -13,5 +13,10 @@
     "prefix": "pp",
     "body": ["pytest.param($0),"],
     "description": "Adds pytest param statement."
+  },
+  "logging.critical": {
+    "prefix": "lc",
+    "body": ["logging.critical(f'{$0 =}'),"],
+    "description": "Adds logging critical with f-string."
   }
 }
