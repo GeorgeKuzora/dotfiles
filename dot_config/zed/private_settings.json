@@ -52,7 +52,8 @@
     "**/Thumbs.db",
     "**/.classpath",
     "**/.settings",
-    ".venv"
+    "**/.venv",
+    "**/hidden*"
   ],
   "language_models": {
     "openai": {
@@ -133,7 +134,8 @@
       "settings": {
         "python.analysis": {
           "diagnosticMode": "workspace",
-          "typeCheckingMode": "standard"
+          "typeCheckingMode": "standard",
+          "exclude": ["hidden*"]
         },
         "python": {
           "pythonPath": ".venv/bin/python"
