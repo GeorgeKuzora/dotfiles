@@ -173,5 +173,11 @@
   "gitlens.advanced.messages": {
     "suppressGitDisabledWarning": true,
     "suppressGitMissingWarning": true
-  }
+  },
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.replace": "block",
+  "vim.cursorStylePerMode.visual": "line",
+  "vim.cursorStylePerMode.visualblock": "line",
+  "vim.cursorStylePerMode.visualline": "line"
 }
