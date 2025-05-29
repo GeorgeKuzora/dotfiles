@@ -58,12 +58,12 @@
   ],
   "language_models": {
     "openai": {
-      "api_url": "https://ai.kth.pro/api/v1",
+      "api_url": "https://ai.kth.pro/api/chat/completions",
       "available_models": [
         {
           "name": "Instruct",
           "display_name": "Instruct",
-          "max_tokens": 32000
+          "max_tokens": 16000
         }
       ],
       "version": "1"
