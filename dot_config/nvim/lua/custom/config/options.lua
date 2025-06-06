@@ -11,14 +11,8 @@ vim.opt.backspace:append { 'nostop' } -- don't stop backspace at insert
 if vim.fn.has 'nvim-0.9' == 1 then
   vim.opt.diffopt:append 'linematch:60' -- enable line match diff algorithm
 end
-
--- Set vim options here (vim.<first_key>.<second_key> = value)
-vim.cmd [[set keymap=russian-jcukenwin]]
-vim.cmd [[set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖБЮ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:<>,фисвуапршолдьтщзйкыегмцчняю;abcdefghijklmnopqrstuvwxyz.]]
-vim.cmd [[set iminsert=0]]
-vim.cmd [[set imsearch=0]]
-vim.cmd [[highlight lCursor guifg=NONE guibg=cyan]]
 opt.grepprg = 'rg --vimgrep --smart-case --follow' -- Better grep command
+
 
 -- :f in current path recursively
 vim.cmd 'set path+=**'
