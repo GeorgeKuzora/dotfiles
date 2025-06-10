@@ -14,16 +14,11 @@ local km = vim.keymap
 -- km.set('n', '<C-j>', '<C-w>j')
 -- km.set('n', '<C-k>', '<C-w>k')
 
--- NEOVIM QUIRKS HEALING AND MISCELLANEOUS
--- Escape insert mode
+-- NEOVIM QUALITY OF LIFE IMPROVEMENTS
+km.set({ 'n', 'v', 'x' }, '<Space>', '<Nop>', { silent = true, desc = 'Space do nothing' })
 km.set('i', 'ii', '<esc>', { desc = 'Escape insert mode' })
--- Russian keymaps
--- escape highlight search
-km.set('n', '<C-c>', ':noh<return><esc>')
-km.set({ 'n', 'v', 'x' }, '<Space>', '<Nop>', { silent = true })
--- Quick Spell correction
+km.set('n', '<C-c>', ':noh<return><esc>', { desc = 'Escape highlight search' })
 km.set('n', 'z1', 'z=1<CR><CR>', { desc = 'Quick spell correction' })
--- change word under cursor
 km.set('n', '<leader>*', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Change word under cursor in a buffer' })
 
 -- INDENTATION CHANGE
