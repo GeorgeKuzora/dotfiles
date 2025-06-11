@@ -54,7 +54,6 @@ return {
       { '<leader>l', group = 'LSP' },
       { '<leader>s', group = 'Surround' },
       { '<leader>t', group = 'Test' },
-      { '<leader>v', group = 'Search' },
       { '<leader>w', group = 'Workspace' },
       { '<leader>r', group = 'Trouble' },
       { '<leader>u', group = 'UI' },
