@@ -13,10 +13,10 @@ return {
       indent = {
         indent = {
           priority = 1,
-          enabled = true, -- enable indent guide,
+          enabled = false, -- enable indent guide,
           char = '┊',
           only_scope = false, -- only show indent guides of the scope,
-          only_current = false, -- only show indent guides in the current window,
+          only_current = true, -- only show indent guides in the current window,
           hl = 'SnacksIndent', ---@type string|string[] hl groups for indent guide,
         },
         animate = {
@@ -29,11 +29,11 @@ return {
           },
         },
         scope = {
-          enabled = true, -- enable highlighting the current scope
+          enabled = false, -- enable highlighting the current scope
           priority = 200,
           char = '┊',
           underline = false, -- underline the start of the scope
-          only_current = false, -- only show scope in the current window
+          only_current = true, -- only show scope in the current window
           hl = 'SnacksIndentScope',
         },
       },
