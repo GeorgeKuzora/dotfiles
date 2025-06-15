@@ -101,3 +101,22 @@ vim.api.nvim_create_autocmd("User", {
       end
   end,
 })
+
+-- Set filetype-specific settings
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup 'FourSpaceIndent',
+  pattern = { "python", "golang", "go" },
+  callback = function()
+    vim.opt_local.tabstop = 4
+    vim.opt_local.shiftwidth = 4
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup 'TwoSpaceIndent',
+  pattern = { "lua", "javascript", "typescript", "json", "html", "css" },
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.shiftwidth = 2
+  end,
+})

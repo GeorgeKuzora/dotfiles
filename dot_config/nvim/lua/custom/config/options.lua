@@ -2,20 +2,18 @@ local g = vim.g
 local o = vim.o
 local wo = vim.wo
 local opt = vim.opt
-local a = vim.api
+local api = vim.api
+local fn = vim.fn
 
 -- Optimizations
-vim.opt.viewoptions:remove 'curdir' -- disable saving current directory with views
-vim.opt.shortmess:append { s = true, I = true, W = true, c = true, C = true } -- disable search count wrap and startup messages
-vim.opt.backspace:append { 'nostop' } -- don't stop backspace at insert
-if vim.fn.has 'nvim-0.9' == 1 then
-  vim.opt.diffopt:append 'linematch:60' -- enable line match diff algorithm
+opt.viewoptions:remove 'curdir' -- disable saving current directory with views
+opt.shortmess:append { s = true, I = true, W = true, c = true, C = true } -- disable search count wrap and startup messages
+opt.backspace:append { 'nostop' } -- don't stop backspace at insert
+if fn.has 'nvim-0.9' == 1 then
+  opt.diffopt:append 'linematch:60' -- enable line match diff algorithm
 end
 opt.grepprg = 'rg --vimgrep --smart-case --follow' -- Better grep command
-
-
--- :f in current path recursively
-vim.cmd 'set path+=**'
+opt.path:append("**") -- include subdirectories in search
 
 -- Enable break indent
 o.breakindent = true
@@ -67,32 +65,34 @@ opt.visualbell = true -- Flash the screen instead of beeping on errors.
 opt.title = true -- set the window’s title, reflecting the file currently being edited.
 -- folding
 opt.foldenable = true -- enable fold for nvim-ufo
-opt.foldmethod = 'manual'                         -- Fold based on indention levels.
+opt.foldmethod = 'manual' -- Fold based on manual selection.
+opt.foldexpr = "nvim_treesitter#foldexpr()" -- Use treesitter for folding
 opt.foldlevel = 99 -- set high foldlevel for nvim-ufo
 opt.foldlevelstart = 99 -- start with all code unfolded
 -- undoing
-opt.autoread = true -- Automatically re-read files if unmodified inside Vim.
+opt.autoread = true -- Automatically re-read files if unmodified inside 
+opt.autowrite = false -- Don't auto save
 opt.backspace = { 'indent', 'eol', 'start' } -- Allow backspacing over indention, line breaks and insertion start.
-opt.dir = vim.fn.expand('$HOME/.cache/nvim') -- Directory to store backup files.
-opt.undodir = vim.fn.expand('$HOME/.cache/nvim/undodir') -- Set undofiles dir
+opt.dir = fn.expand('$HOME/.cache/nvim') -- Directory to store backup files.
+opt.undodir = fn.expand('$HOME/.cache/nvim/undodir') -- Set undofiles dir
 opt.undofile = true -- Set undofiles
 opt.confirm = true -- Display a confirmation dialog when closing an unsaved file.
 opt.history = 10000 -- Increase the undo limit.
 opt.modeline = false -- Ignore file’s mode lines; use vimrc configurations instead.
-opt.swapfile = false -- Disable swap files. if string.find(vim.fn.expand('$SHELL'), 'zsh') ~= nil then
-if string.find(vim.fn.expand('$SHELL'), 'zsh') ~= nil then
+opt.swapfile = false -- Disable swap files. if string.find(fn.expand('$SHELL'), 'zsh') ~= nil then
+if string.find(fn.expand('$SHELL'), 'zsh') ~= nil then
   opt.shell = '/usr/bin/zsh'
-elseif string.find(vim.fn.expand('$SHELL'), 'bash') ~= nil then
+elseif string.find(fn.expand('$SHELL'), 'bash') ~= nil then
   opt.shell = '/usr/bin/bash'
 else
-  opt.shell = vim.fn.expand('$SHELL')
+  opt.shell = fn.expand('$SHELL')
 end
 opt.spell = true --Enable spellchecking.
 opt.spelllang = { 'en_us', 'ru_ru' }
-opt.wildignore = { '.pyc', '.swp' } -- Ignore files matching these patterns when opening files based on a glob pattern.
+opt.wildignore :append({ "*.o", "*.obj", "*.pyc", "*.class", "*.jar", '.pyc', '.swp' }) -- Ignore files matching these patterns when opening files based on a glob pattern.
 opt.clipboard = { 'unnamedplus' } -- Copy paste between vim and everything else, 'unnamed'
 -- UI and windows
-opt.signcolumn = 'yes' -- sets vim.opt.signcolumn to auto
+opt.signcolumn = 'yes' -- sets opt.signcolumn to auto
 opt.colorcolumn = '80,100,120' -- colored line on characters
 opt.termguicolors = true
 opt.mouse = 'a' -- Enable your mouse
@@ -100,6 +100,7 @@ opt.splitbelow = true -- Horizontal splits will automatically be below
 opt.splitright = true -- Vertical splits will automatically be to the right
 opt.termguicolors = true -- Support true colors
 opt.conceallevel = 0 -- So that I can see `` in markdown files
+opt.concealcursor = "" -- Don't hide cursor line markup
 opt.cursorline = true -- Enable highlighting of the current line
 opt.backup = false -- This is recommended by coc
 opt.writebackup = false -- This is recommended by coc
@@ -120,9 +121,9 @@ g.ui_notifications_enabled = true -- disable notifications when toggling UI elem
 g.codelens_enabled = true -- enable or disable automatic codelens refreshing for lsp that support it
 g.highlighturl_enabled = true -- highlight URLs by default
 g.inlay_hints_enabled = false -- enable or disable LSP inlay hints on startup (Neovim v0.10 only)
-g.lsp_handlers_enabled = true -- enable or disable default vim.lsp.handlers (hover and signature help)
+g.lsp_handlers_enabled = true -- enable or disable default lsp.handlers (hover and signature help)
 g.semantic_tokens_enabled = true -- enable or disable LSP semantic tokens on startup
-g.git_worktrees = nil -- enable git integration for detached worktrees (specify a table where each entry is of the form { toplevel = vim.env.HOME, gitdir=vim.env.HOME .. "/.dotfiles" })
+g.git_worktrees = nil -- enable git integration for detached worktrees (specify a table where each entry is of the form { toplevel = env.HOME, gitdir=env.HOME .. "/.dotfiles" })
 
 -- LazyVim options
 opt.grepformat = '%f:%l:%c:%m'
@@ -143,15 +144,32 @@ opt.fillchars = {
   diff = '╱',
   eob = ' ',
 }
-if vim.fn.has 'nvim-0.10' == 1 then
+if fn.has 'nvim-0.10' == 1 then
   opt.smoothscroll = true
 end
 -- Fix markdown indentation settings
-vim.g.markdown_recommended_style = 0
+g.markdown_recommended_style = 0
 
 -- NEOVIDE OPTIONS
-vim.o.guifont = 'VictorMono Nerd Font:h14'
-vim.g.neovide_scale_factor = 1.2
-vim.g.neovide_hide_mouse_when_typing = true
-vim.g.neovide_cursor_animation_length = 0.0
-vim.g.neovide_cursor_vfx_mode = ''
+o.guifont = 'VictorMono Nerd Font:h14'
+g.neovide_scale_factor = 1.2
+g.neovide_hide_mouse_when_typing = true
+g.neovide_cursor_animation_length = 0.0
+g.neovide_cursor_vfx_mode = ''
+
+-- TRANSPARENCY
+api.nvim_set_hl(0, "Normal", { bg = "none" })
+api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
+-- NEW
+opt.showmatch = true -- Highlight matching brackets
+opt.matchtime = 2 -- How long to show matching bracket
+opt.lazyredraw = true -- Don't redraw during macros
+opt.synmaxcol = 300 -- Syntax highlighting limit
+opt.ttimeoutlen = 0 -- Key code timeout
+opt.iskeyword:append("-") -- Treat dash as part of word
+g.mapleader = " " -- Set leader key to space
+g.maplocalleader = " " -- Set local leader key (NEW)
+-- Performance improvements
+opt.redrawtime = 10000
+opt.maxmempattern = 20000

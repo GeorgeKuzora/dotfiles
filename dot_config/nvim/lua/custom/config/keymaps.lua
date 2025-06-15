@@ -86,3 +86,10 @@ end, { desc = 'Toggle diagnostic' })
 
 km.set('n', '<leader>ux', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Set file as executable' })
 km.set('n', '<leader>un', ':noh<return><esc>', { desc = 'Escape highlight search' })
+
+-- Copy Full File-Path
+km.set("n", "<leader>uy", function()
+	local path = vim.fn.expand("%:p")
+	vim.fn.setreg("+", path)
+	print("file:", path)
+end)
