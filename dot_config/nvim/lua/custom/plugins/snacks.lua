@@ -29,7 +29,7 @@ return {
           },
         },
         scope = {
-          enabled = false, -- enable highlighting the current scope
+          enabled = true, -- enable highlighting the current scope
           priority = 200,
           char = '┊',
           underline = false, -- underline the start of the scope
