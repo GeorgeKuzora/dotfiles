@@ -16,7 +16,9 @@
    ],
   "editor.cursorBlinking": "solid",
   "cSpell.language": "en,ru",
-  "editor.codeActionsOnSave": {},
+  "editor.codeActionsOnSave": {
+
+  },
   "php.validate.executablePath": "",
   "search.showLineNumbers": true,
   "git.autofetch": true,
@@ -168,6 +170,9 @@
   "yaml.schemas": {
     "c:\\Users\\kuzora\\.vscode\\extensions\\continue.continue-1.0.9-win32-x64\\config-yaml-schema.json": [
       ".continue/**/*.yaml"
+    ],
+    "/Users/kuzora/.vscode/extensions/continue.continue-1.0.14-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
     ]
   },
   "gitlens.advanced.messages": {
@@ -179,5 +184,6 @@
   "vim.cursorStylePerMode.replace": "block",
   "vim.cursorStylePerMode.visual": "line",
   "vim.cursorStylePerMode.visualblock": "line",
-  "vim.cursorStylePerMode.visualline": "line"
+  "vim.cursorStylePerMode.visualline": "line",
+  "python.languageServer": "Default"
 }
