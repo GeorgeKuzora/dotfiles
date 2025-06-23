@@ -41,14 +41,17 @@ return {
           },
         },
       },
-      pyright = {
-        python = {
-          analysis = {
-            -- autoSearchPaths = true,
-            -- diagnosticMode = "openFilesOnly",
-            -- useLibraryCodeForTypes = true,
-          },
-        },
+      -- pyright = {
+      --   python = {
+      --     analysis = {
+      --       -- autoSearchPaths = true,
+      --       -- diagnosticMode = "openFilesOnly",
+      --       -- useLibraryCodeForTypes = true,
+      --     },
+      --   },
+      -- },
+      pyrefly = {
+        cmd = { 'uvx', 'pyrefly', 'lsp' }
       },
       ts_ls = {
         typescript = {
@@ -209,5 +212,8 @@ return {
     for server_name, server_opts in pairs(opts.servers) do
       setup_servers(server_name, server_opts)
     end
+
+    -- Not supported by lsp.config
+    vim.lsp.enable({ "pyrefly" })
   end,
 }
