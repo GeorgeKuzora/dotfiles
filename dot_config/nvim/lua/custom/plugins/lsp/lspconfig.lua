@@ -51,7 +51,7 @@ return {
         },
       },
       pyrefly = {
-        cmd = { 'uvx', 'pyrefly', 'lsp' }
+        cmd = { 'pyrefly', 'lsp' }
       },
       ts_ls = {
         typescript = {
