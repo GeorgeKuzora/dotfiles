@@ -201,19 +201,17 @@ return {
     -- LSP CONFIG
 
     local setup_servers = function(server_name, server_opts)
-      require('lspconfig')[server_name].setup {
+      vim.lsp.config( server_name, {
         capabilities = capabilities,
         on_attach = on_attach,
         settings = server_opts,
         filetypes = (server_opts or {}).filetypes,
-      }
+      })
+      vim.lsp.enable({ server_name })
     end
 
     for server_name, server_opts in pairs(opts.servers) do
       setup_servers(server_name, server_opts)
     end
-
-    -- Not supported by lsp.config
-    vim.lsp.enable({ "pyrefly" })
   end,
 }
