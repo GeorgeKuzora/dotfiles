@@ -5,6 +5,9 @@ local opt = vim.opt
 local api = vim.api
 local fn = vim.fn
 
+-- Leader keys
+g.mapleader = " " -- Set leader key to space
+g.maplocalleader = " " -- Set local leader key (NEW)
 -- Optimizations
 opt.viewoptions:remove 'curdir' -- disable saving current directory with views
 opt.shortmess:append { s = true, I = true, W = true, c = true, C = true } -- disable search count wrap and startup messages
@@ -32,6 +35,8 @@ opt.infercase = true -- infer cases in keyword completion
 opt.smartcase = true -- Search with ignore case if all small and with case if even one is big
 opt.incsearch = true -- Search incrementally when you input request
 opt.wrapscan = true -- Cycle search results until the end and then move to the beginning
+opt.showmatch = true -- Highlight matching brackets
+opt.matchtime = 2 -- How long to show matching bracket
 
 -- indentation
 opt.autoindent = true -- auto indention
@@ -149,6 +154,12 @@ if fn.has 'nvim-0.10' == 1 then
 end
 -- Fix markdown indentation settings
 g.markdown_recommended_style = 0
+-- Performance improvements
+opt.redrawtime = 10000
+opt.maxmempattern = 20000
+opt.lazyredraw = true -- Don't redraw during macros
+opt.synmaxcol = 300 -- Syntax highlighting limit
+opt.ttimeoutlen = 0 -- Key code timeout
 
 -- NEOVIDE OPTIONS
 o.guifont = 'VictorMono Nerd Font:h14'
@@ -161,15 +172,3 @@ g.neovide_cursor_vfx_mode = ''
 api.nvim_set_hl(0, "Normal", { bg = "none" })
 api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
--- NEW
-opt.showmatch = true -- Highlight matching brackets
-opt.matchtime = 2 -- How long to show matching bracket
-opt.lazyredraw = true -- Don't redraw during macros
-opt.synmaxcol = 300 -- Syntax highlighting limit
-opt.ttimeoutlen = 0 -- Key code timeout
-opt.iskeyword:append("-") -- Treat dash as part of word
-g.mapleader = " " -- Set leader key to space
-g.maplocalleader = " " -- Set local leader key (NEW)
--- Performance improvements
-opt.redrawtime = 10000
-opt.maxmempattern = 20000
