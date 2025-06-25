@@ -173,6 +173,9 @@
     ],
     "/Users/kuzora/.vscode/extensions/continue.continue-1.0.14-darwin-arm64/config-yaml-schema.json": [
       ".continue/**/*.yaml"
+    ],
+    "/Users/kuzora/.vscode/extensions/continue.continue-1.0.15-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
     ]
   },
   "gitlens.advanced.messages": {
@@ -185,5 +188,6 @@
   "vim.cursorStylePerMode.visual": "line",
   "vim.cursorStylePerMode.visualblock": "line",
   "vim.cursorStylePerMode.visualline": "line",
-  "python.languageServer": "Default"
+  "python.languageServer": "Default",
+  "comments.thread.confirmOnCollapse": "never"
 }
