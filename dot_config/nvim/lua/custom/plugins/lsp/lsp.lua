@@ -50,9 +50,9 @@ return {
           },
         },
       },
-      pyrefly = {
-        cmd = { 'pyrefly', 'lsp' }
-      },
+      -- pyrefly = {
+      --   cmd = { 'pyrefly', 'lsp' }
+      -- },
       ts_ls = {
         typescript = {
           inlayHints = {
