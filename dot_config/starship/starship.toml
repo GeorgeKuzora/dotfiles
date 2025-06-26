@@ -4,6 +4,7 @@ format = """
 [](text)\
 $os\
 $sudo\
+$username\
 [](fg:text bg:blue)\
 $directory\
 [](fg:blue bg:surface2)\
@@ -40,13 +41,7 @@ add_newline = true
 [os]
 disabled = false
 style = "bg:text fg:crust"
-format = '[$symbol]($style)'
-
-[sudo]
-disabled = false
-style = "bg:text fg:crust"
-format = '[$symbol]($style)'
-symbol = '󰓎'
+format = '[$symbol ]($style)'
 
 [os.symbols]
 Windows = ""
@@ -68,6 +63,18 @@ CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
+
+[sudo]
+disabled = false
+style = "bg:text fg:crust"
+format = '[$symbol ]($style)'
+symbol = '󰓎'
+
+[username]
+show_always = false
+style_user = "bg:text fg:crust"
+style_root = "bg:text fg:red"
+format = '[$user]($style)'
 
 [directory]
 style = "fg:crust bg:blue"
