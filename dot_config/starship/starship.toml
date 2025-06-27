@@ -3,6 +3,7 @@
 format = """
 [](text)\
 $os\
+$shell\
 $sudo\
 $username\
 [](fg:text bg:blue)\
@@ -41,7 +42,7 @@ add_newline = true
 [os]
 disabled = false
 style = "bg:text fg:crust"
-format = '[$symbol ]($style)'
+format = '[$symbol]($style)'
 
 [os.symbols]
 Windows = ""
@@ -64,10 +65,18 @@ Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 
+[shell]
+fish_indicator = '󰈺'
+bash_indicator = ''
+zsh_indicator = ''
+format = '[$indicator]($style)'
+style = "bg:text fg:crust"
+disabled = false
+
 [sudo]
 disabled = false
 style = "bg:text fg:crust"
-format = '[$symbol ]($style)'
+format = '[$symbol]($style)'
 symbol = '󰓎'
 
 [username]
