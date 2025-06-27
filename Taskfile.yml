@@ -1,8 +1,30 @@
 version: '3'
 
-dotenv: ['.env', '.envrc']
+dotenv: ['.env']
 
 tasks:
-  hello:
+  yamount:
     cmds:
-    - echo {{.CLI_ARGS}}
+    - rclone mount yandex:/ /home/georgiy/Yandex-disk
+  yasync:
+    deps: [documents_sync, pictures_sync]
+  notes_sync:
+    dir: '/home/georgiy/Documents/Notes/My_vault/'
+    cmds:
+    - echo "BACKING UP NOTES"
+    - echo ""
+    - echo $PWD
+    - git add .
+    - git commit -m "new notes"
+    - git pull
+    - git push
+  documents_sync:
+    cmds:
+    - echo "SYNCING DOCUMENTS"
+    - echo ""
+    - rclone copy -P -u /home/georgiy/Documents yandex:/Documents
+  pictures_sync:
+    cmds:
+    - echo "SYNCING PICTURES"
+    - echo ""
+    - rclone copy -P -u /home/georgiy/Pictures yandex:/Pictures
