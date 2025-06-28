@@ -19,43 +19,38 @@ return {
       },
     },
     opts = {
-      openai = {
-        endpoint = "https://ai.kth.pro/api/chat/completions",
-        model = "Instruct",  -- your desired model (or use gpt-4o, etc.)
-        timeout = 30000,   -- Timeout in milliseconds, increase this for reasoning models
-        temperature = 0.8,
-        max_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
-        -- reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
-      },
+      providers = {
 {{- if eq .email "g.kuzora@korona.net" }}
-      provider = "koronatech",
-      vendors = {
         koronatech = {
           __inherited_from = "openai",
+          model = "Instruct",
           api_key_name = "KORONATECH_API_KEY",
           endpoint = "https://ai.kth.pro/api/chat/completions",
-          model = "Instruct",
+          timeout = 30000,   -- Timeout in milliseconds, increase this for reasoning models
+          extra_request_body = {
+            temperature = 0.8,
+            max_tokens = 32768, -- Increase this to include reasoning tokens (for reasoning models)
+          },
         },
-      },
 {{- else }}
-      provider = "mistral",
-      vendors = {
         mistral= {
           __inherited_from = "openai",
           api_key_name = "MISTRAL_API_KEY",
           endpoint = "https://codestral.mistral.ai/v1",
           model = "codestral-latest",
-          max_tokens = 4096, -- to avoid using max_completion_tokens
-        },
+          extra_request_body = {
+            max_tokens = 4096, -- to avoid using max_completion_tokens
+          },
       },
-{{- end }}
-      file_selector = {
-        provider = "snacks",
-        -- Options override for custom providers
-        provider_opts = {},
-      }
     },
+{{- end }}
+    file_selector = {
+      provider = "snacks",
+      -- Options override for custom providers
+      provider_opts = {},
+    }
   },
+},
 {{- if eq .email "g.kuzora@korona.net" }}
   -- {
   --   'milanglacier/minuet-ai.nvim',
