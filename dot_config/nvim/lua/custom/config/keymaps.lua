@@ -41,8 +41,6 @@ km.set({ 'n', 'v', 'x' }, '<leader>D', [["_D]], { desc = 'Delete until end of th
 km.set({ 'n', 'v', 'x' }, '<leader>C', [["_C]], { desc = 'Change until end of the line without killing' })
 km.set('n', 'x', '"_x', { desc = 'Delete char into void' })
 km.set('n', 's', '"_s', { desc = 'Change char into void' })
-km.set({ 'v', 'x' }, '<leader>p', [["_dP]], { desc = 'Paste without killing' })
-km.set({ 'v', 'x' }, '<leader>P', [["_dP]], { desc = 'Paste without killing' })
 
 -- WORKING WITH BUFFERS
 km.set('n', '<leader>bn', vim.cmd.enew, { desc = 'New buffer' })
