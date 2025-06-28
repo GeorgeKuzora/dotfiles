@@ -50,7 +50,9 @@ return {
     vim.fn.sign_define('DapBreakpoint', { text = '🔴', texthl = 'red', linehl = '', numhl = '' })
     require('nvim-dap-virtual-text').setup {}
 
-    require('dap-go').setup()
+    require('dap-go').setup( {
+      delve = {},
+    })
     require('dap-python').setup '~/.local/share/nvim/mason/packages/debugpy/venv/bin/python'
 
     vim.keymap.set('n', '<leader>xx', dap.restart, { desc = 'Debug: Restart' })
@@ -68,5 +70,6 @@ return {
     vim.keymap.set('n', '<leader>xo', dap.step_over, { desc = 'Debug: Step Over' })
     vim.keymap.set('n', '<leader>xi', dap.step_into, { desc = 'Debug: Step Into' })
     vim.keymap.set('n', '<leader>xu', dap.step_out, { desc = 'Debug: Step Out' })
+    vim.keymap.set('n', '<leader>xs', dap.terminate, { desc = 'Debug: Stop' })
   end,
 }
