@@ -7,6 +7,7 @@ return {
     "antoinemadec/FixCursorHold.nvim",
     "nvim-treesitter/nvim-treesitter",
     "nvim-neotest/neotest-python",
+    "nvim-neotest/neotest-go",
   },
   config = function ()
     local neotest = require("neotest")
@@ -32,6 +33,7 @@ return {
           args = getPytestArgs,
           runner = "pytest",
         },
+        require("neotest-go"),
       }
     }
     vim.keymap.set('n', '<leader>tr', function()
