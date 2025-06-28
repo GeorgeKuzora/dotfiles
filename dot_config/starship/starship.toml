@@ -31,7 +31,7 @@ $conda\
 $docker_context\
 [](fg:surface0)\
 $time\
-$cmd_duration\
+$battery\
 $line_break\
 $character"""
 
@@ -200,6 +200,14 @@ disabled = false
 time_format = "%R"
 style = "fg:blue bold"
 format = '[  $time]($style)'
+
+[battery]
+format = '[ $symbol$percentage]($style)'
+disabled = false
+
+[[battery.display]]
+threshold = 100
+style = "fg:blue bold"
 
 [cmd_duration]
 show_milliseconds = true
