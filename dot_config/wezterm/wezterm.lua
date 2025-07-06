@@ -13,75 +13,75 @@ end
 
 -- KEYBINDINGS
 config.keys = {
-    { key = 'p', mods = 'SHIFT|CTRL', action = act.ActivateCommandPalette },
-    { key = 'x', mods = 'SHIFT|CTRL', action = act.ActivateCopyMode },
-    { key = 'f', mods = 'SHIFT|CTRL', action = act.Search 'CurrentSelectionOrEmptyString' },
-    { key = 'l', mods = 'SHIFT|CTRL', action = act.ClearScrollback 'ScrollbackOnly' },
-    { key = 'o', mods = 'SHIFT|CTRL', action = act.ShowDebugOverlay },
-    { key = 'm', mods = 'SHIFT|CTRL', action = act.Hide },
-    { key = 'n', mods = 'SHIFT|CTRL', action = act.SpawnWindow },
-    { key = 'b', mods = 'SHIFT|CTRL', action = act.ReloadConfiguration },
-    { key = 'phys:Space', mods = 'SHIFT|CTRL', action = act.QuickSelect },
-    { key = 'Enter', mods = 'SHIFT|CTRL', action = act.ToggleFullScreen },
+	{ key = 'p',          mods = 'SHIFT|CTRL',     action = act.ActivateCommandPalette },
+	{ key = 'x',          mods = 'SHIFT|CTRL',     action = act.ActivateCopyMode },
+	{ key = 'f',          mods = 'SHIFT|CTRL',     action = act.Search 'CurrentSelectionOrEmptyString' },
+	{ key = 'l',          mods = 'SHIFT|CTRL',     action = act.ClearScrollback 'ScrollbackOnly' },
+	{ key = 'o',          mods = 'SHIFT|CTRL',     action = act.ShowDebugOverlay },
+	{ key = 'm',          mods = 'SHIFT|CTRL',     action = act.Hide },
+	{ key = 'n',          mods = 'SHIFT|CTRL',     action = act.SpawnWindow },
+	{ key = 'b',          mods = 'SHIFT|CTRL',     action = act.ReloadConfiguration },
+	{ key = 'phys:Space', mods = 'SHIFT|CTRL',     action = act.QuickSelect },
+	{ key = 'Enter',      mods = 'SHIFT|CTRL',     action = act.ToggleFullScreen },
 
-    { key = 'LeftArrow', mods = 'ALT', action = act.ActivatePaneDirection 'Left' },
-    { key = 'RightArrow', mods = 'ALT', action = act.ActivatePaneDirection 'Right' },
-    { key = 'UpArrow', mods = 'ALT', action = act.ActivatePaneDirection 'Up' },
-    { key = 'DownArrow', mods = 'ALT', action = act.ActivatePaneDirection 'Down' },
-    { key = 'LeftArrow', mods = 'SHIFT|ALT', action = act.AdjustPaneSize { 'Left', 5 } },
-    { key = 'DownArrow', mods = 'SHIFT|ALT', action = act.AdjustPaneSize { 'Down', 5 } },
-    { key = 'UpArrow', mods = 'SHIFT|ALT', action = act.AdjustPaneSize { 'Up', 5 } },
-    { key = 'RightArrow', mods = 'SHIFT|ALT', action = act.AdjustPaneSize { 'Right', 5 } },
-    { key = 'w', mods = 'SHIFT|CTRL', action = act.CloseCurrentPane { confirm = true } },
-    { key = 'd', mods = 'SHIFT|CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
-    { key = 'r', mods = 'SHIFT|CTRL', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
-    { key = 'z', mods = 'SHIFT|CTRL', action = act.TogglePaneZoomState },
+	{ key = 'LeftArrow',  mods = 'ALT',            action = act.ActivatePaneDirection 'Left' },
+	{ key = 'RightArrow', mods = 'ALT',            action = act.ActivatePaneDirection 'Right' },
+	{ key = 'UpArrow',    mods = 'ALT',            action = act.ActivatePaneDirection 'Up' },
+	{ key = 'DownArrow',  mods = 'ALT',            action = act.ActivatePaneDirection 'Down' },
+	{ key = 'LeftArrow',  mods = 'SHIFT|ALT',      action = act.AdjustPaneSize { 'Left', 5 } },
+	{ key = 'DownArrow',  mods = 'SHIFT|ALT',      action = act.AdjustPaneSize { 'Down', 5 } },
+	{ key = 'UpArrow',    mods = 'SHIFT|ALT',      action = act.AdjustPaneSize { 'Up', 5 } },
+	{ key = 'RightArrow', mods = 'SHIFT|ALT',      action = act.AdjustPaneSize { 'Right', 5 } },
+	{ key = 'w',          mods = 'SHIFT|CTRL',     action = act.CloseCurrentPane { confirm = true } },
+	{ key = 'd',          mods = 'SHIFT|CTRL',     action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
+	{ key = 'r',          mods = 'SHIFT|CTRL',     action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
+	{ key = 'z',          mods = 'SHIFT|CTRL',     action = act.TogglePaneZoomState },
 
-    { key = 'q', mods = 'SHIFT|CTRL', action = act.CloseCurrentTab { confirm = true } },
-    { key = '9', mods = 'SHIFT|CTRL', action = act.ActivateLastTab },
-    { key = 'Tab', mods = 'CTRL', action = act.ActivateTabRelative(1) },
-    { key = 'Tab', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(-1) },
-    { key = 'Tab', mods = 'SHIFT|CTRL|ALT', action = act.ActivateTab(-1) },
-    { key = '{', mods = 'SHIFT|CTRL|ALT', action = act.MoveTabRelative(-1) },
-    { key = '}', mods = 'SHIFT|CTRL|ALT', action = act.MoveTabRelative(1) },
-    { key = 't', mods = 'SHIFT|CTRL', action = act.SpawnTab 'CurrentPaneDomain' },
+	{ key = 'q',          mods = 'SHIFT|CTRL',     action = act.CloseCurrentTab { confirm = true } },
+	{ key = '9',          mods = 'SHIFT|CTRL',     action = act.ActivateLastTab },
+	{ key = 'Tab',        mods = 'CTRL',           action = act.ActivateTabRelative(1) },
+	{ key = 'Tab',        mods = 'SHIFT|CTRL',     action = act.ActivateTabRelative(-1) },
+	{ key = 'Tab',        mods = 'SHIFT|CTRL|ALT', action = act.ActivateTab(-1) },
+	{ key = '{',          mods = 'SHIFT|CTRL|ALT', action = act.MoveTabRelative(-1) },
+	{ key = '}',          mods = 'SHIFT|CTRL|ALT', action = act.MoveTabRelative(1) },
+	{ key = 't',          mods = 'SHIFT|CTRL',     action = act.SpawnTab 'CurrentPaneDomain' },
 
-    {
-        key = 'u',
-        mods = 'SHIFT|CTRL',
-        action = act.CharSelect {
-            copy_on_select = true,
-            copy_to = 'ClipboardAndPrimarySelection',
-        },
-    },
+	{
+		key = 'u',
+		mods = 'SHIFT|CTRL',
+		action = act.CharSelect {
+			copy_on_select = true,
+			copy_to = 'ClipboardAndPrimarySelection',
+		},
+	},
 
-    { key = '0', mods = 'CTRL', action = act.ResetFontSize },
-    { key = '=', mods = 'CTRL', action = act.IncreaseFontSize },
-    { key = '-', mods = 'CTRL', action = act.DecreaseFontSize },
+	{ key = '0',          mods = 'CTRL',       action = act.ResetFontSize },
+	{ key = '=',          mods = 'CTRL',       action = act.IncreaseFontSize },
+	{ key = '-',          mods = 'CTRL',       action = act.DecreaseFontSize },
 
-    { key = 'PageUp', mods = 'SHIFT|CTRL', action = act.ScrollByPage(-1) },
-    { key = 'PageDown', mods = 'SHIFT|CTRL', action = act.ScrollByPage(1) },
-    { key = 'UpArrow', mods = 'SHIFT|CTRL', action = act.ScrollByLine(-1) },
-    { key = 'DownArrow', mods = 'SHIFT|CTRL', action = act.ScrollByLine(1) },
-    { key = 'Home', mods = 'SHIFT|CTRL', action = act.ScrollToTop },
-    { key = 'End', mods = 'SHIFT|CTRL', action = act.ScrollToBottom },
-    { key = 'LeftArrow', mods = 'SHIFT|CTRL', action = act.ScrollToPrompt(-1) },
-    { key = 'RightArrow', mods = 'SHIFT|CTRL', action = act.ScrollToPrompt(1) },
+	{ key = 'PageUp',     mods = 'SHIFT|CTRL', action = act.ScrollByPage(-1) },
+	{ key = 'PageDown',   mods = 'SHIFT|CTRL', action = act.ScrollByPage(1) },
+	{ key = 'UpArrow',    mods = 'SHIFT|CTRL', action = act.ScrollByLine(-1) },
+	{ key = 'DownArrow',  mods = 'SHIFT|CTRL', action = act.ScrollByLine(1) },
+	{ key = 'Home',       mods = 'SHIFT|CTRL', action = act.ScrollToTop },
+	{ key = 'End',        mods = 'SHIFT|CTRL', action = act.ScrollToBottom },
+	{ key = 'LeftArrow',  mods = 'SHIFT|CTRL', action = act.ScrollToPrompt(-1) },
+	{ key = 'RightArrow', mods = 'SHIFT|CTRL', action = act.ScrollToPrompt(1) },
 
-    { key = 'c', mods = 'SHIFT|CTRL', action = act.CopyTo 'Clipboard' },
-    { key = 'Insert', mods = 'CTRL', action = act.CopyTo 'PrimarySelection' },
-    { key = 'Copy', mods = 'NONE', action = act.CopyTo 'Clipboard' },
-    { key = 'v', mods = 'SHIFT|CTRL', action = act.PasteFrom 'Clipboard' },
-    { key = 'Insert', mods = 'SHIFT', action = act.PasteFrom 'PrimarySelection' },
-    { key = 'Paste', mods = 'NONE', action = act.PasteFrom 'Clipboard' },
+	{ key = 'c',          mods = 'SHIFT|CTRL', action = act.CopyTo 'Clipboard' },
+	{ key = 'Insert',     mods = 'CTRL',       action = act.CopyTo 'PrimarySelection' },
+	{ key = 'Copy',       mods = 'NONE',       action = act.CopyTo 'Clipboard' },
+	{ key = 'v',          mods = 'SHIFT|CTRL', action = act.PasteFrom 'Clipboard' },
+	{ key = 'Insert',     mods = 'SHIFT',      action = act.PasteFrom 'PrimarySelection' },
+	{ key = 'Paste',      mods = 'NONE',       action = act.PasteFrom 'Clipboard' },
 }
 
 for i = 1, 8 do
-    table.insert(config.keys, {
-    key = tostring(i),
-    mods = 'CTRL|SHIFT',
-    action = wezterm.action.ActivateTab(i - 1),
-})
+	table.insert(config.keys, {
+		key = tostring(i),
+		mods = 'CTRL|SHIFT',
+		action = wezterm.action.ActivateTab(i - 1),
+	})
 end
 
 -- CONFIGURATION
@@ -114,11 +114,11 @@ config.font = wezterm.font_with_fallback({
 	{ family = "JetBrainsMono Nerd Font", weight = "Regular" },
 	{ family = "JetBrainsMono Nerd Font", weight = "Light" },
 	{ family = "JetBrainsMono Nerd Font", weight = "ExtraLight" },
-	{ family = "VictorMono Nerd Font", weight = "Regular" },
-	{ family = "CommitMono Nerd Font", weight = "Regular" },
+	{ family = "VictorMono Nerd Font",    weight = "Regular" },
+	{ family = "CommitMono Nerd Font",    weight = "Regular" },
 	{ family = "CaskaydiaCove Nerd Font", weight = "Regular" },
-	{ family = "Noto Sans Mono", weight = "Regular" },
-	{ family = "MonaspiceNe Nerd Font", weight = "Regular" },
+	{ family = "Noto Sans Mono",          weight = "Regular" },
+	{ family = "MonaspiceNe Nerd Font",   weight = "Regular" },
 })
 config.font_size = 16.0
 config.freetype_load_flags = "DEFAULT"
@@ -145,19 +145,47 @@ config.unix_domains = {
 }
 config.check_for_updates = false
 
+local mocha = {
+		rosewater = "#f5e0dc",
+		flamingo = "#f2cdcd",
+		pink = "#f5c2e7",
+		mauve = "#cba6f7",
+		red = "#f38ba8",
+		maroon = "#eba0ac",
+		peach = "#fab387",
+		yellow = "#f9e2af",
+		green = "#a6e3a1",
+		teal = "#94e2d5",
+		sky = "#89dceb",
+		sapphire = "#74c7ec",
+		blue = "#89b4fa",
+		lavender = "#b4befe",
+		text = "#cdd6f4",
+		subtext1 = "#bac2de",
+		subtext0 = "#a6adc8",
+		overlay2 = "#9399b2",
+		overlay1 = "#7f849c",
+		overlay0 = "#6c7086",
+		surface2 = "#585b70",
+		surface1 = "#45475a",
+		surface0 = "#313244",
+		base = "#1e1e2e",
+		mantle = "#181825",
+		crust = "#11111b",
+	}
+
 config.color_scheme = "Catppuccin Mocha"
--- config.color_scheme = "Wez"
 config.colors = {
-	background = "#181825",
+	background =mocha.mantle,
 	tab_bar = {
 		-- The color of the strip that goes along the top of the window
 		-- (does not apply when fancy tab bar is in use)
-		background = "#11111b",
+		background =mocha.crust,
 
 		-- The active tab is the one that has focus in the window
 		active_tab = {
-			bg_color = "#313244",
-			fg_color = "#bac2de",
+			bg_color = mocha.surface0,
+			fg_color =mocha.subtext1,
 
 			-- Specify whether you want "Half", "Normal" or "Bold" intensity for the
 			-- label shown for this tab.
@@ -180,8 +208,8 @@ config.colors = {
 
 		-- Inactive tabs are the tabs that do not have focus
 		inactive_tab = {
-			bg_color = "#181825",
-			fg_color = "#7f849c",
+			bg_color = mocha.mantle,
+			fg_color = mocha.overlay1,
 
 			-- The same options that were listed under the `active_tab` section above
 			-- can also be used for `inactive_tab`.
@@ -200,8 +228,8 @@ config.colors = {
 
 		-- The new tab button that let you create new tabs
 		new_tab = {
-			bg_color = "#181825",
-			fg_color = "#7f849c",
+			bg_color = mocha.mantle,
+			fg_color = mocha.overlay1,
 
 			-- The same options that were listed under the `active_tab` section above
 			-- can also be used for `new_tab`.
@@ -210,8 +238,8 @@ config.colors = {
 		-- You can configure some alternate styling when the mouse pointer
 		-- moves over the new tab button
 		new_tab_hover = {
-			bg_color = "#1e1e2e",
-			fg_color = "#bac2de",
+			bg_color = mocha.base,
+			fg_color = mocha.subtext1,
 			italic = false,
 
 			-- The same options that were listed under the `active_tab` section above
