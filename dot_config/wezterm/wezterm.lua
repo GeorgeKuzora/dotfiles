@@ -120,7 +120,7 @@ config.font = wezterm.font_with_fallback({
 	{ family = "Noto Sans Mono",          weight = "Regular" },
 	{ family = "MonaspiceNe Nerd Font",   weight = "Regular" },
 })
-config.font_size = 16.0
+config.font_size = 14.0
 config.freetype_load_flags = "DEFAULT"
 config.warn_about_missing_glyphs = false
 config.default_cursor_style = "SteadyBlock"
@@ -130,8 +130,6 @@ config.colors = {
 	cursor_fg = "black",
 	cursor_border = "silver",
 }
-config.initial_cols = 140
-config.initial_rows = 36
 config.window_padding = {
 	left = 0,
 	right = 0,
@@ -293,6 +291,16 @@ local function _on_format_tab_title(tab, _tabs, _panes, _config, _hover, _max_wi
 end
 
 wezterm.on("format-tab-title", _on_format_tab_title)
+
+wezterm.on('gui-attached', function(domain)
+  -- maximize all displayed windows on startup
+  local workspace = wezterm.mux.get_active_workspace()
+  for _, window in ipairs(wezterm.mux.all_windows()) do
+    if window:get_workspace() == workspace then
+      window:gui_window():maximize()
+    end
+  end
+end)
 
 -- and finally, return the configuration to wezterm
 return config
