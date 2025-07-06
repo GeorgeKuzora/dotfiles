@@ -93,6 +93,14 @@
     "light": "One Light",
     "dark": "Catppuccin Mocha"
   },
+  "experimental.theme_overrides": {
+    "editor.background": "#181825",
+    "editor.gutter": "#181825",
+    "editor.gutter.background": "#181825",
+    "terminal.background": "#181825",
+    "toolbar.background": "#181825",
+    "tab.active_background": "#181825"
+  },
   "use_autoclose": false,
   "always_treat_brackets_as_autoclosed": false,
   "tab_bar": {
