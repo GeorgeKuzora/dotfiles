@@ -1,9 +1,9 @@
 {{- if eq .chezmoi.os "linux" }}
-if [ -e {{ .chezmoi.homeDir -}}/.nix-profile/etc/profile.d/nix.sh ]; then . {{ .chezmoi.homeDir -}}/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+if [ -e {{ .chezmoi.homeDir -}}/.nix-profile/etc/profile.d/nix.sh ]; then . {{ .chezmoi.homeDir -}}/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 {{- if eq .email "g.kuzora@korona.net" }}
-sudo ip link set eth0 mtu 1350
+# sudo ip link set eth0 mtu 1350
 {{- end }}
 {{- if eq .chezmoi.os "linux" }}
 {{- if eq .chezmoi.osRelease.id "ubuntu" }}
