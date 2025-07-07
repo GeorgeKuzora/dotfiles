@@ -1,17 +1,11 @@
-{{- if eq .chezmoi.os "linux" }}
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
-if [ -e {{ .chezmoi.homeDir -}}/.nix-profile/etc/profile.d/nix.sh ]; then . {{ .chezmoi.homeDir -}}/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+export PATH="$PATH:~/.local/bin"
 
-{{- if eq .email "g.kuzora@korona.net" }}
-# sudo ip link set eth0 mtu 1350
-{{- end }}
-{{- if eq .chezmoi.os "linux" }}
-{{- if eq .chezmoi.osRelease.id "ubuntu" }}
-fish -i
-{{- end }}
-{{- end }}
+if [ -e {{ .chezmoi.homeDir -}}/.nix-profile/etc/profile.d/nix.sh ]; then . {{ .chezmoi.homeDir -}}/.nix-profile/etc/profile.d/nix.sh;
+if [ -e zoxide ]; then . eval "$(zoxide init bash)";
 
 # Commands that should be applied only for interactive shells.
+
 [[ $- == *i* ]] || return
 
 HISTFILESIZE=100000
@@ -28,4 +22,17 @@ alias ..='cd ..'
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
+alias gs='git add . && git commit -m "sync from bash" && git pull && git push'
+alias gst='git status'
+alias ga='git add .'
+alias gc='git commit'
+alias gp='git pull'
+alias gP='git push'
+
+{{- if eq .email "g.kuzora@korona.net" }}
+sudo ip link set eth0 mtu 1350
+{{- end }}
+
+{{- if eq .chezmoi.osRelease.id "ubuntu" }}
+fish -i
 {{- end }}

@@ -2,8 +2,9 @@
 {{- if ne .chezmoi.os "linux" }}
 ./dot_bash_profile.tmpl
 ./dot_bashrc.tmpl
-./dot_config/autostart
 ./dot_profile.tmpl
+
+./dot_config/autostart
 {{- else if ne .chezmoi.os "darwin" }}
 ./dot_zprofile
 {{- end }}
