@@ -33,6 +33,8 @@ alias gP='git push'
 sudo ip link set eth0 mtu 1350
 {{- end }}
 
+{{- if eq .chezmoi.os "linux" }}
 {{- if eq .chezmoi.osRelease.id "ubuntu" }}
 fish -i
+{{- end }}
 {{- end }}
