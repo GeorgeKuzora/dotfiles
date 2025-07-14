@@ -58,24 +58,22 @@
   ],
   "language_models": {
     "openai": {
-      "api_url": "https://ai.kth.pro/api/chat/completions",
+      "api_url": "https://ai.kth.pro/api",
       "available_models": [
         {
           "name": "Instruct",
           "display_name": "Instruct",
-          "max_tokens": 16000
+          "max_tokens": 1000
         }
       ],
-      "version": "1"
     }
   },
   "agent": {
-    "default_profile": "ask",
+    "default_profile": "minimal",
     "default_model": {
       "provider": "openai",
       "model": "Instruct"
     },
-    "version": "2",
     "dock": "right"
   },
   "outline_panel": {
