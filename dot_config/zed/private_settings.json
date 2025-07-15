@@ -7,6 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "icon_theme": "Catppuccin Mocha",
   "show_edit_predictions": false,
   "edit_predictions": {
     "mode": "subtle"
@@ -69,7 +70,29 @@
     }
   },
   "agent": {
-    "default_profile": "minimal",
+    "profiles": {
+      "ask": {
+        "name": "Ask",
+        "tools": {
+          "read_file": true
+        },
+        "enable_all_context_servers": false,
+        "context_servers": {}
+      },
+      "custom": {
+        "name": "Custom",
+        "tools": {
+                    "copy_path": false,
+                    "now": false,
+                    "find_path": false,
+                    "edit_file": false,
+                    "read_file": false
+                },
+        "enable_all_context_servers": false,
+        "context_servers": {}
+      }
+    },
+    "default_profile": "custom",
     "default_model": {
       "provider": "openai",
       "model": "Instruct"
