@@ -37,7 +37,7 @@ set -gx KORONATECH_API_KEY {{ .koronatech_api_key | quote }}
 
 # PATH
 fish_add_path $PATH /home/linuxbrew/.linuxbrew/bin $GOPATH/bin $HOME/.local/bin /home/linuxbrew/.linuxbrew/opt/rustup/bin
-fish_add_path $PATH  $HOME/.cargo/bin /opt/homebrew/bin /opt/homebrew/Cellar/rustup/1.28.2/bin /Users/kuzora/.lmstudio/bin
+fish_add_path $PATH  $HOME/.cargo/bin /opt/homebrew/bin /opt/homebrew/Cellar/rustup/1.28.2/bin $HOME/.lmstudio/bin
 
 # ABBREVIATION
 # Colorize grep output (good for log files)
