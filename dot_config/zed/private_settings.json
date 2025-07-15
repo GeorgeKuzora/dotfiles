@@ -115,6 +115,7 @@
     "dark": "Catppuccin Mocha"
   },
   "experimental.theme_overrides": {
+    "background": "#181825",
     "editor.background": "#181825",
     "editor.gutter": "#181825",
     "editor.gutter.background": "#181825",
