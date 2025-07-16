@@ -71,6 +71,23 @@
   },
   "agent": {
     "profiles": {
+      "devstral": {
+        "name": "Devstral",
+        "tools": {
+          "list_directory": true,
+          "diagnostics": false,
+          "grep": true,
+          "open": true,
+          "fetch": true,
+          "copy_path": false,
+          "now": true,
+          "find_path": true,
+          "edit_file": false,
+          "read_file": true
+        },
+        "enable_all_context_servers": false,
+        "context_servers": {}
+      },
       "ask": {
         "name": "Ask",
         "tools": {
@@ -82,11 +99,16 @@
       "custom": {
         "name": "Custom",
         "tools": {
+                    "list_directory": true,
+                    "diagnostics": false,
+                    "grep": true,
+                    "open": true,
+                    "fetch": true,
                     "copy_path": false,
                     "now": false,
-                    "find_path": false,
+                    "find_path": true,
                     "edit_file": false,
-                    "read_file": false
+                    "read_file": true
                 },
         "enable_all_context_servers": false,
         "context_servers": {}
