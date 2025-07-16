@@ -92,7 +92,7 @@
         "context_servers": {}
       }
     },
-    "default_profile": "custom",
+    "default_profile": "minimal",
     "default_model": {
       "provider": "openai",
       "model": "Instruct"
@@ -145,7 +145,13 @@
         "args": ["-i"]
       }
     },
-    "font_family": "JetBrainsMono Nerd Font"
+    "font_family": "JetBrainsMono Nerd Font",
+    "detect_venv": {
+      "on": {
+        "directories": [".env", "env", ".venv", "venv"],
+        "activate_script": "fish"
+      }
+    },
   },
   "lsp": {
     "gopls": {
