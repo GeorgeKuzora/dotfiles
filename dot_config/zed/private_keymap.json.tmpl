@@ -7,23 +7,19 @@
     }
   },
   {
-    "context": "Editor && vim_mode == normal",
-    "bindings": {
-      "space o": ["workspace::SendKeystrokes", "o escape k"],
-      "space shift-o": ["workspace::SendKeystrokes", "shift-o escape j"]
-    }
-  },
-  {
     "context": "VimControl && !menu",
     "bindings": {
-      "cmd-shift-j": "workspace::ToggleBottomDock"
+      "cmd-j": "workspace::ToggleBottomDock"
+      "cmd-shift-j": "workspace::ToggleBottomDock",
     }
   },
   {
     "context": "Workspace",
     "bindings": {
+      "cmd-j": "workspace::ToggleBottomDock",
       "cmd-shift-j": "workspace::ToggleBottomDock",
       "cmd-shift-l": "outline_panel::ToggleFocus",
+      "cmd-b": "workspace::ToggleRightDock",
       "cmd-shift-b": "workspace::ToggleRightDock",
       "cmd-alt-b": "workspace::ToggleLeftDock"
     }
@@ -42,13 +38,6 @@
     "context": "vim_mode == visual",
     "bindings": {
       "shift-s": ["vim::PushAddSurrounds", {}]
-    }
-  },
-  {
-    "context": "Editor && vim_mode == normal",
-    "bindings": {
-      "space o": ["workspace::SendKeystrokes", "o escape k"],
-      "space shift-o": ["workspace::SendKeystrokes", "shift-o escape j"]
     }
   },
   {

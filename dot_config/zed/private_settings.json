@@ -99,13 +99,19 @@
       "custom": {
         "name": "Custom",
         "tools": {
+                    "project_notifications": false,
+                    "thinking": false,
+                    "terminal": false,
+                    "move_path": false,
+                    "create_directory": false,
+                    "delete_path": false,
                     "list_directory": true,
                     "diagnostics": false,
                     "grep": true,
                     "open": true,
                     "fetch": true,
                     "copy_path": false,
-                    "now": false,
+                    "now": true,
                     "find_path": true,
                     "edit_file": false,
                     "read_file": true
@@ -114,10 +120,10 @@
         "context_servers": {}
       }
     },
-    "default_profile": "minimal",
+    "default_profile": "custom",
     "default_model": {
-      "provider": "openai",
-      "model": "Instruct"
+      "provider": "lmstudio",
+      "model": "qwen/qwen3-14b"
     },
     "dock": "right"
   },
