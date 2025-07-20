@@ -168,16 +168,7 @@
   "http.proxySupport": "off",
   "vscode-neovim.neovimExecutablePaths.linux": "/home/linuxbrew/.linuxbrew/bin/nvim",
   "yaml.schemas": {
-    "c:\\Users\\kuzora\\.vscode\\extensions\\continue.continue-1.0.9-win32-x64\\config-yaml-schema.json": [
-      ".continue/**/*.yaml"
-    ],
-    "/Users/kuzora/.vscode/extensions/continue.continue-1.0.14-darwin-arm64/config-yaml-schema.json": [
-      ".continue/**/*.yaml"
-    ],
-    "/Users/kuzora/.vscode/extensions/continue.continue-1.0.15-darwin-arm64/config-yaml-schema.json": [
-      ".continue/**/*.yaml"
-    ],
-    "/Users/kuzora/.vscode/extensions/continue.continue-1.0.18-darwin-arm64/config-yaml-schema.json": [
+    "/Users/kuzora/.vscode/extensions/continue.continue-1.0.19-darwin-arm64/config-yaml-schema.json": [
       ".continue/**/*.yaml"
     ]
   },
@@ -192,5 +183,18 @@
   "vim.cursorStylePerMode.visualblock": "line",
   "vim.cursorStylePerMode.visualline": "line",
   "python.languageServer": "Default",
-  "comments.thread.confirmOnCollapse": "never"
+  "comments.thread.confirmOnCollapse": "never",
+  "codesnap": {
+    "backgroundColor": "",
+    "boxShadow": true,
+    "containerPadding": "0px",
+    "roundedCorners": true,
+    "showWindowControls": true,
+    "showWindowTitle": false,
+    "showLineNumbers": false,
+    "realLineNumbers": false,
+    "transparentBackground": true,
+    "target": "container",
+    "shutterAction": "copy" // or "save", depending on your preference
+}
 }
