@@ -120,10 +120,10 @@
         "context_servers": {}
       }
     },
-    "default_profile": "custom",
+    "default_profile": "minimal",
     "default_model": {
-      "provider": "lmstudio",
-      "model": "qwen/qwen3-14b"
+      "provider": "openai",
+      "model": "Instruct"
     },
     "dock": "right"
   },
