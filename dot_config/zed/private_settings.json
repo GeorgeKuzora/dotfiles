@@ -200,7 +200,7 @@
         "python.analysis": {
           "diagnosticMode": "workspace",
           "typeCheckingMode": "standard",
-          "exclude": ["hidden*"]
+          "exclude": ["hidden*", ".venv"]
         },
         "python": {
           "pythonPath": ".venv/bin/python"
@@ -215,6 +215,13 @@
           "lint": {
             "extendSelect": ["I"]
           }
+        }
+      }
+    },
+    "jj-lsp": {
+      "initialization_options": {
+        "check": {
+          "command": "jj-lsp"
         }
       }
     }
