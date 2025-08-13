@@ -76,6 +76,14 @@
   },
   "agent": {
     "always_allow_tool_actions": true,
+    "enable_feedback": false,
+    "model_parameters": [
+      {
+        "provider": "openai",
+        "model": "Coder",
+        "temperature": 0.7
+      }
+    ],
     "profiles": {
       "devstral": {
         "name": "Devstral",
