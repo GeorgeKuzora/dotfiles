@@ -65,6 +65,11 @@
           "name": "Instruct",
           "display_name": "Instruct",
           "max_tokens": 32000
+        },
+        {
+          "name": "Coder",
+          "display_name": "Coder",
+          "max_tokens": 131000
         }
       ],
     }
@@ -123,7 +128,19 @@
     "default_profile": "minimal",
     "default_model": {
       "provider": "openai",
-      "model": "Instruct"
+      "model": "Coder"
+    },
+    "inline_assistant_model": {
+      "provider": "openai",
+      "model": "Coder"
+    },
+    "commit_message_model": {
+      "provider": "openai",
+      "model": "Coder"
+    },
+    "thread_summary_model": {
+      "provider": "openai",
+      "model": "Coder"
     },
     "dock": "right"
   },
