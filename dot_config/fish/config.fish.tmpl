@@ -35,7 +35,7 @@ set -gx STARSHIP_CONFIG $XDG_CONFIG_HOME/starship/starship.toml
 set -gx MISTRAL_API_KEY {{ .mistral_api_key | quote }}
 set -gx KORONATECH_API_KEY {{ .koronatech_api_key | quote }}
 set -gx OPENAI_API_KEY {{ .koronatech_api_key | quote }}
-set -gx OPENAI_BASE_URL 'https://ai.kth.pro/api'
+set -gx OPENAI_BASE_URL "https://ai.kth.pro/api"
 set -gx OPENAI_MODEL Coder
 
 # PATH
