@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "koronatech": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Koronatech",
+      "options": {
+        "baseURL": "https://ai.kth.pro/api"
+      },
+      "models": {
+        "Coder": {
+          "name": "Coder"
+        }
+      }
+    }
+  }
+}
