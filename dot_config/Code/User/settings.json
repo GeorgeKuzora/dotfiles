@@ -49,7 +49,7 @@
   "editor.renderWhitespace": "none",
   "editor.minimap.renderCharacters": false,
   "editor.minimap.scale": 2,
-  "editor.minimap.autohide": true,
+  "editor.minimap.autohide": "mouseover",
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
   "editor.smoothScrolling": true,
@@ -168,7 +168,7 @@
   "http.proxySupport": "off",
   "vscode-neovim.neovimExecutablePaths.linux": "/home/linuxbrew/.linuxbrew/bin/nvim",
   "yaml.schemas": {
-    "/Users/kuzora/.vscode/extensions/continue.continue-1.0.19-darwin-arm64/config-yaml-schema.json": [
+    "/Users/kuzora/.vscode/extensions/continue.continue-1.0.21-darwin-arm64/config-yaml-schema.json": [
       ".continue/**/*.yaml"
     ]
   },
