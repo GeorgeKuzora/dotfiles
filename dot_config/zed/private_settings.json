@@ -75,6 +75,7 @@
     }
   },
   "agent": {
+    "always_allow_tool_actions": true,
     "profiles": {
       "devstral": {
         "name": "Devstral",
