@@ -3,7 +3,6 @@ return {
   lazy = false, -- lazy loading handled internally
   dependencies = {
     'rafamadriz/friendly-snippets',
-    'Kaiser-Yang/blink-cmp-avante',
     'folke/lazydev.nvim',
   },
   version = 'v0.*',
@@ -28,18 +27,13 @@ return {
       },
     },
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer', 'avante', 'lazydev' },
+      default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev' },
       providers = {
         cmdline = {
           -- ignores cmdline completions when executing shell commands
           enabled = function()
             return vim.fn.getcmdtype() ~= ':' or not vim.fn.getcmdline():match "^[%%0-9,'<>%-]*!"
           end,
-        },
-        avante = {
-          module = 'blink-cmp-avante',
-          name = 'Avante',
-          opts = {}
         },
         lazydev = {
           name = "LazyDev",
