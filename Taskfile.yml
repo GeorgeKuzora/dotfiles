@@ -28,3 +28,8 @@ tasks:
     - echo "SYNCING PICTURES"
     - echo ""
     - rclone copy -P -u /home/georgiy/Pictures yandex:/Pictures
+  jjpush:
+    cmds:
+    - jj b set {{.CLI_ARGS}} -r @
+    - jj git push -b {{.CLI_ARGS}}
+    - jj new
