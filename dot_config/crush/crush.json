@@ -1,0 +1,26 @@
+{
+  "$schema": "https://charm.land/crush.json",
+  "providers": {
+    "coder": {
+      "type": "openai",
+      "base_url": "https://ai.kth.pro/api",
+      "api_key": "$OPENAI_API_KEY",
+      "models": [
+        {
+          "id": "Coder",
+          "name": "Coder",
+          "context_window": 131000,
+          "default_max_tokens": 5000
+        }
+      ]
+    }
+  },
+  "lsp": {
+    "go": {
+      "command": "gopls"
+    },
+    "python": {
+      "command": "pyright"
+    }
+  }
+}
