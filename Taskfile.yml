@@ -29,6 +29,7 @@ tasks:
     - echo ""
     - rclone copy -P -u /home/georgiy/Pictures yandex:/Pictures
   jjpush:
+    dir: '{{.USER_WORKING_DIR}}'
     cmds:
     - jj b set {{.CLI_ARGS}} -r @
     - jj git push -b {{.CLI_ARGS}}
