@@ -30,7 +30,17 @@
     // Lets `f` and `t` motions extend across multiple lines
     "use_multiline_find": true
   },
-  // disable cursor blink
+  "auto_install_extensions": {
+    "catppuccin": true,
+    "catppuccin-icons": true
+  },
+  "load_direnv": "shell_hook",
+  "use_smartcase_search": true,
+  "wrap_guides": [80, 100, 120],
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
   "current_line_highlight": "all",
   "cursor_blink": false,
   "relative_line_numbers": false,
@@ -165,17 +175,8 @@
   },
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "Catppuccin Mocha"
-  },
-  "experimental.theme_overrides": {
-    "background": "#181825",
-    "editor.background": "#181825",
-    "editor.gutter": "#181825",
-    "editor.gutter.background": "#181825",
-    "terminal.background": "#181825",
-    "toolbar.background": "#181825",
-    "tab.active_background": "#181825"
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Espresso"
   },
   "use_autoclose": false,
   "always_treat_brackets_as_autoclosed": false,
@@ -261,7 +262,7 @@
           "arguments": ["-"]
         }
       },
-      "format_on_save": "off"
+      "format_on_save": "on"
     }
   }
 }

@@ -1,33 +1,37 @@
 {{- if eq .chezmoi.os "darwin" }}
 [
   {
-    "context": "vim_mode == visual",
-    "bindings": {
-      "shift-s": ["vim::PushAddSurrounds", {}]
-    }
-  },
-  {
-    "context": "VimControl && !menu",
-    "bindings": {
-      "cmd-j": "workspace::ToggleBottomDock",
-      "cmd-shift-j": "workspace::ToggleBottomDock"
-    }
-  },
-  {
     "context": "Workspace",
     "bindings": {
       "cmd-j": "workspace::ToggleBottomDock",
-      "cmd-shift-j": "workspace::ToggleBottomDock",
-      "cmd-shift-l": "outline_panel::ToggleFocus",
       "cmd-b": "workspace::ToggleRightDock",
+      "cmd-l": "outline_panel::ToggleFocus",
+      "cmd-e": "project_panel::ToggleFocus",
+      "cmd-alt-b": "workspace::ToggleLeftDock",
+      "cmd-shift-j": "workspace::ToggleBottomDock",
       "cmd-shift-b": "workspace::ToggleRightDock",
-      "cmd-alt-b": "workspace::ToggleLeftDock"
+      "cmd-shift-l": "outline_panel::ToggleFocus"
     }
   },
   {
     "context": "Editor",
     "bindings": {
-      "cmd-shift-l": "outline_panel::ToggleFocus"
+      "cmd-shift-l": "outline_panel::ToggleFocus",
+      "cmd-l": "outline_panel::ToggleFocus",
+      "cmd-e": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "shift-y": ["workspace::SendKeystrokes", "y $"]
+    }
+  },
+  {
+    "context": "vim_mode == visual && !menu",
+    "bindings": {
+      ">": ["workspace::SendKeystrokes", "> g v"],
+      "<": ["workspace::SendKeystrokes", "< g v"]
     }
   }
 ]
@@ -35,30 +39,26 @@
 {{- if eq .chezmoi.os "linux" }}
 [
   {
-    "context": "vim_mode == visual",
-    "bindings": {
-      "shift-s": ["vim::PushAddSurrounds", {}]
-    }
-  },
-  {
-    "context": "VimControl && !menu",
-    "bindings": {
-      "ctrl-shift-j": "workspace::ToggleBottomDock"
-    }
-  },
-  {
     "context": "Workspace",
     "bindings": {
-      "ctrl-shift-j": "workspace::ToggleBottomDock",
       "ctrl-shift-l": "outline_panel::ToggleFocus",
+      "ctrl-shift-j": "workspace::ToggleBottomDock",
+      "ctrl-alt-j": "workspace::ToggleBottomDock",
       "ctrl-shift-b": "workspace::ToggleRightDock",
       "ctrl-alt-b": "workspace::ToggleLeftDock"
     }
   },
   {
-    "context": "Editor",
+    "context": "vim_mode == normal && !menu",
     "bindings": {
-      "ctrl-shift-l": "outline_panel::ToggleFocus"
+      "shift-y": ["workspace::SendKeystrokes", "y $"]
+    }
+  },
+  {
+    "context": "vim_mode == visual && !menu",
+    "bindings": {
+      ">": ["workspace::SendKeystrokes", "> g v"],
+      "<": ["workspace::SendKeystrokes", "< g v"]
     }
   }
 ]
