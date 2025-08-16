@@ -1,53 +1,52 @@
-{{- if eq .chezmoi.os "darwin" }}
 [
+{{- if eq .chezmoi.os "darwin" }}
   {
     "context": "Workspace",
     "bindings": {
       "cmd-j": "workspace::ToggleBottomDock",
+      "cmd-shift-j": "terminal_panel::ToggleFocus",
+      "cmd-alt-j": "workspace::NewTerminal",
+
       "cmd-b": "workspace::ToggleRightDock",
-      "cmd-l": "outline_panel::ToggleFocus",
-      "cmd-e": "project_panel::ToggleFocus",
       "cmd-alt-b": "workspace::ToggleLeftDock",
-      "cmd-shift-j": "workspace::ToggleBottomDock",
-      "cmd-shift-b": "workspace::ToggleRightDock",
+
+      "cmd-e": "project_panel::ToggleFocus",
+
+      "cmd-l": "outline_panel::ToggleFocus",
       "cmd-shift-l": "outline_panel::ToggleFocus"
+
     }
   },
   {
     "context": "Editor",
     "bindings": {
-      "cmd-shift-l": "outline_panel::ToggleFocus",
+      "cmd-e": "project_panel::ToggleFocus",
+
       "cmd-l": "outline_panel::ToggleFocus",
-      "cmd-e": "project_panel::ToggleFocus"
+      "cmd-shift-l": "outline_panel::ToggleFocus"
     }
   },
-  {
-    "context": "vim_mode == normal && !menu",
-    "bindings": {
-      "shift-y": ["workspace::SendKeystrokes", "y $"]
-    }
-  },
-  {
-    "context": "vim_mode == visual && !menu",
-    "bindings": {
-      ">": ["workspace::SendKeystrokes", "> g v"],
-      "<": ["workspace::SendKeystrokes", "< g v"]
-    }
-  }
-]
 {{- end }}
 {{- if eq .chezmoi.os "linux" }}
-[
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-shift-l": "outline_panel::ToggleFocus",
-      "ctrl-shift-j": "workspace::ToggleBottomDock",
       "ctrl-alt-j": "workspace::ToggleBottomDock",
+      "cmd-j": "workspace::ToggleBottomDock",
+      "cmd-shift-j": "terminal_panel::ToggleFocus",
+      "cmd-alt-j": "workspace::NewTerminal",
+
       "ctrl-shift-b": "workspace::ToggleRightDock",
-      "ctrl-alt-b": "workspace::ToggleLeftDock"
+      "ctrl-alt-b": "workspace::ToggleLeftDock",
     }
   },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-l": "outline_panel::ToggleFocus"
+    }
+  },
+{{- end }}
   {
     "context": "vim_mode == normal && !menu",
     "bindings": {
@@ -60,6 +59,11 @@
       ">": ["workspace::SendKeystrokes", "> g v"],
       "<": ["workspace::SendKeystrokes", "< g v"]
     }
+  },
+  {
+    "context": "(vim_mode == normal || vim_mode == visual) && !menu",
+    "bindings": {
+      "space /": "buffer_search::DeployReplace"
+    }
   }
 ]
-{{- end }}
