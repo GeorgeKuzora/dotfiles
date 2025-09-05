@@ -17,3 +17,5 @@ hidden*
 .venv
 .zed
 .DS_Store
+.crush
+
