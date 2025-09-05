@@ -112,14 +112,6 @@
         "enable_all_context_servers": false,
         "context_servers": {}
       },
-      "ask": {
-        "name": "Ask",
-        "tools": {
-          "read_file": true
-        },
-        "enable_all_context_servers": false,
-        "context_servers": {}
-      },
       "custom": {
         "name": "Custom",
         "tools": {
