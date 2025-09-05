@@ -18,4 +18,6 @@ hidden*
 .zed
 .DS_Store
 .crush
+.CRUSH.md
+CRUSH.md
 
