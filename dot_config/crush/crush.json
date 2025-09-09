@@ -1,5 +1,12 @@
 {
   "$schema": "https://charm.land/crush.json",
+  "permissions": {
+    "allowed_tools": [
+      "view",
+      "ls",
+      "grep"
+    ]
+  },
   "providers": {
     "coder": {
       "type": "openai",
