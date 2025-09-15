@@ -196,5 +196,6 @@
     "transparentBackground": true,
     "target": "container",
     "shutterAction": "copy" // or "save", depending on your preference
-}
+},
+"workbench.secondarySideBar.defaultVisibility": "hidden"
 }
