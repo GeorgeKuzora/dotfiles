@@ -45,7 +45,7 @@ return {
     },
     keys = {
       { '<leader>gg', function() Snacks.lazygit.open() end, desc = 'LazyGit', },
-      { 'gs', function() Snacks.scope.jump() end, desc = 'Go to start of current scope', mode = { 'n', 'v' } },
+      { 'gz', function() Snacks.scope.jump() end, desc = 'Go to start of current scope', mode = { 'n', 'v' } },
       { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
       -- Pickers
       -- git
@@ -102,6 +102,8 @@ return {
       { "grt", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto Type Definition" },
       { "go", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
       { "gO", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
+      { "gs", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
+      { "gS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
     },
   },
 }
