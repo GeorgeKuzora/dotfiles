@@ -226,6 +226,19 @@
         }
       }
     },
+    "basepyright": {
+      "settings": {
+        "python.analysis": {
+          "diagnosticMode": "workspace",
+          "typeCheckingMode": "standard",
+          "allowedUntypedLibraries": ["mdw_tracing", "app.system.tracing",],
+          "exclude": ["hidden*", ".venv"]
+        },
+        "python": {
+          "pythonPath": ".venv/bin/python"
+        }
+      }
+    },
     "ruff": {
       "initialization_options": {
         "settings": {
@@ -247,7 +260,7 @@
   },
   "languages": {
     "Python": {
-      "language_servers": ["pyright"],
+      "language_servers": ["basedpyright"],
       "formatter": {
         "external": {
           "command": "isort",
