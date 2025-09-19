@@ -228,11 +228,11 @@
     },
     "basepyright": {
       "settings": {
-        "python.analysis": {
+        "basepyright.analysis": {
           "diagnosticMode": "workspace",
           "typeCheckingMode": "standard",
-          "allowedUntypedLibraries": ["mdw_tracing", "app.system.tracing",],
-          "exclude": ["hidden*", ".venv"]
+          "exclude": ["hidden*", ".venv"],
+          "allowedUntypedLibraries": ["mdw_tracing", "app.system.tracing"]
         },
         "python": {
           "pythonPath": ".venv/bin/python"
@@ -243,7 +243,7 @@
       "initialization_options": {
         "settings": {
           // Ruff server settings goes here
-          "lineLength": 80,
+          "lineLength": 100,
           "lint": {
             "extendSelect": ["I"]
           }
