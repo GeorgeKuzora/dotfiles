@@ -85,7 +85,6 @@
     }
   },
   "agent": {
-    "always_allow_tool_actions": true,
     "enable_feedback": false,
     "model_parameters": [
       {
