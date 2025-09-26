@@ -21,3 +21,6 @@ hidden*
 .CRUSH.md
 CRUSH.md
 .crushignore
+.qwen/
+QWEN.md
+AGENTS.md
