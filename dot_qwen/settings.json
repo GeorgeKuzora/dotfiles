@@ -1,4 +1,10 @@
 {
+  "preferredEditor": "neovim",
+  "theme": "Atom One",
   "selectedAuthType": "openai",
-  "preferredEditor": "neovim"
+  "contextFileName": ["QWEN.md", "AGENTS.md", "AGENT.md", "CLAUDE.md", "GEMINI.md", ".rules"],
+  "vimMode": false,
+  "usageStatisticsEnabled": false,
+  "hideBanner": true,
+  "hideTips": true
 }
