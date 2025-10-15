@@ -154,6 +154,13 @@
     },
     "dock": "right"
   },
+  "agent_servers": {
+    "Qwen Agent": {
+      "command": "qwen",
+      "args": ["--experimental-acp"],
+      "env": {"OPENAI_API_KEY": {{ .koronatech_api_key | quote }} }
+    }
+  },
   "outline_panel": {
     "dock": "right"
   },
