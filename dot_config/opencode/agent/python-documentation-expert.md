@@ -1,5 +1,5 @@
 ---
-description: Writes concise Russian technical docs for Python fintech backends
+description: Writes concise technical docs for Python fintech backends
 mode: subagent
 model: koronatech/Coder
 temperature: 0.1

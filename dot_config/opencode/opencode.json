@@ -13,5 +13,11 @@
         }
       }
     }
+  },
+  "instructions": ["QWEN.md"],
+  "permission": {
+    "edit": "ask",
+    "bash": "ask",
+    "webfetch": "allow"
   }
 }
