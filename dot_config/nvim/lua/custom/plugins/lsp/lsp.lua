@@ -41,44 +41,20 @@ return {
           },
         },
       },
-      pyright = {
+      -- rust_analyzer = {}, -- managed by rust plugin
+      basedpyright = {
         python = {
           analysis = {
-            -- autoSearchPaths = true,
-            -- diagnosticMode = "openFilesOnly",
-            -- useLibraryCodeForTypes = true,
+            diagnosticMode = "workspace",
+            typeCheckingMode = "recommended",
+            exclude = { "hidden*", ".venv" },
+            allowedUntypedLibraries = { "mdw_tracing", "app.system.tracing" },
           },
         },
       },
       -- pyrefly = {
       --   cmd = { 'pyrefly', 'lsp' }
       -- },
-      ts_ls = {
-        typescript = {
-          inlayHints = {
-            includeInlayParameterNameHints = 'all',
-            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-            includeInlayFunctionParameterTypeHints = true,
-            includeInlayVariableTypeHints = true,
-            includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-            includeInlayPropertyDeclarationTypeHints = true,
-            includeInlayFunctionLikeReturnTypeHints = true,
-            includeInlayEnumMemberValueHints = true,
-          },
-        },
-        javascript = {
-          inlayHints = {
-            includeInlayParameterNameHints = 'all',
-            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-            includeInlayFunctionParameterTypeHints = true,
-            includeInlayVariableTypeHints = true,
-            includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-            includeInlayPropertyDeclarationTypeHints = true,
-            includeInlayFunctionLikeReturnTypeHints = true,
-            includeInlayEnumMemberValueHints = true,
-          },
-        },
-      },
       html = { filetypes = { 'html', 'twig', 'hbs' } },
       lua_ls = {
         Lua = {
@@ -188,11 +164,9 @@ return {
       ensure_installed = {
         -- formatters
         'isort',
-        'prettier',
         -- linters
         'stylelint',
         'markdownlint',
-        'eslint_d',
         -- debuggers
         'debugpy',
       },
