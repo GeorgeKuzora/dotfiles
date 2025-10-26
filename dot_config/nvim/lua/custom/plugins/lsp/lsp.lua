@@ -85,6 +85,8 @@ return {
     -- KEYBINDINGS
 
     local on_attach = function(_, bufnr)
+    vim.lsp.inlay_hint.enable(false)
+
       local nmap = function(keys, func, desc)
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
       end
