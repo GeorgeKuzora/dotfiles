@@ -13,6 +13,8 @@ return {
 
 
     local python_formatters = {}
+    local rust_formatters = {}
+    local go_formatters = {}
 
     if vim.fn.executable('black') == 1 then
       table.insert(python_formatters, 'black')
@@ -23,21 +25,23 @@ return {
     if vim.fn.executable('ruff') == 1 then
       table.insert(python_formatters, 'ruff_format')
     end
+    if vim.fn.executable('rustfmt') == 1 then
+      table.insert(rust_formatters, 'rustfmt')
+    end
+    if vim.fn.executable('rustfmt') == 1 then
+      table.insert(python_formatters, 'rustfmt')
+    end
+    if vim.fn.executable('gofmt') == 1 then
+      table.insert(go_formatters, 'gofmt')
+    end
 
     conform.setup {
       formatters_by_ft = {
-        javascript = { 'prettier' },
-        typescript = { 'prettier' },
-        javascriptreact = { 'prettier' },
-        typescriptreact = { 'prettier' },
-        svelte = { 'prettier' },
-        css = { 'prettier' },
-        html = { 'prettier' },
-        json = { 'prettier' },
-        yaml = { 'prettier' },
-        markdown = { 'prettier' },
-        graphql = { 'prettier' },
         python = python_formatters,
+        rust = rust_formatters,
+        rst = rust_formatters,
+        go = go_formatters,
+        golang = go_formatters,
       },
       format_on_save = function()
         if not format_is_enabled then

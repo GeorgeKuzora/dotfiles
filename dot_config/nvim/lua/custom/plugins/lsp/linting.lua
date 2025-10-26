@@ -5,6 +5,8 @@ return {
   config = function()
     local lint = require 'lint'
     local python_linters = {}
+    local rust_linters = {}
+    local go_linters = {}
 
     if vim.fn.executable('flake8') == 1 then
       table.insert(python_linters, 'flake8')
@@ -15,15 +17,23 @@ return {
     if vim.fn.executable('ruff') == 1 then
       table.insert(python_linters, 'ruff')
     end
+    if vim.fn.executable('clippy') == 1 then
+      table.insert(rust_linters, 'clippy')
+    end
+    if vim.fn.executable('clippy') == 1 then
+      table.insert(rust_linters, 'clippy')
+    end
+    if vim.fn.executable('golangci-lint') == 1 then
+      table.insert(go_linters, 'golangcilint')
+    end
 
     lint.linters_by_ft = {
-      javascript = { 'eslint_d' },
-      typescript = { 'eslint_d' },
-      javascriptreact = { 'eslint_d' },
-      typescriptreact = { 'eslint_d' },
-      svelte = { 'eslint_d' },
       python = python_linters,
       markdown = { 'markdownlint' },
+      rust = rust_linters,
+      rst = rust_linters,
+      go = go_linters,
+      golang = go_linters,
     }
 
     local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
