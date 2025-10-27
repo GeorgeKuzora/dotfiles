@@ -2,7 +2,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 for _, source in ipairs {
-  'custom.config',
+  'custom',
 } do
   local status_ok, fault = pcall(require, source)
   if not status_ok then

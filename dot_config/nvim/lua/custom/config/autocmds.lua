@@ -105,7 +105,7 @@ vim.api.nvim_create_autocmd("User", {
 -- Set filetype-specific settings
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup 'FourSpaceIndent',
-  pattern = { "python", "golang", "go" },
+  pattern = { "python", "golang", "go", "rust", "rst" },
   callback = function()
     vim.opt_local.tabstop = 4
     vim.opt_local.shiftwidth = 4

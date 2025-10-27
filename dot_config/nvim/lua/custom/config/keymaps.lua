@@ -57,38 +57,15 @@ km.set('i', '<c-u>', '<c-g>u<c-u>', { desc = 'Delete character' })
 km.set('i', '<c-w>', '<c-g>u<c-w>', { desc = 'Delete word' })
 
 -- DIAGNOSTICS
-km.set('n', '<leader>ld', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+km.set('n', '<leader>ld', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })dsfadf
 km.set('n', '<leader>lD', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- NVIM UI
-km.set({ 'n' }, '<leader>uo', function()
-  local current_path = vim.api.nvim_buf_get_name(0)
-  print(current_path)
-  vim.ui.open(current_path)
-end, { desc = 'Show file in xdg-open' })
-
-km.set('n', '<leader>uw', function()
-  local current_wrap = vim.api.nvim_get_option_value("wrap", { win = 0 })
-  vim.api.nvim_set_option_value("wrap", not current_wrap, { win = 0 })
-end, { desc = 'Toggle wrap' })
-
-km.set('n', '<leader>ud', function()
-  local new_lines = not vim.diagnostic.config().virtual_lines
-  local new_text = not vim.diagnostic.config().virtual_text
-  vim.diagnostic.config({ virtual_lines = new_lines, virtual_text = new_text })
-end, { desc = 'Toggle diagnostic virtual lines' })
-
-km.set('n', '<leader>uD', function()
-  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
-end, { desc = 'Toggle diagnostic' })
-
+km.set('n', '<leader>ud', function() vim.cmd.ToggleDiagnostics() end, { desc = 'Toggle diagnostics mode' })
+km.set('n', '<leader>ut', function() vim.cmd.ToggleDiagnosticsVisibility() end, { desc = 'Toggle diagnostics visibility' })dsfad
+km.set('n', '<leader>uD', function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end, { desc = 'Toggle diagnostic' })
+km.set('n', '<leader>uw', function() vim.cmd.ToggleWrap() end, { desc = 'Toggle wrap' })
+km.set('n', '<leader>uo', function() vim.cmd.XdgOpenFile() end, { desc = 'Show file in xdg-open' })
 km.set('n', '<leader>ux', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Set file as executable' })
 km.set('n', '<leader>un', ':noh<return><esc>', { desc = 'Escape highlight search' })
-
--- Copy Full File-Path
-km.set("n", "<leader>uy", function()
-  local path = vim.fn.expand("%:p")
-  vim.fn.setreg("+", path)
-  print("file:", path)
-end, { desc = 'Copy full file path' }
-)
+km.set('n', "<leader>uy", function() vim.cmd.CopyFilePath() end, { desc = 'Copy full file path' })
