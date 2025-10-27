@@ -197,5 +197,7 @@
     "target": "container",
     "shutterAction": "copy" // or "save", depending on your preference
 },
-"workbench.secondarySideBar.defaultVisibility": "hidden"
+"workbench.secondarySideBar.defaultVisibility": "hidden",
+"gitlab.duoAgentPlatform.enabled": false,
+"gitlens.mode.active": "review"
 }
