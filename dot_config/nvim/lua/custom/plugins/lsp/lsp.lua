@@ -28,7 +28,7 @@ return {
     servers = {
       'basedpyright',
       'gopls',
-      -- 'rust_analyzer', -- managed by rust plugin
+      'rust_analyzer',
       'html',
       'lua_ls',
       'docker_compose_language_service',
