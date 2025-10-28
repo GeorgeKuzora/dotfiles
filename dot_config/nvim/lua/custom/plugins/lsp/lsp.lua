@@ -2,16 +2,21 @@ return {
   'neovim/nvim-lspconfig',
   dependencies = {
     {
+      'williamboman/mason.nvim',
+      config = true,
+      dependencies = {
+        'WhoIsSethDaniel/mason-tool-installer.nvim',
+      },
+    },
+    {
       'j-hui/fidget.nvim',
       opts = {},
     },
     {
       'folke/lazydev.nvim',
-      ft = 'lua', -- only load on lua files
+      ft = 'lua',
       opts = {
         library = {
-          -- See the configuration section for more details
-          -- Load luvit types when the `vim.uv` word is found
           { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
         },
       },
@@ -45,15 +50,11 @@ return {
           },
         },
       },
-      -- pyrefly = {
-      --   cmd = { 'pyrefly', 'lsp' }
-      -- },
       html = { filetypes = { 'html', 'twig', 'hbs' } },
       lua_ls = {
         Lua = {
           workspace = {
             checkThirdParty = false,
-            -- make language server aware of runtime files
             library = {
               [vim.fn.expand '$VIMRUNTIME/lua'] = true,
               [vim.fn.stdpath 'config' .. '/lua'] = true,
@@ -75,14 +76,39 @@ return {
 
 
   config = function(_, opts)
+
+    -- MASON CONFIG
+
+    local mason = require 'mason'
+    local mason_tool_installer = require 'mason-tool-installer'
+
+    mason.setup {
+      PATH = "append",
+      ui = {
+        icons = {
+          package_installed = '✓',
+          package_pending = '➜',
+          package_uninstalled = '✗',
+        },
+      },
+    }
+
+    mason_tool_installer.setup {
+      ensure_installed = {
+        -- formatters
+        'isort',
+        -- linters
+        'stylelint',
+        'markdownlint',
+      },
+    }
+
     -- CAPABILITIES
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-
     capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities({}, false))
 
     -- LSP CONFIG
-
     local setup_servers = function(server_name, server_opts)
       vim.lsp.config( server_name, {
         capabilities = capabilities,
