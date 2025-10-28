@@ -1,5 +1,7 @@
 -- DIAGNOSTICS CONFIG
 
+local severity = vim.diagnostic.severity
+
 vim.diagnostic.config {
   virtual_text = true,
   update_in_insert = true,
@@ -10,27 +12,28 @@ vim.diagnostic.config {
     style = 'minimal',
     border = 'rounded',
     source = 'always',
-    header = '',
-    prefix = '',
+    header = 'Diagnostics',
+    prefix = '●',
   },
   signs = {
+    enabled = true,
     text = {
-      [vim.diagnostic.severity.ERROR] = ' ',
-      [vim.diagnostic.severity.WARN] = ' ',
-      [vim.diagnostic.severity.HINT] = '󰠠 ',
-      [vim.diagnostic.severity.INFO] = ' ',
+      [severity.ERROR] = ' ',
+      [severity.WARN] = ' ',
+      [severity.HINT] = '󰠠 ',
+      [severity.INFO] = ' ',
     },
     numhl = {
-      [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
-      [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
-      [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
-      [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
+      [severity.ERROR] = 'DiagnosticSignError',
+      [severity.WARN] = 'DiagnosticSignWarn',
+      [severity.HINT] = 'DiagnosticSignHint',
+      [severity.INFO] = 'DiagnosticSignInfo',
     },
     linehl = {
-      [vim.diagnostic.severity.ERROR] = 'DiagnosticLineBackgroundError',
-      [vim.diagnostic.severity.WARN] = 'DiagnosticLineBackgroundWarn',
-      [vim.diagnostic.severity.HINT] = 'DiagnosticLineBackgroundHint',
-      [vim.diagnostic.severity.INFO] = 'DiagnosticLineBackgroundInfo',
+      [severity.ERROR] = 'DiagnosticLineBackgroundError',
+      [severity.WARN] = 'DiagnosticLineBackgroundWarn',
+      [severity.HINT] = 'DiagnosticLineBackgroundHint',
+      [severity.INFO] = 'DiagnosticLineBackgroundInfo',
     },
   },
 }
