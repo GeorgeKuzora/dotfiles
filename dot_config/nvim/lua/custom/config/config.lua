@@ -1,6 +1,24 @@
 -- DIAGNOSTICS CONFIG
 
-local severity = vim.diagnostic.severity
+local sv = vim.diagnostic.severity
+
+local function DiagnosticPrefix(diagnostic, i, total)
+  local severity = diagnostic.severity
+  local hl_group = 'Normal'
+
+  if severity == sv.ERROR then
+    hl_group = 'DiagnosticSignError'
+  elseif severity == sv.WARN then
+    hl_group = 'DiagnosticSignWarn'
+  elseif severity == sv.INFO then
+    hl_group = 'DiagnosticSignInfo'
+  elseif severity == sv.HINT then
+    hl_group = 'DiagnosticSignHint'
+  end
+
+  local prefix = string.format('%d/%d ', i, total)
+  return prefix, hl_group
+end
 
 vim.diagnostic.config {
   virtual_text = true,
@@ -11,29 +29,29 @@ vim.diagnostic.config {
     focused = false,
     style = 'minimal',
     border = 'rounded',
-    source = 'always',
+    source = true,
     header = '',
-    prefix = '● ',
+    prefix = DiagnosticPrefix,
   },
   signs = {
     enabled = true,
     text = {
-      [severity.ERROR] = ' ',
-      [severity.WARN] = ' ',
-      [severity.HINT] = '󰠠 ',
-      [severity.INFO] = ' ',
+      [sv.ERROR] = ' ',
+      [sv.WARN] = ' ',
+      [sv.HINT] = '󰠠 ',
+      [sv.INFO] = ' ',
     },
     numhl = {
-      [severity.ERROR] = 'DiagnosticSignError',
-      [severity.WARN] = 'DiagnosticSignWarn',
-      [severity.HINT] = 'DiagnosticSignHint',
-      [severity.INFO] = 'DiagnosticSignInfo',
+      [sv.ERROR] = 'DiagnosticSignError',
+      [sv.WARN] = 'DiagnosticSignWarn',
+      [sv.HINT] = 'DiagnosticSignHint',
+      [sv.INFO] = 'DiagnosticSignInfo',
     },
     linehl = {
-      [severity.ERROR] = 'DiagnosticLineBackgroundError',
-      [severity.WARN] = 'DiagnosticLineBackgroundWarn',
-      [severity.HINT] = 'DiagnosticLineBackgroundHint',
-      [severity.INFO] = 'DiagnosticLineBackgroundInfo',
+      [sv.ERROR] = 'DiagnosticLineBackgroundError',
+      [sv.WARN] = 'DiagnosticLineBackgroundWarn',
+      [sv.HINT] = 'DiagnosticLineBackgroundHint',
+      [sv.INFO] = 'DiagnosticLineBackgroundInfo',
     },
   },
 }
