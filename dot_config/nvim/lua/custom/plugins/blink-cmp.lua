@@ -5,7 +5,7 @@ return {
     'rafamadriz/friendly-snippets',
     'folke/lazydev.nvim',
   },
-  version = 'v0.*',
+  version = 'v1.*',
   opts = {
     keymap = {
       preset = 'super-tab', -- 'default'
