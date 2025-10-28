@@ -12,8 +12,8 @@ vim.diagnostic.config {
     style = 'minimal',
     border = 'rounded',
     source = 'always',
-    header = 'Diagnostics',
-    prefix = '●',
+    header = '',
+    prefix = '● ',
   },
   signs = {
     enabled = true,
