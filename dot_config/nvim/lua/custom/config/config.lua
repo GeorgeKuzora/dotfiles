@@ -2,7 +2,7 @@
 
 local sv = vim.diagnostic.severity
 
-local function DiagnosticPrefix(diagnostic, i, total)
+local function diagnostic_prefix(diagnostic, i, total)
   local severity = diagnostic.severity
   local hl_group = 'Normal'
 
@@ -31,7 +31,7 @@ vim.diagnostic.config {
     border = 'rounded',
     source = true,
     header = '',
-    prefix = DiagnosticPrefix,
+    prefix = diagnostic_prefix,
   },
   signs = {
     enabled = true,
