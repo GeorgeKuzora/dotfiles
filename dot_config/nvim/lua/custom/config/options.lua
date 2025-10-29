@@ -68,6 +68,7 @@ opt.tabpagemax = 50 -- Maximum number of tab pages that can be opened from the c
 opt.errorbells = false -- Disable beep on errors.
 opt.visualbell = true -- Flash the screen instead of beeping on errors.
 opt.title = true -- set the window’s title, reflecting the file currently being edited.
+vim.o.winborder = 'rounded'
 -- folding
 opt.foldenable = true -- enable fold for nvim-ufo
 opt.foldmethod = 'manual' -- Fold based on manual selection.
