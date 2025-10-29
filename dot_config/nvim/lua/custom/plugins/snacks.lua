@@ -37,7 +37,13 @@ return {
           hl = 'SnacksIndentScope',
         },
       },
-      picker = {},
+      picker = {
+        sources = {
+          explorer = {
+            layout = { layout = { position = "right" } },
+          },
+        },
+      },
       explorer = {},
       dashboard = {},
       toggle = {},
