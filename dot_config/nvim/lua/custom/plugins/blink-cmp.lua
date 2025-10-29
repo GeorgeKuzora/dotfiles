@@ -26,7 +26,7 @@ return {
       },
     },
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer' },
+      default = { 'lsp', 'path', 'snippets', 'buffer', 'omni' },
       providers = {
         cmdline = {
           -- ignores cmdline completions when executing shell commands
