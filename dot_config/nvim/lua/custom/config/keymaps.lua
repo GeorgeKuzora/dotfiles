@@ -63,6 +63,7 @@ km.set('n', '<leader>lD', vim.diagnostic.setloclist, { desc = 'Open diagnostics 
 -- NVIM UI
 km.set('n', '<leader>ud', function() vim.cmd.ToggleDiagnostics() end, { desc = 'Toggle diagnostics mode' })
 km.set('n', '<leader>ut', function() vim.cmd.ToggleDiagnosticsVisibility() end, { desc = 'Toggle diagnostics visibility' })
+km.set('n', '<leader>ue', function() vim.diagnostic.hide(nil, 0) end, { desc = 'Hide diagnostic decorations' })
 km.set('n', '<leader>uD', function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end, { desc = 'Toggle diagnostic' })
 km.set('n', '<leader>uw', function() vim.cmd.ToggleWrap() end, { desc = 'Toggle wrap' })
 km.set('n', '<leader>uo', function() vim.cmd.XdgOpenFile() end, { desc = 'Show file in xdg-open' })
