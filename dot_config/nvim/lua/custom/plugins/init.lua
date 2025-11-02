@@ -14,9 +14,4 @@ return {
     'j-hui/fidget.nvim',
     opts = {},
   },
-  {
-    'catgoose/nvim-colorizer.lua',
-    event = 'BufReadPre',
-    opts = {},
-  },
 }
