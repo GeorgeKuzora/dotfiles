@@ -20,9 +20,6 @@ return {
     if vim.fn.executable('clippy') == 1 then
       table.insert(rust_linters, 'clippy')
     end
-    if vim.fn.executable('clippy') == 1 then
-      table.insert(rust_linters, 'clippy')
-    end
     if vim.fn.executable('golangci-lint') == 1 then
       table.insert(go_linters, 'golangcilint')
     end
