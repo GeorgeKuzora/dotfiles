@@ -16,8 +16,8 @@ for _, server_name in ipairs(servers) do
   vim.lsp.enable(server_name, true)
 end
 
-vim.api.nvim_create_autocmd("LspAttach", {
-  group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = AutocmdGroup 'UserLspConfig',
   callback = function(event)
     vim.lsp.inlay_hint.enable(false)
 
