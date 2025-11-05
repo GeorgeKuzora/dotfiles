@@ -25,18 +25,17 @@ return {
       end
 
       local function lsp_server_name()
-        local clients = vim.lsp.get_clients()
-        if next(clients) == nil then
+        local clients = vim.lsp.get_clients { bufnr = 0 }
+        if not next(clients) then
           return
         end
-        local msg = ''
-        for _, client in ipairs(clients) do
-          msg = msg .. ', ' .. client.name
+
+        local names = {}
+        for i, client in ipairs(clients) do
+          names[i] = client.name
         end
-        if #msg > 0 then
-          msg = string.sub(msg, 3, #msg)
-          return msg
-        end
+
+        return table.concat(names, ', ')
       end
 
       lualine.setup {

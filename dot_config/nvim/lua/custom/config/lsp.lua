@@ -1,10 +1,28 @@
+-- LSP CONFIG
+
+local servers = {
+  'basedpyright',
+  'gopls',
+  'rust_analyzer',
+  'html',
+  'lua_ls',
+  'docker_compose_language_service',
+  'dockerls',
+  'marksman',
+  'typos_lsp',
+}
+
+for _, server_name in ipairs(servers) do
+  vim.lsp.enable(server_name, true)
+end
+
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-  callback = function(ev)
+  callback = function(event)
     vim.lsp.inlay_hint.enable(false)
 
     local nmap = function(keys, func, desc)
-      vim.keymap.set('n', keys, func, { buffer = ev.buf, silent = true, desc = desc })
+      vim.keymap.set('n', keys, func, { buffer = event.buf, silent = true, desc = desc })
     end
 
     nmap('grn', vim.lsp.buf.rename, 'Rename symbol')

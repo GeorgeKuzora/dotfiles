@@ -1,4 +1,5 @@
 return {
+  'neovim/nvim-lspconfig',
   'onsails/lspkind.nvim',
   'tpope/vim-sleuth',
   'rafamadriz/friendly-snippets',
