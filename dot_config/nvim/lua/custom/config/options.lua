@@ -12,9 +12,7 @@ g.maplocalleader = " " -- Set local leader key (NEW)
 opt.viewoptions:remove 'curdir' -- disable saving current directory with views
 opt.shortmess:append { s = true, I = true, W = true, c = true, C = true } -- disable search count wrap and startup messages
 opt.backspace:append { 'nostop' } -- don't stop backspace at insert
-if fn.has 'nvim-0.9' == 1 then
-  opt.diffopt:append 'linematch:60' -- enable line match diff algorithm
-end
+opt.diffopt:append 'linematch:60' -- enable line match diff algorithm
 opt.grepprg = 'rg --vimgrep --smart-case --follow' -- Better grep command
 opt.path:append("**") -- include subdirectories in search
 
