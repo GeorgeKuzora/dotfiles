@@ -2,8 +2,8 @@
 
 local servers = {
   -- 'basedpyright',
-  -- 'pyright',
-  'pyrefly',
+  -- 'pyrefly',
+  'pyright',
   'gopls',
   'rust_analyzer',
   'html',
@@ -49,5 +49,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, 'Add workspace folder')
     nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Remove workspace folder')
     nmap('<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, 'List workspace folders')
+
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities({}, false))
+    vim.lsp.config('*', { capabilities = capabilities })
   end,
 })
