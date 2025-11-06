@@ -41,17 +41,17 @@ vim.diagnostic.config {
       [sv.HINT] = '󰠠 ',
       [sv.INFO] = ' ',
     },
-    numhl = {
-      [sv.ERROR] = 'DiagnosticSignError',
-      [sv.WARN] = 'DiagnosticSignWarn',
-      [sv.HINT] = 'DiagnosticSignHint',
-      [sv.INFO] = 'DiagnosticSignInfo',
-    },
-    linehl = {
-      [sv.ERROR] = 'DiagnosticLineBackgroundError',
-      [sv.WARN] = 'DiagnosticLineBackgroundWarn',
-      [sv.HINT] = 'DiagnosticLineBackgroundHint',
-      [sv.INFO] = 'DiagnosticLineBackgroundInfo',
-    },
+    -- numhl = {
+    --   [sv.ERROR] = 'DiagnosticSignError',
+    --   [sv.WARN] = 'DiagnosticSignWarn',
+    --   [sv.HINT] = 'DiagnosticSignHint',
+    --   [sv.INFO] = 'DiagnosticSignInfo',
+    -- },
+    -- linehl = {
+    --   [sv.ERROR] = 'DiagnosticLineBackgroundError',
+    --   [sv.WARN] = 'DiagnosticLineBackgroundWarn',
+    --   [sv.HINT] = 'DiagnosticLineBackgroundHint',
+    --   [sv.INFO] = 'DiagnosticLineBackgroundInfo',
+    -- },
   },
 }

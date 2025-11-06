@@ -1,7 +1,9 @@
 -- LSP CONFIG
 
 local servers = {
-  'basedpyright',
+  -- 'basedpyright',
+  -- 'pyright',
+  'pyrefly',
   'gopls',
   'rust_analyzer',
   'html',

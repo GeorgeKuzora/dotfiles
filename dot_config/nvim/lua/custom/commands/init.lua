@@ -1,6 +1,0 @@
-require 'custom.commands.toggle_diagnostics_type'
-require 'custom.commands.open_file_with_system_app'
-require 'custom.commands.toggle_wrap'
-require 'custom.commands.copy_file_path'
-require 'custom.commands.toggle_diagnostics_visibility'
-require 'custom.commands.format_with_lsp'
