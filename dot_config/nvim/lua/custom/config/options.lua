@@ -16,9 +16,6 @@ opt.diffopt:append 'linematch:60' -- enable line match diff algorithm
 opt.grepprg = 'rg --vimgrep --smart-case --follow' -- Better grep command
 opt.path:append("**") -- include subdirectories in search
 
--- Enable break indent
-o.breakindent = true
-
 -- Decrease update time
 o.updatetime = 250
 o.timeoutlen = 300
@@ -37,6 +34,7 @@ opt.showmatch = true -- Highlight matching brackets
 opt.matchtime = 2 -- How long to show matching bracket
 
 -- indentation
+o.breakindent = true -- Enable break indent
 opt.autoindent = true -- auto indention
 opt.smartindent = true -- smart indention
 opt.copyindent = true -- copy the previous indentation on autoindenting
