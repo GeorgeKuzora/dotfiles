@@ -17,7 +17,7 @@ return {
     },
     completion = {
       trigger = {
-        show_in_snippet = false,
+        show_in_snippet = true,
       },
       accept = { auto_brackets = { enabled = false } },
       documentation = {
