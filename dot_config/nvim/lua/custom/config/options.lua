@@ -45,6 +45,16 @@ opt.expandtab = true -- create spaces from tab
 opt.smarttab = true -- Insert “tabstop” number of spaces when the “tab” key is pressed.
 opt.tabstop = 4 -- Indent using four characters.
 opt.softtabstop = 4 -- Indent using four spaces.
+g.markdown_recommended_style = 0
+vim.g.python_indent = {
+  open_paren = 'shiftwidth()',
+  nested_paren = 'shiftwidth()',
+  continue = 'shiftwidth()',
+  closed_paren_align_last_line = 'v:true',
+  searchpair_timeout = 150,
+  disable_parentheses_indenting = 0,
+}
+
 -- lines
 opt.display = 'lastline' -- Always try to show a paragraph’s last line.
 opt.encoding = 'utf-8' -- Use an encoding that supports unicode.
@@ -149,8 +159,6 @@ opt.fillchars = {
 if fn.has 'nvim-0.10' == 1 then
   opt.smoothscroll = true
 end
--- Fix markdown indentation settings
-g.markdown_recommended_style = 0
 -- Performance improvements
 opt.redrawtime = 10000
 opt.maxmempattern = 20000

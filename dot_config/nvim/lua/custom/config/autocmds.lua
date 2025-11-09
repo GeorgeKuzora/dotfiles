@@ -84,10 +84,12 @@ local auto_group = AutocmdGroup 'Indent'
 
 vim.api.nvim_create_autocmd("FileType", {
   group = auto_group,
-  pattern = { "python", "py", "golang", "go", "rust", "rst", "rs" },
+  pattern = { "python", "py"},
   callback = function()
     vim.opt_local.tabstop = 4
     vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
+    vim.opt_local.expandtab = true
   end,
 })
 

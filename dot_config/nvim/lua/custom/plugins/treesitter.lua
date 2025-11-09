@@ -74,7 +74,7 @@ return {
           node_decremental = '<bs>',
         },
       },
-      indent = { enable = true, disable = { 'ruby' } },
+      indent = { enable = true, disable = { 'ruby', 'python' } },
       rainbow = {
         enable = true,
         disable = {}, -- list of languages you want to disable the plugin for
