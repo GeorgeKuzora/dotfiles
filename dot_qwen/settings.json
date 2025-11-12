@@ -1,10 +1,30 @@
 {
-  "preferredEditor": "neovim",
-  "theme": "Atom One",
-  "selectedAuthType": "openai",
-  "contextFileName": ["QWEN.md", "AGENTS.md", "AGENT.md", "CLAUDE.md", "GEMINI.md", ".rules"],
-  "vimMode": false,
-  "usageStatisticsEnabled": false,
-  "hideBanner": true,
-  "hideTips": true
+  "context": {
+    "fileName": [
+      "QWEN.md",
+      "AGENTS.md",
+      "AGENT.md",
+      "CLAUDE.md",
+      "GEMINI.md",
+      ".rules"
+    ]
+  },
+  "ui": {
+    "hideTips": true,
+    "hideBanner": true,
+    "theme": "Atom One"
+  },
+  "general": {
+    "preferredEditor": "neovim",
+    "vimMode": false
+  },
+  "security": {
+    "auth": {
+      "selectedType": "openai"
+    }
+  },
+  "privacy": {
+    "usageStatisticsEnabled": false
+  },
+  "$version": 2
 }
