@@ -5,7 +5,6 @@
 	ui = auto
 [core]
 	editor = nvim
-	pager = delta
 [init]
 	defaultBranch = main
 [pull]
@@ -13,9 +12,7 @@
 [fetch]
 	prune = true
 [diff]
-	external = difft
-    	colorMoved = default
-	; colorMoved = zebra ; if not using delta
+	colorMoved = zebra
 	algorithm = histogram
 [alias]
     	empty = "git commit --allow-empty"
@@ -26,11 +23,9 @@
 [log]
 	decorate = true
 	abbrevCommit = true
-[interactive]
-    	; diffFilter = delta --color-only
-    	; diffFilter = difft
-[delta]
-    	navigate = true    # use n and N to move between diff sections
-
 [merge]
     	conflictstyle = diff3
+[alias]
+    dl = -c diff.external=difft log -p --ext-diff
+    ds = -c diff.external=difft show --ext-diff
+    df = -c diff.external=difft diff
