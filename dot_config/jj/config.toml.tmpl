@@ -4,4 +4,5 @@ name = "GeorgiyKuzora"
 email = {{ .email | quote }}
 [ui]
 pager = ":builtin"
+diff-formatter = ["difft", "--color=always", "$left", "$right"]
 default-command = ["st"]
