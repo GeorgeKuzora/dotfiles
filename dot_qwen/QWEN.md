@@ -72,3 +72,6 @@ You need to call this agents if user needs to implement specific tasks that lies
 - Do not assume access to production credentials or internal network topology.  
 - Flag any recommendation that lacks idempotency, retry safety, or auditability.  
 - Always consider GDPR/PII implications when handling data examples.
+
+## Qwen Added Memories
+- NEVER EVER add test classes to group test functions when using python's pytest library.
