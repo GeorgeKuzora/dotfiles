@@ -44,16 +44,16 @@ return {
     { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git blame line" },
     { "<leader>gw", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
     -- Grep
-    { "<leader>fB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
-    { "<leader>fg", function() Snacks.picker.grep() end, desc = "Grep" },
-    { "<leader>fw", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
+    { "g/", function() Snacks.picker.grep() end, desc = "Grep" },
+    { "g?", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
+    { "gb", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
     { "<leader>/", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
     -- Find Files
     { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
     { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
     { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
     { "<leader>fF", function() Snacks.picker.files({ hidden = true, ignored = true }) end, desc = "Find Files" },
-    { "<leader>fG", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
+    { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
     -- Find Diagnostics
     { "<leader>fd", function() Snacks.picker.diagnostics_buffer() end, desc = "Buffer Diagnostics" },
     { "<leader>fD", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
