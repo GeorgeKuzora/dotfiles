@@ -38,6 +38,7 @@ set -gx OPENAI_API_KEY {{ .koronatech_api_key | quote }}
 set -gx OPENAI_BASE_URL "https://ai.kth.pro/api"
 set -gx OPENAI_HOST $OPENAI_BASE_URL
 set -gx OPENAI_MODEL Coder
+set -gx HOMEBREW_BUNDLE_FILE $HOME/.config/brewfile/Brewfile
 
 # PATH
 fish_add_path $PATH /home/linuxbrew/.linuxbrew/bin $GOPATH/bin $HOME/.local/bin /home/linuxbrew/.linuxbrew/opt/rustup/bin
