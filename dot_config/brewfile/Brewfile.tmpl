@@ -1,55 +1,72 @@
+tap "charmbracelet/tap"
+tap "sst/tap"
+brew "atuin"
+brew "bat"
+brew "block-goose-cli"
+brew "btop"
+brew "carapace"
+brew "chezmoi"
+brew "difftastic"
+brew "direnv"
+brew "eza"
+brew "fd"
+brew "fish"
+brew "fzf"
+brew "gcc"
+brew "gh"
+brew "git"
+brew "git-delta"
+brew "go"
+brew "go-task"
+brew "httpie"
+brew "jj"
+brew "jq"
+brew "just"
+brew "k9s"
+brew "kanata"
+brew "lazydocker"
+brew "lazygit"
+brew "lua"
+brew "luarocks"
+brew "mas"
+brew "neovim"
+brew "node"
+brew "parallel"
+brew "ripgrep"
+brew "rsync"
+brew "rustup"
+brew "starship"
+brew "stow"
+brew "tlrc"
+brew "tmux"
+brew "tokei"
+brew "unzip"
+brew "uv"
+brew "wget"
+brew "xclip"
+brew "xsel"
+brew "yazi"
+brew "zellij"
+brew "zoxide"
+brew "charmbracelet/tap/crush"
+brew "sst/tap/opencode"
+go "github.com/go-delve/delve/cmd/dlv"
+go "github.com/golangci/golangci-lint/cmd/golangci-lint"
+go "golang.org/x/tools/gopls"
 {{- if eq .chezmoi.os "darwin" }}
-mas
+brew "libmagic"
+brew "python@3.11"
+brew "werf"
+cask "appcleaner"
+cask "betterdisplay"
+cask "bitwarden"
+cask "captin"
+cask "ghostty@tip"
+cask "karabiner-elements"
+cask "kawa-app"
+cask "linearmouse"
+cask "meld"
+cask "orbstack"
+cask "visual-studio-code"
+cask "zed"
 {{- end }}
-atuin
-bat
-btop
-carapace
-chezmoi
-cpp
-crush
-difftastic
-direnv
-eza
-fd
-fish
-fzf
-gcc
-gh
-git
-git-delta
-go
-go-task
-golangci-lint
-httpie
-jj
-jq
-just
-k9s
-kanata
-lazydocker
-lazygit
-lua
-luajit
-luarocks
-make
-neovim
-node
-opencode
-parallel
-ripgrep
-rustup
-sqlite
-starship
-stow
-tmux
-tokei
-tree-sitter
-unzip
-uv
-wget
-xclip
-xsel
-yazi
-zellij
-zoxide
