@@ -2,6 +2,7 @@
 
 local servers = {
   -- 'basedpyright',
+  'docker_compose_language_service',
   'docker_language_server',
   'gopls',
   'html',
