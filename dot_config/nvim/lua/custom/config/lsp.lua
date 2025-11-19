@@ -2,15 +2,14 @@
 
 local servers = {
   -- 'basedpyright',
-  -- 'pyrefly',
-  'pyright',
+  'docker_language_server',
   'gopls',
-  'rust_analyzer',
   'html',
   'lua_ls',
-  'docker_compose_language_service',
-  'dockerls',
   'marksman',
+  -- 'pyrefly',
+  'pyright',
+  'rust_analyzer',
   'typos_lsp',
 }
 
