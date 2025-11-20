@@ -63,7 +63,7 @@ return {
       function ()
         require("trouble").close()
       end,
-      desc = 'Open todos in trouble',
+      desc = 'Close trouble',
     },
   },
 }
