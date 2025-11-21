@@ -172,6 +172,11 @@
       "command": "qwen",
       "args": ["--experimental-acp"],
       "env": {"OPENAI_API_KEY": {{ .koronatech_api_key | quote }} }
+    },
+    "OpenCode": {
+      "command": "opencode",
+      "args": ["acp"],
+      "env": {"OPENAI_API_KEY": {{ .koronatech_api_key | quote }} }
     }
   },
   "outline_panel": {
