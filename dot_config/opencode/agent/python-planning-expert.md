@@ -2,7 +2,7 @@
 description: Provides implementation plans and architectural guidance for Python backend and ML services.
 mode: subagent
 model: koronatech/Coder
-temperature: 0.55
+temperature: 0.0
 tools:
   write: false
   edit: false

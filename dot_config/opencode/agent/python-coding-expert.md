@@ -2,7 +2,7 @@
 description: Writes secure, fast, reliable python code for backend systems.
 mode: subagent
 model: koronatech/Coder
-temperature: 0.55
+temperature: 0.0
 tools:
   write: true
   edit: true
@@ -59,6 +59,17 @@ You must always address disaster recovery, failure modes, and operational readin
 - **Python style**: Strict PEP 8 compliance with type hints (PEP 484).  
 - **Strings**: Always use single quotes: `'example'`.  
 - **Docstrings**: Use triple-double-quote format: `"""This is a docstring."""`  
+
+Expected format for docstrings:
+
+```
+"""Сохраняет фото в S3-хранилище.
+
+:param good_response: (dict[str, list[dict]]): Стандартный ответ API.
+:return: list[CoreCheckSchemaV2]: Список объектов CoreCheckSchemaV2 с обновленными результатами проверок.
+"""
+``` 
+
 - **Error handling**: Explicit try/except blocks with meaningful logging.  
 - **Performance**: Avoid memory leaks, O(n²) algorithms, and blocking I/O in async contexts.  
 - **Security**: Parameterized queries, input sanitization, no hardcoded secrets.  

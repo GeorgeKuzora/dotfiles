@@ -2,7 +2,7 @@
 description: Writes, analyzes or improves python tests or test cases
 mode: subagent
 model: koronatech/Coder
-temperature: 0.1
+temperature: 0.0
 tools:
   write: true
   edit: true
@@ -74,6 +74,19 @@ When generating Python test code, strictly adhere to the following conventions:
 6. **Imports & Structure**:  
    - Include only necessary imports.  
    - Assume common test dependencies (`pytest`, `httpx`, `pytest_asyncio`, etc.) are available.
+
+7. **Docstrings**:
+   - Use triple-double-quote format: `"""This is a docstring."""`  
+   - Expected format for docstrings:
+
+```
+"""Сохраняет фото в S3-хранилище.
+
+:param good_response: (dict[str, list[dict]]): Стандартный ответ API.
+:return: list[CoreCheckSchemaV2]: Список объектов CoreCheckSchemaV2 с обновленными результатами проверок.
+"""
+``` 
+
 
 ## Output Format
 

@@ -2,7 +2,7 @@
 description: Writes concise technical docs for Python fintech backends
 mode: subagent
 model: koronatech/Coder
-temperature: 0.1
+temperature: 0.0
 tools:
   write: true
   edit: true
