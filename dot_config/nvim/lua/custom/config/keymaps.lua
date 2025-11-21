@@ -60,6 +60,9 @@ km.set('i', '<c-w>', '<c-g>u<c-w>', { desc = 'Delete word' })
 km.set('n', '<leader>ld', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 km.set('n', '<leader>lD', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
+-- QUICKFIX
+km.set('n', '<leader>qo', function() vim.cmd.copen() end, { desc = 'Open quickfix list' })
+
 -- NVIM UI
 km.set('n', '<leader>ud', function() vim.cmd.ToggleDiagnostics() end, { desc = 'Toggle diagnostics mode' })
 km.set('n', '<leader>ut', function() vim.cmd.ToggleDiagnosticsVisibility() end, { desc = 'Toggle diagnostics visibility' })
