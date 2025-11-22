@@ -1,6 +1,5 @@
 return {
   'stevearc/oil.nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = {},
   config = function()
     local o = require 'oil'
@@ -10,10 +9,11 @@ return {
         ['gl'] = 'actions.refresh',
         ['q'] = { "actions.close", mode = "n" },
       },
-      columns = { 'icon' },
+      columns = {},
       view_options = {
         show_hidden = true,
       },
+      cleanup_delay_ms = 0,
     }
 
     vim.keymap.set('n', '-', function()
