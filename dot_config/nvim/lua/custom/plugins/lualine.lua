@@ -1,7 +1,6 @@
 return {
   {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
     name = 'lualine',
     opts = {},
     config = function()
@@ -72,7 +71,6 @@ return {
             {
               'lsp_server_name',
               fmt = lsp_server_name,
-              icon = ' ',
             },
           },
           lualine_y = { 'progress' },
