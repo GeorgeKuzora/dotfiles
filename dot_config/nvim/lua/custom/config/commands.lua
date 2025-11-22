@@ -38,10 +38,11 @@ vim.api.nvim_create_user_command('XdgOpenFile', open_file_with_system_app, {
 -- TOGGLE DIAGNOSTICS MODES
 local diag_mode = 0
 local function toggle_diagnostics(opts)
-  -- Optional: handle bang (e.g., :ToggleDiagnostics!) to reset
+ -- Optional: handle bang (e.g., :ToggleDiagnostics!) to reset
   if opts.bang then
     diag_mode = -1
-    vim.diagnostic.config({ virtual_text = true, virtual_lines = false })
+    -- Reset to full default config (with format preserved!)
+    vim.diagnostic.config(DiagnosticConfig)
     vim.notify("Diagnostics: reset to default (full virtual text)", vim.log.levels.INFO)
     return
   end
@@ -49,15 +50,20 @@ local function toggle_diagnostics(opts)
   -- Cycle through 4 modes
   diag_mode = (diag_mode + 1) % 4
 
+  local mode_config
   if diag_mode == 0 then
-    vim.diagnostic.config({ virtual_text = true, virtual_lines = false })
+    mode_config = { virtual_text = { format = DiagnosticFormat }, virtual_lines = false }
   elseif diag_mode == 1 then
-    vim.diagnostic.config({ virtual_text = { current_line = true }, virtual_lines = false })
+    mode_config = { virtual_text = { current_line = true, format = DiagnosticFormat }, virtual_lines = false }
   elseif diag_mode == 2 then
-    vim.diagnostic.config({ virtual_text = false, virtual_lines = true })
+    mode_config = { virtual_text = false, virtual_lines = true }
   else -- diag_mode == 3
-    vim.diagnostic.config({ virtual_text = false, virtual_lines = { current_line = true } })
+    mode_config = { virtual_text = false, virtual_lines = { current_line = true } }
   end
+
+  -- Merge mode_config into the base MyDiagnosticConfig
+  local final_config = vim.tbl_deep_extend('force', DiagnosticConfig, mode_config)
+  vim.diagnostic.config(final_config)
 
   -- Notify user of current mode
   local mode_names = {
@@ -79,19 +85,17 @@ vim.api.nvim_create_user_command(
   }
 )
 
--- TOGGLE DIAGNOSTICS VISIBILITY
-local is_enabled = true  -- assume diagnostics start enabled (adjust if needed)
-local last_config = vim.deepcopy(vim.diagnostic.config())  -- capture initial state
+-- TOGGLE DIAGNOSTICS VISIBILITY (format-preserving)
+local diagnostics_visible = true
 
-local function toggle_diagnostics_visibility(opts)
-  if is_enabled then
-    last_config = vim.deepcopy(vim.diagnostic.config())
+local function toggle_diagnostics_visibility()
+  if diagnostics_visible then
     vim.diagnostic.config({ virtual_text = false, virtual_lines = false })
-    is_enabled = false
+    diagnostics_visible = false
     vim.notify("Diagnostics: hidden", vim.log.levels.INFO)
   else
-    vim.diagnostic.config(last_config)
-    is_enabled = true
+    vim.diagnostic.config(DiagnosticConfig)  -- always restore full known-good config
+    diagnostics_visible = true
     vim.notify("Diagnostics: restored", vim.log.levels.INFO)
   end
 end

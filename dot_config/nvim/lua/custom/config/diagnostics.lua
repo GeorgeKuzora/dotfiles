@@ -1,5 +1,15 @@
 -- DIAGNOSTICS CONFIG
 
+---@param diagnostic table
+---@return string
+DiagnosticFormat = function(diagnostic)
+  local msg = diagnostic.message
+  if diagnostic.source then
+    msg = string.format("%s: %s", diagnostic.source, msg)
+  end
+  return msg
+end
+
 local sv = vim.diagnostic.severity
 
 local function diagnostic_prefix(diagnostic, i, total)
@@ -20,8 +30,10 @@ local function diagnostic_prefix(diagnostic, i, total)
   return prefix, hl_group
 end
 
-vim.diagnostic.config {
-  virtual_text = true,
+DiagnosticConfig = {
+  virtual_text = {
+    format = DiagnosticFormat,
+  },
   update_in_insert = true,
   underline = true,
   severity_sort = true,
@@ -55,3 +67,5 @@ vim.diagnostic.config {
     -- },
   },
 }
+
+vim.diagnostic.config(DiagnosticConfig)
