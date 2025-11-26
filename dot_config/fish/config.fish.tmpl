@@ -21,9 +21,16 @@ set -gx MANPAGER 'nvim +Man!'
 set -gx MANWIDTH 999
 set -gx EDITOR $(which nvim)
 set -gx VISUAL $(which nvim)
-set -gx TERM xterm-ghostty
 set -gx COLORTERM truecolor
-set -gx TERMINAL $(which wezterm)
+{{- if eq .chezmoi.os "darwin" }}
+set -gx TERM xterm-ghostty
+set -gx TERMINAL $(which ghostty)
+{{- else if .chezmoi.os "linux" }}
+{{- if eq .chezmoi.osRelease.id "ubuntu" }}
+set -gx TERM xterm-256color
+set -gx TERMINAL $(which xterm)
+{{- end }}
+{{- end }}
 set -gx BROWSER $(which firefox)
 set -gx VIDEO $(which mpv)
 set -gx PAGER $(which less)
