@@ -48,6 +48,13 @@
   },
 {{- end }}
   {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "g o": "outline::Toggle",
+      "g shift-o": "project_symbols::Toggle"
+    }
+  },
+  {
     "context": "vim_mode == normal && !menu",
     "bindings": {
       "shift-y": ["workspace::SendKeystrokes", "y $"],
