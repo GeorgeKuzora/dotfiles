@@ -63,7 +63,6 @@ return {
         indent_blankline = {
           enabled = true,
         },
-        lsp_trouble = true,
         mason = true,
         neotest = true,
         nvim_surround = true,
