@@ -53,6 +53,8 @@ return {
       },
       integrations = {
         blink_cmp = true,
+        dap = true,
+        dap_ui = true,
         diffview = true,
         dropbar = {
           enabled = true,
@@ -60,9 +62,6 @@ return {
         },
         gitsigns = true,
         harpoon = true,
-        indent_blankline = {
-          enabled = true,
-        },
         mason = true,
         neotest = true,
         nvim_surround = true,
