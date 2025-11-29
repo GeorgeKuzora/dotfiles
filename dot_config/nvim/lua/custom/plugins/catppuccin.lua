@@ -83,6 +83,7 @@ return {
           DiagnosticSignHint = { bg = '#242B36' },
           SnacksIndentScope = { fg = colors.overlay0 },
           SnacksIndent = { fg = colors.surface0 },
+          DapStopped = { fg = colors.green },
         }
       end,
     },

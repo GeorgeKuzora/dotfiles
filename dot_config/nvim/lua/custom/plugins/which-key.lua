@@ -22,6 +22,7 @@ return {
       { '<leader>r', group = 'Trouble' },
       { '<leader>u', group = 'UI' },
       { '<leader>x', group = 'Debug' },
+      { '<leader>xB', group = 'Breakpoints' },
     },
   },
   keys = {
