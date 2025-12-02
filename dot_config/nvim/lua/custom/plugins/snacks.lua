@@ -32,12 +32,12 @@ return {
       },
     },
     input = {
-          win = {
-            relative = "cursor",
-            row = -3,
-            col = 0,
-            width = 30,
-          }
+      win = {
+        relative = "cursor",
+        row = -3,
+        col = 0,
+        width = 30,
+      }
     },
   },
   keys = {
