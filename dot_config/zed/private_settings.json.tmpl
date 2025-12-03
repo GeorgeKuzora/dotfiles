@@ -230,6 +230,20 @@
       }
     },
   },
+  "git_hosting_providers": [
+{{- if eq .email "g.kuzora@korona.net" }}
+    {
+      "provider": "gitlab",
+      "name": "Korona GitLab",
+      "base_url": "https://git.ftc.ru/"
+    },
+{{- end }}
+    {
+      "provider": "github",
+      "name": "GitHub",
+      "base_url": "https://github.com"
+    }
+  ],
   "lsp": {
     "gopls": {
       "initialization_options": {
