@@ -1,15 +1,15 @@
 -- LSP CONFIG
 
 local servers = {
-  -- 'basedpyright',
+  'basedpyright',
   'docker_compose_language_service',
   'docker_language_server',
   'gopls',
   'html',
   'lua_ls',
   'marksman',
-  -- 'pyrefly',
-  'pyright',
+  'pyrefly',
+  -- 'pyright',
   'rust_analyzer',
   'typos_lsp',
 }
