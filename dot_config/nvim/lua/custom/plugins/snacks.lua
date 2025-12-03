@@ -36,7 +36,7 @@ return {
         relative = "cursor",
         row = -3,
         col = 0,
-        width = 30,
+        width = 20,
       }
     },
   },
