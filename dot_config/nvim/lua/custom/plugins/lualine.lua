@@ -1,3 +1,35 @@
+local function show_macro_recording()
+  local recording_register = vim.fn.reg_recording()
+  if recording_register == '' then
+    return ''
+  else
+    return 'Recording @' .. recording_register
+  end
+end
+
+local function show_russian_keymap()
+  local keymap = vim.opt.iminsert:get()
+  if keymap == 1 then
+    return 'ru'
+  else
+    return
+  end
+end
+
+local function lsp_server_name()
+  local clients = vim.lsp.get_clients { bufnr = 0 }
+  if not next(clients) then
+    return
+  end
+
+  local names = {}
+  for i, client in ipairs(clients) do
+    names[i] = client.name
+  end
+
+  return table.concat(names, ', ')
+end
+
 return {
   {
     'nvim-lualine/lualine.nvim',
@@ -5,38 +37,6 @@ return {
     opts = {},
     config = function()
       local lualine = require 'lualine'
-
-      local function show_macro_recording()
-        local recording_register = vim.fn.reg_recording()
-        if recording_register == '' then
-          return ''
-        else
-          return 'Recording @' .. recording_register
-        end
-      end
-
-      local function show_russian_keymap()
-        local keymap = vim.opt.iminsert:get()
-        if keymap == 1 then
-          return 'ru'
-        else
-          return
-        end
-      end
-
-      local function lsp_server_name()
-        local clients = vim.lsp.get_clients { bufnr = 0 }
-        if not next(clients) then
-          return
-        end
-
-        local names = {}
-        for i, client in ipairs(clients) do
-          names[i] = client.name
-        end
-
-        return table.concat(names, ', ')
-      end
 
       lualine.setup {
         options = {
