@@ -8,13 +8,13 @@ return {
     local rust_linters = {}
     local go_linters = {}
 
-    if vim.fn.executable('flake8') == 1 then
+    if vim.fn.executable('./.venv/bin/flake8') == 1 then
       table.insert(python_linters, 'flake8')
     end
-    if vim.fn.executable('mypy') == 1 then
+    if vim.fn.executable('./.venv/bin/mypy') == 1 then
       table.insert(python_linters, 'mypy')
     end
-    if vim.fn.executable('ruff') == 1 then
+    if vim.fn.executable('./.venv/bin/ruff') == 1 then
       table.insert(python_linters, 'ruff')
     end
     if vim.fn.executable('clippy') == 1 then

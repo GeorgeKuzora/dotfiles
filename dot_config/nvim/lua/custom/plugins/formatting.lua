@@ -16,13 +16,13 @@ return {
     local rust_formatters = {}
     local go_formatters = {}
 
-    if vim.fn.executable('black') == 1 then
+    if vim.fn.executable('./.venv/bin/black') == 1 then
       table.insert(python_formatters, 'black')
     end
-    if vim.fn.executable('isort') == 1 then
+    if vim.fn.executable('./.venv/bin/isort') == 1 then
       table.insert(python_formatters, 'isort')
     end
-    if vim.fn.executable('ruff') == 1 then
+    if vim.fn.executable('./.venv/bin/ruff') == 1 then
       table.insert(python_formatters, 'ruff_format')
     end
     if vim.fn.executable('rustfmt') == 1 then
