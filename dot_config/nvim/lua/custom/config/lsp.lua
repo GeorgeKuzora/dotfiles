@@ -8,7 +8,7 @@ local servers = {
   'html',
   'lua_ls',
   'marksman',
-  'pyrefly',
+  -- 'pyrefly',
   -- 'pyright',
   'rust_analyzer',
   'typos_lsp',
