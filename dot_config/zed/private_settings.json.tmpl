@@ -104,81 +104,22 @@
   },
   "agent": {
     "enable_feedback": false,
-    "model_parameters": [
-      {
-        "provider": "openai",
-        "model": "Coder",
-        "temperature": 0.7
-      }
-    ],
-    "profiles": {
-      "devstral": {
-        "name": "Devstral",
-        "tools": {
-          "list_directory": true,
-          "diagnostics": false,
-          "grep": true,
-          "open": true,
-          "fetch": true,
-          "copy_path": false,
-          "now": true,
-          "find_path": true,
-          "edit_file": false,
-          "read_file": true
-        },
-        "enable_all_context_servers": false,
-        "context_servers": {}
-      },
-      "custom": {
-        "name": "Custom",
-        "tools": {
-                    "project_notifications": false,
-                    "thinking": false,
-                    "terminal": false,
-                    "move_path": false,
-                    "create_directory": false,
-                    "delete_path": false,
-                    "list_directory": true,
-                    "diagnostics": false,
-                    "grep": true,
-                    "open": true,
-                    "fetch": true,
-                    "copy_path": false,
-                    "now": true,
-                    "find_path": true,
-                    "edit_file": false,
-                    "read_file": true
-                },
-        "enable_all_context_servers": false,
-        "context_servers": {}
-      }
-    },
-    "default_profile": "write",
     "default_model": {
       "provider": "openai",
       "model": "Coder"
     },
-    "inline_assistant_model": {
-      "provider": "openai",
-      "model": "Coder"
-    },
-    "commit_message_model": {
-      "provider": "openai",
-      "model": "Coder"
-    },
-    "thread_summary_model": {
-      "provider": "openai",
-      "model": "Coder"
-    },
-    "dock": "right"
+    "default_profile": "ask",
+    "model_parameters": []
   },
   "agent_servers": {
     "Qwen Agent": {
+      "type": "custom",
       "command": "qwen",
       "args": ["--experimental-acp"],
       "env": {"OPENAI_API_KEY": {{ .koronatech_api_key | quote }} }
     },
     "OpenCode": {
+      "type": "custom",
       "command": "opencode",
       "args": ["acp"],
       "env": {"OPENAI_API_KEY": {{ .koronatech_api_key | quote }} }
