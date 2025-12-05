@@ -2,7 +2,7 @@ return {
   'mfussenegger/nvim-dap',
   event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
-    'williamboman/mason.nvim',
+    { "mason-org/mason.nvim", opts = {} },
     'jay-babu/mason-nvim-dap.nvim',
     'nvim-neotest/nvim-nio',
     -- Add your own debuggers here
