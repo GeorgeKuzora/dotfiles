@@ -52,17 +52,21 @@ fish_add_path $PATH /home/linuxbrew/.linuxbrew/bin $GOPATH/bin $HOME/.local/bin 
 fish_add_path $PATH  $HOME/.cargo/bin /opt/homebrew/bin /opt/homebrew/Cellar/rustup/1.28.2/bin $HOME/.lmstudio/bin
 
 # ABBREVIATION
+
 # Colorize grep output (good for log files)
 safe_abbr grep 'grep --color=auto'
 safe_abbr egrep 'egrep --color=auto'
 safe_abbr fgrep 'fgrep --color=auto'
+
 # Easier to read disk
 safe_abbr df 'df -h' # human-readable sizes
 safe_abbr free 'free -m' # show sizes in MB
+
 # Nvim
 safe_abbr vi nvim
 safe_abbr vim 'set -gx NVIM_APPNAME vim; nvim'
 safe_abbr neovim 'set -gx NVIM_APPNAME nvim; nvim'
+
 # Git
 safe_abbr gst 'git status'
 safe_abbr gl 'git log'
@@ -96,6 +100,7 @@ safe_abbr gmomn 'git merge origin/main'
 safe_abbr gmod 'git merge origin/dev'
 safe_abbr gmos 'git merge origin/staging'
 safe_abbr gmot 'git merge origin/test'
+
 # Jujutsu
 safe_abbr jc 'jj commit -m'
 safe_abbr jn 'jj new'
@@ -118,6 +123,7 @@ safe_abbr js 'jj squash'
 safe_abbr jr 'jj rebase'
 safe_abbr jR 'jj restore'
 safe_abbr ju 'jj undo'
+
 # Kubectl
 safe_abbr k 'kubectl'
 safe_abbr kg 'kubectl get'
@@ -132,39 +138,50 @@ safe_abbr kld 'kubectl logs deployments'
 safe_abbr kgs 'kubectl get services'
 safe_abbr kds 'kubectl describe services'
 safe_abbr kls 'kubectl logs services'
+
 # Poetry
 safe_abbr psh 'poetry shell'
 safe_abbr pi 'poetry install'
 safe_abbr pl 'poetry lock'
 safe_abbr pe 'poetry env'
+
 # Atuin
 safe_abbr asr 'atuin scripts run'
 
-# Other tools
+# Zellij
 safe_abbr zj zellij
 safe_abbr zja 'zellij a'
 safe_abbr zjs 'zellij -s'
+
+# Lazy
 safe_abbr lg lazygit
 safe_abbr lzg lazygit
 safe_abbr lzd lazydocker
+
+# ls commands
 safe_abbr ls 'ls --color=auto'
 safe_abbr ll 'ls -lavh --color=auto --group-directories-first' # show long listing of all except ".."
 safe_abbr ls 'eza --oneline'
 safe_abbr ll 'eza -la --color=auto --group-directories-first --icons --git --header' # show long listing of all except ".."
 safe_abbr tree 'eza --color=auto --group-directories-first --tree' # tree view
-safe_abbr cat bat
-safe_abbr pyal 'source .venv/bin/activate.fish'
-safe_abbr pd prevd
-safe_abbr nd nextd
-safe_abbr gtask go-task
-safe_abbr gotask go-task
-safe_abbr got go-task
-safe_abbr tsk go-task
-safe_abbr ai 'ssh -L 29841:localhost:9841 -p 3389 kuzora@gpu-lana01.well.ftc.ru'
-safe_abbr casper 'ssh kuzora@casper-admin.ml2.dp-k8s-test.ftc.ru -p30023'
-safe_abbr y yazi
+
+# Set TERM var
 safe_abbr set-ghostty 'set -gx TERM xterm-ghostty'
 safe_abbr set-256 'set -gx TERM xterm-256color'
+
+# Other tools
+safe_abbr pyal 'source .venv/bin/activate.fish'
+safe_abbr cat bat
+safe_abbr gotask go-task
+safe_abbr y yazi
+safe_abbr pd prevd
+safe_abbr nd nextd
+
+{{- if eq .email "g.kuzora@korona.net" }}
+# Koronatech
+safe_abbr lana 'kuzora@lana01.well.ftc.ru -p 3389'
+safe_abbr casper 'ssh kuzora@casper-admin.ml2.dp-k8s-test.ftc.ru -p30023'
+{{- end }}
 
 if status is-interactive
     fzf --fish | source
