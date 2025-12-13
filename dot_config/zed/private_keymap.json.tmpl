@@ -78,13 +78,21 @@
   {
     "context": "vim_mode == visual",
     "bindings": {
-      "shift-s": ["vim::PushAddSurrounds", {}]
+      "shift-s": "vim::PushAddSurrounds"
     }
   },
   {
     "context": "vim_mode == insert",
     "bindings": {
       "i i": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "((VimControl && !menu) || (!Editor && !Terminal))",
+    "bindings": {
+      "ctrl-w o": "pane::JoinAll",
+      "ctrl-w ctrl-o": "workspace::CloseInactiveTabsAndPanes",
+      "ctrl-w shift-o": "korkspace::CloseAllDocks"
     }
   }
 ]
