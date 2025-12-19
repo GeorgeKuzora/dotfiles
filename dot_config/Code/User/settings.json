@@ -84,14 +84,6 @@
   "gopls": {
     "ui.semanticTokens": true
   },
-  "catppuccin.workbenchMode": "flat",
-  "catppuccin.colorOverrides": {
-    "mocha": {
-      "base": "#181825",
-      "mantle": "#11111b",
-      "crust": "#11111b"
-    }
-  },
   "errorLens.fontStyleItalic": true,
   "markdownlint.config": {
 
@@ -135,7 +127,7 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "redhat.telemetry.enabled": false,
   "window.density.editorTabHeight": "compact",
-  "workbench.editor.showTabs": "none",
+  "workbench.editor.showTabs": "multiple",
   "python.analysis.diagnosticMode": "workspace",
   "explorer.confirmPasteNative": false,
   "files.autoSave": "afterDelay",
@@ -199,5 +191,7 @@
 },
 "workbench.secondarySideBar.defaultVisibility": "hidden",
 "gitlab.duoAgentPlatform.enabled": false,
-"gitlens.mode.active": "review"
+"gitlens.mode.active": "review",
+"catppuccin.bracketMode": "neovim",
+"catppuccin.workbenchMode": "flat"
 }
