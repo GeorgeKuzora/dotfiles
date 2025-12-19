@@ -193,5 +193,11 @@
 "gitlab.duoAgentPlatform.enabled": false,
 "gitlens.mode.active": "review",
 "catppuccin.bracketMode": "neovim",
-"catppuccin.workbenchMode": "flat"
+"catppuccin.workbenchMode": "flat",
+"kilo-code.allowedCommands": [
+  "git log",
+  "git diff",
+  "git show"
+],
+"kilo-code.deniedCommands": []
 }
