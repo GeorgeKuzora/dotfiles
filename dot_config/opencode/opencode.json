@@ -14,7 +14,7 @@
       }
     }
   },
-  "instructions": ["QWEN.md"],
+  "instructions": ["QWEN.md", "AGENTS.md", "AGENT.md"],
   "permission": {
     "edit": "ask",
     "bash": "ask",
