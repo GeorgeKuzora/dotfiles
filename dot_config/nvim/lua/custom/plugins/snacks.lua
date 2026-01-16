@@ -59,7 +59,7 @@ return {
     { "<leader>/", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
     -- Find Files
     { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
-    { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
+    { "<leader>fo", function() Snacks.picker.buffers() end, desc = "Find Opened Buffers" },
     { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
     { "<leader>fF", function() Snacks.picker.files({ hidden = true, ignored = true }) end, desc = "Find Files" },
     { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
