@@ -199,5 +199,8 @@
   "git diff",
   "git show"
 ],
-"kilo-code.deniedCommands": []
+"kilo-code.deniedCommands": [],
+"gitlab.duo.enabledWithoutGitlabProject": false,
+"gitlab.duoCodeSuggestions.openTabsContext": false,
+"gitlab.real-timeSecurityScan.scanFileOnSave": false
 }
