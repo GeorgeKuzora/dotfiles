@@ -31,11 +31,8 @@ alias gp='git pull'
 alias gP='git push'
 
 {{- if eq .email "g.kuzora@korona.net" }}
+{{- if eq .chezmoi.hostname "ubuntu" }}
 sudo ip link set eth0 mtu 1350
-{{- end }}
-
-{{- if eq .chezmoi.os "linux" }}
-{{- if eq .chezmoi.osRelease.id "ubuntu" }}
 fish -i
 {{- end }}
 {{- end }}

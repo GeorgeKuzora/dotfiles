@@ -15,7 +15,7 @@ in {
 {{- if eq .email "g.kuzora@korona.net" }}
       # pkgs.werf
 {{- else if eq .chezmoi.os "linux" }}
-{{- if eq .chezmoi.osRelease.id "fedora" }}
+{{- if eq .chezmoi.hostname "georgiy" -}}
       # pkgs.obsidian
 {{- end }}
 {{- end }}

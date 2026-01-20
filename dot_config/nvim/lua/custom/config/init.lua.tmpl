@@ -8,7 +8,7 @@ require 'custom.config.autocmds'
 require 'custom.config.commands'
 require 'custom.config.lazy'
 {{- if eq .chezmoi.os "linux" }}
-{{- if eq .chezmoi.osRelease.id "ubuntu" }}
+{{- if eq .chezmoi.hostname "ubuntu" }}
 require 'custom.config.clipboard'
 {{- end }}
 {{- end }}
