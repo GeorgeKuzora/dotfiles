@@ -23,18 +23,15 @@ return {
       },
     }
 
+    require('dap-go').setup( { delve = {} })
+    require('dap-python').setup '~/.local/share/nvim/mason/packages/debugpy/venv/bin/python'
+
     local sign = vim.fn.sign_define
     sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
     sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
     sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
     sign("DapStopped", { text = "→", texthl = "DapStopped", linehl = "", numhl = ""})
     sign("DapBreakpointRejected", { text = "", texthl = "DapBreakpointRejected", linehl = "", numhl = ""})
-
-    require('dap-go').setup( {
-      delve = {},
-    })
-
-    require('dap-python').setup '~/.local/share/nvim/mason/packages/debugpy/venv/bin/python'
 
     vim.keymap.set('n', '<leader>xb', dap.set_breakpoint, { desc = 'Debug: Set Breakpoint' })
     vim.keymap.set('n', '<leader>xBb', dap.toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })
