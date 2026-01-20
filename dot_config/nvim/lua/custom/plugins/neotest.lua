@@ -12,7 +12,7 @@ return {
     local neotest = require("neotest")
 
     local function getPytestArgs()
-            local envVarValue = os.getenv('VI_PYTEST_ARGS')
+            local envVarValue = os.getenv('PYTEST_ADDOPTS')
             if envVarValue == nil then
                 return {}
             end
