@@ -34,13 +34,13 @@ if status is-interactive
     set -gx TERMINAL $(which xterm)
     {{- end }}
     {{- end }}
-    set -gx BROWSER $(which firefox)
-    set -gx VIDEO $(which mpv)
+    set -gx BROWSER $(which xdg-open)
+    set -gx VIDEO $(which xdg-open)
     set -gx PAGER $(which less)
     set -gx SHELL $(which fish)
     set -gx OPENER $(which xdg-open)
-    set -gx READER $(which evince)
-    set -gx IMAGE $(which loupe)
+    set -gx READER $(which xdg-open)
+    set -gx IMAGE $(which xdg-open)
     set -gx STARSHIP_CONFIG $XDG_CONFIG_HOME/starship/starship.toml
     set -gx MISTRAL_API_KEY {{ .mistral_api_key | quote }}
     set -gx KORONATECH_API_KEY {{ .koronatech_api_key | quote }}
