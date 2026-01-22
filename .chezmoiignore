@@ -1,4 +1,5 @@
 ./README.md
+./.vimrc
 {{- if ne .chezmoi.os "linux" }}
 ./dot_bash_profile.tmpl
 ./dot_bashrc.tmpl
