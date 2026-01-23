@@ -15,6 +15,7 @@ $git_state\
 $git_metrics\
 [](fg:surface2 bg:surface1)\
 $package\
+$mise\
 $direnv\
 [](fg:surface1 bg:surface0)\
 $c\
@@ -122,6 +123,9 @@ disabled = false
 symbol = "󰏗"
 style = "fg:blue bold bg:surface1"
 format = '[ $symbol( $version)]($style)'
+
+[mise]
+disabled = false
 
 [direnv]
 allowed_msg = '󱇬'
