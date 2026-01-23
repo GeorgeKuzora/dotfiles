@@ -124,7 +124,11 @@ style = "fg:blue bold bg:surface1"
 format = '[ $symbol( $version)]($style)'
 
 [mise]
+symbol = ""
 style = "fg:blue bold bg:surface1"
+format = '[ $symbol $health]($style)'
+healthy_symbol = '󱇬'
+unhealthy_symbol = '󱘹'
 disabled = false
 
 [nodejs]
