@@ -16,7 +16,6 @@ $git_metrics\
 [](fg:surface2 bg:surface1)\
 $package\
 $mise\
-$direnv\
 [](fg:surface1 bg:surface0)\
 $c\
 $rust\
@@ -125,17 +124,7 @@ style = "fg:blue bold bg:surface1"
 format = '[ $symbol( $version)]($style)'
 
 [mise]
-disabled = false
-
-[direnv]
-allowed_msg = '󱇬'
-not_allowed_msg = '󱘹'
-denied_msg = ''
-loaded_msg = ''
-unloaded_msg = ''
-
 style = "fg:blue bold bg:surface1"
-format = '[ $loaded/$allowed]($style)'
 disabled = false
 
 [nodejs]
