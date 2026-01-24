@@ -1,0 +1,7 @@
+[tools]
+"pipx:basedpyright" = "latest"
+"pipx:debugpy" = "latest"
+"pipx:memray" = "latest"
+"pipx:pyrefly" = "latest"
+"pipx:pyright" = "latest"
+"pipx:ty" = "latest"
