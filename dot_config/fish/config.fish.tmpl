@@ -175,7 +175,6 @@ if status is-interactive
     # Other tools
     safe_abbr venv 'source .venv/bin/activate.fish --no-modify-path'
     safe_abbr cat bat
-    safe_abbr gotask go-task
     safe_abbr y yazi
     safe_abbr pd prevd
     safe_abbr nd nextd
@@ -191,7 +190,6 @@ if status is-interactive
     zoxide init fish | source
     starship init fish | source
     carapace _carapace | source
-    task --completion fish | source
     uv generate-shell-completion fish | source
     uvx --generate-shell-completion fish | source
 end
