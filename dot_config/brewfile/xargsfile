@@ -5,7 +5,6 @@ btop
 carapace
 chezmoi
 difftastic
-direnv
 eza
 fd
 fish
@@ -26,6 +25,7 @@ lazydocker
 lazygit
 lua
 luarocks
+mise
 neovim
 node
 parallel
