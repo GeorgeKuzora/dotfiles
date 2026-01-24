@@ -11,37 +11,32 @@ return {
       print('Setting autoformatting to: ' .. tostring(format_is_enabled))
     end, {})
 
+    local configs = {
+      { lang = 'python', name = 'black', path = './.venv/bin/black' },
+      { lang = 'python', name = 'isort', path = './.venv/bin/isort' },
+      { lang = 'python', name = 'ruff_format', path = './.venv/bin/ruff' },
+      { lang = 'rust', name = 'rustfmt', path = 'rustfmt' },
+      { lang = 'go', name = 'gofmt', path = 'gofmt' }
+    }
 
-    local python_formatters = {}
-    local rust_formatters = {}
-    local go_formatters = {}
+    local formatters = {}
 
-    if vim.fn.executable('./.venv/bin/black') == 1 then
-      table.insert(python_formatters, 'black')
-    end
-    if vim.fn.executable('./.venv/bin/isort') == 1 then
-      table.insert(python_formatters, 'isort')
-    end
-    if vim.fn.executable('./.venv/bin/ruff') == 1 then
-      table.insert(python_formatters, 'ruff_format')
-    end
-    if vim.fn.executable('rustfmt') == 1 then
-      table.insert(rust_formatters, 'rustfmt')
-    end
-    if vim.fn.executable('rustfmt') == 1 then
-      table.insert(python_formatters, 'rustfmt')
-    end
-    if vim.fn.executable('gofmt') == 1 then
-      table.insert(go_formatters, 'gofmt')
+    for _, config in ipairs(configs) do
+      if not formatters[config.lang] then
+        formatters[config.lang] = {}
+      end
+      if vim.fn.executable(config.path) == 1 then
+        table.insert(formatters[config.lang], config.name)
+      end
     end
 
     conform.setup {
       formatters_by_ft = {
-        python = python_formatters,
-        rust = rust_formatters,
-        rst = rust_formatters,
-        go = go_formatters,
-        golang = go_formatters,
+        python = formatters.python,
+        rust = formatters.rust,
+        rst = formatters.rust,
+        go = formatters.go,
+        golang = formatters.go,
       },
       format_on_save = function()
         if not format_is_enabled then

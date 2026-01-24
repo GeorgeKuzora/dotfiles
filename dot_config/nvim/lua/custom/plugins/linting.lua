@@ -4,33 +4,34 @@ return {
   event = { 'BufReadPre', 'BufNewFile' }, -- to disable, comment this out
   config = function()
     local lint = require 'lint'
-    local python_linters = {}
-    local rust_linters = {}
-    local go_linters = {}
 
-    if vim.fn.executable('./.venv/bin/flake8') == 1 then
-      table.insert(python_linters, 'flake8')
-    end
-    if vim.fn.executable('./.venv/bin/mypy') == 1 then
-      table.insert(python_linters, 'mypy')
-    end
-    if vim.fn.executable('./.venv/bin/ruff') == 1 then
-      table.insert(python_linters, 'ruff')
-    end
-    if vim.fn.executable('clippy') == 1 then
-      table.insert(rust_linters, 'clippy')
-    end
-    if vim.fn.executable('golangci-lint') == 1 then
-      table.insert(go_linters, 'golangcilint')
+    local configs = {
+      { lang = 'python', name = 'flake8', path = './.venv/bin/flake8' },
+      { lang = 'python', name = 'mypy', path = './.venv/bin/mypy' },
+      { lang = 'python', name = 'ruff', path = './.venv/bin/ruff' },
+      { lang = 'rust', name = 'clippy', path = 'clippy' },
+      { lang = 'go', name = 'golangcilint', path = 'golangci-lint' },
+      { lang = 'markdown', name = 'markdownlint', path = 'markdownlint' },
+    }
+
+    local linters = {}
+
+    for _, config in ipairs(configs) do
+      if not linters[config.lang] then
+        linters[config.lang] = {}
+      end
+      if vim.fn.executable(config.path) == 1 then
+        table.insert(linters[config.lang], config.name)
+      end
     end
 
     lint.linters_by_ft = {
-      python = python_linters,
-      markdown = { 'markdownlint' },
-      rust = rust_linters,
-      rst = rust_linters,
-      go = go_linters,
-      golang = go_linters,
+      python = linters.python,
+      markdown = linters.markdown,
+      rust = linters.rust,
+      rst = linters.rust,
+      go = linters.go,
+      golang = linters.go,
     }
 
     local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
