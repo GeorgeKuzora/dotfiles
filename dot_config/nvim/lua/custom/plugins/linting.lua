@@ -5,7 +5,7 @@ return {
   config = function()
     local lint = require 'lint'
 
-    local configs = {
+    local tools = {
       { lang = 'python', name = 'flake8', path = './.venv/bin/flake8' },
       { lang = 'python', name = 'mypy', path = './.venv/bin/mypy' },
       { lang = 'python', name = 'ruff', path = './.venv/bin/ruff' },
@@ -14,18 +14,7 @@ return {
       { lang = 'markdown', name = 'markdownlint', path = 'markdownlint' },
     }
 
-    local linters = {}
-
-    for _, config in ipairs(configs) do
-      if not linters[config.lang] then
-        linters[config.lang] = {}
-      end
-      if vim.fn.executable(config.path) == 1 then
-        table.insert(linters[config.lang], config.name)
-      end
-    end
-
-    lint.linters_by_ft = linters
+    lint.linters_by_ft = ExternalToolsConfig(tools)
 
     local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
 

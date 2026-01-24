@@ -11,7 +11,7 @@ return {
       print('Setting autoformatting to: ' .. tostring(format_is_enabled))
     end, {})
 
-    local configs = {
+    local tools = {
       { lang = 'python', name = 'black', path = './.venv/bin/black' },
       { lang = 'python', name = 'isort', path = './.venv/bin/isort' },
       { lang = 'python', name = 'ruff_format', path = './.venv/bin/ruff' },
@@ -19,19 +19,8 @@ return {
       { lang = 'go', name = 'gofmt', path = 'gofmt' }
     }
 
-    local formatters = {}
-
-    for _, config in ipairs(configs) do
-      if not formatters[config.lang] then
-        formatters[config.lang] = {}
-      end
-      if vim.fn.executable(config.path) == 1 then
-        table.insert(formatters[config.lang], config.name)
-      end
-    end
-
     conform.setup {
-      formatters_by_ft = formatters,
+      formatters_by_ft = ExternalToolsConfig(tools),
       format_on_save = function()
         if not format_is_enabled then
           return
