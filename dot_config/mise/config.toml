@@ -5,3 +5,7 @@
 "pipx:pyrefly" = "latest"
 "pipx:pyright" = "latest"
 "pipx:ty" = "latest"
+go = "latest"
+"aqua:golangci/golangci-lint" = "latest"
+"go:golang.org/x/tools/gopls" = "latest"
+"go:github.com/go-delve/delve/cmd/dlv" = "latest"
