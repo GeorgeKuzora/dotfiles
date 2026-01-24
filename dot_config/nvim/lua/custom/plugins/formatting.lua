@@ -31,13 +31,7 @@ return {
     end
 
     conform.setup {
-      formatters_by_ft = {
-        python = formatters.python,
-        rust = formatters.rust,
-        rst = formatters.rust,
-        go = formatters.go,
-        golang = formatters.go,
-      },
+      formatters_by_ft = formatters,
       format_on_save = function()
         if not format_is_enabled then
           return
@@ -57,6 +51,6 @@ return {
         async = false,
         timeout_ms = 1000,
       }
-    end, { desc = 'Format file or range (in visual mode)' })
+    end, { desc = 'Format file or range' })
   end,
 }

@@ -25,14 +25,7 @@ return {
       end
     end
 
-    lint.linters_by_ft = {
-      python = linters.python,
-      markdown = linters.markdown,
-      rust = linters.rust,
-      rst = linters.rust,
-      go = linters.go,
-      golang = linters.go,
-    }
+    lint.linters_by_ft = linters
 
     local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
 
