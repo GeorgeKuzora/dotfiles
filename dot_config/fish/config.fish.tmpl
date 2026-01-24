@@ -51,8 +51,8 @@ if status is-interactive
     set -gx HOMEBREW_BUNDLE_FILE $HOME/.config/brewfile/Brewfile
     
     # PATH
-    fish_add_path $PATH /home/linuxbrew/.linuxbrew/bin $GOPATH/bin $HOME/.local/bin /home/linuxbrew/.linuxbrew/opt/rustup/bin
-    fish_add_path $PATH  $HOME/.cargo/bin /opt/homebrew/bin /opt/homebrew/Cellar/rustup/1.28.2/bin $HOME/.lmstudio/bin
+    fish_add_path --path /home/linuxbrew/.linuxbrew/bin $GOPATH/bin $HOME/.local/bin /home/linuxbrew/.linuxbrew/opt/rustup/bin
+    fish_add_path --path $HOME/.cargo/bin /opt/homebrew/bin /opt/homebrew/Cellar/rustup/1.28.2/bin $HOME/.lmstudio/bin
     
     # ABBREVIATION
     
