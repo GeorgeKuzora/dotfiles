@@ -13,7 +13,6 @@ gcc
 gh
 git
 git-delta
-go
 httpie
 jj
 jq
@@ -31,7 +30,6 @@ parallel
 qwen-code
 ripgrep
 rsync
-rustup
 starship
 stow
 tlrc
