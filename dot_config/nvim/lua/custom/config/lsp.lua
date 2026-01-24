@@ -11,6 +11,7 @@ local servers = {
   -- 'pyrefly',
   'pyright',
   'rust_analyzer',
+  -- 'ty',
   'typos_lsp',
 }
 
