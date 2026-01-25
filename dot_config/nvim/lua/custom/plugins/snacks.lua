@@ -13,6 +13,7 @@ return {
     statuscolumn = { enabled = true },
     lazygit = { enabled = true },
     rename = { enabled = true },
+    dashboard = { enabled = true },
     indent = {
       indent = {
         priority = 1,
