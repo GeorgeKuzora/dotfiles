@@ -14,6 +14,9 @@
 [diff]
 	colorMoved = zebra
 	algorithm = histogram
+	tool = codediff
+[difftool "codediff"]
+	cmd = "nvim \"$LOCAL\" \"$REMOTE\" +\"CodeDiff file $LOCAL $REMOTE\""
 [alias]
     	empty = "git commit --allow-empty"
 [status]
