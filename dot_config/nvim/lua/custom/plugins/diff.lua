@@ -1,8 +1,11 @@
 return {
-  "esmuellert/codediff.nvim",
-  dependencies = { "MunifTanjim/nui.nvim" },
-  cmd = "CodeDiff",
-  keys = {
-    { '<leader>go', '<cmd>CodeDiff<cr>', desc = 'Toggle CodeDiff' },
+  'sindrets/diffview.nvim',
+  event = 'VeryLazy',
+  opts = {
+    view = {
+      merge_tool = {
+        layout = 'diff3_mixed',
+      },
+    },
   },
 }

@@ -55,6 +55,7 @@ return {
         blink_cmp = true,
         dap = true,
         dap_ui = true,
+        diffview = true,
         dropbar = {
           enabled = true,
           color_mode = true,
