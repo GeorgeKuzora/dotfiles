@@ -11,7 +11,6 @@ return {
       { '<leader>]', group = 'Next' },
       { '<leader>t', group = 'Tabs' },
       { '<leader>b', group = 'Buffers' },
-      { '<leader>e', group = 'Explorer' },
       { '<leader>f', group = 'Find' },
       { '<leader>g', group = 'Git' },
       { '<leader>h', group = 'Git Hunk', mode = { 'n', 'v' } },
