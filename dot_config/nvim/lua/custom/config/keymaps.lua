@@ -75,8 +75,8 @@ km.set('n', '<leader>un', ':noh<return><esc>', { desc = 'Escape highlight search
 km.set('n', "<leader>uy", function() vim.cmd.CopyFilePath() end, { desc = 'Copy full file path' })
 
 -- TABS
-km.set('n', '<leader>an', function() vim.cmd.tabnew() end, { desc = 'Create new tab' })
-km.set('n', '<leader>ac', function() vim.cmd.tabclose() end, { desc = 'Close current tab' })
-km.set('n', '<leader>ao', function() vim.cmd.tabonly() end, { desc = 'Close all other tabs' })
-km.set('n', '<leader>ah', function() vim.cmd.tabprevious() end, { desc = 'Go to previous tab' })
-km.set('n', '<leader>al', function() vim.cmd.tabnext() end, { desc = 'Go to next tab' })
+km.set('n', '<leader>tn', function() vim.cmd.tabnew() end, { desc = 'Create new tab' })
+km.set('n', '<leader>tc', function() vim.cmd.tabclose() end, { desc = 'Close current tab' })
+km.set('n', '<leader>to', function() vim.cmd.tabonly() end, { desc = 'Close all other tabs' })
+km.set('n', '[t', function() vim.cmd.tabprevious() end, { desc = 'Go to previous tab' })
+km.set('n', ']t', function() vim.cmd.tabnext() end, { desc = 'Go to next tab' })
