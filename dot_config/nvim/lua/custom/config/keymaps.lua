@@ -57,8 +57,8 @@ km.set('i', '<c-u>', '<c-g>u<c-u>', { desc = 'Delete character' })
 km.set('i', '<c-w>', '<c-g>u<c-w>', { desc = 'Delete word' })
 
 -- DIAGNOSTICS
-km.set('n', '<leader>ld', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-km.set('n', '<leader>lD', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+km.set('n', '<leader>kd', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+km.set('n', '<leader>kD', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- QUICKFIX
 km.set('n', '<leader>q', function() vim.cmd.copen() end, { desc = 'Open quickfix list' })

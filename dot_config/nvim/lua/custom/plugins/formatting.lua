@@ -33,8 +33,8 @@ return {
       end,
     }
 
-    vim.keymap.set('n', '<leader>lF', '<cmd>FormatOnSaveToggle<CR>', { desc = 'Toggle format on save' })
-    vim.keymap.set({ 'n', 'v' }, '<leader>lf', function()
+    vim.keymap.set('n', '<leader>kF', '<cmd>FormatOnSaveToggle<CR>', { desc = 'Toggle format on save' })
+    vim.keymap.set({ 'n', 'v' }, '<leader>kf', function()
       conform.format {
         lsp_fallback = true,
         async = false,

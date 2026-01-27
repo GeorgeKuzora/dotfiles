@@ -15,7 +15,7 @@ return {
       { '<leader>f', group = 'Find' },
       { '<leader>g', group = 'Git' },
       { '<leader>h', group = 'Git Hunk', mode = { 'n', 'v' } },
-      { '<leader>l', group = 'LSP' },
+      { '<leader>k', group = 'LSP' },
       { '<leader>s', group = 'Surround' },
       { '<leader>t', group = 'Test' },
       { '<leader>w', group = 'Workspace' },
@@ -27,7 +27,7 @@ return {
   },
   keys = {
     {
-      '<leader>k',
+      '<leader>y',
       function()
         require('which-key').show { global = false }
       end,

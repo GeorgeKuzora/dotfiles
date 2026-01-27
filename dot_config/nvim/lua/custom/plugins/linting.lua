@@ -25,7 +25,7 @@ return {
       end,
     })
 
-    vim.keymap.set('n', '<leader>li', function()
+    vim.keymap.set('n', '<leader>ki', function()
       lint.try_lint()
     end, { desc = 'Lint current buffer' })
   end,

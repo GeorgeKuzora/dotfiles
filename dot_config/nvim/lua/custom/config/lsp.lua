@@ -30,7 +30,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     nmap('grn', vim.lsp.buf.rename, 'Rename symbol')
     nmap('gra', vim.lsp.buf.code_action, 'Code action')
-    nmap('<leader>lv', function() vim.cmd.Format() end, 'Format buffer with LSP')
+    nmap('<leader>kv', function() vim.cmd.Format() end, 'Format buffer with LSP')
 
     if vim.lsp.inlay_hint then
       nmap('<leader>uh', function()
