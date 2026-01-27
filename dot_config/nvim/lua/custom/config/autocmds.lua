@@ -152,3 +152,13 @@ vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
 		vim.opt_local.cursorline = false
 	end,
 })
+
+-- Trim trailing whitespace on save
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = "*",
+  callback = function()
+  local cursor_pos = vim.api.nvim_win_get_cursor(0)
+  vim.cmd([[keeppatterns %s/\s\+$//e]])
+  vim.api.nvim_win_set_cursor(0, cursor_pos)
+  end,
+})
