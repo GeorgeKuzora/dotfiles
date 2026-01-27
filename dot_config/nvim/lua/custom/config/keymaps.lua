@@ -17,7 +17,6 @@ local km = vim.keymap
 -- NEOVIM QUALITY OF LIFE IMPROVEMENTS
 km.set({ 'n', 'v', 'x' }, '<Space>', '<Nop>', { silent = true, desc = 'Space do nothing' })
 km.set('i', 'ii', '<esc>', { desc = 'Escape insert mode' })
-km.set('n', 'z1', 'z=1<CR><CR>', { desc = 'Quick spell correction' })
 km.set('n', '<leader>*', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Change word under cursor in a buffer' })
 
 -- INDENTATION CHANGE
