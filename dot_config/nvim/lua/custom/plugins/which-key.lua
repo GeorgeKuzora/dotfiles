@@ -16,7 +16,6 @@ return {
       { '<leader>g', group = 'Git' },
       { '<leader>h', group = 'Git Hunk', mode = { 'n', 'v' } },
       { '<leader>k', group = 'LSP' },
-      { '<leader>s', group = 'Surround' },
       { '<leader>t', group = 'Test' },
       { '<leader>w', group = 'Workspace' },
       { '<leader>r', group = 'Trouble' },
