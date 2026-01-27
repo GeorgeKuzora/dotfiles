@@ -7,6 +7,7 @@ return {
     icons = { mappings = false },
     disable = { filetypes = { 'TelescopePrompt' } },
     spec = {
+      { '<leader>', group = 'Custom' },
       { '<leader>[', group = 'Previous' },
       { '<leader>]', group = 'Next' },
       { '<leader>t', group = 'Tabs' },
