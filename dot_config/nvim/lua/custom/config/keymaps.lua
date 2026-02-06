@@ -60,7 +60,8 @@ km.set('n', '<leader>kd', vim.diagnostic.open_float, { desc = 'Open floating dia
 km.set('n', '<leader>kD', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- QUICKFIX
-km.set('n', '<leader>q', function() vim.cmd.copen() end, { desc = 'Open quickfix list' })
+km.set('n', '<leader>qq', function() vim.cmd.copen() end, { desc = 'Open quickfix list' })
+km.set('n', '<leader>qw', function() vim.cmd.cclose() end, { desc = 'Open quickfix list' })
 
 -- NVIM UI
 km.set('n', '<leader>ud', function() vim.cmd.ToggleDiagnostics() end, { desc = 'Toggle diagnostics mode' })
