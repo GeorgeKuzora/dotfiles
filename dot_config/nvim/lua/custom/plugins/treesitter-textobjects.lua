@@ -58,10 +58,10 @@ return {
 
       -- MOVE
 
-      next_start = require("nvim-treesitter-textobjects.move").goto_next_start
-      next_end = require("nvim-treesitter-textobjects.move").goto_next_end
-      previous_start = require("nvim-treesitter-textobjects.move").goto_previous_start
-      previous_end = require("nvim-treesitter-textobjects.move").goto_previous_end
+      local next_start = require("nvim-treesitter-textobjects.move").goto_next_start
+      local next_end = require("nvim-treesitter-textobjects.move").goto_next_end
+      local previous_start = require("nvim-treesitter-textobjects.move").goto_previous_start
+      local previous_end = require("nvim-treesitter-textobjects.move").goto_previous_end
 
       km({ "n", "x", "o" }, "]m", function() next_start("@function.outer", "textobjects") end, { desc = 'Next function start' })
       km({ "n", "x", "o" }, "]M", function() next_end("@function.outer", "textobjects") end, { desc = 'Next function end' })

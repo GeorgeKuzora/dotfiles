@@ -104,7 +104,7 @@ return {
     -- Scope
     { '<leader>;', function() Snacks.scope.jump() end, desc = 'Go to start of current scope', mode = { 'n', 'v' } },
     -- Words
-    { ']w', function() Snacks.words.jump(1, true) end, desc = 'Next word', mode = { 'n', 'v', 'x' } },
-    { '[w', function() Snacks.words.jump(-1, true) end, desc = 'Previous word', mode = { 'n', 'v', 'x' } },
+    { ']w', function() Snacks.words.jump(1, true) end, desc = 'Next word', mode = { 'n', 'o', 'x' } },
+    { '[w', function() Snacks.words.jump(-1, true) end, desc = 'Previous word', mode = { 'n', 'o', 'x' } },
   },
 }
