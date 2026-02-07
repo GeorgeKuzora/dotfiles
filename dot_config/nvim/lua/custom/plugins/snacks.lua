@@ -7,6 +7,7 @@ return {
   priority = 1000,
   lazy = false,
   opts = {
+    words = { enabled = true },
     picker = { enabled = true },
     scope = { enabled = true },
     statuscolumn = { enabled = true },
@@ -102,5 +103,8 @@ return {
     { "gS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
     -- Scope
     { '<leader>;', function() Snacks.scope.jump() end, desc = 'Go to start of current scope', mode = { 'n', 'v' } },
+    -- Words
+    { ']w', function() Snacks.words.jump(1, true) end, desc = 'Next word', mode = { 'n', 'v', 'x' } },
+    { '[w', function() Snacks.words.jump(-1, true) end, desc = 'Previous word', mode = { 'n', 'v', 'x' } },
   },
 }
