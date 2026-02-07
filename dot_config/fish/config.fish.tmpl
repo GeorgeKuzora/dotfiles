@@ -4,10 +4,10 @@ if status is-interactive
     fish_config theme choose "Catppuccin Mocha"
 
     set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense'
-    
+
     # KEYBINDINGS
     set -g fish_key_bindings fish_hybrid_key_bindings
-    
+
     # CURSOR BEHAVIOR
     set fish_cursor_default block
     set fish_cursor_insert line
@@ -16,7 +16,7 @@ if status is-interactive
     set fish_cursor_external line
     set fish_cursor_visual block
     set -g fish_vi_force_cursor 1
-    
+
     # ENV VARIABLES
     set -gx XDG_CONFIG_HOME $HOME/.config
     set -gx GOPATH $HOME/go
@@ -49,27 +49,27 @@ if status is-interactive
     set -gx OPENAI_HOST $OPENAI_BASE_URL
     set -gx OPENAI_MODEL Coder
     set -gx HOMEBREW_BUNDLE_FILE $HOME/.config/brewfile/Brewfile
-    
+
     # PATH
     fish_add_path --path /home/linuxbrew/.linuxbrew/bin $GOPATH/bin $HOME/.local/bin /home/linuxbrew/.linuxbrew/opt/rustup/bin
     fish_add_path --path $HOME/.cargo/bin /opt/homebrew/bin /opt/homebrew/Cellar/rustup/1.28.2/bin $HOME/.lmstudio/bin
-    
+
     # ABBREVIATION
-    
+
     # Colorize grep output (good for log files)
     safe_abbr grep 'grep --color=auto'
     safe_abbr egrep 'egrep --color=auto'
     safe_abbr fgrep 'fgrep --color=auto'
-    
+
     # Easier to read disk
     safe_abbr df 'df -h' # human-readable sizes
     safe_abbr free 'free -m' # show sizes in MB
-    
+
     # Nvim
     safe_abbr vi nvim
     safe_abbr vim 'set -gx NVIM_APPNAME vim; nvim'
     safe_abbr neovim 'set -gx NVIM_APPNAME nvim; nvim'
-    
+
     # Git
     safe_abbr gst 'git status'
     safe_abbr gl 'git log'
@@ -103,7 +103,7 @@ if status is-interactive
     safe_abbr gmod 'git merge origin/dev'
     safe_abbr gmos 'git merge origin/staging'
     safe_abbr gmot 'git merge origin/test'
-    
+
     # Jujutsu
     safe_abbr jc 'jj commit -m'
     safe_abbr jn 'jj new'
@@ -126,7 +126,7 @@ if status is-interactive
     safe_abbr jr 'jj rebase'
     safe_abbr jR 'jj restore'
     safe_abbr ju 'jj undo'
-    
+
     # Kubectl
     safe_abbr k 'kubectl'
     safe_abbr kg 'kubectl get'
@@ -141,44 +141,45 @@ if status is-interactive
     safe_abbr kgs 'kubectl get services'
     safe_abbr kds 'kubectl describe services'
     safe_abbr kls 'kubectl logs services'
-    
+
     # Poetry
     safe_abbr psh 'poetry shell'
     safe_abbr pi 'poetry install'
     safe_abbr pl 'poetry lock'
     safe_abbr pe 'poetry env'
-    
+
     # Atuin
     safe_abbr asr 'atuin scripts run'
-    
+
     # Zellij
     safe_abbr zj zellij
     safe_abbr zja 'zellij a'
     safe_abbr zjs 'zellij -s'
-    
+
     # Lazy
     safe_abbr lg lazygit
     safe_abbr lzg lazygit
     safe_abbr lzd lazydocker
-    
+
     # ls commands
     safe_abbr ls 'ls --color=auto'
     safe_abbr ll 'ls -lavh --color=auto --group-directories-first' # show long listing of all except ".."
     safe_abbr ls 'eza --oneline'
     safe_abbr ll 'eza -la --color=auto --group-directories-first --icons --git --header' # show long listing of all except ".."
     safe_abbr tree 'eza --color=auto --group-directories-first --tree' # tree view
-    
+
     # Set TERM var
     safe_abbr set-ghostty 'set -gx TERM xterm-ghostty'
     safe_abbr set-256 'set -gx TERM xterm-256color'
-    
+
     # Other tools
     safe_abbr venv 'source .venv/bin/activate.fish --no-modify-path'
     safe_abbr cat bat
     safe_abbr y yazi
+    safe_abbr op opencode
     safe_abbr pd prevd
     safe_abbr nd nextd
-    
+
     {{- if eq .email "g.kuzora@korona.net" }}
     # Koronatech
     safe_abbr lana 'set -gx TERM xterm-256color; ssh kuzora@lana01.well.ftc.ru -p 3389'
