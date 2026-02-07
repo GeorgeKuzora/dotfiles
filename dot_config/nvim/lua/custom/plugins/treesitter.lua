@@ -1,5 +1,4 @@
 return {
-  -- -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
   lazy = false,
   build = ':TSUpdate',
@@ -41,13 +40,16 @@ return {
       'vim',
       'vimdoc',
       'yaml',
-    },
+    }
 
     require('nvim-treesitter').install(filetypes)
 
     vim.api.nvim_create_autocmd('FileType', {
+      group = AutocmdGroup 'treesitter_start',
       pattern = filetypes,
-      callback = function() vim.treesitter.start() end,
+      callback = function()
+        vim.treesitter.start()
+      end
     })
-  end,
+  end
 }

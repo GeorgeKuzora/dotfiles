@@ -14,97 +14,98 @@ return {
     -- vim.g.no_ruby_maps = true
     -- vim.g.no_rust_maps = true
     -- vim.g.no_go_maps = true
-  end,
-  config = function()
-    require("nvim-treesitter-textobjects").setup {
-      select = {
-        enable = true,
-        lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-        keymaps = {
-          -- You can use the capture groups defined in textobjects.scm
-          ['ak'] = { query = '@block.outer', desc = 'around block' },
-          ['ik'] = { query = '@block.inner', desc = 'inside block' },
-          ['ac'] = { query = '@class.outer', desc = 'around class' },
-          ['ic'] = { query = '@class.inner', desc = 'inside class' },
-          ['a?'] = { query = '@conditional.outer', desc = 'around conditional' },
-          ['i?'] = { query = '@conditional.inner', desc = 'inside conditional' },
-          ['am'] = { query = '@function.outer', desc = 'around function ' },
-          ['im'] = { query = '@function.inner', desc = 'inside function ' },
-          ['af'] = { query = '@call.outer', desc = 'Select outer part of a function call' },
-          ['if'] = { query = '@call.inner', desc = 'Select inner part of a function call' },
-          ['al'] = { query = '@loop.outer', desc = 'around loop' },
-          ['il'] = { query = '@loop.inner', desc = 'inside loop' },
-          ['aa'] = { query = '@parameter.outer', desc = 'around argument' },
-          ['ia'] = { query = '@parameter.inner', desc = 'inside argument' },
-          ['a='] = { query = '@assignment.outer', desc = 'Select outer part of an assignment' },
-          ['i='] = { query = '@assignment.inner', desc = 'Select inner part of an assignment' },
-          ['R='] = { query = '@assignment.lhs', desc = 'Select left hand side of an assignment' },
-          ['r='] = { query = '@assignment.rhs', desc = 'Select right hand side of an assignment' },
-          ['a:'] = { query = '@property.outer', desc = 'Select outer part of an object property' },
-          ['i:'] = { query = '@property.inner', desc = 'Select inner part of an object property' },
-          ['R:'] = { query = '@property.lhs', desc = 'Select left part of an object property' },
-          ['r:'] = { query = '@property.rhs', desc = 'Select right part of an object property' },
-          ['a/'] = { query = '@comment.outer', desc = 'around comment' },
-          ['i/'] = { query = '@comment.inner', desc = 'inside comment' },
+    end,
+    config = function()
+      require("nvim-treesitter-textobjects").setup {
+        select = {
+          lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
         },
-      },
-      move = {
-        enable = true,
-        set_jumps = true,
-        goto_next_start = {
-          [']k'] = { query = '@block.outer', desc = 'Next block start' },
-          [']m'] = { query = '@function.outer', desc = 'Next function start' },
-          [']a'] = { query = '@parameter.inner', desc = 'Next argument start' },
-          [']c'] = { query = '@class.outer', desc = 'Next class start' },
-          [']f'] = { query = '@call.outer', desc = 'Next function call start' },
-          [']?'] = { query = '@conditional.outer', desc = 'Next conditional start' },
-          [']l'] = { query = '@loop.outer', desc = 'Next loop start' },
+        move = {
+          set_jumps = true, -- whether to set jumps in the jumplist
         },
-        goto_next_end = {
-          [']K'] = { query = '@block.outer', desc = 'Next block end' },
-          [']M'] = { query = '@function.outer', desc = 'Next function end' },
-          [']A'] = { query = '@parameter.inner', desc = 'Next argument end' },
-          [']C'] = { query = '@class.outer', desc = 'Next class end' },
-          [']F'] = { query = '@call.outer', desc = 'Next function call end' },
-          [']!'] = { query = '@conditional.outer', desc = 'Next conditional end' },
-          [']L'] = { query = '@loop.outer', desc = 'Next loop end' },
-        },
-        goto_previous_start = {
-          ['[k'] = { query = '@block.outer', desc = 'Previous block start' },
-          ['[m'] = { query = '@function.outer', desc = 'Previous function start' },
-          ['[a'] = { query = '@parameter.inner', desc = 'Previous argument start' },
-          ['[c'] = { query = '@class.outer', desc = 'Previous class start' },
-          ['[f'] = { query = '@call.outer', desc = 'Prev function call start' },
-          ['[?'] = { query = '@conditional.outer', desc = 'Prev conditional start' },
-          ['[l'] = { query = '@loop.outer', desc = 'Prev loop start' },
-        },
-        goto_previous_end = {
-          ['[K'] = { query = '@block.outer', desc = 'Previous block end' },
-          ['[M'] = { query = '@function.outer', desc = 'Previous function end' },
-          ['[A'] = { query = '@parameter.inner', desc = 'Previous argument end' },
-          ['[C'] = { query = '@class.outer', desc = 'Previous class end' },
-          ['[F'] = { query = '@call.outer', desc = 'Prev function call end' },
-          ['[!'] = { query = '@conditional.outer', desc = 'Prev conditional end' },
-          ['[L'] = { query = '@loop.outer', desc = 'Prev loop end' },
-        },
-      },
-      swap = {
-        enable = true,
-        swap_next = {
-          ['<leader>]k'] = { query = '@block.outer', desc = 'Swap next block' },
-          ['<leader>]m'] = { query = '@function.outer', desc = 'Swap next function' },
-          ['<leader>]a'] = { query = '@parameter.inner', desc = 'Swap next argument' },
-          ['<leader>]:'] = { query = '@property.outer', desc = 'Swap next property' },
-          ['<leader>]c'] = { query = '@class.outer', desc = 'Swap next class' },
-        },
-        swap_previous = {
-          ['<leader>[k'] = { query = '@block.outer', desc = 'Swap previous block' },
-          ['<leader>[m'] = { query = '@function.outer', desc = 'Swap previous function' },
-          ['<leader>[a'] = { query = '@parameter.inner', desc = 'Swap previous argument' },
-          ['<leader>[:'] = { query = '@property.outer', desc = 'Swap previous property' },
-          ['<leader>[c'] = { query = '@class.outer', desc = 'Swap previous class' },
-        },
-      },
-    }
-  end,
+      }
+
+      -- KEYMAPS
+
+      local km = vim.keymap.set
+
+      -- SELECT
+
+      local select = require "nvim-treesitter-textobjects.select".select_textobject
+
+      km({ "x", "o" }, "aj", function() select("@local.scope", "locals") end, { desc = 'Around scope' })
+
+      km({ "x", "o" }, "am", function() select("@function.outer", "textobjects") end, { desc = 'Around function' })
+      km({ "x", "o" }, "im", function() select("@function.inner", "textobjects") end, { desc = 'Inside function' })
+
+      km({ "x", "o" }, "af", function() select("@call.outer", "textobjects") end, { desc = 'Around call' })
+      km({ "x", "o" }, "if", function() select("@call.inner", "textobjects") end, { desc = 'Inside call' })
+
+      km({ "x", "o" }, "ak", function() select("@class.outer", "textobjects") end, { desc = 'Around class' })
+      km({ "x", "o" }, "ik", function() select("@class.inner", "textobjects") end, { desc = 'Inside class' })
+
+      km({ "x", "o" }, "a/", function() select("@comment.outer", "textobjects") end, { desc = 'Around comment' })
+      km({ "x", "o" }, "i/", function() select("@comment.inner", "textobjects") end, { desc = 'Inside comment' })
+
+      km({ "x", "o" }, "ac", function() select("@conditional.outer", "textobjects") end, { desc = 'Around conditional' })
+      km({ "x", "o" }, "ic", function() select("@conditional.inner", "textobjects") end, { desc = 'Inside conditional' })
+
+      km({ "x", "o" }, "ao", function() select("@loop.outer", "textobjects") end, { desc = 'Around loop' })
+      km({ "x", "o" }, "io", function() select("@loop.inner", "textobjects") end, { desc = 'Inside loop' })
+
+      km({ "x", "o" }, "au", function() select("@block.outer", "textobjects") end, { desc = 'Around block' })
+      km({ "x", "o" }, "iu", function() select("@block.inner", "textobjects") end, { desc = 'Inside block' })
+
+      -- MOVE
+
+      next_start = require("nvim-treesitter-textobjects.move").goto_next_start
+      next_end = require("nvim-treesitter-textobjects.move").goto_next_end
+      previous_start = require("nvim-treesitter-textobjects.move").goto_previous_start
+      previous_end = require("nvim-treesitter-textobjects.move").goto_previous_end
+
+      km({ "n", "x", "o" }, "]m", function() next_start("@function.outer", "textobjects") end, { desc = 'Next function start' })
+      km({ "n", "x", "o" }, "]M", function() next_end("@function.outer", "textobjects") end, { desc = 'Next function end' })
+      km({ "n", "x", "o" }, "[m", function() previous_start("@function.outer", "textobjects") end, { desc = 'Previous function start' })
+      km({ "n", "x", "o" }, "[M", function() previous_end("@function.outer", "textobjects") end, { desc = 'Previous function end' })
+
+      km({ "n", "x", "o" }, "]f", function() next_start("@call.outer", "textobjects") end, { desc = 'Next call start' })
+      km({ "n", "x", "o" }, "]F", function() next_end("@call.outer", "textobjects") end, { desc = 'Next call end' })
+      km({ "n", "x", "o" }, "[f", function() previous_start("@call.outer", "textobjects") end, { desc = 'Previous call start' })
+      km({ "n", "x", "o" }, "[F", function() previous_end("@call.outer", "textobjects") end, { desc = 'Previous call end' })
+
+      km({ "n", "x", "o" }, "]k", function() next_start("@class.outer", "textobjects") end, { desc = 'Next class start' })
+      km({ "n", "x", "o" }, "]K", function() next_end("@class.outer", "textobjects") end, { desc = 'Next class end' })
+      km({ "n", "x", "o" }, "[k", function() previous_start("@class.outer", "textobjects") end, { desc = 'Previous class start' })
+      km({ "n", "x", "o" }, "[K", function() previous_end("@class.outer", "textobjects") end, { desc = 'Previous class end' })
+
+      km({ "n", "x", "o" }, "]/", function() next_start("@comment.outer", "textobjects") end, { desc = 'Next comment start' })
+      km({ "n", "x", "o" }, "]?", function() next_end("@comment.outer", "textobjects") end, { desc = 'Next comment end' })
+      km({ "n", "x", "o" }, "[/", function() previous_start("@comment.outer", "textobjects") end, { desc = 'Previous comment start' })
+      km({ "n", "x", "o" }, "[?", function() previous_end("@comment.outer", "textobjects") end, { desc = 'Previous comment end' })
+
+      km({ "n", "x", "o" }, "]c", function() next_start("@conditional.outer", "textobjects") end, { desc = 'Next conditional start' })
+      km({ "n", "x", "o" }, "]C", function() next_end("@conditional.outer", "textobjects") end, { desc = 'Next conditional end' })
+      km({ "n", "x", "o" }, "[c", function() previous_start("@conditional.outer", "textobjects") end, { desc = 'Previous conditional start' })
+      km({ "n", "x", "o" }, "[C", function() previous_end("@conditional.outer", "textobjects") end, { desc = 'Previous conditional end' })
+
+      km({ "n", "x", "o" }, "]o", function() next_start("@loop.outer", "textobjects") end, { desc = 'Next loop start' })
+      km({ "n", "x", "o" }, "]O", function() next_end("@loop.outer", "textobjects") end, { desc = 'Next loop end' })
+      km({ "n", "x", "o" }, "[o", function() previous_start("@loop.outer", "textobjects") end, { desc = 'Previous loop start' })
+      km({ "n", "x", "o" }, "[O", function() previous_end("@loop.outer", "textobjects") end, { desc = 'Previous loop end' })
+
+      km({ "n", "x", "o" }, "]j", function() next_start("@local.scope", "locals") end, { desc = 'Next scope start' })
+      km({ "n", "x", "o" }, "]J", function() next_end("@local.scope", "locals") end, { desc = 'Next scope end' })
+      km({ "n", "x", "o" }, "[j", function() previous_start("@local.scope", "locals") end, { desc = 'Previous scope start' })
+      km({ "n", "x", "o" }, "[J", function() previous_end("@local.scope", "locals") end, { desc = 'Previous scope end' })
+
+      km({ "n", "x", "o" }, "]z", function() next_start("@fold", "folds") end, { desc = 'Next fold start' })
+      km({ "n", "x", "o" }, "]Z", function() next_end("@fold", "folds") end, { desc = 'Next fold end' })
+      km({ "n", "x", "o" }, "[z", function() previous_start("@fold", "folds") end, { desc = 'Previous fold start' })
+      km({ "n", "x", "o" }, "[Z", function() previous_end("@fold", "folds") end, { desc = 'Previous fold end' })
+
+      km({ "n", "x", "o" }, "]]", function() next_start("@block.outer", "textobjects") end, { desc = 'Next block start' })
+      km({ "n", "x", "o" }, "][", function() next_end("@block.outer", "textobjects") end, { desc = 'Next block end' })
+      km({ "n", "x", "o" }, "[[", function() previous_start("@block.outer", "textobjects") end, { desc = 'Previous block start' })
+      km({ "n", "x", "o" }, "[]", function() previous_end("@block.outer", "textobjects") end, { desc = 'Previous block end' })
+    end
 }

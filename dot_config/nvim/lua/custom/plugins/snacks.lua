@@ -8,7 +8,6 @@ return {
   lazy = false,
   opts = {
     picker = { enabled = true },
-    words = { enabled = true },
     scope = { enabled = true },
     statuscolumn = { enabled = true },
     lazygit = { enabled = true },
@@ -101,8 +100,6 @@ return {
     { "gs", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
     { "gO", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
     { "gS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
-    { "]]", function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
-    { "[[", function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
     -- Scope
     { '<leader>;', function() Snacks.scope.jump() end, desc = 'Go to start of current scope', mode = { 'n', 'v' } },
   },

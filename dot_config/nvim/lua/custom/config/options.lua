@@ -78,11 +78,10 @@ vim.o.winborder = 'rounded'
 -- folding
 opt.foldenable = true -- enable fold for nvim-ufo
 opt.foldmethod = 'manual' -- Fold based on manual selection.
-opt.foldexpr = "nvim_treesitter#foldexpr()" -- Use treesitter for folding
 opt.foldlevel = 99 -- set high foldlevel for nvim-ufo
 opt.foldlevelstart = 99 -- start with all code unfolded
 -- undoing
-opt.autoread = true -- Automatically re-read files if unmodified inside 
+opt.autoread = true -- Automatically re-read files if unmodified inside
 opt.autowrite = false -- Don't auto save
 opt.backspace = { 'indent', 'eol', 'start' } -- Allow backspacing over indention, line breaks and insertion start.
 opt.dir = fn.expand('$HOME/.cache/nvim') -- Directory to store backup files.
