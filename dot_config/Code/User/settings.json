@@ -212,5 +212,7 @@
 "kilo-code.deniedCommands": [],
 "gitlab.duo.enabledWithoutGitlabProject": false,
 "gitlab.duoCodeSuggestions.openTabsContext": false,
-"gitlab.real-timeSecurityScan.scanFileOnSave": false
+"gitlab.real-timeSecurityScan.scanFileOnSave": false,
+"containers.containerClient": "com.microsoft.visualstudio.containers.docker",
+"containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose"
 }
