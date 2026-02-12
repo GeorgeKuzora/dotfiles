@@ -18,6 +18,7 @@ local km = vim.keymap
 km.set({ 'n', 'v', 'x' }, '<Space>', '<Nop>', { silent = true, desc = 'Space do nothing' })
 km.set('i', 'ii', '<esc>', { desc = 'Escape insert mode' })
 km.set('n', '<leader>*', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Change word under cursor in a buffer' })
+km.set('v', '<leader>*', [["yy:%s/\V<C-r>=escape(@y, '/' )<CR>/<C-r>=escape(@y, '&')<CR>/gI<Left><Left><Left>]], { desc = 'Change visually selected text in buffer' })
 
 -- INDENTATION CHANGE
 km.set('v', '<', '<gv', { desc = 'Indent left' })
