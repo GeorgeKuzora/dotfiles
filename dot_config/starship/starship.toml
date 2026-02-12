@@ -15,7 +15,6 @@ $git_state\
 $git_metrics\
 [](fg:surface2 bg:surface1)\
 $package\
-$mise\
 [](fg:surface1 bg:surface0)\
 $c\
 $rust\
@@ -123,13 +122,13 @@ symbol = "󰏗"
 style = "fg:blue bold bg:surface1"
 format = '[ $symbol( $version)]($style)'
 
-[mise]
-symbol = ""
-style = "fg:blue bold bg:surface1"
-format = '[ $symbol $health]($style)'
-healthy_symbol = '󱇬'
-unhealthy_symbol = '󱘹'
-disabled = false
+# [mise]
+# symbol = ""
+# style = "fg:blue bold bg:surface1"
+# format = '[ $symbol $health]($style)'
+# healthy_symbol = '󱇬'
+# unhealthy_symbol = '󱘹'
+# disabled = false
 
 [nodejs]
 symbol = ""
