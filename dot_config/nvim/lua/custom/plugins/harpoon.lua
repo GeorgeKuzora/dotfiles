@@ -29,10 +29,10 @@ return {
     vim.keymap.set('n', '<C-5>', function()
       harpoon:list():select(5)
     end, { desc = 'Harpoon mark 5' })
-    vim.keymap.set('n', ']h', function()
+    vim.keymap.set('n', ']n', function()
       harpoon:list():next()
     end, { desc = 'Next Harpoon mark' })
-    vim.keymap.set('n', '[h', function()
+    vim.keymap.set('n', '[n', function()
       harpoon:list():prev()
     end, { desc = 'Previous Harpoon mark' })
   end,
