@@ -13,65 +13,68 @@ return {
       untracked = { text = '?' },
     },
     attach_to_untracked = true,
-    on_attach = function(bufnr)
-      local gs = package.loaded.gitsigns
 
-      local function map(mode, l, r, opts)
-        opts = opts or {}
-        opts.buffer = bufnr
-        vim.keymap.set(mode, l, r, opts)
-      end
+    on_attach = function(bufnr)
+      local gitsigns = require('gitsigns')
+
+      local map = vim.keymap.set
 
       -- Navigation
-      map({ 'n', 'v' }, ']g', function()
+      map('n', ']h', function()
         if vim.wo.diff then
-          return ']g'
+          vim.cmd.normal({']g', bang = true})
+        else
+          gitsigns.nav_hunk('next')
         end
-        vim.schedule(function()
-          gs.next_hunk()
-        end)
-        return '<Ignore>'
-      end, { expr = true, desc = 'Jump to next hunk' })
+      end,
+      { desc = 'Next hunk' }
+      )
 
-      map({ 'n', 'v' }, '[g', function()
+      map('n', '[h', function()
         if vim.wo.diff then
-          return '[g'
+          vim.cmd.normal({'[g', bang = true})
+        else
+          gitsigns.nav_hunk('prev')
         end
-        vim.schedule(function()
-          gs.prev_hunk()
-        end)
-        return '<Ignore>'
-      end, { expr = true, desc = 'Jump to previous hunk' })
+      end,
+      { desc = 'Previous hunk' }
+    )
 
       -- Actions
-      -- visual mode
+      map('n', '<leader>hs', gitsigns.stage_hunk, { desc = 'Stage hunk' })
+      map('n', '<leader>hr', gitsigns.reset_hunk, { desc = 'Reset hunk' })
+
       map('v', '<leader>hs', function()
-        gs.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
-      end, { desc = 'stage git hunk' })
+        gitsigns.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
+      end, { desc = 'Stage selected' })
+
       map('v', '<leader>hr', function()
-        gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
-      end, { desc = 'reset git hunk' })
-      -- normal mode
-      map('n', '<leader>hs', gs.stage_hunk, { desc = 'git stage hunk' })
-      map('n', '<leader>hr', gs.reset_hunk, { desc = 'git reset hunk' })
-      map('n', '<leader>hS', gs.stage_buffer, { desc = 'git Stage buffer' })
-      map('n', '<leader>hR', gs.reset_buffer, { desc = 'git Reset buffer' })
-      map('n', '<leader>hu', gs.undo_stage_hunk, { desc = 'undo stage hunk' })
-      map('n', '<leader>hp', gs.preview_hunk, { desc = 'preview git hunk' })
+        gitsigns.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
+      end, { desc = 'Reset selected' })
+
+      map('n', '<leader>hS', gitsigns.stage_buffer, { desc = 'Stage buffer' })
+      map('n', '<leader>hR', gitsigns.reset_buffer, { desc = 'Reset buffer' })
+      map('n', '<leader>hp', gitsigns.preview_hunk, { desc = 'Preview hunk' })
+      map('n', '<leader>hi', gitsigns.preview_hunk_inline, { desc = 'Preview hunk inline' })
+
       map('n', '<leader>hb', function()
-        gs.blame_line { full = false }
-      end, { desc = 'git blame line' })
-      map('n', '<leader>hB', gs.toggle_current_line_blame, { desc = '[T]oggle git blame line' })
-      map('n', '<leader>hd', gs.diffthis, { desc = 'git diff against index' })
+        gitsigns.blame_line()
+      end, { desc = 'Blame current line' })
+
+      map('n', '<leader>hd', gitsigns.diffthis, { desc = 'Diff buffer' })
       map('n', '<leader>hD', function()
-        gs.diffthis '~'
-      end, { desc = 'git diff against last commit' })
+        gitsigns.diffthis('~')
+      end, { desc = 'Diff project' })
+
+      map('n', '<leader>hQ', function() gitsigns.setqflist('all') end, { desc = 'Send all hunks to quickfix' })
+      map('n', '<leader>hq', gitsigns.setqflist, { desc = 'Send current buffer hunks to quickfix' })
 
       -- Toggles
-      map('n', '<leader>ht', gs.toggle_deleted, { desc = '[T]oggle git show deleted' })
+      map('n', '<leader>hB', gitsigns.toggle_current_line_blame, { desc = 'Toggle current line blame' })
+      map('n', '<leader>hw', gitsigns.toggle_word_diff, { desc = 'Toggle word diff' })
 
       -- Text object
-      map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'select git hunk' })
-    end,
+      map({'o', 'x'}, 'ih', gitsigns.select_hunk, { desc = 'Inside hunk' })
+    end
   },
 }
