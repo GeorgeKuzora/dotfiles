@@ -19,7 +19,7 @@
     "edit": "ask",
     "bash": "ask",
     "webfetch": "allow"
-  }
+  },
   "default_agent": "python-ask",
   "share": "disabled",
   "autoupdate": false
