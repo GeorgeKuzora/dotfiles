@@ -15,6 +15,7 @@ opt.backspace:append { 'nostop' } -- don't stop backspace at insert
 opt.diffopt:append 'linematch:60' -- enable line match diff algorithm
 opt.grepprg = 'rg --vimgrep --smart-case --follow' -- Better grep command
 opt.path:append("**") -- include subdirectories in search
+opt.iskeyword:append("-") -- include subdirectories in search
 
 -- Decrease update time
 o.updatetime = 250
@@ -104,7 +105,7 @@ opt.wildignore :append({ "*.o", "*.obj", "*.pyc", "*.class", "*.jar", '.pyc', '.
 opt.clipboard = { 'unnamedplus' } -- Copy paste between vim and everything else, 'unnamed'
 -- UI and windows
 opt.signcolumn = 'yes' -- sets opt.signcolumn to auto
-opt.colorcolumn = '80,100,120' -- colored line on characters
+opt.colorcolumn = '80,100' -- colored line on characters
 opt.termguicolors = true
 opt.mouse = 'a' -- Enable your mouse
 opt.splitbelow = true -- Horizontal splits will automatically be below
