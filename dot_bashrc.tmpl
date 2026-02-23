@@ -1,6 +1,5 @@
-export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 export PATH="$PATH:~/.local/bin"
-export PATH="$PATH:/Users/kuzora/.lmstudio/bin"
+export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 
 if [ -e {{ .chezmoi.homeDir -}}/.nix-profile/etc/profile.d/nix.sh ]; then . {{ .chezmoi.homeDir -}}/.nix-profile/etc/profile.d/nix.sh; fi
 if [ -e zoxide ]; then . eval "$(zoxide init bash)"; fi
