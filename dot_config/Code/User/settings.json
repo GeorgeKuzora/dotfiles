@@ -214,5 +214,13 @@
 "gitlab.duoCodeSuggestions.openTabsContext": false,
 "gitlab.real-timeSecurityScan.scanFileOnSave": false,
 "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
-"containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose"
+"containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
+"kafka.clusters": [
+  {
+    "id": "localhost-bG9jYWxob3N0OjkwOTI",
+    "name": "localhost",
+    "bootstrap": "localhost:9092",
+    "ssl": false
+  }
+]
 }
