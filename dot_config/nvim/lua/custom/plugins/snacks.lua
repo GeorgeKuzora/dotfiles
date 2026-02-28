@@ -1,5 +1,15 @@
 return {
   'folke/snacks.nvim',
+  dependencies = {
+    {
+      "dtormoen/neural-open.nvim",
+      lazy=false;
+      keys = {
+        { "<leader><leader>", "<Plug>(NeuralOpen)", desc = "Neural Open Files" },
+      },
+      opts = {},
+    },
+  },
   priority = 1000,
   lazy = false,
   opts = {
@@ -58,7 +68,7 @@ return {
     { "gb", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
     { "<leader>/", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
     -- Find Files
-    { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+    { "<leader>fs", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
     { "<leader>,", function() Snacks.picker.buffers() end, desc = "Find Opened Buffers" },
     { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
     { "<leader>fF", function() Snacks.picker.files({ hidden = true, ignored = true }) end, desc = "Find Files" },
