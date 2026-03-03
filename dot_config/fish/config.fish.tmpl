@@ -26,9 +26,10 @@ if status is-interactive
     set -gx VISUAL $(which nvim)
     set -gx COLORTERM truecolor
     {{- if eq .chezmoi.os "darwin" }}
-    set -gx TERM xterm-ghostty
-    set -gx TERMINAL $(which ghostty)
-    {{- else }}
+    # set -gx TERM xterm-ghostty
+    # set -gx TERMINAL $(which ghostty)
+    {{- end }}
+    {{- if eq .chezmoi.os "linux" }}
     {{- if eq  .chezmoi.hostname "ubuntu" }}
     set -gx TERM xterm-256color
     set -gx TERMINAL $(which xterm)
