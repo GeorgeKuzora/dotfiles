@@ -49,6 +49,12 @@ if status is-interactive
     set -gx OPENAI_HOST $OPENAI_BASE_URL
     set -gx OPENAI_MODEL Coder
     set -gx HOMEBREW_BUNDLE_FILE $HOME/.config/brewfile/Brewfile
+    {{- if eq .chezmoi.os "darwin" }}
+    set -gx HOMEBREW_PREFIX /opt/homebrew
+    {{- end }}
+    {{- if eq .chezmoi.os "linux" }}
+    set -gx HOMEBREW_PREFIX /home/linuxbrew/.linuxbrew
+    {{- end }}
 
     # PATH
     fish_add_path --path $HOME/.lmstudio/bin
