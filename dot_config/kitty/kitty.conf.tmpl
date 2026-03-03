@@ -951,16 +951,6 @@ confirm_os_window_close -1
 
 #: Tab bar (((
 
-# Show the tab title followed by the window count
-tab_title_template "{title}  {num_windows}"
-
-# Optional: Style the active tab differently
-# active_tab_title_template "{title} 🪟{num_windows}"
-# inactive_tab_title_template "{title} 🪟{num_windows}"
-
-
-tab_bar_filter session:~ or session:^$
-
 tab_bar_edge top
 
 #: The edge to show the tab bar on, top or bottom.
@@ -1052,7 +1042,7 @@ tab_activity_symbol "✦ "
 #: The maximum number of cells that can be used to render the text in
 #: a tab. A value of zero means that no limit is applied.
 
-# tab_title_template "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{title}"
+tab_title_template "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{title}  {num_windows}"
 
 #: A template to render the tab title. The default just renders the
 #: title with optional symbols for bell and activity. If you wish to
