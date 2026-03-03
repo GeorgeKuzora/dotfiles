@@ -951,6 +951,16 @@ confirm_os_window_close -1
 
 #: Tab bar (((
 
+# Show the tab title followed by the window count
+tab_title_template "{title}  {num_windows}"
+
+# Optional: Style the active tab differently
+# active_tab_title_template "{title} 🪟{num_windows}"
+# inactive_tab_title_template "{title} 🪟{num_windows}"
+
+
+tab_bar_filter session:~ or session:^$
+
 tab_bar_edge top
 
 #: The edge to show the tab bar on, top or bottom.
@@ -966,7 +976,7 @@ tab_bar_edge top
 #: The second number is the margin between the tab bar and the
 #: contents of the current tab.
 
-tab_bar_style powerline
+tab_bar_style slant
 
 #: The tab bar style, can be one of:
 
@@ -1024,7 +1034,7 @@ tab_bar_style powerline
 #: The separator between tabs in the tab bar when using separator as
 #: the tab_bar_style.
 
-tab_powerline_style slanted
+# tab_powerline_style slanted
 
 #: The powerline separator style between tabs in the tab bar when
 #: using powerline as the tab_bar_style, can be one of: angled,
@@ -1583,7 +1593,7 @@ shell fish -i
 #: )))
 
 #: OS specific tweaks (((
-wayland_titlebar_color background
+# wayland_titlebar_color background
 
 #: The color of the kitty window's titlebar on Wayland systems with
 #: client side window decorations such as GNOME. A value of system
@@ -2469,6 +2479,6 @@ map cmd+minus             change_font_size all -1.0
 
 
 # BEGIN_KITTY_THEME
-# Default
+# Catppuccin Kitty Mocha
 include current-theme.conf
 # END_KITTY_THEME
