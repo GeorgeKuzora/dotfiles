@@ -1,7 +1,7 @@
 export HOMEBREW_BUNDLE_FILE="$HOME/.config/brewfile/Brewfile"
 export PATH="$PATH:/opt/homebrew/bin"
 eval "$(/opt/homebrew/bin/brew shellenv)"
-fish -i
+# fish -i
 
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
