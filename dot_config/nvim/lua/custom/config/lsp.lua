@@ -9,9 +9,9 @@ local servers = {
   'lua_ls',
   'marksman',
   -- 'pyrefly',
-  'pyright',
+  -- 'pyright',
   'rust_analyzer',
-  -- 'ty',
+  'ty',
   'typos_lsp',
 }
 
