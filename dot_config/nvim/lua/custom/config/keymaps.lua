@@ -73,7 +73,8 @@ km.set('n', '<leader>uw', function() vim.cmd.ToggleWrap() end, { desc = 'Toggle 
 km.set('n', '<leader>uo', function() vim.cmd.XdgOpenFile() end, { desc = 'Show file in xdg-open' })
 km.set('n', '<leader>ux', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Set file as executable' })
 km.set('n', '<leader>un', ':noh<return><esc>', { desc = 'Escape highlight search' })
-km.set('n', "<leader>uy", function() vim.cmd.CopyFilePath() end, { desc = 'Copy full file path' })
+km.set('n', "<leader>uy", function() vim.cmd.CopyFilePath() end, { desc = 'Copy relative file path' })
+km.set('n', "<leader>uY", function() vim.cmd.CopyAbsFilePath() end, { desc = 'Copy absolute file path' })
 
 -- TABS
 km.set('n', '<leader>tn', function() vim.cmd.tabnew() end, { desc = 'Create new tab' })

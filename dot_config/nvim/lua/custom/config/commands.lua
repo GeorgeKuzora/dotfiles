@@ -1,5 +1,5 @@
--- COPY FILE PATH
-local function copy_file_path(opts)
+-- COPY ABSOLUTE FILE PATH
+local function copy_abs_file_path(opts)
   local path = vim.fn.expand("%:p")
   if path == "" then
     vim.notify("Current buffer has no file path", vim.log.levels.WARN)
@@ -9,8 +9,26 @@ local function copy_file_path(opts)
   vim.notify("Copied to clipboard: " .. path, vim.log.levels.INFO)
 end
 
-vim.api.nvim_create_user_command('CopyFilePath', copy_file_path, {
+vim.api.nvim_create_user_command('CopyAbsFilePath', copy_abs_file_path, {
   desc = 'Copy full absolute file path to system clipboard (+ register)',
+  bang = true,
+})
+
+-- COPY RELATIVE FILE PATH
+local function copy_file_path(opts)
+  local path = vim.fn.expand("%:.")
+
+  if path == "" or path == "%" then
+    vim.notify("Current buffer has no file path", vim.log.levels.WARN)
+    return
+  end
+
+  vim.fn.setreg("+", path)
+  vim.notify("Copied to clipboard: " .. path, vim.log.levels.INFO)
+end
+
+vim.api.nvim_create_user_command('CopyFilePath', copy_file_path, {
+  desc = 'Copy full relative file path to system clipboard (+ register)',
   bang = true,
 })
 
