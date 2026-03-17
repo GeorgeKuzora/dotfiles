@@ -22,26 +22,26 @@ if status is-interactive
     set -gx GOPATH $HOME/go
     set -gx MANPAGER 'nvim +Man!'
     set -gx MANWIDTH 999
-    set -gx EDITOR $(which nvim)
-    set -gx VISUAL $(which nvim)
+    set -gx EDITOR nvim
+    set -gx VISUAL nvim
     set -gx COLORTERM truecolor
     {{- if eq .chezmoi.os "darwin" }}
     # set -gx TERM xterm-ghostty
-    # set -gx TERMINAL $(which ghostty)
+    # set -gx TERMINAL ghostty
     {{- end }}
     {{- if eq .chezmoi.os "linux" }}
     {{- if eq  .chezmoi.hostname "ubuntu" }}
     set -gx TERM xterm-256color
-    set -gx TERMINAL $(which xterm)
+    set -gx TERMINAL xterm
     {{- end }}
     {{- end }}
-    set -gx BROWSER $(which xdg-open)
-    set -gx VIDEO $(which xdg-open)
-    set -gx PAGER $(which less)
-    set -gx SHELL $(which fish)
-    set -gx OPENER $(which xdg-open)
-    set -gx READER $(which xdg-open)
-    set -gx IMAGE $(which xdg-open)
+    set -gx BROWSER xdg-open
+    set -gx VIDEO xdg-open
+    set -gx PAGER less
+    set -gx SHELL fish
+    set -gx OPENER xdg-open
+    set -gx READER xdg-open
+    set -gx IMAGE xdg-open
     set -gx STARSHIP_CONFIG $XDG_CONFIG_HOME/starship/starship.toml
     set -gx MISTRAL_API_KEY {{ .mistral_api_key | quote }}
     set -gx KORONATECH_API_KEY {{ .koronatech_api_key | quote }}
