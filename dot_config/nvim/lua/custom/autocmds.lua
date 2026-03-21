@@ -4,15 +4,21 @@ vim.api.nvim_create_autocmd('PackChanged', {
   callback = function(ev)
     local name, kind = ev.data.spec.name, ev.data.kind
 
-    if name == 'nvim-treesitter' and kind == 'update' or kind == 'install' then
+    if name == 'nvim-treesitter' and (kind == 'update' or kind == 'install') then
       if not ev.data.active then vim.cmd.packadd('nvim-treesitter') end
       vim.cmd('TSUpdate')
     end
 
-    if name == 'luasnip' and kind == 'install' then
+    if name == 'luasnip' and (kind == 'update' or kind == 'install') then
       if not ev.data.active then vim.cmd.packadd('luasnip') end
       vim.cmd('BuildLuaSnip')
     end
+
+    if name == 'blink.cmp' and (kind == 'update' or kind == 'install') then
+      if not ev.data.active then vim.cmd.packadd('blink.cmp') end
+      -- vim.cmd('BuildLuaSnip')
+    end
+
   end
 })
 

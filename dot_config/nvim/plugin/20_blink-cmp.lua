@@ -38,4 +38,10 @@ require("blink-cmp").setup({
     },
   },
   signature = { enabled = true },
+  fuzzy = {
+    implementation = "prefer_rust",
+    prebuilt_binaries = {
+      force_version = nil, -- Let it detect or build locally
+    }
+  },
 })

@@ -26,6 +26,10 @@ local filetypes = {
   'yaml',
 }
 
+require('nvim-treesitter').setup {
+  install_dir = vim.fn.stdpath('data') .. '/site'
+}
+
 require('nvim-treesitter').install(filetypes)
 
 vim.api.nvim_create_autocmd('FileType', {
