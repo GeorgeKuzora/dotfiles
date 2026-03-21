@@ -1,3 +1,6 @@
+[settings]
+env_shell_expand = true
+
 [tools]
 "pipx:basedpyright" = "latest"
 "pipx:debugpy" = "latest"
