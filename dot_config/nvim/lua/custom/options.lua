@@ -10,7 +10,7 @@ g.mapleader = " " -- Set leader key to space
 g.maplocalleader = " " -- Set local leader key (NEW)
 -- Optimizations
 opt.viewoptions:remove 'curdir' -- disable saving current directory with views
-opt.shortmess:append { I = true, s = true, W = true, c = true, C = true } -- disable startup message + other optimization
+opt.shortmess:append { I = false, s = true, W = true, c = true, C = true } -- disable startup message + other optimization
 opt.backspace:append { 'nostop' } -- don't stop backspace at insert
 opt.diffopt:append 'linematch:60' -- enable line match diff algorithm
 opt.grepprg = 'rg --vimgrep --smart-case --follow' -- Better grep command

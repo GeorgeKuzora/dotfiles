@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.lsp.inlay_hint.enable(false)
 
     local nmap = function(keys, func, desc)
-      vim.keymap.set('n', keys, func, { buffer = event.buf, silent = true, desc = desc })
+      Map('n', keys, func, { buffer = event.buf, silent = true, desc = desc })
     end
 
     nmap('grn', vim.lsp.buf.rename, 'Rename symbol')
@@ -44,8 +44,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 
     nmap('<C-s>', function() vim.lsp.buf.signature_help() end, 'Signature help')
-    vim.keymap.set({ 'i', 'v', 'x' }, '<C-s>', function() vim.lsp.buf.signature_help() end, { desc = 'Signature help' })
-    vim.keymap.set({ 'i', 'v', 'x' }, '<C-k>', function() vim.lsp.buf.hover() end, { desc = 'Hover documentation' })
+    Map({ 'i', 'v', 'x' }, '<C-s>', function() vim.lsp.buf.signature_help() end, { desc = 'Signature help' })
+    Map({ 'i', 'v', 'x' }, '<C-k>', function() vim.lsp.buf.hover() end, { desc = 'Hover documentation' })
 
     nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, 'Add workspace folder')
     nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Remove workspace folder')

@@ -139,3 +139,18 @@ vim.api.nvim_create_user_command('ToggleWrap', toggle_wrap, {
   desc = 'Toggle line wrapping in current window',
   bang = true,
 })
+
+-- BUILD LUASNIP PLUGIN
+local function build_lua_snip()
+    local pack_path = vim.fn.stdpath("data") .. "/site/pack"
+    local found_path = vim.fn.glob(pack_path .. "/*/LuaSnip/Makefile")
+    if found_path ~= "" then
+        local dir = vim.fn.fnamemodify(found_path, ":h")
+        vim.cmd(string.format("!cd %s && make install_jsregexp", dir))
+    else
+        print("LuaSnip not found in pack path.")
+    end
+end
+vim.api.nvim_create_user_command("BuildLuaSnip", build_lua_snip, {
+  desc = 'Build luasnip with make install_jsregexp',
+})

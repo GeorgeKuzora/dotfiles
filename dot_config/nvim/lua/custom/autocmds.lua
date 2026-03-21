@@ -1,3 +1,21 @@
+-- Run command for Vim Pack installs and updates
+vim.api.nvim_create_autocmd('PackChanged', {
+  group = AutocmdGroup 'pack_changed',
+  callback = function(ev)
+    local name, kind = ev.data.spec.name, ev.data.kind
+
+    if name == 'nvim-treesitter' and kind == 'update' or kind == 'install' then
+      if not ev.data.active then vim.cmd.packadd('nvim-treesitter') end
+      vim.cmd('TSUpdate')
+    end
+
+    if name == 'luasnip' and kind == 'install' then
+      if not ev.data.active then vim.cmd.packadd('luasnip') end
+      vim.cmd('BuildLuaSnip')
+    end
+  end
+})
+
 -- Auto create dir when saving a file, in case some intermediate directory does not exist
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   group = AutocmdGroup 'auto_create_dir',
@@ -10,8 +28,7 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   end,
 })
 
-
--- wrap and check for spell in text filetypes
+-- Wrap and check for spell in text filetypes
 vim.api.nvim_create_autocmd('FileType', {
   group = AutocmdGroup 'wrap_spell',
   pattern = { 'gitcommit', 'markdown' },
@@ -27,7 +44,7 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'TermClose', 'TermLeave' }, {
   command = 'checktime',
 })
 
--- close some filetypes with <q>
+-- Close some filetypes with <q>
 vim.api.nvim_create_autocmd('FileType', {
   group = AutocmdGroup 'close_with_q',
   pattern = {
@@ -49,11 +66,11 @@ vim.api.nvim_create_autocmd('FileType', {
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
-    vim.keymap.set('n', 'q', '<cmd>close<cr>', { buffer = event.buf, silent = true })
+    Map('n', 'q', '<cmd>close<cr>', { buffer = event.buf, silent = true })
   end,
 })
 
--- go to last loc when opening a buffer
+-- Go to last loc when opening a buffer
 vim.api.nvim_create_autocmd('BufReadPost', {
   group = AutocmdGroup 'last_loc',
   callback = function(event)
@@ -113,7 +130,7 @@ vim.api.nvim_create_autocmd("User", {
   end,
 })
 
--- resize splits if window got resized
+-- Resize splits if window got resized
 vim.api.nvim_create_autocmd({ 'VimResized' }, {
   group = AutocmdGroup 'resize_splits',
   callback = function()
@@ -123,12 +140,12 @@ vim.api.nvim_create_autocmd({ 'VimResized' }, {
   end,
 })
 
--- auto resize splits when the terminal's window is resized
+-- Auto resize splits when the terminal's window is resized
 vim.api.nvim_create_autocmd("VimResized", {
 	command = "wincmd =",
 })
 
--- syntax highlighting for dotenv files
+-- Syntax highlighting for dotenv files
 vim.api.nvim_create_autocmd("BufRead", {
 	group = vim.api.nvim_create_augroup("dotenv_ft", { clear = true }),
 	pattern = { ".env", ".env.*" },
@@ -137,7 +154,7 @@ vim.api.nvim_create_autocmd("BufRead", {
 	end,
 })
 
--- show cursorline only in active window enable
+-- Show cursorline only in active window enable
 vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
 	group = vim.api.nvim_create_augroup("active_cursorline", { clear = true }),
 	callback = function()
@@ -145,7 +162,7 @@ vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
 	end,
 })
 
--- show cursorline only in active window disable
+-- Show cursorline only in active window disable
 vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
 	group = "active_cursorline",
 	callback = function()

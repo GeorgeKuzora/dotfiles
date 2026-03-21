@@ -1,0 +1,13 @@
+require 'custom.functions'
+require 'custom.options'
+require 'custom.russian'
+require 'custom.keymaps'
+require 'custom.diagnostics'
+require 'custom.lsp'
+require 'custom.autocmds'
+require 'custom.commands'
+{{- if eq .chezmoi.os "linux" }}
+{{- if eq .chezmoi.hostname "ubuntu" }}
+require 'custom.clipboard'
+{{- end }}
+{{- end }}

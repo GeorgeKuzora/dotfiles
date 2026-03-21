@@ -24,30 +24,19 @@ local function get_vcs_type()
   return "git"
 end
 
-return {
-  {
-    "julienvincent/hunk.nvim",
-    cmd = { "DiffEditor" },
-    dependencies = { "MunifTanjim/nui.nvim" },
-    config = function()
-      require("hunk").setup()
-    end,
-  },
-  {
-      "clabby/difftastic.nvim",
-      dependencies = {
-        "MunifTanjim/nui.nvim",
-        -- optional: only needed for :DifftPick
-        "folke/snacks.nvim",
-      },
-      config = function()
-        require("difftastic-nvim").setup({
-            vcs = get_vcs_type(),
-            download = true, -- Auto-download pre-built binary
-            snacks_picker = {
-                enabled = true,
-            },
-        })
-    end,
-  },
-}
+vim.pack.add({
+  "https://github.com/MunifTanjim/nui.nvim",
+  "https://github.com/julienvincent/hunk.nvim",
+  "https://github.com/folke/snacks.nvim",
+  "https://github.com/clabby/difftastic.nvim",
+})
+
+require("hunk").setup()
+
+require("difftastic-nvim").setup({
+    vcs = get_vcs_type(),
+    download = true, -- Auto-download pre-built binary
+    snacks_picker = {
+        enabled = true,
+    },
+})

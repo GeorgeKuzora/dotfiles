@@ -15,3 +15,5 @@ function ExternalToolsConfig(spec)
   end
   return config
 end
+
+Map = vim.keymap.set
