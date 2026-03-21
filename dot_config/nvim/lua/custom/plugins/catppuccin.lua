@@ -5,7 +5,7 @@ return {
     lazy = false,
     priority = 1000,
     init = function()
-      vim.cmd.colorscheme 'catppuccin'
+      vim.cmd.colorscheme 'catppuccin-nvim'
     end,
     opts = {
       flavour = 'mocha', -- latte, frappe, macchiato, mocha
