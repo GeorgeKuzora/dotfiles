@@ -30,6 +30,7 @@ vim.pack.add({
   "https://github.com/folke/snacks.nvim",
   "https://github.com/clabby/difftastic.nvim",
 })
+vim.cmd("packadd nvim.difftool")
 
 require("hunk").setup()
 

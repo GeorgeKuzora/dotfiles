@@ -116,6 +116,7 @@ opt.concealcursor = "" -- Don't hide cursor line markup
 opt.cursorline = true -- Enable highlighting of the current line
 opt.backup = false -- This is recommended by coc
 opt.writebackup = false -- This is recommended by coc
+require("vim._core.ui2").enable({})
 -- Automation
 opt.autochdir = false -- Your working directory will always be the same as your working directory
 opt.cp = false -- 'compatible' is not set
