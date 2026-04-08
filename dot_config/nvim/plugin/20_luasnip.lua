@@ -4,7 +4,7 @@ vim.pack.add({
   {
     src = "https://github.com/L3MON4D3/LuaSnip",
     name = 'luasnip',
-    version = 'v2.4.1',
+    version = 'v2.5.0',
   }
 })
 
