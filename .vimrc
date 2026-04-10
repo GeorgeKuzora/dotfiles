@@ -104,6 +104,7 @@ set wildignore+=*.o,*.obj,*.pyc,*.class,*.jar,.pyc,.swp " Ignore files matching 
 set clipboard+=unnamedplus " Copy paste between vim and everything else
 
 " UI and windows
+colorscheme habamax
 set signcolumn=yes " sets signcolumn to auto
 set mouse=a " Enable your mouse
 set splitbelow " Horizontal splits will automatically be below
