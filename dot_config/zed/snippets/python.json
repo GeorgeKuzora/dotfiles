@@ -18,5 +18,20 @@
     "prefix": "lc",
     "body": ["logging.critical(f'{$0 =}'),"],
     "description": "Adds logging critical with f-string."
+  },
+  "logging.error": {
+    "prefix": "le",
+    "body": ["logging.error(f'{$0 =}'),"],
+    "description": "Adds logging error with f-string."
+  },
+  "logging.info": {
+    "prefix": "li",
+    "body": ["logging.info(f'{$0 =}'),"],
+    "description": "Adds logging info with f-string."
+  },
+  "logging.debug": {
+    "prefix": "ld",
+    "body": ["logging.debug(f'{$0 =}'),"],
+    "description": "Adds logging debug with f-string."
   }
 }
