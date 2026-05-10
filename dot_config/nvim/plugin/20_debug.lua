@@ -1,29 +1,16 @@
 vim.pack.add({
-  "https://github.com/mason-org/mason.nvim",
-  "https://github.com/jay-babu/mason-nvim-dap.nvim",
   "https://github.com/nvim-neotest/nvim-nio",
   "https://github.com/leoluz/nvim-dap-go",
   "https://github.com/mfussenegger/nvim-dap-python",
   "https://github.com/mfussenegger/nvim-dap",
 })
 
-require("mason").setup()
-
 local dap = require 'dap'
 
 dap.defaults.fallback.terminal_win_cmd = '50vsplit new'
 
-require('mason-nvim-dap').setup {
-  automatic_setup = true,
-  handlers = {},
-  ensure_installed = {
-    'delve',
-    'debugpy',
-  },
-}
-
-require('dap-go').setup( { delve = {} })
-require('dap-python').setup '~/.local/share/nvim/mason/packages/debugpy/venv/bin/python'
+require('dap-go').setup()
+require('dap-python').setup("uv")
 
 local sign = vim.fn.sign_define
 sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})

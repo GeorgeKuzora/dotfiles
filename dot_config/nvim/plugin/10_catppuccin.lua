@@ -62,7 +62,6 @@ require(theme).setup {
     },
     gitsigns = true,
     harpoon = true,
-    mason = true,
     neotest = true,
     nvim_surround = true,
     semantic_tokens = true,
