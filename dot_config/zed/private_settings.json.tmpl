@@ -118,6 +118,7 @@
     }
   },
   "agent": {
+    "dock": "right",
     "enable_feedback": false,
     "default_model": {
       "provider": "openai",
@@ -138,16 +139,12 @@
     "default_profile": "write"
   },
   "agent_servers": {
-    "Qwen Agent": {
-      "type": "custom",
-      "command": "qwen",
-      "args": ["--experimental-acp"],
+    "qwen-code": {
+      "type": "registry",
       "env": {"OPENAI_API_KEY": {{ .koronatech_api_key | quote }} }
     },
-    "OpenCode": {
-      "type": "custom",
-      "command": "opencode",
-      "args": ["acp"],
+    "opencode": {
+      "type": "registry",
       "env": {"OPENAI_API_KEY": {{ .koronatech_api_key | quote }} }
     }
   },
