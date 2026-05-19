@@ -1,7 +1,6 @@
 ---
 description: Assists user with Python programming, code reviews, best practices, or debugging
 mode: primary
-model: koronatech/Coder
 temperature: 0.0
 tools:
   write: true

@@ -1,7 +1,6 @@
 ---
 description: Writes, analyzes or improves python tests or test cases
 mode: subagent
-model: koronatech/Coder
 temperature: 0.0
 tools:
   write: true

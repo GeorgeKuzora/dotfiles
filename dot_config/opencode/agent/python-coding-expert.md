@@ -1,7 +1,6 @@
 ---
 description: Writes secure, fast, reliable python code for backend systems.
 mode: subagent
-model: koronatech/Coder
 temperature: 0.0
 tools:
   write: true
