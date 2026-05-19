@@ -8,14 +8,14 @@
         "baseURL": "https://ai.kth.pro/api"
       },
       "models": {
-        "Coder": {
-          "name": "Coder"
+        "instructthink": {
+          "name": "InstructThink"
         },
         "Instruct": {
           "name": "Instruct"
         },
-        "instructthink": {
-          "name": "InstructThink"
+        "Coder": {
+          "name": "Coder"
         }
       }
     }
