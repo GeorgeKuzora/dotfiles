@@ -1,0 +1,14 @@
+{
+  "providers": {
+    "koronatech": {
+      "baseUrl": "https://ai.kth.pro/api",
+      "api": "openai-completions",
+      "apiKey": {{ .koronatech_api_key | quote }},
+      "models": [
+        { "id": "instructthink" },
+        { "id": "Instruct" },
+        { "id": "Coder" }
+      ]
+    }
+  }
+}
