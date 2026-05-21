@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.75.4",
   "defaultProvider": "koronatech",
-  "defaultModel": "Instruct",
+  "defaultModel": "instructthink",
   "defaultThinkingLevel": "high",
   "packages": [
     "npm:@gotgenes/pi-permission-system"
