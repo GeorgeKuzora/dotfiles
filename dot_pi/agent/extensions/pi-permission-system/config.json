@@ -20,6 +20,7 @@
       "find *": "allow",
       "cat *": "allow",
       "wc *": "allow",
+      "cd *": "allow",
       "git status": "allow",
       "git diff": "allow",
       "git *": "ask",
