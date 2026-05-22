@@ -5,7 +5,8 @@
   "defaultModel": "instructthink",
   "defaultThinkingLevel": "high",
   "packages": [
-    "npm:@gotgenes/pi-permission-system"
+    "npm:@gotgenes/pi-permission-system",
+    "npm:@ff-labs/pi-fff"
   ],
   "enabledModels": [
     "koronatech/instructthink",
