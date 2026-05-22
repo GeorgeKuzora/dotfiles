@@ -34,6 +34,7 @@
     },
     "mcp": { "mcp_status": "allow" },
     "skill": { "*": "allow" },
-    "external_directory": "ask"
+    "external_directory": "ask",
+    "fffind": "allow"
   }
 }
