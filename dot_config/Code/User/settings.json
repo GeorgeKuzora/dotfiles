@@ -222,5 +222,8 @@
     "bootstrap": "localhost:9092",
     "ssl": false
   }
-]
+],
+"extensions.autoCheckUpdates": false,
+"extensions.autoUpdate": false,
+"update.mode": "manual"
 }
