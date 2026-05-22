@@ -17,3 +17,16 @@ function ExternalToolsConfig(spec)
 end
 
 Map = vim.keymap.set
+
+function GetVisualSelection()
+  local mode = vim.fn.visualmode()
+  if mode == '' then return nil end
+
+  local region = vim.fn.getregion(
+    vim.fn.getpos("v"),
+    vim.fn.getpos("."),
+    { type = mode }
+  )
+
+  return table.concat(region, "\n")
+end

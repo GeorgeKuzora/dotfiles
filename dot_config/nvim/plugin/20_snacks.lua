@@ -54,16 +54,16 @@ Map("n", "<leader>gb", function() Snacks.git.blame_line() end, { desc = "Git bla
 Map({ "n", "v" }, "<leader>gw", function() Snacks.gitbrowse() end, { desc = "Git Browse" })
 
 -- Grep
-Map("n", "g/", function() Snacks.picker.grep() end, { desc = "Grep" })
-Map({ "n", "x" }, "g?", function() Snacks.picker.grep_word() end, { desc = "Visual selection or word" })
+-- Map("n", "g/", function() Snacks.picker.grep() end, { desc = "Grep" })
+-- Map({ "n", "x" }, "g?", function() Snacks.picker.grep_word() end, { desc = "Visual selection or word" })
 Map("n", "gb", function() Snacks.picker.grep_buffers() end, { desc = "Grep Open Buffers" })
 Map("n", "<leader>/", function() Snacks.picker.lines() end, { desc = "Buffer Lines" })
 
 -- Find Files
 Map("n", "<leader>fs", function() Snacks.picker.smart() end, { desc = "Smart Find Files" })
 Map("n", "<leader>,", function() Snacks.picker.buffers() end, { desc = "Find Opened Buffers" })
-Map("n", "<leader>ff", function() Snacks.picker.files() end, { desc = "Find Files" })
-Map("n", "<leader>fF", function() Snacks.picker.files({ hidden = true, ignored = true }) end, { desc = "Find Files" })
+-- Map("n", "<leader>ff", function() Snacks.picker.files() end, { desc = "Find Files" })
+Map("n", "<leader>ff", function() Snacks.picker.files({ hidden = true, ignored = true }) end, { desc = "Find Files" })
 Map("n", "<leader>fg", function() Snacks.picker.git_files() end, { desc = "Find Git Files" })
 
 -- Find Diagnostics
@@ -120,4 +120,4 @@ Map({ "n", "o", "x" }, "]w", function() Snacks.words.jump(1, true) end, { desc =
 Map({ "n", "o", "x" }, "[w", function() Snacks.words.jump(-1, true) end, { desc = "Previous word" })
 
 -- Neural
-Map("n", "<leader><leader>", "<Plug>(NeuralOpen)", { desc = "Neural Open Files" })
+-- Map("n", "<leader><leader>", "<Plug>(NeuralOpen)", { desc = "Neural Open Files" })
