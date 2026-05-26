@@ -3,27 +3,8 @@
   {
     "context": "Workspace",
     "bindings": {
-      "cmd-j": "workspace::ToggleBottomDock",
-      "cmd-shift-j": "terminal_panel::ToggleFocus",
-      "cmd-alt-j": "workspace::NewTerminal",
-
       "cmd-b": "workspace::ToggleRightDock",
       "cmd-alt-b": "workspace::ToggleLeftDock",
-
-      "cmd-e": "project_panel::ToggleFocus",
-
-      "cmd-l": "outline_panel::ToggleFocus",
-      "cmd-shift-l": "outline_panel::ToggleFocus",
-      "alt-cmd-b": "multi_workspace::ToggleWorkspaceSidebar"
-    }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      "cmd-e": "project_panel::ToggleFocus",
-
-      "cmd-l": "outline_panel::ToggleFocus",
-      "cmd-shift-l": "outline_panel::ToggleFocus"
     }
   },
 {{- end }}
@@ -31,33 +12,17 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-alt-j": "workspace::ToggleBottomDock",
-      "cmd-j": "workspace::ToggleBottomDock",
-      "cmd-shift-j": "terminal_panel::ToggleFocus",
-      "cmd-alt-j": "workspace::NewTerminal",
       "ctrl-shift-b": "workspace::ToggleRightDock",
-      "ctrl-alt-b": "multi_workspace::ToggleWorkspaceSidebar"
-    }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      "ctrl-shift-l": "outline_panel::ToggleFocus"
+      "ctrl-alt-b": "workspace::ToggleLeftDock"
     }
   },
 {{- end }}
   {
-    "context": "VimControl && !menu",
+    "context": "VimControl && vim_mode == normal && !menu",
     "bindings": {
       "g o": "outline::Toggle",
-      "g shift-o": "project_symbols::Toggle"
-    }
-  },
-  {
-    "context": "vim_mode == normal && !menu",
-    "bindings": {
+      "g shift-o": "project_symbols::Toggle",
       "shift-y": ["workspace::SendKeystrokes", "y $"],
-      "space f": "file_finder::Toggle",
       "space space": "file_finder::Toggle"
     }
   },
@@ -65,19 +30,14 @@
     "context": "vim_mode == visual && !menu",
     "bindings": {
       ">": ["workspace::SendKeystrokes", "> g v"],
-      "<": ["workspace::SendKeystrokes", "< g v"]
+      "<": ["workspace::SendKeystrokes", "< g v"],
+      "shift-s": "vim::PushAddSurrounds"
     }
   },
   {
     "context": "(vim_mode == normal || vim_mode == visual) && !menu",
     "bindings": {
       "space /": "buffer_search::DeployReplace"
-    }
-  },
-  {
-    "context": "vim_mode == visual",
-    "bindings": {
-      "shift-s": "vim::PushAddSurrounds"
     }
   },
   {
