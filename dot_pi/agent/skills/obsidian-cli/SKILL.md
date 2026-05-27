@@ -104,3 +104,7 @@ obsidian dev:mobile on
 ```
 
 Run `obsidian help` to see additional developer commands including CDP and debugger controls.
+
+# SECURITY ALERT
+
+ALWAYS ESCAPE BACKTICKS `` IN TEXT WHEN USING obsidian-cli: EXAMPLE \`hello world\`. IF NOT TEXT INSIDE BACKTICKS WILL RUN AS BASH COMMAND.
