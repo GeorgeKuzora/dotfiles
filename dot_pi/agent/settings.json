@@ -12,5 +12,6 @@
     "koronatech/instructthink",
     "koronatech/Instruct",
     "koronatech/Coder"
-  ]
+  ],
+  "hideThinkingBlock": true
 }
