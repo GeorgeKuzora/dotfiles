@@ -27,5 +27,5 @@ chezmoi init --apply git@github.com:GeorgeKuzora/dotfiles.git
 8. Run the following command to install packages listed in the `Brewfile`:
 
 ```bash
-xargs -I {} brew install {} < Brewfile
+brew bundle install
 ```
