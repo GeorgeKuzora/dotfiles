@@ -15,7 +15,6 @@ opt.backspace:append { 'nostop' } -- don't stop backspace at insert
 opt.diffopt:append 'linematch:60' -- enable line match diff algorithm
 opt.grepprg = 'rg --vimgrep --smart-case --follow' -- Better grep command
 opt.path:append("**") -- include subdirectories in search
-opt.iskeyword:append("-") -- include subdirectories in search
 
 -- Decrease update time
 o.updatetime = 250
