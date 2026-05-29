@@ -1,21 +1,9 @@
-export PATH="$PATH:~/.local/bin"
-export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
-
-if [ -e {{ .chezmoi.homeDir -}}/.nix-profile/etc/profile.d/nix.sh ]; then . {{ .chezmoi.homeDir -}}/.nix-profile/etc/profile.d/nix.sh; fi
-if [ -e zoxide ]; then . eval "$(zoxide init bash)"; fi
-
 # Commands that should be applied only for interactive shells.
 
 [[ $- == *i* ]] || return
 
 HISTFILESIZE=100000
 HISTSIZE=10000
-
-shopt -s histappend
-shopt -s checkwinsize
-shopt -s extglob
-shopt -s globstar
-shopt -s checkjobs
 
 alias pd='cd -'
 alias ..='cd ..'
