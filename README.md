@@ -13,7 +13,11 @@ I manage my dotfiles using the **[chezmoi](https://www.chezmoi.io/)** CLI tool a
 3. Install `chezmoi` using Homebrew:
 
 ```bash
-brew install chezmoi
+# on MacOS
+/opt/homebrew/bin/brew install chezmoi
+
+# on Linux
+/home/linuxbrew/.linuxbrew/bin/brew install chezmoi
 ```
 
 4. Apply the dotfiles using `chezmoi`:
@@ -23,9 +27,21 @@ chezmoi init --apply git@github.com:GeorgeKuzora/dotfiles.git
 ```
 
 5. Enter information for configuration variables.
-7. Navigate to `~/.config/brewfile`.
-8. Run the following command to install packages listed in the `Brewfile`:
+6. Dotfiles will be placed the directory `~/.local/share/chezmoi`,
+7. Start new shell or source `.bash_profile`, `.zprofile`.
+
+```bash
+# on MacOS
+source ~/.zprofile
+
+# on Linux
+source ~/.bash_profile
+```
+
+8. Navigate to `~/.config/brewfile`.
+9. Run the following command to install packages listed in the `Brewfile`:
 
 ```bash
 brew bundle install
 ```
+10. For linux install `gcc` using distro package manager.
