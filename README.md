@@ -45,3 +45,4 @@ source ~/.bash_profile
 brew bundle install
 ```
 10. For linux install `gcc` using distro package manager.
+11. Create `~/dev` directory.
