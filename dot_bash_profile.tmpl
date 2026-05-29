@@ -1,0 +1,12 @@
+# include .profile if it exists
+[[ -f ~/.profile ]] && . ~/.profile
+
+# include .bashrc if it exists
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+{{- if eq .email "g.kuzora@korona.net" }}
+{{- if eq .chezmoi.hostname "ubuntu" }}
+sudo ip link set eth0 mtu 1350
+fish -i
+{{- end }}
+{{- end }}
