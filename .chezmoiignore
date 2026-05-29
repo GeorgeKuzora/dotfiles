@@ -1,12 +1,17 @@
 ./README.md
-./.vimrc
-{{- if ne .chezmoi.os "linux" }}
-./dot_bash_profile.tmpl
-./dot_bashrc.tmpl
-./dot_profile.tmpl
 
-./dot_config/autostart
+{{- if ne .chezmoi.os "linux" }}
+
+./.config/autostart
+./.bash_profile
+./.bashrc
+./.profile
+
 {{- else if ne .chezmoi.os "darwin" }}
-./dot_zprofile
+
+./.zprofile
+./.zshenv
+./.zshrc
+
 {{- end }}
 
