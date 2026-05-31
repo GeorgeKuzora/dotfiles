@@ -1,254 +1,50 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](text)\
-$os\
-$shell\
-$sudo\
 $username\
-[](fg:text bg:blue)\
+$hostname\
 $directory\
-[](fg:blue bg:surface2)\
 $git_branch\
-$git_status\
 $git_state\
-$git_metrics\
-[](fg:surface2 bg:surface1)\
-$package\
-[](fg:surface1 bg:surface0)\
-$c\
-$rust\
-$golang\
-$nodejs\
-$php\
-$java\
-$kotlin\
-$haskell\
-$lua\
-$python\
-$conda\
-$docker_context\
-[](fg:surface0)\
-$time\
-$battery\
+$git_status\
+$cmd_duration\
 $line_break\
+$python\
 $character"""
 
-palette = 'catppuccin_mocha'
-
-add_newline = true
-
-[os]
-disabled = false
-style = "bg:text fg:crust"
-format = '[$symbol ]($style)'
-
-[os.symbols]
-Windows = ""
-Ubuntu = "󰕈"
-SUSE = ""
-Raspbian = "󰐿"
-Mint = "󰣭"
-Macos = "󰀵"
-Manjaro = ""
-Linux = "󰌽"
-Gentoo = "󰣨"
-Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
-Arch = "󰣇"
-Artix = "󰣇"
-CentOS = ""
-Debian = "󰣚"
-Redhat = "󱄛"
-RedHatEnterprise = "󱄛"
-
-[shell]
-fish_indicator = '󰈺'
-bash_indicator = ''
-zsh_indicator = ''
-format = '[$indicator ]($style)'
-style = "bg:text fg:crust"
-disabled = false
-
-[sudo]
-disabled = false
-style = "bg:text fg:crust"
-format = '[$symbol ]($style)'
-symbol = '󰓎'
-
-[username]
-show_always = false
-style_user = "bg:text fg:crust"
-style_root = "bg:text fg:red"
-format = '[$user]($style)'
-
 [directory]
-style = "fg:crust bg:blue"
-format = "[ $path ]($style)"
-truncation_length = 3
-truncation_symbol = "…/"
-read_only = " 󰌾"
-
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = "󰝚 "
-"Pictures" = " "
-"dev" = "󰲋 "
-
-[git_branch]
-symbol = ""
-style = "fg:blue bold bg:surface2"
-format = '[ $symbol $branch(:$remote_branch)]($style)'
-
-[git_state]
-style = "fg:blue bold bg:surface2"
-format = '[ \($state( $progress_current/$progress_total)\)]($style)'
-
-[git_status]
-style = "fg:blue bold bg:surface2"
-format = '[( $all_status$ahead_behind)]($style)'
-
-[git_metrics]
-added_style = "fg:blue bold bg:surface2"
-deleted_style = "fg:blue bold bg:surface2"
-format = '([ +$added]($added_style))([-$deleted]($deleted_style))'
-disabled = false
-
-[package]
-symbol = "󰏗"
-style = "fg:blue bold bg:surface1"
-format = '[ $symbol( $version)]($style)'
-
-# [mise]
-# symbol = ""
-# style = "fg:blue bold bg:surface1"
-# format = '[ $symbol $health]($style)'
-# healthy_symbol = '󱇬'
-# unhealthy_symbol = '󱘹'
-# disabled = false
-
-[nodejs]
-symbol = ""
-style = "fg:blue bold bg:surface0"
-format = '[ $symbol( $version)]($style)'
-
-[c]
-symbol = ""
-style = "fg:blue bold bg:surface0"
-format = '[ $symbol( $version)]($style)'
-
-[rust]
-symbol = ""
-style = "fg:blue bold bg:surface0"
-format = '[ $symbol( $version)]($style)'
-
-[golang]
-symbol = ""
-style = "fg:blue bold bg:surface0"
-format = '[ $symbol( $version)]($style)'
-
-[php]
-symbol = ""
-style = "fg:blue bold bg:surface0"
-format = '[ $symbol( $version)]($style)'
-
-[java]
-symbol = " "
-style = "fg:blue bold bg:surface0"
-format = '[ $symbol( $version)]($style)'
-
-[kotlin]
-symbol = ""
-style = "fg:blue bold bg:surface0"
-format = '[ $symbol( $version)]($style)'
-
-[haskell]
-symbol = ""
-style = "fg:blue bold bg:surface0"
-format = '[ $symbol( $version)]($style)'
-
-[lua]
-symbol = ""
-style = "fg:blue bold bg:surface0"
-format = '[ $symbol( $version)]($style)'
-
-[python]
-symbol = ""
-style = "fg:blue bold bg:surface0"
-format = '[ $symbol( $version)(\($virtualenv\))]($style)'
-
-[docker_context]
-symbol = ""
-style = "fg:blue bold bg:surface0"
-format = '[ $symbol( $context)]($style)'
-
-[conda]
-symbol = ""
-style = "fg:blue bold bg:surface0"
-format = '[ $symbol( $environment)]($style)'
-ignore_base = false
-
-[time]
-disabled = false
-time_format = "%R"
-style = "fg:blue bold"
-format = '[  $time]($style)'
-
-[battery]
-format = '[ $symbol$percentage]($style)'
-disabled = false
-
-[[battery.display]]
-threshold = 100
-style = "fg:blue bold"
-
-[cmd_duration]
-show_milliseconds = true
-format = "[  $duration]($style)"
-style = "fg:text"
-disabled = false
-show_notifications = false
-min_time_to_notify = 45000
-
-[line_break]
-disabled = false
+style = "blue"
 
 [character]
-disabled = false
-success_symbol = '[❯](bold fg:green)'
-error_symbol = '[❯](bold fg:red)'
-vimcmd_symbol = '[❮](bold fg:green)'
-vimcmd_replace_one_symbol = '[❮](bold fg:lavender)'
-vimcmd_replace_symbol = '[❮](bold fg:lavender)'
-vimcmd_visual_symbol = '[❮](bold fg:yellow)'
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
 
-[palettes.catppuccin_mocha]
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
+[git_branch]
+format = "[$branch]($style)"
+style = "bright-black"
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "cyan"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
+
+[python]
+format = "[$virtualenv]($style) "
+style = "bright-black"
+detect_extensions = []
+detect_files = []

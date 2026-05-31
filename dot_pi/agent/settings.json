@@ -1,6 +1,5 @@
 {
   "lastChangelogVersion": "0.76.0",
-  "theme": "catppuccin-mocha",
   "defaultProvider": "koronatech",
   "defaultModel": "instructthink",
   "defaultThinkingLevel": "high",
