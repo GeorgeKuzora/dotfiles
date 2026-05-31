@@ -1,0 +1,22 @@
+background = CECFD8
+foreground = 060914
+selection-background = 0D2C4E
+selection-foreground = C2CAEC
+cursor-color = 4D4F58
+
+palette = 0=#060914
+palette = 1=#601614
+palette = 2=#344E34
+palette = 3=#72550A
+palette = 4=#1B3960
+palette = 5=#682448
+palette = 6=#076369
+palette = 7=#CECFD8
+palette = 8=#4D4F58
+palette = 9=#842620
+palette = 10=#486440
+palette = 11=#836123
+palette = 12=#284572
+palette = 13=#84375A
+palette = 14=#088287
+palette = 15=#F1F1F4
