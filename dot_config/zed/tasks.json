@@ -9,7 +9,7 @@
   },
   {
     "label": "ruff format current file",
-    "command": "ruff format $ZED_FILE",
+    "command": "ruff format $ZED_FILE; ruff lint --fix $ZED_FILE; ruff check --select I --fix  $ZED_FILE",
     "reveal": "never",
     "reveal_target": "dock",
     "hide": "never",
@@ -24,8 +24,8 @@
     "shell": "system"
   },
   {
-    "label": "isort & ruff current file",
-    "command": "isort $ZED_FILE; ruff format $ZED_FILE",
+    "label": "ruff fix imports current file",
+    "command": "ruff check --select I --fix  $ZED_FILE",
     "reveal": "never",
     "reveal_target": "dock",
     "hide": "never",
