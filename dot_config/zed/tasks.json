@@ -1,6 +1,6 @@
 [
   {
-    "label": "isort current file",
+    "label": "isort",
     "command": "isort $ZED_FILE",
     "reveal": "never",
     "reveal_target": "dock",
@@ -8,15 +8,15 @@
     "shell": "system"
   },
   {
-    "label": "ruff format current file",
-    "command": "ruff format $ZED_FILE; ruff lint --fix $ZED_FILE; ruff check --select I --fix  $ZED_FILE",
+    "label": "ruff format",
+    "command": "ruff check --select I --fix  $ZED_FILE; ruff format $ZED_FILE; ruff check --fix $ZED_FILE",
     "reveal": "never",
     "reveal_target": "dock",
     "hide": "never",
     "shell": "system"
   },
   {
-    "label": "ruff lint fix current file",
+    "label": "ruff lint fix",
     "command": "ruff lint --fix $ZED_FILE",
     "reveal": "never",
     "reveal_target": "dock",
@@ -24,7 +24,7 @@
     "shell": "system"
   },
   {
-    "label": "ruff fix imports current file",
+    "label": "ruff fix imports",
     "command": "ruff check --select I --fix  $ZED_FILE",
     "reveal": "never",
     "reveal_target": "dock",
