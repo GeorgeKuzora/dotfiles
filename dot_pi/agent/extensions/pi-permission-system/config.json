@@ -27,14 +27,20 @@
       "head *": "allow",
       "tail *": "allow",
       "echo *": "allow",
+      "git *": "ask",
       "git status *": "allow",
       "git diff *": "allow",
-      "git *": "ask",
+      "git branch *": "allow",
+      "git fetch *": "allow",
+      "git log *": "allow",
       "rm -rf *": "deny"
     },
     "mcp": { "mcp_status": "allow" },
     "skill": { "*": "allow" },
-    "external_directory": "ask",
+    "external_directory": {
+      "*": "ask",
+      "~/.agents/*": "allow"
+    },
     "fffind": "allow",
     "ffgrep": "allow"
   }
