@@ -5,6 +5,8 @@ local opt = vim.opt
 local api = vim.api
 local fn = vim.fn
 
+vim.cmd.colorscheme 'catppuccin'
+
 -- Leader keys
 g.mapleader = " " -- Set leader key to space
 g.maplocalleader = " " -- Set local leader key (NEW)
@@ -95,7 +97,6 @@ opt.wildignore :append({ "*.o", "*.obj", "*.pyc", "*.class", "*.jar", '.pyc', '.
 opt.clipboard = { 'unnamedplus' } -- Copy paste between vim and everything else, 'unnamed'
 -- UI and windows
 opt.signcolumn = 'yes' -- sets opt.signcolumn to auto
-opt.colorcolumn = '80,100,120' -- colored line on characters
 opt.termguicolors = true
 opt.mouse = 'a' -- Enable your mouse
 opt.splitbelow = true -- Horizontal splits will automatically be below
