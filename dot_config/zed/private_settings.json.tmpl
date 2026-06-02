@@ -75,6 +75,7 @@
   "buffer_font_size": 16,
   "remove_trailing_whitespace_on_save": true,
   "project_panel": {
+    "starts_open": false,
     "dock": "right"
   },
   "git_panel": {
@@ -140,10 +141,6 @@
     "default_profile": "write"
   },
   "agent_servers": {
-    "qwen-code": {
-      "type": "registry",
-      "env": {"OPENAI_API_KEY": {{ .koronatech_api_key | quote }} }
-    },
     "opencode": {
       "type": "registry",
       "env": {"OPENAI_API_KEY": {{ .koronatech_api_key | quote }} }
