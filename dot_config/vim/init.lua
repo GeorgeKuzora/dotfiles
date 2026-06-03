@@ -57,6 +57,7 @@ opt.scrolloff = 8 -- The number of screen lines to keep above and below the curs
 opt.sidescrolloff = 5 -- The number of screen columns to keep to the left and right of the cursor.
 opt.syntax = 'enable' -- Enable syntax higlihting
 -- display
+vim.g.netrw_banner = 0
 wo.number = true -- Show line numbers on the sidebar.
 opt.relativenumber = false -- Show line number on the current line and relative numbers on all other lines.
 opt.laststatus = 3 -- Always display the status bar.
@@ -74,7 +75,7 @@ opt.foldexpr = "nvim_treesitter#foldexpr()" -- Use treesitter for folding
 opt.foldlevel = 99 -- set high foldlevel for nvim-ufo
 opt.foldlevelstart = 99 -- start with all code unfolded
 -- undoing
-opt.autoread = true -- Automatically re-read files if unmodified inside 
+opt.autoread = true -- Automatically re-read files if unmodified inside
 opt.autowrite = false -- Don't auto save
 opt.backspace = { 'indent', 'eol', 'start' } -- Allow backspacing over indention, line breaks and insertion start.
 opt.dir = fn.expand('$HOME/.cache/nvim') -- Directory to store backup files.
