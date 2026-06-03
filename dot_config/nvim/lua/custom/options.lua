@@ -65,6 +65,7 @@ opt.scrolloff = 8 -- The number of screen lines to keep above and below the curs
 opt.sidescrolloff = 5 -- The number of screen columns to keep to the left and right of the cursor.
 opt.syntax = 'enable' -- Enable syntax higlihting
 -- display
+vim.g.netrw_banner = 0
 wo.number = true -- Show line numbers on the sidebar.
 opt.relativenumber = false -- Show line number on the current line and relative numbers on all other lines.
 opt.laststatus = 3 -- Always display the status bar.
