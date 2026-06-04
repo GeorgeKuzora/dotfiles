@@ -94,8 +94,7 @@
     "**/Thumbs.db",
     "**/.classpath",
     "**/.settings",
-    "**/.venv",
-    "**/hidden*"
+    "**/.venv"
   ],
   "language_models": {
     "openai": {
@@ -142,6 +141,9 @@
   },
   "agent_servers": {
     "opencode": {
+      "default_config_options": {
+        "model": "koronatech/instructthink"
+      },
       "type": "custom",
       "command": "opencode",
       "args": ["acp"],
