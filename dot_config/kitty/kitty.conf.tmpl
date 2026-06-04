@@ -1285,13 +1285,6 @@ tab_title_template " {num_windows} {title}"
 
 #: Advanced (((
 
-{{- if eq .chezmoi.os "darwin" }}
-shell /opt/homebrew/bin/fish -i
-{{- end }}
-{{- if eq .chezmoi.os "linux" }}
-shell fish -i
-{{- end }}
-
 #: The shell program to execute. The default value of . means to use
 #: whatever shell is set as the default shell for the current user.
 #: Note that on macOS if you change this, you might need to add

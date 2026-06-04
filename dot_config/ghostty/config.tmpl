@@ -13,12 +13,6 @@ window-save-state = always
 window-new-tab-position = current
 macos-option-as-alt = true
 
-{{- if eq .chezmoi.os "linux" }}
-command = fish -i
-{{- else if eq .chezmoi.os "darwin" }}
-command = /opt/homebrew/bin/fish -i
-{{- end }}
-
 keybind = ctrl+comma=ignore
 keybind = ctrl+shift+e=ignore
 keybind = super+ctrl+left_bracket=ignore
