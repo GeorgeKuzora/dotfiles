@@ -142,7 +142,9 @@
   },
   "agent_servers": {
     "opencode": {
-      "type": "registry",
+      "type": "custom",
+      "command": "opencode",
+      "args": ["acp"],
       "env": {"OPENAI_API_KEY": {{ .koronatech_api_key | quote }} }
     }
   },
