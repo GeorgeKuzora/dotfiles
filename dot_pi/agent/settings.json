@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.78.0",
+  "lastChangelogVersion": "0.79.1",
   "theme": "catppuccin-mocha",
   "defaultProvider": "koronatech",
   "defaultModel": "instructthink",
@@ -10,8 +10,7 @@
   ],
   "enabledModels": [
     "koronatech/instructthink",
-    "koronatech/Instruct",
-    "koronatech/Coder"
+    "koronatech/Instruct"
   ],
   "hideThinkingBlock": true
 }

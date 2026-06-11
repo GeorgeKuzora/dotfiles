@@ -5,9 +5,14 @@
       "api": "openai-completions",
       "apiKey": {{ .koronatech_api_key | quote }},
       "models": [
-        { "id": "instructthink" },
-        { "id": "Instruct" },
-        { "id": "Coder" }
+        {
+            "id": "instructthink",
+            "contextWindow": 96000
+        },
+        {
+            "id": "Instruct",
+            "contextWindow": 96000
+        }
       ]
     }
   }
