@@ -16,19 +16,17 @@
 [diff]
 	colorMoved = zebra
 	algorithm = histogram
-    external = difft
 [alias]
-    	empty = "git commit --allow-empty"
+	empty = commit --allow-empty
+	dl = -c diff.external=difft log -p --ext-diff
+	ds = -c diff.external=difft show --ext-diff
+	df = -c diff.external=difft diff --ext-diff
 [status]
-    	short = true
+	short = true
 [format]
 	pretty = oneline
 [log]
 	decorate = true
 	abbrevCommit = true
 [merge]
-    	conflictstyle = diff3
-[alias]
-    dl = -c diff.external=difft log -p --ext-diff
-    ds = -c diff.external=difft show --ext-diff
-    df = -c diff.external=difft diff
+	conflictstyle = diff3
