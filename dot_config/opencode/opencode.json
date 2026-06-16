@@ -13,19 +13,11 @@
         },
         "Instruct": {
           "name": "Instruct"
-        },
-        "Coder": {
-          "name": "Coder"
         }
       }
     }
   },
   "instructions": ["QWEN.md", "AGENTS.md", "AGENT.md"],
-  "permission": {
-    "edit": "ask",
-    "bash": "ask",
-    "webfetch": "allow"
-  },
   "default_agent": "build",
   "share": "disabled",
   "autoupdate": false
