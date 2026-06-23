@@ -14,7 +14,6 @@
 
 -- NEOVIM QUALITY OF LIFE IMPROVEMENTS
 Map({ 'n', 'v', 'x' }, '<Space>', '<Nop>', { silent = true, desc = 'Space do nothing' })
-Map('i', 'ii', '<esc>', { desc = 'Escape insert mode' })
 Map('n', '<leader>*', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Change word under cursor in a buffer' })
 Map('v', '<leader>*', [["yy:%s/\V<C-r>=escape(@y, '/' )<CR>/<C-r>=escape(@y, '&')<CR>/gI<Left><Left><Left>]], { desc = 'Change visually selected text in buffer' })
 
