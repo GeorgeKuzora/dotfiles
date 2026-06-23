@@ -24,6 +24,7 @@ if status is-interactive
     set -gx EDITOR nvim
     set -gx VISUAL nvim
     set -gx COLORTERM truecolor
+    set -gx MANPATH $HOME/.local/share/man:$MANPATH
     {{- if eq .chezmoi.os "darwin" }}
     # set -gx TERM xterm-ghostty
     # set -gx TERMINAL ghostty
@@ -199,7 +200,9 @@ if status is-interactive
     atuin init fish | source
     zoxide init fish | source
     starship init fish | source
+    mise activate fish --shims | source
     carapace _carapace | source
     uv generate-shell-completion fish | source
     uvx --generate-shell-completion fish | source
+    mise completion fish | source
 end
