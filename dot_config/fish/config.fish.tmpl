@@ -185,6 +185,7 @@ if status is-interactive
     safe_abbr op opencode
     safe_abbr pd prevd
     safe_abbr nd nextd
+    safe_abbr mr mise run
 
     {{- if eq .email "g.kuzora@korona.net" }}
     # Koronatech
@@ -200,7 +201,7 @@ if status is-interactive
     atuin init fish | source
     zoxide init fish | source
     starship init fish | source
-    mise activate fish --shims | source
+    mise activate fish | source
     carapace _carapace | source
     uv generate-shell-completion fish | source
     uvx --generate-shell-completion fish | source
