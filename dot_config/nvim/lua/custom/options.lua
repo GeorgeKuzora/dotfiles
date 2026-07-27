@@ -116,6 +116,9 @@ opt.concealcursor = "" -- Don't hide cursor line markup
 opt.cursorline = true -- Enable highlighting of the current line
 opt.backup = false -- This is recommended by coc
 opt.writebackup = false -- This is recommended by coc
+opt.list = true -- show chars for some invisible chars
+opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' } -- chars for list
+opt.showmode = false -- Dont show mode since we have a statusline
 require("vim._core.ui2").enable({})
 -- Automation
 opt.autochdir = false -- Your working directory will always be the same as your working directory
@@ -138,18 +141,14 @@ g.lsp_handlers_enabled = true -- enable or disable default lsp.handlers (hover a
 g.semantic_tokens_enabled = true -- enable or disable LSP semantic tokens on startup
 g.git_worktrees = nil -- enable git integration for detached worktrees (specify a table where each entry is of the form { toplevel = env.HOME, gitdir=env.HOME .. "/.dotfiles" })
 
--- LazyVim options
-opt.grepformat = '%f:%l:%c:%m'
+-- Extra options
+opt.grepformat = '%f:%l:%c:%m' -- This ensures that when you use :grep, the quickfix list knows the exact column number of the match, not just the line.
 opt.inccommand = 'split' -- preview incremental substitute
-opt.list = true
-opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-opt.pumblend = 10
 opt.sessionoptions = { 'blank', 'buffers', 'curdir', 'folds', 'help', 'tabpages', 'winsize', 'winpos', 'terminal', 'localoptions' }
-opt.showmode = false -- Dont show mode since we have a statusline
-opt.splitkeep = 'screen'
+opt.splitkeep = 'screen' -- keeps the text visually stationary on your screen when splits are created/closed
 opt.wildmode = 'longest:full,full' -- Command-line completion mode
 opt.winminwidth = 5 -- Minimum window width
-opt.fillchars = {
+opt.fillchars = { -- Replaces default UI characters with custom ones
   foldopen = '',
   foldclose = '',
   fold = ' ',
@@ -157,24 +156,17 @@ opt.fillchars = {
   diff = '╱',
   eob = ' ',
 }
-if fn.has 'nvim-0.10' == 1 then
-  opt.smoothscroll = true
-end
+opt.smoothscroll = true -- Enables smooth scrolling by a single line
+
 -- Performance improvements
-opt.redrawtime = 10000
-opt.maxmempattern = 20000
+opt.redrawtime = 10000 -- Prevents syntax highlighting from giving up and turning plain white on very long or complex lines
+opt.maxmempattern = 20000 -- Prevents "Out of memory" errors when running complex searches on massive files
 opt.lazyredraw = true -- Don't redraw during macros
 opt.synmaxcol = 300 -- Syntax highlighting limit
-opt.ttimeoutlen = 0 -- Key code timeout
-
--- NEOVIDE OPTIONS
-o.guifont = 'VictorMono Nerd Font:h14'
-g.neovide_scale_factor = 1.2
-g.neovide_hide_mouse_when_typing = true
-g.neovide_cursor_animation_length = 0.0
-g.neovide_cursor_vfx_mode = ''
+opt.ttimeoutlen = 0 -- Sets the timeout for terminal key codes to 0 milliseconds
 
 -- TRANSPARENCY
-api.nvim_set_hl(0, "Normal", { bg = "none" })
-api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
+opt.pumblend = 10 -- transparency for native completion popup
+api.nvim_set_hl(0, "Normal", { bg = "none" }) -- transparency for transparent terminal
+api.nvim_set_hl(0, "NormalNC", { bg = "none" }) -- transparency for transparent terminal
+api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" }) -- transparency for transparent terminal
