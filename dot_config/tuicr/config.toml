@@ -1,7 +1,9 @@
-theme = "catppuccin-mocha"
+appearance = "system"        # or "dark" / "light"
+theme_dark = "catppuccin-mocha"
+theme_light = "catppuccin-latte"
+
 diff_view = "side-by-side"   # or "unified"
 ignore_whitespace = false    # ignore all whitespace in local VCS diffs
-appearance = "system"        # or "dark" / "light"
 mouse = true
 leader = ";"                  # configurable prefix for leader shortcuts
 comment_vim = false           # vim modal editing in the review comment box
