@@ -28,7 +28,7 @@
     }
   },
   {
-    "context": "vim_mode == visual && !menu",
+    "context": "VimControl && vim_mode == visual && !menu",
     "bindings": {
       ">": ["workspace::SendKeystrokes", "> g v"],
       "<": ["workspace::SendKeystrokes", "< g v"],
@@ -36,9 +36,10 @@
     }
   },
   {
-    "context": "(vim_mode == normal || vim_mode == visual) && !menu",
+    "context": "VimControl && (vim_mode == normal || vim_mode == visual) && !menu",
     "bindings": {
-      "space /": "buffer_search::DeployReplace"
+      "space /": "buffer_search::DeployReplace",
+      "space g": "text_finder::Toggle"
     }
   },
   {
