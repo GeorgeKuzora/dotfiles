@@ -8,3 +8,14 @@ mouse = true
 leader = ";"                  # configurable prefix for leader shortcuts
 comment_vim = false           # vim modal editing in the review comment box
 review_watch_interval_ms = 1000 # set to 0 to disable persisted-review polling
+
+comment_types = [
+  { id = "suggestion", label = "ПРЕДЛОЖЕНИЕ", definition = "possible improvements", color = "yellow" },
+  { id = "issue", label = "ПРОБЛЕМА", definition = "problems to fix", color = "red" },
+  { id = "question", label = "ВОПРОС", definition = "ask for clarification", color = "blue" },
+  { id = "nit", label = "ПРИДИРКА", definition = "small optional tweaks", color = "white" },
+  { id = "praise", label = "КРУТО", definition = "positive feedback", color = "green" },
+]
+
+[forge]
+comment_type_prefix = true
