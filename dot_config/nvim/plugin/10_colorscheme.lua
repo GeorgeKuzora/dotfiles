@@ -72,17 +72,17 @@ require(theme).setup {
   },
   custom_highlights = function(colors)
     return {
-      DiagnosticLineBackgroundError = { bg = '#2D2331' },
-      DiagnosticLineBackgroundWarn = { bg = '#2D2B32' },
-      DiagnosticLineBackgroundInfo = { bg = '#242B36' },
-      DiagnosticLineBackgroundHint = { bg = '#242B36' },
-      DiagnosticSignError = { bg = '#2D2331' },
-      DiagnosticSignWarn = { bg = '#2D2B32' },
-      DiagnosticSignInfo = { bg = '#242B36' },
-      DiagnosticSignHint = { bg = '#242B36' },
       SnacksIndentScope = { fg = colors.overlay0 },
       SnacksIndent = { fg = colors.surface0 },
       DapStopped = { fg = colors.green },
+  --     DiagnosticLineBackgroundError = { bg = '#2D2331' },
+  --     DiagnosticLineBackgroundWarn = { bg = '#2D2B32' },
+  --     DiagnosticLineBackgroundInfo = { bg = '#242B36' },
+  --     DiagnosticLineBackgroundHint = { bg = '#242B36' },
+  --     DiagnosticSignError = { bg = '#2D2331' },
+  --     DiagnosticSignWarn = { bg = '#2D2B32' },
+  --     DiagnosticSignInfo = { bg = '#242B36' },
+  --     DiagnosticSignHint = { bg = '#242B36' },
     }
   end,
 }
