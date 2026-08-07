@@ -106,7 +106,6 @@ opt.clipboard = { 'unnamedplus' } -- Copy paste between vim and everything else,
 -- UI and windows
 opt.signcolumn = 'yes' -- sets opt.signcolumn to auto
 opt.colorcolumn = '80,100' -- colored line on characters
-opt.termguicolors = true
 opt.mouse = 'a' -- Enable your mouse
 opt.splitbelow = true -- Horizontal splits will automatically be below
 opt.splitright = true -- Vertical splits will automatically be to the right
