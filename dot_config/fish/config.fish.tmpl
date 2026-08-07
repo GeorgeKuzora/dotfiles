@@ -26,7 +26,7 @@ if status is-interactive
     set -gx COLORTERM truecolor
     set -gx MANPATH $HOME/.local/share/man:$MANPATH
     {{- if eq .chezmoi.os "darwin" }}
-    # set -gx TERM xterm-ghostty
+    set -gx TERM xterm-ghostty
     # set -gx TERMINAL ghostty
     {{- end }}
     {{- if eq .chezmoi.os "linux" }}
