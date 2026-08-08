@@ -9,8 +9,15 @@ I manage my dotfiles using the **[chezmoi](https://www.chezmoi.io/)** CLI tool a
 ## Installation
 
 1. [Set up SSH keys for GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
-2. Install [Homebrew](https://brew.sh/).
-3. Install `chezmoi` using Homebrew:
+2. For Linux machine: install a system C compiler and the standard development tools:
+
+```bash
+sudo apt update
+sudo apt install build-essential
+```
+
+3. Install [Homebrew](https://brew.sh/).
+4. Install `chezmoi` using Homebrew:
 
 ```bash
 # on MacOS
@@ -20,15 +27,15 @@ I manage my dotfiles using the **[chezmoi](https://www.chezmoi.io/)** CLI tool a
 /home/linuxbrew/.linuxbrew/bin/brew install chezmoi
 ```
 
-4. Apply the dotfiles using `chezmoi`:
+5. Apply the dotfiles using `chezmoi`:
 
 ```bash
 chezmoi init --apply git@github.com:GeorgeKuzora/dotfiles.git
 ```
 
-5. Enter information for configuration variables.
-6. Dotfiles will be placed the directory `~/.local/share/chezmoi`,
-7. Start new shell or source `.bash_profile`, `.zprofile`.
+6. Enter information for configuration variables.
+7. Dotfiles will be placed the directory `~/.local/share/chezmoi`,
+8. Start new shell or source `.bash_profile`, `.zprofile`.
 
 ```bash
 # on MacOS
@@ -38,11 +45,11 @@ source ~/.zprofile
 source ~/.bash_profile
 ```
 
-8. Navigate to `~/.config/brewfile`.
-9. Run the following command to install packages listed in the `Brewfile`:
+9. Navigate to `~/.config/brewfile`.
+10. Run the following command to install packages listed in the `Brewfile`:
 
 ```bash
 brew bundle install
 ```
-10. For linux install `gcc` using distro package manager.
-11. Create `~/dev` directory.
+11. For linux install `gcc` using distro package manager.
+12. Create `~/dev` directory.
