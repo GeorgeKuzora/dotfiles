@@ -1,0 +1,5 @@
+[post-start]
+copy = "wt step copy-ignored"
+init = "git submodule init"
+update = "git submodule update"
+trust = "mise trust"
