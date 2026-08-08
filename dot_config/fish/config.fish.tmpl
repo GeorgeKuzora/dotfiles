@@ -25,9 +25,9 @@ if status is-interactive
     set -gx VISUAL nvim
     set -gx COLORTERM truecolor
     set -gx MANPATH $HOME/.local/share/man:$MANPATH
-    {{- if eq .chezmoi.os "darwin" }}
     set -gx TERM xterm-ghostty
-    # set -gx TERMINAL ghostty
+    set -gx TERMINAL ghostty
+    {{- if eq .chezmoi.os "darwin" }}
     {{- end }}
     {{- if eq .chezmoi.os "linux" }}
     set -gx BROWSER xdg-open
@@ -36,8 +36,8 @@ if status is-interactive
     set -gx READER xdg-open
     set -gx IMAGE xdg-open
     {{- if eq  .chezmoi.hostname "ubuntu" }}
-    set -gx TERM xterm-256color
-    set -gx TERMINAL xterm
+    # set -gx TERM xterm-256color
+    # set -gx TERMINAL xterm
     {{- end }}
     {{- end }}
     set -gx PAGER less
