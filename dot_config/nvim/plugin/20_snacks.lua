@@ -5,8 +5,14 @@ vim.pack.add({
 
 Snacks.setup({
   words = {},
+  explorer = {},
   picker = {
     jump = { reuse_win = false },
+      sources = {
+        explorer = {
+          layout = { layout = { position = "right" } },
+        },
+      },
   },
   scope = {},
   statuscolumn = {},
@@ -118,6 +124,9 @@ Map({ "n", "v" }, "<leader>;", function() Snacks.scope.jump() end, { desc = "Go 
 -- Words
 Map({ "n", "o", "x" }, "]w", function() Snacks.words.jump(1, true) end, { desc = "Next word" })
 Map({ "n", "o", "x" }, "[w", function() Snacks.words.jump(-1, true) end, { desc = "Previous word" })
+
+-- Explorer
+Map("n", "-", function() Snacks.explorer() end, { desc = "File Explorer" })
 
 -- Neural
 -- Map("n", "<leader><leader>", "<Plug>(NeuralOpen)", { desc = "Neural Open Files" })
