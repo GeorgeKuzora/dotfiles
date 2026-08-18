@@ -1,5 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
+{{- if eq .email "g.kuzora@korona.net" }}
   "provider": {
     "koronatech": {
       "npm": "@ai-sdk/openai-compatible",
@@ -15,7 +16,6 @@
           "name": "Instruct"
         }
       }
-{{- if eq .email "g.kuzora@korona.net" }}
     },
     "litellm": {
       "npm": "@ai-sdk/openai-compatible",
@@ -51,11 +51,40 @@
           "name": "glm-4.7"
         }
       }
-{{- end }}
     }
   },
+  "enabled_providers": ["koronatech", "litellm", "opencode"],
+  "small_model": "koronatech/instructthink",
+{{- end }}
   "instructions": ["QWEN.md", "AGENTS.md", "AGENT.md", "CLAUDE.md"],
   "default_agent": "build",
   "share": "disabled",
-  "autoupdate": false
+  "autoupdate": false,
+  "permission": {
+    "bash": {
+      "grep *": "allow",
+      "ls *": "allow",
+      "find *": "allow",
+      "cat *": "allow",
+      "wc *": "allow",
+      "cd *": "allow",
+      "mkdir *": "allow",
+      "mkdir -p *": "allow",
+      "touch *": "allow",
+      "head *": "allow",
+      "tail *": "allow",
+      "echo *": "allow",
+      "git *": "ask",
+      "git status *": "allow",
+      "git diff *": "allow",
+      "git branch *": "allow",
+      "git fetch *": "allow",
+      "git log *": "allow",
+      "git show *": "allow",
+      "rm -rf *": "deny"
+    },
+    "external_directory": {
+      "/tmp/**": "allow"
+    }
+  }
 }
