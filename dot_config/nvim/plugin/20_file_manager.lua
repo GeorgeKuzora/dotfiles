@@ -1,6 +1,19 @@
 vim.pack.add({
-  { src = 'https://github.com/nvim-mini/mini.files', version = 'stable' },
+  "https://github.com/stevearc/oil.nvim",
 })
-local files = require('mini.files')
-files.setup()
-Map("n", "-", function() MiniFiles.open() end, { desc = "File Manager" })
+
+local o = require 'oil'
+o.setup {
+  keymaps = {
+    ['q'] = { "actions.close", mode = "n" },
+  },
+  columns = {},
+  view_options = {
+    show_hidden = true,
+  },
+  cleanup_delay_ms = 10,
+}
+
+Map('n', '-', function()
+  o.open(nil)
+end, { desc = 'Oil open parent directory' })
