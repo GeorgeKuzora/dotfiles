@@ -1,0 +1,61 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "koronatech": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Koronatech",
+      "options": {
+        "baseURL": "https://ai.kth.pro/api"
+      },
+      "models": {
+        "instructthink": {
+          "name": "InstructThink"
+        },
+        "Instruct": {
+          "name": "Instruct"
+        }
+      }
+{{- if eq .email "g.kuzora@korona.net" }}
+    },
+    "litellm": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LiteLLM",
+      "options": {
+        "baseURL": "https://aiproxy.kth.pro/v1",
+        "headers": {"x-api-key": {{ .glm_api_key | quote }}}
+      },
+      "models": {
+        "glm-5.3": {
+          "name": "glm-5.3",
+          "variants": {
+            "none": { "reasoningEffort": "none" },
+            "high": { "reasoningEffort": "high" },
+            "max": { "reasoningEffort": "max" }
+          }
+        },
+        "glm-5.2": {
+          "name": "glm-5.2",
+          "variants": {
+            "none": { "reasoningEffort": "none" },
+            "high": { "reasoningEffort": "high" },
+            "max": { "reasoningEffort": "max" }
+          }
+        },
+        "glm-5.1": {
+          "name": "glm-5.1"
+        },
+        "glm-5.0": {
+          "name": "glm-5.0"
+        },
+        "glm-4.7": {
+          "name": "glm-4.7"
+        }
+      }
+{{- end }}
+    }
+  },
+  "instructions": ["QWEN.md", "AGENTS.md", "AGENT.md", "CLAUDE.md"],
+  "default_agent": "build",
+  "share": "disabled",
+  "autoupdate": false
+}
