@@ -1,0 +1,51 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "absolute"
+cursorline = true
+mouse = true
+true-color = true
+color-modes = true
+bufferline = "never"
+scrolloff = 5
+idle-timeout = 250
+rulers = [80, 100]
+auto-completion = true
+auto-format = false
+auto-pairs = false
+trim-trailing-whitespace = true
+end-of-line-diagnostics = "hint"
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+character = "┊" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 0
+
+[editor.file-picker]
+hidden = false
+
+[editor.search]
+smart-case = true
+wrap-around = true
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = false
+snippets = true
+
+[editor.whitespace.render]
+tab = "all"
+
+[editor.auto-save]
+after-delay.enable = true
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+
+[keys.normal]
+C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
