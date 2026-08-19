@@ -14,7 +14,7 @@ auto-completion = true
 auto-format = false
 auto-pairs = false
 trim-trailing-whitespace = true
-end-of-line-diagnostics = "hint"
+end-of-line-diagnostics = "error"
 
 [editor.cursor-shape]
 normal = "block"
