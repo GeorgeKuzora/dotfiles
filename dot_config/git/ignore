@@ -17,12 +17,6 @@ hidden*
 .venv
 .zed
 .DS_Store
-.crush
-.CRUSH.md
-CRUSH.md
-.crushignore
-.qwen/
-QWEN.md
-AGENTS.md
+AGENTS.local.md
 mise.local.toml
 uv.lock
