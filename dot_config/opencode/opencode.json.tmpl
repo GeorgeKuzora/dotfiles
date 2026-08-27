@@ -25,6 +25,14 @@
         "headers": {"x-api-key": {{ .glm_api_key | quote }}}
       },
       "models": {
+        "glm-5.3-flash": {
+          "name": "glm-5.3-flash",
+          "reasoningEffort": "max",
+          "thinking": {
+            "clear_thinking": false,
+            "type": "enabled"
+          }
+        },
         "glm-5.3": {
           "name": "glm-5.3",
           "variants": {
@@ -41,12 +49,6 @@
             "max": { "reasoningEffort": "max" }
           }
         },
-        "glm-5.1": {
-          "name": "glm-5.1"
-        },
-        "glm-5": {
-          "name": "glm-5.0"
-        },
         "glm-4.7": {
           "name": "glm-4.7"
         }
@@ -56,7 +58,7 @@
   "enabled_providers": ["koronatech", "litellm", "opencode"],
   "small_model": "koronatech/instructthink",
 {{- end }}
-  "instructions": ["QWEN.md", "AGENTS.md", "AGENT.md", "CLAUDE.md"],
+  "instructions": ["AGENTS.md", "AGENT.md", "CLAUDE.md", "QWEN.md"],
   "default_agent": "build",
   "share": "disabled",
   "autoupdate": false,
