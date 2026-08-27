@@ -58,6 +58,7 @@ if status is-interactive
     {{- if eq .chezmoi.os "darwin" }}
     fish_add_path $HOME/.lmstudio/bin $HOME/.orbstack/bin
     fish_add_path /opt/homebrew/bin/Applications/Obsidian.app/Contents/MacOS
+    fish_add_path /Applications/Docker.app/Contents/Resources/bin
     {{- end }}
 
     # ABBREVIATION
@@ -162,6 +163,11 @@ if status is-interactive
     safe_abbr lzg lazygit
     safe_abbr lzd lazydocker
 
+    # Lumen
+    safe_abbr l 'lumen'
+    safe_abbr ld 'lumen diff'
+    safe_abbr ldmh 'lumen diff master...HEAD'
+
     # ls commands
     safe_abbr ls 'ls --color=auto'
     safe_abbr ll 'ls -lavh --color=auto --group-directories-first' # show long listing of all except ".."
@@ -181,7 +187,6 @@ if status is-interactive
     safe_abbr pd prevd
     safe_abbr nd nextd
     safe_abbr mr 'mise run'
-    safe_abbr l 'lumen diff master...HEAD'
 
     fzf --fish | source
     atuin init fish | source
