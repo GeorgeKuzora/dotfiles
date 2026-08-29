@@ -25,19 +25,16 @@ local function get_vcs_type()
 end
 
 vim.pack.add({
-  "https://github.com/MunifTanjim/nui.nvim",
-  "https://github.com/julienvincent/hunk.nvim",
-  "https://github.com/folke/snacks.nvim",
-  "https://github.com/clabby/difftastic.nvim",
+  "https://github.com/dlyongemallo/diffview-plus.nvim",
 })
+
 vim.cmd("packadd nvim.difftool")
 
-require("hunk").setup()
-
-require("difftastic-nvim").setup({
-    vcs = get_vcs_type(),
-    download = true, -- Auto-download pre-built binary
-    snacks_picker = {
-        enabled = true,
-    },
+require("diffview").setup({
+  enhanced_diff_hl = true,
+  use_icons = false,
+  view = {
+    default = { layout = "diff2_horizontal" },
+    merge_tool = { layout = "diff3_mixed" },
+  },
 })

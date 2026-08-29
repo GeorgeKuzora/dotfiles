@@ -2,7 +2,24 @@
 [user]
 name = "GeorgiyKuzora"
 email = {{ .email | quote }}
+
 [ui]
 default-command = ["st"]
 diff-formatter = ["difft", "--color=always", "$left", "$right"]
-diff-editor = ["nvim", "-c", "DiffEditor $left $right $output"]
+merge-editor = "diffview-merge"
+diff-editor = "diffview-edit"
+diff-instructions = false
+
+[merge-tools.diffview-merge]
+program = "nvim"
+merge-args = [
+  "-c", "DiffviewMergeFiles \"$output\" \"$base\" \"$left\" \"$right\""
+]
+merge-tool-edits-conflict-markers = true
+conflict-marker-style = "git"
+
+[merge-tools.diffview-edit]
+program = "nvim"
+edit-args = [
+    "-c", "DiffviewDiffDirs $left $right",
+]
