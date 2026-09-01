@@ -20,3 +20,5 @@ hidden*
 AGENTS.local.md
 mise.local.toml
 uv.lock
+.push_image_state
+*.tar.xz
