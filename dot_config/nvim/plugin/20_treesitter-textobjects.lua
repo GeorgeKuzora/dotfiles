@@ -44,8 +44,11 @@ Map({ "x", "o" }, "ik", function() select("@class.inner", "textobjects") end, { 
 Map({ "x", "o" }, "a/", function() select("@comment.outer", "textobjects") end, { desc = 'Around comment' })
 Map({ "x", "o" }, "i/", function() select("@comment.inner", "textobjects") end, { desc = 'Inside comment' })
 
-Map({ "x", "o" }, "ac", function() select("@conditional.outer", "textobjects") end, { desc = 'Around conditional' })
-Map({ "x", "o" }, "ic", function() select("@conditional.inner", "textobjects") end, { desc = 'Inside conditional' })
+Map({ "x", "o" }, "ag", function() select("@conditional.outer", "textobjects") end, { desc = 'Around conditional' })
+Map({ "x", "o" }, "ig", function() select("@conditional.inner", "textobjects") end, { desc = 'Inside conditional' })
+
+Map({ "x", "o" }, "aa", function() select("@attribute.outer", "textobjects") end, { desc = 'Around attribute' })
+Map({ "x", "o" }, "ia", function() select("@attribute.inner", "textobjects") end, { desc = 'Inside attribute' })
 
 Map({ "x", "o" }, "ao", function() select("@loop.outer", "textobjects") end, { desc = 'Around loop' })
 Map({ "x", "o" }, "io", function() select("@loop.inner", "textobjects") end, { desc = 'Inside loop' })
@@ -80,10 +83,16 @@ Map({ "n", "x", "o" }, "]?", function() next_end("@comment.outer", "textobjects"
 Map({ "n", "x", "o" }, "[/", function() previous_start("@comment.outer", "textobjects") end, { desc = 'Previous comment start' })
 Map({ "n", "x", "o" }, "[?", function() previous_end("@comment.outer", "textobjects") end, { desc = 'Previous comment end' })
 
-Map({ "n", "x", "o" }, "]c", function() next_start("@conditional.outer", "textobjects") end, { desc = 'Next conditional start' })
-Map({ "n", "x", "o" }, "]C", function() next_end("@conditional.outer", "textobjects") end, { desc = 'Next conditional end' })
-Map({ "n", "x", "o" }, "[c", function() previous_start("@conditional.outer", "textobjects") end, { desc = 'Previous conditional start' })
-Map({ "n", "x", "o" }, "[C", function() previous_end("@conditional.outer", "textobjects") end, { desc = 'Previous conditional end' })
+Map({ "n", "x", "o" }, "]g", function() next_start("@conditional.outer", "textobjects") end, { desc = 'Next conditional start' })
+Map({ "n", "x", "o" }, "]G", function() next_end("@conditional.outer", "textobjects") end, { desc = 'Next conditional end' })
+Map({ "n", "x", "o" }, "[g", function() previous_start("@conditional.outer", "textobjects") end, { desc = 'Previous conditional start' })
+Map({ "n", "x", "o" }, "[G", function() previous_end("@conditional.outer", "textobjects") end, { desc = 'Previous conditional end' })
+
+
+Map({ "n", "x", "o" }, "]a", function() next_start("@attribute.outer", "textobjects") end, { desc = 'Next attribute start' })
+Map({ "n", "x", "o" }, "]A", function() next_end("@attribute.outer", "textobjects") end, { desc = 'Next attribute end' })
+Map({ "n", "x", "o" }, "[a", function() previous_start("@attribute.outer", "textobjects") end, { desc = 'Previous attribute start' })
+Map({ "n", "x", "o" }, "[A", function() previous_end("@attribute.outer", "textobjects") end, { desc = 'Previous attribute end' })
 
 Map({ "n", "x", "o" }, "]o", function() next_start("@loop.outer", "textobjects") end, { desc = 'Next loop start' })
 Map({ "n", "x", "o" }, "]O", function() next_end("@loop.outer", "textobjects") end, { desc = 'Next loop end' })
