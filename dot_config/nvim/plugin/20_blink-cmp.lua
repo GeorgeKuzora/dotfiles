@@ -28,14 +28,6 @@ require("blink-cmp").setup({
   },
   sources = {
     default = { 'lsp', 'path', 'snippets', 'buffer', 'omni' },
-    providers = {
-      cmdline = {
-        -- ignores cmdline completions when executing shell commands
-        enabled = function()
-          return vim.fn.getcmdtype() ~= ':' or not vim.fn.getcmdline():match "^[%%0-9,'<>%-]*!"
-        end,
-      },
-    },
   },
   signature = { enabled = true },
   fuzzy = {
