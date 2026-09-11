@@ -15,6 +15,7 @@ taskfile.dist.yaml
 .continue
 hidden*
 .venv
+.venv-sandbox
 .zed
 .DS_Store
 AGENTS.local.md
