@@ -28,8 +28,6 @@ vim.pack.add({
   "https://github.com/dlyongemallo/diffview-plus.nvim",
 })
 
-vim.cmd("packadd nvim.difftool")
-
 require("diffview").setup({
   enhanced_diff_hl = true,
   use_icons = false,
