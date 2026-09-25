@@ -1,0 +1,34 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": ["AGENTS.md", "AGENT.md", "CLAUDE.md", "QWEN.md"],
+  "default_agent": "build",
+  "share": "disabled",
+  "autoupdate": false,
+  "permission": {
+    "bash": {
+      "grep *": "allow",
+      "ls *": "allow",
+      "find *": "allow",
+      "cat *": "allow",
+      "wc *": "allow",
+      "cd *": "allow",
+      "mkdir *": "allow",
+      "mkdir -p *": "allow",
+      "touch *": "allow",
+      "head *": "allow",
+      "tail *": "allow",
+      "echo *": "allow",
+      "git *": "ask",
+      "git status *": "allow",
+      "git diff *": "allow",
+      "git branch *": "allow",
+      "git fetch *": "allow",
+      "git log *": "allow",
+      "git show *": "allow",
+      "rm -rf *": "deny"
+    },
+    "external_directory": {
+      "/tmp/**": "allow"
+    }
+  }
+}

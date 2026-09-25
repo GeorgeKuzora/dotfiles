@@ -1,0 +1,49 @@
+{
+  "permission": {
+    "*": "ask",
+    "path": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
+    },
+    "grep": "allow",
+    "find": "allow",
+    "ls": "allow",
+    "read": "allow",
+    "write": "allow",
+    "edit": "allow",
+    "bash": {
+      "*": "ask",
+      "grep *": "allow",
+      "ls *": "allow",
+      "find *": "allow",
+      "cat *": "allow",
+      "wc *": "allow",
+      "cd *": "allow",
+      "mkdir *": "allow",
+      "mkdir -p *": "allow",
+      "touch *": "allow",
+      "head *": "allow",
+      "tail *": "allow",
+      "echo *": "allow",
+      "sed *": "allow",
+      "git *": "ask",
+      "git status *": "allow",
+      "git diff *": "allow",
+      "git branch *": "allow",
+      "git fetch *": "allow",
+      "git log *": "allow",
+      "git show *": "allow",
+      "rm -rf *": "deny"
+    },
+    "mcp": { "mcp_status": "allow" },
+    "skill": { "*": "allow" },
+    "external_directory": {
+      "*": "ask",
+      "~/.agents/*": "allow"
+    },
+    "fffind": "allow",
+    "ffgrep": "allow"
+  }
+}

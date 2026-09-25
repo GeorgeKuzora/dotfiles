@@ -1,0 +1,36 @@
+[user]
+	name = GeorgiyKuzora
+	email = {{ .email | quote }}
+[color]
+	ui = auto
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[rebase]
+    updateRefs = true
+[fetch]
+	prune = true
+[diff]
+	colorMoved = zebra
+	algorithm = histogram
+[alias]
+	empty = commit --allow-empty
+	dl = -c diff.external=difft log -p --ext-diff
+	ds = -c diff.external=difft show --ext-diff
+	df = -c diff.external=difft diff --ext-diff
+[status]
+	short = true
+[format]
+	pretty = oneline
+[log]
+	decorate = true
+	abbrevCommit = true
+[merge]
+	conflictstyle = diff3
+    tool = diffview
+[mergetool "diffview"]
+    cmd = nvim -c "DiffviewOpen"
+    keepBackup = false

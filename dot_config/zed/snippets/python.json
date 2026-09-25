@@ -1,0 +1,37 @@
+{
+  "@pytest.fixture": {
+    "prefix": "pf",
+    "body": ["@pytest.fixture\n$0"],
+    "description": "Adds pytest fixture decorator."
+  },
+  "@pytest.mark.parametrize": {
+    "prefix": "pz",
+    "body": ["@pytest.mark.parametrize(\n    [$1],\n    [$0],\n)"],
+    "description": "Adds pytest parametrize decorator."
+  },
+  "pytest.param": {
+    "prefix": "pp",
+    "body": ["pytest.param($0),"],
+    "description": "Adds pytest param statement."
+  },
+  "logging.critical": {
+    "prefix": "lc",
+    "body": ["logging.critical(f'{$0 =}'),"],
+    "description": "Adds logging critical with f-string."
+  },
+  "logging.error": {
+    "prefix": "le",
+    "body": ["logging.error(f'{$0 =}'),"],
+    "description": "Adds logging error with f-string."
+  },
+  "logging.info": {
+    "prefix": "li",
+    "body": ["logging.info(f'{$0 =}'),"],
+    "description": "Adds logging info with f-string."
+  },
+  "logging.debug": {
+    "prefix": "ld",
+    "body": ["logging.debug(f'{$0 =}'),"],
+    "description": "Adds logging debug with f-string."
+  }
+}

@@ -1,0 +1,14 @@
+{{- if eq .chezmoi.os "linux" -}}
+{{- if eq .chezmoi.hostname "georgiy" -}}
+[Desktop Entry]
+Categories=Network;FileTransfer;P2P
+Comment=Starts the main syncthing process in the background.
+Exec=/usr/bin/syncthing serve --no-browser --logfile=default
+GenericName=File synchronization
+Icon=syncthing
+Keywords=synchronization;daemon;
+Name=Start Syncthing
+Terminal=false
+Type=Application
+{{- end }}
+{{- end }}

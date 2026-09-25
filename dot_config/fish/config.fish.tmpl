@@ -1,0 +1,206 @@
+if status is-interactive
+    # OPTIONS
+    set fish_greeting # disable greeting on startup
+
+    set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense'
+
+    # KEYBINDINGS
+    set -g fish_key_bindings fish_hybrid_key_bindings
+
+    # CURSOR BEHAVIOR
+    set fish_cursor_default block
+    set fish_cursor_insert line
+    set fish_cursor_replace_one underscore
+    set fish_cursor_replace underscore
+    set fish_cursor_external line
+    set fish_cursor_visual block
+    set -g fish_vi_force_cursor 1
+
+    # ENV VARIABLES
+    set -gx XDG_CONFIG_HOME $HOME/.config
+    set -gx GOPATH $HOME/go
+    set -gx MANPAGER 'nvim +Man!'
+    set -gx MANWIDTH 999
+    set -gx EDITOR nvim
+    set -gx VISUAL nvim
+    set -gx COLORTERM truecolor
+    set -gx MANPATH $HOME/.local/share/man:$MANPATH
+    set -gx TERM xterm-ghostty
+    set -gx TERMINAL ghostty
+    set -gx FZF_CTRL_T_COMMAND "fd --hidden --no-ignore --exclude .git --exclude node_modules --exclude .venv --exclude .venv-sandbox --exclude .mypy_cache --exclude .pytest_cache --exclude .jj --exclude __pycache__"
+    {{- if eq .chezmoi.os "darwin" }}
+    {{- end }}
+    {{- if eq .chezmoi.os "linux" }}
+    set -gx BROWSER xdg-open
+    set -gx VIDEO xdg-open
+    set -gx OPENER xdg-open
+    set -gx READER xdg-open
+    set -gx IMAGE xdg-open
+    {{- if eq  .chezmoi.hostname "ubuntu" }}
+    # set -gx TERM xterm-256color
+    # set -gx TERMINAL xterm
+    {{- end }}
+    {{- end }}
+    set -gx PAGER less
+    set -gx SHELL fish
+    set -gx STARSHIP_CONFIG $XDG_CONFIG_HOME/starship/starship.toml
+    set -gx HOMEBREW_BUNDLE_FILE $HOME/.config/brewfile/Brewfile
+    {{- if eq .chezmoi.os "darwin" }}
+    set -gx HOMEBREW_PREFIX /opt/homebrew
+    {{- end }}
+    {{- if eq .chezmoi.os "linux" }}
+    set -gx HOMEBREW_PREFIX /home/linuxbrew/.linuxbrew
+    {{- end }}
+
+
+    # PATH
+    fish_add_path $HOMEBREW_PREFIX/bin $HOMEBREW_PREFIX/opt/rustup/bin
+    fish_add_path $HOME/.local/bin $GOPATH/bin $HOME/.cargo/bin
+
+    {{- if eq .chezmoi.os "darwin" }}
+    fish_add_path $HOME/.lmstudio/bin $HOME/.orbstack/bin
+    fish_add_path /opt/homebrew/bin/Applications/Obsidian.app/Contents/MacOS
+    fish_add_path /Applications/Docker.app/Contents/Resources/bin
+    {{- end }}
+
+    # ABBREVIATION
+
+    # Colorize grep output (good for log files)
+    safe_abbr grep 'grep --color=auto'
+    safe_abbr egrep 'egrep --color=auto'
+    safe_abbr fgrep 'fgrep --color=auto'
+
+    # Easier to read disk
+    safe_abbr df 'df -h' # human-readable sizes
+    safe_abbr free 'free -m' # show sizes in MB
+
+    # Nvim
+    safe_abbr vi nvim
+    safe_abbr vim 'set -gx NVIM_APPNAME vim; nvim'
+    safe_abbr neovim 'set -gx NVIM_APPNAME nvim; nvim'
+
+    # Git
+    safe_abbr gst 'git status'
+    safe_abbr gl 'git log'
+    safe_abbr ga 'git add'
+    safe_abbr gc 'git commit'
+    safe_abbr gcm 'git commit -m'
+    safe_abbr gP 'git push'
+    safe_abbr gp 'git pull'
+    safe_abbr gf 'git fetch'
+    safe_abbr gb 'git branch'
+    safe_abbr gco 'git checkout'
+    safe_abbr gcob 'git checkout -b'
+    safe_abbr gs 'git stash push -m'
+    safe_abbr gsa 'git stash apply'
+    safe_abbr gsp 'git stash pop'
+    safe_abbr gsd 'git stash drop'
+    safe_abbr gss 'git stash show'
+    safe_abbr gsl 'git stash list'
+    safe_abbr gsb 'git stash branch'
+    safe_abbr gsc 'git stash clear'
+    safe_abbr gwta 'git worktree add'
+    safe_abbr gwtr 'git worktree remove'
+    safe_abbr gm 'git merge'
+    safe_abbr gmc 'git merge --continue'
+    safe_abbr gma 'git merge --abort'
+    safe_abbr gr 'git rebase'
+    safe_abbr grc 'git rebase --continue'
+    safe_abbr gra 'git rebase --abort'
+    safe_abbr gmomr 'git merge origin/master'
+    safe_abbr gmomn 'git merge origin/main'
+    safe_abbr gmod 'git merge origin/dev'
+    safe_abbr gmos 'git merge origin/staging'
+    safe_abbr gmot 'git merge origin/test'
+
+    # Jujutsu
+    safe_abbr jst 'jj st'
+    safe_abbr jc 'jj commit -m'
+    safe_abbr jn 'jj new'
+    safe_abbr jnd 'jj new -m'
+    safe_abbr jd 'jj describe'
+    safe_abbr jl 'jj log -n 10'
+    safe_abbr jla 'jj log'
+    safe_abbr je 'jj edit -r'
+    safe_abbr jnx 'jj next --edit'
+    safe_abbr jp 'jj prev --edit'
+    safe_abbr jg 'jj git'
+    safe_abbr jgp 'jj git push -b'
+    safe_abbr jgpm 'jj git push -b main'
+    safe_abbr jgf 'jj git fetch'
+    safe_abbr jb 'jj b'
+    safe_abbr jbs 'jj b set'
+    safe_abbr jbc 'jj b create'
+    safe_abbr jf 'jj diff'
+    safe_abbr js 'jj squash'
+    safe_abbr jr 'jj rebase'
+    safe_abbr jR 'jj restore'
+    safe_abbr ju 'jj undo'
+
+    # Kubectl
+    safe_abbr k 'kubectl'
+    safe_abbr kg 'kubectl get'
+    safe_abbr kd 'kubectl describe'
+    safe_abbr kl 'kubectl logs'
+    safe_abbr kgp 'kubectl get pods'
+    safe_abbr kdp 'kubectl describe pods'
+    safe_abbr klp 'kubectl logs pods'
+    safe_abbr kgd 'kubectl get deployments'
+    safe_abbr kdd 'kubectl describe deployments'
+    safe_abbr kld 'kubectl logs deployments'
+    safe_abbr kgs 'kubectl get services'
+    safe_abbr kds 'kubectl describe services'
+    safe_abbr kls 'kubectl logs services'
+
+    # Atuin
+    safe_abbr as 'atuin scripts'
+    safe_abbr asr 'atuin scripts run'
+
+    # Zellij
+    safe_abbr zj zellij
+    safe_abbr zja 'zellij a'
+    safe_abbr zjs 'zellij -s'
+
+    # Lazy
+    safe_abbr lg lazygit
+    safe_abbr lzg lazygit
+    safe_abbr lzd lazydocker
+
+    # Lumen
+    safe_abbr l 'lumen'
+    safe_abbr ld 'lumen diff'
+    safe_abbr ldmh 'lumen diff master...HEAD'
+
+    # ls commands
+    safe_abbr ls 'ls --color=auto'
+    safe_abbr ll 'ls -lavh --color=auto --group-directories-first' # show long listing of all except ".."
+    safe_abbr ls 'eza --oneline'
+    safe_abbr ll 'eza -la --color=auto --group-directories-first --icons --git --header' # show long listing of all except ".."
+    safe_abbr tree 'eza --color=auto --group-directories-first --tree' # tree view
+
+    # Set TERM var
+    safe_abbr set-ghostty 'set -gx TERM xterm-ghostty'
+    safe_abbr set-256 'set -gx TERM xterm-256color'
+
+    # Other tools
+    safe_abbr venv 'source .venv/bin/activate.fish --no-modify-path'
+    safe_abbr cat bat
+    safe_abbr y yazi
+    safe_abbr op opencode
+    safe_abbr pd prevd
+    safe_abbr nd nextd
+    safe_abbr mr 'mise run'
+
+
+    if functions -q init
+        init
+    end
+
+    fzf --fish | source
+    atuin init fish | source
+    zoxide init fish | source
+    starship init fish | source
+    carapace _carapace | source
+    uv generate-shell-completion fish | source
+    uvx --generate-shell-completion fish | source
+end

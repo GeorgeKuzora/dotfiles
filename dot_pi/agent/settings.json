@@ -1,0 +1,9 @@
+{
+  "lastChangelogVersion": "0.84.0",
+  "theme": "catppuccin-mocha",
+  "packages": [
+    "npm:@gotgenes/pi-permission-system",
+    "npm:@ff-labs/pi-fff"
+  ],
+  "hideThinkingBlock": true
+}

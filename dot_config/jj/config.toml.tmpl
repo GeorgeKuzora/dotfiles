@@ -1,0 +1,25 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+[user]
+name = "GeorgiyKuzora"
+email = {{ .email | quote }}
+
+[ui]
+default-command = ["st"]
+diff-formatter = ["difft", "--color=always", "$left", "$right"]
+merge-editor = "diffview-merge"
+diff-editor = "diffview-edit"
+diff-instructions = false
+
+[merge-tools.diffview-merge]
+program = "nvim"
+merge-args = [
+  "-c", "DiffviewMergeFiles \"$output\" \"$base\" \"$left\" \"$right\""
+]
+merge-tool-edits-conflict-markers = true
+conflict-marker-style = "git"
+
+[merge-tools.diffview-edit]
+program = "nvim"
+edit-args = [
+    "-c", "DiffviewDiffDirs $left $right",
+]

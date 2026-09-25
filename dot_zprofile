@@ -1,0 +1,14 @@
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:/opt/homebrew/bin"
+export PATH="$PATH:$HOME/.lmstudio/bin"
+export PATH="$PATH:/opt/homebrew/bin/Applications/Obsidian.app/Contents/MacOS"
+
+export HOMEBREW_BUNDLE_FILE="$HOME/.config/brewfile/Brewfile"
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+
+fish
