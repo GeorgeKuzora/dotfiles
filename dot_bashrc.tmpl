@@ -1,5 +1,10 @@
-# Commands that should be applied only for interactive shells.
+{{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.hostname "georgiy"))}}
+export PATH="$PATH:~/.local/bin"
+export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+fish
+{{- end }}
 
+# Commands that should be applied only for interactive shells.
 [[ $- == *i* ]] || return
 
 HISTFILESIZE=100000
