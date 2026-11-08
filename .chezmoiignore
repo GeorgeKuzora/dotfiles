@@ -3,9 +3,7 @@
 {{- if ne .chezmoi.os "linux" }}
 
 ./.config/autostart
-./.bash_profile
 ./.bashrc
-./.profile
 
 {{- else if ne .chezmoi.os "darwin" }}
 

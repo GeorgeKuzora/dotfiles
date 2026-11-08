@@ -1,7 +1,10 @@
-{{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.hostname "georgiy"))}}
 export PATH="$PATH:~/.local/bin"
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
-fish
+
+{{- if eq .work "true" }}
+{{- if eq .chezmoi.hostname "ubuntu" }}
+sudo ip link set eth0 mtu 1350
+{{- end }}
 {{- end }}
 
 # Commands that should be applied only for interactive shells.
@@ -21,3 +24,5 @@ alias ga='git add .'
 alias gc='git commit'
 alias gp='git pull'
 alias gP='git push'
+
+fish
